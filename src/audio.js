@@ -82,6 +82,10 @@ export async function createAudioModem() {
     return resumed;
   }
 
+  // Call directly from a user gesture before starting a polling loop. Keeping
+  // this context alive permits later packets without another button press.
+  function prime() { return activate(); }
+
   function releaseCapture() {
     clearTimeout(receivingTimer);
     if (processor) { processor.onaudioprocess = null; processor.disconnect(); processor = null; }
@@ -112,12 +116,12 @@ export async function createAudioModem() {
     if (mode === 'listening') return;
     if (mode !== 'idle') throw new Error('Detén la transmisión antes de escuchar.');
     statusCallback = onStatus;
-    const resume = activate();
     const token = ++generation;
     mode = 'starting';
     onStatus('loading');
     try {
-      await resume;
+      await prime();
+      if (token !== generation) throw abortError();
       const captured = await navigator.mediaDevices.getUserMedia({ audio: {
         channelCount: 1,
         echoCancellation: false,
@@ -171,27 +175,33 @@ export async function createAudioModem() {
     }
   }
 
-  async function transmit(frames, { onProgress = () => {}, onStatus = () => {}, repeat = 2, signal } = {}) {
+  async function transmit(frames, { onProgress = () => {}, onStatus = () => {}, repeat = 2, signal,
+    keepAlive = false, speed = 'fast' } = {}) {
     if (!Array.isArray(frames) || !frames.length || frames.length > 68 || frames.some((frame) => !(frame instanceof Uint8Array) || !frame.length || frame.length > 140)) {
       throw new Error('La transmisión requiere paquetes de entre 1 y 140 bytes.');
     }
     if (!Number.isInteger(repeat) || repeat < 1 || repeat > 8) throw new Error('Repeticiones: entre 1 y 8.');
+    if (!['fast', 'fastest'].includes(speed)) throw new Error('Velocidad de transmisión no compatible.');
+    if (typeof keepAlive !== 'boolean') throw new Error('keepAlive debe ser booleano.');
     if (mode !== 'idle') throw new Error('Detén la escucha o transmisión actual primero.');
     if (signal?.aborted) throw abortError();
     statusCallback = onStatus;
-    const resume = activate();
     const token = ++generation;
     mode = 'transmitting';
     const cancel = () => { void stop(); };
     signal?.addEventListener('abort', cancel, { once: true });
+    let complete = false;
     try {
-      await resume;
+      await prime();
+      if (token !== generation || signal?.aborted) throw abortError();
       onStatus('transmitting');
+      const protocol = modem.ProtocolId[speed === 'fastest' ? 'GGWAVE_PROTOCOL_AUDIBLE_FASTEST' : 'GGWAVE_PROTOCOL_AUDIBLE_FAST'];
+      if (protocol === undefined) throw new Error('El módem no admite esa velocidad de transmisión.');
       let sent = 0;
       for (let cycle = 0; cycle < repeat; cycle++) {
         for (let part = 0; part < frames.length; part++) {
           if (token !== generation || signal?.aborted) throw abortError();
-          const waveform = modem.encode(instance, frames[part], modem.ProtocolId.GGWAVE_PROTOCOL_AUDIBLE_FAST, 40);
+          const waveform = modem.encode(instance, frames[part], protocol, 40);
           if (!waveform?.byteLength || waveform.byteLength % 4) throw new Error('No se pudo generar la señal de audio.');
           const bytes = new Uint8Array(waveform.buffer, waveform.byteOffset, waveform.byteLength).slice();
           const samples = new Float32Array(bytes.buffer);
@@ -202,9 +212,13 @@ export async function createAudioModem() {
           source.connect(context.destination);
           playback = source;
           onProgress({ sent, total: frames.length * repeat, cycle: cycle + 1, cycles: repeat, frame: part + 1, frames: frames.length, durationSeconds: buffer.duration });
-          await new Promise((resolve) => { source.onended = resolve; source.start(); });
-          source.disconnect();
-          if (playback === source) playback = null;
+          try {
+            await new Promise((resolve) => { source.onended = resolve; source.start(); });
+          } finally {
+            source.onended = null;
+            source.disconnect();
+            if (playback === source) playback = null;
+          }
           if (token !== generation || signal?.aborted) throw abortError();
           sent++;
           onProgress({ sent, total: frames.length * repeat, cycle: cycle + 1, cycles: repeat, frame: part + 1, frames: frames.length, durationSeconds: buffer.duration });
@@ -213,11 +227,16 @@ export async function createAudioModem() {
           await new Promise((resolve) => setTimeout(resolve, 250));
         }
       }
+      if (token !== generation || signal?.aborted) throw abortError();
+      complete = true;
     } finally {
       signal?.removeEventListener('abort', cancel);
-      if (token === generation) await stop();
+      if (token === generation) {
+        if (complete && keepAlive) { mode = 'idle'; onStatus('idle'); }
+        else await stop();
+      }
     }
   }
 
-  return { transmit, listen, stop };
+  return { prime, transmit, listen, stop };
 }

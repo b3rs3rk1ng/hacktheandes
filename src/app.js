@@ -1,3 +1,5 @@
+import { createSituationUI } from './situation.js';
+import { createStation } from './station.js';
 import { createAudioModem } from './audio.js';
 import { createAssembler, encodeAlert } from './protocol.js';
 import { locations, officialSources, officialBulletins } from './data.js';
@@ -33,6 +35,8 @@ let packetGeneration = 0;
 let sending = false;
 let clearPending = false;
 const assembler = createAssembler();
+const situationReady = createSituationUI(storage,{toast}).catch(error=>{ $('situation-map').textContent=error.message; return null; });
+const station = createStation({ getModem:()=>modem, isBusy:()=>listening||sending, onBusy:value=>{sending=value;$('transmit-button').disabled=value;} });
 
 const modemReady = createAudioModem().then(value => {
   modem = value;
@@ -134,6 +138,15 @@ async function receiveFrame(frame) {
     $('fragment-progress').max = result.total;
     $('fragment-progress').value = result.received;
     $('fragment-text').textContent = `${result.received} de ${result.total} fragmentos. Si falta alguno, espera la siguiente vuelta.`;
+    return;
+  }
+  if (result.state === 'complete' && result.field) {
+    try {
+      const situation=await situationReady;
+      if (!situation) throw new Error('El mapa no está disponible. Recarga la app con internet.');
+      const message=await situation.receive(result.field);
+      $('receive-progress').hidden=true;$('receiver-feedback').textContent=message;toast(message);
+    } catch(error) {$('receiver-feedback').textContent=error.message;}
     return;
   }
   if (result.state !== 'complete' || !result.alert) return;
@@ -287,7 +300,8 @@ $('stop-transmit').addEventListener('click', () => transmissionController?.abort
 async function setMode(mode, updateUrl = true) {
   if (!['receive', 'send', 'guide'].includes(mode)) mode = 'receive';
   if (mode !== 'receive' && listening) await stopListening();
-  if (mode !== 'send' && sending) transmissionController?.abort();
+  if (mode !== 'send' && sending) { transmissionController?.abort(); station.stop(); }
+  if (mode === 'send') void station.prepare();
   for (const view of ['receive', 'send', 'guide']) $(`${view}-view`).hidden = view !== mode;
   document.querySelectorAll('[data-mode]').forEach(button => {
     const active = button.dataset.mode === mode;
@@ -341,12 +355,13 @@ async function prepareOffline() {
     return;
   }
   try {
-    await navigator.serviceWorker.register('/sw.js');
+    const registered = await navigator.serviceWorker.register('/sw.js', {updateViaCache:'none'});
+    if (registered.installing) await new Promise((resolve,reject)=>{const worker=registered.installing;worker.addEventListener('statechange',()=>{if(worker.state==='activated')resolve();else if(worker.state==='redundant')reject(new Error('La nueva versión no se pudo guardar.'));});});
     const registration = await navigator.serviceWorker.ready;
     await new Promise((resolve, reject) => {
       const channel = new MessageChannel();
       const timeout = setTimeout(() => reject(new Error('La preparación tardó más de lo esperado.')), 15000);
-      channel.port1.onmessage = event => { if (event.data?.ready) { clearTimeout(timeout); resolve(); } };
+      channel.port1.onmessage = event => { clearTimeout(timeout); event.data?.ready ? resolve() : reject(new Error('Faltan recursos guardados.'));  };
       registration.active.postMessage({ type:'OFFLINE_STATUS' }, [channel.port2]);
     });
     $('offline-title').textContent = 'Lista sin internet';
@@ -361,6 +376,11 @@ async function prepareOffline() {
   }
 }
 
+let reloadingShell=false;
+if ('serviceWorker' in navigator) navigator.serviceWorker.addEventListener('controllerchange',()=>{
+  if (!reloadingShell && !listening && !sending) {reloadingShell=true;location.reload();}
+  else toast('Nueva versión guardada. Recarga Onda cuando termine la recepción.');
+});
 renderInbox();
 void preparePacket();
 void prepareOffline();
@@ -371,7 +391,7 @@ document.addEventListener('visibilitychange', () => {
     $('receiver-feedback').textContent = 'Se detuvo la escucha al salir de esta pantalla. Pulsa escuchar para continuar.';
   }
 });
-window.addEventListener('pagehide', () => { transmissionController?.abort(); if (modem) void modem.stop(); });
+window.addEventListener('pagehide', () => { station.stop(); transmissionController?.abort(); if (modem) void modem.stop(); });
 
 // Kept exported for integration checks using the real frame validation path.
 export { receiveFrame };
