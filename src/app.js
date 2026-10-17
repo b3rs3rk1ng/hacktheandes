@@ -5,6 +5,7 @@ import { createAssembler, encodeAlert } from './protocol.js';
 import { locations, officialSources, officialBulletins } from './data.js';
 import { isForLocation, validity, loadInbox, saveInbox, mergeNotice } from './inbox.js';
 
+const runtime = {bundled:globalThis.ONDA_CONFIG?.bundled === true, canEmit:globalThis.ONDA_CONFIG?.canEmit !== false};
 const $ = id => document.getElementById(id);
 const node = (tag, text, className) => {
   const element = document.createElement(tag);
@@ -68,7 +69,7 @@ function toast(message) {
 
 function renderNetwork() {
   document.body.classList.toggle('offline', !navigator.onLine);
-  $('network-text').textContent = navigator.onLine ? 'En línea' : 'Sin internet';
+  $('network-text').textContent = runtime.bundled ? 'App offline' : navigator.onLine ? 'Red disponible' : 'Sin internet';
 }
 window.addEventListener('online', renderNetwork);
 window.addEventListener('offline', renderNetwork);
@@ -297,7 +298,7 @@ $('send-form').addEventListener('submit', async event => {
 $('stop-transmit').addEventListener('click', () => transmissionController?.abort());
 
 async function setMode(mode, updateUrl = true) {
-  if (!['receive', 'send', 'guide'].includes(mode)) mode = 'receive';
+  if (!['receive', 'send', 'guide'].includes(mode) || (mode === 'send' && !runtime.canEmit)) mode = 'receive';
   if (mode !== 'receive' && listening) await stopListening();
   if (mode !== 'send' && sending) { transmissionController?.abort(); station.stop(); }
   if (mode === 'send') void station.prepare();
@@ -313,6 +314,8 @@ async function setMode(mode, updateUrl = true) {
     history.replaceState(null, '', url);
   }
 }
+document.body.classList.toggle('receive-only', !runtime.canEmit);
+document.querySelectorAll('[data-mode="send"]').forEach(button=>{button.hidden=!runtime.canEmit;});
 document.querySelectorAll('[data-mode]').forEach(button => button.addEventListener('click', () => void setMode(button.dataset.mode)));
 document.querySelectorAll('[data-go]').forEach(button => button.addEventListener('click', () => { void setMode(button.dataset.go); window.scrollTo({ top:0, behavior:'smooth' }); }));
 void setMode(new URL(location.href).searchParams.get('mode') || 'receive', false);
@@ -347,6 +350,16 @@ $('clear-button').addEventListener('click', () => {
 });
 
 async function prepareOffline() {
+  if (runtime.bundled) {
+    $('offline-title').textContent='Incluida en este iPhone';
+    $('offline-description').textContent='El mapa y las herramientas vienen dentro de la app. Los datos nuevos llegan al escuchar la señal.';
+    $('offline-state').textContent='Disponible';
+    document.querySelector('.readiness-strip').classList.add('ready');
+    const firstStep=document.querySelector('.guide-steps article p');
+    if(firstStep)firstStep.textContent='Abre Onda, elige tu lugar o usa GPS. El mapa ya viene incluido en la app.';
+    return;
+  }
+
   if (!('serviceWorker' in navigator) || !window.isSecureContext) {
     $('offline-title').textContent = 'Este navegador no permite guardar la web offline';
     $('offline-description').textContent = 'Usa Safari desde la dirección HTTPS para preparar el iPhone.';

@@ -86,3 +86,9 @@ Los tests cubren contratos, rejillas de geografías distintas, corrupción, orde
 Se verificaron la preparación de caché y la recarga en Safari. Las pruebas automatizadas comprueban la integridad del contenido guardado; la apertura física en modo avión aún debe comprobarse en el dispositivo. Un aviso escrito de la primera versión se recibió físicamente entre laptop e iPhone. Eso no valida todavía las nuevas rejillas, la velocidad experimental, el GPS sin red, todos los modelos de teléfono ni la instalación PWA en cada versión de iOS. Una prueba sintética del módem tampoco sustituye pruebas con micrófonos, reverberación, distancia y ruido real.
 
 Quedan por medir fiabilidad del flujo completo de mapas en el teléfono, consumo y recepción mediante emisoras AM/FM. No se afirma cobertura nacional de una antena, conectividad equivalente a internet, recepción garantizada ni comunicación bidireccional a distancia. El mapa base es generalizado y no contiene una red vial operativa. Las referencias a otras fuentes oficiales no son integraciones de datos adicionales.
+
+## Instalación directa en iPhone
+
+La carpeta `ios/` contiene una app SwiftUI/WKWebView que incluye los recursos del receptor y abre sin depender del hosting. Reutiliza el protocolo y el módem de la web. Consulta [ios/README.md](ios/README.md) para compilar, firmar e instalar con Xcode/Developer Mode. La firma y los perfiles de desarrollo se gestionan fuera del repositorio.
+
+La compilación para un iPhone físico y la instalación por USB se verificaron. La primera apertura necesita que el usuario confíe en el certificado de desarrollo en los ajustes de iOS. Las pruebas físicas de audio/GPS de este contenedor siguen pendientes hasta autorizarlo y abrirlo.
