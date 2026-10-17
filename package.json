@@ -15,5 +15,13 @@
   },
   "devDependencies": {
     "esbuild": "0.28.2"
+  },
+  "onda": {
+    "offline": {
+      "exclude": [
+        "/public/data/initial-feed.json",
+        "/public/data/replay-feed.json"
+      ]
+    }
   }
 }

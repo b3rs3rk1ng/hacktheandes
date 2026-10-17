@@ -38,6 +38,8 @@ const sw = await call('/sw.js');
 assert.equal(sw.headers.get('service-worker-allowed'), '/');
 assert.equal(sw.headers.get('cache-control'), 'no-cache');
 const swSource = await sw.text();
+assert.ok(!swSource.includes('/public/data/initial-feed.json'), 'Receiver must not precache emitter payloads.');
+assert.ok(!swSource.includes('/public/data/replay-feed.json'), 'Receiver must receive historical fields through audio.');
 assert.ok(!swSource.includes('/server/index.js'), 'A server bundle must not enter the browser precache.');
 assert.ok(!swSource.includes('/.openai/hosting.json'), 'Deployment metadata must not enter the browser precache.');
 assert.equal((await call('/.openai/hosting.json')).status, 404);

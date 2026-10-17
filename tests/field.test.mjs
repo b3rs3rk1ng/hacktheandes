@@ -5,7 +5,7 @@ import { createRequire } from 'node:module';
 import { fileURLToPath } from 'node:url';
 import { dirname } from 'node:path';
 import { encodeAlert, encodeField, validateField, createAssembler, PROTOCOL_LIMITS } from '../src/protocol.js';
-import { mergeField, loadFields, saveFields, sampleField, fieldFreshness, FIELD_STORAGE_KEY, MAX_FIELDS } from '../src/field-store.js';
+import { mergeField, loadFields, saveFields, sampleField, selectFieldAt, fieldFreshness, FIELD_STORAGE_KEY, MAX_FIELDS } from '../src/field-store.js';
 
 const observedAt = '2026-10-17T15:00:00.000Z';
 const expiresAt = '2026-10-17T16:00:00.000Z';
@@ -202,4 +202,22 @@ test('a geographic field survives the actual modem waveform with deterministic s
     assert.equal(received.length, encoded.frames.length);
     assert.deepEqual((await assemble(received)).field, field);
   } finally { modem.free(tx); modem.free(rx); }
+});
+
+
+test('point selection prefers fresh covering data, then resolution, and preserves stale/no-data distinctions', () => {
+  const now=Date.parse('2026-10-17T15:30:00Z');
+  const broad=sample({id:'broad',values:[1,1,1,1]});
+  const staleDetail=sample({id:'detail',bounds:[130,30,131,31],cols:1,rows:1,values:[3],observedAt:'2026-10-17T13:00:00Z',expiresAt:'2026-10-17T14:00:00Z'});
+  assert.equal(selectFieldAt([record(staleDetail),record(broad)],130.5,30.5,{now}).record.field.id,'broad');
+  const freshDetail={...staleDetail,observedAt,expiresAt};
+  assert.equal(selectFieldAt([record(freshDetail),record(broad)],130.5,30.5,{now}).record.field.id,'detail');
+  const far=sample({id:'unrelated',bounds:[10,-30,14,-26]});
+  assert.equal(selectFieldAt([record(staleDetail),record(far)],130.5,30.5,{now}).record.field.id,'detail');
+  const missing=sample({id:'missing',values:[255,255,255,255]});
+  assert.deepEqual(selectFieldAt([record(missing)],130.5,30.5,{now}),{record:null,coverage:true});
+  assert.deepEqual(selectFieldAt([record(missing)],-70,-10,{now}),{record:null,coverage:false});
+  const replay={...freshDetail,context:'replay'};
+  assert.equal(selectFieldAt([record(replay),record(broad)],130.5,30.5,{now}).record.field.context,'live');
+  assert.equal(selectFieldAt([record(replay),record(broad)],130.5,30.5,{now,context:'replay'}).record.field.context,'replay');
 });

@@ -27,9 +27,15 @@ async function files(directory) {
     ? files(path.join(directory, entry.name)) : path.join(directory, entry.name)))).flat();
 }
 const assetFiles = (await files(output)).sort();
+// Optional source payloads are emitted by the station; the offline receiver
+// caches its shell and geography, never preloads a transmission's contents.
+const projectConfig=JSON.parse(await readFile(path.join(root,'package.json'),'utf8'));
+const optionalAssets=new Set(projectConfig.onda?.offline?.exclude || []);
+if ([...optionalAssets].some(value=>typeof value!=='string'||!value.startsWith('/'))) throw new Error('Invalid offline asset exclusion.');
 const integrity = {};
 for (const file of assetFiles) {
   const pathname = '/' + path.relative(output, file).split(path.sep).join('/');
+  if (optionalAssets.has(pathname)) continue;
   integrity[pathname] = pathname === '/index.html'
     ? { shellMarker }
     : { sha256: createHash('sha256').update(await readFile(file)).digest('hex') };

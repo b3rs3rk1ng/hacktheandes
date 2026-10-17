@@ -1,9 +1,8 @@
 import { createSituationMap, loadLocalities } from './map-view.js';
-import { loadFields, saveFields, mergeField, sampleField, fieldFreshness } from './field-store.js';
+import { loadFields, saveFields, mergeField, selectFieldAt, fieldFreshness } from './field-store.js';
 import { loadLocation, saveLocation, locateDevice, normalizeLocation } from './location.js';
 const $ = id => document.getElementById(id);
 const dateText = value => new Intl.DateTimeFormat('es-PE',{day:'2-digit',month:'short',hour:'2-digit',minute:'2-digit',timeZone:'America/Lima'}).format(new Date(value));
-const area = f => (f.bounds[2]-f.bounds[0])*(f.bounds[3]-f.bounds[1])/(f.cols*f.rows);
 const levelNames = ['Sin clasificación','Clasificación amarilla','Clasificación naranja','Clasificación roja'];
 export async function createSituationUI(storage,{toast=()=>{}}={}) {
   let fields = loadFields(storage);
@@ -31,12 +30,7 @@ export async function createSituationUI(storage,{toast=()=>{}}={}) {
     map.setFields(active.map(record=>record.field));
     $('map-context').textContent=context==='replay'?'HISTÓRICO · demostración':'Datos recibidos por sonido';
     $('map-context').classList.toggle('historical',context==='replay');
-    const covering=active.map(record=>({...record,sample:sampleField(record.field,position.longitude,position.latitude)})).filter(record=>record.sample);
-    const available=covering.filter(record=>record.sample.value!==255);
-    const current=available.filter(record=>fieldFreshness(record.field)==='current');
-    const usable=context==='live'&&current.length?current:available;
-    const candidates=usable.sort((a,b)=>current.length&&context==='live'?area(a.field)-area(b.field)||Date.parse(b.field.observedAt)-Date.parse(a.field.observedAt):Date.parse(b.field.observedAt)-Date.parse(a.field.observedAt)||area(a.field)-area(b.field));
-    const record=candidates[0];
+    const {record,coverage}=selectFieldAt(fields,position.longitude,position.latitude,{context});
     $('local-level').textContent=record?levelNames[record.sample.value]:'Aún sin datos para este punto';
     $('local-level').dataset.level=record?.sample.value ?? '';
     if(record) {
@@ -49,7 +43,7 @@ export async function createSituationUI(storage,{toast=()=>{}}={}) {
       $('field-source').href=record.field.source.url;
       $('field-source').hidden=false;
     } else {
-      $('field-observed').textContent=covering.length?'La fuente no tiene dato en esta celda.':active.length?'La señal recibida no cubre este punto.':'El mapa está guardado. La información llegará al escuchar.';
+      $('field-observed').textContent=coverage?'La fuente no tiene dato en esta celda.':active.length?'La señal recibida no cubre este punto.':'El mapa está guardado. La información llegará al escuchar.';
       $('field-received').textContent='Tu ubicación se usa solamente en este teléfono.';
       $('field-explanation').textContent='Una misma emisión puede llevar datos de varios lugares. Tu teléfono muestra los que corresponden a tu ubicación.';
       $('field-source').hidden=true;

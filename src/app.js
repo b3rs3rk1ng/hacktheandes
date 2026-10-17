@@ -117,7 +117,6 @@ function receiverStatus(status) {
     $('listen-button').lastElementChild.textContent = 'Volver a escuchar';
     document.querySelector('.radio-panel').classList.remove('listening');
     $('receiver-feedback').textContent = 'Vuelve a pulsar escuchar y mantén esta pantalla abierta.';
-    if (modem) void modem.stop();
   }
 }
 

@@ -2,8 +2,12 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 
 let sequence = 0;
+async function until(predicate) {
+  for (let turn=0;turn<20;turn++) {if(predicate())return;await Promise.resolve();}
+  assert.ok(predicate(),'Expected audio lifecycle event did not occur');
+}
 
-async function fixture(t, { holdPlayback = false, holdResume = false, encodingError = false } = {}) {
+async function fixture(t, { holdPlayback = false, holdResume = false, suppressStoppedEvent = false, encodingError = false } = {}) {
   const contexts = [];
   const encoded = [];
   const freed = [];
@@ -23,7 +27,7 @@ async function fixture(t, { holdPlayback = false, holdResume = false, encodingEr
     close() { this.closes++; this.state = 'closed'; return Promise.resolve(); }
     createBuffer(channels, length, rate) { return { duration: length / rate, copyToChannel() {} }; }
     createBufferSource() {
-      const source = { ...node(), start() { if (!holdPlayback) queueMicrotask(() => this.onended?.()); }, stop() { this.stopped = true; queueMicrotask(() => this.onended?.()); } };
+      const source = { ...node(), start() { if (!holdPlayback) queueMicrotask(() => this.onended?.()); }, stop() { this.stopped = true; if (!suppressStoppedEvent) queueMicrotask(() => this.onended?.()); } };
       sources.push(source);
       return source;
     }
@@ -95,7 +99,7 @@ test('abort interrupts an active kept-alive transmission and closes resources', 
   const f = await fixture(t, { holdPlayback: true });
   const controller = new AbortController();
   const transmission = f.modem.transmit([new Uint8Array([1])], { keepAlive: true, signal: controller.signal });
-  await Promise.resolve();
+  await until(()=>f.sources.length===1);
   assert.equal(f.sources.length, 1);
   controller.abort();
   await assert.rejects(transmission, { name: 'AbortError' });
@@ -142,4 +146,39 @@ test('invalid options never open audio and encoding failure closes even with kee
   await assert.rejects(f.modem.transmit([new Uint8Array([1])], { keepAlive: true }), /Encoder failed/);
   assert.equal(f.contexts[0].closes, 1);
   assert.equal(f.freed.length, 1);
+});
+
+
+test('stop settles active playback even when closing the context suppresses the ended event', async t => {
+  const f=await fixture(t,{holdPlayback:true,suppressStoppedEvent:true});
+  const transmission=f.modem.transmit([new Uint8Array([1])],{keepAlive:true});
+  await until(()=>f.sources.length===1);
+  const rejected=assert.rejects(transmission,{name:'AbortError'});
+  await f.modem.stop();
+  await rejected;
+  assert.equal(f.sources[0].disconnected,true);
+  assert.equal(f.contexts[0].closes,1);
+  const restarted=f.modem.transmit([new Uint8Array([2])]);
+  await Promise.resolve();
+  const restartedRejected=assert.rejects(restarted,{name:'AbortError'});
+  await f.modem.stop();await restartedRejected;
+  assert.equal(f.contexts.length,2);
+});
+
+test('audio interruption settles playback and releases the context without an ended event', async t => {
+  const f=await fixture(t,{holdPlayback:true,suppressStoppedEvent:true});
+  const transmission=f.modem.transmit([new Uint8Array([1])],{keepAlive:true});
+  await until(()=>f.sources.length===1);
+  const rejected=assert.rejects(transmission,{name:'AbortError'});
+  f.contexts[0].state='interrupted';f.contexts[0].onstatechange();
+  await rejected;
+  assert.equal(f.contexts[0].closes,1);
+});
+
+
+test('stop rejects pending priming even if the browser never settles resume', async t=>{
+  const f=await fixture(t,{holdResume:true});
+  const pending=f.modem.prime();const rejected=assert.rejects(pending,{name:'AbortError'});
+  await f.modem.stop();await rejected;
+  assert.equal(f.contexts[0].closes,1);
 });

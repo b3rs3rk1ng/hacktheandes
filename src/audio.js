@@ -48,6 +48,8 @@ export async function createAudioModem() {
   let processor = null;
   let silence = null;
   let playback = null;
+  let cancelPlayback = null;
+  const pendingResumes = new Set();
   let mode = 'idle';
   let generation = 0;
   let statusCallback = () => {};
@@ -73,13 +75,18 @@ export async function createAudioModem() {
       context = new AudioContext();
       context.onstatechange = () => {
         if (context?.state === 'interrupted' || (context?.state === 'suspended' && mode !== 'idle')) {
-          statusCallback('interrupted');
+          const report=statusCallback;
+          void stop().then(()=>report('interrupted'));
         }
       };
     }
     const resumed = context.resume();
     if (instance === null) resetInstance();
-    return resumed;
+    return new Promise((resolve,reject)=>{
+      const cancel=()=>reject(abortError());
+      pendingResumes.add(cancel);
+      Promise.resolve(resumed).then(resolve,reject).finally(()=>pendingResumes.delete(cancel));
+    });
   }
 
   // Call directly from a user gesture before starting a polling loop. Keeping
@@ -97,7 +104,14 @@ export async function createAudioModem() {
   async function stop() {
     const token = ++generation;
     mode = 'idle';
+    for (const cancel of pendingResumes) cancel();
+    pendingResumes.clear();
     releaseCapture();
+    // Closing an AudioContext may suppress a queued source.onended event.
+    // Settle the caller independently so Stop can always release the UI.
+    const cancelPending = cancelPlayback;
+    cancelPlayback = null;
+    cancelPending?.();
     if (playback) { try { playback.stop(); } catch {} playback = null; }
     if (instance !== null) { modem.free(instance); instance = null; }
     const previous = context;
@@ -213,11 +227,16 @@ export async function createAudioModem() {
           playback = source;
           onProgress({ sent, total: frames.length * repeat, cycle: cycle + 1, cycles: repeat, frame: part + 1, frames: frames.length, durationSeconds: buffer.duration });
           try {
-            await new Promise((resolve) => { source.onended = resolve; source.start(); });
+            if (token !== generation || signal?.aborted) throw abortError();
+            await new Promise((resolve,reject) => {
+              cancelPlayback = () => reject(abortError());
+              source.onended = resolve;
+              source.start();
+            });
           } finally {
             source.onended = null;
             source.disconnect();
-            if (playback === source) playback = null;
+            if (playback === source) { playback = null; cancelPlayback = null; }
           }
           if (token !== generation || signal?.aborted) throw abortError();
           sent++;

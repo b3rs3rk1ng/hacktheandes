@@ -82,3 +82,16 @@ export function sampleField(field, longitude, latitude) {
     latitude: south + (row + 0.5) * (north - south) / rows,
   };
 }
+
+/** Choose a dated sample for a point. Freshness is evaluated only inside coverage. */
+export function selectFieldAt(records, longitude, latitude, { context='live', now=Date.now() }={}) {
+  const area=field=>(field.bounds[2]-field.bounds[0])*(field.bounds[3]-field.bounds[1])/(field.cols*field.rows);
+  const covering=records.filter(record=>record.field.context===context)
+    .map(record=>({...record,sample:sampleField(record.field,longitude,latitude)})).filter(record=>record.sample);
+  const available=covering.filter(record=>record.sample.value!==255);
+  const current=context==='live'?available.filter(record=>fieldFreshness(record.field,now)==='current'):[];
+  const usable=current.length?current:available;
+  usable.sort((a,b)=>current.length?area(a.field)-area(b.field)||Date.parse(b.field.observedAt)-Date.parse(a.field.observedAt)
+    :Date.parse(b.field.observedAt)-Date.parse(a.field.observedAt)||area(a.field)-area(b.field));
+  return {record:usable[0]||null,coverage:covering.length>0};
+}
