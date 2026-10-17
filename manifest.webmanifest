@@ -1,0 +1,11 @@
+{
+  "name": "Onda · Avisos sin internet",
+  "short_name": "Onda",
+  "lang": "es-PE",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#f5f8ff",
+  "theme_color": "#164b9b",
+  "icons": [{"src":"/public/icon.svg","sizes":"any","type":"image/svg+xml","purpose":"any"}]
+}
