@@ -2,6 +2,14 @@
 
 La **chacra con cámara del dron, detección YOLO, batería, regreso y recarga** está documentada en [ORCHARD.md](ORCHARD.md). Visor local: http://127.0.0.1:18437.
 
+La recuperación de una parada por inclinación deja el vehículo en pausa cuando vuelve a tener apoyo estable; sólo la llegada física puede completar una ruta. Las pruebas de esta transición incluyen dos orígenes de coordenadas y no requieren archivos locales:
+
+```sh
+node --test simulator/test_ground_recovery.mjs
+```
+
+Desde la raíz del repositorio, `node --test simulator/test_navigation_recovery.mjs` también reproduce las poses capturadas de la flota si existen `simulator/runtime/orchard.json` y `simulator/runtime/fleet-navigation-recovery.json`. Sin esas capturas locales, esta prueba de integración informa que se omite; con ellas, exige recuperación, replanificación y llegada a menos de 0,35 m del destino. Las capturas de ejecución no se publican en Git.
+
 ## Ensayo de manipulación aérea original
 
 Escena pequeña de Webots R2025a, ejecutada en `laptop` y accesible desde la Mac mediante túneles SSH. Independiente de la aplicación Onda.

@@ -49,7 +49,9 @@ export async function createGroundDriver(spec,world){
   power=charging?-(world.config.fleet?.charge_power_w||600)*Math.min(1,Math.max(.08,(1-soc)*12)):config.idle_power_w+auxiliaryPower+Math.abs(4*force*s.speed)/config.motor_efficiency;if(power>0)meanPower+=(power-meanPower)*Math.min(1,dt/15);const wh=power*dt/3600;energy+=Math.max(0,wh);soc=clamp(soc-wh/config.battery_wh,0,1);
   return state();
  }
- function recover(){const s=dynamics.state();if(status!=='stopped'||Math.abs(s.pitch)>p.stop_tilt_rad*.7||Math.abs(s.roll)>p.stop_tilt_rad*.7||s.wheels.filter(w=>w.contact).length<3||Math.abs(s.speed)>.05)return false;status='complete';dynamics.body.wakeUp();return true}
+ // Stable support clears the safety stop; it does not establish arrival.
+ // Hold position until the caller resumes the route or supplies a new one.
+ function recover(){const s=dynamics.state();if(status!=='stopped'||Math.abs(s.pitch)>p.stop_tilt_rad*.7||Math.abs(s.roll)>p.stop_tilt_rad*.7||s.wheels.filter(w=>w.contact).length<3||Math.abs(s.speed)>.05)return false;status='paused';dynamics.body.wakeUp();return true}
  function navigate(points,{home=false}={}){if(points.length<2||points.some(p=>p.length!==2||!p.every(Number.isFinite)))throw Error('Ruta terrestre inválida');route=points;index=1;returning=home;status='running';dynamics.body.wakeUp();return state()}
  function restore(saved){
   if(!saved||saved.origin?.some((v,i)=>Math.abs(v-[east,ground,-north][i])>.01))return false;
