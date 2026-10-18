@@ -7,14 +7,18 @@ async function until(predicate) {
   assert.ok(predicate(),'Expected audio lifecycle event did not occur');
 }
 
-async function fixture(t, { holdPlayback = false, holdResume = false, suppressStoppedEvent = false, encodingError = false, onActivity } = {}) {
+async function fixture(t, { holdPlayback = false, holdResume = false, holdIntroduction = false,
+  suppressStoppedEvent = false, encodingError = false, onActivity, fetchImpl } = {}) {
   const contexts = [];
   const encoded = [];
   const freed = [];
   const sources = [];
   const processors = [];
+  const requests = [];
+  const buffers = [];
   let nextInstance = 0;
   let finishResume;
+  let finishIntroduction;
   let trackStops = 0;
   let microphoneRequests = 0;
   const node = () => ({ connections: [], connect(target) { this.connections.push(target); }, disconnect() { this.disconnected = true; } });
@@ -26,7 +30,14 @@ async function fixture(t, { holdPlayback = false, holdResume = false, suppressSt
       return holdResume ? new Promise(resolve => { finishResume = resolve; }) : Promise.resolve();
     }
     close() { this.closes++; this.state = 'closed'; return Promise.resolve(); }
-    createBuffer(channels, length, rate) { return { duration: length / rate, copyToChannel() {} }; }
+    createBuffer(channels, length, rate) {
+      const buffer = { length, duration: length / rate, copyToChannel(samples) { this.samples = samples.slice(); } };
+      buffers.push(buffer); return buffer;
+    }
+    decodeAudioData() {
+      const voice = { duration: 4.2, getChannelData: () => new Float32Array(201600).fill(0.1) };
+      return holdIntroduction ? new Promise(resolve => { finishIntroduction = () => resolve(voice); }) : Promise.resolve(voice);
+    }
     createBufferSource() {
       const source = { ...node(), start() { this.started = true; if (!holdPlayback && !this.loop) queueMicrotask(() => this.onended?.()); }, stop() { this.stopped = true; if (!suppressStoppedEvent) queueMicrotask(() => this.onended?.()); } };
       sources.push(source);
@@ -57,10 +68,19 @@ async function fixture(t, { holdPlayback = false, holdResume = false, suppressSt
     if (previousWindow) Object.defineProperty(globalThis, 'window', previousWindow); else delete globalThis.window;
     if (previousNavigator) Object.defineProperty(globalThis, 'navigator', previousNavigator); else delete globalThis.navigator;
   });
-  t.mock.method(globalThis, 'setTimeout', callback => { queueMicrotask(callback); return 0; });
+  const nativeTimeout = globalThis.setTimeout;
+  t.mock.method(globalThis, 'setTimeout', (callback, ms, ...args) => {
+    if (ms === 250) { queueMicrotask(callback); return 0; }
+    return nativeTimeout(callback, ms, ...args);
+  });
   const { createAudioModem } = await import(`../src/audio.js?lifecycle-test=${sequence++}`);
-  const modem = await createAudioModem({ onActivity });
-  return { modem, contexts, sources, processors, encoded, freed, finishResume: () => finishResume?.(), get trackStops() { return trackStops; }, get microphoneRequests() { return microphoneRequests; } };
+  const modem = await createAudioModem({ onActivity, fetchImpl: async (url, options) => {
+    requests.push({ url, options });
+    return fetchImpl ? fetchImpl(url, options) : new Response(new Uint8Array([1, 2, 3, 4]), { headers: { 'content-type': 'audio/wav' } });
+  } });
+  return { modem, contexts, sources, processors, requests, buffers, encoded, freed,
+    finishResume: () => finishResume?.(), finishIntroduction: () => finishIntroduction?.(),
+    get trackStops() { return trackStops; }, get microphoneRequests() { return microphoneRequests; } };
 }
 
 test('priming unlocks synchronously and consecutive kept-alive transmissions reuse one context and modem', async t => {
@@ -257,4 +277,74 @@ test('suspending a retained hiss channel stops it even between transmissions', a
   assert.equal(f.processors[0].onaudioprocess, null);
   assert.equal(f.sources.find(source => source.loop).stopped, true);
   assert.deepEqual(activity.at(-1), { mode: 'idle', active: false });
+});
+
+test('five-second preview plays a local announcer through the chosen channel without encoding data or opening a microphone', async t => {
+  const f = await fixture(t);
+  await f.modem.previewChannel();
+  assert.equal(f.encoded.length, 0);
+  assert.equal(f.microphoneRequests, 0);
+  assert.equal(f.requests.length, 1);
+  assert.ok(f.requests[0].url.pathname.endsWith('/public/audio/radio-intro.wav'));
+  assert.equal(f.requests[0].options.credentials, 'same-origin');
+  const source = f.sources.find(source => !source.loop);
+  assert.equal(source.buffer.duration, 5);
+  const samples = source.buffer.samples;
+  assert.ok(samples.subarray(0, 31200).every(sample => sample === 0), 'the first 650 ms leave space for tuning');
+  assert.ok(samples.subarray(32000, 232000).some(sample => sample !== 0));
+  assert.equal(samples.at(-1), 0, 'voice ends before the scene ends');
+  assert.equal(source.connections[0], f.processors[0]);
+  assert.equal(f.processors[0].onaudioprocess, null);
+  assert.ok(f.sources.find(source => source.loop).stopped);
+});
+
+test('a kept introduction and following data reuse one output graph and one local voice load', async t => {
+  const f = await fixture(t);
+  await f.modem.previewChannel({ keepAlive: true });
+  await f.modem.transmit([new Uint8Array([42])], { channel: 'radio', keepAlive: true, repeat: 1 });
+  await f.modem.previewChannel({ channel: 'direct', keepAlive: true });
+  assert.equal(f.requests.length, 1, 'voice is decoded once for the current context');
+  assert.equal(f.processors.length, 1);
+  assert.deepEqual(f.encoded[0].frame, [42]);
+  assert.equal(f.sources.at(-1).connections[0], f.contexts[0].destination);
+  await f.modem.stop();
+});
+
+test('stop cancels a pending introduction decode and permits a later preview', async t => {
+  const f = await fixture(t, { holdIntroduction: true });
+  const pending = f.modem.previewChannel();
+  const rejected = assert.rejects(pending, { name: 'AbortError' });
+  await until(() => f.requests.length === 1);
+  // Advance through the local response body to the decoder without wall-clock sleeps.
+  for (let i = 0; i < 12; i++) await Promise.resolve();
+  await f.modem.stop(); await rejected;
+  assert.equal(f.requests[0].options.signal.aborted, true);
+  f.finishIntroduction(); await Promise.resolve();
+  assert.equal(f.sources.length, 0, 'stopped loading cannot start a delayed voice');
+  const next = f.modem.previewChannel();
+  await until(() => f.requests.length === 2);
+  for (let i = 0; i < 12; i++) await Promise.resolve();
+  f.finishIntroduction(); await next;
+  assert.equal(f.contexts.length, 2);
+});
+
+test('abort stops the preview voice and its continuing noise without waiting for ended', async t => {
+  const f = await fixture(t, { holdPlayback: true, suppressStoppedEvent: true });
+  const controller = new AbortController();
+  const pending = f.modem.previewChannel({ signal: controller.signal });
+  const rejected = assert.rejects(pending, { name: 'AbortError' });
+  await until(() => f.sources.some(source => !source.loop));
+  controller.abort(); await rejected;
+  assert.ok(f.sources.every(source => source.stopped));
+  assert.equal(f.contexts[0].closes, 1);
+});
+
+test('invalid preview options and a sign-in HTML response never become introduction audio', async t => {
+  const f = await fixture(t, { fetchImpl: async () => new Response('<html>sign in</html>', { headers: { 'content-type': 'text/html' } }) });
+  for (const seconds of [0, NaN, Infinity, 16]) await assert.rejects(f.modem.previewChannel({ seconds }), /durar/);
+  await assert.rejects(f.modem.previewChannel({ channel: 'unknown' }), /Canal/);
+  assert.equal(f.contexts.length, 0);
+  await assert.rejects(f.modem.previewChannel(), /voz local/);
+  assert.equal(f.sources.length, 0);
+  assert.equal(f.contexts[0].closes, 1);
 });

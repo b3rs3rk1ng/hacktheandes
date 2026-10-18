@@ -58,7 +58,7 @@ function validateReplay(value) {
 }
 
 export function createStation({ getModem, isBusy, onBusy, fetchImpl = globalThis.fetch }) {
-  let client, replay, controller, preparing;
+  let client, replay, controller, preparing, operation;
   let prepared = false;
   let lastCheck = 0;
   // Both source URLs are same-origin and may sit behind the private site login.
@@ -67,6 +67,25 @@ export function createStation({ getModem, isBusy, onBusy, fetchImpl = globalThis
 
   function describeChannel() {
     $('station-channel-info').textContent = channels[$('station-channel').value]?.description || 'Selecciona un canal de sonido válido.';
+  }
+
+  function selectedChannel() {
+    const channel = $('station-channel').value;
+    if (!Object.hasOwn(channels, channel)) throw new Error('Canal de sonido no válido.');
+    return channel;
+  }
+
+  async function intro(modem, channel, signal, keepAlive) {
+    $('station-state').textContent = `Radio · locutor y sintonía · 5 segundos · ${channels[channel].label}`;
+    await cancellable(modem.previewChannel({ channel, seconds: 5, signal, keepAlive }), signal);
+    if (signal.aborted) throw stopped(signal);
+  }
+
+  async function preview(signal, primed, modem) {
+    await cancellable(primed, signal);
+    if (signal.aborted) throw stopped(signal);
+    await intro(modem, selectedChannel(), signal, false);
+    $('station-state').textContent = 'Escucha de prueba terminada. No se enviaron datos.';
   }
 
   function status(result) {
@@ -123,9 +142,9 @@ export function createStation({ getModem, isBusy, onBusy, fetchImpl = globalThis
     const context = $('station-context').value;
     if (!['live', 'replay'].includes(context)) throw new Error('Contexto de emisión no válido.');
     const speed = $('station-speed').value;
-    const channel = $('station-channel').value;
-    if (!Object.hasOwn(channels, channel)) throw new Error('Canal de sonido no válido.');
+    const channel = selectedChannel();
     const channelLabel = channels[channel].label;
+    await intro(modem, channel, signal, true);
     let cycle = 0, replayIndex = 0;
     while (!signal.aborted) {
       if (context === 'live' && Date.now() - lastCheck >= 300000) await cancellable(refresh(signal), signal);
@@ -154,36 +173,50 @@ export function createStation({ getModem, isBusy, onBusy, fetchImpl = globalThis
     }
   }
 
-  $('station-start').addEventListener('click', async () => {
-    if (controller) { controller.abort(new DOMException('Emisión detenida', 'AbortError')); return; }
+  async function startOperation(mode) {
+    if (controller) {
+      if (operation === mode) controller.abort(new DOMException('Emisión detenida', 'AbortError'));
+      return;
+    }
     const modem = getModem();
-    if (!modem) { $('station-state').textContent = 'El audio se está preparando. Vuelve a pulsar emitir.'; return; }
+    if (!modem) { $('station-state').textContent = 'El audio se está preparando. Vuelve a pulsar en un momento.'; return; }
     if (isBusy()) { $('station-state').textContent = 'Detén la otra recepción o emisión antes de iniciar.'; return; }
     controller = new AbortController();
     const current = controller;
+    operation = mode;
     onBusy(true);
-    $('station-start').textContent = 'Detener emisión continua';
+    $('station-start').textContent = mode === 'emit' ? 'Detener emisión continua' : 'Emitir datos continuamente';
+    $('station-start').disabled = mode === 'preview';
+    $('station-preview').textContent = mode === 'preview' ? 'Detener escucha de prueba' : 'Escuchar radio · 5 segundos';
+    $('station-preview').disabled = mode === 'emit';
     $('station-context').disabled = true;
     $('station-speed').disabled = true;
     $('station-channel').disabled = true;
     document.body.classList.add('transmitting');
     try {
       // No await precedes prime(): Safari receives resume inside this gesture.
-      await run(current.signal, modem.prime(), modem);
+      await (mode === 'preview' ? preview : run)(current.signal, modem.prime(), modem);
     } catch (error) {
-      $('station-state').textContent = current.signal.aborted ? 'Emisión detenida. Los receptores conservan los datos.' : error.message;
+      $('station-state').textContent = current.signal.aborted
+        ? mode === 'preview' ? 'Escucha de prueba detenida. No se enviaron datos.' : 'Emisión detenida. Los receptores conservan los datos.'
+        : error.message;
     } finally {
       try { await modem.stop(); }
       catch (error) { $('station-state').textContent = `No se pudo cerrar el audio: ${error.message}`; }
-      if (controller === current) controller = null;
+      if (controller === current) { controller = null; operation = null; }
       onBusy(false);
       $('station-start').textContent = 'Emitir datos continuamente';
+      $('station-start').disabled = false;
+      $('station-preview').textContent = 'Escuchar radio · 5 segundos';
+      $('station-preview').disabled = false;
       $('station-context').disabled = false;
       $('station-speed').disabled = false;
       $('station-channel').disabled = false;
       document.body.classList.remove('transmitting');
     }
-  });
+  }
+  $('station-start').addEventListener('click', () => startOperation('emit'));
+  $('station-preview').addEventListener('click', () => startOperation('preview'));
   $('source-refresh').addEventListener('click', () => {
     void (prepared ? refresh() : prepare()).catch(error => {
       if (error.name !== 'AbortError') $('source-state').textContent = error.message;

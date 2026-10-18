@@ -34,6 +34,13 @@ for (const pathname of ['/src/app.js', '/src/audio.js', '/src/audio-channel.js',
 const png = await call('/public/apple-touch-icon.png');
 assert.equal(png.headers.get('content-type'), 'image/png');
 assert.deepEqual(Buffer.from(await png.arrayBuffer()).subarray(0, 8), Buffer.from([137, 80, 78, 71, 13, 10, 26, 10]));
+const introduction = await call('/public/audio/radio-intro.wav');
+assert.equal(introduction.status, 200);
+assert.match(introduction.headers.get('content-type'), /^audio\/wav/);
+const voiceBytes = Buffer.from(await introduction.arrayBuffer());
+assert.equal(voiceBytes.toString('ascii', 0, 4), 'RIFF');
+assert.equal(voiceBytes.toString('ascii', 8, 12), 'WAVE');
+assert.deepEqual(voiceBytes, await readFile(path.join(root, 'public/audio/radio-intro.wav')));
 const sw = await call('/sw.js');
 assert.equal(sw.headers.get('service-worker-allowed'), '/');
 assert.equal(sw.headers.get('cache-control'), 'no-cache');

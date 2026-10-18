@@ -44,7 +44,7 @@ function microphoneError(error) {
 // onActivity receives { mode, active } whenever the audio lifecycle changes.
 // Capture, transmission and a retained channel producing hiss are active.
 // A primed context alone does not keep the screen awake.
-export async function createAudioModem({ onActivity = () => {} } = {}) {
+export async function createAudioModem({ onActivity = () => {}, fetchImpl = globalThis.fetch } = {}) {
   const modem = await loadModule();
   let context = null;
   let instance = null;
@@ -54,7 +54,9 @@ export async function createAudioModem({ onActivity = () => {} } = {}) {
   let silence = null;
   let playback = null;
   let cancelPlayback = null;
-  const pendingResumes = new Set();
+  const pendingOperations = new Set();
+  let introductionPromise = null;
+  let introductionController = null;
   let mode = 'idle';
   let generation = 0;
   let statusCallback = () => {};
@@ -92,7 +94,7 @@ export async function createAudioModem({ onActivity = () => {} } = {}) {
     const channel = createAudioChannel({ profile, sampleRate: context.sampleRate });
     const node = context.createScriptProcessor(4096, 1, 1);
     const clock = context.createBufferSource();
-    outputChannel = { profile, node, clock };
+    outputChannel = { profile, node, clock, channel };
     clock.buffer = context.createBuffer(1, 4096, context.sampleRate);
     clock.loop = true;
     clock.connect(node);
@@ -102,6 +104,65 @@ export async function createAudioModem({ onActivity = () => {} } = {}) {
     node.connect(context.destination);
     clock.start();
     return node;
+  }
+
+  function waitForOperation(operation) {
+    return new Promise((resolve, reject) => {
+      const cancel = () => reject(abortError());
+      pendingOperations.add(cancel);
+      Promise.resolve(operation).then(resolve, reject).finally(() => pendingOperations.delete(cancel));
+    });
+  }
+
+  async function loadIntroduction() {
+    if (!introductionPromise) {
+      const activeContext = context;
+      const controller = new AbortController();
+      introductionController = controller;
+      const timeout = setTimeout(() => controller.abort(), 8000);
+      controller.signal.addEventListener('abort', () => clearTimeout(timeout), { once: true });
+      const pending = (async () => {
+        const response = await fetchImpl(new URL('../public/audio/radio-intro.wav', import.meta.url), {
+          credentials: 'same-origin', signal: controller.signal,
+        });
+        if (!response.ok || !/^audio\/(?:wav|x-wav|wave)(?:;|$)/i.test(response.headers.get('content-type') || '')) {
+          throw new Error('No se pudo cargar la voz local del boletín.');
+        }
+        const limit = 512 * 1024;
+        const declared = response.headers.get('content-length');
+        if (declared && (!/^\d+$/.test(declared) || Number(declared) > limit)) throw new Error('La introducción de audio excede el límite.');
+        const bytes = await response.arrayBuffer();
+        if (!bytes.byteLength || bytes.byteLength > limit) throw new Error('La introducción de audio no es válida.');
+        return activeContext.decodeAudioData(bytes);
+      })().catch(error => {
+        if (introductionPromise === pending) introductionPromise = null;
+        throw error;
+      }).finally(() => {
+        clearTimeout(timeout);
+        if (introductionController === controller) introductionController = null;
+      });
+      introductionPromise = pending;
+    }
+    return waitForOperation(introductionPromise);
+  }
+
+  async function playBuffer(buffer, destination, token, signal) {
+    const source = context.createBufferSource();
+    playback = source;
+    try {
+      source.buffer = buffer;
+      source.connect(destination);
+      if (token !== generation || signal?.aborted) throw abortError();
+      await new Promise((resolve, reject) => {
+        cancelPlayback = () => reject(abortError());
+        source.onended = resolve;
+        source.start();
+      });
+    } finally {
+      source.onended = null;
+      source.disconnect();
+      if (playback === source) { playback = null; cancelPlayback = null; }
+    }
   }
 
   function resetInstance() {
@@ -131,11 +192,7 @@ export async function createAudioModem({ onActivity = () => {} } = {}) {
     }
     const resumed = context.resume();
     if (instance === null) resetInstance();
-    return new Promise((resolve,reject)=>{
-      const cancel=()=>reject(abortError());
-      pendingResumes.add(cancel);
-      Promise.resolve(resumed).then(resolve,reject).finally(()=>pendingResumes.delete(cancel));
-    });
+    return waitForOperation(resumed);
   }
 
   // Call directly from a user gesture before starting a polling loop. Keeping
@@ -154,8 +211,11 @@ export async function createAudioModem({ onActivity = () => {} } = {}) {
     const token = ++generation;
     releaseOutputChannel();
     setMode('idle');
-    for (const cancel of pendingResumes) cancel();
-    pendingResumes.clear();
+    for (const cancel of pendingOperations) cancel();
+    pendingOperations.clear();
+    introductionController?.abort();
+    introductionController = null;
+    introductionPromise = null;
     releaseCapture();
     // Closing an AudioContext may suppress a queued source.onended event.
     // Settle the caller independently so Stop can always release the UI.
@@ -171,6 +231,52 @@ export async function createAudioModem({ onActivity = () => {} } = {}) {
       if (previous.state !== 'closed') await previous.close();
     }
     if (token === generation) statusCallback('stopped');
+  }
+
+  // A bounded, local station identification precedes data without overlapping
+  // packets. Preview and continuous transmission share the same output graph.
+  async function previewChannel({ channel = 'radio', seconds = 5, keepAlive = false, signal,
+    onStatus = () => {} } = {}) {
+    if (!Object.hasOwn(CHANNEL_PROFILES, channel)) throw new Error('Canal de audio no compatible.');
+    if (!Number.isFinite(seconds) || seconds < 1 || seconds > 15) throw new Error('La prueba de radio debe durar entre 1 y 15 segundos.');
+    if (typeof keepAlive !== 'boolean') throw new Error('keepAlive debe ser booleano.');
+    if (mode !== 'idle') throw new Error('Detén la escucha o transmisión actual primero.');
+    if (signal?.aborted) throw abortError();
+    statusCallback = onStatus;
+    const token = ++generation;
+    const cancel = () => { void stop(); };
+    signal?.addEventListener('abort', cancel, { once: true });
+    setMode('previewing');
+    let complete = false;
+    try {
+      await prime();
+      if (token !== generation || signal?.aborted) throw abortError();
+      const voice = await loadIntroduction();
+      if (token !== generation || signal?.aborted) throw abortError();
+      const buffer = context.createBuffer(1, Math.round(context.sampleRate * seconds), context.sampleRate);
+      const samples = new Float32Array(buffer.length);
+      const start = Math.round(context.sampleRate * 0.65);
+      const speech = voice.getChannelData(0);
+      const count = Math.min(speech.length, Math.max(0, samples.length - start));
+      const fade = Math.round(context.sampleRate * 0.03);
+      for (let index = 0; index < count; index++) {
+        const envelope = Math.min(1, index / fade, (count - 1 - index) / fade);
+        samples[start + index] = speech[index] * Math.max(0, envelope);
+      }
+      buffer.copyToChannel(samples, 0);
+      const destination = transmissionDestination(channel);
+      outputChannel?.channel.beginIntroduction(seconds);
+      onStatus('previewing');
+      await playBuffer(buffer, destination, token, signal);
+      if (token !== generation || signal?.aborted) throw abortError();
+      complete = true;
+    } finally {
+      signal?.removeEventListener('abort', cancel);
+      if (token === generation) {
+        if (complete && keepAlive) { setMode('idle'); onStatus('idle'); }
+        else await stop();
+      }
+    }
   }
 
   async function listen({ onFrame = () => {}, onLevel = () => {}, onStatus = () => {} } = {}) {
@@ -274,23 +380,8 @@ export async function createAudioModem({ onActivity = () => {} } = {}) {
           const samples = new Float32Array(bytes.buffer);
           const buffer = context.createBuffer(1, samples.length, context.sampleRate);
           buffer.copyToChannel(samples, 0);
-          const source = context.createBufferSource();
-          source.buffer = buffer;
-          source.connect(destination);
-          playback = source;
           onProgress({ sent, total: frames.length * repeat, cycle: cycle + 1, cycles: repeat, frame: part + 1, frames: frames.length, durationSeconds: buffer.duration });
-          try {
-            if (token !== generation || signal?.aborted) throw abortError();
-            await new Promise((resolve,reject) => {
-              cancelPlayback = () => reject(abortError());
-              source.onended = resolve;
-              source.start();
-            });
-          } finally {
-            source.onended = null;
-            source.disconnect();
-            if (playback === source) { playback = null; cancelPlayback = null; }
-          }
+          await playBuffer(buffer, destination, token, signal);
           if (token !== generation || signal?.aborted) throw abortError();
           sent++;
           onProgress({ sent, total: frames.length * repeat, cycle: cycle + 1, cycles: repeat, frame: part + 1, frames: frames.length, durationSeconds: buffer.duration });
@@ -310,5 +401,5 @@ export async function createAudioModem({ onActivity = () => {} } = {}) {
     }
   }
 
-  return { prime, transmit, listen, stop };
+  return { prime, previewChannel, transmit, listen, stop };
 }

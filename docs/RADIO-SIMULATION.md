@@ -4,6 +4,14 @@ La estación ofrece sonido directo, radio estable simulada y señal variable sim
 
 La simulación procesa las muestras que salen del altavoz. No modifica los datos ni entrega paquetes al receptor por otra vía. El iPhone sigue reconstruyendo los fragmentos captados por su micrófono, con la misma corrección del módem y las verificaciones CRC del transporte.
 
+## Entrada de radio
+
+El botón **«Escuchar radio · 5 segundos»** permite oír una entrada con locutor y, en los perfiles de radio, siseo y crujidos. Sólo reproduce sonido mediante `previewChannel({channel, seconds: 5, signal, keepAlive: false})`: no prepara ni consulta la fuente, no codifica rejillas y no llama a `transmit`. La voz no contiene datos del mapa ni una entrega alternativa de paquetes. La recepción del mapa sigue dependiendo de los tonos posteriores.
+
+Cada inicio de emisión continua prepara primero la fuente y reproduce esa entrada una sola vez con `keepAlive: true`, antes de comenzar las rejillas. La selección de canal, contexto y velocidad permanece fija durante toda la emisión. El botón de emisión puede detener también esta introducción; la prueba de sonido tiene su propio botón para detenerse y admite la misma cancelación común de la estación.
+
+Ambas acciones comparten la propiedad del audio: no se puede comenzar una mientras la otra está activa. Al terminar, detener o fallar se liberan el módem y los controles. Las pruebas de estación comprueban el orden introducción→paquetes, una sola entrada entre varias rejillas y observaciones, ausencia de consultas y datos durante la prueba, interrupción antes de los paquetes y recuperación de los controles.
+
 `src/audio-channel.js` mantiene un estado común por canal: filtros, generador de ruido y dos componentes lentos de variación de ganancia. Ese estado continúa durante los silencios y entre mensajes. Un grafo Web Audio persistente en `src/audio.js` mantiene el siseo también durante las pausas de 250 ms y entre vueltas. Al detener, cambiar a sonido directo o comenzar una recepción se libera el grafo.
 
 | Perfil | Banda aproximada de la señal | Siseo RMS antes de su filtro | Variación máxima de ganancia |

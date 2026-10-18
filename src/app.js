@@ -281,9 +281,12 @@ $('send-form').addEventListener('submit', async event => {
   $('station-speed').disabled = true;
   $('station-channel').disabled = true;
   $('stop-transmit').hidden = false;
-  $('transmit-feedback').textContent = 'Emitiendo. El receptor debe estar escuchando.';
+  $('transmit-feedback').textContent = 'Locutor y sintonía · 5 segundos. Después comienza el aviso.';
   try {
     // Audio activation remains directly attached to this user gesture.
+    await modem.previewChannel({ channel:$('station-channel').value, seconds:5,
+      keepAlive:true, signal:transmissionController.signal });
+    $('transmit-feedback').textContent = 'Emitiendo. El receptor debe estar escuchando.';
     await modem.transmit(packet.frames, { repeat:Number($('send-repeat').value), speed:$('station-speed').value,
       channel:$('station-channel').value, signal:transmissionController.signal, onProgress:progress => {
       $('transmit-progress').max = progress.total;
