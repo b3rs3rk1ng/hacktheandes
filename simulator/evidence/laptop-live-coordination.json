@@ -1,0 +1,220 @@
+{
+  "url": "https://reads-puzzle-song-assets.trycloudflare.com",
+  "samples": [
+    {
+      "time": 1792331500.122802,
+      "drone": "charging",
+      "local_inspection_allowed": true,
+      "indices": {
+        "ground-3": 5,
+        "ground-2": 7,
+        "ground-1": 6
+      },
+      "frames": 39,
+      "robots": {
+        "ground-1": {
+          "phase": "patrolling",
+          "position": [
+            0.5723193774370188,
+            25.69392267006976,
+            -0.5079653933044367
+          ],
+          "speed": 0.007897996519174052,
+          "contacts": 4
+        },
+        "ground-2": {
+          "phase": "waiting_team",
+          "position": [
+            4.619796231368683,
+            29.15114505363959,
+            0.45507662274680016
+          ],
+          "speed": -0.0017707736268153238,
+          "contacts": 4
+        },
+        "ground-3": {
+          "phase": "patrolling",
+          "position": [
+            8.119390118966678,
+            22.430341866768206,
+            0.31060953283655696
+          ],
+          "speed": 0.1370608101447324,
+          "contacts": 4
+        }
+      }
+    },
+    {
+      "time": 1792331504.717841,
+      "drone": "charging",
+      "local_inspection_allowed": true,
+      "indices": {
+        "ground-3": 5,
+        "ground-2": 7,
+        "ground-1": 6
+      },
+      "frames": 39,
+      "robots": {
+        "ground-1": {
+          "phase": "patrolling",
+          "position": [
+            0.5687031351764773,
+            25.69026127048604,
+            -0.5090242541660918
+          ],
+          "speed": 0.007783083722552355,
+          "contacts": 4
+        },
+        "ground-2": {
+          "phase": "waiting_team",
+          "position": [
+            4.607293178868433,
+            29.1512730697442,
+            0.45296910047294453
+          ],
+          "speed": -0.0017902252437305387,
+          "contacts": 4
+        },
+        "ground-3": {
+          "phase": "patrolling",
+          "position": [
+            8.295989676293004,
+            22.464930440177888,
+            0.35036097569936964
+          ],
+          "speed": -0.06316981232962542,
+          "contacts": 4
+        }
+      }
+    },
+    {
+      "time": 1792331510.93601,
+      "drone": "charging",
+      "local_inspection_allowed": true,
+      "indices": {
+        "ground-3": 5,
+        "ground-2": 7,
+        "ground-1": 6
+      },
+      "frames": 39,
+      "robots": {
+        "ground-1": {
+          "phase": "patrolling",
+          "position": [
+            0.5701430180898583,
+            25.691742965567023,
+            -0.5085932440041855
+          ],
+          "speed": 0.007451926961137677,
+          "contacts": 4
+        },
+        "ground-2": {
+          "phase": "waiting_team",
+          "position": [
+            4.591427776246933,
+            29.151443340172634,
+            0.45029560986441913
+          ],
+          "speed": -0.0018170404619865365,
+          "contacts": 4
+        },
+        "ground-3": {
+          "phase": "patrolling",
+          "position": [
+            8.274641730355409,
+            22.426225084281004,
+            0.33813591357696393
+          ],
+          "speed": 0.029166277091573448,
+          "contacts": 4
+        }
+      }
+    },
+    {
+      "time": 1792331516.442417,
+      "drone": "charging",
+      "local_inspection_allowed": true,
+      "indices": {
+        "ground-3": 5,
+        "ground-2": 7,
+        "ground-1": 6
+      },
+      "frames": 39,
+      "robots": {
+        "ground-1": {
+          "phase": "patrolling",
+          "position": [
+            0.5676691945239014,
+            25.689249287893304,
+            -0.5093105563033223
+          ],
+          "speed": 0.0076321695288038656,
+          "contacts": 4
+        },
+        "ground-2": {
+          "phase": "waiting_team",
+          "position": [
+            4.577482669896122,
+            29.15158721847802,
+            0.44794721791679765
+          ],
+          "speed": -0.0018399431491154825,
+          "contacts": 4
+        },
+        "ground-3": {
+          "phase": "patrolling",
+          "position": [
+            8.21904763289195,
+            22.41935417578665,
+            0.32590338720769707
+          ],
+          "speed": 0.003878674442658487,
+          "contacts": 4
+        }
+      }
+    },
+    {
+      "time": 1792331524.6533718,
+      "drone": "charging",
+      "local_inspection_allowed": true,
+      "indices": {
+        "ground-3": 5,
+        "ground-2": 7,
+        "ground-1": 6
+      },
+      "frames": 39,
+      "robots": {
+        "ground-1": {
+          "phase": "patrolling",
+          "position": [
+            0.5663945692976782,
+            25.687976884977616,
+            -0.509676813707034
+          ],
+          "speed": 0.007578424171125883,
+          "contacts": 4
+        },
+        "ground-2": {
+          "phase": "waiting_team",
+          "position": [
+            4.555589832049941,
+            29.151820549686917,
+            0.4442608103015555
+          ],
+          "speed": -0.0018780058149250789,
+          "contacts": 4
+        },
+        "ground-3": {
+          "phase": "patrolling",
+          "position": [
+            8.184520976499442,
+            22.41738809638624,
+            0.3188865715907834
+          ],
+          "speed": 0.011060678109045177,
+          "contacts": 4
+        }
+      }
+    }
+  ]
+}

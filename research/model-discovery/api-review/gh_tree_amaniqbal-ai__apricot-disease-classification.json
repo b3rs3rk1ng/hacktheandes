@@ -1,0 +1,153 @@
+{
+  "sha": "a0db4816f3bf40f03bf731a24953c7864e695626",
+  "url": "https://api.github.com/repos/amaniqbal-ai/apricot-disease-classification/git/trees/a0db4816f3bf40f03bf731a24953c7864e695626",
+  "tree": [
+    {
+      "path": ".gitignore",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "220c2edcccf954bf7cf5b670fd06bcc5adb9ee34",
+      "size": 296,
+      "url": "https://api.github.com/repos/amaniqbal-ai/apricot-disease-classification/git/blobs/220c2edcccf954bf7cf5b670fd06bcc5adb9ee34"
+    },
+    {
+      "path": "LICENSE",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ca2aff896e5fa42a7532ce11c94be0547c789c3e",
+      "size": 1092,
+      "url": "https://api.github.com/repos/amaniqbal-ai/apricot-disease-classification/git/blobs/ca2aff896e5fa42a7532ce11c94be0547c789c3e"
+    },
+    {
+      "path": "README.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b82618d080222b946b16b7b5e356b577fa71634d",
+      "size": 8362,
+      "url": "https://api.github.com/repos/amaniqbal-ai/apricot-disease-classification/git/blobs/b82618d080222b946b16b7b5e356b577fa71634d"
+    },
+    {
+      "path": "features_cache",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "d564d0bc3dd917926892c55e3706cc116d5b165e",
+      "url": "https://api.github.com/repos/amaniqbal-ai/apricot-disease-classification/git/trees/d564d0bc3dd917926892c55e3706cc116d5b165e"
+    },
+    {
+      "path": "features_cache/.gitkeep",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "size": 0,
+      "url": "https://api.github.com/repos/amaniqbal-ai/apricot-disease-classification/git/blobs/e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    {
+      "path": "models",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "9f889595277f73a8b8a5ea988f63bc553a974316",
+      "url": "https://api.github.com/repos/amaniqbal-ai/apricot-disease-classification/git/trees/9f889595277f73a8b8a5ea988f63bc553a974316"
+    },
+    {
+      "path": "models/finetuned",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "d564d0bc3dd917926892c55e3706cc116d5b165e",
+      "url": "https://api.github.com/repos/amaniqbal-ai/apricot-disease-classification/git/trees/d564d0bc3dd917926892c55e3706cc116d5b165e"
+    },
+    {
+      "path": "models/finetuned/.gitkeep",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "size": 0,
+      "url": "https://api.github.com/repos/amaniqbal-ai/apricot-disease-classification/git/blobs/e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    {
+      "path": "models/svm",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "d564d0bc3dd917926892c55e3706cc116d5b165e",
+      "url": "https://api.github.com/repos/amaniqbal-ai/apricot-disease-classification/git/trees/d564d0bc3dd917926892c55e3706cc116d5b165e"
+    },
+    {
+      "path": "models/svm/.gitkeep",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "size": 0,
+      "url": "https://api.github.com/repos/amaniqbal-ai/apricot-disease-classification/git/blobs/e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    {
+      "path": "requirements.txt",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "4bb5b264f63b24d521afa26e9acd2ecfc0028cfb",
+      "size": 96,
+      "url": "https://api.github.com/repos/amaniqbal-ai/apricot-disease-classification/git/blobs/4bb5b264f63b24d521afa26e9acd2ecfc0028cfb"
+    },
+    {
+      "path": "sample_images",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "d564d0bc3dd917926892c55e3706cc116d5b165e",
+      "url": "https://api.github.com/repos/amaniqbal-ai/apricot-disease-classification/git/trees/d564d0bc3dd917926892c55e3706cc116d5b165e"
+    },
+    {
+      "path": "sample_images/.gitkeep",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "size": 0,
+      "url": "https://api.github.com/repos/amaniqbal-ai/apricot-disease-classification/git/blobs/e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    {
+      "path": "src",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "ac8ced49d3e74f91912244367952bbbd319343cc",
+      "url": "https://api.github.com/repos/amaniqbal-ai/apricot-disease-classification/git/trees/ac8ced49d3e74f91912244367952bbbd319343cc"
+    },
+    {
+      "path": "src/config.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "696b4a49837651500ce0811e42317bd3c1c3ac36",
+      "size": 8186,
+      "url": "https://api.github.com/repos/amaniqbal-ai/apricot-disease-classification/git/blobs/696b4a49837651500ce0811e42317bd3c1c3ac36"
+    },
+    {
+      "path": "src/inspect_npz.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "72d758ca0ae60446369f45b6a6a9d7bcf5344a68",
+      "size": 422,
+      "url": "https://api.github.com/repos/amaniqbal-ai/apricot-disease-classification/git/blobs/72d758ca0ae60446369f45b6a6a9d7bcf5344a68"
+    },
+    {
+      "path": "src/model_utils.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "53afe6b90ce355fd7212e87b6074cdd781abfdec",
+      "size": 9270,
+      "url": "https://api.github.com/repos/amaniqbal-ai/apricot-disease-classification/git/blobs/53afe6b90ce355fd7212e87b6074cdd781abfdec"
+    },
+    {
+      "path": "src/predict.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "9ecf74fb191e2f3fada4021b7b8c864a8e526d71",
+      "size": 6586,
+      "url": "https://api.github.com/repos/amaniqbal-ai/apricot-disease-classification/git/blobs/9ecf74fb191e2f3fada4021b7b8c864a8e526d71"
+    },
+    {
+      "path": "src/train_svm_classifiers.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "6464fa59be717b6d2b7f501420df1800df2d0a7a",
+      "size": 2455,
+      "url": "https://api.github.com/repos/amaniqbal-ai/apricot-disease-classification/git/blobs/6464fa59be717b6d2b7f501420df1800df2d0a7a"
+    }
+  ],
+  "truncated": false
+}

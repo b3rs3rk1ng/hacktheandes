@@ -1,0 +1,31 @@
+{
+  "sha": "e74f5f0ca7a21d4f277cb6eed166b50192b6af5b",
+  "url": "https://api.github.com/repos/joanfco30/CocoaMoniliaDataSet/git/trees/e74f5f0ca7a21d4f277cb6eed166b50192b6af5b",
+  "tree": [
+    {
+      "path": "CC-BY-4.0",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2f244ac814036ecd9ba9f69782e89ce6b1dca9eb",
+      "size": 18650,
+      "url": "https://api.github.com/repos/joanfco30/CocoaMoniliaDataSet/git/blobs/2f244ac814036ecd9ba9f69782e89ce6b1dca9eb"
+    },
+    {
+      "path": "CocoaMoniliaDataSet.ipynb",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3a535be1acc022a9537d4f583497548e51688706",
+      "size": 3417763,
+      "url": "https://api.github.com/repos/joanfco30/CocoaMoniliaDataSet/git/blobs/3a535be1acc022a9537d4f583497548e51688706"
+    },
+    {
+      "path": "README.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "08358c5fed66c2e4d702ec9f6ac7ea3b7d1dec11",
+      "size": 7476,
+      "url": "https://api.github.com/repos/joanfco30/CocoaMoniliaDataSet/git/blobs/08358c5fed66c2e4d702ec9f6ac7ea3b7d1dec11"
+    }
+  ],
+  "truncated": false
+}

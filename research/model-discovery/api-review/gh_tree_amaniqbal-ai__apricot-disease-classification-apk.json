@@ -1,0 +1,23 @@
+{
+  "sha": "5dbd258259906744d3bd4bf0cbe3a3c026543ddc",
+  "url": "https://api.github.com/repos/amaniqbal-ai/apricot-disease-classification-apk/git/trees/5dbd258259906744d3bd4bf0cbe3a3c026543ddc",
+  "tree": [
+    {
+      "path": "LICENSE",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "906ae5922e5341faeb1bb0aa65dbcd56fd2691c8",
+      "size": 1069,
+      "url": "https://api.github.com/repos/amaniqbal-ai/apricot-disease-classification-apk/git/blobs/906ae5922e5341faeb1bb0aa65dbcd56fd2691c8"
+    },
+    {
+      "path": "README.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "cfe5e9f91d98b1e1e5ba8dfde5cb26468e317782",
+      "size": 1742,
+      "url": "https://api.github.com/repos/amaniqbal-ai/apricot-disease-classification-apk/git/blobs/cfe5e9f91d98b1e1e5ba8dfde5cb26468e317782"
+    }
+  ],
+  "truncated": false
+}

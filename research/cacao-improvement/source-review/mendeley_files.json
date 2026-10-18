@@ -1,0 +1,11 @@
+{
+  "dataset": "Mendeley ykbtpsyfv9 version 1; frozen external image-classification test",
+  "source_url": "https://data.mendeley.com/datasets/ykbtpsyfv9/1",
+  "license": "CC BY 4.0",
+  "classes": ["healthy", "monilia"],
+  "capture_group_regex": "(?:^|/)([0-9]{8})_",
+  "files": [
+    {"name": "Monilia.rar", "url": "https://prod-dcd-datasets-public-files-eu-west-1.s3.eu-west-1.amazonaws.com/e238b7b7-1ba7-47bd-ae45-e082bf9dd61b", "size": 5710821257, "sha256": "089f849938ef618974c29bb065ce3f7252e8c8a1609dfab5ff1c1d692d5ed506", "label_class_id": 1, "label_source": "Author-declared Monilia archive, Mendeley version 1", "expected_images": 1342},
+    {"name": "Sanos.rar", "url": "https://prod-dcd-datasets-public-files-eu-west-1.s3.eu-west-1.amazonaws.com/e90f64a7-71c9-40be-ac92-da681cbc6693", "size": 3143246055, "sha256": "b277565be4507474419180f165063ca7619e7b99f2ced473341c7f35da72f9a8", "label_class_id": 0, "label_source": "Author-declared healthy archive, Mendeley version 1", "expected_images": 842}
+  ]
+}

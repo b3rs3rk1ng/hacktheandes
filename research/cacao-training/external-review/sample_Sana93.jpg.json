@@ -1,0 +1,178 @@
+{
+    "description": "",
+    "tags": [],
+    "size": {
+        "height": 4160,
+        "width": 3120
+    },
+    "objects": [
+        {
+            "id": 12892452,
+            "classId": 19772,
+            "description": "",
+            "geometryType": "rectangle",
+            "labelerLogin": "gr@datasetninja.com",
+            "createdAt": "2023-07-03T15:03:49.843Z",
+            "updatedAt": "2023-07-03T15:03:49.843Z",
+            "tags": [],
+            "classTitle": "healthy",
+            "points": {
+                "exterior": [
+                    [
+                        1031,
+                        1875
+                    ],
+                    [
+                        1613,
+                        3569
+                    ]
+                ],
+                "interior": []
+            }
+        },
+        {
+            "id": 12892451,
+            "classId": 19771,
+            "description": "",
+            "geometryType": "rectangle",
+            "labelerLogin": "gr@datasetninja.com",
+            "createdAt": "2023-07-03T15:03:49.843Z",
+            "updatedAt": "2023-07-03T15:03:49.843Z",
+            "tags": [],
+            "classTitle": "monilia",
+            "points": {
+                "exterior": [
+                    [
+                        1314,
+                        1901
+                    ],
+                    [
+                        1528,
+                        2247
+                    ]
+                ],
+                "interior": []
+            }
+        },
+        {
+            "id": 12892450,
+            "classId": 19770,
+            "description": "",
+            "geometryType": "rectangle",
+            "labelerLogin": "gr@datasetninja.com",
+            "createdAt": "2023-07-03T15:03:49.843Z",
+            "updatedAt": "2023-07-03T15:03:49.843Z",
+            "tags": [],
+            "classTitle": "phytophthora",
+            "points": {
+                "exterior": [
+                    [
+                        1822,
+                        1411
+                    ],
+                    [
+                        2327,
+                        2670
+                    ]
+                ],
+                "interior": []
+            }
+        },
+        {
+            "id": 12892449,
+            "classId": 19772,
+            "description": "",
+            "geometryType": "rectangle",
+            "labelerLogin": "gr@datasetninja.com",
+            "createdAt": "2023-07-03T15:03:49.842Z",
+            "updatedAt": "2023-07-03T15:03:49.842Z",
+            "tags": [],
+            "classTitle": "healthy",
+            "points": {
+                "exterior": [
+                    [
+                        1340,
+                        1779
+                    ],
+                    [
+                        1900,
+                        2183
+                    ]
+                ],
+                "interior": []
+            }
+        },
+        {
+            "id": 12892448,
+            "classId": 19772,
+            "description": "",
+            "geometryType": "rectangle",
+            "labelerLogin": "gr@datasetninja.com",
+            "createdAt": "2023-07-03T15:03:49.842Z",
+            "updatedAt": "2023-07-03T15:03:49.842Z",
+            "tags": [],
+            "classTitle": "healthy",
+            "points": {
+                "exterior": [
+                    [
+                        2786,
+                        880
+                    ],
+                    [
+                        3063,
+                        1475
+                    ]
+                ],
+                "interior": []
+            }
+        },
+        {
+            "id": 12892447,
+            "classId": 19772,
+            "description": "",
+            "geometryType": "rectangle",
+            "labelerLogin": "gr@datasetninja.com",
+            "createdAt": "2023-07-03T15:03:49.842Z",
+            "updatedAt": "2023-07-03T15:03:49.842Z",
+            "tags": [],
+            "classTitle": "healthy",
+            "points": {
+                "exterior": [
+                    [
+                        1828,
+                        501
+                    ],
+                    [
+                        1996,
+                        856
+                    ]
+                ],
+                "interior": []
+            }
+        },
+        {
+            "id": 12892446,
+            "classId": 19772,
+            "description": "",
+            "geometryType": "rectangle",
+            "labelerLogin": "gr@datasetninja.com",
+            "createdAt": "2023-07-03T15:03:49.842Z",
+            "updatedAt": "2023-07-03T15:03:49.842Z",
+            "tags": [],
+            "classTitle": "healthy",
+            "points": {
+                "exterior": [
+                    [
+                        1468,
+                        1492
+                    ],
+                    [
+                        1823,
+                        1815
+                    ]
+                ],
+                "interior": []
+            }
+        }
+    ]
+}

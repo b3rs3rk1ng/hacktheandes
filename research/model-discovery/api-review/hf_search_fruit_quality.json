@@ -1,0 +1,224 @@
+[
+  {
+    "_id": "65d4b07c61d441bc82e7479f",
+    "id": "azlan8289/fruitquality-1.0",
+    "author": "azlan8289",
+    "gated": false,
+    "lastModified": "2024-02-20T15:59:50.000Z",
+    "likes": 0,
+    "trendingScore": 0,
+    "private": false,
+    "sha": "9ad1c715ea0f7ed59bd98fc6e390fcaf85228e41",
+    "config": {},
+    "downloads": 0,
+    "tags": [
+      "region:us"
+    ],
+    "createdAt": "2024-02-20T14:00:28.000Z",
+    "modelId": "azlan8289/fruitquality-1.0",
+    "siblings": [
+      {
+        "rfilename": ".gitattributes"
+      },
+      {
+        "rfilename": "fruitquality-1.0.h5"
+      }
+    ]
+  },
+  {
+    "_id": "670034ef4dbcde622db73323",
+    "id": "spectrewolf8/MobileNetv3_fruit_quality_classifier",
+    "author": "spectrewolf8",
+    "gated": false,
+    "lastModified": "2025-01-18T13:42:22.000Z",
+    "likes": 0,
+    "trendingScore": 0,
+    "private": false,
+    "sha": "a1cfb14231979ad9746d54aeb2a502a209956994",
+    "config": {},
+    "downloads": 0,
+    "tags": [
+      "region:us"
+    ],
+    "createdAt": "2024-10-04T18:33:19.000Z",
+    "modelId": "spectrewolf8/MobileNetv3_fruit_quality_classifier",
+    "siblings": [
+      {
+        "rfilename": ".gitattributes"
+      },
+      {
+        "rfilename": "MobileNetv3_fruit_quality_classifier.h5"
+      }
+    ]
+  },
+  {
+    "_id": "67f33c4b9130d0c0b9e2d3ac",
+    "id": "vy220218/fruit-quality-check",
+    "author": "vy220218",
+    "gated": false,
+    "lastModified": "2025-04-07T02:45:34.000Z",
+    "likes": 0,
+    "trendingScore": 0,
+    "private": false,
+    "sha": "070aa6926fc2379503550cf4dae9f168e152ef65",
+    "config": {},
+    "downloads": 0,
+    "tags": [
+      "region:us"
+    ],
+    "createdAt": "2025-04-07T02:45:31.000Z",
+    "modelId": "vy220218/fruit-quality-check",
+    "siblings": [
+      {
+        "rfilename": ".gitattributes"
+      }
+    ]
+  },
+  {
+    "_id": "68cfd61c903a72b3af7ea53e",
+    "id": "Graviton17/vit-fruit-veg-quality-predictor",
+    "author": "Graviton17",
+    "gated": false,
+    "lastModified": "2025-09-21T12:14:01.000Z",
+    "likes": 0,
+    "trendingScore": 0,
+    "private": false,
+    "sha": "52d48d31daff8d61de48db83ae68ac9b61d2f071",
+    "config": {},
+    "downloads": 0,
+    "tags": [
+      "safetensors",
+      "image-classification",
+      "regression",
+      "vision-transformer",
+      "fruit",
+      "vegetable",
+      "license:mit",
+      "region:us"
+    ],
+    "pipeline_tag": "image-classification",
+    "createdAt": "2025-09-21T10:40:28.000Z",
+    "modelId": "Graviton17/vit-fruit-veg-quality-predictor",
+    "siblings": [
+      {
+        "rfilename": ".gitattributes"
+      },
+      {
+        "rfilename": "README.md"
+      },
+      {
+        "rfilename": "model.safetensors"
+      },
+      {
+        "rfilename": "modeling.py"
+      },
+      {
+        "rfilename": "preprocessor_config.json"
+      }
+    ]
+  },
+  {
+    "_id": "69439df13c77d921442b8c08",
+    "id": "Omarmohamadfhd99/fruit-quality-cnn",
+    "author": "Omarmohamadfhd99",
+    "gated": false,
+    "lastModified": "2025-12-18T06:23:59.000Z",
+    "likes": 0,
+    "trendingScore": 0,
+    "private": false,
+    "sha": "6fd105619cff7008e71dbf3db1f79087771f5da8",
+    "config": {
+      "model_type": "cnn"
+    },
+    "downloads": 5,
+    "tags": [
+      "cnn",
+      "region:us"
+    ],
+    "createdAt": "2025-12-18T06:23:45.000Z",
+    "modelId": "Omarmohamadfhd99/fruit-quality-cnn",
+    "siblings": [
+      {
+        "rfilename": ".gitattributes"
+      },
+      {
+        "rfilename": "README.md"
+      },
+      {
+        "rfilename": "config.json"
+      },
+      {
+        "rfilename": "fruit_cnn_model.h5"
+      }
+    ]
+  },
+  {
+    "_id": "696e4b55513aac976cccfa17",
+    "id": "KartikGoudar1008/fruit-quality-inspector",
+    "author": "KartikGoudar1008",
+    "gated": false,
+    "lastModified": "2026-01-19T16:20:44.000Z",
+    "likes": 0,
+    "trendingScore": 0,
+    "private": false,
+    "sha": "17f9bd2a602051771006be01300bbdfbab5794eb",
+    "config": {},
+    "downloads": 0,
+    "tags": [
+      "license:apache-2.0",
+      "region:us"
+    ],
+    "createdAt": "2026-01-19T15:18:45.000Z",
+    "modelId": "KartikGoudar1008/fruit-quality-inspector",
+    "siblings": [
+      {
+        "rfilename": ".gitattributes"
+      },
+      {
+        "rfilename": "README.md"
+      },
+      {
+        "rfilename": "fruite-inspection.py"
+      }
+    ]
+  },
+  {
+    "_id": "69c95ab1f69be9b927cbe2c2",
+    "id": "Mahmoud123Mahmoud/fruit-quality-ultra",
+    "author": "Mahmoud123Mahmoud",
+    "gated": false,
+    "lastModified": "2026-04-14T19:26:05.000Z",
+    "likes": 0,
+    "trendingScore": 0,
+    "private": false,
+    "sha": "e6822b6a1eac9a30729ce3efdf582de3761eaf36",
+    "config": {
+      "architectures": [
+        "ViTForImageClassification"
+      ],
+      "model_type": "vit"
+    },
+    "downloads": 6,
+    "tags": [
+      "safetensors",
+      "vit",
+      "region:us"
+    ],
+    "createdAt": "2026-03-29T17:00:33.000Z",
+    "modelId": "Mahmoud123Mahmoud/fruit-quality-ultra",
+    "siblings": [
+      {
+        "rfilename": ".gitattributes"
+      },
+      {
+        "rfilename": "config.json"
+      },
+      {
+        "rfilename": "model.safetensors"
+      },
+      {
+        "rfilename": "preprocessor_config.json"
+      }
+    ]
+  }
+]

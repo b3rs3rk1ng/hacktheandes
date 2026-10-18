@@ -1,0 +1,132 @@
+{
+  "duration_ms": 10007.499999998508,
+  "frames": 600,
+  "mean_fps": 60.00480038403074,
+  "p95_frame_ms": 17.69999999999709,
+  "over_33ms": 0,
+  "canvas": {
+    "width": 1800,
+    "height": 908
+  },
+  "environment": {
+    "treeCells": 80,
+    "bones": 56878,
+    "farClusters": 80641,
+    "nearLeaves": 7965,
+    "litterLeaves": 8606,
+    "terrainTriangles": 46008
+  },
+  "last_render_pass": {
+    "calls": 145,
+    "triangles": 1274727
+  },
+  "phase": "transit",
+  "actual_inference_frames_since_load": 60,
+  "scene_sha256": "b9c10f5f8082f13024cde253404abb90f3a5f4960a6f94e2899839818315aa34",
+  "limitations": [
+    "Ten-second local browser measurement, not a full-field benchmark",
+    "The robot-preview tab was also open; hardware and visibility affect results",
+    "Renderer counters describe the last render pass, not the sum of all passes"
+  ],
+  "chase_measurement": {
+    "view": "chase",
+    "duration_ms": 8021.800000001502,
+    "frames": 391,
+    "mean_fps": 48.67846071486363,
+    "p95_frame_ms": 33.40000000002328,
+    "over_33ms": 18,
+    "phase": "transit",
+    "metrics": {
+      "fps": 49.18839153959666,
+      "frames": 273,
+      "busy": true,
+      "inferError": "",
+      "renderer": {
+        "frame": 22928,
+        "calls": 54,
+        "triangles": 1266287,
+        "points": 0,
+        "lines": 0
+      },
+      "environment": {
+        "treeCells": 80,
+        "bones": 56878,
+        "farClusters": 80641,
+        "nearLeaves": 8370,
+        "litterLeaves": 8517,
+        "terrainTriangles": 46008
+      }
+    }
+  },
+  "final_revision": {
+    "revision": "closed-rounded-ends-and-spatial-vegetation-lod",
+    "measurements": [
+      {
+        "view": "fpv",
+        "duration_ms": 8008.200000000001,
+        "frames": 477,
+        "mean_fps": 59.63021764404385,
+        "p95_frame_ms": 17.299999999999272,
+        "over_33ms": 0,
+        "phase": "hold",
+        "metrics": {
+          "fps": 58.98820235952805,
+          "frames": 19,
+          "busy": true,
+          "inferError": "",
+          "renderer": {
+            "frame": 1959,
+            "calls": 97,
+            "triangles": 864032,
+            "points": 0,
+            "lines": 0
+          },
+          "environment": {
+            "treeCells": 80,
+            "bones": 56878,
+            "farClusters": 80641,
+            "nearLeaves": 12825,
+            "litterLeaves": 8824,
+            "terrainTriangles": 46008
+          }
+        }
+      },
+      {
+        "view": "chase",
+        "duration_ms": 8014.399999994042,
+        "frames": 421,
+        "mean_fps": 52.51996007984029,
+        "p95_frame_ms": 33.39999999999782,
+        "over_33ms": 11,
+        "phase": "hold",
+        "metrics": {
+          "fps": 55.08557938225426,
+          "frames": 28,
+          "busy": true,
+          "inferError": "",
+          "renderer": {
+            "frame": 2812,
+            "calls": 44,
+            "triangles": 764694,
+            "points": 0,
+            "lines": 0
+          },
+          "environment": {
+            "treeCells": 80,
+            "bones": 56878,
+            "farClusters": 80641,
+            "nearLeaves": 12825,
+            "litterLeaves": 8824,
+            "terrainTriangles": 46008
+          }
+        }
+      }
+    ]
+  },
+  "source_sha256": {
+    "simulator/ui/orchard/environment.js": "c3d8ca0647c3b030e5c0f320bc691347643f6026bdf0c9f3c675990d895cc9ad",
+    "simulator/ui/orchard/tree-geometry.mjs": "cfb480d0ca69e62e0b13f49911276479b7a870a0c18f6380960474030aa0f810",
+    "simulator/ui/orchard/instanced-cells.mjs": "ae02b151b1d0041279d25f355faf4c5a865879c167c1f7e68969f0182fcd89ac",
+    "simulator/ui/orchard/main.js": "ae584880c914b7d45a9bce31ec1b83913eb86f5392e405eed93e71193b0ed64c"
+  }
+}

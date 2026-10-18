@@ -1,0 +1,269 @@
+[
+  {
+    "_id": "657cd590ce825cd9746d40ea",
+    "id": "NonoBru/fruit-disease-classifier",
+    "author": "NonoBru",
+    "gated": false,
+    "lastModified": "2023-12-15T23:37:40.000Z",
+    "likes": 0,
+    "trendingScore": 0,
+    "private": false,
+    "sha": "5a0f34d0ae021b7df4f6d5c0f6ccd94c87e90fcd",
+    "config": {
+      "architectures": [
+        "ViTForImageClassification"
+      ],
+      "model_type": "vit"
+    },
+    "downloads": 6,
+    "tags": [
+      "transformers",
+      "tensorboard",
+      "safetensors",
+      "vit",
+      "image-classification",
+      "pytorch",
+      "huggingpics",
+      "model-index",
+      "endpoints_compatible",
+      "region:us"
+    ],
+    "pipeline_tag": "image-classification",
+    "library_name": "transformers",
+    "createdAt": "2023-12-15T22:39:12.000Z",
+    "modelId": "NonoBru/fruit-disease-classifier",
+    "siblings": [
+      {
+        "rfilename": ".gitattributes"
+      },
+      {
+        "rfilename": "README.md"
+      },
+      {
+        "rfilename": "config.json"
+      },
+      {
+        "rfilename": "model.safetensors"
+      },
+      {
+        "rfilename": "preprocessor_config.json"
+      },
+      {
+        "rfilename": "runs/events.out.tfevents.1702679657.cbefff3dfe26.196.0"
+      }
+    ]
+  },
+  {
+    "_id": "67c95183dd8b0c2d8e95ad17",
+    "id": "yazidsupriadi/fruits-vegetables-diseases",
+    "author": "yazidsupriadi",
+    "gated": false,
+    "lastModified": "2025-03-07T07:06:08.000Z",
+    "likes": 1,
+    "trendingScore": 0,
+    "private": false,
+    "sha": "f07803aaa81ca88cc08a12ac3457dc01076b6463",
+    "config": {},
+    "downloads": 0,
+    "tags": [
+      "id",
+      "license:apache-2.0",
+      "region:us"
+    ],
+    "createdAt": "2025-03-06T07:40:51.000Z",
+    "modelId": "yazidsupriadi/fruits-vegetables-diseases",
+    "siblings": [
+      {
+        "rfilename": ".gitattributes"
+      },
+      {
+        "rfilename": "README.md"
+      },
+      {
+        "rfilename": "vegetables_and_fruit_diseases_model.pth"
+      }
+    ]
+  },
+  {
+    "_id": "67fb83efe683800735f27f09",
+    "id": "dima806/orange_fruit_disease_detection",
+    "author": "dima806",
+    "gated": false,
+    "lastModified": "2025-04-13T13:57:28.000Z",
+    "likes": 1,
+    "trendingScore": 0,
+    "private": false,
+    "sha": "339b09d56c9ab871aac61ec330560d2575872a28",
+    "config": {
+      "architectures": [
+        "ViTForImageClassification"
+      ],
+      "model_type": "vit"
+    },
+    "downloads": 13,
+    "tags": [
+      "transformers",
+      "safetensors",
+      "vit",
+      "image-classification",
+      "base_model:google/vit-base-patch16-224-in21k",
+      "base_model:finetune:google/vit-base-patch16-224-in21k",
+      "license:apache-2.0",
+      "endpoints_compatible",
+      "region:us"
+    ],
+    "pipeline_tag": "image-classification",
+    "library_name": "transformers",
+    "createdAt": "2025-04-13T09:29:19.000Z",
+    "modelId": "dima806/orange_fruit_disease_detection",
+    "siblings": [
+      {
+        "rfilename": ".gitattributes"
+      },
+      {
+        "rfilename": "README.md"
+      },
+      {
+        "rfilename": "checkpoint-169/config.json"
+      },
+      {
+        "rfilename": "checkpoint-169/model.safetensors"
+      },
+      {
+        "rfilename": "checkpoint-169/optimizer.pt"
+      },
+      {
+        "rfilename": "checkpoint-169/preprocessor_config.json"
+      },
+      {
+        "rfilename": "checkpoint-169/rng_state.pth"
+      },
+      {
+        "rfilename": "checkpoint-169/scheduler.pt"
+      },
+      {
+        "rfilename": "checkpoint-169/trainer_state.json"
+      },
+      {
+        "rfilename": "checkpoint-169/training_args.bin"
+      },
+      {
+        "rfilename": "checkpoint-1690/config.json"
+      },
+      {
+        "rfilename": "checkpoint-1690/model.safetensors"
+      },
+      {
+        "rfilename": "checkpoint-1690/optimizer.pt"
+      },
+      {
+        "rfilename": "checkpoint-1690/preprocessor_config.json"
+      },
+      {
+        "rfilename": "checkpoint-1690/rng_state.pth"
+      },
+      {
+        "rfilename": "checkpoint-1690/scheduler.pt"
+      },
+      {
+        "rfilename": "checkpoint-1690/trainer_state.json"
+      },
+      {
+        "rfilename": "checkpoint-1690/training_args.bin"
+      },
+      {
+        "rfilename": "config.json"
+      },
+      {
+        "rfilename": "model.safetensors"
+      },
+      {
+        "rfilename": "preprocessor_config.json"
+      },
+      {
+        "rfilename": "training_args.bin"
+      }
+    ]
+  },
+  {
+    "_id": "698f00878b25dde9f20656e5",
+    "id": "sohaib7861/Fruit_and_Plant_Disease_Detection",
+    "author": "sohaib7861",
+    "gated": false,
+    "lastModified": "2026-02-13T10:44:23.000Z",
+    "likes": 0,
+    "trendingScore": 0,
+    "private": false,
+    "sha": "7e3c4a372720481a798369462d8cc6f96b37abed",
+    "config": {},
+    "downloads": 0,
+    "tags": [
+      "region:us"
+    ],
+    "createdAt": "2026-02-13T10:44:23.000Z",
+    "modelId": "sohaib7861/Fruit_and_Plant_Disease_Detection",
+    "siblings": [
+      {
+        "rfilename": ".gitattributes"
+      }
+    ]
+  },
+  {
+    "_id": "69c4efbeca37f988ed3c5e6d",
+    "id": "M-Parames01/fruit-disease-model",
+    "author": "M-Parames01",
+    "gated": false,
+    "lastModified": "2026-03-26T08:36:31.000Z",
+    "likes": 0,
+    "trendingScore": 0,
+    "private": false,
+    "sha": "817cd6381160168c24c8e64a38a09e5dda4ae405",
+    "config": {},
+    "downloads": 4,
+    "tags": [
+      "keras",
+      "license:mit",
+      "region:us"
+    ],
+    "library_name": "keras",
+    "createdAt": "2026-03-26T08:35:10.000Z",
+    "modelId": "M-Parames01/fruit-disease-model",
+    "siblings": [
+      {
+        "rfilename": ".gitattributes"
+      },
+      {
+        "rfilename": "README.md"
+      },
+      {
+        "rfilename": "fusion_resume_model_1.keras"
+      }
+    ]
+  },
+  {
+    "_id": "6a88a9e17cf40ad6609e1ad3",
+    "id": "ketanpurohit07/FruitGuard-Disease-Classification",
+    "author": "ketanpurohit07",
+    "gated": false,
+    "lastModified": "2026-08-21T19:57:43.000Z",
+    "likes": 0,
+    "trendingScore": 0,
+    "private": false,
+    "sha": "59699035bdfdcbf536644737493c8c708202f912",
+    "config": {},
+    "downloads": 0,
+    "tags": [
+      "region:us"
+    ],
+    "createdAt": "2026-08-21T19:41:21.000Z",
+    "modelId": "ketanpurohit07/FruitGuard-Disease-Classification",
+    "siblings": [
+      {
+        "rfilename": ".gitattributes"
+      },
+      {
+        "rfilename": "model_v2.pth"
+      }
+    ]
+  }
+]

@@ -1,0 +1,62 @@
+{
+  "_id": "6ac0a2f317c08e6d36c11cd6",
+  "id": "ixrbhii/pear-disease-convnext",
+  "private": false,
+  "pipeline_tag": "image-classification",
+  "library_name": "timm",
+  "tags": [
+    "timm",
+    "safetensors",
+    "agriculture",
+    "plant-disease",
+    "convnext",
+    "image-classification",
+    "license:cc-by-4.0",
+    "region:us"
+  ],
+  "downloads": 19,
+  "likes": 0,
+  "modelId": "ixrbhii/pear-disease-convnext",
+  "author": "ixrbhii",
+  "sha": "2425fe795a6668ed3bdedc053edbb963e415c2fd",
+  "lastModified": "2026-10-04T17:29:32.000Z",
+  "gated": false,
+  "disabled": false,
+  "model-index": null,
+  "config": {},
+  "cardData": {
+    "license": "cc-by-4.0",
+    "library_name": "timm",
+    "pipeline_tag": "image-classification",
+    "tags": [
+      "agriculture",
+      "plant-disease",
+      "convnext",
+      "image-classification",
+      "timm"
+    ]
+  },
+  "siblings": [
+    {
+      "rfilename": ".gitattributes"
+    },
+    {
+      "rfilename": "README.md"
+    },
+    {
+      "rfilename": "config.json"
+    },
+    {
+      "rfilename": "model.safetensors"
+    }
+  ],
+  "spaces": [],
+  "createdAt": "2026-10-03T06:38:43.000Z",
+  "safetensors": {
+    "parameters": {
+      "F16": 49458533
+    },
+    "total": 49458533
+  },
+  "usedStorage": 98950890
+}

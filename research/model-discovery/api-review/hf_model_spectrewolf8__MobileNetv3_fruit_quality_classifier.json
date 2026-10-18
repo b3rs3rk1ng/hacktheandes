@@ -1,0 +1,28 @@
+{
+  "_id": "670034ef4dbcde622db73323",
+  "id": "spectrewolf8/MobileNetv3_fruit_quality_classifier",
+  "private": false,
+  "tags": [
+    "region:us"
+  ],
+  "downloads": 0,
+  "likes": 0,
+  "modelId": "spectrewolf8/MobileNetv3_fruit_quality_classifier",
+  "author": "spectrewolf8",
+  "sha": "a1cfb14231979ad9746d54aeb2a502a209956994",
+  "lastModified": "2025-01-18T13:42:22.000Z",
+  "gated": false,
+  "disabled": false,
+  "config": {},
+  "siblings": [
+    {
+      "rfilename": ".gitattributes"
+    },
+    {
+      "rfilename": "MobileNetv3_fruit_quality_classifier.h5"
+    }
+  ],
+  "spaces": [],
+  "createdAt": "2024-10-04T18:33:19.000Z",
+  "usedStorage": 44667080
+}

@@ -1,0 +1,119 @@
+{
+  "_id": "657cd590ce825cd9746d40ea",
+  "id": "NonoBru/fruit-disease-classifier",
+  "private": false,
+  "pipeline_tag": "image-classification",
+  "library_name": "transformers",
+  "tags": [
+    "transformers",
+    "tensorboard",
+    "safetensors",
+    "vit",
+    "image-classification",
+    "pytorch",
+    "huggingpics",
+    "model-index",
+    "endpoints_compatible",
+    "region:us"
+  ],
+  "downloads": 6,
+  "likes": 0,
+  "modelId": "NonoBru/fruit-disease-classifier",
+  "author": "NonoBru",
+  "sha": "5a0f34d0ae021b7df4f6d5c0f6ccd94c87e90fcd",
+  "lastModified": "2023-12-15T23:37:40.000Z",
+  "gated": false,
+  "disabled": false,
+  "model-index": [
+    {
+      "name": "fruit-disease-classifier",
+      "results": [
+        {
+          "task": {
+            "name": "Image Classification",
+            "type": "image-classification"
+          },
+          "metrics": [
+            {
+              "name": "Accuracy",
+              "type": "accuracy",
+              "value": 0.6404494643211365,
+              "verified": false
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "config": {
+    "architectures": [
+      "ViTForImageClassification"
+    ],
+    "model_type": "vit"
+  },
+  "cardData": {
+    "tags": [
+      "image-classification",
+      "pytorch",
+      "huggingpics"
+    ],
+    "metrics": [
+      "accuracy"
+    ],
+    "model-index": [
+      {
+        "name": "fruit-disease-classifier",
+        "results": [
+          {
+            "task": {
+              "name": "Image Classification",
+              "type": "image-classification"
+            },
+            "metrics": [
+              {
+                "name": "Accuracy",
+                "type": "accuracy",
+                "value": 0.6404494643211365,
+                "verified": false
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "transformersInfo": {
+    "auto_model": "AutoModelForImageClassification",
+    "pipeline_tag": "image-classification",
+    "processor": "AutoImageProcessor"
+  },
+  "siblings": [
+    {
+      "rfilename": ".gitattributes"
+    },
+    {
+      "rfilename": "README.md"
+    },
+    {
+      "rfilename": "config.json"
+    },
+    {
+      "rfilename": "model.safetensors"
+    },
+    {
+      "rfilename": "preprocessor_config.json"
+    },
+    {
+      "rfilename": "runs/events.out.tfevents.1702679657.cbefff3dfe26.196.0"
+    }
+  ],
+  "spaces": [],
+  "createdAt": "2023-12-15T22:39:12.000Z",
+  "safetensors": {
+    "parameters": {
+      "F32": 85814036
+    },
+    "total": 85814036
+  },
+  "usedStorage": 343282606
+}

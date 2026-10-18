@@ -1,0 +1,437 @@
+{
+  "seed": 37,
+  "field": {
+    "size_m": [
+      260,
+      300
+    ],
+    "home": [
+      0,
+      -9,
+      0.34
+    ]
+  },
+  "parcels": [
+    {
+      "id": "cacao",
+      "crop": "cacao",
+      "origin": [
+        -68,
+        6
+      ],
+      "rows": 34,
+      "columns": 35,
+      "spacing": [
+        4,
+        4
+      ]
+    },
+    {
+      "id": "platano",
+      "crop": "banana",
+      "origin": [
+        80,
+        8
+      ],
+      "rows": 25,
+      "columns": 8,
+      "spacing": [
+        4,
+        4
+      ]
+    },
+    {
+      "id": "cafe",
+      "crop": "coffee",
+      "origin": [
+        -112,
+        8
+      ],
+      "rows": 39,
+      "columns": 11,
+      "spacing": [
+        2.5,
+        2.8
+      ]
+    },
+    {
+      "id": "maiz",
+      "crop": "maize",
+      "origin": [
+        -108,
+        -64
+      ],
+      "rows": 32,
+      "columns": 68,
+      "spacing": [
+        1,
+        1.4
+      ]
+    }
+  ],
+  "flight": {
+    "mass_kg": 2.4,
+    "max_thrust_n": 65,
+    "inertia": [
+      0.085,
+      0.095,
+      0.15
+    ],
+    "cruise_speed_mps": 0.85,
+    "climb_speed_mps": 0.65,
+    "max_acceleration_mps2": 1.2,
+    "position_kp": 1.4,
+    "velocity_kd": 2.9,
+    "attitude_frequency": 9,
+    "attitude_damping": 1,
+    "return_height_m": 5.1,
+    "rotor_radius_m": 0.105,
+    "rotors": 4,
+    "drag_area_m2": 0.12,
+    "air_density": 1.18,
+    "motor_efficiency": 0.62,
+    "profile_power_w": 48,
+    "avionics_w": 18,
+    "wind_mps": [
+      0.4,
+      0.15,
+      0
+    ],
+    "payload_lever_m": 0.565,
+    "cage_radius_m": 0.285,
+    "cage_center_y_m": 0.045,
+    "rotor_arm_m": 0.16,
+    "max_jerk_mps3": 8,
+    "motor_response_s": 0.06,
+    "max_yaw_rate_rad_s": 0.7,
+    "inspection_only": true
+  },
+  "battery": {
+    "cells": 6,
+    "capacity_ah": 4,
+    "initial_soc": 1,
+    "internal_resistance_ohm": 0.085,
+    "reserve_fraction": 0.12,
+    "charge_current_a": 4,
+    "charge_efficiency": 0.94,
+    "resume_at_soc": 0.95
+  },
+  "inspection": {
+    "radius_m": 0.95,
+    "height_m": 1.55,
+    "dwell_s": 1.2,
+    "minimum_frames": 2,
+    "angles": [
+      -1.5707963267948966
+    ],
+    "alert_threshold": 0.74,
+    "target_class_ids": [
+      1
+    ],
+    "crop": "cacao",
+    "auto_resume_after_charge": true,
+    "maximum_trees": null,
+    "obstacle_clearance_m": 0.58,
+    "height_levels_m": [
+      1.25,
+      1.8
+    ]
+  },
+  "camera": {
+    "width": 640,
+    "height": 384,
+    "vertical_fov_degrees": 58,
+    "near_m": 0.05,
+    "far_m": 600,
+    "offset_m": [
+      0.235,
+      0,
+      -0.04
+    ],
+    "inference_interval_ms": 450
+  },
+  "model": {
+    "weights": "/home/f3mt0/hacktheandes-cacao-improvement/artifacts/detector-yolo11s.pt",
+    "sha256": "4a72c36e6aed0db8c5f39b637a918da28e4386644ceb52c7b9d8446efb9a9d33",
+    "names": [
+      "healthy",
+      "monilia",
+      "phytophthora"
+    ],
+    "imgsz": 640,
+    "proposal_confidence": 0.05,
+    "nms_iou": 0.7,
+    "class_labels": [
+      "Sano",
+      "Monilia",
+      "Fitóftora"
+    ]
+  },
+  "manipulation": {
+    "enabled": false,
+    "mass_kg": 0.45,
+    "tool_offset_m": 0.5,
+    "bin": [
+      1.7,
+      -9,
+      0
+    ],
+    "bin_size": [
+      1,
+      0.9,
+      0.65
+    ],
+    "fruit_radii_m": [
+      0.055,
+      0.055,
+      0.14
+    ],
+    "grip_offset_m": 0.065
+  },
+  "server": {
+    "host": "127.0.0.1",
+    "port": 18437,
+    "physics_port": 18436
+  },
+  "terrain": {
+    "grid_spacing_m": 2,
+    "margin_m": 12,
+    "amplitude_m": 2.35,
+    "wavelength_m": 36,
+    "service_radius_m": 7,
+    "service_blend_m": 14,
+    "texture_tile_m": 2.2,
+    "litter_radius_m": 16,
+    "litter_density_m2": 11,
+    "litter_max_instances": 10000,
+    "paths": [
+      {
+        "start": [
+          72,
+          -12
+        ],
+        "end": [
+          72,
+          116
+        ],
+        "width": 2.1
+      },
+      {
+        "start": [
+          0,
+          -14
+        ],
+        "end": [
+          0,
+          4
+        ],
+        "width": 1.5
+      }
+    ],
+    "detail_patches": [
+      {
+        "origin": [
+          -4,
+          -12
+        ],
+        "size_m": [
+          12,
+          64
+        ],
+        "spacing_m": 0.25,
+        "features": [
+          {
+            "center": [
+              2,
+              12
+            ],
+            "radii_m": [
+              2,
+              0.35
+            ],
+            "height_m": 0.1,
+            "angle_degrees": 8
+          },
+          {
+            "center": [
+              2.35,
+              18
+            ],
+            "radii_m": [
+              0.55,
+              0.75
+            ],
+            "height_m": 0.12
+          },
+          {
+            "center": [
+              1.6,
+              25
+            ],
+            "radii_m": [
+              0.27,
+              3
+            ],
+            "height_m": -0.1
+          },
+          {
+            "center": [
+              2.4,
+              25
+            ],
+            "radii_m": [
+              0.27,
+              3
+            ],
+            "height_m": -0.1
+          },
+          {
+            "center": [
+              2,
+              34
+            ],
+            "radii_m": [
+              4,
+              3
+            ],
+            "height_m": 0.48,
+            "angle_degrees": 15
+          },
+          {
+            "center": [
+              2.45,
+              42
+            ],
+            "radii_m": [
+              0.6,
+              0.55
+            ],
+            "height_m": 0.11
+          },
+          {
+            "center": [
+              2,
+              46
+            ],
+            "radii_m": [
+              2,
+              0.32
+            ],
+            "height_m": 0.09,
+            "angle_degrees": -12
+          }
+        ]
+      }
+    ]
+  },
+  "vegetation": {
+    "cell_size_m": 20,
+    "near_radius_m": 9,
+    "near_leaf_limit": 22000,
+    "leaves_per_shoot": 9,
+    "profiles": {
+      "cacao": {
+        "kind": "cacao",
+        "height_m": [
+          3.3,
+          4.25
+        ],
+        "pods": [
+          7,
+          14
+        ]
+      }
+    },
+    "branch_detail_radius_m": 22,
+    "resident_radius_m": 24,
+    "release_radius_m": 34
+  },
+  "rendering": {
+    "maximum_pixel_ratio": 1,
+    "maximum_drawing_pixels": 1300000,
+    "shadow_map_size": 1024,
+    "shadow_update_hz": 20,
+    "observer_fps": 30,
+    "observer_max_pixels": 180000,
+    "fog": {
+      "color": "#a5b2a0",
+      "near_m": 12,
+      "far_m": 34
+    },
+    "rover_detail_distance_m": 24
+  },
+  "ground_vehicle": {
+    "origin_enu": [
+      2,
+      -8
+    ],
+    "route_local_xz": [
+      [
+        0,
+        0
+      ],
+      [
+        56,
+        0
+      ]
+    ],
+    "cruise_speed_mps": 0.55,
+    "reverse_speed_mps": 0.35,
+    "battery_wh": 1024,
+    "idle_power_w": 55,
+    "motor_efficiency": 0.7
+  },
+  "fleet": {
+    "robots": [
+      {
+        "id": "ground-1",
+        "label": "Terrestre 1",
+        "station_enu": [
+          2.0,
+          -8
+        ]
+      },
+      {
+        "id": "ground-2",
+        "label": "Terrestre 2",
+        "station_enu": [
+          4.4,
+          -8
+        ]
+      },
+      {
+        "id": "ground-3",
+        "label": "Terrestre 3",
+        "station_enu": [
+          6.8,
+          -8
+        ]
+      }
+    ],
+    "verification_frames": 2,
+    "verification_timeout_s": 18,
+    "charge_power_w": 600,
+    "resume_soc": 0.9,
+    "return_soc": 0.25,
+    "navigation_grid_m": 0.6,
+    "navigation_clearance_m": 0.72,
+    "task_lease_s": 90,
+    "maximum_task_distance_m": 90,
+    "coverage": {
+      "enabled": true,
+      "axis_enu": [
+        0,
+        1
+      ],
+      "lane_spacing_m": 4,
+      "scout_lookahead_trees": 1,
+      "maximum_ground_lead_trees": 1,
+      "survey_seconds": 6,
+      "minimum_survey_frames": 2,
+      "aisle_offset_m": 1.25,
+      "stop_before_tree_m": 0.6,
+      "continue_without_scout": true
+    },
+    "bin_capacity_pods": 2
+  }
+}

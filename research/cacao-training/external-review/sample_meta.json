@@ -1,0 +1,30 @@
+{
+    "classes": [
+        {
+            "title": "healthy",
+            "shape": "rectangle",
+            "color": "#7ED321",
+            "geometry_config": {},
+            "id": 19772,
+            "hotkey": ""
+        },
+        {
+            "title": "monilia",
+            "shape": "rectangle",
+            "color": "#F8E71C",
+            "geometry_config": {},
+            "id": 19771,
+            "hotkey": ""
+        },
+        {
+            "title": "phytophthora",
+            "shape": "rectangle",
+            "color": "#D0021B",
+            "geometry_config": {},
+            "id": 19770,
+            "hotkey": ""
+        }
+    ],
+    "tags": [],
+    "projectType": "images"
+}

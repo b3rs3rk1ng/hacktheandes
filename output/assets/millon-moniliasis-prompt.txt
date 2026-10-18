@@ -1,0 +1,12 @@
+Generated with the built-in image generation tool.
+Asset: millon-moniliasis-rojo.png
+Purpose: expressive typographic metaphor for economic loss, not a clinical image.
+Reference: research/cacao-improvement/source-review/sample-downloads/images/test/017fa25b2cde2609b042a85e.jpg
+
+Use case: productivity-visual.
+Create a single transparent-background typographic asset for a PowerPoint pitch slide.
+Exact text, one horizontal line: "S/ 1 MILLÓN". Preserve the accent on Ó and all characters exactly.
+Make the lettering enormous, very heavy modern sans serif, frontal and flat, with vivid RED as the dominant readable color. The number and MILLÓN should be the focus. Wide horizontal composition, tight clean margins, about 3:1 aspect ratio.
+Give the red letter surfaces an effect of cacao fruit rotting from MONILIASIS: irregular dark brown necrotic patches, dried cracked skin and localized white-to-cream powdery fungal growth, visually guided by the supplied real cacao photograph. Keep most of the red visible and every letter unmistakably legible from a distance. Fungal deterioration should look organic and photographic, concentrated along lower edges and a few interior patches.
+The supplied photograph is a TEXTURE REFERENCE ONLY. Do not include the cacao fruit, background cloth or any other objects in the final image. Do not modify or reproduce the reference photograph as the composition.
+This is expressive typography, not a scientific specimen or microscopy image. No mushrooms, no green bread mold, no droplets, no slime, no gore. No additional words, no captions, no logos, no frame, no glow. No perspective or dramatic 3D extrusion. Actual alpha transparency, not a checkerboard image or a solid background.

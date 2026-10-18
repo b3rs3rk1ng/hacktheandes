@@ -1,0 +1,1784 @@
+<!DOCTYPE html>
+<html xmlns:mml="http://www.w3.org/1998/Math/MathML" lang="en">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="robots" content="all,index,follow" />
+
+
+	<link rel="shortcut icon" href="https://www.plantprotection.pl/es-static/g/c/js_favicon.ico?v=1" type="image/x-icon" />
+
+<link rel="stylesheet" href="https://www.plantprotection.pl/es-static/esfontsv5/styles.css?v6" />
+
+<link rel="stylesheet" href="https://www.plantprotection.pl/es-static/common/bootstrap-4.6.0-dist/css/bootstrap.css" />
+<style>
+
+a {color: #0682E7;}
+a:link {text-decoration:none;color: #0682E7;}
+a:visited {text-decoration:none;color: #0682E7;}
+a:focus {text-decoration:underline;color: #0682E7;}
+a:active {text-decoration:none;color: #0682E7;}
+a:hover {text-decoration:underline;color: #0682E7;}
+
+</style>
+<link rel="stylesheet" type="text/css" href="https://www.plantprotection.pl/es-static/css/styles_v2.css?v2315675" />
+<link rel="stylesheet" type="text/css" href="https://www.plantprotection.pl/es-static/css/v2-box.css?v1.1" />
+
+
+<script src="https://www.plantprotection.pl/es-static/common/jquery-3.6.0.min.js"></script>
+<script src="https://www.plantprotection.pl/es-static/common/bootstrap-4.6.0-dist/js/bootstrap.min.js"></script>
+<script src="https://www.plantprotection.pl/es-static/common/jquery.fancybox.min.js?v=3"></script>
+<link rel="stylesheet" href="https://www.plantprotection.pl/es-static/common/jquery.fancybox.min.css?v=3" type="text/css" media="screen" />
+
+<script src="https://www.plantprotection.pl/es-static/js/scripts.js?v=v2.12345"></script>
+
+<meta property="og:url" content="https://www.plantprotection.pl/Improved-YOLOv5m-model-based-on-Swin-Transformer-K-means-and-Efficient-Intersection,187093,0,2.html" />
+<meta property="og:title" content="Improved YOLOv5m model based on Swin Transformer, <i>K-means</i>++, and Efficient Intersection over Union (EIoU) loss function for cocoa tree (<i>Theobroma cacao</i>) disease detection" />
+<meta property="og:description" content="The cocoa tree is prone to diverse diseases such as stem borer, stem canker, swollen shot,
+and root rot disease which impedes high yield. Early disease detection is a critical component
+of diverse management processes that are implemented throughout the life cycle
+of cocoa plants. Consequently,..." />
+	<meta name="twitter:card" content="summary"></meta>
+	<meta name="twitter:image" content="https://www.plantprotection.pl/f/pictures/187093_17083_o.jpg" />
+	<meta property="og:image" content="https://www.plantprotection.pl/f/pictures/187093_17083_o.jpg" />
+
+<style>
+
+
+
+@media (min-width: 1px) {
+	img.articleImg		{width: 100px;}
+	img.articleImgList	{width: 100px;}
+	div.articleInfo {}	
+}
+@media (min-width: 768px) {
+	img.articleImg		{width: 190px;}
+	img.articleImgList	{width: 110px;}
+	div.articleInfo {width: calc(100% - 200px); float: left;}	
+}
+
+
+.issuePdfButton					{display:inline-block; background:#dd2511; padding:7px 14px;color:#ffffff !important; }
+
+
+
+
+
+
+div.topMenuIn							{background-color: #dd2511; }
+div.topMenuIn .submenu					{background-color: #dd2511; }
+div.searchArea							{background-color: #dd2511; }
+div.mMenu	 							{background: #dd2511; }
+a.mMenu.collapsed  						{ background-color: #dd2511; }
+a.mMenu  								{ color: #dd2511;}
+a.mSearch.collapsed  					{ background-color: #dd2511; }
+a.mSearch			  					{ color: #dd2511;}
+
+
+
+
+
+
+
+
+
+
+div.magBibliography2 a:hover 					{color: #0682E7;}
+
+div.rightBox0:hover .boxIcon	{color:#dd2511;}
+div.rightBox1:hover .boxIcon	{color:#dd2511;}
+
+div.articleTopInner	 a.articleTopL:hover		{border-bottom:2px solid #0682E7; color: #0682E7;}
+a.articleNavArrow:hover							{color: #0682E7;}
+
+a.download-pdf							{color: #0682E7;}
+a.download-pdf:hover					{color: #0682E7;}
+
+a.magStats:hover				{color:  #0682E7;}
+a.advSearch:hover				{color:  #0682E7;}
+div.logosMore a:hover			{color:  #0682E7;}
+
+a.cookieAccept					{background:  #0682E7;}
+a.cookieDecline					{color:  #0682E7;border:1px solid #0682E7;}
+a.cookieMore					{color:  #0682E7;}
+
+div.refExternalLink	.icon			{color:  #0682E7;}
+div.otherArticles a:hover				{color: #0682E7;}
+div.scrollArrow	a:hover				{color: #0682E7;}
+
+.bgMain								{background-color: #dd2511 !important;}
+
+
+a.magArticleTitle:hover			{color:  #0682E7;}
+div.topMenuFullClose a:hover	{color:  #0682E7;}
+a.cookieAlertClose:hover		{color:  #0682E7;}
+div.topMenuFull a.menuOpt:hover	{color:  #0682E7;}
+
+div.tabsIn a.tabCur				{border-top: 1px solid #dd2511;}
+	
+div.impOptionsBorder {border-color: #dd2511;}
+a.impOptionSubmit {background: #dd2511;}
+
+
+a.impOption {border-color: #dd2511; color: #dd2511;}
+a.impOption:hover {background: #dd2511;}
+div.menu a.menuCurrentPos   {border-color: #dd2511;}
+div.pagingDiv a {color: #dd2511; }
+div.pagingDiv a:hover {background: #dd2511; border: 1px solid #dd2511; }
+div.pagingDiv b {background: #dd2511;}
+div.subtitleUnderline { border-bottom: 2px solid #dd2511;}
+
+div.rightBoxOptLine 	{ border-bottom:2px solid #dd2511; }
+div.logosMoreLine		{ border-bottom:2px solid #dd2511; }
+
+div.highlights ul li::before { color: #dd2511;}	
+
+ul.tops li.current 			{ border-bottom-color:#dd2511;}
+div.header 					{ background: #ffffff; }
+div.metricValueImp 			{ color:#dd2511;}
+div.metrics a				{ color:#0682E7;}
+
+input.emailAlertsButton 	{color: #0682E7;}
+
+
+div.linksColorBackground	{background: #0682E7;}
+
+div.whiteLogoOut				{background: #ffffff;}
+
+div.abstractSup				{background: #0682E7;}
+div.abstractSupLink			{color: #0682E7; }	
+div.abstractSupLink:hover	{background: #0682E7; color:#fff; }	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</style>
+
+<script>
+
+function countStats(articleId, countType) {
+	$.get('https://www.plantprotection.pl/CountStats/'+articleId+'/'+countType+'/');
+}
+
+function pdfStats(articleId) {
+	countStats(articleId, 'PDF');
+}
+
+jQuery(document).ready(function() {	
+	$(".db-orcid").each(function(){
+        var elementContent = $(this).html();
+        elementContent = '<div class="icon icon-orcid"></div>'+elementContent;
+        $(this).html(elementContent);
+    });
+	
+	$(".db-googlescholar").each(function(){
+        var elementContent = $(this).html();
+        elementContent = '<div class="icon icon-googlescholar"></div>'+elementContent;
+        $(this).html(elementContent);
+    });
+	
+	$(".db-researcherid").each(function(){
+        var elementContent = $(this).html();
+        elementContent = '<div class="icon icon-researcher-id"></div>'+elementContent;
+        $(this).html(elementContent);
+    });
+    
+	$(".db-scopus").each(function(){
+        var elementContent = $(this).html();
+        elementContent = '<div class="icon icon-scopus"></div>'+elementContent;
+        $(this).html(elementContent);
+    });
+    
+});
+
+</script><script src="https://www.plantprotection.pl/es-static/common/jcanvas.min.js"></script>
+<script src="https://www.plantprotection.pl/es-static/common/es.canvas.js?v2"></script>
+
+	    	<meta name="description" content="The cocoa tree is prone to diverse diseases such as stem borer, stem canker, swollen shot,
+and root rot disease which impedes high yield. Early disease detection is a critical component
+of diverse management processes that are implemented throughout the life cycle
+of cocoa plants. Consequently,..." />
+<meta name="citation_title" content="Improved YOLOv5m model based on Swin Transformer,  K-means ++, and Efficient Intersection over Union (EIoU) loss function for cocoa tree ( Theobroma cacao ) disease detection" />
+	<meta name="citation_doi" content="10.24425/jppr.2024.151253"  />
+	<meta name="dc.identifier" content="doi:10.24425/jppr.2024.151253" />
+<meta name="citation_journal_title" content="Journal of Plant Protection Research" />
+	<meta name="citation_issn" content="1427-4345" />
+    <meta name="citation_issn" content="1899-007X" />
+		<meta name="citation_volume" content="64" />
+	<meta name="citation_issue" content="3" />
+<meta name="citation_publisher" content="Institute of Plant Protection – National Research institute, Committee on Agronomic Sciences of the Polish Academy of Science and Polish Society of Plant Protection" />
+					<meta name="citation_language" content="english" />		<meta name="citation_journal_abbrev" content="Journal of Plant Protection Research" />
+	<meta name="citation_author" content="Benedicta Nana Esi Nyarko" />
+	<meta name="citation_author" content="Wu Bin Wu" />
+	<meta name="citation_author" content="Zhou Jinzhi Zhou" />
+	<meta name="citation_author" content="Mwanaharusi Mohd Juma Mohd" />
+	<meta name="citation_online_date" content="2024/09/02" />
+	<meta name="citation_firstpage" content="265" />
+	<meta name="citation_lastpage" content="274" />
+<meta name="citation_fulltext_world_readable" content="" />
+		<meta name="citation_pdf_url" content="https://www.plantprotection.pl/pdf-187093-113569?filename=Improved-YOLOv5m-model-ba.pdf" />
+<meta name="citation_keywords" content="cocoa tree disease; EIoU; K-means ++; plant disease detection; Swin Transformer" />
+    	
+    	<script>
+
+
+MathJax = {
+  tex: {
+    inlineMath: [['$$', '$$'], ['\\(', '\\)']]
+  }
+};
+
+
+</script>
+
+<script type="text/javascript" id="MathJax-script" async
+   src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>	
+<link rel="stylesheet" href="https://www.plantprotection.pl/es-static/jats/jats-preview.css?v=2.23456656" />
+
+<script type="text/javascript">
+
+
+function showRef(refId, top) {
+	top = top - $('#jsHeaderId').height();
+	$('#showRefId').css('top', top +'px');
+	$('#showRefId_reference').html($('#ref_'+refId).html());
+	$('#showRefId_a').attr('href', '#'+refId);
+	$('#showRefId').show();
+}
+
+
+</script>
+    	    
+
+<title>
+						Improved YOLOv5m model based on Swin Transformer,  K-means ++, and Efficient Intersection over Union (EIoU) loss function for cocoa tree ( Theobroma cacao ) disease detection
+					
+	</title>
+
+<script src="https://platform-api.sharethis.com/js/sharethis.js#property=647f0be740353a0019caf2e3&product=inline-share-buttons&source=platform" async="async"></script>
+
+<!-- Google Analytics -->
+		
+</head>
+<body>
+<div id="skipLinks">
+	<a href="#contentId">Skip to content</a>
+</div>
+
+<div class="container-fluid">
+
+<div class="d-none d-md-block">
+
+</div>
+<div class="d-block d-md-none"><!-- mobile menu -->
+	<div class="mMenu">
+	
+	
+
+		   <a href="#" onclick="$('#mMenuCollapse').slideToggle(400); $('#mSearchCollapse').hide();  return false;" class="dirRight menuOpt mobileMenuIcoOpt">
+		   		<div class="icon icon-reorder"></div>
+		   </a>
+		   <a href="#" onclick="$('#mSearchCollapse').slideToggle(150); $('#mMenuCollapse').hide(); return false;" class="dirRight menuOpt mobileMenuIcoOpt">
+		   		<div class="icon icon-search"></div>
+		   </a>
+		   			 	
+		 			 	
+		 			 
+		   			 	
+		 			 	
+		 			 	
+					 			   
+		   				
+		   <div class="clearAll">&nbsp;</div>
+		   <div class="mobileMenuHiddenDiv" id="mMenuCollapse">
+		     	 <div class="mobileMenu">
+											<a href="https://www.plantprotection.pl/" class="menuOpt  ">Current Issue</a>
+								
+															<a href="https://www.plantprotection.pl/First-Look,2845.html" class="menuOpt  ">First Look</a>
+								
+															<a href="https://www.plantprotection.pl/Online-first" class="menuOpt  ">Ahead of Print</a>
+								
+															<a href="https://www.plantprotection.pl/Archive" class="menuOpt menuCurrentGroup menuCurrentPos">Archive</a>
+								
+															<a href="https://www.plantprotection.pl/About-the-Journal,968.html" class="menuOpt  ">About the Journal</a>
+								
+									<a href="https://www.plantprotection.pl/Editorial,969.html" class="menuOpt menuSub  ">Editorial</a>
+									<a href="https://www.plantprotection.pl/Ethical-Standards,1859.html" class="menuOpt menuSub  ">Ethical Standards</a>
+									<a href="https://www.plantprotection.pl/Reviewer-procedure,1860.html" class="menuOpt menuSub  ">Reviewer procedure</a>
+									<a href="https://www.plantprotection.pl/Peer-review-process,1861.html" class="menuOpt menuSub  ">Peer review process</a>
+									<a href="https://www.plantprotection.pl/Open-Access-Policy,1428.html" class="menuOpt menuSub  ">Open Access Policy</a>
+									<a href="https://www.plantprotection.pl/Article-Publication-Charge,6022.html" class="menuOpt menuSub  ">Article Publication Charge</a>
+									<a href="https://www.plantprotection.pl/Contact,1609.html" class="menuOpt menuSub  ">Contact</a>
+															<a href="https://www.plantprotection.pl/List-of-Reviewers,979.html" class="menuOpt  ">List of Reviewers</a>
+								
+									<a href="https://www.plantprotection.pl/dl/c2878bee34c42018888fb3b349794657/" class="menuOpt menuSub  ">2025</a>
+									<a href="https://www.plantprotection.pl/dl/813fbbd9941aa728f3b9c8e74eb9d197/" class="menuOpt menuSub  ">2024</a>
+									<a href="https://www.plantprotection.pl/dl/0aa0e59b40a5b9f4ba52988c5f6c8f23/" class="menuOpt menuSub  ">2023</a>
+									<a href="https://www.plantprotection.pl/dl/6d073767186e42f717c4d42502a6178a/" class="menuOpt menuSub  ">2022</a>
+									<a href="https://www.plantprotection.pl/dl/040a26bc13e64823d40595ce2228e959/" class="menuOpt menuSub  ">2021</a>
+									<a href="https://www.plantprotection.pl/dl/388e72c0e755776d554f378d66efb59c/" class="menuOpt menuSub  ">2020</a>
+									<a href="https://www.plantprotection.pl/dl/dcdd9c1bde908599c6161c9e81b57a73/" class="menuOpt menuSub  ">2019</a>
+									<a href="https://www.plantprotection.pl/dl/c08fa2106d2d5b14c181f9e10d185b8f/" class="menuOpt menuSub  ">2018</a>
+									<a href="https://www.plantprotection.pl/dl/a57c7e1491cec153754acb32503cef92/" class="menuOpt menuSub  ">2017</a>
+									<a href="https://www.plantprotection.pl/dl/675458e62341df524141116e90a451cc/" class="menuOpt menuSub  ">2016</a>
+									<a href="https://www.plantprotection.pl/dl/39cea2a655c490e1364ede2860cf0073/" class="menuOpt menuSub  ">2015</a>
+									<a href="https://www.plantprotection.pl/dl/6031961c99530a58233cb20008f1bf31/" class="menuOpt menuSub  ">2014</a>
+									<a href="https://www.plantprotection.pl/dl/3c775eb6c0d7d29b81a601330fdc659f/" class="menuOpt menuSub  ">2013</a>
+									<a href="https://www.plantprotection.pl/dl/2bbe01257b61afa80f6a83fe5198af18/" class="menuOpt menuSub  ">2012</a>
+									<a href="https://www.plantprotection.pl/dl/041939ef32575da970aa92bb2744b28a/" class="menuOpt menuSub  ">2011</a>
+										</div>		   </div>
+		   <div class="mobileMenuHiddenDiv" id="mSearchCollapse">
+		     	<div class="mobileSearch">
+<div class="divRelative">
+	<form action="https://www.plantprotection.pl/Search/" name="searchFormmobile" method="get">
+		<input name="s" type="text" class="mobileSearchInput" value=""/>
+		<div class="searchBut"><a href="#" onclick="document.searchFormmobile.submit();return false;"><div class="icon icon-angle-right"></div></a></div>
+			</form>
+	</div>
+</div>		   </div>
+	</div>
+</div>
+
+<div class="row d-none d-md-block">
+	<div class="col-12">
+		<div class="topMenuUnder"></div>
+		<div class="topMenu" id="topMenuId">
+			<div class="topMenuIn">
+		 			 	
+		 	<a href="#" class="menuOpt dirRight" id="searchButtonId" onclick="toggleSearchForm(); return false;"><div class="menuIcon icon icon-search" aria-hidden="true"></div></a>
+		 	
+		 	<div class="searchArea" id="searchAreaId"><div class="searchAreaIn">
+		 		<div class="searchButton">
+		 			<a href="#" onclick="document.getElementById('searchFormId').submit();">SEARCH</a>
+		 		</div>
+		 		<form action="https://www.plantprotection.pl/Search/" id="searchFormId" name="searchForm" method="get">
+					<input name="s" id="searchInputId" type="text" value=""/>
+				</form>
+		 	</div></div>
+		 	
+		 	<script>
+			
+		
+				function toggleSearchForm(){
+					$('#searchAreaId').toggle(); 
+					$('#searchButtonId').toggleClass('menuOptSubmenuOpen'); 
+					document.getElementById('searchInputId').focus(); 
+				}
+				
+				function hideSearchForm() { 
+					$('#searchAreaId').hide(); 
+					$('#searchButtonId').removeClass('menuOptSubmenuOpen'); 
+			    }
+				
+				function setSubmenuWidth(menuPosId) { 
+					$("#submenu"+menuPosId).css("min-width", $("#menuPos"+menuPosId).outerWidth() + "px");
+				}
+				
+				$(window).scroll(function () { 
+					hideSearchForm();
+			    });
+			
+			
+			</script>
+		 	
+										<div class="dirLeft" >
+										<a id="menuPos966" href="https://www.plantprotection.pl/" class="menuOpt ">
+						<div class="dirLeft icon icon-home" aria-hidden="true"></div> Current Issue
+					</a>
+										
+								
+				</div>
+													<div class="dirLeft" >
+										<a id="menuPos2845" href="https://www.plantprotection.pl/First-Look,2845.html" class="menuOpt ">
+						 First Look
+					</a>
+										
+								
+				</div>
+													<div class="dirLeft" >
+										<a id="menuPos1054" href="https://www.plantprotection.pl/Online-first" class="menuOpt ">
+						 Ahead of Print
+					</a>
+										
+								
+				</div>
+													<div class="dirLeft" >
+										<a id="menuPos967" href="https://www.plantprotection.pl/Archive" class="menuOpt menuCurrentPos">
+						 Archive
+					</a>
+										
+								
+				</div>
+													<div class="dirLeft" onmouseover="$('#submenu968').show(0, setSubmenuWidth(968)); $('#menuPos968').addClass('menuOptSubmenuOpen');"  onmouseout="$('#submenu968').hide(); $('#menuPos968').removeClass('menuOptSubmenuOpen');">
+										<a id="menuPos968" href="https://www.plantprotection.pl/About-the-Journal,968.html" class="menuOpt ">
+						 About the Journal
+					</a>
+										
+											<div class="submenu" id="submenu968"><div class="submenuIn">
+													<a href="https://www.plantprotection.pl/Editorial,969.html" class="menuSubOpt">Editorial</a>
+													<a href="https://www.plantprotection.pl/Ethical-Standards,1859.html" class="menuSubOpt">Ethical Standards</a>
+													<a href="https://www.plantprotection.pl/Reviewer-procedure,1860.html" class="menuSubOpt">Reviewer procedure</a>
+													<a href="https://www.plantprotection.pl/Peer-review-process,1861.html" class="menuSubOpt">Peer review process</a>
+													<a href="https://www.plantprotection.pl/Open-Access-Policy,1428.html" class="menuSubOpt">Open Access Policy</a>
+													<a href="https://www.plantprotection.pl/Article-Publication-Charge,6022.html" class="menuSubOpt">Article Publication Charge</a>
+													<a href="https://www.plantprotection.pl/Contact,1609.html" class="menuSubOpt">Contact</a>
+												</div></div>
+								
+				</div>
+													<div class="dirLeft" onmouseover="$('#submenu979').show(0, setSubmenuWidth(979)); $('#menuPos979').addClass('menuOptSubmenuOpen');"  onmouseout="$('#submenu979').hide(); $('#menuPos979').removeClass('menuOptSubmenuOpen');">
+										<a id="menuPos979" href="https://www.plantprotection.pl/List-of-Reviewers,979.html" class="menuOpt ">
+						 List of Reviewers
+					</a>
+										
+											<div class="submenu" id="submenu979"><div class="submenuIn">
+													<a href="https://www.plantprotection.pl/dl/c2878bee34c42018888fb3b349794657/" class="menuSubOpt">2025</a>
+													<a href="https://www.plantprotection.pl/dl/813fbbd9941aa728f3b9c8e74eb9d197/" class="menuSubOpt">2024</a>
+													<a href="https://www.plantprotection.pl/dl/0aa0e59b40a5b9f4ba52988c5f6c8f23/" class="menuSubOpt">2023</a>
+													<a href="https://www.plantprotection.pl/dl/6d073767186e42f717c4d42502a6178a/" class="menuSubOpt">2022</a>
+													<a href="https://www.plantprotection.pl/dl/040a26bc13e64823d40595ce2228e959/" class="menuSubOpt">2021</a>
+													<a href="https://www.plantprotection.pl/dl/388e72c0e755776d554f378d66efb59c/" class="menuSubOpt">2020</a>
+													<a href="https://www.plantprotection.pl/dl/dcdd9c1bde908599c6161c9e81b57a73/" class="menuSubOpt">2019</a>
+													<a href="https://www.plantprotection.pl/dl/c08fa2106d2d5b14c181f9e10d185b8f/" class="menuSubOpt">2018</a>
+													<a href="https://www.plantprotection.pl/dl/a57c7e1491cec153754acb32503cef92/" class="menuSubOpt">2017</a>
+													<a href="https://www.plantprotection.pl/dl/675458e62341df524141116e90a451cc/" class="menuSubOpt">2016</a>
+													<a href="https://www.plantprotection.pl/dl/39cea2a655c490e1364ede2860cf0073/" class="menuSubOpt">2015</a>
+													<a href="https://www.plantprotection.pl/dl/6031961c99530a58233cb20008f1bf31/" class="menuSubOpt">2014</a>
+													<a href="https://www.plantprotection.pl/dl/3c775eb6c0d7d29b81a601330fdc659f/" class="menuSubOpt">2013</a>
+													<a href="https://www.plantprotection.pl/dl/2bbe01257b61afa80f6a83fe5198af18/" class="menuSubOpt">2012</a>
+													<a href="https://www.plantprotection.pl/dl/041939ef32575da970aa92bb2744b28a/" class="menuSubOpt">2011</a>
+												</div></div>
+								
+				</div>
+									
+					 	
+		 			 	
+		 			 	 
+					 	
+		 			 	
+		 			 	
+					 	
+		 			 	
+						<div class="dirLeft">
+		 		<a href="#" class="menuOpt" id="desktopFullMenuLinkId" onclick="$('#topMenuId').addClass('topMenuHidden'); $('#topMenuFullId').addClass('topMenuFullVisible'); hideSearchForm(); return false;">
+		 			<div class="menuIcon icon icon-reorder"></div>
+		 		</a>
+		 	</div>
+		 				<div class="clearAll"></div>
+			</div>
+			
+			<div class="topMenuFull" id="topMenuFullId">
+			<div class="topMenuFullIn">
+				<div class="container-fluid stdRow">
+				
+					<div class="row">
+						<div class="col-6 topMenuFullLogo">
+						<div>
+													<img src="https://www.plantprotection.pl/_static/logo-jppr.gif" alt="Logo of the journal: Journal of Plant Protection Research" class="hLogo" style="max-width:190%;" />
+												</div>
+						</div>
+						<div class="col-6 topMenuFullClose">
+							<a href="#" onclick="$('#topMenuFullId').removeClass('topMenuFullVisible'); $('#topMenuId').removeClass('topMenuHidden'); return false;">
+								<div class="icon icon-close-empty"></div>
+							</a>
+						</div>
+					</div>
+				
+					<div class="row">
+
+											<div class="col-md-3">
+														<a href="https://www.plantprotection.pl/" class="menuOpt">
+								Current Issue
+							</a>
+														
+													</div>
+																	<div class="col-md-3">
+														<a href="https://www.plantprotection.pl/First-Look,2845.html" class="menuOpt">
+								First Look
+							</a>
+														
+													</div>
+																	<div class="col-md-3">
+														<a href="https://www.plantprotection.pl/Online-first" class="menuOpt">
+								Ahead of Print
+							</a>
+														
+													</div>
+																	<div class="col-md-3">
+														<a href="https://www.plantprotection.pl/Archive" class="menuOpt">
+								Archive
+							</a>
+														
+													</div>
+													</div><div class="row topMenuFullLineOut"><div class="col-12 topMenuFullLine"></div></div><div class="row">
+																	<div class="col-md-3">
+														<a href="https://www.plantprotection.pl/About-the-Journal,968.html" class="menuOpt">
+								About the Journal
+							</a>
+														
+																						<a href="https://www.plantprotection.pl/Editorial,969.html" class="menuSubOpt">Editorial</a>
+															<a href="https://www.plantprotection.pl/Ethical-Standards,1859.html" class="menuSubOpt">Ethical Standards</a>
+															<a href="https://www.plantprotection.pl/Reviewer-procedure,1860.html" class="menuSubOpt">Reviewer procedure</a>
+															<a href="https://www.plantprotection.pl/Peer-review-process,1861.html" class="menuSubOpt">Peer review process</a>
+															<a href="https://www.plantprotection.pl/Open-Access-Policy,1428.html" class="menuSubOpt">Open Access Policy</a>
+															<a href="https://www.plantprotection.pl/Article-Publication-Charge,6022.html" class="menuSubOpt">Article Publication Charge</a>
+															<a href="https://www.plantprotection.pl/Contact,1609.html" class="menuSubOpt">Contact</a>
+																				</div>
+																	<div class="col-md-3">
+														<a href="https://www.plantprotection.pl/List-of-Reviewers,979.html" class="menuOpt">
+								List of Reviewers
+							</a>
+														
+																						<a href="https://www.plantprotection.pl/dl/c2878bee34c42018888fb3b349794657/" class="menuSubOpt">2025</a>
+															<a href="https://www.plantprotection.pl/dl/813fbbd9941aa728f3b9c8e74eb9d197/" class="menuSubOpt">2024</a>
+															<a href="https://www.plantprotection.pl/dl/0aa0e59b40a5b9f4ba52988c5f6c8f23/" class="menuSubOpt">2023</a>
+															<a href="https://www.plantprotection.pl/dl/6d073767186e42f717c4d42502a6178a/" class="menuSubOpt">2022</a>
+															<a href="https://www.plantprotection.pl/dl/040a26bc13e64823d40595ce2228e959/" class="menuSubOpt">2021</a>
+															<a href="https://www.plantprotection.pl/dl/388e72c0e755776d554f378d66efb59c/" class="menuSubOpt">2020</a>
+															<a href="https://www.plantprotection.pl/dl/dcdd9c1bde908599c6161c9e81b57a73/" class="menuSubOpt">2019</a>
+															<a href="https://www.plantprotection.pl/dl/c08fa2106d2d5b14c181f9e10d185b8f/" class="menuSubOpt">2018</a>
+															<a href="https://www.plantprotection.pl/dl/a57c7e1491cec153754acb32503cef92/" class="menuSubOpt">2017</a>
+															<a href="https://www.plantprotection.pl/dl/675458e62341df524141116e90a451cc/" class="menuSubOpt">2016</a>
+															<a href="https://www.plantprotection.pl/dl/39cea2a655c490e1364ede2860cf0073/" class="menuSubOpt">2015</a>
+															<a href="https://www.plantprotection.pl/dl/6031961c99530a58233cb20008f1bf31/" class="menuSubOpt">2014</a>
+															<a href="https://www.plantprotection.pl/dl/3c775eb6c0d7d29b81a601330fdc659f/" class="menuSubOpt">2013</a>
+															<a href="https://www.plantprotection.pl/dl/2bbe01257b61afa80f6a83fe5198af18/" class="menuSubOpt">2012</a>
+															<a href="https://www.plantprotection.pl/dl/041939ef32575da970aa92bb2744b28a/" class="menuSubOpt">2011</a>
+																				</div>
+															
+				</div>
+				</div>
+			</div>	
+			</div>
+			
+		</div>
+	</div>
+</div>
+
+
+
+<div class="row header">
+<div class="container-fluid stdRow">
+<div class="row" id="jsHeaderId">
+	<div class="col-12">
+					<div class="headLogo">
+				<div class="d-none d-md-block">
+									<div class="dirRight" style="padding-right:405px; padding-top:17px;"><img src="https://www.plantprotection.pl/f/9dc32932c71973fe92994408c0fce193.png" height="60" alt="" border="0" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="https://www.plantprotection.pl/f/0a85eaff8f33dd2f490ca78974df4c15.png"  height="60" alt="" border="0" /></div>
+
+								</div>
+				<a href="https://www.plantprotection.pl/">
+									<img src="https://www.plantprotection.pl/_static/logo-jppr.gif" alt="Logo of the journal: Journal of Plant Protection Research" class="hLogo" style=""  />
+								</a>
+				<div class="d-none d-md-block">
+								</div>
+			</div>
+			<div id="contentId"></div>
+	</div>
+</div>
+</div>
+</div>
+
+
+
+
+<div class="row mainBG">
+<div class="container-fluid stdRow">
+<div class="row">
+	<div class="col-12 col-md-8 mainDiv">
+		
+		
+			
+		
+				
+	
+			
+			
+		
+		
+									
+				
+<div class="articleTop">
+<div class="articleTopInner">
+	<a href="https://www.plantprotection.pl/Issue-3-2024,13154" class="articleTopL dirLeft">3/2024 vol. 64</a>
+	<div class="articleTopLinkSpacer dirLeft"></div>
+	
+
+			<a href="#" class="articleTopL dirRight" data-fancybox="popup" data-type="ajax" data-src="https://www.plantprotection.pl/stats/187093/?langId=2"><div class="icon icon-bar-chart"></div><span class="d-none d-md-inline-block">Stats</span></a>
+		<div class="articleTopLinkSpacer dirRight"></div>
+		
+			<a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" class="articleTopL dirRight"><div class="icon icon-cc"></div><span class="d-none d-md-inline-block">CC-BY 4.0</span></a>
+		<div class="articleTopLinkSpacer dirRight"></div>
+		
+	<a href="#" class="articleTopL dirRight" data-fancybox="ungrouped" data-type="ajax" data-src="https://www.plantprotection.pl/cite/187093/?langId=2"><div class="icon icon-quote-left"></div><span class="d-none d-md-inline-block">Get citation</span></a>
+
+	
+	<div class="clearAll"></div>
+</div>
+</div>
+
+	<a href="https://www.plantprotection.pl/The-chemical-grain-composition-of-wheat-and-barley-affects-the-development-of-the,187250,0,2.html" title="NEXT" class="dirRight articleNavArrow"><div class="icon icon-angle-right"></div></a>
+	<div class="articleNavSpacer dirRight"></div>
+	<a href="https://www.plantprotection.pl/Identifying-the-key-motif-essential-for-enhancing-plant-defense-against-Botrytis,187010,0,2.html" title="PREVIOUS" class="dirRight articleNavArrow"><div class="icon icon-angle-left"></div></a>
+
+
+	<div class="dirLeft magArticleTypeAbstract">ORIGINAL ARTICLE</div>
+
+<div class="clearAll"></div>
+
+<div class="dirRight">
+	<a href="https://www.plantprotection.pl/f/pictures/187093_17083_o.jpg" data-fancybox="gallery"><img src="https://www.plantprotection.pl/f/pictures/187093_17083_o.jpg" class="articleImg" alt="Figure from article: Improved YOLOv5m model..." /></a>
+	
+	</div>
+
+<div class="articleInfo">
+<div class="articleTitle">Improved YOLOv5m model based on Swin Transformer, <i>K-means</i>++, and Efficient Intersection over Union (EIoU) loss function for cocoa tree (<i>Theobroma cacao</i>) disease detection</div>
+
+<script type="text/javascript">
+	
+		$(document).ready(function() {
+			countStats(187093, 'VIEW');
+		});
+	
+</script>
+
+<div class="subtitleUnderline"></div>
+
+			<div class="magAbstractAuthors">
+							<div class="dirLeft authorPos">
+    <div class="dirLeft " id="author_238509" onmouseover="highlightAffs('1', 1, 238509); return false;" onmouseout="highlightAffs('1', 0, 238509); return false;">
+    	<a href="https://www.plantprotection.pl/Author-benedicta-nana-esi-nyarko/238509" class="black">Benedicta Nana Esi Nyarko</a>
+    
+    	    	<span class="">
+    		<sup>
+    		1<span rel="contributionRel" style="display: none;">, A-B</span>    		</sup>
+    	</span>
+    						
+    </div>
+    
+        
+                    	        	<div class="dirLeft"><a href="mailto:benedictanyarko41@gmail.com"><div class="icon icon-envelope-o"></div></a></div>
+        	                
+    <div class="dirLeft">
+<a href="https://orcid.org/0000-0002-1738-6048" target="_blank"><div class="icon icon-orcid"></div></a>
+</div>
+            
+	<div class="dirLeft pad-right-5">,</div>	
+	<div class="clearAll">&nbsp;</div>				
+</div>				
+							<div class="dirLeft authorPos">
+    <div class="dirLeft " id="author_238510" onmouseover="highlightAffs('1', 1, 238510); return false;" onmouseout="highlightAffs('1', 0, 238510); return false;">
+    	<a href="https://www.plantprotection.pl/Author-wu-bin-wu/238510" class="black">Wu Bin  Wu</a>
+    
+    	    	<span class="">
+    		<sup>
+    		1<span rel="contributionRel" style="display: none;">, F</span>    		</sup>
+    	</span>
+    						
+    </div>
+    
+        
+                    	                
+                
+	<div class="dirLeft pad-right-5">,</div>	
+	<div class="clearAll">&nbsp;</div>				
+</div>				
+							<div class="dirLeft authorPos">
+    <div class="dirLeft " id="author_238511" onmouseover="highlightAffs('1', 1, 238511); return false;" onmouseout="highlightAffs('1', 0, 238511); return false;">
+    	<a href="https://www.plantprotection.pl/Author-zhou-jinzhi-zhou/238511" class="black">Zhou Jinzhi  Zhou</a>
+    
+    	    	<span class="">
+    		<sup>
+    		1<span rel="contributionRel" style="display: none;">, E</span>    		</sup>
+    	</span>
+    						
+    </div>
+    
+        
+                    	                
+                
+	<div class="dirLeft pad-right-5">,</div>	
+	<div class="clearAll">&nbsp;</div>				
+</div>				
+							<div class="dirLeft authorPos">
+    <div class="dirLeft " id="author_272645" onmouseover="highlightAffs('1', 1, 272645); return false;" onmouseout="highlightAffs('1', 0, 272645); return false;">
+    	<a href="https://www.plantprotection.pl/Author-mwanaharusi-mohd-juma-mohd/272645" class="black">Mwanaharusi Mohd Juma  Mohd</a>
+    
+    	    	<span class="">
+    		<sup>
+    		1<span rel="contributionRel" style="display: none;">, C</span>    		</sup>
+    	</span>
+    						
+    </div>
+    
+        
+                    	                
+                
+		
+	<div class="clearAll">&nbsp;</div>				
+</div>				
+						<div class="clearAll">&nbsp;</div>
+		</div>
+	
+<div style="height: 10px;line-height: 10px;font-size: 0;">&nbsp;</div>
+<a class="articleDetails" href="#" onclick="$('#articleDetailsId').toggle(200); $('#moreDetailsId').toggle(); $('#hideDetailsId').toggle(); $('[rel=contributionRel]').toggle(200); return false; " id="moreDetailsId"><div class="dirLeft icon icon-angle-down"></div>More details</a>
+<a class="articleDetails" href="#" onclick="$('#articleDetailsId').toggle(200); $('#hideDetailsId').toggle(); $('#moreDetailsId').toggle(); $('[rel=contributionRel]').toggle(200); return false; " id="hideDetailsId"><div class="dirLeft icon icon-angle-up"></div>Hide details</a>
+<div id="articleDetailsId">
+	<div class="affiliations">
+	<div class="simple-list">
+									<div class="list-row-small" id="aff_1" onmouseover="highlightAuthors('238509,238510,238511,272645', 1, 1); return false;" onmouseout="highlightAuthors('238509,238510,238511,272645', 0, 1); return false;">
+				<div class="dirLeft w-23px pad-left-4 em-08">1</div>
+				<div class="dirLeft w-100-c23 em-095">School of Information Engineering, Southwest University of Science and Technology, Qinglong Road, Fucheng District, Mianyang C, Mianyang, China</div>
+				<div class="clearAll">&nbsp;</div>
+			</div>
+										
+				
+				
+				<div class="list-row-small">
+			<div class="dirLeft w-23px">&nbsp;</div>
+			<div class="dirLeft w-100-c23 em-095">A - Research concept and design; B - Collection and/or assembly of data; C - Data analysis and interpretation; D - Writing the article; E - Critical revision of the article; F - Final approval of article</div>
+			<div class="clearAll">&nbsp;</div>
+		</div>		
+				
+		</div>
+			
+	<div class="simple-list pad-top-12 pad-bot-10">		
+			<div class="list-row-small-2">
+			<div class="dirLeft w-23px">&nbsp;</div>
+			<div class="dirLeft w-100-c23 em-08">Submission date: 2024-04-03</div>
+			<div class="clearAll">&nbsp;</div>
+		</div>		
+		
+		
+		
+			<div class="list-row-small-2">
+			<div class="dirLeft w-23px">&nbsp;</div>
+			<div class="dirLeft w-100-c23 em-08">Acceptance date: 2024-04-12</div>
+			<div class="clearAll">&nbsp;</div>
+		</div>		
+	
+		
+			<div class="list-row-small-2">
+			<div class="dirLeft w-23px">&nbsp;</div>
+			<div class="dirLeft w-100-c23 em-08">Online publication date: 2024-09-02</div>
+			<div class="clearAll">&nbsp;</div>
+		</div>		
+		
+		</div>
+	
+					<div class="simple-list">		
+					    		<div class="list-row-small">
+    			<div class="dirLeft w-23px">&nbsp;</div>
+    			<div class="dirLeft w-100-c23">
+    				    					<div class="em-085"><b>Corresponding author</b></div>
+    					    				    				<div class="em-095">
+    					<a href="https://www.plantprotection.pl/Author-benedicta-nana-esi-nyarko/238509" class="corrAuthorLink" class="black">Benedicta Nana Esi Nyarko</a> &nbsp;&nbsp;<a href="mailto:benedictanyarko41@gmail.com"><div class="icon icon-envelope-o"></div></a><br/>
+    					School of Information Engineering, Southwest University of Science and Technology, Qinglong Road,
+Fucheng District, Mianyang C, Mianyang, China
+    				</div>
+    			
+				</div>
+    			<div class="clearAll">&nbsp;</div>
+    		</div>		
+			
+																						
+				
+		</div>
+		
+	</div>
+		
+</div>
+
+<script type="text/javascript">
+
+	function highlightAuthors(a, on, aff){
+		var a = a.split(',');
+		
+		if(on == 1)
+			$('#aff_'+aff).stop().animate({backgroundColor: "#FFFAA8"}, 166);
+		else
+			$('#aff_'+aff).stop().animate({backgroundColor: "#fff"}, 166);
+		
+		for(i = 0; i < a.length; i++){
+			if(on == 1)
+				$('#author_'+a[i]).stop().animate({backgroundColor: "#FFFAA8"}, 166);
+			else
+				$('#author_'+a[i]).stop().animate({backgroundColor: "#fff"}, 166);
+		}
+	}
+	
+	function highlightAffs(affs, on, author){
+		var affs = affs.split(',');
+		
+		if(on == 1)
+			$('#author_'+author).stop().animate({backgroundColor: "#FFFAA8"}, 166);
+		else
+			$('#author_'+author).stop().animate({backgroundColor: "#fff"}, 166);
+		
+		for(i = 0; i < affs.length; i++){
+			if(on == 1)
+				$('#aff_'+affs[i]).stop().animate({backgroundColor: "#FFFAA8"}, 166);
+			else
+				$('#aff_'+affs[i]).stop().animate({backgroundColor: "#fff"}, 166);
+		}
+	}
+
+</script>
+
+<div style="height: 8px;line-height: 8px;font-size: 0;">&nbsp;</div>
+
+<div class="magBibliography2">Journal of Plant Protection Research 2024;64(3):265-274</div>
+<!-- 
+ -->
+
+	<div class="magBibliography2">
+		<div class="dirLeft" style="padding-top: 7px; padding-right: 10px;">
+			<a href="https://doi.org/10.24425/jppr.2024.151253"><div class="dirLeft icon icon-angle-right"></div>DOI: <span class="magBibliographyDOI">https://doi.org/10.24425/jppr.2024.151253</span></a>
+		</div>
+				<div class="clearAll">&nbsp;</div>
+	</div>	
+</div>
+<div class="clearAll">&nbsp;</div>
+
+
+<div class="abstractButtons">
+
+		    		    		<a class="abstractFullText dirLeft" target="_blank" onclick="pdfStats(187093);return true;" href="https://www.plantprotection.pl/pdf-187093-113569?filename=Improved-YOLOv5m-model-ba.pdf">
+    			<div class="abstractFullTextButton dirLeft">
+    				<div class="dirLeft icon icon-file-pdf-o"></div>
+    				Article <span class="block">(PDF)</span>
+    			</div>
+    			
+    			    		</a>
+    			
+				
+				
+				<a href="#references" class="abstractLink dirLeft">
+			<span class="block">References</span><span class="block">&nbsp;</span><span class="block">(30)</span>
+		</a>
+				
+				<div class="clearAll">&nbsp;</div>
+
+</div>
+
+
+
+<div class="highlights">
+    <div class="abstractLabel">HIGHLIGHTS</div>
+    <div class="">
+    	<ul>
+    	    	<li>Analysis of deep Learning Methods for cocoa tree disease detection</li>
+    	    	<li><i>K-means</i>++ for Achor box optimization</li>
+    	    	<li>Loss Function Optimization for YOLOv5m</li>
+    	    	<li>The Swin Transformer for multi-scale feature acquisition</li>
+    	    	</ul>
+    </div>
+</div>
+
+<div class="abstractLabel">KEYWORDS</div>
+<div class="abstractContent">
+	<a href="https://www.plantprotection.pl/Keyword-cocoa+tree+disease/606006" class="singleKeyword">cocoa tree disease<div class="icon icon-circle dirRight"></div></a><a href="https://www.plantprotection.pl/Keyword-EIoU/533903" class="singleKeyword">EIoU<div class="icon icon-circle dirRight"></div></a><a href="https://www.plantprotection.pl/Keyword-K-means+%2B%2B/606007" class="singleKeyword"><i>K-means</i>++<div class="icon icon-circle dirRight"></div></a><a href="https://www.plantprotection.pl/Keyword-plant+disease+detection/426327" class="singleKeyword">plant disease detection<div class="icon icon-circle dirRight"></div></a><a href="https://www.plantprotection.pl/Keyword-Swin+Transformer/606008" class="singleKeyword">Swin Transformer</a>	<div class="clearAll">&nbsp;</div>
+</div>
+
+
+<div class="abstractLabel">TOPICS</div>
+<div class="abstractContent">
+	<div class="topics-list">
+	<ul>
+		<li><a href="https://www.plantprotection.pl/Topic-Plant+Pathology/2734">Plant Pathology</a></li>	</ul>
+	</div>
+</div>
+
+
+<div class="abstractLabel">ABSTRACT</div>
+<div class="abstractContent realAbstract" >The cocoa tree is prone to diverse diseases such as stem borer, stem canker, swollen shot,
+and root rot disease which impedes high yield. Early disease detection is a critical component
+of diverse management processes that are implemented throughout the life cycle
+of cocoa plants. Consequently, several studies on the application of detection techniques
+to recognize diseases have been proposed by several researchers. This study proposes the
+YOLOv5m network for cocoa tree disease detection. The development of cocoa disease
+detection systems will aid farmers in early identification prompt response, and efficient
+management of related cocoa tree diseases which will ultimately increase yield and sustainability.
+To improve the performance of the YOLOv5m network, a Swin Transformer
+(Swin-T) was added to the backbone network to improve cocoa tree disease detection accuracy.
+By obtaining global information, the <i>K-means</i>++ algorithm was added to modify
+the choice of initial clustering locations, and Efficient Intersection over Union Loss (EIoU)
+was used as a bounding box regression loss function to speed up the bounding box regression
+rate, resulting in higher precision of the YOLOv5m network. The experimental
+assessment outcome of this study showed that the proposed method YOLOv5m (Swin-T,
+<i>K-means</i>++, EIoU) achieved 96% precision, mAP of 92%, and recall of 94%. Compared to
+the original YOLOv5m, precision improved by 5%, mAP improved by 6%, and recall by
+5%. Comparing the proposed method to the conventional YOLOv5m, the latter showed
+improved performance and better accuracy with a high detection speed and compactness.
+This improvement offers a useful and effective method for detecting diseases related to
+cocoa trees.</div>
+
+		
+
+
+
+	
+
+		
+    <a class="anchor" id="responsibleEditor"></a>
+    <div class="abstractLabel">RESPONSIBLE EDITOR</div>
+    <div class="abstractContentReal">
+    	<div class="">Piotr Iwaniuk</div>
+    </div>
+    <a class="anchor" id="conflictOfInterests"></a>
+    <div class="abstractLabel">CONFLICT OF INTEREST</div>
+    <div class="abstractContentReal">
+    	<div class="">The authors have declared that no conflict of interests exist.</div>
+    </div>
+
+
+
+
+
+
+
+<div style="padding-top: 20px;"></div>
+<a class="anchor" id="references"></a>
+<div class="abstractLabel"><span class="block">REFERENCES</span><span class="block">&nbsp;</span><span class="block">(30)</span></div>
+<div class="abstractContent">
+			<a class="anchor" id="1"></a>
+<div class="ref" id="ref_1">
+	<div class="dirLeft refNo">1.</div>
+	<div class="dirLeft refText">
+		<div style="word-break: break-word;">Adeniyi D.O., Asogwa E.U. 2023. Chapter 14 – Complexes and diversity of pathogens and insect pests of cocoa tree. Forest Microbiology. Tree Diseases and Pests 3: 285–311. DOI: <a target="_blank" href="https://doi.org/10.1016/B978-0-443-18694-3.00002-X">https://doi.org/10.1016/B978-0...</a>.</div>
+		<div class="refLinks">
+			<!-- 
+			<div class="dirLeft refExternalLink"><div class="icon icon-external-link"></div></div>
+			<div class="dirLeft" style="width: 20px;">&nbsp;</div> -->
+			
+						<div class="dirLeft"><a target="_blank" href="https://doi.org/10.1016/B978-0-443-18694-3.00002-X">CrossRef</a></div>
+			<div class="dirLeft" style="width: 25px;">&nbsp;</div>
+						
+						
+						
+			
+			<div class="dirLeft"><a target="_blank" href="https://scholar.google.com/scholar?q=Adeniyi D.O., Asogwa E.U. 2023. Chapter 14 – Complexes and diversity of pathogens and insect pests of cocoa tree. Forest Microbiology. Tree Diseases and Pests 3: 285–311. DOI: https://doi.org/10.1016/B978-0-443-18694-3.00002-X.">Google Scholar</a></div>
+			
+			<div class="clearAll">&nbsp;</div>					
+		</div>
+	</div>
+	<div class="clearAll">&nbsp;</div>
+</div>			<a class="anchor" id="2"></a>
+<div class="ref" id="ref_2">
+	<div class="dirLeft refNo">2.</div>
+	<div class="dirLeft refText">
+		<div style="word-break: break-word;">Ambele C.F., Bisseleua H.D., Djuideu C.T., Akutse K.S. 2023. Managing insect services and disservices in cocoa agroforestry systems. Agroforestry Systems: 1–20. DOI: <a target="_blank" href="https://doi.org/10.1007/s10457-023-00839-x">https://doi.org/10.1007/s10457...</a>.</div>
+		<div class="refLinks">
+			<!-- 
+			<div class="dirLeft refExternalLink"><div class="icon icon-external-link"></div></div>
+			<div class="dirLeft" style="width: 20px;">&nbsp;</div> -->
+			
+						<div class="dirLeft"><a target="_blank" href="https://doi.org/10.1007/s10457-023-00839-x">CrossRef</a></div>
+			<div class="dirLeft" style="width: 25px;">&nbsp;</div>
+						
+						
+						
+			
+			<div class="dirLeft"><a target="_blank" href="https://scholar.google.com/scholar?q=Ambele C.F., Bisseleua H.D., Djuideu C.T., Akutse K.S. 2023. Managing insect services and disservices in cocoa agroforestry systems. Agroforestry Systems: 1–20. DOI: https://doi.org/10.1007/s10457-023-00839-x.">Google Scholar</a></div>
+			
+			<div class="clearAll">&nbsp;</div>					
+		</div>
+	</div>
+	<div class="clearAll">&nbsp;</div>
+</div>			<a class="anchor" id="3"></a>
+<div class="ref" id="ref_3">
+	<div class="dirLeft refNo">3.</div>
+	<div class="dirLeft refText">
+		<div style="word-break: break-word;">Ameyaw G.A., Chingandu N., Domfeh O., Dzahini-Obiatey H.K., Gutiérrez O.A., Brown J.K. Variable detection of cacao swollen shoots disease-associated badnaviruses by PCR amplification. p. 13–17. In: “Proceedings of International Symposium on Cocoa Research (ISCR)”. Lima, Peru. DOI: <a target="_blank" href="https://doi/full/10.5555/20203127100">https://doi/full/10.5555/20203...</a>.</div>
+		<div class="refLinks">
+			<!-- 
+			<div class="dirLeft refExternalLink"><div class="icon icon-external-link"></div></div>
+			<div class="dirLeft" style="width: 20px;">&nbsp;</div> -->
+			
+						
+						
+						
+			
+			<div class="dirLeft"><a target="_blank" href="https://scholar.google.com/scholar?q=Ameyaw G.A., Chingandu N., Domfeh O., Dzahini-Obiatey H.K., Gutiérrez O.A., Brown J.K. Variable detection of cacao swollen shoots disease-associated badnaviruses by PCR amplification. p. 13–17. In: “Proceedings of International Symposium on Cocoa Research (ISCR)”. Lima, Peru. DOI: https://doi/full/10.5555/20203127100.">Google Scholar</a></div>
+			
+			<div class="clearAll">&nbsp;</div>					
+		</div>
+	</div>
+	<div class="clearAll">&nbsp;</div>
+</div>			<a class="anchor" id="4"></a>
+<div class="ref" id="ref_4">
+	<div class="dirLeft refNo">4.</div>
+	<div class="dirLeft refText">
+		<div style="word-break: break-word;">Angira A., Sharma T., Choudhary N., Rishi N., Verma H.N., Awasthi L.P. 2024. Viral diseases of field and Horticultural Crops. Academic Press: 15–21. DOI: <a target="_blank" href="https://doi.org/10.1016/B978-0-323-90899-3.00015-X">https://doi.org/10.1016/B978-0...</a>.</div>
+		<div class="refLinks">
+			<!-- 
+			<div class="dirLeft refExternalLink"><div class="icon icon-external-link"></div></div>
+			<div class="dirLeft" style="width: 20px;">&nbsp;</div> -->
+			
+						<div class="dirLeft"><a target="_blank" href="https://doi.org/10.1016/B978-0-323-90899-3.00015-X">CrossRef</a></div>
+			<div class="dirLeft" style="width: 25px;">&nbsp;</div>
+						
+						
+						
+			
+			<div class="dirLeft"><a target="_blank" href="https://scholar.google.com/scholar?q=Angira A., Sharma T., Choudhary N., Rishi N., Verma H.N., Awasthi L.P. 2024. Viral diseases of field and Horticultural Crops. Academic Press: 15–21. DOI: https://doi.org/10.1016/B978-0-323-90899-3.00015-X.">Google Scholar</a></div>
+			
+			<div class="clearAll">&nbsp;</div>					
+		</div>
+	</div>
+	<div class="clearAll">&nbsp;</div>
+</div>			<a class="anchor" id="5"></a>
+<div class="ref" id="ref_5">
+	<div class="dirLeft refNo">5.</div>
+	<div class="dirLeft refText">
+		<div style="word-break: break-word;">Appiah A.A. 2023. Evaluation of progress in cocoa crop protection and management. IntechOpen: 216. DOI: <a target="_blank" href="https://doi.org/10.5772/intechopen.112642">https://doi.org/10.5772/intech...</a>.</div>
+		<div class="refLinks">
+			<!-- 
+			<div class="dirLeft refExternalLink"><div class="icon icon-external-link"></div></div>
+			<div class="dirLeft" style="width: 20px;">&nbsp;</div> -->
+			
+						<div class="dirLeft"><a target="_blank" href="https://doi.org/10.5772/intechopen.112642">CrossRef</a></div>
+			<div class="dirLeft" style="width: 25px;">&nbsp;</div>
+						
+						
+						
+			
+			<div class="dirLeft"><a target="_blank" href="https://scholar.google.com/scholar?q=Appiah A.A. 2023. Evaluation of progress in cocoa crop protection and management. IntechOpen: 216. DOI: https://doi.org/10.5772/intechopen.112642.">Google Scholar</a></div>
+			
+			<div class="clearAll">&nbsp;</div>					
+		</div>
+	</div>
+	<div class="clearAll">&nbsp;</div>
+</div>			<a class="anchor" id="6"></a>
+<div class="ref" id="ref_6">
+	<div class="dirLeft refNo">6.</div>
+	<div class="dirLeft refText">
+		<div style="word-break: break-word;">Argout X., Droc G., Fouet O., Rouard M., Labadie K., Rhoné B., Rey Loor G., Lanaud C. 2023. Pangenomic exploration of Theobroma cacao: new insights into gene content diversity and selection during domestication. bioRxiv: 2023.2011.2003.565324. DOI: <a target="_blank" href="https://doi.org/10.1101/2023.11.03.565324">https://doi.org/10.1101/2023.1...</a>.</div>
+		<div class="refLinks">
+			<!-- 
+			<div class="dirLeft refExternalLink"><div class="icon icon-external-link"></div></div>
+			<div class="dirLeft" style="width: 20px;">&nbsp;</div> -->
+			
+						<div class="dirLeft"><a target="_blank" href="https://doi.org/10.1101/2023.11.03.565324">CrossRef</a></div>
+			<div class="dirLeft" style="width: 25px;">&nbsp;</div>
+						
+						
+						
+			
+			<div class="dirLeft"><a target="_blank" href="https://scholar.google.com/scholar?q=Argout X., Droc G., Fouet O., Rouard M., Labadie K., Rhoné B., Rey Loor G., Lanaud C. 2023. Pangenomic exploration of Theobroma cacao: new insights into gene content diversity and selection during domestication. bioRxiv: 2023.2011.2003.565324. DOI: https://doi.org/10.1101/2023.11.03.565324.">Google Scholar</a></div>
+			
+			<div class="clearAll">&nbsp;</div>					
+		</div>
+	</div>
+	<div class="clearAll">&nbsp;</div>
+</div>			<a class="anchor" id="7"></a>
+<div class="ref" id="ref_7">
+	<div class="dirLeft refNo">7.</div>
+	<div class="dirLeft refText">
+		<div style="word-break: break-word;">Bacea D.-S., Oniga F. 2023. Single-stage architecture for improved accuracy real-time object detection on mobile devices. Image and Vision Computing 130: 104613. DOI: <a target="_blank" href="https://doi.org/10.1016/j.imavis.2022.104613">https://doi.org/10.1016/j.imav...</a>.</div>
+		<div class="refLinks">
+			<!-- 
+			<div class="dirLeft refExternalLink"><div class="icon icon-external-link"></div></div>
+			<div class="dirLeft" style="width: 20px;">&nbsp;</div> -->
+			
+						<div class="dirLeft"><a target="_blank" href="https://doi.org/10.1016/j.imavis.2022.104613">CrossRef</a></div>
+			<div class="dirLeft" style="width: 25px;">&nbsp;</div>
+						
+						
+						
+			
+			<div class="dirLeft"><a target="_blank" href="https://scholar.google.com/scholar?q=Bacea D.-S., Oniga F. 2023. Single-stage architecture for improved accuracy real-time object detection on mobile devices. Image and Vision Computing 130: 104613. DOI: https://doi.org/10.1016/j.imavis.2022.104613.">Google Scholar</a></div>
+			
+			<div class="clearAll">&nbsp;</div>					
+		</div>
+	</div>
+	<div class="clearAll">&nbsp;</div>
+</div>			<a class="anchor" id="8"></a>
+<div class="ref" id="ref_8">
+	<div class="dirLeft refNo">8.</div>
+	<div class="dirLeft refText">
+		<div style="word-break: break-word;">Bahadur A., Dutta P. 2023. Diseases of commercial crops and their integrated management. CRC Press: 38–52. DOI: <a target="_blank" href="https://doi.org/10.4324/9781032627908">https://doi.org/10.4324/978103...</a>.</div>
+		<div class="refLinks">
+			<!-- 
+			<div class="dirLeft refExternalLink"><div class="icon icon-external-link"></div></div>
+			<div class="dirLeft" style="width: 20px;">&nbsp;</div> -->
+			
+						
+						
+						
+			
+			<div class="dirLeft"><a target="_blank" href="https://scholar.google.com/scholar?q=Bahadur A., Dutta P. 2023. Diseases of commercial crops and their integrated management. CRC Press: 38–52. DOI: https://doi.org/10.4324/9781032627908.">Google Scholar</a></div>
+			
+			<div class="clearAll">&nbsp;</div>					
+		</div>
+	</div>
+	<div class="clearAll">&nbsp;</div>
+</div>			<a class="anchor" id="9"></a>
+<div class="ref" id="ref_9">
+	<div class="dirLeft refNo">9.</div>
+	<div class="dirLeft refText">
+		<div style="word-break: break-word;">Bhatti U. A., Bazai S. U., Hussain S., Fakhar S., Ku C. S., Marjan S., Yee P. L., Jing L. 2023. Deep learning-based trees disease recognition and classification using hyperspectral data. Computers, Materials & Continua 77 (1): 681–697. DOI: <a target="_blank" href="https://doi.org/10.32604/cmc.2023.037958">https://doi.org/10.32604/cmc.2...</a>.</div>
+		<div class="refLinks">
+			<!-- 
+			<div class="dirLeft refExternalLink"><div class="icon icon-external-link"></div></div>
+			<div class="dirLeft" style="width: 20px;">&nbsp;</div> -->
+			
+						<div class="dirLeft"><a target="_blank" href="https://doi.org/10.32604/cmc.2023.037958">CrossRef</a></div>
+			<div class="dirLeft" style="width: 25px;">&nbsp;</div>
+						
+						
+						
+			
+			<div class="dirLeft"><a target="_blank" href="https://scholar.google.com/scholar?q=Bhatti U. A., Bazai S. U., Hussain S., Fakhar S., Ku C. S., Marjan S., Yee P. L., Jing L. 2023. Deep learning-based trees disease recognition and classification using hyperspectral data. Computers, Materials & Continua 77 (1): 681–697. DOI: https://doi.org/10.32604/cmc.2023.037958.">Google Scholar</a></div>
+			
+			<div class="clearAll">&nbsp;</div>					
+		</div>
+	</div>
+	<div class="clearAll">&nbsp;</div>
+</div>			<a class="anchor" id="10"></a>
+<div class="ref" id="ref_10">
+	<div class="dirLeft refNo">10.</div>
+	<div class="dirLeft refText">
+		<div style="word-break: break-word;">Bissiri Y.H.-T., Ollo S., Maurice K.L.M., Senan S., Kolo Y. 2023. Socio-entomological characterisation of cocoa orchards in the haut-sassandra region (Côte d’Ivoire). Journal of Entomology and Zoology Studies 11 (3): 42–48. DOI: <a target="_blank" href="https://doi.org/10.22271/j.ento.2023.v11.i3a.9203">https://doi.org/10.22271/j.ent...</a>.</div>
+		<div class="refLinks">
+			<!-- 
+			<div class="dirLeft refExternalLink"><div class="icon icon-external-link"></div></div>
+			<div class="dirLeft" style="width: 20px;">&nbsp;</div> -->
+			
+						<div class="dirLeft"><a target="_blank" href="https://doi.org/10.22271/j.ento.2023.v11.i3a.9203">CrossRef</a></div>
+			<div class="dirLeft" style="width: 25px;">&nbsp;</div>
+						
+						
+						
+			
+			<div class="dirLeft"><a target="_blank" href="https://scholar.google.com/scholar?q=Bissiri Y.H.-T., Ollo S., Maurice K.L.M., Senan S., Kolo Y. 2023. Socio-entomological characterisation of cocoa orchards in the haut-sassandra region (Côte d’Ivoire). Journal of Entomology and Zoology Studies 11 (3): 42–48. DOI: https://doi.org/10.22271/j.ento.2023.v11.i3a.9203.">Google Scholar</a></div>
+			
+			<div class="clearAll">&nbsp;</div>					
+		</div>
+	</div>
+	<div class="clearAll">&nbsp;</div>
+</div>			<a class="anchor" id="11"></a>
+<div class="ref" id="ref_11">
+	<div class="dirLeft refNo">11.</div>
+	<div class="dirLeft refText">
+		<div style="word-break: break-word;">Bose T., Spies C.F., Hammerbacher A., Coutinho T.A. 2023. Phytophthora: an underestimated threat to agriculture, forestry, and natural ecosystems in sub-Saharan Africa. Mycological Progress 22 (11): 78. DOI: <a target="_blank" href="https://doi.org/10.1007/s11557-023-01926-0">https://doi.org/10.1007/s11557...</a>.</div>
+		<div class="refLinks">
+			<!-- 
+			<div class="dirLeft refExternalLink"><div class="icon icon-external-link"></div></div>
+			<div class="dirLeft" style="width: 20px;">&nbsp;</div> -->
+			
+						<div class="dirLeft"><a target="_blank" href="https://doi.org/10.1007/s11557-023-01926-0">CrossRef</a></div>
+			<div class="dirLeft" style="width: 25px;">&nbsp;</div>
+						
+						
+						
+			
+			<div class="dirLeft"><a target="_blank" href="https://scholar.google.com/scholar?q=Bose T., Spies C.F., Hammerbacher A., Coutinho T.A. 2023. Phytophthora: an underestimated threat to agriculture, forestry, and natural ecosystems in sub-Saharan Africa. Mycological Progress 22 (11): 78. DOI: https://doi.org/10.1007/s11557-023-01926-0.">Google Scholar</a></div>
+			
+			<div class="clearAll">&nbsp;</div>					
+		</div>
+	</div>
+	<div class="clearAll">&nbsp;</div>
+</div>			<a class="anchor" id="12"></a>
+<div class="ref" id="ref_12">
+	<div class="dirLeft refNo">12.</div>
+	<div class="dirLeft refText">
+		<div style="word-break: break-word;">Coulibaly M., Kouassi K., Kolo S., Asseu O. 2020. Detection of “swollen shoot” disease in Ivorian cocoa trees via convolutional neural networks. Engineering 12: 166–176. DOI: <a target="_blank" href="https://doi.org/10.4236/eng.2020.123014">https://doi.org/10.4236/eng.20...</a>.</div>
+		<div class="refLinks">
+			<!-- 
+			<div class="dirLeft refExternalLink"><div class="icon icon-external-link"></div></div>
+			<div class="dirLeft" style="width: 20px;">&nbsp;</div> -->
+			
+						<div class="dirLeft"><a target="_blank" href="https://doi.org/10.4236/eng.2020.123014">CrossRef</a></div>
+			<div class="dirLeft" style="width: 25px;">&nbsp;</div>
+						
+						
+						
+			
+			<div class="dirLeft"><a target="_blank" href="https://scholar.google.com/scholar?q=Coulibaly M., Kouassi K., Kolo S., Asseu O. 2020. Detection of “swollen shoot” disease in Ivorian cocoa trees via convolutional neural networks. Engineering 12: 166–176. DOI: https://doi.org/10.4236/eng.2020.123014.">Google Scholar</a></div>
+			
+			<div class="clearAll">&nbsp;</div>					
+		</div>
+	</div>
+	<div class="clearAll">&nbsp;</div>
+</div>			<a class="anchor" id="13"></a>
+<div class="ref" id="ref_13">
+	<div class="dirLeft refNo">13.</div>
+	<div class="dirLeft refText">
+		<div style="word-break: break-word;">Debnath A.J., Dutta P., Bahadur A. 2023. Diseases of commercial crops and their integrated management. CRC Press: 38–52 DOI: <a target="_blank" href="https://doi.org/10.4324/9781032627908">https://doi.org/10.4324/978103...</a>.</div>
+		<div class="refLinks">
+			<!-- 
+			<div class="dirLeft refExternalLink"><div class="icon icon-external-link"></div></div>
+			<div class="dirLeft" style="width: 20px;">&nbsp;</div> -->
+			
+						<div class="dirLeft"><a target="_blank" href="https://doi.org/10.4324/9781032627908">CrossRef</a></div>
+			<div class="dirLeft" style="width: 25px;">&nbsp;</div>
+						
+						
+						
+			
+			<div class="dirLeft"><a target="_blank" href="https://scholar.google.com/scholar?q=Debnath A.J., Dutta P., Bahadur A. 2023. Diseases of commercial crops and their integrated management. CRC Press: 38–52 DOI: https://doi.org/10.4324/9781032627908.">Google Scholar</a></div>
+			
+			<div class="clearAll">&nbsp;</div>					
+		</div>
+	</div>
+	<div class="clearAll">&nbsp;</div>
+</div>			<a class="anchor" id="14"></a>
+<div class="ref" id="ref_14">
+	<div class="dirLeft refNo">14.</div>
+	<div class="dirLeft refText">
+		<div style="word-break: break-word;">Diwan T., Anirudh G., Tembhurne J.V. 2023. Object detection using YOLO: challenges, architectural successors, datasets and applications. Multimedia Tools and Applications 82 (6): 9243–9275. DOI: <a target="_blank" href="https://doi.org/10.1007/s11042-022-13644-y">https://doi.org/10.1007/s11042...</a>.</div>
+		<div class="refLinks">
+			<!-- 
+			<div class="dirLeft refExternalLink"><div class="icon icon-external-link"></div></div>
+			<div class="dirLeft" style="width: 20px;">&nbsp;</div> -->
+			
+						<div class="dirLeft"><a target="_blank" href="https://doi.org/10.1007/s11042-022-13644-y">CrossRef</a></div>
+			<div class="dirLeft" style="width: 25px;">&nbsp;</div>
+						
+						
+						
+			
+			<div class="dirLeft"><a target="_blank" href="https://scholar.google.com/scholar?q=Diwan T., Anirudh G., Tembhurne J.V. 2023. Object detection using YOLO: challenges, architectural successors, datasets and applications. Multimedia Tools and Applications 82 (6): 9243–9275. DOI: https://doi.org/10.1007/s11042-022-13644-y.">Google Scholar</a></div>
+			
+			<div class="clearAll">&nbsp;</div>					
+		</div>
+	</div>
+	<div class="clearAll">&nbsp;</div>
+</div>			<a class="anchor" id="15"></a>
+<div class="ref" id="ref_15">
+	<div class="dirLeft refNo">15.</div>
+	<div class="dirLeft refText">
+		<div style="word-break: break-word;">George A.A. 2019. Management of the cacao swollen shoot virus (CSSV) menace in Ghana: The past, present and the future. Plant Diseases. T.-P. Snježana. IntechOpen. Rijeka 1–13 DOI: <a target="_blank" href="https://doi.org/10.5772/intechopen.87009">https://doi.org/10.5772/intech...</a>.</div>
+		<div class="refLinks">
+			<!-- 
+			<div class="dirLeft refExternalLink"><div class="icon icon-external-link"></div></div>
+			<div class="dirLeft" style="width: 20px;">&nbsp;</div> -->
+			
+						<div class="dirLeft"><a target="_blank" href="https://doi.org/10.5772/intechopen.87009">CrossRef</a></div>
+			<div class="dirLeft" style="width: 25px;">&nbsp;</div>
+						
+						
+						
+			
+			<div class="dirLeft"><a target="_blank" href="https://scholar.google.com/scholar?q=George A.A. 2019. Management of the cacao swollen shoot virus (CSSV) menace in Ghana: The past, present and the future. Plant Diseases. T.-P. Snježana. IntechOpen. Rijeka 1–13 DOI: https://doi.org/10.5772/intechopen.87009.">Google Scholar</a></div>
+			
+			<div class="clearAll">&nbsp;</div>					
+		</div>
+	</div>
+	<div class="clearAll">&nbsp;</div>
+</div>			<a class="anchor" id="16"></a>
+<div class="ref" id="ref_16">
+	<div class="dirLeft refNo">16.</div>
+	<div class="dirLeft refText">
+		<div style="word-break: break-word;">Gong X., Zhang S. 2023. An analysis of plant diseases identification based on deep learning methods. The Plant Pathology Journal 39 (4): 319. DOI: <a target="_blank" href="https://doi.org/10.5423%2FPPJ.OA.02.2023.0034">https://doi.org/10.5423%2FPPJ....</a>.</div>
+		<div class="refLinks">
+			<!-- 
+			<div class="dirLeft refExternalLink"><div class="icon icon-external-link"></div></div>
+			<div class="dirLeft" style="width: 20px;">&nbsp;</div> -->
+			
+						<div class="dirLeft"><a target="_blank" href="https://doi.org/10.5423/PPJ.OA.02.2023.0034">CrossRef</a></div>
+			<div class="dirLeft" style="width: 25px;">&nbsp;</div>
+						
+						
+						
+			
+			<div class="dirLeft"><a target="_blank" href="https://scholar.google.com/scholar?q=Gong X., Zhang S. 2023. An analysis of plant diseases identification based on deep learning methods. The Plant Pathology Journal 39 (4): 319. DOI: https://doi.org/10.5423%2FPPJ.OA.02.2023.0034.">Google Scholar</a></div>
+			
+			<div class="clearAll">&nbsp;</div>					
+		</div>
+	</div>
+	<div class="clearAll">&nbsp;</div>
+</div>			<a class="anchor" id="17"></a>
+<div class="ref" id="ref_17">
+	<div class="dirLeft refNo">17.</div>
+	<div class="dirLeft refText">
+		<div style="word-break: break-word;">Hacinas E.A., Querol L., Acero L.A., Arcelo M., Amalin D., Rustia D.J. 2022. Automated cocoa pod borer detection using an edge computing-based deep learning algorithm. In: Proceedings of "ASABE Annual International Meeting”. Houston, Texas, USA. DOI: <a target="_blank" href="https://doi.org/10.13031/aim.202200238">https://doi.org/10.13031/aim.2...</a>.</div>
+		<div class="refLinks">
+			<!-- 
+			<div class="dirLeft refExternalLink"><div class="icon icon-external-link"></div></div>
+			<div class="dirLeft" style="width: 20px;">&nbsp;</div> -->
+			
+						<div class="dirLeft"><a target="_blank" href="https://doi.org/10.13031/aim.202200238">CrossRef</a></div>
+			<div class="dirLeft" style="width: 25px;">&nbsp;</div>
+						
+						
+						
+			
+			<div class="dirLeft"><a target="_blank" href="https://scholar.google.com/scholar?q=Hacinas E.A., Querol L., Acero L.A., Arcelo M., Amalin D., Rustia D.J. 2022. Automated cocoa pod borer detection using an edge computing-based deep learning algorithm. In: Proceedings of "ASABE Annual International Meeting”. Houston, Texas, USA. DOI: https://doi.org/10.13031/aim.202200238.">Google Scholar</a></div>
+			
+			<div class="clearAll">&nbsp;</div>					
+		</div>
+	</div>
+	<div class="clearAll">&nbsp;</div>
+</div>			<a class="anchor" id="18"></a>
+<div class="ref" id="ref_18">
+	<div class="dirLeft refNo">18.</div>
+	<div class="dirLeft refText">
+		<div style="word-break: break-word;">Kingsley-Umana E., Asogwa E., Mokwunye I. 2022. Outbreak, distribution and damage characteristics of cocoa stem borer, eulophonotus myrmeleon felder 1874 (Lepidoptera: Cossidae) in major cocoa producing states in Nigeria. Advances in Entomology 10: 175–185. DOI: <a target="_blank" href="https://doi.org/10.4236/ae.2022.102013">https://doi.org/10.4236/ae.202...</a>.</div>
+		<div class="refLinks">
+			<!-- 
+			<div class="dirLeft refExternalLink"><div class="icon icon-external-link"></div></div>
+			<div class="dirLeft" style="width: 20px;">&nbsp;</div> -->
+			
+						<div class="dirLeft"><a target="_blank" href="https://doi.org/10.4236/ae.2022.102013">CrossRef</a></div>
+			<div class="dirLeft" style="width: 25px;">&nbsp;</div>
+						
+						
+						
+			
+			<div class="dirLeft"><a target="_blank" href="https://scholar.google.com/scholar?q=Kingsley-Umana E., Asogwa E., Mokwunye I. 2022. Outbreak, distribution and damage characteristics of cocoa stem borer, eulophonotus myrmeleon felder 1874 (Lepidoptera: Cossidae) in major cocoa producing states in Nigeria. Advances in Entomology 10: 175–185. DOI: https://doi.org/10.4236/ae.2022.102013.">Google Scholar</a></div>
+			
+			<div class="clearAll">&nbsp;</div>					
+		</div>
+	</div>
+	<div class="clearAll">&nbsp;</div>
+</div>			<a class="anchor" id="19"></a>
+<div class="ref" id="ref_19">
+	<div class="dirLeft refNo">19.</div>
+	<div class="dirLeft refText">
+		<div style="word-break: break-word;">Kumi S., Kelly D., Woodstuff J., Lomotey R.K., Orji R., Deters R. 2022. Cocoa companion: Deep learning-based smartphone application for cocoa disease detection. Procedia Computer Science 203: 87–94. DOI: <a target="_blank" href="https://doi.org/10.1016/j.procs.2022.07.013">https://doi.org/10.1016/j.proc...</a>.</div>
+		<div class="refLinks">
+			<!-- 
+			<div class="dirLeft refExternalLink"><div class="icon icon-external-link"></div></div>
+			<div class="dirLeft" style="width: 20px;">&nbsp;</div> -->
+			
+						<div class="dirLeft"><a target="_blank" href="https://doi.org/10.1016/j.procs.2022.07.013">CrossRef</a></div>
+			<div class="dirLeft" style="width: 25px;">&nbsp;</div>
+						
+						
+						
+			
+			<div class="dirLeft"><a target="_blank" href="https://scholar.google.com/scholar?q=Kumi S., Kelly D., Woodstuff J., Lomotey R.K., Orji R., Deters R. 2022. Cocoa companion: Deep learning-based smartphone application for cocoa disease detection. Procedia Computer Science 203: 87–94. DOI: https://doi.org/10.1016/j.procs.2022.07.013.">Google Scholar</a></div>
+			
+			<div class="clearAll">&nbsp;</div>					
+		</div>
+	</div>
+	<div class="clearAll">&nbsp;</div>
+</div>			<a class="anchor" id="20"></a>
+<div class="ref" id="ref_20">
+	<div class="dirLeft refNo">20.</div>
+	<div class="dirLeft refText">
+		<div style="word-break: break-word;">Muller E. 2016. Cacao swollen shoot virus (CSSV): history, biology, and genome. p. 337–358. In: “Cacao Diseases” (Bailey B., Meinhardt L., eds.). Springer, Cham DOI: <a target="_blank" href="https://doi.org/10.1007/978-3-319-24789-2_10">https://doi.org/10.1007/978-3-...</a>.</div>
+		<div class="refLinks">
+			<!-- 
+			<div class="dirLeft refExternalLink"><div class="icon icon-external-link"></div></div>
+			<div class="dirLeft" style="width: 20px;">&nbsp;</div> -->
+			
+						<div class="dirLeft"><a target="_blank" href="https://doi.org/10.1007/978-3-319-24789-2_10">CrossRef</a></div>
+			<div class="dirLeft" style="width: 25px;">&nbsp;</div>
+						
+						
+						
+			
+			<div class="dirLeft"><a target="_blank" href="https://scholar.google.com/scholar?q=Muller E. 2016. Cacao swollen shoot virus (CSSV): history, biology, and genome. p. 337–358. In: “Cacao Diseases” (Bailey B., Meinhardt L., eds.). Springer, Cham DOI: https://doi.org/10.1007/978-3-319-24789-2_10.">Google Scholar</a></div>
+			
+			<div class="clearAll">&nbsp;</div>					
+		</div>
+	</div>
+	<div class="clearAll">&nbsp;</div>
+</div>			<a class="anchor" id="21"></a>
+<div class="ref" id="ref_21">
+	<div class="dirLeft refNo">21.</div>
+	<div class="dirLeft refText">
+		<div style="word-break: break-word;">Nandini M.L.N. 2023. Detection of plant diseases and pests using deep learning models: a recent research. Chelonian Research Foundation 18 (2): 474–501. DOI: <a target="_blank" href="https://doi.org/10.18011/2023.10(2).474-501">https://doi.org/10.18011/2023....</a>.</div>
+		<div class="refLinks">
+			<!-- 
+			<div class="dirLeft refExternalLink"><div class="icon icon-external-link"></div></div>
+			<div class="dirLeft" style="width: 20px;">&nbsp;</div> -->
+			
+						<div class="dirLeft"><a target="_blank" href="https://doi.org/10.18011/2023.10(2).474-501">CrossRef</a></div>
+			<div class="dirLeft" style="width: 25px;">&nbsp;</div>
+						
+						
+						
+			
+			<div class="dirLeft"><a target="_blank" href="https://scholar.google.com/scholar?q=Nandini M.L.N. 2023. Detection of plant diseases and pests using deep learning models: a recent research. Chelonian Research Foundation 18 (2): 474–501. DOI: https://doi.org/10.18011/2023.10(2).474-501.">Google Scholar</a></div>
+			
+			<div class="clearAll">&nbsp;</div>					
+		</div>
+	</div>
+	<div class="clearAll">&nbsp;</div>
+</div>			<a class="anchor" id="22"></a>
+<div class="ref" id="ref_22">
+	<div class="dirLeft refNo">22.</div>
+	<div class="dirLeft refText">
+		<div style="word-break: break-word;">Nyadanu D., Akromah R., Adomako B., Kwoseh C., Lowor S.T., Dzahini-Obiatey H., Akrofi A.Y., Assuah M.K. 2012. Inheritance and general combining ability studies of detached pod, leaf disc and natural field resistance to Phytophthora palmivora and Phytophthora megakarya in cacao (Theobroma cacao L.). Euphytica 188 (2): 253–264. DOI: <a target="_blank" href="https://doi.org/10.1007/s10681-012-0717-x">https://doi.org/10.1007/s10681...</a>.</div>
+		<div class="refLinks">
+			<!-- 
+			<div class="dirLeft refExternalLink"><div class="icon icon-external-link"></div></div>
+			<div class="dirLeft" style="width: 20px;">&nbsp;</div> -->
+			
+						<div class="dirLeft"><a target="_blank" href="https://doi.org/10.1007/s10681-012-0717-x">CrossRef</a></div>
+			<div class="dirLeft" style="width: 25px;">&nbsp;</div>
+						
+						
+						
+			
+			<div class="dirLeft"><a target="_blank" href="https://scholar.google.com/scholar?q=Nyadanu D., Akromah R., Adomako B., Kwoseh C., Lowor S.T., Dzahini-Obiatey H., Akrofi A.Y., Assuah M.K. 2012. Inheritance and general combining ability studies of detached pod, leaf disc and natural field resistance to Phytophthora palmivora and Phytophthora megakarya in cacao (Theobroma cacao L.). Euphytica 188 (2): 253–264. DOI: https://doi.org/10.1007/s10681-012-0717-x.">Google Scholar</a></div>
+			
+			<div class="clearAll">&nbsp;</div>					
+		</div>
+	</div>
+	<div class="clearAll">&nbsp;</div>
+</div>			<a class="anchor" id="23"></a>
+<div class="ref" id="ref_23">
+	<div class="dirLeft refNo">23.</div>
+	<div class="dirLeft refText">
+		<div style="word-break: break-word;">Okali C. 2023. Female and male in West Africa. Routledge: 169–178 DOI: <a target="_blank" href="https://doi.org/10.4324/9781003402749">https://doi.org/10.4324/978100...</a>.</div>
+		<div class="refLinks">
+			<!-- 
+			<div class="dirLeft refExternalLink"><div class="icon icon-external-link"></div></div>
+			<div class="dirLeft" style="width: 20px;">&nbsp;</div> -->
+			
+						<div class="dirLeft"><a target="_blank" href="https://doi.org/10.4324/9781003402749">CrossRef</a></div>
+			<div class="dirLeft" style="width: 25px;">&nbsp;</div>
+						
+						
+						
+			
+			<div class="dirLeft"><a target="_blank" href="https://scholar.google.com/scholar?q=Okali C. 2023. Female and male in West Africa. Routledge: 169–178 DOI: https://doi.org/10.4324/9781003402749.">Google Scholar</a></div>
+			
+			<div class="clearAll">&nbsp;</div>					
+		</div>
+	</div>
+	<div class="clearAll">&nbsp;</div>
+</div>			<a class="anchor" id="24"></a>
+<div class="ref" id="ref_24">
+	<div class="dirLeft refNo">24.</div>
+	<div class="dirLeft refText">
+		<div style="word-break: break-word;">Puig A.S. 2023. Fungal pathogens of cacao in Puerto Rico. Plants 12 (22): 3855. DOI: <a target="_blank" href="https://doi.org/10.3390/plants12223855">https://doi.org/10.3390/plants...</a>.</div>
+		<div class="refLinks">
+			<!-- 
+			<div class="dirLeft refExternalLink"><div class="icon icon-external-link"></div></div>
+			<div class="dirLeft" style="width: 20px;">&nbsp;</div> -->
+			
+						<div class="dirLeft"><a target="_blank" href="https://doi.org/10.3390/plants12223855">CrossRef</a></div>
+			<div class="dirLeft" style="width: 25px;">&nbsp;</div>
+						
+						
+						
+			
+			<div class="dirLeft"><a target="_blank" href="https://scholar.google.com/scholar?q=Puig A.S. 2023. Fungal pathogens of cacao in Puerto Rico. Plants 12 (22): 3855. DOI: https://doi.org/10.3390/plants12223855.">Google Scholar</a></div>
+			
+			<div class="clearAll">&nbsp;</div>					
+		</div>
+	</div>
+	<div class="clearAll">&nbsp;</div>
+</div>			<a class="anchor" id="25"></a>
+<div class="ref" id="ref_25">
+	<div class="dirLeft refNo">25.</div>
+	<div class="dirLeft refText">
+		<div style="word-break: break-word;">Ramos-Sobrinho R., Kouakou K., Bi A. B., Keith C. V., Diby L., Kouame C., Aka R. A., Marelli J.-P., Brown J. K. 2021. Molecular detection of cacao swollen shoot badnavirus species by amplification with four PCR primer pairs, and evidence that cacao swollen shoot Togo B virus-like isolates are highly prevalent in Côte d’Ivoire. European Journal of Plant Pathology 159 (4): 941–947. DOI: <a target="_blank" href="https://doi.org/10.1007/s10658-021-02203-0">https://doi.org/10.1007/s10658...</a>.</div>
+		<div class="refLinks">
+			<!-- 
+			<div class="dirLeft refExternalLink"><div class="icon icon-external-link"></div></div>
+			<div class="dirLeft" style="width: 20px;">&nbsp;</div> -->
+			
+						<div class="dirLeft"><a target="_blank" href="https://doi.org/10.1007/s10658-021-02203-0">CrossRef</a></div>
+			<div class="dirLeft" style="width: 25px;">&nbsp;</div>
+						
+						
+						
+			
+			<div class="dirLeft"><a target="_blank" href="https://scholar.google.com/scholar?q=Ramos-Sobrinho R., Kouakou K., Bi A. B., Keith C. V., Diby L., Kouame C., Aka R. A., Marelli J.-P., Brown J. K. 2021. Molecular detection of cacao swollen shoot badnavirus species by amplification with four PCR primer pairs, and evidence that cacao swollen shoot Togo B virus-like isolates are highly prevalent in Côte d’Ivoire. European Journal of Plant Pathology 159 (4): 941–947. DOI: https://doi.org/10.1007/s10658-021-02203-0.">Google Scholar</a></div>
+			
+			<div class="clearAll">&nbsp;</div>					
+		</div>
+	</div>
+	<div class="clearAll">&nbsp;</div>
+</div>			<a class="anchor" id="26"></a>
+<div class="ref" id="ref_26">
+	<div class="dirLeft refNo">26.</div>
+	<div class="dirLeft refText">
+		<div style="word-break: break-word;">Rodriguez C., Alfaro O., Paredes P., Esenarro D., Hilario F. 2021. Machine learning techniques in the detection of cocoa (Theobroma cacao L.) diseases. Annals of the Romanian Society for Cell Biology 25 (3): 7732–7741.</div>
+		<div class="refLinks">
+			<!-- 
+			<div class="dirLeft refExternalLink"><div class="icon icon-external-link"></div></div>
+			<div class="dirLeft" style="width: 20px;">&nbsp;</div> -->
+			
+						
+						
+						
+			
+			<div class="dirLeft"><a target="_blank" href="https://scholar.google.com/scholar?q=Rodriguez C., Alfaro O., Paredes P., Esenarro D., Hilario F. 2021. Machine learning techniques in the detection of cocoa (Theobroma cacao L.) diseases. Annals of the Romanian Society for Cell Biology 25 (3): 7732–7741.">Google Scholar</a></div>
+			
+			<div class="clearAll">&nbsp;</div>					
+		</div>
+	</div>
+	<div class="clearAll">&nbsp;</div>
+</div>			<a class="anchor" id="27"></a>
+<div class="ref" id="ref_27">
+	<div class="dirLeft refNo">27.</div>
+	<div class="dirLeft refText">
+		<div style="word-break: break-word;">Shoaib M., Shah B., Ei-Sappagh S., Ali A., Ullah A., Alenezi F., Gechev T., Hussain T., Ali F. 2023. An advanced deep learning models-based plant disease detection: A review of recent research. Frontiers in Plant Science 14: 1158933. DOI: <a target="_blank" href="https://doi.org/10.3389/fpls.2023.1158933">https://doi.org/10.3389/fpls.2...</a>.</div>
+		<div class="refLinks">
+			<!-- 
+			<div class="dirLeft refExternalLink"><div class="icon icon-external-link"></div></div>
+			<div class="dirLeft" style="width: 20px;">&nbsp;</div> -->
+			
+						<div class="dirLeft"><a target="_blank" href="https://doi.org/10.3389/fpls.2023.1158933">CrossRef</a></div>
+			<div class="dirLeft" style="width: 25px;">&nbsp;</div>
+						
+						
+						
+			
+			<div class="dirLeft"><a target="_blank" href="https://scholar.google.com/scholar?q=Shoaib M., Shah B., Ei-Sappagh S., Ali A., Ullah A., Alenezi F., Gechev T., Hussain T., Ali F. 2023. An advanced deep learning models-based plant disease detection: A review of recent research. Frontiers in Plant Science 14: 1158933. DOI: https://doi.org/10.3389/fpls.2023.1158933.">Google Scholar</a></div>
+			
+			<div class="clearAll">&nbsp;</div>					
+		</div>
+	</div>
+	<div class="clearAll">&nbsp;</div>
+</div>			<a class="anchor" id="28"></a>
+<div class="ref" id="ref_28">
+	<div class="dirLeft refNo">28.</div>
+	<div class="dirLeft refText">
+		<div style="word-break: break-word;">Snell N. 2023. Modern medicines from plants. CRC Press: 51–62. DOI: <a target="_blank" href="https://doi.org/10.1201/9781003413004">https://doi.org/10.1201/978100...</a>.</div>
+		<div class="refLinks">
+			<!-- 
+			<div class="dirLeft refExternalLink"><div class="icon icon-external-link"></div></div>
+			<div class="dirLeft" style="width: 20px;">&nbsp;</div> -->
+			
+						<div class="dirLeft"><a target="_blank" href="https://doi.org/10.1201/9781003413004">CrossRef</a></div>
+			<div class="dirLeft" style="width: 25px;">&nbsp;</div>
+						
+						
+						
+			
+			<div class="dirLeft"><a target="_blank" href="https://scholar.google.com/scholar?q=Snell N. 2023. Modern medicines from plants. CRC Press: 51–62. DOI: https://doi.org/10.1201/9781003413004.">Google Scholar</a></div>
+			
+			<div class="clearAll">&nbsp;</div>					
+		</div>
+	</div>
+	<div class="clearAll">&nbsp;</div>
+</div>			<a class="anchor" id="29"></a>
+<div class="ref" id="ref_29">
+	<div class="dirLeft refNo">29.</div>
+	<div class="dirLeft refText">
+		<div style="word-break: break-word;">Wang S., Wang Y., Chang Y., Zhao R., She Y. 2023. EBSE-YOLO: high precision recognition algorithm for small target foreign object detection. IEEE Access 11: 57951–57964. DOI: <a target="_blank" href="https://doi.org/10.1109/ACCESS.2023.3284062">https://doi.org/10.1109/ACCESS...</a>.</div>
+		<div class="refLinks">
+			<!-- 
+			<div class="dirLeft refExternalLink"><div class="icon icon-external-link"></div></div>
+			<div class="dirLeft" style="width: 20px;">&nbsp;</div> -->
+			
+						<div class="dirLeft"><a target="_blank" href="https://doi.org/10.1109/ACCESS.2023.3284062">CrossRef</a></div>
+			<div class="dirLeft" style="width: 25px;">&nbsp;</div>
+						
+						
+						
+			
+			<div class="dirLeft"><a target="_blank" href="https://scholar.google.com/scholar?q=Wang S., Wang Y., Chang Y., Zhao R., She Y. 2023. EBSE-YOLO: high precision recognition algorithm for small target foreign object detection. IEEE Access 11: 57951–57964. DOI: https://doi.org/10.1109/ACCESS.2023.3284062.">Google Scholar</a></div>
+			
+			<div class="clearAll">&nbsp;</div>					
+		</div>
+	</div>
+	<div class="clearAll">&nbsp;</div>
+</div>			<a class="anchor" id="30"></a>
+<div class="ref" id="ref_30">
+	<div class="dirLeft refNo">30.</div>
+	<div class="dirLeft refText">
+		<div style="word-break: break-word;">Yan Y. 2022. Using the improved SSD algorithm to motion target detection and tracking. Computational Intelligence and Neuroscience 2022 (1): 1886964.</div>
+		<div class="refLinks">
+			<!-- 
+			<div class="dirLeft refExternalLink"><div class="icon icon-external-link"></div></div>
+			<div class="dirLeft" style="width: 20px;">&nbsp;</div> -->
+			
+						<div class="dirLeft"><a target="_blank" href="https://doi.org/10.1155/2022/1886964">CrossRef</a></div>
+			<div class="dirLeft" style="width: 25px;">&nbsp;</div>
+						
+						
+						
+			
+			<div class="dirLeft"><a target="_blank" href="https://scholar.google.com/scholar?q=Yan Y. 2022. Using the improved SSD algorithm to motion target detection and tracking. Computational Intelligence and Neuroscience 2022 (1): 1886964.">Google Scholar</a></div>
+			
+			<div class="clearAll">&nbsp;</div>					
+		</div>
+	</div>
+	<div class="clearAll">&nbsp;</div>
+</div>	</div>
+
+
+
+
+							
+	
+		
+		<!--  END MAIN -->
+		</div>
+		
+		<div class="col-12 col-md-4">
+		
+			<div class="rightBoxes fullWidth">
+						
+						
+			<div style="padding-bottom:20px">
+	<a href="https://www.editorialsystem.com/jppr" target="_blank" class="rightBoxOpt" title="Submit your paper - Opens in a new window" >
+		<div class="rightBoxOptLine"></div>
+		Submit your paper
+	</a>
+
+			<a href="https://www.plantprotection.pl/Instructions-for-Authors,972.html" class="rightBoxOpt" >
+			<div class="rightBoxOptLine"></div>
+			Instructions for Authors		</a>
+			<a href="https://www.plantprotection.pl/dl/f66d34df41674c6a84c063fd8bf15a2d/" class="rightBoxOpt" >
+			<div class="rightBoxOptLine"></div>
+			Template for Authors		</a>
+			<a href="https://www.plantprotection.pl/Instructions-for-Reviewers,977.html" class="rightBoxOpt" >
+			<div class="rightBoxOptLine"></div>
+			Instructions for Reviewers		</a>
+					
+</div>								
+											
+								
+								
+							
+								
+							
+				<div class="rightBox1">
+	
+<div class="rightBoxLabel"><div class="boxIcon icon icon-share dirRight"></div>Share</div>
+<div class="rightBoxContent">
+<div class="sharethis-inline-share-buttons"></div></div>
+
+<div class="shareSendEmail"><a href="mailto:?body=http://www.plantprotection.pl/Improved-YOLOv5m-model-based-on-Swin-Transformer-K-means-and-Efficient-Intersection,187093,0,2.html&subject=I recommend this paper">Send by email</a></div></div> 
+									<div class="rightBox1">
+	<div class="rightBoxLabel"><div class="boxIcon icon icon-link dirRight" aria-hidden="true"></div>RELATED ARTICLE</div>
+	<div class="otherArticles">
+					<div class="boxPos">
+				<a href="https://www.plantprotection.pl/Tomato-fruit-disease-detection-based-on-improved-single-shot-detection-algorithm,169295,0,2.html">
+			Tomato fruit disease detection based on improved single shot detection algorithm
+		</a>
+		</div>
+		</div>
+</div>
+								
+									
+<div class="rightBox1" >
+	<div class="rightBoxLabel"><div class="boxIcon icon icon-ios-browsers-outline dirRight" aria-hidden="true"></div>Indexes</div>
+	<div style="height: 1px;line-height: 1px;font-size: 0;">&nbsp;</div>	<div class="indexPos boxPos"><a href="https://www.plantprotection.pl/Keywords">Keywords index</a></div>
+			<div class="indexPos boxPos"><a href="https://www.plantprotection.pl/Topics">Topics index</a></div>
+		<div class="boxPos"><a href="https://www.plantprotection.pl/Authors">Authors index</a></div>
+</div>				
+
+								
+								
+										
+						
+						</div>
+		</div>
+	</div>
+	</div>
+	</div>
+	
+	 
+	<div class="row footer1">
+	<div class="container-fluid stdRow">
+	<div class="row">
+		<div class="col-6">
+												<div class="issn">
+				<div style="display:inline-block;">
+				<table>
+				<tr><td class="issnLabel">eISSN:</td><td class="issnValue">1899-007X</td></tr>				<tr><td class="issnLabel">ISSN:</td><td class="issnValue">1427-4345</td></tr>				</table>
+				</div>
+			</div>	
+					</div>
+		
+		<div class="col-6 text-right">	
+		<img src="https://www.plantprotection.pl/es-static/g/c/js_logo_small.png" alt="Journals System - logo"/>		
+		</div>
+	</div>
+	</div>
+	</div>
+	
+	<div class="row footer2">
+	<div class="container-fluid stdRow">
+	<div class="row">
+		<div class="col-12">
+			<div class="copyright">			
+								<div class="text-center">© 2006-2026 Journal hosting platform by <a href="http://www.bentus.com">Bentus</a></div>
+			</div>
+		</div>
+	</div>
+	</div>
+	</div>
+		
+	
+<div class="hidden">
+	<a id="cookieAlertLinkId" href="#" data-fancybox="cookie-alert" data-src="#acceptCookiesId"></a>
+</div>
+
+<script> 
+
+var acceptCookies = getCookie("acceptOwnCookiesCookie");
+var declineCookies = getCookie("declineOwnCookiesCookie");
+
+if (acceptCookies == 1 || declineCookies == 1) {
+}
+else{
+	jQuery(document).ready(function() {	
+		$("[data-fancybox=cookie-alert]").fancybox({
+			'modal'	: true
+		});
+		
+		$('#cookieAlertLinkId').click();
+	});
+}
+
+</script>	
+<div class="hidden">
+<div id="acceptCookiesId" class="box-w-900">
+	<div>
+		<div class="pad-bot-10 font09em lh14em">We process personal data collected when visiting the website. The function of obtaining information about users and their behavior is carried out by voluntarily entered information in forms and saving cookies in end devices. Data, including cookies, are used to provide services, improve the user experience and to analyze the traffic in accordance with the <a href='https://www.editorialsystem.com/Privacy-policy/' target='_blank' title='Privacy policy - Opens in a new window'>Privacy policy</a>. Data are also collected and processed by Google Analytics tool (<a href='https://www.google.com/intl/eng/policies/privacy/partners/' target='_blank' title='Google - Opens in a new window'>more</a>).<br/><br/>You can change cookies settings in your browser. Restricted use of cookies in the browser configuration may affect some functionalities of the website.</div>
+	</div>
+	
+	<div class="text-center">
+	<a href="#" class="cookieAccept" onclick="setCookie('acceptOwnCookiesCookie',1,800); $.fancybox.close(); return false;">
+		I agree
+	</a>
+	<a href="#" class="cookieDecline" onclick="setCookie('declineOwnCookiesCookie',1,3); $.fancybox.close(); return false;">
+		I do not agree
+	</a>
+		</div>
+</div>
+</div>
+
+	
+	<div class="row footer2">
+	<div class="container-fluid stdRow">
+	<div class="row">
+	<div class="col-12 scrollArrow">
+		<script>
+			$(document).ready(function(){
+				// scroll body to 0px on click
+				$('#scrollToTop').click(function () {
+					var body = $("html, body");
+					body.animate({scrollTop:0}, 500, 'swing');
+				});
+			});
+		</script>
+	
+		<a href="#" id="scrollToTop"><img src="https://www.plantprotection.pl/es-static/v/chevron-up.svg" width="31" alt="Scroll to top"/></a>
+	</div>
+	</div>
+	</div>
+	</div>
+	
+</div>
+</body>
+</html>

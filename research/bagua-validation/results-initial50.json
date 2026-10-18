@@ -1,0 +1,3197 @@
+{
+  "MobileNetV3-Small": {
+    "model": "MobileNetV3-Small",
+    "classes": [
+      "Healthy",
+      "Carmenta foraseminis",
+      "Moniliophthora perniciosa",
+      "Moniliophthora roreri",
+      "Phytophthora palmivora"
+    ],
+    "weights_sha256": "3d2be982091e4ed126b4ce3249fee68b3be8792302ef56575015323bd90a2e72",
+    "device": "cuda",
+    "gpu": "NVIDIA GeForce RTX 4060 Laptop GPU",
+    "inference_only_mean_ms": 1.3311235001310706,
+    "pipeline_median_ms": 49.9675574246794,
+    "matrix_rows_healthy_diseased_cols_five_model_classes": [
+      [
+        18,
+        0,
+        5,
+        1,
+        1
+      ],
+      [
+        4,
+        5,
+        5,
+        4,
+        7
+      ]
+    ],
+    "monilia_top1": {
+      "confusion_rows_actual_healthy_diseased_cols_negative_positive": [
+        [
+          24,
+          1
+        ],
+        [
+          21,
+          4
+        ]
+      ],
+      "sensitivity": 0.16,
+      "specificity": 0.96,
+      "accuracy": 0.56,
+      "precision": 0.8
+    },
+    "any_disease_top1": {
+      "confusion_rows_actual_healthy_diseased_cols_negative_positive": [
+        [
+          18,
+          7
+        ],
+        [
+          4,
+          21
+        ]
+      ],
+      "sensitivity": 0.84,
+      "specificity": 0.72,
+      "accuracy": 0.78,
+      "precision": 0.75
+    },
+    "rows": [
+      {
+        "label": "enfermos",
+        "id": "1GlVqDWriINMZHt_0CUvgdb640IUn0bsC",
+        "name": "cacao_enfermo (34).jpg",
+        "size": 63370,
+        "path": "images/enfermos-1GlVqDWriINMZHt_0CUvgdb640IUn0bsC.jpg",
+        "sha256": "6b9a0f2ac1f3ee7471f0d18faed8fb36159ec58fe4b5a27f9a8f14c59370c081",
+        "width": 640,
+        "height": 640,
+        "pred": 4,
+        "pred_name": "Phytophthora palmivora",
+        "probabilities": [
+          0.18222367763519287,
+          0.16435566544532776,
+          0.04724651575088501,
+          0.12165854126214981,
+          0.48451557755470276
+        ],
+        "total_decode_transform_inference_ms": 30.600271886214614
+      },
+      {
+        "label": "enfermos",
+        "id": "1V5sWdssd6EHH8ftZrI5XcuLm-mSyprc8",
+        "name": "cacao_enfermo (47).jpg",
+        "size": 62951,
+        "path": "images/enfermos-1V5sWdssd6EHH8ftZrI5XcuLm-mSyprc8.jpg",
+        "sha256": "f8527ef9a6e8ad5f91961b30051844c3c98cb42260748cd653b2f27cffb50cf0",
+        "width": 640,
+        "height": 640,
+        "pred": 3,
+        "pred_name": "Moniliophthora roreri",
+        "probabilities": [
+          0.019860900938510895,
+          0.01600067690014839,
+          0.27343112230300903,
+          0.3636980652809143,
+          0.3270092308521271
+        ],
+        "total_decode_transform_inference_ms": 5.633004941046238
+      },
+      {
+        "label": "enfermos",
+        "id": "13jdYVYJ-_bqLgI0pHEZCVr6uTC1Hi7_F",
+        "name": "cacao_enfermo (25).jpg",
+        "size": 53150,
+        "path": "images/enfermos-13jdYVYJ-_bqLgI0pHEZCVr6uTC1Hi7_F.jpg",
+        "sha256": "b288233e45791bb2aed8042c8ac8980f23b139a0e01b4bb06693d556b9d73d65",
+        "width": 640,
+        "height": 640,
+        "pred": 1,
+        "pred_name": "Carmenta foraseminis",
+        "probabilities": [
+          0.004383154213428497,
+          0.9495183229446411,
+          0.03462909162044525,
+          0.0021420479752123356,
+          0.009327411651611328
+        ],
+        "total_decode_transform_inference_ms": 4.533016122877598
+      },
+      {
+        "label": "enfermos",
+        "id": "1ZGpygDf411x6aLQiSLHFdZCBs0WIBMHp",
+        "name": "cacao_enfermo (26).jpg",
+        "size": 69795,
+        "path": "images/enfermos-1ZGpygDf411x6aLQiSLHFdZCBs0WIBMHp.jpg",
+        "sha256": "806ad57315200e89782a2d5506028d8f7357079dae1ac674b0d10ce1ed725a07",
+        "width": 640,
+        "height": 640,
+        "pred": 3,
+        "pred_name": "Moniliophthora roreri",
+        "probabilities": [
+          0.017116514965891838,
+          0.0030199808534234762,
+          0.05010740086436272,
+          0.7222249507904053,
+          0.2075311243534088
+        ],
+        "total_decode_transform_inference_ms": 4.478601971641183
+      },
+      {
+        "label": "enfermos",
+        "id": "1amodQlWuuqL_gctdYK9hoMPdYaaNGlwa",
+        "name": "cacao_enfermo (3).jpg",
+        "size": 44452,
+        "path": "images/enfermos-1amodQlWuuqL_gctdYK9hoMPdYaaNGlwa.jpg",
+        "sha256": "44ab236defe2568c2766d60f5233ca309b5f8547a09ed466fa088cf70ee026cf",
+        "width": 640,
+        "height": 640,
+        "pred": 1,
+        "pred_name": "Carmenta foraseminis",
+        "probabilities": [
+          0.3714882731437683,
+          0.44690534472465515,
+          0.07453765720129013,
+          0.02457241155207157,
+          0.082496277987957
+        ],
+        "total_decode_transform_inference_ms": 4.14535216987133
+      },
+      {
+        "label": "enfermos",
+        "id": "1go4FAOaUHEoeyUPo1rwdTf5DtXrrVA0_",
+        "name": "cacao_enfermo (39).jpg",
+        "size": 62828,
+        "path": "images/enfermos-1go4FAOaUHEoeyUPo1rwdTf5DtXrrVA0_.jpg",
+        "sha256": "9b0737e24ab2543729dd2feffc33878489ec3af86983b4d9cd5006cb8257b26b",
+        "width": 640,
+        "height": 640,
+        "pred": 2,
+        "pred_name": "Moniliophthora perniciosa",
+        "probabilities": [
+          0.1541386842727661,
+          0.017878016456961632,
+          0.7751494646072388,
+          0.03922002762556076,
+          0.013613758608698845
+        ],
+        "total_decode_transform_inference_ms": 3.972125006839633
+      },
+      {
+        "label": "enfermos",
+        "id": "17e5Er4m1IGX6QRnVXFrEtR6w0B8w3se2",
+        "name": "cacao_enfermo (38).jpg",
+        "size": 65024,
+        "path": "images/enfermos-17e5Er4m1IGX6QRnVXFrEtR6w0B8w3se2.jpg",
+        "sha256": "7e712fcaa9f399c6e9a56d37a72d75a7a7bdba54388e3947df87fa04ca972586",
+        "width": 640,
+        "height": 640,
+        "pred": 0,
+        "pred_name": "Healthy",
+        "probabilities": [
+          0.39815008640289307,
+          0.022988416254520416,
+          0.3023633360862732,
+          0.14877495169639587,
+          0.12772320210933685
+        ],
+        "total_decode_transform_inference_ms": 4.115679068490863
+      },
+      {
+        "label": "enfermos",
+        "id": "1IIpiWFgaWZ0ybBj8FyRPZCaWspllmVmh",
+        "name": "cacao_enfermo (36).jpg",
+        "size": 81952,
+        "path": "images/enfermos-1IIpiWFgaWZ0ybBj8FyRPZCaWspllmVmh.jpg",
+        "sha256": "b05f927cef8674625c0e475eca84c4d766f5152ec3beb2316f8a411fae46652a",
+        "width": 640,
+        "height": 640,
+        "pred": 4,
+        "pred_name": "Phytophthora palmivora",
+        "probabilities": [
+          0.2178637534379959,
+          0.1851375550031662,
+          0.22890810668468475,
+          0.0951935276389122,
+          0.2728970944881439
+        ],
+        "total_decode_transform_inference_ms": 5.004642065614462
+      },
+      {
+        "label": "enfermos",
+        "id": "130-W1Uo6AWs12O5DpPiDf2d__rK8AvZx",
+        "name": "cacao_enfermo (16).jpg",
+        "size": 71160,
+        "path": "images/enfermos-130-W1Uo6AWs12O5DpPiDf2d__rK8AvZx.jpg",
+        "sha256": "c1b5ce01bf8e57e10e900f41a89d6a51af9ba264cfbde0476cb05974ba8c41c7",
+        "width": 640,
+        "height": 640,
+        "pred": 4,
+        "pred_name": "Phytophthora palmivora",
+        "probabilities": [
+          0.11589241027832031,
+          0.09265266358852386,
+          0.05343730375170708,
+          0.2367636263370514,
+          0.5012540221214294
+        ],
+        "total_decode_transform_inference_ms": 4.646696150302887
+      },
+      {
+        "label": "enfermos",
+        "id": "1lyIAPyJHpCzQHuv4rwf-2RKfYLiAF5WR",
+        "name": "cacao_enfermo (49).jpg",
+        "size": 68543,
+        "path": "images/enfermos-1lyIAPyJHpCzQHuv4rwf-2RKfYLiAF5WR.jpg",
+        "sha256": "c4b356d80f6b2a8db87f0afc19b07f3b334eed7ff880e58fcba77ec160a0c4f8",
+        "width": 640,
+        "height": 640,
+        "pred": 2,
+        "pred_name": "Moniliophthora perniciosa",
+        "probabilities": [
+          0.23078447580337524,
+          0.056506965309381485,
+          0.46631792187690735,
+          0.04337035119533539,
+          0.20302028954029083
+        ],
+        "total_decode_transform_inference_ms": 4.152113106101751
+      },
+      {
+        "label": "enfermos",
+        "id": "1K1VfZGiPrKwNE-4VeNj0OrOEWPwYvOgM",
+        "name": "cacao_enfermo (11).jpg",
+        "size": 54451,
+        "path": "images/enfermos-1K1VfZGiPrKwNE-4VeNj0OrOEWPwYvOgM.jpg",
+        "sha256": "e4930467facdbb98af263c7b0a4c5fa7927d50c2989521195ab434220454db7b",
+        "width": 640,
+        "height": 640,
+        "pred": 0,
+        "pred_name": "Healthy",
+        "probabilities": [
+          0.46762099862098694,
+          0.17854805290699005,
+          0.036471378058195114,
+          0.017565982416272163,
+          0.2997935116291046
+        ],
+        "total_decode_transform_inference_ms": 4.17696894146502
+      },
+      {
+        "label": "enfermos",
+        "id": "1JQKsY1UmTEL7Ghoq3dFE4Hjh8vzIKmYa",
+        "name": "cacao_enfermo (29).jpg",
+        "size": 68453,
+        "path": "images/enfermos-1JQKsY1UmTEL7Ghoq3dFE4Hjh8vzIKmYa.jpg",
+        "sha256": "2e943a29415ccface19c02b934a08cce904d3bd8fbe158ef19daeeb24133b644",
+        "width": 640,
+        "height": 640,
+        "pred": 0,
+        "pred_name": "Healthy",
+        "probabilities": [
+          0.8000888228416443,
+          0.033127203583717346,
+          0.058780133724212646,
+          0.04438672587275505,
+          0.06361714750528336
+        ],
+        "total_decode_transform_inference_ms": 4.000963876023889
+      },
+      {
+        "label": "enfermos",
+        "id": "1ibqHRP5dQlnuVaAzV5QCqlnolRRuCKXn",
+        "name": "cacao_enfermo (4).jpg",
+        "size": 66197,
+        "path": "images/enfermos-1ibqHRP5dQlnuVaAzV5QCqlnolRRuCKXn.jpg",
+        "sha256": "3f921d8314f99b97b0dd148b36ad894c2e414869b100348d17fe14823e6bf3f0",
+        "width": 640,
+        "height": 640,
+        "pred": 4,
+        "pred_name": "Phytophthora palmivora",
+        "probabilities": [
+          0.008426910266280174,
+          0.19640444219112396,
+          0.002910146489739418,
+          0.057860564440488815,
+          0.7343978881835938
+        ],
+        "total_decode_transform_inference_ms": 4.068741109222174
+      },
+      {
+        "label": "enfermos",
+        "id": "1G3BUugkrit7TNNmUFtvSmHa7jkFIC6bp",
+        "name": "cacao_enfermo (6).jpg",
+        "size": 69115,
+        "path": "images/enfermos-1G3BUugkrit7TNNmUFtvSmHa7jkFIC6bp.jpg",
+        "sha256": "208564e17459094ba7c7e7b97cf64128aa1e3d1ee5d5be741d5c9854e726ad38",
+        "width": 640,
+        "height": 640,
+        "pred": 1,
+        "pred_name": "Carmenta foraseminis",
+        "probabilities": [
+          0.04229354485869408,
+          0.7189475297927856,
+          0.004700749181210995,
+          0.01026941742748022,
+          0.2237887680530548
+        ],
+        "total_decode_transform_inference_ms": 4.014159087091684
+      },
+      {
+        "label": "enfermos",
+        "id": "1sguYLi__JPlEr1QN1fRwlpS9Iv9LxXdl",
+        "name": "cacao_enfermo (24).jpg",
+        "size": 43555,
+        "path": "images/enfermos-1sguYLi__JPlEr1QN1fRwlpS9Iv9LxXdl.jpg",
+        "sha256": "8156d65f1623db1d179fd85195d4a31533e5ee9f4e9dfcebbed69d7ec9f22d61",
+        "width": 640,
+        "height": 640,
+        "pred": 0,
+        "pred_name": "Healthy",
+        "probabilities": [
+          0.4509565830230713,
+          0.042833112180233,
+          0.1450360119342804,
+          0.14966973662376404,
+          0.21150453388690948
+        ],
+        "total_decode_transform_inference_ms": 3.915546927601099
+      },
+      {
+        "label": "enfermos",
+        "id": "1t_r4LCl5u4S3KjfMdKvsW_ZmggBd4AAp",
+        "name": "cacao_enfermo (2).jpg",
+        "size": 66872,
+        "path": "images/enfermos-1t_r4LCl5u4S3KjfMdKvsW_ZmggBd4AAp.jpg",
+        "sha256": "09d956c294ecccb919df4e39eb3093f27dca9632496bdef6bdd419d96f72a21d",
+        "width": 640,
+        "height": 640,
+        "pred": 4,
+        "pred_name": "Phytophthora palmivora",
+        "probabilities": [
+          0.1534043401479721,
+          0.013317444361746311,
+          0.011539475992321968,
+          0.029897477477788925,
+          0.7918412685394287
+        ],
+        "total_decode_transform_inference_ms": 3.9752470329403877
+      },
+      {
+        "label": "enfermos",
+        "id": "1o8Ii1_T6ehXhWQDlbgBTVs-2NLiJzi-G",
+        "name": "cacao_enfermo (50).jpg",
+        "size": 61201,
+        "path": "images/enfermos-1o8Ii1_T6ehXhWQDlbgBTVs-2NLiJzi-G.jpg",
+        "sha256": "fd849c4f83e685d81b619df987936bc89b2be1d8bc2b873bc76aaed918f0ee5a",
+        "width": 640,
+        "height": 640,
+        "pred": 3,
+        "pred_name": "Moniliophthora roreri",
+        "probabilities": [
+          0.027184147387742996,
+          0.016403721645474434,
+          0.10720442980527878,
+          0.6441075205802917,
+          0.20510011911392212
+        ],
+        "total_decode_transform_inference_ms": 4.261634079739451
+      },
+      {
+        "label": "enfermos",
+        "id": "1Iq6DK_AlK347meeaCUZpSBdey_PJqvY8",
+        "name": "cacao_enfermo (28).jpg",
+        "size": 82879,
+        "path": "images/enfermos-1Iq6DK_AlK347meeaCUZpSBdey_PJqvY8.jpg",
+        "sha256": "7ed87a5ea8c8384217f87224a5c29d25cf3a5404c36381fd7e4bcdfc8b7d8b80",
+        "width": 640,
+        "height": 640,
+        "pred": 2,
+        "pred_name": "Moniliophthora perniciosa",
+        "probabilities": [
+          0.11534266173839569,
+          0.1366271674633026,
+          0.6283136606216431,
+          0.053039565682411194,
+          0.06667699664831161
+        ],
+        "total_decode_transform_inference_ms": 4.061056999489665
+      },
+      {
+        "label": "enfermos",
+        "id": "183moUnJR7lMfUAxye9EfDJEvlC-gM5un",
+        "name": "cacao_enfermo (10).jpg",
+        "size": 48476,
+        "path": "images/enfermos-183moUnJR7lMfUAxye9EfDJEvlC-gM5un.jpg",
+        "sha256": "5d22517cc3081ce7517ccc56dfe6a7a5f622b66ab6e3e5cb5726ea87c45b1728",
+        "width": 640,
+        "height": 640,
+        "pred": 3,
+        "pred_name": "Moniliophthora roreri",
+        "probabilities": [
+          0.12844452261924744,
+          0.005148014519363642,
+          0.032784122973680496,
+          0.4918404221534729,
+          0.34178295731544495
+        ],
+        "total_decode_transform_inference_ms": 3.9742770604789257
+      },
+      {
+        "label": "enfermos",
+        "id": "1ZCVKBUQTj6sBGJhrCwuZCaoijN_89Z8I",
+        "name": "cacao_enfermo (42).jpg",
+        "size": 73150,
+        "path": "images/enfermos-1ZCVKBUQTj6sBGJhrCwuZCaoijN_89Z8I.jpg",
+        "sha256": "f342f1fb0d9b8d16f19126acca61d219111d3c66850b91e22577bc98212987b0",
+        "width": 640,
+        "height": 640,
+        "pred": 2,
+        "pred_name": "Moniliophthora perniciosa",
+        "probabilities": [
+          0.1721639186143875,
+          0.02217446267604828,
+          0.6052410006523132,
+          0.12334141135215759,
+          0.07707922905683517
+        ],
+        "total_decode_transform_inference_ms": 4.0292879566550255
+      },
+      {
+        "label": "enfermos",
+        "id": "1UDFPjqooV4xKPluZu_FPp7lO1pFdBg0w",
+        "name": "cacao_enfermo (14).jpg",
+        "size": 68222,
+        "path": "images/enfermos-1UDFPjqooV4xKPluZu_FPp7lO1pFdBg0w.jpg",
+        "sha256": "13fda0d54f7e9e804648530d490ce2941c0f7bfc64e653c17b8aa6a11c95776e",
+        "width": 640,
+        "height": 640,
+        "pred": 4,
+        "pred_name": "Phytophthora palmivora",
+        "probabilities": [
+          0.39899104833602905,
+          0.02308712899684906,
+          0.023397943004965782,
+          0.1341141164302826,
+          0.42040979862213135
+        ],
+        "total_decode_transform_inference_ms": 4.0801160503178835
+      },
+      {
+        "label": "enfermos",
+        "id": "1boD13X1cIy9di7E61Sfw-B6PbL1jSkDU",
+        "name": "cacao_enfermo (44).jpg",
+        "size": 72874,
+        "path": "images/enfermos-1boD13X1cIy9di7E61Sfw-B6PbL1jSkDU.jpg",
+        "sha256": "0f99307cea6e707381f4234ea61062ca0d802182e06874d695dfcfb78a68ba2c",
+        "width": 640,
+        "height": 640,
+        "pred": 4,
+        "pred_name": "Phytophthora palmivora",
+        "probabilities": [
+          0.03651496395468712,
+          0.10610661655664444,
+          0.005720656365156174,
+          0.0702674463391304,
+          0.7813903093338013
+        ],
+        "total_decode_transform_inference_ms": 3.987211035564542
+      },
+      {
+        "label": "enfermos",
+        "id": "11dgyngMFK104OvCJgQEL4tN8_QQRXR2O",
+        "name": "cacao_enfermo (35).jpg",
+        "size": 66261,
+        "path": "images/enfermos-11dgyngMFK104OvCJgQEL4tN8_QQRXR2O.jpg",
+        "sha256": "6128c1d127d08ca36c39b2e6a37de588646ab6cff7d568703ba23a423c84d68c",
+        "width": 640,
+        "height": 640,
+        "pred": 2,
+        "pred_name": "Moniliophthora perniciosa",
+        "probabilities": [
+          0.03921068087220192,
+          0.007721183355897665,
+          0.933821976184845,
+          0.015305588953197002,
+          0.003940523602068424
+        ],
+        "total_decode_transform_inference_ms": 4.105807049199939
+      },
+      {
+        "label": "enfermos",
+        "id": "1NdkvpK_HC1T4g0mF-z5K2GUQSv-kSB_9",
+        "name": "cacao_enfermo (19).jpg",
+        "size": 69129,
+        "path": "images/enfermos-1NdkvpK_HC1T4g0mF-z5K2GUQSv-kSB_9.jpg",
+        "sha256": "52b4a70a2d3cfbaeb1e05c8ae33676436b76138c15a92482fdf5bd762b666c65",
+        "width": 640,
+        "height": 640,
+        "pred": 1,
+        "pred_name": "Carmenta foraseminis",
+        "probabilities": [
+          0.023421742022037506,
+          0.42930954694747925,
+          0.014459031634032726,
+          0.11318478733301163,
+          0.419624924659729
+        ],
+        "total_decode_transform_inference_ms": 3.927655052393675
+      },
+      {
+        "label": "enfermos",
+        "id": "1WLYUC0zCE9RgcUANWX3mB5m68wdDgbYo",
+        "name": "cacao_enfermo (37).jpg",
+        "size": 86871,
+        "path": "images/enfermos-1WLYUC0zCE9RgcUANWX3mB5m68wdDgbYo.jpg",
+        "sha256": "22b602510f4015a28301f9f33c341c86981b38fc7a750de2592549c9e54778f3",
+        "width": 640,
+        "height": 640,
+        "pred": 1,
+        "pred_name": "Carmenta foraseminis",
+        "probabilities": [
+          0.1349020153284073,
+          0.5573864579200745,
+          0.1471131145954132,
+          0.049397777765989304,
+          0.11120064556598663
+        ],
+        "total_decode_transform_inference_ms": 4.49276901781559
+      },
+      {
+        "label": "sanos",
+        "id": "1NPoPzkCSDedMeQSZhYf8X5bM9fNKwKMt",
+        "name": "cacao_sano (11).jpg",
+        "size": 2561106,
+        "path": "images/sanos-1NPoPzkCSDedMeQSZhYf8X5bM9fNKwKMt.jpg",
+        "sha256": "ee762613240d8ea4ed54c5ea4288aa518d3f41727832f756cb3e9b0639f50572",
+        "width": 3060,
+        "height": 4080,
+        "pred": 4,
+        "pred_name": "Phytophthora palmivora",
+        "probabilities": [
+          0.08504905551671982,
+          0.02315249852836132,
+          0.024954985827207565,
+          0.17112930119037628,
+          0.6957141757011414
+        ],
+        "total_decode_transform_inference_ms": 91.4077830966562
+      },
+      {
+        "label": "sanos",
+        "id": "1qr6NSOhyZpfDF1-kvcNgTEdq9WKfazXW",
+        "name": "cacao_sano (30).jpg",
+        "size": 3227347,
+        "path": "images/sanos-1qr6NSOhyZpfDF1-kvcNgTEdq9WKfazXW.jpg",
+        "sha256": "d957469d5b0f0ca772d904c0a0fc8b0eb534c3a43a3b08e56ccaa321b068f121",
+        "width": 3060,
+        "height": 4080,
+        "pred": 2,
+        "pred_name": "Moniliophthora perniciosa",
+        "probabilities": [
+          0.3449869155883789,
+          0.03656049072742462,
+          0.5822393894195557,
+          0.0176357701420784,
+          0.01857743039727211
+        ],
+        "total_decode_transform_inference_ms": 89.4984370097518
+      },
+      {
+        "label": "sanos",
+        "id": "1Kxqv2fonm4oygrhwXf7K-8D8npIZmMLr",
+        "name": "cacao_sano (33).jpg",
+        "size": 2836771,
+        "path": "images/sanos-1Kxqv2fonm4oygrhwXf7K-8D8npIZmMLr.jpg",
+        "sha256": "b612b48d7631135874d668b1fab4ae1d7d1b3a2b8ffb731240de88960e136903",
+        "width": 3060,
+        "height": 4080,
+        "pred": 0,
+        "pred_name": "Healthy",
+        "probabilities": [
+          0.715181827545166,
+          0.00840961653739214,
+          0.2687625586986542,
+          0.0038994960486888885,
+          0.003746387781575322
+        ],
+        "total_decode_transform_inference_ms": 81.3924539834261
+      },
+      {
+        "label": "sanos",
+        "id": "1mfl63UdpIz2BBqGsVJG0Tz-0F238ahJJ",
+        "name": "cacao_sano (13).jpg",
+        "size": 2527130,
+        "path": "images/sanos-1mfl63UdpIz2BBqGsVJG0Tz-0F238ahJJ.jpg",
+        "sha256": "ce09ca21f976dbe57d8331090669eb96459d7f4531c237d97ab3eff2df43bf15",
+        "width": 3060,
+        "height": 4080,
+        "pred": 0,
+        "pred_name": "Healthy",
+        "probabilities": [
+          0.7214617729187012,
+          0.0026351960841566324,
+          0.012982391752302647,
+          0.19035221636295319,
+          0.07256846874952316
+        ],
+        "total_decode_transform_inference_ms": 70.31308207660913
+      },
+      {
+        "label": "sanos",
+        "id": "1iOdP17bAB2VK6VeEflLsQLYN5BlaIh6K",
+        "name": "cacao_sano (42).jpg",
+        "size": 2791849,
+        "path": "images/sanos-1iOdP17bAB2VK6VeEflLsQLYN5BlaIh6K.jpg",
+        "sha256": "68868cf4ab2b803a6f0a7ea54d6f458cff1644fed58c69e4c684a58a740f3bc2",
+        "width": 3060,
+        "height": 4080,
+        "pred": 0,
+        "pred_name": "Healthy",
+        "probabilities": [
+          0.7293314933776855,
+          0.008432184346020222,
+          0.2393544763326645,
+          0.006590870674699545,
+          0.016290977597236633
+        ],
+        "total_decode_transform_inference_ms": 82.10865082219243
+      },
+      {
+        "label": "sanos",
+        "id": "165bFj5-yqqnHogL2kbPREFD-P161vvkv",
+        "name": "cacao_sano (44).jpg",
+        "size": 2873392,
+        "path": "images/sanos-165bFj5-yqqnHogL2kbPREFD-P161vvkv.jpg",
+        "sha256": "00d62f6c653fdd4b0941e1fbe54e1718fca2c983d5c40756c2e57fb1f4477ae7",
+        "width": 3060,
+        "height": 4080,
+        "pred": 0,
+        "pred_name": "Healthy",
+        "probabilities": [
+          0.981299102306366,
+          0.0006545367068611085,
+          0.017301658168435097,
+          0.00012300688831601292,
+          0.0006216487381607294
+        ],
+        "total_decode_transform_inference_ms": 73.32444796338677
+      },
+      {
+        "label": "sanos",
+        "id": "180AilWXDcs2r--oE16362GKBNoz4A7Lm",
+        "name": "cacao_sano (22).jpg",
+        "size": 3357711,
+        "path": "images/sanos-180AilWXDcs2r--oE16362GKBNoz4A7Lm.jpg",
+        "sha256": "71037ae1ecef566096e79607a1bde0e29e7fa2b854c2eb9851c5dd07e0b49c6e",
+        "width": 3060,
+        "height": 4080,
+        "pred": 0,
+        "pred_name": "Healthy",
+        "probabilities": [
+          0.6195416450500488,
+          0.011038041673600674,
+          0.34135958552360535,
+          0.012701282277703285,
+          0.015359414741396904
+        ],
+        "total_decode_transform_inference_ms": 83.17426289431751
+      },
+      {
+        "label": "sanos",
+        "id": "1hUOfEml3PA3NxFQmcCdEGtgONn29uEum",
+        "name": "cacao_sano (20).jpg",
+        "size": 3342952,
+        "path": "images/sanos-1hUOfEml3PA3NxFQmcCdEGtgONn29uEum.jpg",
+        "sha256": "48364f2a6e2eb8452d2755eca8b313a89bdeabad0100125ff13062e6b4ddd4d6",
+        "width": 3060,
+        "height": 4080,
+        "pred": 0,
+        "pred_name": "Healthy",
+        "probabilities": [
+          0.7077639102935791,
+          0.007821514271199703,
+          0.2721092104911804,
+          0.0077430373057723045,
+          0.004562451038509607
+        ],
+        "total_decode_transform_inference_ms": 75.73966309428215
+      },
+      {
+        "label": "sanos",
+        "id": "11_4b3lqGIIR3UjMn9SUhICY6XsEWMsVX",
+        "name": "cacao_sano (45).jpg",
+        "size": 3659781,
+        "path": "images/sanos-11_4b3lqGIIR3UjMn9SUhICY6XsEWMsVX.jpg",
+        "sha256": "ea931fc28a54a0a36a727b26e812ab25f1c888ed719305c76ed30dd01d775955",
+        "width": 3060,
+        "height": 4080,
+        "pred": 3,
+        "pred_name": "Moniliophthora roreri",
+        "probabilities": [
+          0.25915396213531494,
+          0.024112585932016373,
+          0.15426570177078247,
+          0.4836222529411316,
+          0.07884540408849716
+        ],
+        "total_decode_transform_inference_ms": 84.61621892638505
+      },
+      {
+        "label": "sanos",
+        "id": "1vGGKDRqLfr_wim26sXDCjhdJTaf7t3Fb",
+        "name": "cacao_sano (34).jpg",
+        "size": 2836771,
+        "path": "images/sanos-1vGGKDRqLfr_wim26sXDCjhdJTaf7t3Fb.jpg",
+        "sha256": "b612b48d7631135874d668b1fab4ae1d7d1b3a2b8ffb731240de88960e136903",
+        "width": 3060,
+        "height": 4080,
+        "pred": 0,
+        "pred_name": "Healthy",
+        "probabilities": [
+          0.715181827545166,
+          0.00840961653739214,
+          0.2687625586986542,
+          0.0038994960486888885,
+          0.003746387781575322
+        ],
+        "total_decode_transform_inference_ms": 73.12888302840292
+      },
+      {
+        "label": "sanos",
+        "id": "1vnlIik-WjVNsIkjoJ8Bdiuer7sIv4uxf",
+        "name": "cacao_sano (21).jpg",
+        "size": 3342952,
+        "path": "images/sanos-1vnlIik-WjVNsIkjoJ8Bdiuer7sIv4uxf.jpg",
+        "sha256": "48364f2a6e2eb8452d2755eca8b313a89bdeabad0100125ff13062e6b4ddd4d6",
+        "width": 3060,
+        "height": 4080,
+        "pred": 0,
+        "pred_name": "Healthy",
+        "probabilities": [
+          0.7077639102935791,
+          0.007821514271199703,
+          0.2721092104911804,
+          0.0077430373057723045,
+          0.004562451038509607
+        ],
+        "total_decode_transform_inference_ms": 82.70531287416816
+      },
+      {
+        "label": "sanos",
+        "id": "1uX5vh41Yikm6UIo7JQ0a2HsKo-orT0zV",
+        "name": "cacao_sano (12).jpg",
+        "size": 2527130,
+        "path": "images/sanos-1uX5vh41Yikm6UIo7JQ0a2HsKo-orT0zV.jpg",
+        "sha256": "ce09ca21f976dbe57d8331090669eb96459d7f4531c237d97ab3eff2df43bf15",
+        "width": 3060,
+        "height": 4080,
+        "pred": 0,
+        "pred_name": "Healthy",
+        "probabilities": [
+          0.7214617729187012,
+          0.0026351960841566324,
+          0.012982391752302647,
+          0.19035221636295319,
+          0.07256846874952316
+        ],
+        "total_decode_transform_inference_ms": 70.93728194013238
+      },
+      {
+        "label": "sanos",
+        "id": "1C-gwcBfifzdknVlGF36t3JC2OmFsQAFr",
+        "name": "cacao_sano (36).jpg",
+        "size": 2836771,
+        "path": "images/sanos-1C-gwcBfifzdknVlGF36t3JC2OmFsQAFr.jpg",
+        "sha256": "b612b48d7631135874d668b1fab4ae1d7d1b3a2b8ffb731240de88960e136903",
+        "width": 3060,
+        "height": 4080,
+        "pred": 0,
+        "pred_name": "Healthy",
+        "probabilities": [
+          0.715181827545166,
+          0.00840961653739214,
+          0.2687625586986542,
+          0.0038994960486888885,
+          0.003746387781575322
+        ],
+        "total_decode_transform_inference_ms": 81.44393190741539
+      },
+      {
+        "label": "sanos",
+        "id": "16j8EQ-DGgXtslGGdzbrjZbfxD1M-SC2o",
+        "name": "cacao_sano (2).jpg",
+        "size": 2834999,
+        "path": "images/sanos-16j8EQ-DGgXtslGGdzbrjZbfxD1M-SC2o.jpg",
+        "sha256": "b2a631c2750a82f7cd0f8c281e6c1b91432d3c21207f25ebe84778857516df69",
+        "width": 3060,
+        "height": 4080,
+        "pred": 0,
+        "pred_name": "Healthy",
+        "probabilities": [
+          0.6019954085350037,
+          0.011004606261849403,
+          0.37185123562812805,
+          0.0082665104418993,
+          0.0068822517059743404
+        ],
+        "total_decode_transform_inference_ms": 72.10376695729792
+      },
+      {
+        "label": "sanos",
+        "id": "14yO25Ww1uzteI-aULzg15p_-0AmUTd76",
+        "name": "cacao_sano (17).jpg",
+        "size": 3242434,
+        "path": "images/sanos-14yO25Ww1uzteI-aULzg15p_-0AmUTd76.jpg",
+        "sha256": "f1cff8f63d6db502ca8ca557c4425c61668a3cb8be23cf3d4fee4447e3a939fc",
+        "width": 3060,
+        "height": 4080,
+        "pred": 0,
+        "pred_name": "Healthy",
+        "probabilities": [
+          0.6444770693778992,
+          0.007845712825655937,
+          0.28796204924583435,
+          0.024631967768073082,
+          0.03508322313427925
+        ],
+        "total_decode_transform_inference_ms": 83.5956500377506
+      },
+      {
+        "label": "sanos",
+        "id": "1s707g4n14q2Q_CUf9agLCv8R2zJnUtTf",
+        "name": "cacao_sano (7).jpg",
+        "size": 2485700,
+        "path": "images/sanos-1s707g4n14q2Q_CUf9agLCv8R2zJnUtTf.jpg",
+        "sha256": "0713c90fa94b37a19dadad15f4b60aa29313e02375ffa3403a8ef0845750299e",
+        "width": 3060,
+        "height": 4080,
+        "pred": 2,
+        "pred_name": "Moniliophthora perniciosa",
+        "probabilities": [
+          0.01309946272522211,
+          0.013453030958771706,
+          0.9443880319595337,
+          0.02217206545174122,
+          0.0068873693235218525
+        ],
+        "total_decode_transform_inference_ms": 71.38925092294812
+      },
+      {
+        "label": "sanos",
+        "id": "1U3FOe_076Yl-tgy5bivcuuFB-FpxjHTE",
+        "name": "cacao_sano (43).jpg",
+        "size": 2873392,
+        "path": "images/sanos-1U3FOe_076Yl-tgy5bivcuuFB-FpxjHTE.jpg",
+        "sha256": "00d62f6c653fdd4b0941e1fbe54e1718fca2c983d5c40756c2e57fb1f4477ae7",
+        "width": 3060,
+        "height": 4080,
+        "pred": 0,
+        "pred_name": "Healthy",
+        "probabilities": [
+          0.981299102306366,
+          0.0006545367068611085,
+          0.017301658168435097,
+          0.00012300688831601292,
+          0.0006216487381607294
+        ],
+        "total_decode_transform_inference_ms": 80.73470112867653
+      },
+      {
+        "label": "sanos",
+        "id": "1BNW4fU-49xEsSKYfqK_wrgMlgf7CH2R_",
+        "name": "cacao_sano (14).jpg",
+        "size": 3223836,
+        "path": "images/sanos-1BNW4fU-49xEsSKYfqK_wrgMlgf7CH2R_.jpg",
+        "sha256": "a515f25bef769f510cc1bb14968bcbb235f9eaa1c56101f8dcac9ca9f770ed13",
+        "width": 3060,
+        "height": 4080,
+        "pred": 2,
+        "pred_name": "Moniliophthora perniciosa",
+        "probabilities": [
+          0.4650464951992035,
+          0.004477727226912975,
+          0.49996912479400635,
+          0.020157530903816223,
+          0.010349074378609657
+        ],
+        "total_decode_transform_inference_ms": 74.77844785898924
+      },
+      {
+        "label": "sanos",
+        "id": "1R80IEWBX_Pjgyjntx9TzL9_5ubBeqH-N",
+        "name": "cacao_sano (35).jpg",
+        "size": 2836771,
+        "path": "images/sanos-1R80IEWBX_Pjgyjntx9TzL9_5ubBeqH-N.jpg",
+        "sha256": "b612b48d7631135874d668b1fab4ae1d7d1b3a2b8ffb731240de88960e136903",
+        "width": 3060,
+        "height": 4080,
+        "pred": 0,
+        "pred_name": "Healthy",
+        "probabilities": [
+          0.715181827545166,
+          0.00840961653739214,
+          0.2687625586986542,
+          0.0038994960486888885,
+          0.003746387781575322
+        ],
+        "total_decode_transform_inference_ms": 80.29887615703046
+      },
+      {
+        "label": "sanos",
+        "id": "15rYcN1_ceHPsChyYGiuZq_1oiQmyp2i-",
+        "name": "cacao_sano (18).jpg",
+        "size": 3342952,
+        "path": "images/sanos-15rYcN1_ceHPsChyYGiuZq_1oiQmyp2i-.jpg",
+        "sha256": "48364f2a6e2eb8452d2755eca8b313a89bdeabad0100125ff13062e6b4ddd4d6",
+        "width": 3060,
+        "height": 4080,
+        "pred": 0,
+        "pred_name": "Healthy",
+        "probabilities": [
+          0.7077639102935791,
+          0.007821514271199703,
+          0.2721092104911804,
+          0.0077430373057723045,
+          0.004562451038509607
+        ],
+        "total_decode_transform_inference_ms": 75.66578802652657
+      },
+      {
+        "label": "sanos",
+        "id": "1uBkSKI3k0wlhp2DDjVyO30y_Rnn3uuUr",
+        "name": "cacao_sano (6).jpg",
+        "size": 2485700,
+        "path": "images/sanos-1uBkSKI3k0wlhp2DDjVyO30y_Rnn3uuUr.jpg",
+        "sha256": "0713c90fa94b37a19dadad15f4b60aa29313e02375ffa3403a8ef0845750299e",
+        "width": 3060,
+        "height": 4080,
+        "pred": 2,
+        "pred_name": "Moniliophthora perniciosa",
+        "probabilities": [
+          0.01309946272522211,
+          0.013453030958771706,
+          0.9443880319595337,
+          0.02217206545174122,
+          0.0068873693235218525
+        ],
+        "total_decode_transform_inference_ms": 78.3227679785341
+      },
+      {
+        "label": "sanos",
+        "id": "14Zf0iqc2dnN5LrK2gXEnWELPXuZBi1FP",
+        "name": "cacao_sano (28).jpg",
+        "size": 2885777,
+        "path": "images/sanos-14Zf0iqc2dnN5LrK2gXEnWELPXuZBi1FP.jpg",
+        "sha256": "04cc3ad91bf9997940ed0dee401142f56870623680c022943f03a24ecfd2edd6",
+        "width": 3060,
+        "height": 4080,
+        "pred": 0,
+        "pred_name": "Healthy",
+        "probabilities": [
+          0.9532961845397949,
+          0.00676509877666831,
+          0.030909618362784386,
+          0.0027935218531638384,
+          0.006235487759113312
+        ],
+        "total_decode_transform_inference_ms": 71.72706699930131
+      },
+      {
+        "label": "sanos",
+        "id": "1lYzNN7E8g57oyN1kcSRVA9aXSkBHs5ON",
+        "name": "cacao_sano (25).jpg",
+        "size": 2526374,
+        "path": "images/sanos-1lYzNN7E8g57oyN1kcSRVA9aXSkBHs5ON.jpg",
+        "sha256": "b483f3dc1fdd6c5a99fd6cd6b87388bbb81252ad72ca5123fcc2f97f3c95c5c6",
+        "width": 3060,
+        "height": 4080,
+        "pred": 2,
+        "pred_name": "Moniliophthora perniciosa",
+        "probabilities": [
+          0.08141724765300751,
+          0.021088456735014915,
+          0.8479578495025635,
+          0.032859720289707184,
+          0.0166767667979002
+        ],
+        "total_decode_transform_inference_ms": 79.27622110582888
+      },
+      {
+        "label": "sanos",
+        "id": "1VJ-UDTCaKdqf3oMrUV79W1mbuni2rJ90",
+        "name": "cacao_sano (8).jpg",
+        "size": 2597066,
+        "path": "images/sanos-1VJ-UDTCaKdqf3oMrUV79W1mbuni2rJ90.jpg",
+        "sha256": "6ea8a6e512f0eac58a1abc71b05cf7a3b98202b783628f67a2578fdb09c64a93",
+        "width": 3060,
+        "height": 4080,
+        "pred": 0,
+        "pred_name": "Healthy",
+        "probabilities": [
+          0.5364701151847839,
+          0.032021887600421906,
+          0.19342467188835144,
+          0.10049554705619812,
+          0.13758783042430878
+        ],
+        "total_decode_transform_inference_ms": 69.33484296314418
+      },
+      {
+        "label": "sanos",
+        "id": "1XMTUYjVRPmgpgv7dmRZ07fmNTygjyUI_",
+        "name": "cacao_sano (49).jpg",
+        "size": 2905234,
+        "path": "images/sanos-1XMTUYjVRPmgpgv7dmRZ07fmNTygjyUI_.jpg",
+        "sha256": "62498942587c9f492c6c1d340df4daae06a9f10dcabfbd895825c0037c20a566",
+        "width": 3060,
+        "height": 4080,
+        "pred": 0,
+        "pred_name": "Healthy",
+        "probabilities": [
+          0.9547929167747498,
+          0.0027391717303544283,
+          0.04057467356324196,
+          0.0007943009259179235,
+          0.0010990201262757182
+        ],
+        "total_decode_transform_inference_ms": 81.56886301003397
+      }
+    ]
+  },
+  "EfficientNet-B0": {
+    "model": "EfficientNet-B0",
+    "classes": [
+      "Healthy",
+      "Carmenta foraseminis",
+      "Moniliophthora perniciosa",
+      "Moniliophthora roreri",
+      "Phytophthora palmivora"
+    ],
+    "weights_sha256": "80dcf50b9a51a422aca4abf6c1b1d0a65f936a8ed0f2b36ff9da0f2e1a2ba0b5",
+    "device": "cuda",
+    "gpu": "NVIDIA GeForce RTX 4060 Laptop GPU",
+    "inference_only_mean_ms": 2.0421285601332784,
+    "pipeline_median_ms": 38.561082910746336,
+    "matrix_rows_healthy_diseased_cols_five_model_classes": [
+      [
+        17,
+        0,
+        8,
+        0,
+        0
+      ],
+      [
+        3,
+        5,
+        5,
+        10,
+        2
+      ]
+    ],
+    "monilia_top1": {
+      "confusion_rows_actual_healthy_diseased_cols_negative_positive": [
+        [
+          25,
+          0
+        ],
+        [
+          15,
+          10
+        ]
+      ],
+      "sensitivity": 0.4,
+      "specificity": 1.0,
+      "accuracy": 0.7,
+      "precision": 1.0
+    },
+    "any_disease_top1": {
+      "confusion_rows_actual_healthy_diseased_cols_negative_positive": [
+        [
+          17,
+          8
+        ],
+        [
+          3,
+          22
+        ]
+      ],
+      "sensitivity": 0.88,
+      "specificity": 0.68,
+      "accuracy": 0.78,
+      "precision": 0.7333333333333333
+    },
+    "rows": [
+      {
+        "label": "enfermos",
+        "id": "1GlVqDWriINMZHt_0CUvgdb640IUn0bsC",
+        "name": "cacao_enfermo (34).jpg",
+        "size": 63370,
+        "path": "images/enfermos-1GlVqDWriINMZHt_0CUvgdb640IUn0bsC.jpg",
+        "sha256": "6b9a0f2ac1f3ee7471f0d18faed8fb36159ec58fe4b5a27f9a8f14c59370c081",
+        "width": 640,
+        "height": 640,
+        "pred": 3,
+        "pred_name": "Moniliophthora roreri",
+        "probabilities": [
+          0.05275484174489975,
+          0.11521279811859131,
+          0.011792534030973911,
+          0.5159820914268494,
+          0.30425772070884705
+        ],
+        "total_decode_transform_inference_ms": 5.384630057960749
+      },
+      {
+        "label": "enfermos",
+        "id": "1V5sWdssd6EHH8ftZrI5XcuLm-mSyprc8",
+        "name": "cacao_enfermo (47).jpg",
+        "size": 62951,
+        "path": "images/enfermos-1V5sWdssd6EHH8ftZrI5XcuLm-mSyprc8.jpg",
+        "sha256": "f8527ef9a6e8ad5f91961b30051844c3c98cb42260748cd653b2f27cffb50cf0",
+        "width": 640,
+        "height": 640,
+        "pred": 2,
+        "pred_name": "Moniliophthora perniciosa",
+        "probabilities": [
+          0.033535607159137726,
+          0.020104151219129562,
+          0.5450160503387451,
+          0.28833505511283875,
+          0.11300911754369736
+        ],
+        "total_decode_transform_inference_ms": 5.310175009071827
+      },
+      {
+        "label": "enfermos",
+        "id": "13jdYVYJ-_bqLgI0pHEZCVr6uTC1Hi7_F",
+        "name": "cacao_enfermo (25).jpg",
+        "size": 53150,
+        "path": "images/enfermos-13jdYVYJ-_bqLgI0pHEZCVr6uTC1Hi7_F.jpg",
+        "sha256": "b288233e45791bb2aed8042c8ac8980f23b139a0e01b4bb06693d556b9d73d65",
+        "width": 640,
+        "height": 640,
+        "pred": 1,
+        "pred_name": "Carmenta foraseminis",
+        "probabilities": [
+          0.000668658409267664,
+          0.9920700192451477,
+          0.00012635707389563322,
+          0.0025566674303263426,
+          0.004578331485390663
+        ],
+        "total_decode_transform_inference_ms": 4.665051121264696
+      },
+      {
+        "label": "enfermos",
+        "id": "1ZGpygDf411x6aLQiSLHFdZCBs0WIBMHp",
+        "name": "cacao_enfermo (26).jpg",
+        "size": 69795,
+        "path": "images/enfermos-1ZGpygDf411x6aLQiSLHFdZCBs0WIBMHp.jpg",
+        "sha256": "806ad57315200e89782a2d5506028d8f7357079dae1ac674b0d10ce1ed725a07",
+        "width": 640,
+        "height": 640,
+        "pred": 3,
+        "pred_name": "Moniliophthora roreri",
+        "probabilities": [
+          0.05267352610826492,
+          0.13497164845466614,
+          0.24005189538002014,
+          0.4812581241130829,
+          0.09104486554861069
+        ],
+        "total_decode_transform_inference_ms": 5.001991055905819
+      },
+      {
+        "label": "enfermos",
+        "id": "1amodQlWuuqL_gctdYK9hoMPdYaaNGlwa",
+        "name": "cacao_enfermo (3).jpg",
+        "size": 44452,
+        "path": "images/enfermos-1amodQlWuuqL_gctdYK9hoMPdYaaNGlwa.jpg",
+        "sha256": "44ab236defe2568c2766d60f5233ca309b5f8547a09ed466fa088cf70ee026cf",
+        "width": 640,
+        "height": 640,
+        "pred": 0,
+        "pred_name": "Healthy",
+        "probabilities": [
+          0.9735569953918457,
+          0.01608917862176895,
+          0.001045917859300971,
+          0.005252000875771046,
+          0.004055929835885763
+        ],
+        "total_decode_transform_inference_ms": 4.615968093276024
+      },
+      {
+        "label": "enfermos",
+        "id": "1go4FAOaUHEoeyUPo1rwdTf5DtXrrVA0_",
+        "name": "cacao_enfermo (39).jpg",
+        "size": 62828,
+        "path": "images/enfermos-1go4FAOaUHEoeyUPo1rwdTf5DtXrrVA0_.jpg",
+        "sha256": "9b0737e24ab2543729dd2feffc33878489ec3af86983b4d9cd5006cb8257b26b",
+        "width": 640,
+        "height": 640,
+        "pred": 2,
+        "pred_name": "Moniliophthora perniciosa",
+        "probabilities": [
+          0.0660657212138176,
+          0.014069689437747002,
+          0.6212971806526184,
+          0.2688317596912384,
+          0.029735645279288292
+        ],
+        "total_decode_transform_inference_ms": 4.883409012109041
+      },
+      {
+        "label": "enfermos",
+        "id": "17e5Er4m1IGX6QRnVXFrEtR6w0B8w3se2",
+        "name": "cacao_enfermo (38).jpg",
+        "size": 65024,
+        "path": "images/enfermos-17e5Er4m1IGX6QRnVXFrEtR6w0B8w3se2.jpg",
+        "sha256": "7e712fcaa9f399c6e9a56d37a72d75a7a7bdba54388e3947df87fa04ca972586",
+        "width": 640,
+        "height": 640,
+        "pred": 3,
+        "pred_name": "Moniliophthora roreri",
+        "probabilities": [
+          0.07090087234973907,
+          0.023238999769091606,
+          0.08021475374698639,
+          0.703071653842926,
+          0.12257375568151474
+        ],
+        "total_decode_transform_inference_ms": 4.729293053969741
+      },
+      {
+        "label": "enfermos",
+        "id": "1IIpiWFgaWZ0ybBj8FyRPZCaWspllmVmh",
+        "name": "cacao_enfermo (36).jpg",
+        "size": 81952,
+        "path": "images/enfermos-1IIpiWFgaWZ0ybBj8FyRPZCaWspllmVmh.jpg",
+        "sha256": "b05f927cef8674625c0e475eca84c4d766f5152ec3beb2316f8a411fae46652a",
+        "width": 640,
+        "height": 640,
+        "pred": 3,
+        "pred_name": "Moniliophthora roreri",
+        "probabilities": [
+          0.02079528383910656,
+          0.0812738910317421,
+          0.007337293587625027,
+          0.48100703954696655,
+          0.4095865488052368
+        ],
+        "total_decode_transform_inference_ms": 5.057405913248658
+      },
+      {
+        "label": "enfermos",
+        "id": "130-W1Uo6AWs12O5DpPiDf2d__rK8AvZx",
+        "name": "cacao_enfermo (16).jpg",
+        "size": 71160,
+        "path": "images/enfermos-130-W1Uo6AWs12O5DpPiDf2d__rK8AvZx.jpg",
+        "sha256": "c1b5ce01bf8e57e10e900f41a89d6a51af9ba264cfbde0476cb05974ba8c41c7",
+        "width": 640,
+        "height": 640,
+        "pred": 0,
+        "pred_name": "Healthy",
+        "probabilities": [
+          0.5979256629943848,
+          0.0649099349975586,
+          0.014790540561079979,
+          0.1421249359846115,
+          0.18024900555610657
+        ],
+        "total_decode_transform_inference_ms": 4.76039806380868
+      },
+      {
+        "label": "enfermos",
+        "id": "1lyIAPyJHpCzQHuv4rwf-2RKfYLiAF5WR",
+        "name": "cacao_enfermo (49).jpg",
+        "size": 68543,
+        "path": "images/enfermos-1lyIAPyJHpCzQHuv4rwf-2RKfYLiAF5WR.jpg",
+        "sha256": "c4b356d80f6b2a8db87f0afc19b07f3b334eed7ff880e58fcba77ec160a0c4f8",
+        "width": 640,
+        "height": 640,
+        "pred": 2,
+        "pred_name": "Moniliophthora perniciosa",
+        "probabilities": [
+          0.1769520342350006,
+          0.05343233048915863,
+          0.4803180694580078,
+          0.19841596484184265,
+          0.09088163077831268
+        ],
+        "total_decode_transform_inference_ms": 4.879581974819303
+      },
+      {
+        "label": "enfermos",
+        "id": "1K1VfZGiPrKwNE-4VeNj0OrOEWPwYvOgM",
+        "name": "cacao_enfermo (11).jpg",
+        "size": 54451,
+        "path": "images/enfermos-1K1VfZGiPrKwNE-4VeNj0OrOEWPwYvOgM.jpg",
+        "sha256": "e4930467facdbb98af263c7b0a4c5fa7927d50c2989521195ab434220454db7b",
+        "width": 640,
+        "height": 640,
+        "pred": 0,
+        "pred_name": "Healthy",
+        "probabilities": [
+          0.31491604447364807,
+          0.20342393219470978,
+          0.07363646477460861,
+          0.267843097448349,
+          0.14018045365810394
+        ],
+        "total_decode_transform_inference_ms": 4.682708065956831
+      },
+      {
+        "label": "enfermos",
+        "id": "1JQKsY1UmTEL7Ghoq3dFE4Hjh8vzIKmYa",
+        "name": "cacao_enfermo (29).jpg",
+        "size": 68453,
+        "path": "images/enfermos-1JQKsY1UmTEL7Ghoq3dFE4Hjh8vzIKmYa.jpg",
+        "sha256": "2e943a29415ccface19c02b934a08cce904d3bd8fbe158ef19daeeb24133b644",
+        "width": 640,
+        "height": 640,
+        "pred": 3,
+        "pred_name": "Moniliophthora roreri",
+        "probabilities": [
+          0.02185516245663166,
+          0.006740905344486237,
+          0.006611104588955641,
+          0.8992521166801453,
+          0.06554070115089417
+        ],
+        "total_decode_transform_inference_ms": 4.876954946666956
+      },
+      {
+        "label": "enfermos",
+        "id": "1ibqHRP5dQlnuVaAzV5QCqlnolRRuCKXn",
+        "name": "cacao_enfermo (4).jpg",
+        "size": 66197,
+        "path": "images/enfermos-1ibqHRP5dQlnuVaAzV5QCqlnolRRuCKXn.jpg",
+        "sha256": "3f921d8314f99b97b0dd148b36ad894c2e414869b100348d17fe14823e6bf3f0",
+        "width": 640,
+        "height": 640,
+        "pred": 4,
+        "pred_name": "Phytophthora palmivora",
+        "probabilities": [
+          0.08041306585073471,
+          0.03135769069194794,
+          0.0018918239511549473,
+          0.18021388351917267,
+          0.7061235904693604
+        ],
+        "total_decode_transform_inference_ms": 4.688172833994031
+      },
+      {
+        "label": "enfermos",
+        "id": "1G3BUugkrit7TNNmUFtvSmHa7jkFIC6bp",
+        "name": "cacao_enfermo (6).jpg",
+        "size": 69115,
+        "path": "images/enfermos-1G3BUugkrit7TNNmUFtvSmHa7jkFIC6bp.jpg",
+        "sha256": "208564e17459094ba7c7e7b97cf64128aa1e3d1ee5d5be741d5c9854e726ad38",
+        "width": 640,
+        "height": 640,
+        "pred": 1,
+        "pred_name": "Carmenta foraseminis",
+        "probabilities": [
+          0.1916435956954956,
+          0.7072749733924866,
+          0.0004776667628902942,
+          0.021455734968185425,
+          0.07914804667234421
+        ],
+        "total_decode_transform_inference_ms": 4.984858212992549
+      },
+      {
+        "label": "enfermos",
+        "id": "1sguYLi__JPlEr1QN1fRwlpS9Iv9LxXdl",
+        "name": "cacao_enfermo (24).jpg",
+        "size": 43555,
+        "path": "images/enfermos-1sguYLi__JPlEr1QN1fRwlpS9Iv9LxXdl.jpg",
+        "sha256": "8156d65f1623db1d179fd85195d4a31533e5ee9f4e9dfcebbed69d7ec9f22d61",
+        "width": 640,
+        "height": 640,
+        "pred": 3,
+        "pred_name": "Moniliophthora roreri",
+        "probabilities": [
+          0.1118970513343811,
+          0.004167893901467323,
+          0.06225886940956116,
+          0.7353123426437378,
+          0.08636380732059479
+        ],
+        "total_decode_transform_inference_ms": 4.676513839513063
+      },
+      {
+        "label": "enfermos",
+        "id": "1t_r4LCl5u4S3KjfMdKvsW_ZmggBd4AAp",
+        "name": "cacao_enfermo (2).jpg",
+        "size": 66872,
+        "path": "images/enfermos-1t_r4LCl5u4S3KjfMdKvsW_ZmggBd4AAp.jpg",
+        "sha256": "09d956c294ecccb919df4e39eb3093f27dca9632496bdef6bdd419d96f72a21d",
+        "width": 640,
+        "height": 640,
+        "pred": 3,
+        "pred_name": "Moniliophthora roreri",
+        "probabilities": [
+          0.16039542853832245,
+          0.03274860978126526,
+          0.028511127457022667,
+          0.40314316749572754,
+          0.37520164251327515
+        ],
+        "total_decode_transform_inference_ms": 4.916022066026926
+      },
+      {
+        "label": "enfermos",
+        "id": "1o8Ii1_T6ehXhWQDlbgBTVs-2NLiJzi-G",
+        "name": "cacao_enfermo (50).jpg",
+        "size": 61201,
+        "path": "images/enfermos-1o8Ii1_T6ehXhWQDlbgBTVs-2NLiJzi-G.jpg",
+        "sha256": "fd849c4f83e685d81b619df987936bc89b2be1d8bc2b873bc76aaed918f0ee5a",
+        "width": 640,
+        "height": 640,
+        "pred": 3,
+        "pred_name": "Moniliophthora roreri",
+        "probabilities": [
+          0.016823988407850266,
+          0.14654327929019928,
+          0.02273937501013279,
+          0.7286163568496704,
+          0.08527710288763046
+        ],
+        "total_decode_transform_inference_ms": 4.752811044454575
+      },
+      {
+        "label": "enfermos",
+        "id": "1Iq6DK_AlK347meeaCUZpSBdey_PJqvY8",
+        "name": "cacao_enfermo (28).jpg",
+        "size": 82879,
+        "path": "images/enfermos-1Iq6DK_AlK347meeaCUZpSBdey_PJqvY8.jpg",
+        "sha256": "7ed87a5ea8c8384217f87224a5c29d25cf3a5404c36381fd7e4bcdfc8b7d8b80",
+        "width": 640,
+        "height": 640,
+        "pred": 1,
+        "pred_name": "Carmenta foraseminis",
+        "probabilities": [
+          0.055253490805625916,
+          0.8456624746322632,
+          0.010456045158207417,
+          0.04689349979162216,
+          0.04173450171947479
+        ],
+        "total_decode_transform_inference_ms": 5.051471060141921
+      },
+      {
+        "label": "enfermos",
+        "id": "183moUnJR7lMfUAxye9EfDJEvlC-gM5un",
+        "name": "cacao_enfermo (10).jpg",
+        "size": 48476,
+        "path": "images/enfermos-183moUnJR7lMfUAxye9EfDJEvlC-gM5un.jpg",
+        "sha256": "5d22517cc3081ce7517ccc56dfe6a7a5f622b66ab6e3e5cb5726ea87c45b1728",
+        "width": 640,
+        "height": 640,
+        "pred": 3,
+        "pred_name": "Moniliophthora roreri",
+        "probabilities": [
+          0.07707729190587997,
+          0.03379867225885391,
+          0.022670935839414597,
+          0.5599967241287231,
+          0.3064563572406769
+        ],
+        "total_decode_transform_inference_ms": 4.699127050116658
+      },
+      {
+        "label": "enfermos",
+        "id": "1ZCVKBUQTj6sBGJhrCwuZCaoijN_89Z8I",
+        "name": "cacao_enfermo (42).jpg",
+        "size": 73150,
+        "path": "images/enfermos-1ZCVKBUQTj6sBGJhrCwuZCaoijN_89Z8I.jpg",
+        "sha256": "f342f1fb0d9b8d16f19126acca61d219111d3c66850b91e22577bc98212987b0",
+        "width": 640,
+        "height": 640,
+        "pred": 2,
+        "pred_name": "Moniliophthora perniciosa",
+        "probabilities": [
+          0.02373729646205902,
+          0.0064214556477963924,
+          0.9617140889167786,
+          0.005417016334831715,
+          0.0027100583538413048
+        ],
+        "total_decode_transform_inference_ms": 5.007167113944888
+      },
+      {
+        "label": "enfermos",
+        "id": "1UDFPjqooV4xKPluZu_FPp7lO1pFdBg0w",
+        "name": "cacao_enfermo (14).jpg",
+        "size": 68222,
+        "path": "images/enfermos-1UDFPjqooV4xKPluZu_FPp7lO1pFdBg0w.jpg",
+        "sha256": "13fda0d54f7e9e804648530d490ce2941c0f7bfc64e653c17b8aa6a11c95776e",
+        "width": 640,
+        "height": 640,
+        "pred": 3,
+        "pred_name": "Moniliophthora roreri",
+        "probabilities": [
+          0.14503051340579987,
+          0.051777902990579605,
+          0.015235980972647667,
+          0.43064993619918823,
+          0.3573055863380432
+        ],
+        "total_decode_transform_inference_ms": 4.815977066755295
+      },
+      {
+        "label": "enfermos",
+        "id": "1boD13X1cIy9di7E61Sfw-B6PbL1jSkDU",
+        "name": "cacao_enfermo (44).jpg",
+        "size": 72874,
+        "path": "images/enfermos-1boD13X1cIy9di7E61Sfw-B6PbL1jSkDU.jpg",
+        "sha256": "0f99307cea6e707381f4234ea61062ca0d802182e06874d695dfcfb78a68ba2c",
+        "width": 640,
+        "height": 640,
+        "pred": 4,
+        "pred_name": "Phytophthora palmivora",
+        "probabilities": [
+          0.11123121529817581,
+          0.2153511494398117,
+          0.0011367128463461995,
+          0.09557422250509262,
+          0.5767067074775696
+        ],
+        "total_decode_transform_inference_ms": 5.008170148357749
+      },
+      {
+        "label": "enfermos",
+        "id": "11dgyngMFK104OvCJgQEL4tN8_QQRXR2O",
+        "name": "cacao_enfermo (35).jpg",
+        "size": 66261,
+        "path": "images/enfermos-11dgyngMFK104OvCJgQEL4tN8_QQRXR2O.jpg",
+        "sha256": "6128c1d127d08ca36c39b2e6a37de588646ab6cff7d568703ba23a423c84d68c",
+        "width": 640,
+        "height": 640,
+        "pred": 2,
+        "pred_name": "Moniliophthora perniciosa",
+        "probabilities": [
+          0.017161931842565536,
+          0.00422124657779932,
+          0.9545497298240662,
+          0.020343486219644547,
+          0.0037235182244330645
+        ],
+        "total_decode_transform_inference_ms": 4.778749076649547
+      },
+      {
+        "label": "enfermos",
+        "id": "1NdkvpK_HC1T4g0mF-z5K2GUQSv-kSB_9",
+        "name": "cacao_enfermo (19).jpg",
+        "size": 69129,
+        "path": "images/enfermos-1NdkvpK_HC1T4g0mF-z5K2GUQSv-kSB_9.jpg",
+        "sha256": "52b4a70a2d3cfbaeb1e05c8ae33676436b76138c15a92482fdf5bd762b666c65",
+        "width": 640,
+        "height": 640,
+        "pred": 1,
+        "pred_name": "Carmenta foraseminis",
+        "probabilities": [
+          0.03813968598842621,
+          0.4627727270126343,
+          0.03053213469684124,
+          0.17899028956890106,
+          0.28956520557403564
+        ],
+        "total_decode_transform_inference_ms": 4.9754411447793245
+      },
+      {
+        "label": "enfermos",
+        "id": "1WLYUC0zCE9RgcUANWX3mB5m68wdDgbYo",
+        "name": "cacao_enfermo (37).jpg",
+        "size": 86871,
+        "path": "images/enfermos-1WLYUC0zCE9RgcUANWX3mB5m68wdDgbYo.jpg",
+        "sha256": "22b602510f4015a28301f9f33c341c86981b38fc7a750de2592549c9e54778f3",
+        "width": 640,
+        "height": 640,
+        "pred": 1,
+        "pred_name": "Carmenta foraseminis",
+        "probabilities": [
+          0.11894495040178299,
+          0.3650665283203125,
+          0.01800534687936306,
+          0.3462366759777069,
+          0.1517464965581894
+        ],
+        "total_decode_transform_inference_ms": 5.810553906485438
+      },
+      {
+        "label": "sanos",
+        "id": "1NPoPzkCSDedMeQSZhYf8X5bM9fNKwKMt",
+        "name": "cacao_sano (11).jpg",
+        "size": 2561106,
+        "path": "images/sanos-1NPoPzkCSDedMeQSZhYf8X5bM9fNKwKMt.jpg",
+        "sha256": "ee762613240d8ea4ed54c5ea4288aa518d3f41727832f756cb3e9b0639f50572",
+        "width": 3060,
+        "height": 4080,
+        "pred": 0,
+        "pred_name": "Healthy",
+        "probabilities": [
+          0.4570786952972412,
+          0.0027963288594037294,
+          0.006473338697105646,
+          0.442234069108963,
+          0.09141749143600464
+        ],
+        "total_decode_transform_inference_ms": 88.83179095573723
+      },
+      {
+        "label": "sanos",
+        "id": "1qr6NSOhyZpfDF1-kvcNgTEdq9WKfazXW",
+        "name": "cacao_sano (30).jpg",
+        "size": 3227347,
+        "path": "images/sanos-1qr6NSOhyZpfDF1-kvcNgTEdq9WKfazXW.jpg",
+        "sha256": "d957469d5b0f0ca772d904c0a0fc8b0eb534c3a43a3b08e56ccaa321b068f121",
+        "width": 3060,
+        "height": 4080,
+        "pred": 0,
+        "pred_name": "Healthy",
+        "probabilities": [
+          0.8927894830703735,
+          0.0032191553618758917,
+          0.09690486639738083,
+          0.0010882471688091755,
+          0.005998170468956232
+        ],
+        "total_decode_transform_inference_ms": 84.69386002980173
+      },
+      {
+        "label": "sanos",
+        "id": "1Kxqv2fonm4oygrhwXf7K-8D8npIZmMLr",
+        "name": "cacao_sano (33).jpg",
+        "size": 2836771,
+        "path": "images/sanos-1Kxqv2fonm4oygrhwXf7K-8D8npIZmMLr.jpg",
+        "sha256": "b612b48d7631135874d668b1fab4ae1d7d1b3a2b8ffb731240de88960e136903",
+        "width": 3060,
+        "height": 4080,
+        "pred": 2,
+        "pred_name": "Moniliophthora perniciosa",
+        "probabilities": [
+          0.44715479016304016,
+          0.0023462551180273294,
+          0.5488348603248596,
+          0.000447790022008121,
+          0.0012162663042545319
+        ],
+        "total_decode_transform_inference_ms": 72.32696004211903
+      },
+      {
+        "label": "sanos",
+        "id": "1mfl63UdpIz2BBqGsVJG0Tz-0F238ahJJ",
+        "name": "cacao_sano (13).jpg",
+        "size": 2527130,
+        "path": "images/sanos-1mfl63UdpIz2BBqGsVJG0Tz-0F238ahJJ.jpg",
+        "sha256": "ce09ca21f976dbe57d8331090669eb96459d7f4531c237d97ab3eff2df43bf15",
+        "width": 3060,
+        "height": 4080,
+        "pred": 0,
+        "pred_name": "Healthy",
+        "probabilities": [
+          0.8688482046127319,
+          0.0011018946534022689,
+          0.10157658904790878,
+          0.0010685313027352095,
+          0.027404725551605225
+        ],
+        "total_decode_transform_inference_ms": 78.7766189314425
+      },
+      {
+        "label": "sanos",
+        "id": "1iOdP17bAB2VK6VeEflLsQLYN5BlaIh6K",
+        "name": "cacao_sano (42).jpg",
+        "size": 2791849,
+        "path": "images/sanos-1iOdP17bAB2VK6VeEflLsQLYN5BlaIh6K.jpg",
+        "sha256": "68868cf4ab2b803a6f0a7ea54d6f458cff1644fed58c69e4c684a58a740f3bc2",
+        "width": 3060,
+        "height": 4080,
+        "pred": 0,
+        "pred_name": "Healthy",
+        "probabilities": [
+          0.7459796667098999,
+          0.00478696171194315,
+          0.20432643592357635,
+          0.014835448004305363,
+          0.030071482062339783
+        ],
+        "total_decode_transform_inference_ms": 76.55667490325868
+      },
+      {
+        "label": "sanos",
+        "id": "165bFj5-yqqnHogL2kbPREFD-P161vvkv",
+        "name": "cacao_sano (44).jpg",
+        "size": 2873392,
+        "path": "images/sanos-165bFj5-yqqnHogL2kbPREFD-P161vvkv.jpg",
+        "sha256": "00d62f6c653fdd4b0941e1fbe54e1718fca2c983d5c40756c2e57fb1f4477ae7",
+        "width": 3060,
+        "height": 4080,
+        "pred": 0,
+        "pred_name": "Healthy",
+        "probabilities": [
+          0.911389172077179,
+          0.0013835177524015307,
+          0.07047691196203232,
+          0.0050005074590444565,
+          0.01174986083060503
+        ],
+        "total_decode_transform_inference_ms": 81.56251697801054
+      },
+      {
+        "label": "sanos",
+        "id": "180AilWXDcs2r--oE16362GKBNoz4A7Lm",
+        "name": "cacao_sano (22).jpg",
+        "size": 3357711,
+        "path": "images/sanos-180AilWXDcs2r--oE16362GKBNoz4A7Lm.jpg",
+        "sha256": "71037ae1ecef566096e79607a1bde0e29e7fa2b854c2eb9851c5dd07e0b49c6e",
+        "width": 3060,
+        "height": 4080,
+        "pred": 0,
+        "pred_name": "Healthy",
+        "probabilities": [
+          0.9002576470375061,
+          0.003488502698019147,
+          0.07148896902799606,
+          0.012879052199423313,
+          0.011885804124176502
+        ],
+        "total_decode_transform_inference_ms": 78.68401007726789
+      },
+      {
+        "label": "sanos",
+        "id": "1hUOfEml3PA3NxFQmcCdEGtgONn29uEum",
+        "name": "cacao_sano (20).jpg",
+        "size": 3342952,
+        "path": "images/sanos-1hUOfEml3PA3NxFQmcCdEGtgONn29uEum.jpg",
+        "sha256": "48364f2a6e2eb8452d2755eca8b313a89bdeabad0100125ff13062e6b4ddd4d6",
+        "width": 3060,
+        "height": 4080,
+        "pred": 0,
+        "pred_name": "Healthy",
+        "probabilities": [
+          0.9979713559150696,
+          0.00010019937326433137,
+          0.0018275075126439333,
+          6.631610449403524e-05,
+          3.461760934442282e-05
+        ],
+        "total_decode_transform_inference_ms": 85.83018206991255
+      },
+      {
+        "label": "sanos",
+        "id": "11_4b3lqGIIR3UjMn9SUhICY6XsEWMsVX",
+        "name": "cacao_sano (45).jpg",
+        "size": 3659781,
+        "path": "images/sanos-11_4b3lqGIIR3UjMn9SUhICY6XsEWMsVX.jpg",
+        "sha256": "ea931fc28a54a0a36a727b26e812ab25f1c888ed719305c76ed30dd01d775955",
+        "width": 3060,
+        "height": 4080,
+        "pred": 2,
+        "pred_name": "Moniliophthora perniciosa",
+        "probabilities": [
+          0.25162434577941895,
+          0.04274013638496399,
+          0.6647540330886841,
+          0.02497207000851631,
+          0.015909433364868164
+        ],
+        "total_decode_transform_inference_ms": 81.5216158516705
+      },
+      {
+        "label": "sanos",
+        "id": "1vGGKDRqLfr_wim26sXDCjhdJTaf7t3Fb",
+        "name": "cacao_sano (34).jpg",
+        "size": 2836771,
+        "path": "images/sanos-1vGGKDRqLfr_wim26sXDCjhdJTaf7t3Fb.jpg",
+        "sha256": "b612b48d7631135874d668b1fab4ae1d7d1b3a2b8ffb731240de88960e136903",
+        "width": 3060,
+        "height": 4080,
+        "pred": 2,
+        "pred_name": "Moniliophthora perniciosa",
+        "probabilities": [
+          0.44715479016304016,
+          0.0023462551180273294,
+          0.5488348603248596,
+          0.000447790022008121,
+          0.0012162663042545319
+        ],
+        "total_decode_transform_inference_ms": 80.78129892237484
+      },
+      {
+        "label": "sanos",
+        "id": "1vnlIik-WjVNsIkjoJ8Bdiuer7sIv4uxf",
+        "name": "cacao_sano (21).jpg",
+        "size": 3342952,
+        "path": "images/sanos-1vnlIik-WjVNsIkjoJ8Bdiuer7sIv4uxf.jpg",
+        "sha256": "48364f2a6e2eb8452d2755eca8b313a89bdeabad0100125ff13062e6b4ddd4d6",
+        "width": 3060,
+        "height": 4080,
+        "pred": 0,
+        "pred_name": "Healthy",
+        "probabilities": [
+          0.9979713559150696,
+          0.00010019937326433137,
+          0.0018275075126439333,
+          6.631610449403524e-05,
+          3.461760934442282e-05
+        ],
+        "total_decode_transform_inference_ms": 77.37536495551467
+      },
+      {
+        "label": "sanos",
+        "id": "1uX5vh41Yikm6UIo7JQ0a2HsKo-orT0zV",
+        "name": "cacao_sano (12).jpg",
+        "size": 2527130,
+        "path": "images/sanos-1uX5vh41Yikm6UIo7JQ0a2HsKo-orT0zV.jpg",
+        "sha256": "ce09ca21f976dbe57d8331090669eb96459d7f4531c237d97ab3eff2df43bf15",
+        "width": 3060,
+        "height": 4080,
+        "pred": 0,
+        "pred_name": "Healthy",
+        "probabilities": [
+          0.8688482046127319,
+          0.0011018946534022689,
+          0.10157658904790878,
+          0.0010685313027352095,
+          0.027404725551605225
+        ],
+        "total_decode_transform_inference_ms": 79.35139816254377
+      },
+      {
+        "label": "sanos",
+        "id": "1C-gwcBfifzdknVlGF36t3JC2OmFsQAFr",
+        "name": "cacao_sano (36).jpg",
+        "size": 2836771,
+        "path": "images/sanos-1C-gwcBfifzdknVlGF36t3JC2OmFsQAFr.jpg",
+        "sha256": "b612b48d7631135874d668b1fab4ae1d7d1b3a2b8ffb731240de88960e136903",
+        "width": 3060,
+        "height": 4080,
+        "pred": 2,
+        "pred_name": "Moniliophthora perniciosa",
+        "probabilities": [
+          0.44715479016304016,
+          0.0023462551180273294,
+          0.5488348603248596,
+          0.000447790022008121,
+          0.0012162663042545319
+        ],
+        "total_decode_transform_inference_ms": 76.12804905511439
+      },
+      {
+        "label": "sanos",
+        "id": "16j8EQ-DGgXtslGGdzbrjZbfxD1M-SC2o",
+        "name": "cacao_sano (2).jpg",
+        "size": 2834999,
+        "path": "images/sanos-16j8EQ-DGgXtslGGdzbrjZbfxD1M-SC2o.jpg",
+        "sha256": "b2a631c2750a82f7cd0f8c281e6c1b91432d3c21207f25ebe84778857516df69",
+        "width": 3060,
+        "height": 4080,
+        "pred": 0,
+        "pred_name": "Healthy",
+        "probabilities": [
+          0.5590062141418457,
+          0.057605255395174026,
+          0.315509170293808,
+          0.04672713950276375,
+          0.021152257919311523
+        ],
+        "total_decode_transform_inference_ms": 80.07496292702854
+      },
+      {
+        "label": "sanos",
+        "id": "14yO25Ww1uzteI-aULzg15p_-0AmUTd76",
+        "name": "cacao_sano (17).jpg",
+        "size": 3242434,
+        "path": "images/sanos-14yO25Ww1uzteI-aULzg15p_-0AmUTd76.jpg",
+        "sha256": "f1cff8f63d6db502ca8ca557c4425c61668a3cb8be23cf3d4fee4447e3a939fc",
+        "width": 3060,
+        "height": 4080,
+        "pred": 0,
+        "pred_name": "Healthy",
+        "probabilities": [
+          0.8561161756515503,
+          0.0013454942964017391,
+          0.1107826828956604,
+          0.016301464289426804,
+          0.015454167500138283
+        ],
+        "total_decode_transform_inference_ms": 76.13599486649036
+      },
+      {
+        "label": "sanos",
+        "id": "1s707g4n14q2Q_CUf9agLCv8R2zJnUtTf",
+        "name": "cacao_sano (7).jpg",
+        "size": 2485700,
+        "path": "images/sanos-1s707g4n14q2Q_CUf9agLCv8R2zJnUtTf.jpg",
+        "sha256": "0713c90fa94b37a19dadad15f4b60aa29313e02375ffa3403a8ef0845750299e",
+        "width": 3060,
+        "height": 4080,
+        "pred": 2,
+        "pred_name": "Moniliophthora perniciosa",
+        "probabilities": [
+          0.026072019711136818,
+          0.001630029990337789,
+          0.9310290217399597,
+          0.03960323706269264,
+          0.0016657141968607903
+        ],
+        "total_decode_transform_inference_ms": 79.65055899694562
+      },
+      {
+        "label": "sanos",
+        "id": "1U3FOe_076Yl-tgy5bivcuuFB-FpxjHTE",
+        "name": "cacao_sano (43).jpg",
+        "size": 2873392,
+        "path": "images/sanos-1U3FOe_076Yl-tgy5bivcuuFB-FpxjHTE.jpg",
+        "sha256": "00d62f6c653fdd4b0941e1fbe54e1718fca2c983d5c40756c2e57fb1f4477ae7",
+        "width": 3060,
+        "height": 4080,
+        "pred": 0,
+        "pred_name": "Healthy",
+        "probabilities": [
+          0.911389172077179,
+          0.0013835177524015307,
+          0.07047691196203232,
+          0.0050005074590444565,
+          0.01174986083060503
+        ],
+        "total_decode_transform_inference_ms": 76.7391670960933
+      },
+      {
+        "label": "sanos",
+        "id": "1BNW4fU-49xEsSKYfqK_wrgMlgf7CH2R_",
+        "name": "cacao_sano (14).jpg",
+        "size": 3223836,
+        "path": "images/sanos-1BNW4fU-49xEsSKYfqK_wrgMlgf7CH2R_.jpg",
+        "sha256": "a515f25bef769f510cc1bb14968bcbb235f9eaa1c56101f8dcac9ca9f770ed13",
+        "width": 3060,
+        "height": 4080,
+        "pred": 0,
+        "pred_name": "Healthy",
+        "probabilities": [
+          0.7453315258026123,
+          0.006957148667424917,
+          0.14254814386367798,
+          0.0994776114821434,
+          0.005685523152351379
+        ],
+        "total_decode_transform_inference_ms": 83.62159691751003
+      },
+      {
+        "label": "sanos",
+        "id": "1R80IEWBX_Pjgyjntx9TzL9_5ubBeqH-N",
+        "name": "cacao_sano (35).jpg",
+        "size": 2836771,
+        "path": "images/sanos-1R80IEWBX_Pjgyjntx9TzL9_5ubBeqH-N.jpg",
+        "sha256": "b612b48d7631135874d668b1fab4ae1d7d1b3a2b8ffb731240de88960e136903",
+        "width": 3060,
+        "height": 4080,
+        "pred": 2,
+        "pred_name": "Moniliophthora perniciosa",
+        "probabilities": [
+          0.44715479016304016,
+          0.0023462551180273294,
+          0.5488348603248596,
+          0.000447790022008121,
+          0.0012162663042545319
+        ],
+        "total_decode_transform_inference_ms": 73.86927399784327
+      },
+      {
+        "label": "sanos",
+        "id": "15rYcN1_ceHPsChyYGiuZq_1oiQmyp2i-",
+        "name": "cacao_sano (18).jpg",
+        "size": 3342952,
+        "path": "images/sanos-15rYcN1_ceHPsChyYGiuZq_1oiQmyp2i-.jpg",
+        "sha256": "48364f2a6e2eb8452d2755eca8b313a89bdeabad0100125ff13062e6b4ddd4d6",
+        "width": 3060,
+        "height": 4080,
+        "pred": 0,
+        "pred_name": "Healthy",
+        "probabilities": [
+          0.9979713559150696,
+          0.00010019937326433137,
+          0.0018275075126439333,
+          6.631610449403524e-05,
+          3.461760934442282e-05
+        ],
+        "total_decode_transform_inference_ms": 84.49428086169064
+      },
+      {
+        "label": "sanos",
+        "id": "1uBkSKI3k0wlhp2DDjVyO30y_Rnn3uuUr",
+        "name": "cacao_sano (6).jpg",
+        "size": 2485700,
+        "path": "images/sanos-1uBkSKI3k0wlhp2DDjVyO30y_Rnn3uuUr.jpg",
+        "sha256": "0713c90fa94b37a19dadad15f4b60aa29313e02375ffa3403a8ef0845750299e",
+        "width": 3060,
+        "height": 4080,
+        "pred": 2,
+        "pred_name": "Moniliophthora perniciosa",
+        "probabilities": [
+          0.026072019711136818,
+          0.001630029990337789,
+          0.9310290217399597,
+          0.03960323706269264,
+          0.0016657141968607903
+        ],
+        "total_decode_transform_inference_ms": 71.77659613080323
+      },
+      {
+        "label": "sanos",
+        "id": "14Zf0iqc2dnN5LrK2gXEnWELPXuZBi1FP",
+        "name": "cacao_sano (28).jpg",
+        "size": 2885777,
+        "path": "images/sanos-14Zf0iqc2dnN5LrK2gXEnWELPXuZBi1FP.jpg",
+        "sha256": "04cc3ad91bf9997940ed0dee401142f56870623680c022943f03a24ecfd2edd6",
+        "width": 3060,
+        "height": 4080,
+        "pred": 0,
+        "pred_name": "Healthy",
+        "probabilities": [
+          0.8797096610069275,
+          0.002040205057710409,
+          0.1019175574183464,
+          0.013117877766489983,
+          0.0032146587036550045
+        ],
+        "total_decode_transform_inference_ms": 84.48956697247922
+      },
+      {
+        "label": "sanos",
+        "id": "1lYzNN7E8g57oyN1kcSRVA9aXSkBHs5ON",
+        "name": "cacao_sano (25).jpg",
+        "size": 2526374,
+        "path": "images/sanos-1lYzNN7E8g57oyN1kcSRVA9aXSkBHs5ON.jpg",
+        "sha256": "b483f3dc1fdd6c5a99fd6cd6b87388bbb81252ad72ca5123fcc2f97f3c95c5c6",
+        "width": 3060,
+        "height": 4080,
+        "pred": 2,
+        "pred_name": "Moniliophthora perniciosa",
+        "probabilities": [
+          0.08412276208400726,
+          0.32437217235565186,
+          0.3376993238925934,
+          0.2251596599817276,
+          0.028646079823374748
+        ],
+        "total_decode_transform_inference_ms": 71.31161191500723
+      },
+      {
+        "label": "sanos",
+        "id": "1VJ-UDTCaKdqf3oMrUV79W1mbuni2rJ90",
+        "name": "cacao_sano (8).jpg",
+        "size": 2597066,
+        "path": "images/sanos-1VJ-UDTCaKdqf3oMrUV79W1mbuni2rJ90.jpg",
+        "sha256": "6ea8a6e512f0eac58a1abc71b05cf7a3b98202b783628f67a2578fdb09c64a93",
+        "width": 3060,
+        "height": 4080,
+        "pred": 0,
+        "pred_name": "Healthy",
+        "probabilities": [
+          0.35548314452171326,
+          0.007170081604272127,
+          0.04541797935962677,
+          0.2426384836435318,
+          0.3492903411388397
+        ],
+        "total_decode_transform_inference_ms": 79.26349202170968
+      },
+      {
+        "label": "sanos",
+        "id": "1XMTUYjVRPmgpgv7dmRZ07fmNTygjyUI_",
+        "name": "cacao_sano (49).jpg",
+        "size": 2905234,
+        "path": "images/sanos-1XMTUYjVRPmgpgv7dmRZ07fmNTygjyUI_.jpg",
+        "sha256": "62498942587c9f492c6c1d340df4daae06a9f10dcabfbd895825c0037c20a566",
+        "width": 3060,
+        "height": 4080,
+        "pred": 0,
+        "pred_name": "Healthy",
+        "probabilities": [
+          0.8587151765823364,
+          0.010470199398696423,
+          0.1026061475276947,
+          0.012778946198523045,
+          0.015429596416652203
+        ],
+        "total_decode_transform_inference_ms": 73.66915699094534
+      }
+    ]
+  },
+  "ResNet50": {
+    "model": "ResNet50",
+    "classes": [
+      "Healthy",
+      "Carmenta foraseminis",
+      "Moniliophthora perniciosa",
+      "Moniliophthora roreri",
+      "Phytophthora palmivora"
+    ],
+    "weights_sha256": "bbcd0b88672e1206af227e17ddedfc505f3fa6b5370e7c915f27389c69917524",
+    "device": "cuda",
+    "gpu": "NVIDIA GeForce RTX 4060 Laptop GPU",
+    "inference_only_mean_ms": 2.6748112216591835,
+    "pipeline_median_ms": 39.870930602774024,
+    "matrix_rows_healthy_diseased_cols_five_model_classes": [
+      [
+        17,
+        0,
+        4,
+        4,
+        0
+      ],
+      [
+        10,
+        6,
+        2,
+        3,
+        4
+      ]
+    ],
+    "monilia_top1": {
+      "confusion_rows_actual_healthy_diseased_cols_negative_positive": [
+        [
+          21,
+          4
+        ],
+        [
+          22,
+          3
+        ]
+      ],
+      "sensitivity": 0.12,
+      "specificity": 0.84,
+      "accuracy": 0.48,
+      "precision": 0.42857142857142855
+    },
+    "any_disease_top1": {
+      "confusion_rows_actual_healthy_diseased_cols_negative_positive": [
+        [
+          17,
+          8
+        ],
+        [
+          10,
+          15
+        ]
+      ],
+      "sensitivity": 0.6,
+      "specificity": 0.68,
+      "accuracy": 0.64,
+      "precision": 0.6521739130434783
+    },
+    "rows": [
+      {
+        "label": "enfermos",
+        "id": "1GlVqDWriINMZHt_0CUvgdb640IUn0bsC",
+        "name": "cacao_enfermo (34).jpg",
+        "size": 63370,
+        "path": "images/enfermos-1GlVqDWriINMZHt_0CUvgdb640IUn0bsC.jpg",
+        "sha256": "6b9a0f2ac1f3ee7471f0d18faed8fb36159ec58fe4b5a27f9a8f14c59370c081",
+        "width": 640,
+        "height": 640,
+        "pred": 1,
+        "pred_name": "Carmenta foraseminis",
+        "probabilities": [
+          0.08179396390914917,
+          0.4103236496448517,
+          0.003039696253836155,
+          0.3474268615245819,
+          0.15741585195064545
+        ],
+        "total_decode_transform_inference_ms": 6.282503018155694
+      },
+      {
+        "label": "enfermos",
+        "id": "1V5sWdssd6EHH8ftZrI5XcuLm-mSyprc8",
+        "name": "cacao_enfermo (47).jpg",
+        "size": 62951,
+        "path": "images/enfermos-1V5sWdssd6EHH8ftZrI5XcuLm-mSyprc8.jpg",
+        "sha256": "f8527ef9a6e8ad5f91961b30051844c3c98cb42260748cd653b2f27cffb50cf0",
+        "width": 640,
+        "height": 640,
+        "pred": 4,
+        "pred_name": "Phytophthora palmivora",
+        "probabilities": [
+          0.05066869407892227,
+          0.01331007294356823,
+          0.006969427689909935,
+          0.07476318627595901,
+          0.8542885780334473
+        ],
+        "total_decode_transform_inference_ms": 5.240605911239982
+      },
+      {
+        "label": "enfermos",
+        "id": "13jdYVYJ-_bqLgI0pHEZCVr6uTC1Hi7_F",
+        "name": "cacao_enfermo (25).jpg",
+        "size": 53150,
+        "path": "images/enfermos-13jdYVYJ-_bqLgI0pHEZCVr6uTC1Hi7_F.jpg",
+        "sha256": "b288233e45791bb2aed8042c8ac8980f23b139a0e01b4bb06693d556b9d73d65",
+        "width": 640,
+        "height": 640,
+        "pred": 1,
+        "pred_name": "Carmenta foraseminis",
+        "probabilities": [
+          4.3129007281095255e-06,
+          0.9996168613433838,
+          7.645470532224863e-07,
+          0.00016616936773061752,
+          0.0002119616256095469
+        ],
+        "total_decode_transform_inference_ms": 4.955603973940015
+      },
+      {
+        "label": "enfermos",
+        "id": "1ZGpygDf411x6aLQiSLHFdZCBs0WIBMHp",
+        "name": "cacao_enfermo (26).jpg",
+        "size": 69795,
+        "path": "images/enfermos-1ZGpygDf411x6aLQiSLHFdZCBs0WIBMHp.jpg",
+        "sha256": "806ad57315200e89782a2d5506028d8f7357079dae1ac674b0d10ce1ed725a07",
+        "width": 640,
+        "height": 640,
+        "pred": 2,
+        "pred_name": "Moniliophthora perniciosa",
+        "probabilities": [
+          0.043254222720861435,
+          0.009319385513663292,
+          0.787430465221405,
+          0.06704939156770706,
+          0.09294657409191132
+        ],
+        "total_decode_transform_inference_ms": 5.148100899532437
+      },
+      {
+        "label": "enfermos",
+        "id": "1amodQlWuuqL_gctdYK9hoMPdYaaNGlwa",
+        "name": "cacao_enfermo (3).jpg",
+        "size": 44452,
+        "path": "images/enfermos-1amodQlWuuqL_gctdYK9hoMPdYaaNGlwa.jpg",
+        "sha256": "44ab236defe2568c2766d60f5233ca309b5f8547a09ed466fa088cf70ee026cf",
+        "width": 640,
+        "height": 640,
+        "pred": 1,
+        "pred_name": "Carmenta foraseminis",
+        "probabilities": [
+          0.0766640156507492,
+          0.7533294558525085,
+          0.004410334397107363,
+          0.03552008792757988,
+          0.1300760805606842
+        ],
+        "total_decode_transform_inference_ms": 4.845293005928397
+      },
+      {
+        "label": "enfermos",
+        "id": "1go4FAOaUHEoeyUPo1rwdTf5DtXrrVA0_",
+        "name": "cacao_enfermo (39).jpg",
+        "size": 62828,
+        "path": "images/enfermos-1go4FAOaUHEoeyUPo1rwdTf5DtXrrVA0_.jpg",
+        "sha256": "9b0737e24ab2543729dd2feffc33878489ec3af86983b4d9cd5006cb8257b26b",
+        "width": 640,
+        "height": 640,
+        "pred": 2,
+        "pred_name": "Moniliophthora perniciosa",
+        "probabilities": [
+          0.0870719626545906,
+          0.006763486657291651,
+          0.8310880661010742,
+          0.07031484693288803,
+          0.004761689808219671
+        ],
+        "total_decode_transform_inference_ms": 5.0049531273543835
+      },
+      {
+        "label": "enfermos",
+        "id": "17e5Er4m1IGX6QRnVXFrEtR6w0B8w3se2",
+        "name": "cacao_enfermo (38).jpg",
+        "size": 65024,
+        "path": "images/enfermos-17e5Er4m1IGX6QRnVXFrEtR6w0B8w3se2.jpg",
+        "sha256": "7e712fcaa9f399c6e9a56d37a72d75a7a7bdba54388e3947df87fa04ca972586",
+        "width": 640,
+        "height": 640,
+        "pred": 0,
+        "pred_name": "Healthy",
+        "probabilities": [
+          0.625460684299469,
+          0.0007832549163140357,
+          0.022090567275881767,
+          0.337377667427063,
+          0.014287816360592842
+        ],
+        "total_decode_transform_inference_ms": 4.996231058612466
+      },
+      {
+        "label": "enfermos",
+        "id": "1IIpiWFgaWZ0ybBj8FyRPZCaWspllmVmh",
+        "name": "cacao_enfermo (36).jpg",
+        "size": 81952,
+        "path": "images/enfermos-1IIpiWFgaWZ0ybBj8FyRPZCaWspllmVmh.jpg",
+        "sha256": "b05f927cef8674625c0e475eca84c4d766f5152ec3beb2316f8a411fae46652a",
+        "width": 640,
+        "height": 640,
+        "pred": 4,
+        "pred_name": "Phytophthora palmivora",
+        "probabilities": [
+          0.03220491483807564,
+          0.14947918057441711,
+          0.003657711436972022,
+          0.28794196248054504,
+          0.5267162322998047
+        ],
+        "total_decode_transform_inference_ms": 5.137107102200389
+      },
+      {
+        "label": "enfermos",
+        "id": "130-W1Uo6AWs12O5DpPiDf2d__rK8AvZx",
+        "name": "cacao_enfermo (16).jpg",
+        "size": 71160,
+        "path": "images/enfermos-130-W1Uo6AWs12O5DpPiDf2d__rK8AvZx.jpg",
+        "sha256": "c1b5ce01bf8e57e10e900f41a89d6a51af9ba264cfbde0476cb05974ba8c41c7",
+        "width": 640,
+        "height": 640,
+        "pred": 0,
+        "pred_name": "Healthy",
+        "probabilities": [
+          0.41193583607673645,
+          0.28606727719306946,
+          0.012516862712800503,
+          0.1023288369178772,
+          0.18715116381645203
+        ],
+        "total_decode_transform_inference_ms": 5.037711001932621
+      },
+      {
+        "label": "enfermos",
+        "id": "1lyIAPyJHpCzQHuv4rwf-2RKfYLiAF5WR",
+        "name": "cacao_enfermo (49).jpg",
+        "size": 68543,
+        "path": "images/enfermos-1lyIAPyJHpCzQHuv4rwf-2RKfYLiAF5WR.jpg",
+        "sha256": "c4b356d80f6b2a8db87f0afc19b07f3b334eed7ff880e58fcba77ec160a0c4f8",
+        "width": 640,
+        "height": 640,
+        "pred": 0,
+        "pred_name": "Healthy",
+        "probabilities": [
+          0.680306077003479,
+          0.009848819114267826,
+          0.14628878235816956,
+          0.02640443481504917,
+          0.13715188205242157
+        ],
+        "total_decode_transform_inference_ms": 5.041544092819095
+      },
+      {
+        "label": "enfermos",
+        "id": "1K1VfZGiPrKwNE-4VeNj0OrOEWPwYvOgM",
+        "name": "cacao_enfermo (11).jpg",
+        "size": 54451,
+        "path": "images/enfermos-1K1VfZGiPrKwNE-4VeNj0OrOEWPwYvOgM.jpg",
+        "sha256": "e4930467facdbb98af263c7b0a4c5fa7927d50c2989521195ab434220454db7b",
+        "width": 640,
+        "height": 640,
+        "pred": 0,
+        "pred_name": "Healthy",
+        "probabilities": [
+          0.5684691667556763,
+          0.17487341165542603,
+          0.0014095025835558772,
+          0.08166816085577011,
+          0.17357975244522095
+        ],
+        "total_decode_transform_inference_ms": 5.443687085062265
+      },
+      {
+        "label": "enfermos",
+        "id": "1JQKsY1UmTEL7Ghoq3dFE4Hjh8vzIKmYa",
+        "name": "cacao_enfermo (29).jpg",
+        "size": 68453,
+        "path": "images/enfermos-1JQKsY1UmTEL7Ghoq3dFE4Hjh8vzIKmYa.jpg",
+        "sha256": "2e943a29415ccface19c02b934a08cce904d3bd8fbe158ef19daeeb24133b644",
+        "width": 640,
+        "height": 640,
+        "pred": 1,
+        "pred_name": "Carmenta foraseminis",
+        "probabilities": [
+          0.010406170040369034,
+          0.9649794697761536,
+          0.00011955083027714863,
+          0.011503913439810276,
+          0.012990946881473064
+        ],
+        "total_decode_transform_inference_ms": 5.075576016679406
+      },
+      {
+        "label": "enfermos",
+        "id": "1ibqHRP5dQlnuVaAzV5QCqlnolRRuCKXn",
+        "name": "cacao_enfermo (4).jpg",
+        "size": 66197,
+        "path": "images/enfermos-1ibqHRP5dQlnuVaAzV5QCqlnolRRuCKXn.jpg",
+        "sha256": "3f921d8314f99b97b0dd148b36ad894c2e414869b100348d17fe14823e6bf3f0",
+        "width": 640,
+        "height": 640,
+        "pred": 4,
+        "pred_name": "Phytophthora palmivora",
+        "probabilities": [
+          7.2970710789377335e-06,
+          0.027416760101914406,
+          4.422167421580525e-06,
+          0.002052925992757082,
+          0.9705186486244202
+        ],
+        "total_decode_transform_inference_ms": 5.0001859199255705
+      },
+      {
+        "label": "enfermos",
+        "id": "1G3BUugkrit7TNNmUFtvSmHa7jkFIC6bp",
+        "name": "cacao_enfermo (6).jpg",
+        "size": 69115,
+        "path": "images/enfermos-1G3BUugkrit7TNNmUFtvSmHa7jkFIC6bp.jpg",
+        "sha256": "208564e17459094ba7c7e7b97cf64128aa1e3d1ee5d5be741d5c9854e726ad38",
+        "width": 640,
+        "height": 640,
+        "pred": 1,
+        "pred_name": "Carmenta foraseminis",
+        "probabilities": [
+          0.0003127482777927071,
+          0.7656731605529785,
+          1.1956793059653137e-05,
+          0.021380683407187462,
+          0.21262143552303314
+        ],
+        "total_decode_transform_inference_ms": 5.054795183241367
+      },
+      {
+        "label": "enfermos",
+        "id": "1sguYLi__JPlEr1QN1fRwlpS9Iv9LxXdl",
+        "name": "cacao_enfermo (24).jpg",
+        "size": 43555,
+        "path": "images/enfermos-1sguYLi__JPlEr1QN1fRwlpS9Iv9LxXdl.jpg",
+        "sha256": "8156d65f1623db1d179fd85195d4a31533e5ee9f4e9dfcebbed69d7ec9f22d61",
+        "width": 640,
+        "height": 640,
+        "pred": 3,
+        "pred_name": "Moniliophthora roreri",
+        "probabilities": [
+          0.030514400452375412,
+          0.0037280695978552103,
+          0.0003409207274671644,
+          0.919536292552948,
+          0.04588025435805321
+        ],
+        "total_decode_transform_inference_ms": 4.8754399176687
+      },
+      {
+        "label": "enfermos",
+        "id": "1t_r4LCl5u4S3KjfMdKvsW_ZmggBd4AAp",
+        "name": "cacao_enfermo (2).jpg",
+        "size": 66872,
+        "path": "images/enfermos-1t_r4LCl5u4S3KjfMdKvsW_ZmggBd4AAp.jpg",
+        "sha256": "09d956c294ecccb919df4e39eb3093f27dca9632496bdef6bdd419d96f72a21d",
+        "width": 640,
+        "height": 640,
+        "pred": 0,
+        "pred_name": "Healthy",
+        "probabilities": [
+          0.821771502494812,
+          0.037913672626018524,
+          0.020701859146356583,
+          0.050549495965242386,
+          0.0690634697675705
+        ],
+        "total_decode_transform_inference_ms": 4.9494788981974125
+      },
+      {
+        "label": "enfermos",
+        "id": "1o8Ii1_T6ehXhWQDlbgBTVs-2NLiJzi-G",
+        "name": "cacao_enfermo (50).jpg",
+        "size": 61201,
+        "path": "images/enfermos-1o8Ii1_T6ehXhWQDlbgBTVs-2NLiJzi-G.jpg",
+        "sha256": "fd849c4f83e685d81b619df987936bc89b2be1d8bc2b873bc76aaed918f0ee5a",
+        "width": 640,
+        "height": 640,
+        "pred": 3,
+        "pred_name": "Moniliophthora roreri",
+        "probabilities": [
+          0.08261336386203766,
+          0.0005843154503963888,
+          0.0017997840186581016,
+          0.8978416323661804,
+          0.017160966992378235
+        ],
+        "total_decode_transform_inference_ms": 4.925949964672327
+      },
+      {
+        "label": "enfermos",
+        "id": "1Iq6DK_AlK347meeaCUZpSBdey_PJqvY8",
+        "name": "cacao_enfermo (28).jpg",
+        "size": 82879,
+        "path": "images/enfermos-1Iq6DK_AlK347meeaCUZpSBdey_PJqvY8.jpg",
+        "sha256": "7ed87a5ea8c8384217f87224a5c29d25cf3a5404c36381fd7e4bcdfc8b7d8b80",
+        "width": 640,
+        "height": 640,
+        "pred": 0,
+        "pred_name": "Healthy",
+        "probabilities": [
+          0.8863243460655212,
+          0.06472064554691315,
+          0.006295015569776297,
+          0.029332615435123444,
+          0.013327389024198055
+        ],
+        "total_decode_transform_inference_ms": 5.078521091490984
+      },
+      {
+        "label": "enfermos",
+        "id": "183moUnJR7lMfUAxye9EfDJEvlC-gM5un",
+        "name": "cacao_enfermo (10).jpg",
+        "size": 48476,
+        "path": "images/enfermos-183moUnJR7lMfUAxye9EfDJEvlC-gM5un.jpg",
+        "sha256": "5d22517cc3081ce7517ccc56dfe6a7a5f622b66ab6e3e5cb5726ea87c45b1728",
+        "width": 640,
+        "height": 640,
+        "pred": 1,
+        "pred_name": "Carmenta foraseminis",
+        "probabilities": [
+          0.01584293693304062,
+          0.6328122019767761,
+          0.0006838625413365662,
+          0.18603453040122986,
+          0.16462650895118713
+        ],
+        "total_decode_transform_inference_ms": 4.859961802139878
+      },
+      {
+        "label": "enfermos",
+        "id": "1ZCVKBUQTj6sBGJhrCwuZCaoijN_89Z8I",
+        "name": "cacao_enfermo (42).jpg",
+        "size": 73150,
+        "path": "images/enfermos-1ZCVKBUQTj6sBGJhrCwuZCaoijN_89Z8I.jpg",
+        "sha256": "f342f1fb0d9b8d16f19126acca61d219111d3c66850b91e22577bc98212987b0",
+        "width": 640,
+        "height": 640,
+        "pred": 0,
+        "pred_name": "Healthy",
+        "probabilities": [
+          0.6779873371124268,
+          0.018993664532899857,
+          0.11236079037189484,
+          0.17375947535037994,
+          0.016898656263947487
+        ],
+        "total_decode_transform_inference_ms": 5.051288055256009
+      },
+      {
+        "label": "enfermos",
+        "id": "1UDFPjqooV4xKPluZu_FPp7lO1pFdBg0w",
+        "name": "cacao_enfermo (14).jpg",
+        "size": 68222,
+        "path": "images/enfermos-1UDFPjqooV4xKPluZu_FPp7lO1pFdBg0w.jpg",
+        "sha256": "13fda0d54f7e9e804648530d490ce2941c0f7bfc64e653c17b8aa6a11c95776e",
+        "width": 640,
+        "height": 640,
+        "pred": 0,
+        "pred_name": "Healthy",
+        "probabilities": [
+          0.5477902293205261,
+          0.004917991813272238,
+          0.03529743850231171,
+          0.34181344509124756,
+          0.07018083333969116
+        ],
+        "total_decode_transform_inference_ms": 5.0277430564165115
+      },
+      {
+        "label": "enfermos",
+        "id": "1boD13X1cIy9di7E61Sfw-B6PbL1jSkDU",
+        "name": "cacao_enfermo (44).jpg",
+        "size": 72874,
+        "path": "images/enfermos-1boD13X1cIy9di7E61Sfw-B6PbL1jSkDU.jpg",
+        "sha256": "0f99307cea6e707381f4234ea61062ca0d802182e06874d695dfcfb78a68ba2c",
+        "width": 640,
+        "height": 640,
+        "pred": 0,
+        "pred_name": "Healthy",
+        "probabilities": [
+          0.6601641178131104,
+          0.005469080992043018,
+          0.02138400822877884,
+          0.2627978026866913,
+          0.05018505081534386
+        ],
+        "total_decode_transform_inference_ms": 4.993991926312447
+      },
+      {
+        "label": "enfermos",
+        "id": "11dgyngMFK104OvCJgQEL4tN8_QQRXR2O",
+        "name": "cacao_enfermo (35).jpg",
+        "size": 66261,
+        "path": "images/enfermos-11dgyngMFK104OvCJgQEL4tN8_QQRXR2O.jpg",
+        "sha256": "6128c1d127d08ca36c39b2e6a37de588646ab6cff7d568703ba23a423c84d68c",
+        "width": 640,
+        "height": 640,
+        "pred": 0,
+        "pred_name": "Healthy",
+        "probabilities": [
+          0.7168663144111633,
+          0.04038488119840622,
+          0.08200837671756744,
+          0.11448908597230911,
+          0.046251390129327774
+        ],
+        "total_decode_transform_inference_ms": 4.918649792671204
+      },
+      {
+        "label": "enfermos",
+        "id": "1NdkvpK_HC1T4g0mF-z5K2GUQSv-kSB_9",
+        "name": "cacao_enfermo (19).jpg",
+        "size": 69129,
+        "path": "images/enfermos-1NdkvpK_HC1T4g0mF-z5K2GUQSv-kSB_9.jpg",
+        "sha256": "52b4a70a2d3cfbaeb1e05c8ae33676436b76138c15a92482fdf5bd762b666c65",
+        "width": 640,
+        "height": 640,
+        "pred": 3,
+        "pred_name": "Moniliophthora roreri",
+        "probabilities": [
+          0.018578650429844856,
+          0.00518532982096076,
+          0.0014354155864566565,
+          0.9449867606163025,
+          0.02981381304562092
+        ],
+        "total_decode_transform_inference_ms": 5.021173041313887
+      },
+      {
+        "label": "enfermos",
+        "id": "1WLYUC0zCE9RgcUANWX3mB5m68wdDgbYo",
+        "name": "cacao_enfermo (37).jpg",
+        "size": 86871,
+        "path": "images/enfermos-1WLYUC0zCE9RgcUANWX3mB5m68wdDgbYo.jpg",
+        "sha256": "22b602510f4015a28301f9f33c341c86981b38fc7a750de2592549c9e54778f3",
+        "width": 640,
+        "height": 640,
+        "pred": 4,
+        "pred_name": "Phytophthora palmivora",
+        "probabilities": [
+          0.18254141509532928,
+          0.13304652273654938,
+          0.001864463440142572,
+          0.12125513702630997,
+          0.5612924098968506
+        ],
+        "total_decode_transform_inference_ms": 5.076220026239753
+      },
+      {
+        "label": "sanos",
+        "id": "1NPoPzkCSDedMeQSZhYf8X5bM9fNKwKMt",
+        "name": "cacao_sano (11).jpg",
+        "size": 2561106,
+        "path": "images/sanos-1NPoPzkCSDedMeQSZhYf8X5bM9fNKwKMt.jpg",
+        "sha256": "ee762613240d8ea4ed54c5ea4288aa518d3f41727832f756cb3e9b0639f50572",
+        "width": 3060,
+        "height": 4080,
+        "pred": 3,
+        "pred_name": "Moniliophthora roreri",
+        "probabilities": [
+          0.038003433495759964,
+          0.15909603238105774,
+          0.010338102467358112,
+          0.599764883518219,
+          0.19279757142066956
+        ],
+        "total_decode_transform_inference_ms": 89.17019492946565
+      },
+      {
+        "label": "sanos",
+        "id": "1qr6NSOhyZpfDF1-kvcNgTEdq9WKfazXW",
+        "name": "cacao_sano (30).jpg",
+        "size": 3227347,
+        "path": "images/sanos-1qr6NSOhyZpfDF1-kvcNgTEdq9WKfazXW.jpg",
+        "sha256": "d957469d5b0f0ca772d904c0a0fc8b0eb534c3a43a3b08e56ccaa321b068f121",
+        "width": 3060,
+        "height": 4080,
+        "pred": 2,
+        "pred_name": "Moniliophthora perniciosa",
+        "probabilities": [
+          0.21808499097824097,
+          0.09338199347257614,
+          0.6881629228591919,
+          7.698389526922256e-05,
+          0.00029307478689588606
+        ],
+        "total_decode_transform_inference_ms": 86.3197180442512
+      },
+      {
+        "label": "sanos",
+        "id": "1Kxqv2fonm4oygrhwXf7K-8D8npIZmMLr",
+        "name": "cacao_sano (33).jpg",
+        "size": 2836771,
+        "path": "images/sanos-1Kxqv2fonm4oygrhwXf7K-8D8npIZmMLr.jpg",
+        "sha256": "b612b48d7631135874d668b1fab4ae1d7d1b3a2b8ffb731240de88960e136903",
+        "width": 3060,
+        "height": 4080,
+        "pred": 0,
+        "pred_name": "Healthy",
+        "probabilities": [
+          0.46160635352134705,
+          0.08898980915546417,
+          0.44036686420440674,
+          0.0031555688474327326,
+          0.00588142080232501
+        ],
+        "total_decode_transform_inference_ms": 75.2214400563389
+      },
+      {
+        "label": "sanos",
+        "id": "1mfl63UdpIz2BBqGsVJG0Tz-0F238ahJJ",
+        "name": "cacao_sano (13).jpg",
+        "size": 2527130,
+        "path": "images/sanos-1mfl63UdpIz2BBqGsVJG0Tz-0F238ahJJ.jpg",
+        "sha256": "ce09ca21f976dbe57d8331090669eb96459d7f4531c237d97ab3eff2df43bf15",
+        "width": 3060,
+        "height": 4080,
+        "pred": 0,
+        "pred_name": "Healthy",
+        "probabilities": [
+          0.8925413489341736,
+          0.00044744598562829196,
+          0.015683840960264206,
+          0.05352896451950073,
+          0.03779836371541023
+        ],
+        "total_decode_transform_inference_ms": 83.05344101972878
+      },
+      {
+        "label": "sanos",
+        "id": "1iOdP17bAB2VK6VeEflLsQLYN5BlaIh6K",
+        "name": "cacao_sano (42).jpg",
+        "size": 2791849,
+        "path": "images/sanos-1iOdP17bAB2VK6VeEflLsQLYN5BlaIh6K.jpg",
+        "sha256": "68868cf4ab2b803a6f0a7ea54d6f458cff1644fed58c69e4c684a58a740f3bc2",
+        "width": 3060,
+        "height": 4080,
+        "pred": 0,
+        "pred_name": "Healthy",
+        "probabilities": [
+          0.6740906238555908,
+          0.0108354352414608,
+          0.3119969367980957,
+          0.0010785567574203014,
+          0.0019983844831585884
+        ],
+        "total_decode_transform_inference_ms": 75.13942779041827
+      },
+      {
+        "label": "sanos",
+        "id": "165bFj5-yqqnHogL2kbPREFD-P161vvkv",
+        "name": "cacao_sano (44).jpg",
+        "size": 2873392,
+        "path": "images/sanos-165bFj5-yqqnHogL2kbPREFD-P161vvkv.jpg",
+        "sha256": "00d62f6c653fdd4b0941e1fbe54e1718fca2c983d5c40756c2e57fb1f4477ae7",
+        "width": 3060,
+        "height": 4080,
+        "pred": 0,
+        "pred_name": "Healthy",
+        "probabilities": [
+          0.5684807896614075,
+          0.008892691694200039,
+          0.42173048853874207,
+          0.00020557349489536136,
+          0.0006905064801685512
+        ],
+        "total_decode_transform_inference_ms": 85.40169592015445
+      },
+      {
+        "label": "sanos",
+        "id": "180AilWXDcs2r--oE16362GKBNoz4A7Lm",
+        "name": "cacao_sano (22).jpg",
+        "size": 3357711,
+        "path": "images/sanos-180AilWXDcs2r--oE16362GKBNoz4A7Lm.jpg",
+        "sha256": "71037ae1ecef566096e79607a1bde0e29e7fa2b854c2eb9851c5dd07e0b49c6e",
+        "width": 3060,
+        "height": 4080,
+        "pred": 0,
+        "pred_name": "Healthy",
+        "probabilities": [
+          0.4962713122367859,
+          0.0037361907307058573,
+          0.02320335991680622,
+          0.45707380771636963,
+          0.01971530355513096
+        ],
+        "total_decode_transform_inference_ms": 78.13681499101222
+      },
+      {
+        "label": "sanos",
+        "id": "1hUOfEml3PA3NxFQmcCdEGtgONn29uEum",
+        "name": "cacao_sano (20).jpg",
+        "size": 3342952,
+        "path": "images/sanos-1hUOfEml3PA3NxFQmcCdEGtgONn29uEum.jpg",
+        "sha256": "48364f2a6e2eb8452d2755eca8b313a89bdeabad0100125ff13062e6b4ddd4d6",
+        "width": 3060,
+        "height": 4080,
+        "pred": 0,
+        "pred_name": "Healthy",
+        "probabilities": [
+          0.920941948890686,
+          0.0009188411640934646,
+          0.020293906331062317,
+          0.05479840934276581,
+          0.0030468653421849012
+        ],
+        "total_decode_transform_inference_ms": 87.15725992806256
+      },
+      {
+        "label": "sanos",
+        "id": "11_4b3lqGIIR3UjMn9SUhICY6XsEWMsVX",
+        "name": "cacao_sano (45).jpg",
+        "size": 3659781,
+        "path": "images/sanos-11_4b3lqGIIR3UjMn9SUhICY6XsEWMsVX.jpg",
+        "sha256": "ea931fc28a54a0a36a727b26e812ab25f1c888ed719305c76ed30dd01d775955",
+        "width": 3060,
+        "height": 4080,
+        "pred": 2,
+        "pred_name": "Moniliophthora perniciosa",
+        "probabilities": [
+          0.13773004710674286,
+          0.00042507940088398755,
+          0.8591620922088623,
+          0.002263142727315426,
+          0.000419583753682673
+        ],
+        "total_decode_transform_inference_ms": 79.78533091954887
+      },
+      {
+        "label": "sanos",
+        "id": "1vGGKDRqLfr_wim26sXDCjhdJTaf7t3Fb",
+        "name": "cacao_sano (34).jpg",
+        "size": 2836771,
+        "path": "images/sanos-1vGGKDRqLfr_wim26sXDCjhdJTaf7t3Fb.jpg",
+        "sha256": "b612b48d7631135874d668b1fab4ae1d7d1b3a2b8ffb731240de88960e136903",
+        "width": 3060,
+        "height": 4080,
+        "pred": 0,
+        "pred_name": "Healthy",
+        "probabilities": [
+          0.46160635352134705,
+          0.08898980915546417,
+          0.44036686420440674,
+          0.0031555688474327326,
+          0.00588142080232501
+        ],
+        "total_decode_transform_inference_ms": 84.0271560009569
+      },
+      {
+        "label": "sanos",
+        "id": "1vnlIik-WjVNsIkjoJ8Bdiuer7sIv4uxf",
+        "name": "cacao_sano (21).jpg",
+        "size": 3342952,
+        "path": "images/sanos-1vnlIik-WjVNsIkjoJ8Bdiuer7sIv4uxf.jpg",
+        "sha256": "48364f2a6e2eb8452d2755eca8b313a89bdeabad0100125ff13062e6b4ddd4d6",
+        "width": 3060,
+        "height": 4080,
+        "pred": 0,
+        "pred_name": "Healthy",
+        "probabilities": [
+          0.920941948890686,
+          0.0009188411640934646,
+          0.020293906331062317,
+          0.05479840934276581,
+          0.0030468653421849012
+        ],
+        "total_decode_transform_inference_ms": 78.68386199697852
+      },
+      {
+        "label": "sanos",
+        "id": "1uX5vh41Yikm6UIo7JQ0a2HsKo-orT0zV",
+        "name": "cacao_sano (12).jpg",
+        "size": 2527130,
+        "path": "images/sanos-1uX5vh41Yikm6UIo7JQ0a2HsKo-orT0zV.jpg",
+        "sha256": "ce09ca21f976dbe57d8331090669eb96459d7f4531c237d97ab3eff2df43bf15",
+        "width": 3060,
+        "height": 4080,
+        "pred": 0,
+        "pred_name": "Healthy",
+        "probabilities": [
+          0.8925413489341736,
+          0.00044744598562829196,
+          0.015683840960264206,
+          0.05352896451950073,
+          0.03779836371541023
+        ],
+        "total_decode_transform_inference_ms": 82.63399708084762
+      },
+      {
+        "label": "sanos",
+        "id": "1C-gwcBfifzdknVlGF36t3JC2OmFsQAFr",
+        "name": "cacao_sano (36).jpg",
+        "size": 2836771,
+        "path": "images/sanos-1C-gwcBfifzdknVlGF36t3JC2OmFsQAFr.jpg",
+        "sha256": "b612b48d7631135874d668b1fab4ae1d7d1b3a2b8ffb731240de88960e136903",
+        "width": 3060,
+        "height": 4080,
+        "pred": 0,
+        "pred_name": "Healthy",
+        "probabilities": [
+          0.46160635352134705,
+          0.08898980915546417,
+          0.44036686420440674,
+          0.0031555688474327326,
+          0.00588142080232501
+        ],
+        "total_decode_transform_inference_ms": 74.86258400604129
+      },
+      {
+        "label": "sanos",
+        "id": "16j8EQ-DGgXtslGGdzbrjZbfxD1M-SC2o",
+        "name": "cacao_sano (2).jpg",
+        "size": 2834999,
+        "path": "images/sanos-16j8EQ-DGgXtslGGdzbrjZbfxD1M-SC2o.jpg",
+        "sha256": "b2a631c2750a82f7cd0f8c281e6c1b91432d3c21207f25ebe84778857516df69",
+        "width": 3060,
+        "height": 4080,
+        "pred": 0,
+        "pred_name": "Healthy",
+        "probabilities": [
+          0.9002669453620911,
+          0.00412609102204442,
+          0.05724965035915375,
+          0.026675423607230186,
+          0.011681938543915749
+        ],
+        "total_decode_transform_inference_ms": 85.88891918770969
+      },
+      {
+        "label": "sanos",
+        "id": "14yO25Ww1uzteI-aULzg15p_-0AmUTd76",
+        "name": "cacao_sano (17).jpg",
+        "size": 3242434,
+        "path": "images/sanos-14yO25Ww1uzteI-aULzg15p_-0AmUTd76.jpg",
+        "sha256": "f1cff8f63d6db502ca8ca557c4425c61668a3cb8be23cf3d4fee4447e3a939fc",
+        "width": 3060,
+        "height": 4080,
+        "pred": 0,
+        "pred_name": "Healthy",
+        "probabilities": [
+          0.7006332278251648,
+          0.00047238534898497164,
+          0.288189172744751,
+          0.0077103981748223305,
+          0.0029947811271995306
+        ],
+        "total_decode_transform_inference_ms": 78.86823685839772
+      },
+      {
+        "label": "sanos",
+        "id": "1s707g4n14q2Q_CUf9agLCv8R2zJnUtTf",
+        "name": "cacao_sano (7).jpg",
+        "size": 2485700,
+        "path": "images/sanos-1s707g4n14q2Q_CUf9agLCv8R2zJnUtTf.jpg",
+        "sha256": "0713c90fa94b37a19dadad15f4b60aa29313e02375ffa3403a8ef0845750299e",
+        "width": 3060,
+        "height": 4080,
+        "pred": 2,
+        "pred_name": "Moniliophthora perniciosa",
+        "probabilities": [
+          0.011794036254286766,
+          0.016721662133932114,
+          0.971013605594635,
+          0.00041348772356286645,
+          5.716144005418755e-05
+        ],
+        "total_decode_transform_inference_ms": 85.00372688286006
+      },
+      {
+        "label": "sanos",
+        "id": "1U3FOe_076Yl-tgy5bivcuuFB-FpxjHTE",
+        "name": "cacao_sano (43).jpg",
+        "size": 2873392,
+        "path": "images/sanos-1U3FOe_076Yl-tgy5bivcuuFB-FpxjHTE.jpg",
+        "sha256": "00d62f6c653fdd4b0941e1fbe54e1718fca2c983d5c40756c2e57fb1f4477ae7",
+        "width": 3060,
+        "height": 4080,
+        "pred": 0,
+        "pred_name": "Healthy",
+        "probabilities": [
+          0.5684807896614075,
+          0.008892691694200039,
+          0.42173048853874207,
+          0.00020557349489536136,
+          0.0006905064801685512
+        ],
+        "total_decode_transform_inference_ms": 76.32350781932473
+      },
+      {
+        "label": "sanos",
+        "id": "1BNW4fU-49xEsSKYfqK_wrgMlgf7CH2R_",
+        "name": "cacao_sano (14).jpg",
+        "size": 3223836,
+        "path": "images/sanos-1BNW4fU-49xEsSKYfqK_wrgMlgf7CH2R_.jpg",
+        "sha256": "a515f25bef769f510cc1bb14968bcbb235f9eaa1c56101f8dcac9ca9f770ed13",
+        "width": 3060,
+        "height": 4080,
+        "pred": 0,
+        "pred_name": "Healthy",
+        "probabilities": [
+          0.5109232664108276,
+          0.0010630387114360929,
+          0.46880024671554565,
+          0.011240322142839432,
+          0.007973132655024529
+        ],
+        "total_decode_transform_inference_ms": 86.82136912830174
+      },
+      {
+        "label": "sanos",
+        "id": "1R80IEWBX_Pjgyjntx9TzL9_5ubBeqH-N",
+        "name": "cacao_sano (35).jpg",
+        "size": 2836771,
+        "path": "images/sanos-1R80IEWBX_Pjgyjntx9TzL9_5ubBeqH-N.jpg",
+        "sha256": "b612b48d7631135874d668b1fab4ae1d7d1b3a2b8ffb731240de88960e136903",
+        "width": 3060,
+        "height": 4080,
+        "pred": 0,
+        "pred_name": "Healthy",
+        "probabilities": [
+          0.46160635352134705,
+          0.08898980915546417,
+          0.44036686420440674,
+          0.0031555688474327326,
+          0.00588142080232501
+        ],
+        "total_decode_transform_inference_ms": 77.10227300412953
+      },
+      {
+        "label": "sanos",
+        "id": "15rYcN1_ceHPsChyYGiuZq_1oiQmyp2i-",
+        "name": "cacao_sano (18).jpg",
+        "size": 3342952,
+        "path": "images/sanos-15rYcN1_ceHPsChyYGiuZq_1oiQmyp2i-.jpg",
+        "sha256": "48364f2a6e2eb8452d2755eca8b313a89bdeabad0100125ff13062e6b4ddd4d6",
+        "width": 3060,
+        "height": 4080,
+        "pred": 0,
+        "pred_name": "Healthy",
+        "probabilities": [
+          0.920941948890686,
+          0.0009188411640934646,
+          0.020293906331062317,
+          0.05479840934276581,
+          0.0030468653421849012
+        ],
+        "total_decode_transform_inference_ms": 88.34253088571131
+      },
+      {
+        "label": "sanos",
+        "id": "1uBkSKI3k0wlhp2DDjVyO30y_Rnn3uuUr",
+        "name": "cacao_sano (6).jpg",
+        "size": 2485700,
+        "path": "images/sanos-1uBkSKI3k0wlhp2DDjVyO30y_Rnn3uuUr.jpg",
+        "sha256": "0713c90fa94b37a19dadad15f4b60aa29313e02375ffa3403a8ef0845750299e",
+        "width": 3060,
+        "height": 4080,
+        "pred": 2,
+        "pred_name": "Moniliophthora perniciosa",
+        "probabilities": [
+          0.011794036254286766,
+          0.016721662133932114,
+          0.971013605594635,
+          0.00041348772356286645,
+          5.716144005418755e-05
+        ],
+        "total_decode_transform_inference_ms": 73.45935818739235
+      },
+      {
+        "label": "sanos",
+        "id": "14Zf0iqc2dnN5LrK2gXEnWELPXuZBi1FP",
+        "name": "cacao_sano (28).jpg",
+        "size": 2885777,
+        "path": "images/sanos-14Zf0iqc2dnN5LrK2gXEnWELPXuZBi1FP.jpg",
+        "sha256": "04cc3ad91bf9997940ed0dee401142f56870623680c022943f03a24ecfd2edd6",
+        "width": 3060,
+        "height": 4080,
+        "pred": 3,
+        "pred_name": "Moniliophthora roreri",
+        "probabilities": [
+          0.30695241689682007,
+          0.01444633211940527,
+          0.010730001144111156,
+          0.39860033988952637,
+          0.2692709267139435
+        ],
+        "total_decode_transform_inference_ms": 89.6250270307064
+      },
+      {
+        "label": "sanos",
+        "id": "1lYzNN7E8g57oyN1kcSRVA9aXSkBHs5ON",
+        "name": "cacao_sano (25).jpg",
+        "size": 2526374,
+        "path": "images/sanos-1lYzNN7E8g57oyN1kcSRVA9aXSkBHs5ON.jpg",
+        "sha256": "b483f3dc1fdd6c5a99fd6cd6b87388bbb81252ad72ca5123fcc2f97f3c95c5c6",
+        "width": 3060,
+        "height": 4080,
+        "pred": 3,
+        "pred_name": "Moniliophthora roreri",
+        "probabilities": [
+          0.08663609623908997,
+          0.020704565569758415,
+          0.09735681116580963,
+          0.59236741065979,
+          0.2029350996017456
+        ],
+        "total_decode_transform_inference_ms": 76.50494715198874
+      },
+      {
+        "label": "sanos",
+        "id": "1VJ-UDTCaKdqf3oMrUV79W1mbuni2rJ90",
+        "name": "cacao_sano (8).jpg",
+        "size": 2597066,
+        "path": "images/sanos-1VJ-UDTCaKdqf3oMrUV79W1mbuni2rJ90.jpg",
+        "sha256": "6ea8a6e512f0eac58a1abc71b05cf7a3b98202b783628f67a2578fdb09c64a93",
+        "width": 3060,
+        "height": 4080,
+        "pred": 3,
+        "pred_name": "Moniliophthora roreri",
+        "probabilities": [
+          0.3479982912540436,
+          0.011472989805042744,
+          0.019398918375372887,
+          0.5356091856956482,
+          0.08552059531211853
+        ],
+        "total_decode_transform_inference_ms": 83.24161800555885
+      },
+      {
+        "label": "sanos",
+        "id": "1XMTUYjVRPmgpgv7dmRZ07fmNTygjyUI_",
+        "name": "cacao_sano (49).jpg",
+        "size": 2905234,
+        "path": "images/sanos-1XMTUYjVRPmgpgv7dmRZ07fmNTygjyUI_.jpg",
+        "sha256": "62498942587c9f492c6c1d340df4daae06a9f10dcabfbd895825c0037c20a566",
+        "width": 3060,
+        "height": 4080,
+        "pred": 0,
+        "pred_name": "Healthy",
+        "probabilities": [
+          0.9755613207817078,
+          0.004919789731502533,
+          0.014393942430615425,
+          0.0018261506920680404,
+          0.0032986982259899378
+        ],
+        "total_decode_transform_inference_ms": 75.67472103983164
+      }
+    ]
+  }
+}

@@ -1,0 +1,22 @@
+[
+  {
+    "name": "apple_detection_drone_brazil-yolo11n/",
+    "size": 0
+  },
+  {
+    "name": "apple_detection_drone_brazil-yolo11n/best.pt",
+    "size": 5490067
+  },
+  {
+    "name": "apple_detection_drone_brazil-yolo11n/results.json",
+    "size": 363
+  },
+  {
+    "name": "apple_detection_drone_brazil-yolo11n/args.yaml",
+    "size": 1643
+  },
+  {
+    "name": "apple_detection_drone_brazil-yolo11n/results.csv",
+    "size": 13689
+  }
+]

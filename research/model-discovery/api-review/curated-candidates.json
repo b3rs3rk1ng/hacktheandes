@@ -1,0 +1,210 @@
+{
+  "retrieved_utc": "2026-10-18T04:45:20.898854+00:00",
+  "method": "Direct public Hugging Face REST API and GitHub REST API; referenced raw README/config/source/report/image resources. Python stdlib. No browser search; no remote code execution; no weights downloaded.",
+  "coverage": {
+    "hf_search_queries": 9,
+    "github_search_queries": 11,
+    "hf_model_details_reviewed": 20
+  },
+  "conclusion": "Reusable candidates exist. Apple visible deterioration has the most immediately testable detector/classifiers found here. None has verified moving-camera orchard performance or ready drone integration. No blanket absence claim.",
+  "candidates": [
+    {
+      "id": "AKASH-ALAM/Fruit_Quality_Detection_Using_Deep_Learning",
+      "platform": "github",
+      "fruit": "apple",
+      "task": "object-detection",
+      "condition": "visible poor/spoiled condition, no pathogen diagnosis",
+      "url": "https://github.com/AKASH-ALAM/Fruit_Quality_Detection_Using_Deep_Learning",
+      "artifacts": [
+        {
+          "path": "model/fruit_quality/weights/best.pt",
+          "bytes": 6211946
+        },
+        {
+          "path": "model/fruit_quality/weights/best.onnx",
+          "bytes": 12144721
+        }
+      ],
+      "classes": [
+        "bad apple",
+        "bad banana",
+        "bad orange",
+        "bad pomegranate",
+        "good apple",
+        "good banana",
+        "good orange",
+        "good pomegranate"
+      ],
+      "license": {
+        "repository": "MIT",
+        "weights_separate_notice": null,
+        "upstream": "Ultralytics AGPL-3.0; chain needs review, repo MIT does not settle pretrained-weight licensing"
+      },
+      "metrics": {
+        "precision": 0.9817,
+        "recall": 0.9779,
+        "mAP50": 0.9897,
+        "mAP50_95": 0.8589,
+        "source": "author classification.txt, validation, not own run",
+        "per_class_apple_sanitary_metric": null
+      },
+      "motion_evidence": false,
+      "orchard_evidence": false,
+      "notes": [
+        "Downloaded training metadata/code/report/image examples only; no weights and no execution.",
+        "Examples show picked apples on table/in hand, many closely related views. Independence by physical fruit is not documented; leakage not established.",
+        "predict.py expects Good/Rotten prefixes while published confusion matrix uses lowercase good/bad; verdict mapping requires correction and metadata verification.",
+        "Author reports 3-4 sec on free cloud CPU; not drone realtime benchmark."
+      ]
+    },
+    {
+      "id": "ausjahk/fruits-fresh-rotten-from-scratch",
+      "platform": "huggingface",
+      "fruit": "apple",
+      "task": "image-classification",
+      "condition": "fresh vs rotten, no pathogen diagnosis",
+      "url": "https://huggingface.co/ausjahk/fruits-fresh-rotten-from-scratch",
+      "artifacts": [
+        {
+          "path": "model.safetensors",
+          "bytes": 44772544
+        }
+      ],
+      "classes": [
+        "freshapples",
+        "freshbanana",
+        "freshoranges",
+        "rottenapples",
+        "rottenbanana",
+        "rottenoranges"
+      ],
+      "license": {
+        "model_card": "apache-2.0"
+      },
+      "metrics": {
+        "accuracy": 0.9610270518110958,
+        "source": "author model card, eval set described but model-index labels split train; provenance and split insufficient",
+        "per_class_apple_metric": null
+      },
+      "motion_evidence": false,
+      "orchard_evidence": false,
+      "notes": [
+        "ResNet18 architecture, config and preprocessor available; no custom remote code needed in stated architecture.",
+        "No downloaded weights or inference; accuracy is not independent validation.",
+        "Requires already localized/cropped fruit and rejection of unknown inputs."
+      ]
+    },
+    {
+      "id": "OleksandrKlanovets/fruitnet",
+      "platform": "github",
+      "fruit": "apple",
+      "task": "image-classification",
+      "condition": "fresh vs rotten, no pathogen diagnosis",
+      "url": "https://github.com/OleksandrKlanovets/fruitnet",
+      "artifacts": [
+        {
+          "path": "config/fruit_classifier_v3_transfer_learning.h5",
+          "bytes": 9428816
+        }
+      ],
+      "classes": [
+        "fresh apple",
+        "fresh orange",
+        "fresh banana",
+        "rotten apple",
+        "rotten orange",
+        "rotten banana"
+      ],
+      "license": {
+        "repository": "MIT",
+        "weights_separate_notice": null
+      },
+      "metrics": {
+        "accuracy": 0.99,
+        "source": "author README test set claim, Kaggle Fruits fresh and rotten for classification",
+        "per_class_apple_metric": null
+      },
+      "motion_evidence": false,
+      "orchard_evidence": false,
+      "notes": [
+        "Already found in previous audit; independently rechecked API tree and license.",
+        "MobileNetV2 transfer learning, inference code exists; README explicitly says no non-fruit fallback.",
+        "Webcam UI is input support, not evidence of moving drone robustness."
+      ]
+    },
+    {
+      "id": "amaniqbal-ai/apricot-disease-classification",
+      "platform": "github",
+      "fruit": "apricot",
+      "task": "image-classification",
+      "condition": "includes brown_rot; mixed plant organs/classes",
+      "url": "https://github.com/amaniqbal-ai/apricot-disease-classification",
+      "artifacts": [
+        {
+          "path": "releases/v1.0/finetuned.zip",
+          "bytes": 843703864
+        },
+        {
+          "path": "releases/v1.1/top5_v2.zip",
+          "bytes": 1523097756
+        }
+      ],
+      "classes": [
+        "brown_rot",
+        "gumosis_and_galls",
+        "healthy",
+        "other_disorder_water_stress",
+        "shot_hole",
+        "shot_hole_leaves",
+        "wilting_and_dieback"
+      ],
+      "license": {
+        "repository": "MIT",
+        "release_weights_separate_notice": null
+      },
+      "metrics": {
+        "MobileNetV3_Small_accuracy": 0.799,
+        "Swin_Base_accuracy": 0.8846,
+        "source": "author README/config claims, augmented derivatives of 748 originals",
+        "fruit_brown_rot_metric": null,
+        "related_APK_field_test_top1": 0.5,
+        "related_APK_field_test_n": 10,
+        "related_APK_field_test_latency_seconds": 3.5
+      },
+      "motion_evidence": false,
+      "orchard_evidence": "Authors claim field conditions; no moving-drone video evaluation found.",
+      "notes": [
+        "Release APIs confirm assets; archives not downloaded or inspected internally.",
+        "Related APK repo README gives ConvNeXt INT8 tiny field evaluation; not same model as Swin and MobileNet.",
+        "APK latest release is v1.0.1 and says new Swin, while README field report discusses ConvNeXt v1.0.0. Do not transfer metrics across versions.",
+        "Classifier does not localize fruit; many classes concern leaves or branches."
+      ]
+    }
+  ],
+  "reject_examples": [
+    {
+      "id": "NonoBru/fruit-disease-classifier",
+      "reason": "Accuracy 0.64045, no explicit license; mixed diseases/organs."
+    },
+    {
+      "id": "charlesniswander/fruit_freshness_demo",
+      "reason": "Accuracy 0.34831, no explicit license."
+    },
+    {
+      "id": "ixrbhii/peach-disease-convnext",
+      "reason": "Explicit leaf classifier."
+    },
+    {
+      "id": "ixrbhii/pear-disease-convnext",
+      "reason": "Explicit leaf classifier."
+    },
+    {
+      "id": "DavieObi/Fresh-vs-Rotten-Fruit-Classification-YOLOv8-",
+      "reason": "Only file named yolov8n-cls.pt, no fine-tuned best.pt discovered; file alone does not establish trained fruit weights."
+    },
+    {
+      "id": "diboworks/rotten_fruit_classifier",
+      "reason": "Apache2 weights visible but missing class mapping and metrics; cannot call strong."
+    }
+  ]
+}

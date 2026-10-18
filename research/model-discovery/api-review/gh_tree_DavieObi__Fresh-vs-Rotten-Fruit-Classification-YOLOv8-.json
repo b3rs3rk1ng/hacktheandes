@@ -1,0 +1,47 @@
+{
+  "sha": "7c2c814897f3dbd5f653c37850faaf1e8992dae7",
+  "url": "https://api.github.com/repos/DavieObi/Fresh-vs-Rotten-Fruit-Classification-YOLOv8-/git/trees/7c2c814897f3dbd5f653c37850faaf1e8992dae7",
+  "tree": [
+    {
+      "path": "CONTRIBUTING.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "819b810077136cd1aa92e6761ddd2137e2c176c6",
+      "size": 1677,
+      "url": "https://api.github.com/repos/DavieObi/Fresh-vs-Rotten-Fruit-Classification-YOLOv8-/git/blobs/819b810077136cd1aa92e6761ddd2137e2c176c6"
+    },
+    {
+      "path": "Fruit classification.ipynb",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "aafcf42cd0485f5b1983d81854c8140ed820a1b6",
+      "size": 1048577,
+      "url": "https://api.github.com/repos/DavieObi/Fresh-vs-Rotten-Fruit-Classification-YOLOv8-/git/blobs/aafcf42cd0485f5b1983d81854c8140ed820a1b6"
+    },
+    {
+      "path": "LICENSE",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "6ad9aeb61bbb7b8e0463c52bb154cb16e224880d",
+      "size": 1072,
+      "url": "https://api.github.com/repos/DavieObi/Fresh-vs-Rotten-Fruit-Classification-YOLOv8-/git/blobs/6ad9aeb61bbb7b8e0463c52bb154cb16e224880d"
+    },
+    {
+      "path": "README.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "677e97c309fcf8810057ae25d168604c955acfd2",
+      "size": 4487,
+      "url": "https://api.github.com/repos/DavieObi/Fresh-vs-Rotten-Fruit-Classification-YOLOv8-/git/blobs/677e97c309fcf8810057ae25d168604c955acfd2"
+    },
+    {
+      "path": "yolov8n-cls.pt",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a9f63530ba2656d0652270f9304f8872e6d8e787",
+      "size": 5563076,
+      "url": "https://api.github.com/repos/DavieObi/Fresh-vs-Rotten-Fruit-Classification-YOLOv8-/git/blobs/a9f63530ba2656d0652270f9304f8872e6d8e787"
+    }
+  ],
+  "truncated": false
+}

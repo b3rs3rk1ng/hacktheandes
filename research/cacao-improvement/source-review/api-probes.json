@@ -1,0 +1,22 @@
+[
+  {
+    "url": "https://data.mendeley.com/public-api/datasets/ykbtpsyfv9/versions/1",
+    "error": "HTTP Error 403: Forbidden"
+  },
+  {
+    "url": "https://data.mendeley.com/public-api/datasets/ykbtpsyfv9/versions/1/files",
+    "error": "HTTP Error 403: Forbidden"
+  },
+  {
+    "url": "https://data.mendeley.com/public-api/datasets/ykbtpsyfv9",
+    "error": "HTTP Error 403: Forbidden"
+  },
+  {
+    "url": "https://api.mendeley.com/datasets/ykbtpsyfv9/versions/1",
+    "error": "HTTP Error 403: Forbidden"
+  },
+  {
+    "url": "https://data.mendeley.com/datasets/ykbtpsyfv9/1",
+    "error": "HTTP Error 403: Forbidden"
+  }
+]

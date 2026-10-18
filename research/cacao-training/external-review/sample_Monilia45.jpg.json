@@ -1,0 +1,82 @@
+{
+    "description": "",
+    "tags": [],
+    "size": {
+        "height": 4160,
+        "width": 3120
+    },
+    "objects": [
+        {
+            "id": 12891893,
+            "classId": 19771,
+            "description": "",
+            "geometryType": "rectangle",
+            "labelerLogin": "gr@datasetninja.com",
+            "createdAt": "2023-07-03T15:02:58.055Z",
+            "updatedAt": "2023-07-03T15:02:58.055Z",
+            "tags": [],
+            "classTitle": "monilia",
+            "points": {
+                "exterior": [
+                    [
+                        1327,
+                        1147
+                    ],
+                    [
+                        2123,
+                        3089
+                    ]
+                ],
+                "interior": []
+            }
+        },
+        {
+            "id": 12891892,
+            "classId": 19771,
+            "description": "",
+            "geometryType": "rectangle",
+            "labelerLogin": "gr@datasetninja.com",
+            "createdAt": "2023-07-03T15:02:58.054Z",
+            "updatedAt": "2023-07-03T15:02:58.054Z",
+            "tags": [],
+            "classTitle": "monilia",
+            "points": {
+                "exterior": [
+                    [
+                        482,
+                        1010
+                    ],
+                    [
+                        831,
+                        2224
+                    ]
+                ],
+                "interior": []
+            }
+        },
+        {
+            "id": 12891891,
+            "classId": 19772,
+            "description": "",
+            "geometryType": "rectangle",
+            "labelerLogin": "gr@datasetninja.com",
+            "createdAt": "2023-07-03T15:02:58.054Z",
+            "updatedAt": "2023-07-03T15:02:58.054Z",
+            "tags": [],
+            "classTitle": "healthy",
+            "points": {
+                "exterior": [
+                    [
+                        2131,
+                        1106
+                    ],
+                    [
+                        2704,
+                        2393
+                    ]
+                ],
+                "interior": []
+            }
+        }
+    ]
+}

@@ -1,0 +1,13 @@
+{
+  "best": "/home/f3mt0/hacktheandes-cacao-improvement/runs/detector/baseline/weights/best.pt",
+  "best_sha256": "4a72c36e6aed0db8c5f39b637a918da28e4386644ceb52c7b9d8446efb9a9d33",
+  "save_dir": "/home/f3mt0/hacktheandes-cacao-improvement/runs/detector/baseline",
+  "epochs_requested": 40,
+  "metrics": {
+    "metrics/precision(B)": 0.8165270488468179,
+    "metrics/recall(B)": 0.7350066015915188,
+    "metrics/mAP50(B)": 0.7759362435122129,
+    "metrics/mAP50-95(B)": 0.6204733513543167,
+    "fitness": 0.6204733513543167
+  }
+}

@@ -1,0 +1,12 @@
+downloads/
+data/
+runs/
+*.pt
+*.onnx
+*.parquet
+*.cache
+__pycache__/
+dataset-audit/zip_tail.bin
+
+# Curated trained project models are part of the reproducible artifact.
+!artifacts/*.pt

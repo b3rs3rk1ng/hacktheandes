@@ -1,0 +1,171 @@
+{
+  "benchmark": {
+    "task": "image_binary",
+    "split": "test",
+    "target_names": [
+      "monilia"
+    ],
+    "healthy_name": "healthy",
+    "eligible_benchmark_sha256": "3ecc38fc544760f7b519c43c93139d38b3cf8e36790da1bca116bfe39672fc10",
+    "eligible_pixels_sha256": "0e35ad7d2bede824bbbeca526fbfd8a2b7d24709919e82025826e623980f29ec"
+  },
+  "rows": [
+    {
+      "report": "/home/f3mt0/hacktheandes-cacao-improvement/runs/benchmark-v1/benchmarks/new_image_test/baseline_v1/evaluation.json",
+      "variant": "clean",
+      "unit": "image",
+      "selection_status": "precision_target_unmet_fallback_max_precision_at_minimum_recall_and_alerts",
+      "threshold": 0.89,
+      "precision": 0.9473684210526315,
+      "recall": 0.36,
+      "f1": 0.5217391304347826,
+      "tp": 72,
+      "fp": 4,
+      "fn": 128,
+      "alerts": 76,
+      "images": 399,
+      "healthy_false_actions_or_alarms": {
+        "images": 199,
+        "false_alarms": 4
+      },
+      "delta_percentage_points_vs_first": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      "p50_ms": 8.601960958912969,
+      "p95_ms": 9.48908927384764
+    },
+    {
+      "report": "/home/f3mt0/hacktheandes-cacao-improvement/runs/benchmark-v1/benchmarks/new_image_test/detector_v2/evaluation.json",
+      "variant": "clean",
+      "unit": "image",
+      "selection_status": "target_met_on_validation",
+      "threshold": 0.74,
+      "precision": 0.9597989949748744,
+      "recall": 0.955,
+      "f1": 0.9573934837092731,
+      "tp": 191,
+      "fp": 8,
+      "fn": 9,
+      "alerts": 199,
+      "images": 399,
+      "healthy_false_actions_or_alarms": {
+        "images": 199,
+        "false_alarms": 8
+      },
+      "delta_percentage_points_vs_first": {
+        "precision": 1.2430573922242893,
+        "recall": 59.5,
+        "f1": 43.56543532744905
+      },
+      "p50_ms": 10.159525088965893,
+      "p95_ms": 11.411359161138535
+    },
+    {
+      "report": "/home/f3mt0/hacktheandes-cacao-improvement/runs/benchmark-v1/benchmarks/new_image_test/baseline_v1/evaluation.json",
+      "variant": "motion_blur_11",
+      "unit": "image",
+      "selection_status": "precision_target_unmet_fallback_max_precision_at_minimum_recall_and_alerts",
+      "threshold": 0.89,
+      "precision": 0.9565217391304348,
+      "recall": 0.11,
+      "f1": 0.19730941704035873,
+      "tp": 22,
+      "fp": 1,
+      "fn": 178,
+      "alerts": 23,
+      "images": 399,
+      "healthy_false_actions_or_alarms": {
+        "images": 199,
+        "false_alarms": 1
+      },
+      "delta_percentage_points_vs_first": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      "p50_ms": 10.225820122286677,
+      "p95_ms": 11.241464572958648
+    },
+    {
+      "report": "/home/f3mt0/hacktheandes-cacao-improvement/runs/benchmark-v1/benchmarks/new_image_test/detector_v2/evaluation.json",
+      "variant": "motion_blur_11",
+      "unit": "image",
+      "selection_status": "target_met_on_validation",
+      "threshold": 0.74,
+      "precision": 0.9744897959183674,
+      "recall": 0.955,
+      "f1": 0.9646464646464646,
+      "tp": 191,
+      "fp": 5,
+      "fn": 9,
+      "alerts": 196,
+      "images": 399,
+      "healthy_false_actions_or_alarms": {
+        "images": 199,
+        "false_alarms": 5
+      },
+      "delta_percentage_points_vs_first": {
+        "precision": 1.7968056787932563,
+        "recall": 84.5,
+        "f1": 76.73370476061059
+      },
+      "p50_ms": 11.841787956655025,
+      "p95_ms": 12.77025977615267
+    },
+    {
+      "report": "/home/f3mt0/hacktheandes-cacao-improvement/runs/benchmark-v1/benchmarks/new_image_test/baseline_v1/evaluation.json",
+      "variant": "motion_blur_21",
+      "unit": "image",
+      "selection_status": "precision_target_unmet_fallback_max_precision_at_minimum_recall_and_alerts",
+      "threshold": 0.89,
+      "precision": 0.6666666666666666,
+      "recall": 0.11,
+      "f1": 0.1888412017167382,
+      "tp": 22,
+      "fp": 11,
+      "fn": 178,
+      "alerts": 33,
+      "images": 399,
+      "healthy_false_actions_or_alarms": {
+        "images": 199,
+        "false_alarms": 11
+      },
+      "delta_percentage_points_vs_first": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      "p50_ms": 34.77755910716951,
+      "p95_ms": 35.99502353463322
+    },
+    {
+      "report": "/home/f3mt0/hacktheandes-cacao-improvement/runs/benchmark-v1/benchmarks/new_image_test/detector_v2/evaluation.json",
+      "variant": "motion_blur_21",
+      "unit": "image",
+      "selection_status": "target_met_on_validation",
+      "threshold": 0.74,
+      "precision": 0.9320388349514563,
+      "recall": 0.96,
+      "f1": 0.9458128078817734,
+      "tp": 192,
+      "fp": 14,
+      "fn": 8,
+      "alerts": 206,
+      "images": 399,
+      "healthy_false_actions_or_alarms": {
+        "images": 199,
+        "false_alarms": 14
+      },
+      "delta_percentage_points_vs_first": {
+        "precision": 26.53721682847897,
+        "recall": 85.0,
+        "f1": 75.69716061650351
+      },
+      "p50_ms": 37.146670976653695,
+      "p95_ms": 38.42895582783967
+    }
+  ],
+  "note": "Paired frozen evaluations on identical eligible pixels and labels. Differences are point estimates, not significance tests. Regression data is development evidence, not a new independent test."
+}

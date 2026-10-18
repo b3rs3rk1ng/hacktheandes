@@ -1,0 +1,793 @@
+{
+  "image_count": 1950,
+  "image_basename_count": 1913,
+  "duplicate_basename_groups": 37,
+  "same_crc_size_basename_groups": 36,
+  "omitted_from_published_splits": [],
+  "coco": {
+    "instances_h0.json": {
+      "images": 649,
+      "annotations": 724,
+      "annotations_by_category": {
+        "1": 644,
+        "2": 56,
+        "4": 15,
+        "3": 4,
+        "5": 5
+      },
+      "image_keys": [
+        "coco_url",
+        "date_captured",
+        "file_name",
+        "flickr_url",
+        "height",
+        "id",
+        "license",
+        "width"
+      ],
+      "annotation_keys": [
+        "area",
+        "attributes",
+        "bbox",
+        "category_id",
+        "id",
+        "image_id",
+        "iscrowd",
+        "segmentation"
+      ],
+      "date_captured_values": {
+        "0": 649
+      },
+      "attributes": {
+        "{'occluded': False}": 724
+      },
+      "bbox_issues": [],
+      "size_counts": {
+        "3472x3472": 285,
+        "3072x3072": 146,
+        "2448x2448": 15,
+        "3000x3000": 33,
+        "2992x2992": 75,
+        "2992x4000": 42,
+        "6000x8000": 38,
+        "3024x3024": 15
+      }
+    },
+    "instances_m1.json": {
+      "images": 436,
+      "annotations": 479,
+      "annotations_by_category": {
+        "2": 378,
+        "5": 20,
+        "1": 57,
+        "3": 23,
+        "4": 1
+      },
+      "image_keys": [
+        "coco_url",
+        "date_captured",
+        "file_name",
+        "flickr_url",
+        "height",
+        "id",
+        "license",
+        "width"
+      ],
+      "annotation_keys": [
+        "area",
+        "attributes",
+        "bbox",
+        "category_id",
+        "id",
+        "image_id",
+        "iscrowd",
+        "segmentation"
+      ],
+      "date_captured_values": {
+        "0": 436
+      },
+      "attributes": {
+        "{'occluded': False}": 479
+      },
+      "bbox_issues": [],
+      "size_counts": {
+        "3472x3472": 36,
+        "3056x3056": 153,
+        "3072x3072": 186,
+        "2448x2448": 36,
+        "3000x3000": 21,
+        "6000x8000": 1,
+        "3024x3024": 3
+      }
+    },
+    "instances_m2.json": {
+      "images": 401,
+      "annotations": 442,
+      "annotations_by_category": {
+        "3": 378,
+        "1": 35,
+        "4": 17,
+        "5": 9,
+        "2": 3
+      },
+      "image_keys": [
+        "coco_url",
+        "date_captured",
+        "file_name",
+        "flickr_url",
+        "height",
+        "id",
+        "license",
+        "width"
+      ],
+      "annotation_keys": [
+        "area",
+        "attributes",
+        "bbox",
+        "category_id",
+        "id",
+        "image_id",
+        "iscrowd",
+        "segmentation"
+      ],
+      "date_captured_values": {
+        "0": 401
+      },
+      "attributes": {
+        "{'occluded': False}": 442
+      },
+      "bbox_issues": [],
+      "size_counts": {
+        "3056x3056": 5,
+        "3072x3072": 284,
+        "2448x2448": 60,
+        "3000x3000": 21,
+        "3472x3472": 7,
+        "2992x2992": 4,
+        "6000x8000": 2,
+        "3024x3024": 18
+      }
+    },
+    "instances_m3.json": {
+      "images": 467,
+      "annotations": 517,
+      "annotations_by_category": {
+        "4": 478,
+        "2": 5,
+        "1": 18,
+        "3": 11,
+        "5": 5
+      },
+      "image_keys": [
+        "coco_url",
+        "date_captured",
+        "file_name",
+        "flickr_url",
+        "height",
+        "id",
+        "license",
+        "width"
+      ],
+      "annotation_keys": [
+        "area",
+        "attributes",
+        "bbox",
+        "category_id",
+        "id",
+        "image_id",
+        "iscrowd",
+        "segmentation"
+      ],
+      "date_captured_values": {
+        "0": 467
+      },
+      "attributes": {
+        "{'occluded': False}": 517
+      },
+      "bbox_issues": [],
+      "size_counts": {
+        "3072x3072": 313,
+        "2448x2448": 93,
+        "3472x3472": 19,
+        "3000x3000": 11,
+        "4032x3024": 1,
+        "3024x4032": 2,
+        "3024x3024": 28
+      }
+    }
+  },
+  "duplicate_basename_entries": {
+    "IMG_20240226_144734405_HDR.jpg": [
+      {
+        "name": "CocoaMoniliaDataSet/cocoapods_images/h0/IMG_20240226_144734405_HDR.jpg",
+        "size": 4958015,
+        "compressed": 4931014,
+        "crc32": "c0df052e",
+        "offset": 863647427
+      },
+      {
+        "name": "CocoaMoniliaDataSet/cocoapods_images/m3/IMG_20240226_144734405_HDR.jpg",
+        "size": 4958015,
+        "compressed": 4931014,
+        "crc32": "c0df052e",
+        "offset": 4779859904
+      }
+    ],
+    "IMG_20240226_144736930_HDR.jpg": [
+      {
+        "name": "CocoaMoniliaDataSet/cocoapods_images/h0/IMG_20240226_144736930_HDR.jpg",
+        "size": 4771889,
+        "compressed": 4741649,
+        "crc32": "304959a2",
+        "offset": 868578589
+      },
+      {
+        "name": "CocoaMoniliaDataSet/cocoapods_images/m3/IMG_20240226_144736930_HDR.jpg",
+        "size": 4771889,
+        "compressed": 4741649,
+        "crc32": "304959a2",
+        "offset": 4784791066
+      }
+    ],
+    "IMG_20240226_144739715_HDR.jpg": [
+      {
+        "name": "CocoaMoniliaDataSet/cocoapods_images/h0/IMG_20240226_144739715_HDR.jpg",
+        "size": 4520010,
+        "compressed": 4491369,
+        "crc32": "21e0072d",
+        "offset": 873320386
+      },
+      {
+        "name": "CocoaMoniliaDataSet/cocoapods_images/m3/IMG_20240226_144739715_HDR.jpg",
+        "size": 4520010,
+        "compressed": 4491369,
+        "crc32": "21e0072d",
+        "offset": 4789532863
+      }
+    ],
+    "IMG_20240227_084730947_HDR.jpg": [
+      {
+        "name": "CocoaMoniliaDataSet/cocoapods_images/h0/IMG_20240227_084730947_HDR.jpg",
+        "size": 2984070,
+        "compressed": 2950395,
+        "crc32": "b9d893cc",
+        "offset": 1030390295
+      },
+      {
+        "name": "CocoaMoniliaDataSet/cocoapods_images/m2/IMG_20240227_084730947_HDR.jpg",
+        "size": 2984070,
+        "compressed": 2950395,
+        "crc32": "b9d893cc",
+        "offset": 3777669260
+      }
+    ],
+    "IMG_20240227_084931966_HDR.jpg": [
+      {
+        "name": "CocoaMoniliaDataSet/cocoapods_images/h0/IMG_20240227_084931966_HDR.jpg",
+        "size": 4096276,
+        "compressed": 4069833,
+        "crc32": "0b788b77",
+        "offset": 1033340838
+      },
+      {
+        "name": "CocoaMoniliaDataSet/cocoapods_images/m3/IMG_20240227_084931966_HDR.jpg",
+        "size": 4096276,
+        "compressed": 4069833,
+        "crc32": "0b788b77",
+        "offset": 4833396510
+      }
+    ],
+    "IMG_20240227_084933309_HDR.jpg": [
+      {
+        "name": "CocoaMoniliaDataSet/cocoapods_images/h0/IMG_20240227_084933309_HDR.jpg",
+        "size": 4212813,
+        "compressed": 4186416,
+        "crc32": "9d3e0feb",
+        "offset": 1037410819
+      },
+      {
+        "name": "CocoaMoniliaDataSet/cocoapods_images/m3/IMG_20240227_084933309_HDR.jpg",
+        "size": 4212813,
+        "compressed": 4186416,
+        "crc32": "9d3e0feb",
+        "offset": 4837466491
+      }
+    ],
+    "IMG_20240227_085313181_HDR.jpg": [
+      {
+        "name": "CocoaMoniliaDataSet/cocoapods_images/h0/IMG_20240227_085313181_HDR.jpg",
+        "size": 3634332,
+        "compressed": 3602627,
+        "crc32": "abd0d1dc",
+        "offset": 1041597383
+      },
+      {
+        "name": "CocoaMoniliaDataSet/cocoapods_images/m3/IMG_20240227_085313181_HDR.jpg",
+        "size": 3634332,
+        "compressed": 3602627,
+        "crc32": "abd0d1dc",
+        "offset": 4841653055
+      }
+    ],
+    "IMG_20240802_130325.jpg": [
+      {
+        "name": "CocoaMoniliaDataSet/cocoapods_images/h0/IMG_20240802_130325.jpg",
+        "size": 3919000,
+        "compressed": 3919269,
+        "crc32": "c4e77fbb",
+        "offset": 1189810622
+      },
+      {
+        "name": "CocoaMoniliaDataSet/cocoapods_images/m2/IMG_20240802_130325.jpg",
+        "size": 3746738,
+        "compressed": 3746833,
+        "crc32": "fd1eac0e",
+        "offset": 4112689023
+      }
+    ],
+    "IMG_20240928_101442156_HDR.jpg": [
+      {
+        "name": "CocoaMoniliaDataSet/cocoapods_images/h0/IMG_20240928_101442156_HDR.jpg",
+        "size": 2995891,
+        "compressed": 2966630,
+        "crc32": "031f1276",
+        "offset": 1540618234
+      },
+      {
+        "name": "CocoaMoniliaDataSet/cocoapods_images/m3/IMG_20240928_101442156_HDR.jpg",
+        "size": 2995891,
+        "compressed": 2966630,
+        "crc32": "031f1276",
+        "offset": 5503261626
+      }
+    ],
+    "IMG_20240928_102204255_HDR.jpg": [
+      {
+        "name": "CocoaMoniliaDataSet/cocoapods_images/h0/IMG_20240928_102204255_HDR.jpg",
+        "size": 2734206,
+        "compressed": 2703048,
+        "crc32": "8f07732c",
+        "offset": 1616789576
+      },
+      {
+        "name": "CocoaMoniliaDataSet/cocoapods_images/m3/IMG_20240928_102204255_HDR.jpg",
+        "size": 2734206,
+        "compressed": 2703048,
+        "crc32": "8f07732c",
+        "offset": 5520734115
+      }
+    ],
+    "IMG_20240928_104910692_HDR.jpg": [
+      {
+        "name": "CocoaMoniliaDataSet/cocoapods_images/h0/IMG_20240928_104910692_HDR.jpg",
+        "size": 3267200,
+        "compressed": 3235872,
+        "crc32": "cb74b9a0",
+        "offset": 2158805996
+      },
+      {
+        "name": "CocoaMoniliaDataSet/cocoapods_images/m3/IMG_20240928_104910692_HDR.jpg",
+        "size": 3267200,
+        "compressed": 3235872,
+        "crc32": "cb74b9a0",
+        "offset": 5558162322
+      }
+    ],
+    "IMG_20240928_110129193_HDR.jpg": [
+      {
+        "name": "CocoaMoniliaDataSet/cocoapods_images/h0/IMG_20240928_110129193_HDR.jpg",
+        "size": 4073258,
+        "compressed": 4043180,
+        "crc32": "e934c12b",
+        "offset": 2186983264
+      },
+      {
+        "name": "CocoaMoniliaDataSet/cocoapods_images/m3/IMG_20240928_110129193_HDR.jpg",
+        "size": 4073258,
+        "compressed": 4043180,
+        "crc32": "e934c12b",
+        "offset": 5613981156
+      }
+    ],
+    "IMG_20240928_111106365_HDR.jpg": [
+      {
+        "name": "CocoaMoniliaDataSet/cocoapods_images/h0/IMG_20240928_111106365_HDR.jpg",
+        "size": 2771071,
+        "compressed": 2738612,
+        "crc32": "110a2fde",
+        "offset": 2206161964
+      },
+      {
+        "name": "CocoaMoniliaDataSet/cocoapods_images/m1/IMG_20240928_111106365_HDR.jpg",
+        "size": 2771071,
+        "compressed": 2738612,
+        "crc32": "110a2fde",
+        "offset": 3328780019
+      }
+    ],
+    "IMG_20240928_111110468_HDR.jpg": [
+      {
+        "name": "CocoaMoniliaDataSet/cocoapods_images/h0/IMG_20240928_111110468_HDR.jpg",
+        "size": 3190852,
+        "compressed": 3158558,
+        "crc32": "cbe8d24c",
+        "offset": 2208900724
+      },
+      {
+        "name": "CocoaMoniliaDataSet/cocoapods_images/m1/IMG_20240928_111110468_HDR.jpg",
+        "size": 3190852,
+        "compressed": 3158558,
+        "crc32": "cbe8d24c",
+        "offset": 3331518779
+      }
+    ],
+    "IMG_20240928_111133386_HDR.jpg": [
+      {
+        "name": "CocoaMoniliaDataSet/cocoapods_images/h0/IMG_20240928_111133386_HDR.jpg",
+        "size": 3883615,
+        "compressed": 3851368,
+        "crc32": "1ddad38f",
+        "offset": 2215660657
+      },
+      {
+        "name": "CocoaMoniliaDataSet/cocoapods_images/m3/IMG_20240928_111133386_HDR.jpg",
+        "size": 3883615,
+        "compressed": 3851368,
+        "crc32": "1ddad38f",
+        "offset": 5651488883
+      }
+    ],
+    "IMG_20240928_111138475_HDR.jpg": [
+      {
+        "name": "CocoaMoniliaDataSet/cocoapods_images/h0/IMG_20240928_111138475_HDR.jpg",
+        "size": 4195045,
+        "compressed": 4163837,
+        "crc32": "e09844f6",
+        "offset": 2219512173
+      },
+      {
+        "name": "CocoaMoniliaDataSet/cocoapods_images/m3/IMG_20240928_111138475_HDR.jpg",
+        "size": 4195045,
+        "compressed": 4163837,
+        "crc32": "e09844f6",
+        "offset": 5659380660
+      }
+    ],
+    "IMG_20240928_111332046_HDR.jpg": [
+      {
+        "name": "CocoaMoniliaDataSet/cocoapods_images/h0/IMG_20240928_111332046_HDR.jpg",
+        "size": 3810923,
+        "compressed": 3780435,
+        "crc32": "5ba37088",
+        "offset": 2223676158
+      },
+      {
+        "name": "CocoaMoniliaDataSet/cocoapods_images/m3/IMG_20240928_111332046_HDR.jpg",
+        "size": 3810923,
+        "compressed": 3780435,
+        "crc32": "5ba37088",
+        "offset": 5677447319
+      }
+    ],
+    "IMG_20240928_111333190_HDR.jpg": [
+      {
+        "name": "CocoaMoniliaDataSet/cocoapods_images/h0/IMG_20240928_111333190_HDR.jpg",
+        "size": 3628174,
+        "compressed": 3597744,
+        "crc32": "a0230648",
+        "offset": 2227456741
+      },
+      {
+        "name": "CocoaMoniliaDataSet/cocoapods_images/m3/IMG_20240928_111333190_HDR.jpg",
+        "size": 3628174,
+        "compressed": 3597744,
+        "crc32": "a0230648",
+        "offset": 5681227902
+      }
+    ],
+    "IMG_20241010_110516206_HDR.jpg": [
+      {
+        "name": "CocoaMoniliaDataSet/cocoapods_images/h0/IMG_20241010_110516206_HDR.jpg",
+        "size": 3240625,
+        "compressed": 3207990,
+        "crc32": "b96a1f26",
+        "offset": 2258013628
+      },
+      {
+        "name": "CocoaMoniliaDataSet/cocoapods_images/m1/IMG_20241010_110516206_HDR.jpg",
+        "size": 3240625,
+        "compressed": 3207990,
+        "crc32": "b96a1f26",
+        "offset": 3500888218
+      }
+    ],
+    "IMG_20240227_103956164.jpg": [
+      {
+        "name": "CocoaMoniliaDataSet/cocoapods_images/m1/IMG_20240227_103956164.jpg",
+        "size": 3169812,
+        "compressed": 3137945,
+        "crc32": "557d4b43",
+        "offset": 2907001355
+      },
+      {
+        "name": "CocoaMoniliaDataSet/cocoapods_images/m2/IMG_20240227_103956164.jpg",
+        "size": 3169812,
+        "compressed": 3137945,
+        "crc32": "557d4b43",
+        "offset": 3856231642
+      }
+    ],
+    "IMG_20240227_103959101.jpg": [
+      {
+        "name": "CocoaMoniliaDataSet/cocoapods_images/m1/IMG_20240227_103959101.jpg",
+        "size": 2611069,
+        "compressed": 2579062,
+        "crc32": "a4b5329d",
+        "offset": 2910139444
+      },
+      {
+        "name": "CocoaMoniliaDataSet/cocoapods_images/m2/IMG_20240227_103959101.jpg",
+        "size": 2611069,
+        "compressed": 2579062,
+        "crc32": "a4b5329d",
+        "offset": 3859369731
+      }
+    ],
+    "IMG_20240227_104002121_HDR.jpg": [
+      {
+        "name": "CocoaMoniliaDataSet/cocoapods_images/m1/IMG_20240227_104002121_HDR.jpg",
+        "size": 3057328,
+        "compressed": 3025287,
+        "crc32": "24a03bc7",
+        "offset": 2912718650
+      },
+      {
+        "name": "CocoaMoniliaDataSet/cocoapods_images/m2/IMG_20240227_104002121_HDR.jpg",
+        "size": 3057328,
+        "compressed": 3025287,
+        "crc32": "24a03bc7",
+        "offset": 3861948937
+      }
+    ],
+    "IMG_20240928_110824271_HDR.jpg": [
+      {
+        "name": "CocoaMoniliaDataSet/cocoapods_images/m1/IMG_20240928_110824271_HDR.jpg",
+        "size": 3120994,
+        "compressed": 3091732,
+        "crc32": "11480cc5",
+        "offset": 3319457674
+      },
+      {
+        "name": "CocoaMoniliaDataSet/cocoapods_images/m2/IMG_20240928_110824271_HDR.jpg",
+        "size": 3120994,
+        "compressed": 3091732,
+        "crc32": "11480cc5",
+        "offset": 4356813322
+      }
+    ],
+    "IMG_20240928_110825620_HDR.jpg": [
+      {
+        "name": "CocoaMoniliaDataSet/cocoapods_images/m1/IMG_20240928_110825620_HDR.jpg",
+        "size": 3252936,
+        "compressed": 3223724,
+        "crc32": "844941e5",
+        "offset": 3322549554
+      },
+      {
+        "name": "CocoaMoniliaDataSet/cocoapods_images/m2/IMG_20240928_110825620_HDR.jpg",
+        "size": 3252936,
+        "compressed": 3223724,
+        "crc32": "844941e5",
+        "offset": 4359905202
+      }
+    ],
+    "IMG_20241010_102713031.jpg": [
+      {
+        "name": "CocoaMoniliaDataSet/cocoapods_images/m1/IMG_20241010_102713031.jpg",
+        "size": 2630721,
+        "compressed": 2596177,
+        "crc32": "0ea8fe2f",
+        "offset": 3345416712
+      },
+      {
+        "name": "CocoaMoniliaDataSet/cocoapods_images/m2/IMG_20241010_102713031.jpg",
+        "size": 2630721,
+        "compressed": 2596177,
+        "crc32": "0ea8fe2f",
+        "offset": 4373462655
+      }
+    ],
+    "IMG_20241010_102717472.jpg": [
+      {
+        "name": "CocoaMoniliaDataSet/cocoapods_images/m1/IMG_20241010_102717472.jpg",
+        "size": 2623023,
+        "compressed": 2588476,
+        "crc32": "d046994f",
+        "offset": 3348013033
+      },
+      {
+        "name": "CocoaMoniliaDataSet/cocoapods_images/m2/IMG_20241010_102717472.jpg",
+        "size": 2623023,
+        "compressed": 2588476,
+        "crc32": "d046994f",
+        "offset": 4376058976
+      }
+    ],
+    "IMG_20241010_102719070.jpg": [
+      {
+        "name": "CocoaMoniliaDataSet/cocoapods_images/m1/IMG_20241010_102719070.jpg",
+        "size": 2568537,
+        "compressed": 2533945,
+        "crc32": "8a1a7ab5",
+        "offset": 3350601653
+      },
+      {
+        "name": "CocoaMoniliaDataSet/cocoapods_images/m2/IMG_20241010_102719070.jpg",
+        "size": 2568537,
+        "compressed": 2533945,
+        "crc32": "8a1a7ab5",
+        "offset": 4378647596
+      }
+    ],
+    "IMG_20241010_105720446.jpg": [
+      {
+        "name": "CocoaMoniliaDataSet/cocoapods_images/m1/IMG_20241010_105720446.jpg",
+        "size": 3205617,
+        "compressed": 3178368,
+        "crc32": "ea09f83a",
+        "offset": 3430157725
+      },
+      {
+        "name": "CocoaMoniliaDataSet/cocoapods_images/m2/IMG_20241010_105720446.jpg",
+        "size": 3205617,
+        "compressed": 3178368,
+        "crc32": "ea09f83a",
+        "offset": 4426035886
+      }
+    ],
+    "IMG_20241010_105721840.jpg": [
+      {
+        "name": "CocoaMoniliaDataSet/cocoapods_images/m1/IMG_20241010_105721840.jpg",
+        "size": 2605287,
+        "compressed": 2577699,
+        "crc32": "58c46dff",
+        "offset": 3433336237
+      },
+      {
+        "name": "CocoaMoniliaDataSet/cocoapods_images/m2/IMG_20241010_105721840.jpg",
+        "size": 2605287,
+        "compressed": 2577699,
+        "crc32": "58c46dff",
+        "offset": 4429214398
+      }
+    ],
+    "IMG_20241010_105724982.jpg": [
+      {
+        "name": "CocoaMoniliaDataSet/cocoapods_images/m1/IMG_20241010_105724982.jpg",
+        "size": 2793381,
+        "compressed": 2766001,
+        "crc32": "9f9dce08",
+        "offset": 3435914080
+      },
+      {
+        "name": "CocoaMoniliaDataSet/cocoapods_images/m2/IMG_20241010_105724982.jpg",
+        "size": 2793381,
+        "compressed": 2766001,
+        "crc32": "9f9dce08",
+        "offset": 4431792241
+      }
+    ],
+    "IMG_20241010_130144621_HDR.jpg": [
+      {
+        "name": "CocoaMoniliaDataSet/cocoapods_images/m1/IMG_20241010_130144621_HDR.jpg",
+        "size": 3391612,
+        "compressed": 3355241,
+        "crc32": "b33ee761",
+        "offset": 3531325893
+      },
+      {
+        "name": "CocoaMoniliaDataSet/cocoapods_images/m2/IMG_20241010_130144621_HDR.jpg",
+        "size": 3391612,
+        "compressed": 3355241,
+        "crc32": "b33ee761",
+        "offset": 4521572006
+      }
+    ],
+    "IMG_20241010_130146042_HDR.jpg": [
+      {
+        "name": "CocoaMoniliaDataSet/cocoapods_images/m1/IMG_20241010_130146042_HDR.jpg",
+        "size": 3392848,
+        "compressed": 3357451,
+        "crc32": "d1606747",
+        "offset": 3534681282
+      },
+      {
+        "name": "CocoaMoniliaDataSet/cocoapods_images/m2/IMG_20241010_130146042_HDR.jpg",
+        "size": 3392848,
+        "compressed": 3357451,
+        "crc32": "d1606747",
+        "offset": 4524927395
+      }
+    ],
+    "IMG_20240227_104653572.jpg": [
+      {
+        "name": "CocoaMoniliaDataSet/cocoapods_images/m2/IMG_20240227_104653572.jpg",
+        "size": 2848343,
+        "compressed": 2812786,
+        "crc32": "c650fd3f",
+        "offset": 3876205709
+      },
+      {
+        "name": "CocoaMoniliaDataSet/cocoapods_images/m3/IMG_20240227_104653572.jpg",
+        "size": 2848343,
+        "compressed": 2812786,
+        "crc32": "c650fd3f",
+        "offset": 5025704616
+      }
+    ],
+    "IMG_20240227_104654856.jpg": [
+      {
+        "name": "CocoaMoniliaDataSet/cocoapods_images/m2/IMG_20240227_104654856.jpg",
+        "size": 3149539,
+        "compressed": 3113934,
+        "crc32": "661d368e",
+        "offset": 3879018639
+      },
+      {
+        "name": "CocoaMoniliaDataSet/cocoapods_images/m3/IMG_20240227_104654856.jpg",
+        "size": 3149539,
+        "compressed": 3113934,
+        "crc32": "661d368e",
+        "offset": 5028517546
+      }
+    ],
+    "IMG_20240802_133828.jpg": [
+      {
+        "name": "CocoaMoniliaDataSet/cocoapods_images/m2/IMG_20240802_133828.jpg",
+        "size": 3732633,
+        "compressed": 3731252,
+        "crc32": "34b7e6a1",
+        "offset": 4164855762
+      },
+      {
+        "name": "CocoaMoniliaDataSet/cocoapods_images/m3/IMG_20240802_133828.jpg",
+        "size": 3732633,
+        "compressed": 3731252,
+        "crc32": "34b7e6a1",
+        "offset": 5466693324
+      }
+    ],
+    "IMG_20241010_102343184_HDR.jpg": [
+      {
+        "name": "CocoaMoniliaDataSet/cocoapods_images/m2/IMG_20241010_102343184_HDR.jpg",
+        "size": 2751451,
+        "compressed": 2716966,
+        "crc32": "a13c69be",
+        "offset": 4370745541
+      },
+      {
+        "name": "CocoaMoniliaDataSet/cocoapods_images/m3/IMG_20241010_102343184_HDR.jpg",
+        "size": 2751451,
+        "compressed": 2716966,
+        "crc32": "a13c69be",
+        "offset": 5697883469
+      }
+    ],
+    "IMG_20241010_113456260.jpg": [
+      {
+        "name": "CocoaMoniliaDataSet/cocoapods_images/m2/IMG_20241010_113456260.jpg",
+        "size": 3113533,
+        "compressed": 3084146,
+        "crc32": "96fb0b5f",
+        "offset": 4500965789
+      },
+      {
+        "name": "CocoaMoniliaDataSet/cocoapods_images/m3/IMG_20241010_113456260.jpg",
+        "size": 3113533,
+        "compressed": 3084146,
+        "crc32": "96fb0b5f",
+        "offset": 5793826561
+      }
+    ]
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "names": [
+    "healthy",
+    "monilia",
+    "phytophthora"
+  ],
+  "healthy_class": 0,
+  "target_classes": [
+    1
+  ],
+  "detector_class_mapping": {
+    "h0": 0,
+    "m1": 1,
+    "m2": 1,
+    "m3": 1
+  },
+  "proposal_confidence": 0.05,
+  "nms_iou": 0.7,
+  "imgsz": 640,
+  "duplicate_phash_distance": 4,
+  "selection": {
+    "precision_target": 0.95,
+    "min_recall": 0.5,
+    "min_alerts": 20
+  }
+}

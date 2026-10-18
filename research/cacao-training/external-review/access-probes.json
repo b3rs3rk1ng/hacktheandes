@@ -1,0 +1,62 @@
+[
+  {
+    "url": "https://assets.supervisely.com/remote/eyJsaW5rIjogInMzOi8vc3VwZXJ2aXNlbHktZGF0YXNldHMvMTI2Nl9Db2NvYSBEaXNlYXNlcy9jb2NvYS1kaXNlYXNlcy1EYXRhc2V0TmluamEudGFyIiwgInNpZyI6ICJHalowUWNobHhqRnJRWDFKaDdKQkZ1amtUYXpNRkw2TDJ5TldGSUZubWVBPSJ9?response-content-disposition=attachment%3B%20filename%3D%22cocoa-diseases-DatasetNinja.tar%22",
+    "resolved_url": "https://assets.supervisely.com/remote/eyJsaW5rIjogInMzOi8vc3VwZXJ2aXNlbHktZGF0YXNldHMvMTI2Nl9Db2NvYSBEaXNlYXNlcy9jb2NvYS1kaXNlYXNlcy1EYXRhc2V0TmluamEudGFyIiwgInNpZyI6ICJHalowUWNobHhqRnJRWDFKaDdKQkZ1amtUYXpNRkw2TDJ5TldGSUZubWVBPSJ9?response-content-disposition=attachment%3B%20filename%3D%22cocoa-diseases-DatasetNinja.tar%22",
+    "status": 206,
+    "headers": {
+      "surrogate-control": "no-store",
+      "cache-control": "no-store, no-cache, must-revalidate, proxy-revalidate",
+      "pragma": "no-cache",
+      "expires": "0",
+      "access-control-allow-origin": "*",
+      "content-disposition": "attachment; filename=\"cocoa-diseases-DatasetNinja.tar\"",
+      "last-modified": "Thu, 14 Aug 2025 18:01:46 GMT",
+      "content-range": "bytes 0-65535/1673768960",
+      "content-length": "65536",
+      "content-type": "application/x-tar",
+      "date": "Sun, 18 Oct 2026 05:43:56 GMT",
+      "x-envoy-upstream-service-time": "28",
+      "connection": "close"
+    },
+    "size": 65536,
+    "magic": "2e2f2e2f40506178486561646572000000000000000000000000000000000000"
+  },
+  {
+    "url": "https://supervisely-datasets.s3.amazonaws.com/1266_Cocoa%20Diseases/cocoa-diseases-DatasetNinja.tar",
+    "error": "HTTP Error 404: Not Found"
+  },
+  {
+    "url": "https://supervisely-datasets.s3.eu-central-1.amazonaws.com/1266_Cocoa%20Diseases/cocoa-diseases-DatasetNinja.tar",
+    "error": "HTTP Error 404: Not Found"
+  },
+  {
+    "url": "https://www.kaggle.com/api/v1/datasets/download/serranosebas/enfermedades-cacao-yolov4?datasetVersionNumber=2",
+    "resolved_url": "https://storage.googleapis.com:443/kaggle-data-sets/936627/1584148/bundle/archive.zip?X-Goog-Algorithm=GOOG4-RSA-SHA256&X-Goog-Credential=gcp-kaggle-com%40kaggle-161607.iam.gserviceaccount.com%2F20261018%2Fauto%2Fstorage%2Fgoog4_request&X-Goog-Date=20261018T054356Z&X-Goog-Expires=259200&X-Goog-SignedHeaders=host&X-Goog-Signature=5aa84f3ba0cf51d612bb8c5b4d3d03326e0b6b9dc1088a931f7e898fef5f6b953b37885c6c4d02d516bd50947823b3b001588eebf91041aeb679c73ebf211890fb5538dfed15fd53180bc37d6bd91b71fa561ba09",
+    "status": 206,
+    "headers": {
+      "Content-Type": "application/zip",
+      "X-GUploader-UploadID": "AP6rU83vxeputAigi8JU1g9SKrquJMpaaFuPqgg5yxx1Nr31kMpDdfvTZ06uTHRt5nLcmR_B",
+      "Expires": "Sun, 18 Oct 2026 05:43:56 GMT",
+      "Date": "Sun, 18 Oct 2026 05:43:56 GMT",
+      "Cache-Control": "private, max-age=0",
+      "Last-Modified": "Fri, 23 Oct 2020 22:37:08 GMT",
+      "ETag": "\"560b2b3bf79e580a28f025cd4789c8a4\"",
+      "x-goog-generation": "1603492628848162",
+      "x-goog-metageneration": "1",
+      "x-goog-stored-content-encoding": "identity",
+      "x-goog-stored-content-length": "1671357375",
+      "x-goog-hash": "crc32c=m4BmKA==",
+      "x-goog-storage-class": "MULTI_REGIONAL",
+      "Accept-Ranges": "bytes",
+      "Content-Range": "bytes 0-65535/1671357375",
+      "Content-Length": "65536",
+      "Access-Control-Allow-Origin": "*",
+      "Access-Control-Expose-Headers": "Content-Type",
+      "Server": "UploadServer",
+      "Alt-Svc": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000",
+      "Connection": "close"
+    },
+    "size": 65536,
+    "magic": "504b03042d000000080040b45751b83f2cabffffffffffffffff21001400456e"
+  }
+]

@@ -1,0 +1,64 @@
+{
+  "_id": "68cfd61c903a72b3af7ea53e",
+  "id": "Graviton17/vit-fruit-veg-quality-predictor",
+  "private": false,
+  "pipeline_tag": "image-classification",
+  "tags": [
+    "safetensors",
+    "image-classification",
+    "regression",
+    "vision-transformer",
+    "fruit",
+    "vegetable",
+    "license:mit",
+    "region:us"
+  ],
+  "downloads": 0,
+  "likes": 0,
+  "modelId": "Graviton17/vit-fruit-veg-quality-predictor",
+  "author": "Graviton17",
+  "sha": "52d48d31daff8d61de48db83ae68ac9b61d2f071",
+  "lastModified": "2025-09-21T12:14:01.000Z",
+  "gated": false,
+  "disabled": false,
+  "model-index": null,
+  "config": {},
+  "cardData": {
+    "license": "mit",
+    "tags": [
+      "image-classification",
+      "regression",
+      "vision-transformer",
+      "fruit",
+      "vegetable"
+    ]
+  },
+  "siblings": [
+    {
+      "rfilename": ".gitattributes"
+    },
+    {
+      "rfilename": "README.md"
+    },
+    {
+      "rfilename": "model.safetensors"
+    },
+    {
+      "rfilename": "modeling.py"
+    },
+    {
+      "rfilename": "preprocessor_config.json"
+    }
+  ],
+  "spaces": [
+    "aditya-ranjan1234/foodsense-ai"
+  ],
+  "createdAt": "2025-09-21T10:40:28.000Z",
+  "safetensors": {
+    "parameters": {
+      "F32": 86401552
+    },
+    "total": 86401552
+  },
+  "usedStorage": 2074070131
+}

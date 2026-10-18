@@ -1,0 +1,34 @@
+{
+    "description": "",
+    "tags": [],
+    "size": {
+        "height": 4160,
+        "width": 3120
+    },
+    "objects": [
+        {
+            "id": 12892026,
+            "classId": 19771,
+            "description": "",
+            "geometryType": "rectangle",
+            "labelerLogin": "gr@datasetninja.com",
+            "createdAt": "2023-07-03T15:03:09.034Z",
+            "updatedAt": "2023-07-03T15:03:09.034Z",
+            "tags": [],
+            "classTitle": "monilia",
+            "points": {
+                "exterior": [
+                    [
+                        832,
+                        1219
+                    ],
+                    [
+                        2419,
+                        2988
+                    ]
+                ],
+                "interior": []
+            }
+        }
+    ]
+}

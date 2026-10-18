@@ -1,0 +1,173 @@
+{
+  "created": "2025-11-25T21:59:56.315389+00:00",
+  "modified": "2025-11-25T21:59:56.759833+00:00",
+  "id": 17716661,
+  "conceptrecid": "17156051",
+  "doi": "10.5281/zenodo.17716661",
+  "conceptdoi": "10.5281/zenodo.17156051",
+  "doi_url": "https://doi.org/10.5281/zenodo.17716661",
+  "metadata": {
+    "title": "CocoaMoniliaDataSet",
+    "doi": "10.5281/zenodo.17716661",
+    "publication_date": "2025-11-25",
+    "description": "<p><span lang=\"EN-GB\">Computer vision applications for detecting diseases in agriculture have been gaining relevance in recent years through the use of deep learning architectures. Digital image datasets serve as the main input for these architectures, enabling the analysis of patterns associated with a specific disease. However, some diseases have not yet been explored due to the limited availability of annotated image datasets. Cocoa pods are fundamental for the production of chocolate and its derived products; nevertheless, their production is threatened by Monilia Roreri, a fungal disease responsible for yield losses of approximately 30% - 40%. Therefore, this paper proposes a CocoaMoniliaSet, a dataset of cocoa pods labeled across symptomatic stages of Monilia disease. Although the infection of cocoa pod caused by Monilia roreri describes four biological cycles, the dataset takes the visual symptoms into three classes to support computer vision task. These symptoms correspond to: cycle 1 (humps), cycle 2 (oily and brown spots and cycle 3 (white powder or sporulation). In this paper, cycle 2 represents a symptomatic stage that merges the second and third biological cycles.In addition, the dataset included healthy cocoa pods to facilitate early detection of the disease. The dataset comprises 1953 images with four labeled classes: (1) healthy cocoa pod labeled as (h0); (2)first Monilia cycle, humps, labeled as (m1); (3)second and third Monilia cycle of the disease labeled as (m2); and (4) fourth Monilia cycle labeled as m3. Each instance in the image was annotated using the polygon method in CVAT (Computer Vision Annotation Tool), and the resulting labels are provided in COCO 1.0, YOLO, and segmentation mask 1.1 format to enable training object detection algorithms using bounding boxes. The publication of this dataset is essential for exploring techniques to diagnose cocoa disease using computer vision techniques.</span></p>\n<p>The dataset is structured as follows:</p>\n<div>\n<div>CocoaMoniliaDataSet/</div>\n<div>\u2502</div>\n<div>\u251c\u2500\u2500 cocoapods_images/</div>\n<div>\u2502 &nbsp; &nbsp; \u251c\u2500\u2500 h0/</div>\n<div>\u2502 &nbsp; &nbsp; \u251c\u2500\u2500 m1/</div>\n<div>\u2502 &nbsp; &nbsp; \u251c\u2500\u2500 m2/</div>\n<div>\u2502 &nbsp; &nbsp; \u251c\u2500\u2500 m3/</div>\n<div>\u2502</div>\n<div>\u2502\u2500\u2500 COCO_annotations/</div>\n<div>\u2502 &nbsp; &nbsp; \u251c\u2500\u2500 instances_h0.json</div>\n<div>\u2502 &nbsp; &nbsp; \u251c\u2500\u2500 instances_m1.json</div>\n<div>\u2502 &nbsp; &nbsp; \u251c\u2500\u2500 instances_m2.json</div>\n<div>\u2502 &nbsp; &nbsp; \u251c\u2500\u2500 instances_m3.json</div>\n<div>\u2502</div>\n<div>\u2502\u2500\u2500 mask_segmentation/</div>\n<div>\u2502 &nbsp; &nbsp; \u251c\u2500\u2500 SegmentationClassh0/</div>\n<div>\u2502 &nbsp; &nbsp; \u251c\u2500\u2500 segmentationObjecth0/</div>\n<div>\u2502 &nbsp; &nbsp; \u251c\u2500\u2500 SegmentationClassm1/</div>\n<div>\u2502 &nbsp; &nbsp; \u251c\u2500\u2500 segmentationObjectm1/</div>\n<div>\u2502 &nbsp; &nbsp; \u251c\u2500\u2500 SegmentationClassm2/</div>\n<div>\u2502 &nbsp; &nbsp; \u251c\u2500\u2500 segmentationObjectm2/</div>\n<div>\u2502 &nbsp; &nbsp; \u251c\u2500\u2500 SegmentationClassm3/</div>\n<div>\u2502 &nbsp; &nbsp; \u251c\u2500\u2500 segmentationObjectm3/</div>\n<div>\u2502</div>\n<div>\u2502\u2500\u2500 DataSet_split_seg/</div>\n<div>\u2502 &nbsp; &nbsp; \u251c\u2500\u2500 images/</div>\n<div>\u2502 &nbsp; &nbsp; \u251c\u2500\u2500 labels/</div>\n<div>\u2502 &nbsp; &nbsp;</div>\n<div>\u2502\u2500\u2500 YOLO_annotations/</div>\n<div>&nbsp; &nbsp; &nbsp; \u251c\u2500\u2500 h0/</div>\n<div>&nbsp; &nbsp; &nbsp; \u251c\u2500\u2500 m1/</div>\n<div>&nbsp; &nbsp; &nbsp; \u251c\u2500\u2500 m2/</div>\n<div>&nbsp; &nbsp; &nbsp; \u251c\u2500\u2500 m3/</div>\n<div>&nbsp;</div>\n<div>Repository link:&nbsp; <a href=\"https://github.com/joanfco30/CocoaMoniliaDataSet\" target=\"_blank\" rel=\"noopener\">CocoaMoniliaDataSet</a></div>\n<div>Notebook link:&nbsp;<a href=\"https://colab.research.google.com/drive/1C4zdLG0hXHoqtQQvP15NHhZAWn_U4jQI?usp=sharing\" target=\"_blank\" rel=\"noopener\">CocoaMoniliaDataSet.ipynb</a></div>\n</div>",
+    "access_right": "open",
+    "creators": [
+      {
+        "name": "Alvarado Molina, Joan Francisco",
+        "affiliation": "Universidad EAFIT",
+        "orcid": "0009-0008-5611-3553"
+      },
+      {
+        "name": "Restrepo-Arias, Juan F.",
+        "affiliation": "Universidad EAFIT",
+        "orcid": "0000-0002-9689-1017"
+      },
+      {
+        "name": "Vel\u00e1squez, David",
+        "affiliation": "Vicomtech",
+        "orcid": "0000-0002-9949-8915"
+      },
+      {
+        "name": "Branch Bedoya, John Willian",
+        "affiliation": "Universidad Nacional de Colombia Sede Medell\u00edn",
+        "orcid": "0000-0002-0378-028X"
+      },
+      {
+        "name": "Maiza, Mikel",
+        "affiliation": "\u00c9cole Sup\u00e9rieure des Technologies Industrielles Avanc\u00e9es",
+        "orcid": "0000-0002-6321-8053"
+      }
+    ],
+    "keywords": [
+      "Computer Vision",
+      "Cocoa disease detection",
+      "Object detection",
+      "Precision agriculture"
+    ],
+    "language": "eng",
+    "custom": {
+      "code:codeRepository": "https://github.com/joanfco30/CocoaMoniliaDataSet.git",
+      "code:programmingLanguage": [
+        {
+          "id": "python",
+          "title": {
+            "en": "Python"
+          }
+        }
+      ]
+    },
+    "resource_type": {
+      "title": "Dataset",
+      "type": "dataset"
+    },
+    "license": {
+      "id": "cc-by-4.0"
+    },
+    "relations": {
+      "version": [
+        {
+          "index": 1,
+          "is_last": true,
+          "parent": {
+            "pid_type": "recid",
+            "pid_value": "17156051"
+          }
+        }
+      ]
+    }
+  },
+  "title": "CocoaMoniliaDataSet",
+  "links": {
+    "self": "https://zenodo.org/api/records/17716661",
+    "self_html": "https://zenodo.org/records/17716661",
+    "preview_html": "https://zenodo.org/records/17716661?preview=1",
+    "doi": "https://doi.org/10.5281/zenodo.17716661",
+    "self_doi": "https://doi.org/10.5281/zenodo.17716661",
+    "self_doi_html": "https://zenodo.org/doi/10.5281/zenodo.17716661",
+    "reserve_doi": "https://zenodo.org/api/records/17716661/draft/pids/doi",
+    "parent": "https://zenodo.org/api/records/17156051",
+    "parent_html": "https://zenodo.org/records/17156051",
+    "parent_doi": "https://doi.org/10.5281/zenodo.17156051",
+    "parent_doi_html": "https://zenodo.org/doi/10.5281/zenodo.17156051",
+    "self_iiif_manifest": "https://zenodo.org/api/iiif/record:17716661/manifest",
+    "self_iiif_sequence": "https://zenodo.org/api/iiif/record:17716661/sequence/default",
+    "files": "https://zenodo.org/api/records/17716661/files",
+    "media_files": "https://zenodo.org/api/records/17716661/media-files",
+    "latest": "https://zenodo.org/api/records/17716661/versions/latest",
+    "latest_html": "https://zenodo.org/records/17716661/latest",
+    "versions": "https://zenodo.org/api/records/17716661/versions",
+    "draft": "https://zenodo.org/api/records/17716661/draft",
+    "access_links": "https://zenodo.org/api/records/17716661/access/links",
+    "access_grants": "https://zenodo.org/api/records/17716661/access/grants",
+    "access_users": "https://zenodo.org/api/records/17716661/access/users",
+    "access_request": "https://zenodo.org/api/records/17716661/access/request",
+    "access": "https://zenodo.org/api/records/17716661/access",
+    "communities": "https://zenodo.org/api/records/17716661/communities",
+    "communities-suggestions": "https://zenodo.org/api/records/17716661/communities-suggestions",
+    "request_deletion": "https://zenodo.org/api/records/17716661/request-deletion",
+    "file_modification": "https://zenodo.org/api/records/17716661/file-modification",
+    "quota_increase": "https://zenodo.org/api/records/17716661/quota-increase",
+    "requests": "https://zenodo.org/api/records/17716661/requests"
+  },
+  "updated": "2025-11-25T21:59:56.759833+00:00",
+  "recid": "17716661",
+  "revision": 4,
+  "files": [
+    {
+      "id": "10a99511-0ce2-4331-a0bb-a38b74d13afa",
+      "key": "val.txt",
+      "size": 12733,
+      "checksum": "md5:b1ff099b8ec652a669d10deb0d9758eb",
+      "links": {
+        "self": "https://zenodo.org/api/records/17716661/files/val.txt/content"
+      }
+    },
+    {
+      "id": "a3d288c9-3e0d-4100-b6d8-7490a2226283",
+      "key": "test.txt",
+      "size": 12894,
+      "checksum": "md5:6d9b3e6e3c7dbdbe01a86d18575f56db",
+      "links": {
+        "self": "https://zenodo.org/api/records/17716661/files/test.txt/content"
+      }
+    },
+    {
+      "id": "a1f556e4-7703-4ddf-bfd1-9a4295583f00",
+      "key": "train.txt",
+      "size": 102283,
+      "checksum": "md5:9b68d167efd0b55f6cb772b73eba0698",
+      "links": {
+        "self": "https://zenodo.org/api/records/17716661/files/train.txt/content"
+      }
+    },
+    {
+      "id": "710b58aa-d177-4edb-8f78-f1d6885f6a58",
+      "key": "CocoaMoniliaDataSet.zip",
+      "size": 6187303002,
+      "checksum": "md5:d3531c4a62f3aaff9c146c7a8ae39a6b",
+      "links": {
+        "self": "https://zenodo.org/api/records/17716661/files/CocoaMoniliaDataSet.zip/content"
+      }
+    }
+  ],
+  "swh": {},
+  "owners": [
+    {
+      "id": "1411127"
+    }
+  ],
+  "status": "published",
+  "stats": {
+    "downloads": 1813,
+    "unique_downloads": 614,
+    "views": 1259,
+    "unique_views": 1040,
+    "version_downloads": 1691,
+    "version_unique_downloads": 571,
+    "version_unique_views": 911,
+    "version_views": 1094
+  },
+  "state": "done",
+  "submitted": true
+}

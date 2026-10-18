@@ -1,0 +1,11 @@
+{
+  "checks": {
+    "delayed_60s_visual_pose_with_fresh_telemetry_keeps_drone_audio": true,
+    "inactive_drone_keeps_shared_ground_audio_bus": true,
+    "visibility_resume_recovers_suspended_context": true,
+    "public_sound_enabled_by_default": true,
+    "browser_console_errors": 0
+  },
+  "measured_master_gain": 0.37994277477264404,
+  "scope": "Browser regression checks; no claim of calibrated hardware acoustics or prolonged uninterrupted playback."
+}

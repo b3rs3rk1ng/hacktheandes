@@ -1,0 +1,1121 @@
+{
+  "engine": "Rapier 0.21.0",
+  "step_s": 0.008333333333333333,
+  "limits": "Estimated rigid chassis and raycast wheel dynamics; no hardware, deformable soil, arm-contact or crop-vision validation.",
+  "cases": {
+    "rough": {
+      "status": "complete",
+      "time_s": 27.574999999999076,
+      "x_m": 11.602712372738644,
+      "z_m": -0.00400196179029163,
+      "speed_mps": 0.024718384328185867,
+      "mass_kg": 105.49999237060547,
+      "peak_pitch_deg": 9.150776139114035,
+      "peak_roll_deg": 6.078712145820678,
+      "max_compression_m": 0.050778452157974246,
+      "max_wheel_height_difference_m": 0.05077844858169556,
+      "min_contacts": 2,
+      "trace": [
+        {
+          "time_s": 0.01,
+          "x_m": -2.4,
+          "speed_mps": 0,
+          "pitch_deg": 0,
+          "roll_deg": 0,
+          "contacts": [
+            false,
+            false,
+            false,
+            false
+          ]
+        },
+        {
+          "time_s": 1.01,
+          "x_m": -2.344,
+          "speed_mps": 0.409,
+          "pitch_deg": 0.82,
+          "roll_deg": -0.02,
+          "contacts": [
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "time_s": 2.01,
+          "x_m": -1.756,
+          "speed_mps": 0.636,
+          "pitch_deg": 0.04,
+          "roll_deg": -0.02,
+          "contacts": [
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "time_s": 3.01,
+          "x_m": -1.118,
+          "speed_mps": 0.637,
+          "pitch_deg": 0.03,
+          "roll_deg": -0.02,
+          "contacts": [
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "time_s": 4.01,
+          "x_m": -0.481,
+          "speed_mps": 0.644,
+          "pitch_deg": -0.02,
+          "roll_deg": -0.05,
+          "contacts": [
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "time_s": 5.01,
+          "x_m": 0.161,
+          "speed_mps": 0.576,
+          "pitch_deg": -1.13,
+          "roll_deg": -1.9,
+          "contacts": [
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "time_s": 6.01,
+          "x_m": 0.783,
+          "speed_mps": 0.208,
+          "pitch_deg": 0.76,
+          "roll_deg": 0.8,
+          "contacts": [
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "time_s": 7.01,
+          "x_m": 0.833,
+          "speed_mps": 0.246,
+          "pitch_deg": 2,
+          "roll_deg": -0.39,
+          "contacts": [
+            true,
+            true,
+            false,
+            true
+          ]
+        },
+        {
+          "time_s": 8.01,
+          "x_m": 1.396,
+          "speed_mps": 0.46,
+          "pitch_deg": 2.62,
+          "roll_deg": 0.44,
+          "contacts": [
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "time_s": 9.01,
+          "x_m": 1.945,
+          "speed_mps": 0.553,
+          "pitch_deg": 6.58,
+          "roll_deg": -0.04,
+          "contacts": [
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "time_s": 10.01,
+          "x_m": 2.383,
+          "speed_mps": 0.5,
+          "pitch_deg": 8.64,
+          "roll_deg": 0.03,
+          "contacts": [
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "time_s": 11.01,
+          "x_m": 2.78,
+          "speed_mps": 0.382,
+          "pitch_deg": 9.15,
+          "roll_deg": -0.03,
+          "contacts": [
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "time_s": 12.01,
+          "x_m": 3.148,
+          "speed_mps": 0.369,
+          "pitch_deg": 8.78,
+          "roll_deg": -0.02,
+          "contacts": [
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "time_s": 13.01,
+          "x_m": 3.508,
+          "speed_mps": 0.351,
+          "pitch_deg": 8.16,
+          "roll_deg": 0.02,
+          "contacts": [
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "time_s": 14.01,
+          "x_m": 3.879,
+          "speed_mps": 0.366,
+          "pitch_deg": 8.66,
+          "roll_deg": -0.01,
+          "contacts": [
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "time_s": 15.01,
+          "x_m": 4.252,
+          "speed_mps": 0.374,
+          "pitch_deg": 9.07,
+          "roll_deg": -0.06,
+          "contacts": [
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "time_s": 16.01,
+          "x_m": 4.612,
+          "speed_mps": 0.371,
+          "pitch_deg": 8.44,
+          "roll_deg": 0.71,
+          "contacts": [
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "time_s": 17.01,
+          "x_m": 4.988,
+          "speed_mps": 0.412,
+          "pitch_deg": 4.08,
+          "roll_deg": 3.08,
+          "contacts": [
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "time_s": 18.01,
+          "x_m": 5.439,
+          "speed_mps": 0.564,
+          "pitch_deg": 0.18,
+          "roll_deg": 4.02,
+          "contacts": [
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "time_s": 19.01,
+          "x_m": 6.054,
+          "speed_mps": 0.639,
+          "pitch_deg": -0.15,
+          "roll_deg": 6.04,
+          "contacts": [
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "time_s": 20.01,
+          "x_m": 6.657,
+          "speed_mps": 0.626,
+          "pitch_deg": 0.31,
+          "roll_deg": 3.48,
+          "contacts": [
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "time_s": 21.01,
+          "x_m": 7.328,
+          "speed_mps": 0.805,
+          "pitch_deg": -8.43,
+          "roll_deg": 1.09,
+          "contacts": [
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "time_s": 22.01,
+          "x_m": 8.196,
+          "speed_mps": 0.911,
+          "pitch_deg": -8.48,
+          "roll_deg": -0.02,
+          "contacts": [
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "time_s": 23.01,
+          "x_m": 9.092,
+          "speed_mps": 0.908,
+          "pitch_deg": -8.12,
+          "roll_deg": -0.05,
+          "contacts": [
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "time_s": 24.01,
+          "x_m": 9.979,
+          "speed_mps": 0.737,
+          "pitch_deg": -4.52,
+          "roll_deg": -0.23,
+          "contacts": [
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "time_s": 25.01,
+          "x_m": 10.681,
+          "speed_mps": 0.651,
+          "pitch_deg": -0.13,
+          "roll_deg": -0.01,
+          "contacts": [
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "time_s": 26.01,
+          "x_m": 11.232,
+          "speed_mps": 0.514,
+          "pitch_deg": -0.54,
+          "roll_deg": -0.01,
+          "contacts": [
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "time_s": 27.01,
+          "x_m": 11.533,
+          "speed_mps": 0.15,
+          "pitch_deg": 0.29,
+          "roll_deg": -0.06,
+          "contacts": [
+            true,
+            true,
+            true,
+            true
+          ]
+        }
+      ]
+    },
+    "flat": {
+      "status": "complete",
+      "time_s": 23.983333333332613,
+      "x_m": 11.602796912184711,
+      "z_m": 0.0003031501631265977,
+      "speed_mps": 0.024833343739454068,
+      "mass_kg": 105.49999237060547,
+      "peak_pitch_deg": 0.8055677367189606,
+      "peak_roll_deg": 0.075324381262066,
+      "max_compression_m": 0.028884921073913578,
+      "max_wheel_height_difference_m": 0.011174172163009644,
+      "min_contacts": 4,
+      "trace": [
+        {
+          "time_s": 0.01,
+          "x_m": -2.4,
+          "speed_mps": 0,
+          "pitch_deg": 0,
+          "roll_deg": 0,
+          "contacts": [
+            false,
+            false,
+            false,
+            false
+          ]
+        },
+        {
+          "time_s": 1.01,
+          "x_m": -2.344,
+          "speed_mps": 0.409,
+          "pitch_deg": 0.82,
+          "roll_deg": -0.02,
+          "contacts": [
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "time_s": 2.01,
+          "x_m": -1.756,
+          "speed_mps": 0.636,
+          "pitch_deg": 0.04,
+          "roll_deg": -0.02,
+          "contacts": [
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "time_s": 3.01,
+          "x_m": -1.118,
+          "speed_mps": 0.637,
+          "pitch_deg": 0.03,
+          "roll_deg": -0.02,
+          "contacts": [
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "time_s": 4.01,
+          "x_m": -0.481,
+          "speed_mps": 0.644,
+          "pitch_deg": -0.02,
+          "roll_deg": -0.05,
+          "contacts": [
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "time_s": 5.01,
+          "x_m": 0.156,
+          "speed_mps": 0.633,
+          "pitch_deg": -0.01,
+          "roll_deg": -0.01,
+          "contacts": [
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "time_s": 6.01,
+          "x_m": 0.794,
+          "speed_mps": 0.635,
+          "pitch_deg": 0.06,
+          "roll_deg": -0.03,
+          "contacts": [
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "time_s": 7.01,
+          "x_m": 1.431,
+          "speed_mps": 0.643,
+          "pitch_deg": 0.31,
+          "roll_deg": -0.03,
+          "contacts": [
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "time_s": 8.01,
+          "x_m": 2.064,
+          "speed_mps": 0.63,
+          "pitch_deg": -0.44,
+          "roll_deg": 0.02,
+          "contacts": [
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "time_s": 9.01,
+          "x_m": 2.705,
+          "speed_mps": 0.637,
+          "pitch_deg": 0.35,
+          "roll_deg": -0.04,
+          "contacts": [
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "time_s": 10.01,
+          "x_m": 3.342,
+          "speed_mps": 0.642,
+          "pitch_deg": 0.02,
+          "roll_deg": -0.01,
+          "contacts": [
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "time_s": 11.01,
+          "x_m": 3.977,
+          "speed_mps": 0.633,
+          "pitch_deg": -0.05,
+          "roll_deg": 0,
+          "contacts": [
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "time_s": 12.01,
+          "x_m": 4.615,
+          "speed_mps": 0.634,
+          "pitch_deg": -0.12,
+          "roll_deg": -0.01,
+          "contacts": [
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "time_s": 13.01,
+          "x_m": 5.255,
+          "speed_mps": 0.645,
+          "pitch_deg": 0.46,
+          "roll_deg": -0.05,
+          "contacts": [
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "time_s": 14.01,
+          "x_m": 5.888,
+          "speed_mps": 0.633,
+          "pitch_deg": -0.42,
+          "roll_deg": 0.01,
+          "contacts": [
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "time_s": 15.01,
+          "x_m": 6.528,
+          "speed_mps": 0.636,
+          "pitch_deg": 0.23,
+          "roll_deg": -0.01,
+          "contacts": [
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "time_s": 16.01,
+          "x_m": 7.165,
+          "speed_mps": 0.637,
+          "pitch_deg": 0.06,
+          "roll_deg": -0.03,
+          "contacts": [
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "time_s": 17.01,
+          "x_m": 7.801,
+          "speed_mps": 0.639,
+          "pitch_deg": 0.05,
+          "roll_deg": -0.01,
+          "contacts": [
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "time_s": 18.01,
+          "x_m": 8.437,
+          "speed_mps": 0.63,
+          "pitch_deg": -0.29,
+          "roll_deg": 0.01,
+          "contacts": [
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "time_s": 19.01,
+          "x_m": 9.079,
+          "speed_mps": 0.642,
+          "pitch_deg": 0.52,
+          "roll_deg": -0.05,
+          "contacts": [
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "time_s": 20.01,
+          "x_m": 9.712,
+          "speed_mps": 0.635,
+          "pitch_deg": -0.33,
+          "roll_deg": -0.01,
+          "contacts": [
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "time_s": 21.01,
+          "x_m": 10.351,
+          "speed_mps": 0.637,
+          "pitch_deg": 0.12,
+          "roll_deg": 0.01,
+          "contacts": [
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "time_s": 22.01,
+          "x_m": 10.988,
+          "speed_mps": 0.632,
+          "pitch_deg": 0.05,
+          "roll_deg": -0.04,
+          "contacts": [
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "time_s": 23.01,
+          "x_m": 11.454,
+          "speed_mps": 0.24,
+          "pitch_deg": 0.18,
+          "roll_deg": -0.06,
+          "contacts": [
+            true,
+            true,
+            true,
+            true
+          ]
+        }
+      ]
+    },
+    "stationary": {
+      "status": "running",
+      "time_s": 4.008333333333322,
+      "x_m": -2.4000000951458325,
+      "z_m": -0.000007016625168041374,
+      "speed_mps": -5.518536272867189e-9,
+      "mass_kg": 105.49999237060547,
+      "peak_pitch_deg": 3.838322510773599e-8,
+      "peak_roll_deg": 0.016973562281912505,
+      "max_compression_m": 0.023346785306930545,
+      "max_wheel_height_difference_m": 0.00023701786994934082,
+      "min_contacts": 4,
+      "trace": [
+        {
+          "time_s": 0.01,
+          "x_m": -2.4,
+          "speed_mps": 0,
+          "pitch_deg": 0,
+          "roll_deg": 0,
+          "contacts": [
+            false,
+            false,
+            false,
+            false
+          ]
+        },
+        {
+          "time_s": 1.01,
+          "x_m": -2.4,
+          "speed_mps": 0,
+          "pitch_deg": 0,
+          "roll_deg": -0.02,
+          "contacts": [
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "time_s": 2.01,
+          "x_m": -2.4,
+          "speed_mps": 0,
+          "pitch_deg": 0,
+          "roll_deg": -0.02,
+          "contacts": [
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "time_s": 3.01,
+          "x_m": -2.4,
+          "speed_mps": 0,
+          "pitch_deg": 0,
+          "roll_deg": -0.02,
+          "contacts": [
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "time_s": 4.01,
+          "x_m": -2.4,
+          "speed_mps": 0,
+          "pitch_deg": 0,
+          "roll_deg": -0.02,
+          "contacts": [
+            true,
+            true,
+            true,
+            true
+          ]
+        }
+      ]
+    },
+    "resized": {
+      "status": "complete",
+      "time_s": 23.983333333332613,
+      "x_m": 11.602768219720334,
+      "z_m": 0.000303288918228673,
+      "speed_mps": 0.02483289123403389,
+      "mass_kg": 105.49999237060547,
+      "peak_pitch_deg": 0.8055672030697559,
+      "peak_roll_deg": 0.07532368075993821,
+      "max_compression_m": 0.028884921073913578,
+      "max_wheel_height_difference_m": 0.011174172163009644,
+      "min_contacts": 4,
+      "trace": [
+        {
+          "time_s": 0.01,
+          "x_m": -2.4,
+          "speed_mps": 0,
+          "pitch_deg": 0,
+          "roll_deg": 0,
+          "contacts": [
+            false,
+            false,
+            false,
+            false
+          ]
+        },
+        {
+          "time_s": 1.01,
+          "x_m": -2.344,
+          "speed_mps": 0.409,
+          "pitch_deg": 0.82,
+          "roll_deg": -0.02,
+          "contacts": [
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "time_s": 2.01,
+          "x_m": -1.756,
+          "speed_mps": 0.636,
+          "pitch_deg": 0.04,
+          "roll_deg": -0.02,
+          "contacts": [
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "time_s": 3.01,
+          "x_m": -1.118,
+          "speed_mps": 0.637,
+          "pitch_deg": 0.03,
+          "roll_deg": -0.02,
+          "contacts": [
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "time_s": 4.01,
+          "x_m": -0.481,
+          "speed_mps": 0.644,
+          "pitch_deg": -0.02,
+          "roll_deg": -0.05,
+          "contacts": [
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "time_s": 5.01,
+          "x_m": 0.156,
+          "speed_mps": 0.633,
+          "pitch_deg": -0.01,
+          "roll_deg": -0.01,
+          "contacts": [
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "time_s": 6.01,
+          "x_m": 0.794,
+          "speed_mps": 0.635,
+          "pitch_deg": 0.06,
+          "roll_deg": -0.03,
+          "contacts": [
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "time_s": 7.01,
+          "x_m": 1.431,
+          "speed_mps": 0.643,
+          "pitch_deg": 0.31,
+          "roll_deg": -0.03,
+          "contacts": [
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "time_s": 8.01,
+          "x_m": 2.064,
+          "speed_mps": 0.63,
+          "pitch_deg": -0.44,
+          "roll_deg": 0.02,
+          "contacts": [
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "time_s": 9.01,
+          "x_m": 2.705,
+          "speed_mps": 0.637,
+          "pitch_deg": 0.35,
+          "roll_deg": -0.04,
+          "contacts": [
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "time_s": 10.01,
+          "x_m": 3.342,
+          "speed_mps": 0.642,
+          "pitch_deg": 0.02,
+          "roll_deg": -0.01,
+          "contacts": [
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "time_s": 11.01,
+          "x_m": 3.977,
+          "speed_mps": 0.633,
+          "pitch_deg": -0.05,
+          "roll_deg": 0,
+          "contacts": [
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "time_s": 12.01,
+          "x_m": 4.615,
+          "speed_mps": 0.634,
+          "pitch_deg": -0.12,
+          "roll_deg": -0.01,
+          "contacts": [
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "time_s": 13.01,
+          "x_m": 5.255,
+          "speed_mps": 0.645,
+          "pitch_deg": 0.46,
+          "roll_deg": -0.05,
+          "contacts": [
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "time_s": 14.01,
+          "x_m": 5.888,
+          "speed_mps": 0.633,
+          "pitch_deg": -0.42,
+          "roll_deg": 0.01,
+          "contacts": [
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "time_s": 15.01,
+          "x_m": 6.528,
+          "speed_mps": 0.636,
+          "pitch_deg": 0.23,
+          "roll_deg": -0.01,
+          "contacts": [
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "time_s": 16.01,
+          "x_m": 7.165,
+          "speed_mps": 0.637,
+          "pitch_deg": 0.06,
+          "roll_deg": -0.03,
+          "contacts": [
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "time_s": 17.01,
+          "x_m": 7.801,
+          "speed_mps": 0.639,
+          "pitch_deg": 0.05,
+          "roll_deg": -0.01,
+          "contacts": [
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "time_s": 18.01,
+          "x_m": 8.437,
+          "speed_mps": 0.63,
+          "pitch_deg": -0.29,
+          "roll_deg": 0.01,
+          "contacts": [
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "time_s": 19.01,
+          "x_m": 9.079,
+          "speed_mps": 0.642,
+          "pitch_deg": 0.52,
+          "roll_deg": -0.05,
+          "contacts": [
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "time_s": 20.01,
+          "x_m": 9.712,
+          "speed_mps": 0.635,
+          "pitch_deg": -0.33,
+          "roll_deg": -0.01,
+          "contacts": [
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "time_s": 21.01,
+          "x_m": 10.351,
+          "speed_mps": 0.637,
+          "pitch_deg": 0.12,
+          "roll_deg": 0.01,
+          "contacts": [
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "time_s": 22.01,
+          "x_m": 10.988,
+          "speed_mps": 0.632,
+          "pitch_deg": 0.05,
+          "roll_deg": -0.04,
+          "contacts": [
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "time_s": 23.01,
+          "x_m": 11.454,
+          "speed_mps": 0.24,
+          "pitch_deg": 0.18,
+          "roll_deg": -0.06,
+          "contacts": [
+            true,
+            true,
+            true,
+            true
+          ]
+        }
+      ]
+    }
+  },
+  "safety": "Tilt stop, zero engine force, reset passed"
+}

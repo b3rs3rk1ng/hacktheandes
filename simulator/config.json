@@ -1,0 +1,27 @@
+{
+  "title": "Laboratorio de cacao",
+  "time_step_ms": 16,
+  "drone": {
+    "mass_kg": 1.2,
+    "initial_position": [-1.7, 0, 0.45],
+    "tool_offset": [0.65, 0, 0],
+    "max_force_n": 34,
+    "position_kp": 4.5,
+    "velocity_kd": 4.2,
+    "inertia_kg_m2": [0.035, 0.045, 0.065],
+    "attitude_frequency": 8.0,
+    "attitude_damping": 1.0,
+    "position_tolerance_m": 0.025
+  },
+  "target": {
+    "position": [1.55, 0, 1.45],
+    "radii": [0.13, 0.13, 0.26],
+    "mass_kg": 0.45,
+    "grip_offset": [-0.15, 0, 0],
+    "stem_offset": [0.15, 0, 0]
+  },
+  "tree": {"position": [1.98, 0, 0], "height": 2.9},
+  "bin": {"position": [-1.0, -1.45, 0], "size": [0.85, 0.75, 0.42]},
+  "grip_tolerance_m": 0.035,
+  "seed": 17
+}

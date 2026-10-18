@@ -1,0 +1,286 @@
+{
+  "cross_class_iou_threshold": 0.8,
+  "conflicts": [
+    {
+      "a": {
+        "path": "CocoaMoniliaDataSet/cocoapods_images/h0/IMG_20240928_102204255_HDR.jpg",
+        "dimensions": [
+          3072,
+          3072
+        ],
+        "class": 4,
+        "bbox": [
+          1094.0,
+          342.0,
+          1547.0,
+          1861.0
+        ]
+      },
+      "b": {
+        "path": "CocoaMoniliaDataSet/cocoapods_images/m3/IMG_20240928_102204255_HDR.jpg",
+        "dimensions": [
+          3072,
+          3072
+        ],
+        "class": 5,
+        "bbox": [
+          1095.0,
+          446.0,
+          1550.0,
+          1859.0
+        ]
+      },
+      "iou": 0.922480956053765
+    },
+    {
+      "a": {
+        "path": "CocoaMoniliaDataSet/cocoapods_images/h0/IMG_20240928_111133386_HDR.jpg",
+        "dimensions": [
+          3072,
+          3072
+        ],
+        "class": 3,
+        "bbox": [
+          1251.0,
+          1010.0,
+          1844.0,
+          2377.0
+        ]
+      },
+      "b": {
+        "path": "CocoaMoniliaDataSet/cocoapods_images/m3/IMG_20240928_111133386_HDR.jpg",
+        "dimensions": [
+          3072,
+          3072
+        ],
+        "class": 4,
+        "bbox": [
+          1251.0,
+          1137.0,
+          1842.0,
+          2378.0
+        ]
+      },
+      "iou": 0.9033778669710634
+    },
+    {
+      "a": {
+        "path": "CocoaMoniliaDataSet/cocoapods_images/m1/IMG_20241010_102713031.jpg",
+        "dimensions": [
+          3072,
+          3072
+        ],
+        "class": 2,
+        "bbox": [
+          669.0,
+          693.0,
+          1967.0,
+          2701.0
+        ]
+      },
+      "b": {
+        "path": "CocoaMoniliaDataSet/cocoapods_images/m2/IMG_20241010_102713031.jpg",
+        "dimensions": [
+          3072,
+          3072
+        ],
+        "class": 3,
+        "bbox": [
+          670.0,
+          695.0,
+          1967.0,
+          2700.0
+        ]
+      },
+      "iou": 0.9977367110909213
+    },
+    {
+      "a": {
+        "path": "CocoaMoniliaDataSet/cocoapods_images/m1/IMG_20241010_102717472.jpg",
+        "dimensions": [
+          3072,
+          3072
+        ],
+        "class": 2,
+        "bbox": [
+          782.0,
+          174.0,
+          2445.0,
+          2662.0
+        ]
+      },
+      "b": {
+        "path": "CocoaMoniliaDataSet/cocoapods_images/m2/IMG_20241010_102717472.jpg",
+        "dimensions": [
+          3072,
+          3072
+        ],
+        "class": 3,
+        "bbox": [
+          780.0,
+          170.0,
+          2446.0,
+          2666.0
+        ]
+      },
+      "iou": 0.9949999230461415
+    },
+    {
+      "a": {
+        "path": "CocoaMoniliaDataSet/cocoapods_images/m1/IMG_20241010_102719070.jpg",
+        "dimensions": [
+          3072,
+          3072
+        ],
+        "class": 2,
+        "bbox": [
+          795.0,
+          19.0,
+          2326.0,
+          2572.4
+        ]
+      },
+      "b": {
+        "path": "CocoaMoniliaDataSet/cocoapods_images/m2/IMG_20241010_102719070.jpg",
+        "dimensions": [
+          3072,
+          3072
+        ],
+        "class": 3,
+        "bbox": [
+          792.0,
+          17.0,
+          2328.0,
+          2564.0
+        ]
+      },
+      "iou": 0.9926988490650468
+    },
+    {
+      "a": {
+        "path": "CocoaMoniliaDataSet/cocoapods_images/m2/IMG_20240227_104653572.jpg",
+        "dimensions": [
+          3072,
+          3072
+        ],
+        "class": 3,
+        "bbox": [
+          568.0,
+          305.0,
+          1815.9,
+          2716.0
+        ]
+      },
+      "b": {
+        "path": "CocoaMoniliaDataSet/cocoapods_images/m3/IMG_20240227_104653572.jpg",
+        "dimensions": [
+          3072,
+          3072
+        ],
+        "class": 4,
+        "bbox": [
+          568.0,
+          301.0,
+          1815.71,
+          2711.43
+        ]
+      },
+      "iou": 0.996299881519515
+    },
+    {
+      "a": {
+        "path": "CocoaMoniliaDataSet/cocoapods_images/m2/IMG_20240227_104654856.jpg",
+        "dimensions": [
+          3072,
+          3072
+        ],
+        "class": 3,
+        "bbox": [
+          805.3,
+          350.0,
+          2036.0,
+          2745.7
+        ]
+      },
+      "b": {
+        "path": "CocoaMoniliaDataSet/cocoapods_images/m3/IMG_20240227_104654856.jpg",
+        "dimensions": [
+          3072,
+          3072
+        ],
+        "class": 4,
+        "bbox": [
+          815.0,
+          351.0,
+          2036.0,
+          2740.0
+        ]
+      },
+      "iou": 0.98934367182794
+    },
+    {
+      "a": {
+        "path": "CocoaMoniliaDataSet/cocoapods_images/m2/IMG_20240802_133828.jpg",
+        "dimensions": [
+          3000,
+          3000
+        ],
+        "class": 3,
+        "bbox": [
+          907.0,
+          410.0,
+          2329.0,
+          3000.0
+        ]
+      },
+      "b": {
+        "path": "CocoaMoniliaDataSet/cocoapods_images/m3/IMG_20240802_133828.jpg",
+        "dimensions": [
+          3000,
+          3000
+        ],
+        "class": 4,
+        "bbox": [
+          910.0,
+          410.0,
+          2328.0,
+          2994.0
+        ]
+      },
+      "iou": 0.9948769746238101
+    },
+    {
+      "a": {
+        "path": "CocoaMoniliaDataSet/cocoapods_images/m2/IMG_20241010_102343184_HDR.jpg",
+        "dimensions": [
+          3072,
+          3072
+        ],
+        "class": 3,
+        "bbox": [
+          936.0,
+          907.0,
+          1858.0,
+          2444.0
+        ]
+      },
+      "b": {
+        "path": "CocoaMoniliaDataSet/cocoapods_images/m3/IMG_20241010_102343184_HDR.jpg",
+        "dimensions": [
+          3072,
+          3072
+        ],
+        "class": 4,
+        "bbox": [
+          938.0,
+          908.0,
+          1857.0,
+          2437.6099999999997
+        ]
+      },
+      "iou": 0.9919537807120665
+    }
+  ],
+  "binary_conflicts": [],
+  "dimension_conflicts": []
+}

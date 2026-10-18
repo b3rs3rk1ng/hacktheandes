@@ -1,0 +1,429 @@
+{
+  "data": [
+    {
+      "id": "665f61990f8c80082e3c92e8",
+      "type": "files",
+      "attributes": {
+        "guid": "snxup",
+        "checkout": null,
+        "name": "Raw_Ecuador_images_11_03_23_1.zip",
+        "kind": "file",
+        "path": "/665f61990f8c80082e3c92e8",
+        "size": 4203258796,
+        "provider": "osfstorage",
+        "materialized_path": "/Full_cocoa_dataset/Raw cocoa images/Raw_Ecuador_images_11_03_23_1.zip",
+        "last_touched": null,
+        "date_modified": "2024-06-04T18:48:57.308724",
+        "date_created": "2024-06-04T18:48:57.308724Z",
+        "extra": {
+          "hashes": {
+            "md5": "e99263cc97cdcb3d242ab1fb755ea2e5",
+            "sha256": "27c8c9037f13497c70c3f3166e65d49446098907c2db69ac79854a837b175971"
+          },
+          "downloads": 0
+        },
+        "tags": [],
+        "current_user_can_comment": false,
+        "current_version": 1,
+        "show_as_unviewed": false
+      },
+      "relationships": {
+        "parent_folder": {
+          "links": {
+            "related": {
+              "href": "https://api.osf.io/v2/files/665f39d0d835c428e74cecf3/",
+              "meta": {}
+            }
+          },
+          "data": {
+            "id": "665f39d0d835c428e74cecf3",
+            "type": "files"
+          }
+        },
+        "versions": {
+          "links": {
+            "related": {
+              "href": "https://api.osf.io/v2/files/665f61990f8c80082e3c92e8/versions/",
+              "meta": {}
+            }
+          }
+        },
+        "comments": {
+          "links": {
+            "related": {
+              "href": "https://api.osf.io/v2/nodes/2fw6g/comments/?filter%5Btarget%5D=snxup",
+              "meta": {}
+            }
+          }
+        },
+        "node": {
+          "links": {
+            "related": {
+              "href": "https://api.osf.io/v2/nodes/2fw6g/",
+              "meta": {}
+            }
+          },
+          "data": {
+            "id": "2fw6g",
+            "type": "nodes"
+          }
+        },
+        "target": {
+          "links": {
+            "related": {
+              "href": "https://api.osf.io/v2/nodes/2fw6g/",
+              "meta": {
+                "type": "nodes"
+              }
+            }
+          },
+          "data": {
+            "type": "nodes",
+            "id": "2fw6g"
+          }
+        },
+        "cedar_metadata_records": {
+          "links": {
+            "related": {
+              "href": "https://api.osf.io/v2/files/665f61990f8c80082e3c92e8/cedar_metadata_records/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "links": {
+        "info": "https://api.osf.io/v2/files/665f61990f8c80082e3c92e8/",
+        "move": "https://files.osf.io/v1/resources/2fw6g/providers/osfstorage/665f61990f8c80082e3c92e8",
+        "upload": "https://files.osf.io/v1/resources/2fw6g/providers/osfstorage/665f61990f8c80082e3c92e8",
+        "delete": "https://files.osf.io/v1/resources/2fw6g/providers/osfstorage/665f61990f8c80082e3c92e8",
+        "download": "https://osf.io/download/snxup/",
+        "render": "https://mfr.osf.io/render?url=https%3A%2F%2Fosf.io%2Fdownload%2Fsnxup%2F%3Fdirect%26mode%3Drender",
+        "html": "https://osf.io/2fw6g/files/osfstorage/665f61990f8c80082e3c92e8",
+        "self": "https://api.osf.io/v2/files/665f61990f8c80082e3c92e8/",
+        "iri": "https://osf.io/snxup"
+      }
+    },
+    {
+      "id": "665f74ad77ff4c4f27e04c01",
+      "type": "files",
+      "attributes": {
+        "guid": "8pqez",
+        "checkout": null,
+        "name": "Raw_Ecuador_images_11_03_23_2.zip",
+        "kind": "file",
+        "path": "/665f74ad77ff4c4f27e04c01",
+        "size": 3998047941,
+        "provider": "osfstorage",
+        "materialized_path": "/Full_cocoa_dataset/Raw cocoa images/Raw_Ecuador_images_11_03_23_2.zip",
+        "last_touched": null,
+        "date_modified": "2024-06-04T20:10:21.957813",
+        "date_created": "2024-06-04T20:10:21.957813Z",
+        "extra": {
+          "hashes": {
+            "md5": "633d78624dcbfb056c94a7f78b345aa5",
+            "sha256": "12263a614c645c977336d4451504bf1542c5a2983c1f47efa21f15a0bdc08aef"
+          },
+          "downloads": 0
+        },
+        "tags": [],
+        "current_user_can_comment": false,
+        "current_version": 1,
+        "show_as_unviewed": false
+      },
+      "relationships": {
+        "parent_folder": {
+          "links": {
+            "related": {
+              "href": "https://api.osf.io/v2/files/665f39d0d835c428e74cecf3/",
+              "meta": {}
+            }
+          },
+          "data": {
+            "id": "665f39d0d835c428e74cecf3",
+            "type": "files"
+          }
+        },
+        "versions": {
+          "links": {
+            "related": {
+              "href": "https://api.osf.io/v2/files/665f74ad77ff4c4f27e04c01/versions/",
+              "meta": {}
+            }
+          }
+        },
+        "comments": {
+          "links": {
+            "related": {
+              "href": "https://api.osf.io/v2/nodes/2fw6g/comments/?filter%5Btarget%5D=8pqez",
+              "meta": {}
+            }
+          }
+        },
+        "node": {
+          "links": {
+            "related": {
+              "href": "https://api.osf.io/v2/nodes/2fw6g/",
+              "meta": {}
+            }
+          },
+          "data": {
+            "id": "2fw6g",
+            "type": "nodes"
+          }
+        },
+        "target": {
+          "links": {
+            "related": {
+              "href": "https://api.osf.io/v2/nodes/2fw6g/",
+              "meta": {
+                "type": "nodes"
+              }
+            }
+          },
+          "data": {
+            "type": "nodes",
+            "id": "2fw6g"
+          }
+        },
+        "cedar_metadata_records": {
+          "links": {
+            "related": {
+              "href": "https://api.osf.io/v2/files/665f74ad77ff4c4f27e04c01/cedar_metadata_records/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "links": {
+        "info": "https://api.osf.io/v2/files/665f74ad77ff4c4f27e04c01/",
+        "move": "https://files.osf.io/v1/resources/2fw6g/providers/osfstorage/665f74ad77ff4c4f27e04c01",
+        "upload": "https://files.osf.io/v1/resources/2fw6g/providers/osfstorage/665f74ad77ff4c4f27e04c01",
+        "delete": "https://files.osf.io/v1/resources/2fw6g/providers/osfstorage/665f74ad77ff4c4f27e04c01",
+        "download": "https://osf.io/download/8pqez/",
+        "render": "https://mfr.osf.io/render?url=https%3A%2F%2Fosf.io%2Fdownload%2F8pqez%2F%3Fdirect%26mode%3Drender",
+        "html": "https://osf.io/2fw6g/files/osfstorage/665f74ad77ff4c4f27e04c01",
+        "self": "https://api.osf.io/v2/files/665f74ad77ff4c4f27e04c01/",
+        "iri": "https://osf.io/8pqez"
+      }
+    },
+    {
+      "id": "666080ea77ff4c501ae04cb3",
+      "type": "files",
+      "attributes": {
+        "guid": "2y4a8",
+        "checkout": null,
+        "name": "Raw_Ecuador_images_11_03_23_3.zip",
+        "kind": "file",
+        "path": "/666080ea77ff4c501ae04cb3",
+        "size": 4706125567,
+        "provider": "osfstorage",
+        "materialized_path": "/Full_cocoa_dataset/Raw cocoa images/Raw_Ecuador_images_11_03_23_3.zip",
+        "last_touched": null,
+        "date_modified": "2024-06-05T15:14:50.108125",
+        "date_created": "2024-06-05T15:14:50.108125Z",
+        "extra": {
+          "hashes": {
+            "md5": "528f30fec3144370ff5e8fadb3956da7",
+            "sha256": "c8778408dd0a0fef7506bfc8ef2d173bbba0a7fcd7a65632b0b6618a6514a1d2"
+          },
+          "downloads": 0
+        },
+        "tags": [],
+        "current_user_can_comment": false,
+        "current_version": 1,
+        "show_as_unviewed": false
+      },
+      "relationships": {
+        "parent_folder": {
+          "links": {
+            "related": {
+              "href": "https://api.osf.io/v2/files/665f39d0d835c428e74cecf3/",
+              "meta": {}
+            }
+          },
+          "data": {
+            "id": "665f39d0d835c428e74cecf3",
+            "type": "files"
+          }
+        },
+        "versions": {
+          "links": {
+            "related": {
+              "href": "https://api.osf.io/v2/files/666080ea77ff4c501ae04cb3/versions/",
+              "meta": {}
+            }
+          }
+        },
+        "comments": {
+          "links": {
+            "related": {
+              "href": "https://api.osf.io/v2/nodes/2fw6g/comments/?filter%5Btarget%5D=2y4a8",
+              "meta": {}
+            }
+          }
+        },
+        "node": {
+          "links": {
+            "related": {
+              "href": "https://api.osf.io/v2/nodes/2fw6g/",
+              "meta": {}
+            }
+          },
+          "data": {
+            "id": "2fw6g",
+            "type": "nodes"
+          }
+        },
+        "target": {
+          "links": {
+            "related": {
+              "href": "https://api.osf.io/v2/nodes/2fw6g/",
+              "meta": {
+                "type": "nodes"
+              }
+            }
+          },
+          "data": {
+            "type": "nodes",
+            "id": "2fw6g"
+          }
+        },
+        "cedar_metadata_records": {
+          "links": {
+            "related": {
+              "href": "https://api.osf.io/v2/files/666080ea77ff4c501ae04cb3/cedar_metadata_records/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "links": {
+        "info": "https://api.osf.io/v2/files/666080ea77ff4c501ae04cb3/",
+        "move": "https://files.osf.io/v1/resources/2fw6g/providers/osfstorage/666080ea77ff4c501ae04cb3",
+        "upload": "https://files.osf.io/v1/resources/2fw6g/providers/osfstorage/666080ea77ff4c501ae04cb3",
+        "delete": "https://files.osf.io/v1/resources/2fw6g/providers/osfstorage/666080ea77ff4c501ae04cb3",
+        "download": "https://osf.io/download/2y4a8/",
+        "render": "https://mfr.osf.io/render?url=https%3A%2F%2Fosf.io%2Fdownload%2F2y4a8%2F%3Fdirect%26mode%3Drender",
+        "html": "https://osf.io/2fw6g/files/osfstorage/666080ea77ff4c501ae04cb3",
+        "self": "https://api.osf.io/v2/files/666080ea77ff4c501ae04cb3/",
+        "iri": "https://osf.io/2y4a8"
+      }
+    },
+    {
+      "id": "666089f40f8c8009443c951b",
+      "type": "files",
+      "attributes": {
+        "guid": "qyxe2",
+        "checkout": null,
+        "name": "Raw_Ecuador_images_11_03_23_4.zip",
+        "kind": "file",
+        "path": "/666089f40f8c8009443c951b",
+        "size": 3869355950,
+        "provider": "osfstorage",
+        "materialized_path": "/Full_cocoa_dataset/Raw cocoa images/Raw_Ecuador_images_11_03_23_4.zip",
+        "last_touched": null,
+        "date_modified": "2024-06-05T15:53:24.526365",
+        "date_created": "2024-06-05T15:53:24.526365Z",
+        "extra": {
+          "hashes": {
+            "md5": "96dcce72decdebce2ceb172c58a9e505",
+            "sha256": "f6368e57f8fcc1fcb86ee1a99fd9076703281daf05b412ff5d708a4cc9e18119"
+          },
+          "downloads": 1
+        },
+        "tags": [],
+        "current_user_can_comment": false,
+        "current_version": 1,
+        "show_as_unviewed": false
+      },
+      "relationships": {
+        "parent_folder": {
+          "links": {
+            "related": {
+              "href": "https://api.osf.io/v2/files/665f39d0d835c428e74cecf3/",
+              "meta": {}
+            }
+          },
+          "data": {
+            "id": "665f39d0d835c428e74cecf3",
+            "type": "files"
+          }
+        },
+        "versions": {
+          "links": {
+            "related": {
+              "href": "https://api.osf.io/v2/files/666089f40f8c8009443c951b/versions/",
+              "meta": {}
+            }
+          }
+        },
+        "comments": {
+          "links": {
+            "related": {
+              "href": "https://api.osf.io/v2/nodes/2fw6g/comments/?filter%5Btarget%5D=qyxe2",
+              "meta": {}
+            }
+          }
+        },
+        "node": {
+          "links": {
+            "related": {
+              "href": "https://api.osf.io/v2/nodes/2fw6g/",
+              "meta": {}
+            }
+          },
+          "data": {
+            "id": "2fw6g",
+            "type": "nodes"
+          }
+        },
+        "target": {
+          "links": {
+            "related": {
+              "href": "https://api.osf.io/v2/nodes/2fw6g/",
+              "meta": {
+                "type": "nodes"
+              }
+            }
+          },
+          "data": {
+            "type": "nodes",
+            "id": "2fw6g"
+          }
+        },
+        "cedar_metadata_records": {
+          "links": {
+            "related": {
+              "href": "https://api.osf.io/v2/files/666089f40f8c8009443c951b/cedar_metadata_records/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "links": {
+        "info": "https://api.osf.io/v2/files/666089f40f8c8009443c951b/",
+        "move": "https://files.osf.io/v1/resources/2fw6g/providers/osfstorage/666089f40f8c8009443c951b",
+        "upload": "https://files.osf.io/v1/resources/2fw6g/providers/osfstorage/666089f40f8c8009443c951b",
+        "delete": "https://files.osf.io/v1/resources/2fw6g/providers/osfstorage/666089f40f8c8009443c951b",
+        "download": "https://osf.io/download/qyxe2/",
+        "render": "https://mfr.osf.io/render?url=https%3A%2F%2Fosf.io%2Fdownload%2Fqyxe2%2F%3Fdirect%26mode%3Drender",
+        "html": "https://osf.io/2fw6g/files/osfstorage/666089f40f8c8009443c951b",
+        "self": "https://api.osf.io/v2/files/666089f40f8c8009443c951b/",
+        "iri": "https://osf.io/qyxe2"
+      }
+    }
+  ],
+  "links": {
+    "first": null,
+    "last": null,
+    "prev": null,
+    "next": null,
+    "meta": {
+      "total": 4,
+      "per_page": 100
+    }
+  },
+  "meta": {
+    "version": "2.0"
+  }
+}

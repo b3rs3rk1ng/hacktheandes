@@ -1,0 +1,122 @@
+{
+  "source": "downloads/external-cocoa-yolov4.zip",
+  "mapping": {
+    "dataset": "Serrano/Torres Cocoa Diseases (YOLOv4), Kaggle version 2, external test only",
+    "require_class_files": true,
+    "classes": [
+      {
+        "source_id": 0,
+        "source_name": "Fitoftora",
+        "target_id": 2,
+        "target_name": "phytophthora",
+        "role": "other_disease"
+      },
+      {
+        "source_id": 1,
+        "source_name": "Monilia",
+        "target_id": 1,
+        "target_name": "monilia",
+        "role": "target_disease"
+      },
+      {
+        "source_id": 2,
+        "source_name": "Sana",
+        "target_id": 0,
+        "target_name": "healthy",
+        "role": "healthy"
+      }
+    ]
+  },
+  "box_frame_contract": "require-unoriented",
+  "source_images": 312,
+  "exported_images": 298,
+  "excluded_images": [
+    {
+      "image": "Enfermedades Cacao/Fito/Fito18.jpg",
+      "label": "Enfermedades Cacao/Fito/Fito18.txt",
+      "reason": "Line 5: out-of-bounds/zero-area normalized xyxy [0.466346, 0.9221155, 0.509936, 1.0000005]"
+    },
+    {
+      "image": "Enfermedades Cacao/Fito/Fito24.jpg",
+      "label": "Enfermedades Cacao/Fito/Fito24.txt",
+      "reason": "Line 2: out-of-bounds/zero-area normalized xyxy [0.8233975, 0.8632215, 0.9689105, 1.0000005]"
+    },
+    {
+      "image": "Enfermedades Cacao/Fito/Fito25.jpg",
+      "label": "Enfermedades Cacao/Fito/Fito25.txt",
+      "reason": "Line 1: out-of-bounds/zero-area normalized xyxy [0.6294875, 0.3125, 1.0000005, 0.996394]"
+    },
+    {
+      "image": "Enfermedades Cacao/Fito/Fito49.jpg",
+      "label": "Enfermedades Cacao/Fito/Fito49.txt",
+      "reason": "Line 2: out-of-bounds/zero-area normalized xyxy [0.2391025, 0.8271635, 0.4910255, 1.0000005]"
+    },
+    {
+      "image": "Enfermedades Cacao/Fito/Fito63.jpg",
+      "label": "Enfermedades Cacao/Fito/Fito63.txt",
+      "reason": "Line 6: out-of-bounds/zero-area normalized xyxy [0.5378205, 0.9221155, 0.8073714999999999, 1.0000005]"
+    },
+    {
+      "image": "Enfermedades Cacao/Fito/Fito9.jpg",
+      "label": "Enfermedades Cacao/Fito/Fito9.txt",
+      "reason": "Line 2: out-of-bounds/zero-area normalized xyxy [0.7096155, 0.42403849999999993, 1.0000005, 0.6283654999999999]"
+    },
+    {
+      "image": "Enfermedades Cacao/Monilia/Monilia1.jpg",
+      "label": "Enfermedades Cacao/Monilia/Monilia1.txt",
+      "reason": "Line 5: out-of-bounds/zero-area normalized xyxy [0.11538499999999999, 0.9521635, 0.211539, 1.0000005]"
+    },
+    {
+      "image": "Enfermedades Cacao/Monilia/Monilia61.jpg",
+      "label": "Enfermedades Cacao/Monilia/Monilia61.txt",
+      "reason": "Line 3: out-of-bounds/zero-area normalized xyxy [0.9208335, 0.8036055000000001, 1.0000005, 0.9216345]"
+    },
+    {
+      "image": "Enfermedades Cacao/Monilia/Monilia63.jpg",
+      "label": "Enfermedades Cacao/Monilia/Monilia63.txt",
+      "reason": "Line 3: out-of-bounds/zero-area normalized xyxy [0.8320515, 0.17980749999999998, 1.0000005, 0.45072049999999997]"
+    },
+    {
+      "image": "Enfermedades Cacao/Monilia/Monilia77.jpg",
+      "label": "Enfermedades Cacao/Monilia/Monilia77.txt",
+      "reason": "Line 10: out-of-bounds/zero-area normalized xyxy [0.9746795, 0.087981, 1.0000005, 0.149039]"
+    },
+    {
+      "image": "Enfermedades Cacao/Sana/Sana39.jpg",
+      "label": "Enfermedades Cacao/Sana/Sana39.txt",
+      "reason": "Line 8: out-of-bounds/zero-area normalized xyxy [0.9557695, 0.34254850000000003, 1.0000005, 0.3983175]"
+    },
+    {
+      "image": "Enfermedades Cacao/Sana/Sana4.jpg",
+      "label": "Enfermedades Cacao/Sana/Sana4.txt",
+      "reason": "Line 9: out-of-bounds/zero-area normalized xyxy [0.9208335, 0.41346150000000004, 1.0000005, 0.6975965000000001]"
+    },
+    {
+      "image": "Enfermedades Cacao/Sana/Sana7.jpg",
+      "label": "Enfermedades Cacao/Sana/Sana7.txt",
+      "reason": "Line 10: out-of-bounds/zero-area normalized xyxy [0.9458335, 0.634375, 1.0000005, 0.720673]"
+    },
+    {
+      "image": "Enfermedades Cacao/Sana/Sana95.jpg",
+      "label": "Enfermedades Cacao/Sana/Sana95.txt",
+      "reason": "Line 8: out-of-bounds/zero-area normalized xyxy [0.8945515, 0.5709135000000001, 1.0000005, 0.7588945]"
+    }
+  ],
+  "class_files": [
+    "Enfermedades Cacao/Fito/classes.txt",
+    "Enfermedades Cacao/Monilia/classes.txt",
+    "Enfermedades Cacao/Sana/classes.txt"
+  ],
+  "exif_orientations": {
+    "1": 312
+  },
+  "box_counts": {
+    "phytophthora": 213,
+    "healthy": 1134,
+    "monilia": 137
+  },
+  "pixel_duplicate_images": 0,
+  "manifest_sha256": "ca23305effb5192743bda7e0d6f7b0506124f681fe278ff2613728def9913909",
+  "evaluation_only": true,
+  "caution": "val YAML path aliases test only for validation-library compatibility; train is null; no fitting or threshold selection on external data"
+}

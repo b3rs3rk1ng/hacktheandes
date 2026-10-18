@@ -1,0 +1,42 @@
+[
+  {
+    "name": "regional",
+    "url": "https://prod-dcd-datasets-public-files-eu-west-1.s3.eu-west-1.amazonaws.com/e238b7b7-1ba7-47bd-ae45-e082bf9dd61b",
+    "status": 206,
+    "range": "bytes 16777216-20971519/5710821257",
+    "bytes": 4194304,
+    "seconds": 2.3916347500053234,
+    "MBps": 1.7537393617443733,
+    "sha256": "a74f669723c8ea34176eaea7f8566949ac95c01a245c51bdf2a9018418554c2e"
+  },
+  {
+    "name": "global",
+    "url": "https://prod-dcd-datasets-public-files-eu-west-1.s3.amazonaws.com/e238b7b7-1ba7-47bd-ae45-e082bf9dd61b",
+    "status": 206,
+    "range": "bytes 16777216-20971519/5710821257",
+    "bytes": 4194304,
+    "seconds": 2.90845737500058,
+    "MBps": 1.442106058026435,
+    "sha256": "a74f669723c8ea34176eaea7f8566949ac95c01a245c51bdf2a9018418554c2e"
+  },
+  {
+    "name": "dualstack",
+    "url": "https://prod-dcd-datasets-public-files-eu-west-1.s3.dualstack.eu-west-1.amazonaws.com/e238b7b7-1ba7-47bd-ae45-e082bf9dd61b",
+    "status": 206,
+    "range": "bytes 16777216-20971519/5710821257",
+    "bytes": 4194304,
+    "seconds": 2.73035125000024,
+    "MBps": 1.5361774423710617,
+    "sha256": "a74f669723c8ea34176eaea7f8566949ac95c01a245c51bdf2a9018418554c2e"
+  },
+  {
+    "name": "path-style",
+    "url": "https://s3.eu-west-1.amazonaws.com/prod-dcd-datasets-public-files-eu-west-1/e238b7b7-1ba7-47bd-ae45-e082bf9dd61b",
+    "status": 206,
+    "range": "bytes 16777216-20971519/5710821257",
+    "bytes": 4194304,
+    "seconds": 2.6680135839997092,
+    "MBps": 1.5720699568973624,
+    "sha256": "a74f669723c8ea34176eaea7f8566949ac95c01a245c51bdf2a9018418554c2e"
+  }
+]

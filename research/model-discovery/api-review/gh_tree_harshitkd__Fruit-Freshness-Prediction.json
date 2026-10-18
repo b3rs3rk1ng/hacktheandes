@@ -1,0 +1,77 @@
+{
+  "sha": "a6c04d6653f070f9484aff0346b390abfe92ce9f",
+  "url": "https://api.github.com/repos/harshitkd/Fruit-Freshness-Prediction/git/trees/a6c04d6653f070f9484aff0346b390abfe92ce9f",
+  "tree": [
+    {
+      "path": "LICENSE",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f288702d2fa16d3cdf0035b15a9fcbc552cd88e7",
+      "size": 35149,
+      "url": "https://api.github.com/repos/harshitkd/Fruit-Freshness-Prediction/git/blobs/f288702d2fa16d3cdf0035b15a9fcbc552cd88e7"
+    },
+    {
+      "path": "README.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "591a5c45354cf76b80868909c2a081917a50a8f4",
+      "size": 4314,
+      "url": "https://api.github.com/repos/harshitkd/Fruit-Freshness-Prediction/git/blobs/591a5c45354cf76b80868909c2a081917a50a8f4"
+    },
+    {
+      "path": "models",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "246fe1527144f43953b37729ff8854ff07cd7331",
+      "url": "https://api.github.com/repos/harshitkd/Fruit-Freshness-Prediction/git/trees/246fe1527144f43953b37729ff8854ff07cd7331"
+    },
+    {
+      "path": "models/Conv 3 layer.ipynb",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c94b30aa7b82b186febbd4326a8efbcb59307c11",
+      "size": 199138,
+      "url": "https://api.github.com/repos/harshitkd/Fruit-Freshness-Prediction/git/blobs/c94b30aa7b82b186febbd4326a8efbcb59307c11"
+    },
+    {
+      "path": "models/ResNet50V2.ipynb",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "1ec5284265a1ed90569518aeacc651369fd7ad3e",
+      "size": 254681,
+      "url": "https://api.github.com/repos/harshitkd/Fruit-Freshness-Prediction/git/blobs/1ec5284265a1ed90569518aeacc651369fd7ad3e"
+    },
+    {
+      "path": "models/VGG-16.ipynb",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e495f9ae49706b34e91d265986c6c14055be0265",
+      "size": 224834,
+      "url": "https://api.github.com/repos/harshitkd/Fruit-Freshness-Prediction/git/blobs/e495f9ae49706b34e91d265986c6c14055be0265"
+    },
+    {
+      "path": "reference Docs",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "93bf839e86328ec19f9704e334f82ef3bbf2a799",
+      "url": "https://api.github.com/repos/harshitkd/Fruit-Freshness-Prediction/git/trees/93bf839e86328ec19f9704e334f82ef3bbf2a799"
+    },
+    {
+      "path": "reference Docs/IRJET-V8I5551.pdf",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "57da2565910033786ae35faf40d4584e85bc1a17",
+      "size": 619508,
+      "url": "https://api.github.com/repos/harshitkd/Fruit-Freshness-Prediction/git/blobs/57da2565910033786ae35faf40d4584e85bc1a17"
+    },
+    {
+      "path": "reference Docs/art00003.pdf",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "9592093aac6830495b72783c37f47379c29ce10a",
+      "size": 5713611,
+      "url": "https://api.github.com/repos/harshitkd/Fruit-Freshness-Prediction/git/blobs/9592093aac6830495b72783c37f47379c29ce10a"
+    }
+  ],
+  "truncated": false
+}

@@ -1,0 +1,62 @@
+{
+  "url": "https://github.com/amaniqbal-ai/apricot-disease-classification/releases/download/v1.0/finetuned.zip",
+  "archive_size": 843703864,
+  "files": [
+    {
+      "name": "finetuned/",
+      "compression": 0,
+      "crc32": 0,
+      "compressed_size": 0,
+      "size": 0,
+      "header_offset": 0
+    },
+    {
+      "name": "finetuned/.gitkeep",
+      "compression": 8,
+      "crc32": 0,
+      "compressed_size": 2,
+      "size": 0,
+      "header_offset": 72
+    },
+    {
+      "name": "finetuned/apricot_disease_model.pt",
+      "compression": 8,
+      "crc32": 2219487908,
+      "compressed_size": 5742938,
+      "size": 6237274,
+      "header_offset": 170
+    },
+    {
+      "name": "finetuned/model_alexnet.pt",
+      "compression": 8,
+      "crc32": 279775745,
+      "compressed_size": 211656939,
+      "size": 228136478,
+      "header_offset": 5743220
+    },
+    {
+      "name": "finetuned/model_googlenet.pt",
+      "compression": 8,
+      "crc32": 3130461785,
+      "compressed_size": 36997826,
+      "size": 39995802,
+      "header_offset": 217400263
+    },
+    {
+      "name": "finetuned/model_inception_v3.pt",
+      "compression": 8,
+      "crc32": 836946976,
+      "compressed_size": 90651741,
+      "size": 97804290,
+      "header_offset": 254398195
+    },
+    {
+      "name": "finetuned/model_vgg16.pt",
+      "compression": 8,
+      "crc32": 432513480,
+      "compressed_size": 498653034,
+      "size": 537168838,
+      "header_offset": 345050045
+    }
+  ]
+}

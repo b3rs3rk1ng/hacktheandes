@@ -1,0 +1,12 @@
+const labels={alert_located:'Alerta localizada',human_approved:'Retirada aprobada',human_rejected:'Fruto conservado',camera_verified:'Confirmación visual',carrying:'Fruto retirado',completed:'Fruto depositado',tree_surveyed:'Árbol evaluado'};
+const seconds=n=>Math.max(0,Math.floor(n))+' s';
+export function createLiveActivity(element){let previous='';
+ function update({fleet,drone,vision}){const rows=[],now=Date.now()/1000;
+  if(drone){const label=({takeoff:'Despega',transit:'Reconoce el siguiente árbol',inspect:'Reconoce y envía el mapa',scout_hold:'Mapa enviado · espera al equipo',return_climb:'Regresa a cargar',return_transit:'Regresa a cargar',landing:'Aterriza en estación',charging:'Carga en estación',idle:'Preparando reconocimiento'})[drone.phase]||drone.label;rows.push({actor:'Dron',label,time:seconds(drone.phase_elapsed_s||0),active:!['idle','charging','scout_hold'].includes(drone.phase)})}
+  for(const c of fleet.contexts)rows.push({actor:c.vehicle.label,label:(c.phase==='surveying'&&fleet.data.coverage?.local_inspection_allowed?'Inspección local con YOLO11s':c.phase==='waiting_scout'&&fleet.data.coverage?.scout?.phase==='charging'?'Espera reconocimiento · dron cargando':fleet.labels[c.phase]||c.phase),time:seconds(c.time||0),active:!['idle','waiting_scout','waiting_team','awaiting_review','charging'].includes(c.phase)});
+  if(vision)rows.push({actor:'YOLO11s',label:`${vision.predictions.length} ${vision.predictions.length===1?'detección':'detecciones'} · ${vision.vehicle_id==='drone'?'dron':vision.vehicle_id?.replace('ground-','terrestre ')||'cámara'}`,time:Math.round(vision.inference_ms)+' ms',done:true});
+  const last=[...fleet.data.events].reverse().find(e=>labels[e.kind]);if(last)rows.push({actor:last.robot_id?.replace('ground-','Terrestre ')||'Equipo',label:labels[last.kind],time:'hace '+seconds(now-last.time),done:true});
+  const signature=JSON.stringify(rows);if(signature===previous)return;previous=signature;element.replaceChildren(...rows.map(row=>{const line=document.createElement('div');line.className='activity-row';const icon=document.createElement('i'),text=document.createElement('span'),time=document.createElement('small');icon.className=row.done?'done':row.active?'working':'waiting';icon.textContent=row.done?'✓':row.active?'':'·';text.textContent=row.actor+' · '+row.label;time.textContent=row.time;line.append(icon,text,time);return line}));
+ }
+ return {update};
+}

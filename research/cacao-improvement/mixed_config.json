@@ -1,0 +1,48 @@
+{
+  "name": "Cocoa disease development mix v1",
+  "classes": ["healthy", "monilia", "phytophthora"],
+  "sources": [
+    {
+      "name": "cocoa_monilia_v2",
+      "manifest": "../hacktheandes-cacao-training/data/grouped-v1/manifest.json",
+      "classes": ["h0", "m1", "m2", "m3"],
+      "class_mapping": {"h0": "healthy", "m1": "monilia", "m2": "monilia", "m3": "monilia"},
+      "unknown_policy": "drop_image",
+      "box_frame": "require-unoriented",
+      "split_policy": {"kind": "preserve", "map": {"train": "train", "val": "val", "test": "regression"}},
+      "prior_use": "Original train and validation; old test has already influenced development decisions",
+      "evaluation_role": "legacy_regression_or_development"
+    },
+    {
+      "name": "serrano_torres_v2",
+      "manifest": "../hacktheandes-cacao-training/data/external-v2/manifest.json",
+      "classes": ["healthy", "monilia", "phytophthora"],
+      "class_mapping": {"healthy": "healthy", "monilia": "monilia", "phytophthora": "phytophthora"},
+      "unknown_policy": "error",
+      "box_frame": "require-unoriented",
+      "split_policy": {"kind": "grouped", "fractions": {"train": 0.8, "val": 0.2}},
+      "prior_use": "Previously evaluated external benchmark; intentionally repurposed as development data",
+      "evaluation_role": "development_after_prior_external_evaluation"
+    }
+  ],
+  "grouping": {
+    "phash_distance": 4,
+    "preserve_source_groups": true,
+    "protected_splits": ["regression"],
+    "duplicate_box_iou": 0.9,
+    "conflicting_box_iou": 0.8,
+    "balance_restarts": 400
+  },
+  "exports": {
+    "disease_detection": true,
+    "pod_detection": true,
+    "roi_classification": {"min_side": 32, "context_fraction": 0.1, "write_images": false}
+  },
+  "augmentation": {
+    "enabled": true,
+    "variants_per_training_image": 1,
+    "brightness": [0.65, 1.2],
+    "motion_blur": {"kernel": [3, 9], "angles": [0, 45, 90, 135]}
+  },
+  "seed": 20261018
+}

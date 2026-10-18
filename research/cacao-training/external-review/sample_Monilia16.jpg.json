@@ -1,0 +1,154 @@
+{
+    "description": "",
+    "tags": [],
+    "size": {
+        "height": 4160,
+        "width": 3120
+    },
+    "objects": [
+        {
+            "id": 12892057,
+            "classId": 19770,
+            "description": "",
+            "geometryType": "rectangle",
+            "labelerLogin": "gr@datasetninja.com",
+            "createdAt": "2023-07-03T15:03:09.037Z",
+            "updatedAt": "2023-07-03T15:03:09.037Z",
+            "tags": [],
+            "classTitle": "phytophthora",
+            "points": {
+                "exterior": [
+                    [
+                        1196,
+                        1244
+                    ],
+                    [
+                        1900,
+                        3134
+                    ]
+                ],
+                "interior": []
+            }
+        },
+        {
+            "id": 12892056,
+            "classId": 19772,
+            "description": "",
+            "geometryType": "rectangle",
+            "labelerLogin": "gr@datasetninja.com",
+            "createdAt": "2023-07-03T15:03:09.037Z",
+            "updatedAt": "2023-07-03T15:03:09.037Z",
+            "tags": [],
+            "classTitle": "healthy",
+            "points": {
+                "exterior": [
+                    [
+                        1000,
+                        2719
+                    ],
+                    [
+                        1277,
+                        3302
+                    ]
+                ],
+                "interior": []
+            }
+        },
+        {
+            "id": 12892055,
+            "classId": 19772,
+            "description": "",
+            "geometryType": "rectangle",
+            "labelerLogin": "gr@datasetninja.com",
+            "createdAt": "2023-07-03T15:03:09.037Z",
+            "updatedAt": "2023-07-03T15:03:09.037Z",
+            "tags": [],
+            "classTitle": "healthy",
+            "points": {
+                "exterior": [
+                    [
+                        1404,
+                        3416
+                    ],
+                    [
+                        1687,
+                        4030
+                    ]
+                ],
+                "interior": []
+            }
+        },
+        {
+            "id": 12892054,
+            "classId": 19772,
+            "description": "",
+            "geometryType": "rectangle",
+            "labelerLogin": "gr@datasetninja.com",
+            "createdAt": "2023-07-03T15:03:09.036Z",
+            "updatedAt": "2023-07-03T15:03:09.036Z",
+            "tags": [],
+            "classTitle": "healthy",
+            "points": {
+                "exterior": [
+                    [
+                        1441,
+                        2970
+                    ],
+                    [
+                        1741,
+                        3575
+                    ]
+                ],
+                "interior": []
+            }
+        },
+        {
+            "id": 12892053,
+            "classId": 19772,
+            "description": "",
+            "geometryType": "rectangle",
+            "labelerLogin": "gr@datasetninja.com",
+            "createdAt": "2023-07-03T15:03:09.036Z",
+            "updatedAt": "2023-07-03T15:03:09.036Z",
+            "tags": [],
+            "classTitle": "healthy",
+            "points": {
+                "exterior": [
+                    [
+                        2287,
+                        1942
+                    ],
+                    [
+                        2446,
+                        2306
+                    ]
+                ],
+                "interior": []
+            }
+        },
+        {
+            "id": 12892052,
+            "classId": 19772,
+            "description": "",
+            "geometryType": "rectangle",
+            "labelerLogin": "gr@datasetninja.com",
+            "createdAt": "2023-07-03T15:03:09.036Z",
+            "updatedAt": "2023-07-03T15:03:09.036Z",
+            "tags": [],
+            "classTitle": "healthy",
+            "points": {
+                "exterior": [
+                    [
+                        1709,
+                        1084
+                    ],
+                    [
+                        1828,
+                        1425
+                    ]
+                ],
+                "interior": []
+            }
+        }
+    ]
+}

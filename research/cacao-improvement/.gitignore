@@ -1,0 +1,12 @@
+__pycache__/
+downloads/
+data/
+runs/
+*.pt
+*.pth
+*.cache
+*.rar
+*.onnx
+
+# Curated trained project models are part of the reproducible artifact.
+!artifacts/*.pt

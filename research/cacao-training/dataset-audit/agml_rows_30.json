@@ -1,0 +1,817 @@
+{
+  "features": [
+    {
+      "feature_idx": 0,
+      "name": "image",
+      "type": {
+        "_type": "Image"
+      }
+    },
+    {
+      "feature_idx": 1,
+      "name": "objects",
+      "type": {
+        "bbox": {
+          "feature": {
+            "feature": {
+              "dtype": "float64",
+              "_type": "Value"
+            },
+            "_type": "List"
+          },
+          "_type": "List"
+        },
+        "categories": {
+          "feature": {
+            "names": [
+              "0",
+              "1",
+              "2",
+              "3",
+              "4"
+            ],
+            "_type": "ClassLabel"
+          },
+          "_type": "List"
+        }
+      }
+    },
+    {
+      "feature_idx": 2,
+      "name": "treatment",
+      "type": {
+        "dtype": "string",
+        "_type": "Value"
+      }
+    }
+  ],
+  "rows": [
+    {
+      "row_idx": 0,
+      "row": {
+        "image": {
+          "src": "https://datasets-server.huggingface.co/cached-assets/Project-AgML/cocoa_monilia_detection/--/07aeef939a7009fc13202a812185607772759f2d/--/default/train/0/image/image.jpg?Expires=1792305243&Signature=qliFlrN-THfzkSqf7zup91mQ0xeUXNDsOnFcmq9jwUAbYuFwjiHhaNh7IBN18PH-VkoiIRyz23JmPE7-Lhfmf6EeLbo2roMBPEf~D8gbWaS720ZOT2zcNQZuOpfLuhBvXF3RPAifc8aBcFViLaKWm13-E7fOXrllaegv96sNPuOrmL9MszZeG7v0tzJIcz23bLmZhAsrWgi~jQzXW3xh-qqtIK-LC8q7ZQtkBab2nwNZkR986PjXTWHv-qdmr2sKly4LmJtQPxONYiRO8wyw6u1qkDKagtlLmsD~aGBhJ9L~Qb42w8p5ddv8so40KovaG-a3rxvN2rr3ONZ-wwTwkA__&Key-Pair-Id=K3C0L9WB6U5DUC",
+          "height": 3072,
+          "width": 3072
+        },
+        "objects": {
+          "bbox": [
+            [
+              1127.000064,
+              867.001344,
+              693.000192,
+              1626.9987840000001
+            ]
+          ],
+          "categories": [
+            1
+          ]
+        },
+        "treatment": "h0"
+      },
+      "truncated_cells": []
+    },
+    {
+      "row_idx": 1,
+      "row": {
+        "image": {
+          "src": "https://datasets-server.huggingface.co/cached-assets/Project-AgML/cocoa_monilia_detection/--/07aeef939a7009fc13202a812185607772759f2d/--/default/train/1/image/image.jpg?Expires=1792305243&Signature=sOsR1zmOpaXtr9oAlh7yVevM9PQbA85t~LqrC1JlFqHURWqBUxKgmj6TzApDy5pswKzQmEf9ZW2A8Ra3khS1BYPdCXLMvd9zFHZ4oCQmR0nfmzPfxxBDCj6LR4SIMjcvVR1eg1pmObBaDBp8aFI7LkmAcU-Js8ecLWCv4y0tE-l8qoBYqg6Ss9TSrl2xkbKBM3k6giZfmkVZYN~CeGIe-CNFC4cKl9R~6BwjJau~893eAdjiQqdO0R33Fy5rl9B0yb0tI2Q74k66Zr8EG32C3fPJRTmE8b~RL-lZLS5~rbhcy4A9NFbgyA48eml~RAgbi8h7oBTO5yW96QQu9NAkMw__&Key-Pair-Id=K3C0L9WB6U5DUC",
+          "height": 4000,
+          "width": 2992
+        },
+        "objects": {
+          "bbox": [
+            [
+              1084.224,
+              308.1760000000001,
+              2212.568,
+              2229.788
+            ]
+          ],
+          "categories": [
+            0
+          ]
+        },
+        "treatment": "h0"
+      },
+      "truncated_cells": []
+    },
+    {
+      "row_idx": 2,
+      "row": {
+        "image": {
+          "src": "https://datasets-server.huggingface.co/cached-assets/Project-AgML/cocoa_monilia_detection/--/07aeef939a7009fc13202a812185607772759f2d/--/default/train/2/image/image.jpg?Expires=1792305243&Signature=NXoDouTtstOjNCZ5DZBJCv4~gaUN-t0kSLsYpsyfrTplyLsnToUz6lisqsYxNd2a5DzAeuDFe1WN1MiKRTR6t38q8Dmeizw2Xo8pUvBExzxSyv3YOo15lXYEj~GLA8xPu8CKMbWv78wVhQQOJde8AyVrt2rkRlMMniaFPDyro2Nt0CN4X-fknGgayAfnsOaVEXEhSBx52To5tyY6We4y8J0KVPM8lOPeWFzMqOoUUVBZRRHBKPqFNTjOapVGTz92mxjPzEH5GaEJN4Nat9k-WYG75hjo-oEmSAXsLVrEuwaX3My74GZaJiV6Kphp~-dwAZAGJ1DHMQF78xvER2h0Sg__&Key-Pair-Id=K3C0L9WB6U5DUC",
+          "height": 3072,
+          "width": 3072
+        },
+        "objects": {
+          "bbox": [
+            [
+              247.00108799999992,
+              695.000064,
+              2390.99904,
+              1175.998464
+            ]
+          ],
+          "categories": [
+            0
+          ]
+        },
+        "treatment": "h0"
+      },
+      "truncated_cells": []
+    },
+    {
+      "row_idx": 3,
+      "row": {
+        "image": {
+          "src": "https://datasets-server.huggingface.co/cached-assets/Project-AgML/cocoa_monilia_detection/--/07aeef939a7009fc13202a812185607772759f2d/--/default/train/3/image/image.jpg?Expires=1792305243&Signature=EiOUfjG02I~nmEQpgm2hGdP~568uDNKaBD3voccxqcGqnNXn7pBb8HyXBJpliCMRqJg~1SXDHk12OQc9emceiVjeH2A--hROgZklGxqPhu-4VzFK4Ri3wObO0busX~dWeiV5ym-MDw4B43EZnBkM26vSf5Ojvr--cdJT6ceNnPlytumbUZygcJgwDwwT57DIFq1NZ65dirLjcNf3WEYF-01JbJMhxtZSiITnbXl4rMRJz4YJRUtVtkiYGAZylkH3VuO92Y2Nunb7WTtCHwC~bZm2s0UgGEgI7H2njh-qCHdluYTM7JD~x7Vp6NY1a07Avc44JuynLwYBOV4x7x2WjQ__&Key-Pair-Id=K3C0L9WB6U5DUC",
+          "height": 2992,
+          "width": 2992
+        },
+        "objects": {
+          "bbox": [
+            [
+              966.99944,
+              566.001128,
+              899.999584,
+              1866.999024
+            ]
+          ],
+          "categories": [
+            0
+          ]
+        },
+        "treatment": "h0"
+      },
+      "truncated_cells": []
+    },
+    {
+      "row_idx": 4,
+      "row": {
+        "image": {
+          "src": "https://datasets-server.huggingface.co/cached-assets/Project-AgML/cocoa_monilia_detection/--/07aeef939a7009fc13202a812185607772759f2d/--/default/train/4/image/image.jpg?Expires=1792305243&Signature=ns6f2G9gr34iA7MZ2a2VktO50Wgh7wz3AH~bQFa00kvlZH3vimltmnXJhOQM5yIbwWPX7zFg3JInC3vAp~J0xG8TZGGe~6x41G6v01mbfMpsFxgsi0mt7mrVG1lKwTq2INeCZEfBO~3tYz03QOi965w4m9hQiM3FBsoxHCcMmUF0ymWkGP4238bSzi671MsjUUZTg0jvn8U3E~jMFHidUl1A2E7s8d7b9b9sqnVMxdX6Rn3Sp7L15TbockCBEQrNQd5dn8Us3T9q2gIPffyz80SorRXzN9IytpeejMlCfG6EMt4smHwIsosh5I1h247RVcvmzzppFbpIAkl-sFLjQQ__&Key-Pair-Id=K3C0L9WB6U5DUC",
+          "height": 3472,
+          "width": 3472
+        },
+        "objects": {
+          "bbox": [
+            [
+              454.9986560000001,
+              1371.000792,
+              1179.000928,
+              1680.000112
+            ],
+            [
+              1639.9992000000002,
+              1314.000968,
+              1094.99936,
+              1772.0011679999998
+            ]
+          ],
+          "categories": [
+            0,
+            0
+          ]
+        },
+        "treatment": "h0"
+      },
+      "truncated_cells": []
+    },
+    {
+      "row_idx": 5,
+      "row": {
+        "image": {
+          "src": "https://datasets-server.huggingface.co/cached-assets/Project-AgML/cocoa_monilia_detection/--/07aeef939a7009fc13202a812185607772759f2d/--/default/train/5/image/image.jpg?Expires=1792305243&Signature=lDaWNfdetHjYdNe-Acyh1R1yhE2KxeJDuvq3EIEfwhF9R8HiRZmusXiz8TnZRWbMjnpwIRN2NzquUKbg9Ft4Xw-cW8esqrU3pI0lX3m20Po5PqLxI6xCfxvyB1pIs~HNS-xp~GwfofmHXvxwhncvqMjwWznbrpF1ZK5Hg27ZDR-jWlDlqOEhvQAfXT8vyWp4Bsx3mcBF9-z8ZStTGvxJ17IWWc~CeZnK~3xoyQzp5EHDpvznFXWvoq~8H7nz6SHYY16iLuNwkU5gczTDRVaxnCiFtLtraR37AXYiWOsUhHGF3yj46wBx0c7vfM7DC4f7~kYwRMfAMp2UNL8cquNVlg__&Key-Pair-Id=K3C0L9WB6U5DUC",
+          "height": 3472,
+          "width": 3472
+        },
+        "objects": {
+          "bbox": [
+            [
+              943.002144,
+              365.0009439999999,
+              1213.9986880000001,
+              3032.000384
+            ]
+          ],
+          "categories": [
+            0
+          ]
+        },
+        "treatment": "h0"
+      },
+      "truncated_cells": []
+    },
+    {
+      "row_idx": 6,
+      "row": {
+        "image": {
+          "src": "https://datasets-server.huggingface.co/cached-assets/Project-AgML/cocoa_monilia_detection/--/07aeef939a7009fc13202a812185607772759f2d/--/default/train/6/image/image.jpg?Expires=1792305243&Signature=K5oIvI56ZvuL4XtSwqdJ78EQ78gbsvSXmYSM3-692rAB5PlUNAN~DzDjc0me1rp2i8pjq-W5fXotjcFataTDxgU-d1pjdpEYKTTQYFjyd0G7NwsSDD8-gie29KldEbFbLD30XEPBITlA~NhIKrkfDpaCYxC-bEdQiw3LA9p9eM43S~MHc4vyjxPavXd4FiqUneLdJsxhEY7NOZm47Pwbn93NJ6eAcfypA96KGsm0xB9vBPLH1mgjJX~I6w6vtv398u-JVZKUZnt6ugV0NMkZP0bNx4a9B5eXwagdZ20mbLdMg111p3GTI4~~Y~cb35mLGP7lDIVfNpmWk6IUtkwZHQ__&Key-Pair-Id=K3C0L9WB6U5DUC",
+          "height": 2992,
+          "width": 2992
+        },
+        "objects": {
+          "bbox": [
+            [
+              1101.0006480000002,
+              446.9988160000001,
+              833.9990560000001,
+              2377.999712
+            ]
+          ],
+          "categories": [
+            0
+          ]
+        },
+        "treatment": "h0"
+      },
+      "truncated_cells": []
+    },
+    {
+      "row_idx": 7,
+      "row": {
+        "image": {
+          "src": "https://datasets-server.huggingface.co/cached-assets/Project-AgML/cocoa_monilia_detection/--/07aeef939a7009fc13202a812185607772759f2d/--/default/train/7/image/image.jpg?Expires=1792305244&Signature=NSk~NAQkI8sbQppXxsJfq4PehPBXhRzG73Agl8GmKizfyXP7FOZVkqkB80jBGJxEXglsOqTcz6f3vOw8Bf4Jyu7Lr1AU2SQwhBavjTM88SIQIAt1ukArfdxJ3mbKSBjwyah83yeuZITILSrhEbh0UIimynHeomcaU-v5EUiYC3V4SahrLYAiWZlpKWJ~hHTPYS6nTSPD-2rvhwj9EMjFvYZds1mJapgjwf5xBXHicS5Gv9jFS1traA4FBfv-827u8h8TjeAYr~aaWKaoH9Vd4IWHocL4-~Not0deNLjLld5OS1ltnjahKD24jxVwD0uKRWxY3OVjD3g93RlYi-hvTQ__&Key-Pair-Id=K3C0L9WB6U5DUC",
+          "height": 3072,
+          "width": 3072
+        },
+        "objects": {
+          "bbox": [
+            [
+              888.0,
+              625.9983360000001,
+              894.999552,
+              2060.000256
+            ]
+          ],
+          "categories": [
+            0
+          ]
+        },
+        "treatment": "h0"
+      },
+      "truncated_cells": []
+    },
+    {
+      "row_idx": 8,
+      "row": {
+        "image": {
+          "src": "https://datasets-server.huggingface.co/cached-assets/Project-AgML/cocoa_monilia_detection/--/07aeef939a7009fc13202a812185607772759f2d/--/default/train/8/image/image.jpg?Expires=1792305244&Signature=ZGNmiQ6TuTSQZqH5sE3qobsMJGyWFbToLhuFv3negHrpVGETNn8u0LnT8NE~Xr3SUReZ4VzHvirMXMSVdK4AWinsP6SIIFgcqIpxF70Nu5CWFiigAXUVfdzlPE44Chdn9cUU4np5mVux5h-GE2WnWSGzWHIPiMJQkLcqhqZ~T7REONPo-TYKnnqSmUVsH9v8rLC0y9NEAp1Kiuz8yC2LbA~akNonHKbyqsnLsFcFSjwDRIQC-UQkYMokLXsRd4ZQ2tj-SdErhQZeHuCpqCTQvzJxSE06NQQbBaKvF8Rl6cJf-u9KDxWLkMjRN98KWYHuV21jzLMnGehlt5RsJnTfLw__&Key-Pair-Id=K3C0L9WB6U5DUC",
+          "height": 3072,
+          "width": 3072
+        },
+        "objects": {
+          "bbox": [
+            [
+              1162.000896,
+              460.99968,
+              990.999552,
+              1991.000064
+            ]
+          ],
+          "categories": [
+            0
+          ]
+        },
+        "treatment": "h0"
+      },
+      "truncated_cells": []
+    },
+    {
+      "row_idx": 9,
+      "row": {
+        "image": {
+          "src": "https://datasets-server.huggingface.co/cached-assets/Project-AgML/cocoa_monilia_detection/--/07aeef939a7009fc13202a812185607772759f2d/--/default/train/9/image/image.jpg?Expires=1792305244&Signature=R1RwU8k683HORKydNwaiKlhmFdGq-Zlzt1ht1oxhot4ufaxmikHGrFJtiPHr246QqeV2R785XsHXE335rbkQGyzM56TrM6AQUGUooEYLrqds5vOCMruyMrat-qMMBu9GgStMxdQK4oDTDL1mq65nmT~xzWpk3IncoShDXftu7NfLd2kDZ35uROyoPIpvTRZD7sK55baanP89LXkSRq0r0UeB5IpwZoygcvUzAw7iBqUcZOJkWH3W~HKGMd25E5Gq3HJqA-6ppZQFRglv1bbrCeezRcJPCl90PVIsCxTR4PbD2Pxvv1YZ6oo4p9eeC-ZRl5bIyB0RkLhkn9Wvv4cGCg__&Key-Pair-Id=K3C0L9WB6U5DUC",
+          "height": 2448,
+          "width": 2448
+        },
+        "objects": {
+          "bbox": [
+            [
+              559.999584,
+              982.9992960000001,
+              595.999872,
+              817.9992
+            ]
+          ],
+          "categories": [
+            0
+          ]
+        },
+        "treatment": "h0"
+      },
+      "truncated_cells": []
+    },
+    {
+      "row_idx": 10,
+      "row": {
+        "image": {
+          "src": "https://datasets-server.huggingface.co/cached-assets/Project-AgML/cocoa_monilia_detection/--/07aeef939a7009fc13202a812185607772759f2d/--/default/train/10/image/image.jpg?Expires=1792305243&Signature=Xo3G6x1To3MLlLX~8bWtOSwHkYCm3FZloFsS~Fcx963m7Ed3NKAEoNbCItdj8VDDeApdQcQ2RYuv7m9Ds7G1RW0mVUtnXQRZ9EmWvjai-XzRlxMdYtLi73x~BE0G4NWPcjtmISmQLOxb4scQCr8DM54F-QWdcswSTdhBUhZaisTmSjHsECi70lkzFo6oltrnVSJEkc6OzOeOwa9CLHIsU~VmKDww9NLfejqxqJIitymT~4OoBBiNGFcbYCTDia~TJJE0d9CiBtd5iwS2xhGXI6-XwhxGC5U1e1O-IAeCsLcLfoQViyuMLdcWiYh4DuefwvaCzy7UJOZIHntgumlPQg__&Key-Pair-Id=K3C0L9WB6U5DUC",
+          "height": 3072,
+          "width": 3072
+        },
+        "objects": {
+          "bbox": [
+            [
+              1240.0005119999998,
+              588.0007679999999,
+              935.0000640000001,
+              1785.0009599999998
+            ]
+          ],
+          "categories": [
+            0
+          ]
+        },
+        "treatment": "h0"
+      },
+      "truncated_cells": []
+    },
+    {
+      "row_idx": 11,
+      "row": {
+        "image": {
+          "src": "https://datasets-server.huggingface.co/cached-assets/Project-AgML/cocoa_monilia_detection/--/07aeef939a7009fc13202a812185607772759f2d/--/default/train/11/image/image.jpg?Expires=1792305243&Signature=ioytQvDROAUhIfAEoyR~jfN4nWkHt-APiO8cwMKT20mP4OGa7uhPgwODiiEPtcKN9PX2igRJsPO8MpLl2AtYpF9Vz7KiE1ZVoSyteYqiUHmAgLcS~MgcgqKTkAbFoq7oDFjsrvoXXPGUpOIYTE033FMNq~6NUIBi5hBZ~ob88mBj2cT5r1NvMJRypd4la7IdE1lVjpY4pn54~10HPOrw6vxvsIcvgugqSA5IhYV3qdMS5RVbOMlhuJYIc9AphoG6dcL430FQFXLTHjQ9358c9tssdyhv6MH99r3s0G51Eh9Ft3jt1l0yhX3wNXDh~cmzwQRC97BKyKk1JDtSNkbGwA__&Key-Pair-Id=K3C0L9WB6U5DUC",
+          "height": 3072,
+          "width": 3072
+        },
+        "objects": {
+          "bbox": [
+            [
+              956.0002559999999,
+              588.0007679999999,
+              971.9992320000001,
+              1912.998912
+            ]
+          ],
+          "categories": [
+            0
+          ]
+        },
+        "treatment": "h0"
+      },
+      "truncated_cells": []
+    },
+    {
+      "row_idx": 12,
+      "row": {
+        "image": {
+          "src": "https://datasets-server.huggingface.co/cached-assets/Project-AgML/cocoa_monilia_detection/--/07aeef939a7009fc13202a812185607772759f2d/--/default/train/12/image/image.jpg?Expires=1792305243&Signature=AYkrOzaJUr9wumFlZZhw7a~WdArNUbVceaT2mLPjJwFf7qZGKOZ6oAfk5R7fAuw3Daj6T01evDX1uO2gAM9yr78LvaJrL9iWYowQrCOrUWLe4KO-TeNRi-fJ9ACe4CNlBkvei0InrcyvD3q4RSQJNQmVvBhFF7b9QgatAW19ahlNH1eYzipQBC0sZ~b3cRRMa0GCXYHkZzCWeMRPSt-CkK3sA9Ar3H-DUVrl-mQjhqa-f2PPraU7Ruveq6gJkRdEliSYeAb3GQowcF3iSsBp17yhzWqW9l4LlFmVzEgPH5w60yr8otfOazlTIBMP09NUHn6KIfm8mLCARsz8uZoMjQ__&Key-Pair-Id=K3C0L9WB6U5DUC",
+          "height": 3072,
+          "width": 3072
+        },
+        "objects": {
+          "bbox": [
+            [
+              1110.0011519999998,
+              906.000384,
+              783.0005760000001,
+              1505.998848
+            ]
+          ],
+          "categories": [
+            0
+          ]
+        },
+        "treatment": "h0"
+      },
+      "truncated_cells": []
+    },
+    {
+      "row_idx": 13,
+      "row": {
+        "image": {
+          "src": "https://datasets-server.huggingface.co/cached-assets/Project-AgML/cocoa_monilia_detection/--/07aeef939a7009fc13202a812185607772759f2d/--/default/train/13/image/image.jpg?Expires=1792305243&Signature=t0FzR85394PAFWM57fVtE6FHWWnr8srbbjl4xEqcNStIdU2CYmkOc~PC6Z-5Oz46zgfqhwGcLpROnszXVAQ3GArkfnBgrIxGL-EgTEscHqURgPOxgmupyeGooI5Kxj8XRff2MkCZ~RBHd046OqK1qMoL~4ffXEzJO9notPCF-1FKJS13CzjfZ0w1R28EIXYkuA1Ev90E~GIJJNpPEZsPeITNyJG5HR3ufOFyIXmezpi0mSYOfjTTdDpsPceHKbbkpn7x2yQ1ilPNRItiRHjCV~z0Gvki4fmdppp31x0kATbADAZ69oTUlv~0IzkcvmRVCIzrQs3lTbFlvFQ4SwAFug__&Key-Pair-Id=K3C0L9WB6U5DUC",
+          "height": 3472,
+          "width": 3472
+        },
+        "objects": {
+          "bbox": [
+            [
+              895.0000079999999,
+              830.9988960000001,
+              1555.001168,
+              2078.99888
+            ]
+          ],
+          "categories": [
+            0
+          ]
+        },
+        "treatment": "h0"
+      },
+      "truncated_cells": []
+    },
+    {
+      "row_idx": 14,
+      "row": {
+        "image": {
+          "src": "https://datasets-server.huggingface.co/cached-assets/Project-AgML/cocoa_monilia_detection/--/07aeef939a7009fc13202a812185607772759f2d/--/default/train/14/image/image.jpg?Expires=1792305243&Signature=DJhxAqmbNh5OpPnKqu~5Ka9J93lmYmKCgElVOCjvuUK1KOc1Fesy7kkgf8t-FpxxA9D-sl27JmC3LFIJPJKL2OXu3bqAlTSsGjn4kBVJRXmvpvfVxfvrsuK1y8JFEmCLZBkyM6s11k1AZh-ioNfFJ-AVX~rVLZyqRstZ9zrPyBQfnrGZOf4xPDsWZjgOaRbbxyANdSLacJxrOM5~7ddDagDnWWdXdZ2zp4aFfBFp4w9ajN4X9NWUMuQaHeb2oLez4nr1HBj6Gk0BLiRfuDZuzLnEmee-fFc7v6~ZVE60G-Gl8Cvv4OpYWc-Fpi6rJwSV1CyyQp0fLCO8Z-GgZT86FA__&Key-Pair-Id=K3C0L9WB6U5DUC",
+          "height": 3072,
+          "width": 3072
+        },
+        "objects": {
+          "bbox": [
+            [
+              1038.0011519999998,
+              305.00044799999995,
+              971.9992320000001,
+              1752.999936
+            ]
+          ],
+          "categories": [
+            0
+          ]
+        },
+        "treatment": "h0"
+      },
+      "truncated_cells": []
+    },
+    {
+      "row_idx": 15,
+      "row": {
+        "image": {
+          "src": "https://datasets-server.huggingface.co/cached-assets/Project-AgML/cocoa_monilia_detection/--/07aeef939a7009fc13202a812185607772759f2d/--/default/train/15/image/image.jpg?Expires=1792305243&Signature=kI7z1jrYqJLpwdrRWexB6DZ9U4GjFfkomyn1zMA6qtCGRXRcVfKmTvHFEqbi3IDfKu-xwPACMglTTCznaEp2omqQkJyoCwcAcaGY0lWINXWBrK6-Aruo3vHkTtM-iAzSkNTuGWkk3n9Q37fgwNsVXU~-UHeYaCAdXi~Z2B77qPYo8Bnkp0cqjm7J8GDFKg5IWldeIjrdAeLL1YrW0nH9mGaRVV~NTzBZ3fJgK8g0Z1Q8XWJcm6dLVAmp67y8GR62i3Egwbv7m-~GWZA6CYHtuOC1FYKoluWUJM~vn1VJG7RZMe-5g1x-ocTPrkqwEJaPaOm-Fkp8ad6dtKUc6V07Ig__&Key-Pair-Id=K3C0L9WB6U5DUC",
+          "height": 3072,
+          "width": 3072
+        },
+        "objects": {
+          "bbox": [
+            [
+              713.000448,
+              757.9991040000001,
+              844.99968,
+              1630.0001280000001
+            ],
+            [
+              1350.0011520000003,
+              514.0008959999999,
+              1140.999168,
+              1069.000704
+            ]
+          ],
+          "categories": [
+            0,
+            0
+          ]
+        },
+        "treatment": "h0"
+      },
+      "truncated_cells": []
+    },
+    {
+      "row_idx": 16,
+      "row": {
+        "image": {
+          "src": "https://datasets-server.huggingface.co/cached-assets/Project-AgML/cocoa_monilia_detection/--/07aeef939a7009fc13202a812185607772759f2d/--/default/train/16/image/image.jpg?Expires=1792305243&Signature=X3I2XWb9ZWYjfXFv-vN9GD7ai8DwZtwspRpKgmPuS5hZj36nuPz~45~e~FTCZ4FJ1cbNgRN1b44zygcOrWE3cNG2iSIPcwzhOv~xEg58nYE6u3iKmoXTEaE~Ih-52K4k1OH30d7GbujABOq1mFSKCd4k5D31T3aJrffo9WVXDVsPa-SfwMJcTZD2~A4jDHR2oWo9iW8P4Nkwa1C31XQNc4xH5ISiukzc5LQe2tZ9iGJJdAAez27~zdvWe~~pbWCfSs2AWfF0DNIsuywoYNbE8cSf27zyL-JeEoLuxmWBwLyRGWcDNWfr-KIuTbtYmBw6oevfP9jG82xRxfQuDBnsGw__&Key-Pair-Id=K3C0L9WB6U5DUC",
+          "height": 2992,
+          "width": 2992
+        },
+        "objects": {
+          "bbox": [
+            [
+              1513.3281679999998,
+              271.3893599999998,
+              1062.851152,
+              2555.2098880000003
+            ]
+          ],
+          "categories": [
+            0
+          ]
+        },
+        "treatment": "h0"
+      },
+      "truncated_cells": []
+    },
+    {
+      "row_idx": 17,
+      "row": {
+        "image": {
+          "src": "https://datasets-server.huggingface.co/cached-assets/Project-AgML/cocoa_monilia_detection/--/07aeef939a7009fc13202a812185607772759f2d/--/default/train/17/image/image.jpg?Expires=1792305243&Signature=POZZqvfYdmfbC~DJNv5K165IpO6pIojHq6x-xKjQXU~c0H-sQCSDrKQoYCTUtfiIF9lVFmp0F5mqzwcDhvzKYg1Wl2q4z9IEV1czmOL~JAhSXOpj44q8xBJvbUEVHggN0Br8-55vOfHaHlv-zyKE2Gx1M2HyhLadCNpEmD8n6T1hB5mvxz9IqLRsIMwsEa8hi27pSm5FS6cft-ofFc8U4qWuPaOQNyTKAmZdF745Gp2CWlU~2hHsG0NZVQ9LZD064ARtsjxSxUgFmN7srFfOiq4ODbMnLvUJAASXOYB7LLrWt3AHKz4UhmFPLcJPPQxRd3P-T72puwLRCoOe8PYWYA__&Key-Pair-Id=K3C0L9WB6U5DUC",
+          "height": 3472,
+          "width": 3472
+        },
+        "objects": {
+          "bbox": [
+            [
+              1446.0011999999997,
+              866.0018640000001,
+              885.9988480000001,
+              1704.998512
+            ]
+          ],
+          "categories": [
+            0
+          ]
+        },
+        "treatment": "h0"
+      },
+      "truncated_cells": []
+    },
+    {
+      "row_idx": 18,
+      "row": {
+        "image": {
+          "src": "https://datasets-server.huggingface.co/cached-assets/Project-AgML/cocoa_monilia_detection/--/07aeef939a7009fc13202a812185607772759f2d/--/default/train/18/image/image.jpg?Expires=1792305243&Signature=wCYvW7XC7sQN-vfoXN8mNEZeBPaZ2Ps~SZLddVwryd~VaRLrfztZDa9WhDhBuYsR2VPMcgVsRrhhNd6sy1z79gf3YVent5jx~hb58jMyO75UutAK3JSnzuEvPe2R~P1QoZ7gBC6HvWisKST4zxzXhbBDUMk30ywQY4QU~gOlggKVmWs7ggKtL3iasSRwPiUyERwkV-EPr9npdfDciaB55et-XXoXWxBIElIMwxlJfmiC3X6ks14S2Yqp8pfwV7GGe5~U3QZHsJJqM8R7-~818QOrYumovfmR4Ibf3dVU9XCUiXNrFuAUaie-dCnNirTfhSP896G5ffjwbs7TTJBppA__&Key-Pair-Id=K3C0L9WB6U5DUC",
+          "height": 3472,
+          "width": 3472
+        },
+        "objects": {
+          "bbox": [
+            [
+              1296.0003839999997,
+              782.0020320000002,
+              1169.001568,
+              2402.998976
+            ]
+          ],
+          "categories": [
+            0
+          ]
+        },
+        "treatment": "h0"
+      },
+      "truncated_cells": []
+    },
+    {
+      "row_idx": 19,
+      "row": {
+        "image": {
+          "src": "https://datasets-server.huggingface.co/cached-assets/Project-AgML/cocoa_monilia_detection/--/07aeef939a7009fc13202a812185607772759f2d/--/default/train/19/image/image.jpg?Expires=1792305243&Signature=Ru2ybklMqwLg95yjKK4nfwf5uKKgZLg79OwsF3ioxn5eGOORn20XwBcVIjpsrZ7YmAX0hagEyfk1obI7WfpRz~6PilKZ~ixU5cXN6OuX~kwHHhF4QtWPZmb2UB5hTp5tDWw9325Q0sLBW2hBXMia3McLAUwy8OfDNUwFopAgoSBVjHzmv9XuDgI2-VZza4dxo6D~a8YVtL5jLRya6QBsrYsxzn1zE4KX~uNZZrPx0poDo8fzUP85NekzWNX-sU~Q-VPg43dkeuwX8AwpjinW4STGX~M1wWIiX4~YPBdVOJintgjeLHSjKO5HNwq3fGxvY22mXW-4NU3~n7wtij5LxQ__&Key-Pair-Id=K3C0L9WB6U5DUC",
+          "height": 8000,
+          "width": 6000
+        },
+        "objects": {
+          "bbox": [
+            [
+              2298.664,
+              950.9970000000001,
+              3976.0,
+              4334.25
+            ]
+          ],
+          "categories": [
+            0
+          ]
+        },
+        "treatment": "h0"
+      },
+      "truncated_cells": []
+    },
+    {
+      "row_idx": 20,
+      "row": {
+        "image": {
+          "src": "https://datasets-server.huggingface.co/cached-assets/Project-AgML/cocoa_monilia_detection/--/07aeef939a7009fc13202a812185607772759f2d/--/default/train/20/image/image.jpg?Expires=1792305243&Signature=HZJhwET4517CMwXBE2nY72bpU520Ug0DsIVhsKcyl2iLTduIFkTjxs1gtMe2oHbXa-mQIm~pBEuS8Q6-8xEGPWD~cNnmRTHn1fJFQxRomWRwswJkgZZbgpASPcljaoD7~Sbak7Y4-h8I7xXfErUAR3iK4J4v6Chh4tMgf8gFURTOiSmFHdvkjzEy5NhGvLfSR~MtwAGx2v-~eKaidrJd~ztdaNrfifQh61wu23VtEWQUucjyHI49CMg-PtPXxv5g7tOBS1gZz2qzOJ47g3xLasaQSep8ytjafGJhY1G1kfstyjrDnM2HGYVh6o71INdLZDSokpJo18Cn0Z7CLNKzAw__&Key-Pair-Id=K3C0L9WB6U5DUC",
+          "height": 3472,
+          "width": 3472
+        },
+        "objects": {
+          "bbox": [
+            [
+              895.9999440000001,
+              917.998536,
+              1331.001616,
+              2417.001552
+            ]
+          ],
+          "categories": [
+            0
+          ]
+        },
+        "treatment": "h0"
+      },
+      "truncated_cells": []
+    },
+    {
+      "row_idx": 21,
+      "row": {
+        "image": {
+          "src": "https://datasets-server.huggingface.co/cached-assets/Project-AgML/cocoa_monilia_detection/--/07aeef939a7009fc13202a812185607772759f2d/--/default/train/21/image/image.jpg?Expires=1792305243&Signature=n0OSxEJHbq0~nEc4Eur8LUPWQ92GIy5YSy425AXhH7v5Zwhb4o130I5dodG7lm0OYnUN3mbpTcC-iRYqk588vFDIZiAotcWptRblOCXbBtI2tt9h5r8f3G7fHHtla55g~4OyldlpRTn7-NMD4IxJVZ6Nf~gv1-aIWqVHFpAeLlaRq2KXAyhMIZWENZY3Zh0NndX5BXu0qnchn21vWTHTIpjUXvQBzfGEGZk1dKO6acfSsGRn2~jcBfproam~jrpluuAjDyuIHcbj-xKFQOn2X02zV2fOuS1LdvdqjTgqoouG1RZacbnmAA-qC~Apfl7-HSMIY-nK-xhcT9UxqQpk7g__&Key-Pair-Id=K3C0L9WB6U5DUC",
+          "height": 3472,
+          "width": 3472
+        },
+        "objects": {
+          "bbox": [
+            [
+              947.998352,
+              385.9995999999999,
+              1285.001088,
+              2810.000704
+            ]
+          ],
+          "categories": [
+            0
+          ]
+        },
+        "treatment": "h0"
+      },
+      "truncated_cells": []
+    },
+    {
+      "row_idx": 22,
+      "row": {
+        "image": {
+          "src": "https://datasets-server.huggingface.co/cached-assets/Project-AgML/cocoa_monilia_detection/--/07aeef939a7009fc13202a812185607772759f2d/--/default/train/22/image/image.jpg?Expires=1792305243&Signature=tu9uY31EAMYbcAkeo6Pd6LG8xACw~9HY9dWHYggc0y7uCEnoPb3FEBNLeB8VVH-ubdS1P9H1X8LI6hWzYNSfyGwhychvJxzdrIAqcvwFD4BIxegXYiNQOojn2N6qeIHVzz8~b1Oml4cQE7C5h94Iz8GX8u88SIWOC35JZ9wveU4Nh-BdJGL2T2rTDN~5zRBaU1GH1kr140yLXK-fAujeC1pE5qzVXjdMpVvmAenhmIvd4tzMCTKQeSr4-aFTqwjUqJW5RU~-3brNoVg5sXVmDTNLpip1aJETZsKtvph7-jtUBWabwC3iABG5mEov-ypQYCxr-dkYkKssGGhFy68hZA__&Key-Pair-Id=K3C0L9WB6U5DUC",
+          "height": 4000,
+          "width": 2992
+        },
+        "objects": {
+          "bbox": [
+            [
+              1467.914,
+              726.3079999999999,
+              1467.916,
+              1950.784
+            ]
+          ],
+          "categories": [
+            1
+          ]
+        },
+        "treatment": "h0"
+      },
+      "truncated_cells": []
+    },
+    {
+      "row_idx": 23,
+      "row": {
+        "image": {
+          "src": "https://datasets-server.huggingface.co/cached-assets/Project-AgML/cocoa_monilia_detection/--/07aeef939a7009fc13202a812185607772759f2d/--/default/train/23/image/image.jpg?Expires=1792305243&Signature=GD~pncy8tztXG-FThesw5YyWrFlWqVdrbora~SyHgtIW6TFl1SgDwg9OFgQbEu64ckYcSgWspj-dGzFmXuY02Pn-gp8FQlfObUYC9jGk5vPaAIAvt9QegUkZ6o9ZtgiDqU0HBz3C3AM1a1NLzl8VbDwceclYIMdEA3y0Vv6fIxYn4DoUjXmTAq~xJEb2IrSW3pAlIKMBiKrJtaRl2N8g7O4Uh5~BRWOTEVerHb5yiFCpMxGQHi4XUjAZqbh~T0CHX9epOJV9asx3PEtu7x5L-9idDT68UMrU22N7FaxSB3GsXq3v~BrBN8Vt3W1od~r9grasruMgFB-TbsH7JpPIpQ__&Key-Pair-Id=K3C0L9WB6U5DUC",
+          "height": 4000,
+          "width": 2992
+        },
+        "objects": {
+          "bbox": [
+            [
+              549.466,
+              448.80000000000007,
+              2387.7000000000003,
+              2335.256
+            ]
+          ],
+          "categories": [
+            0
+          ]
+        },
+        "treatment": "h0"
+      },
+      "truncated_cells": []
+    },
+    {
+      "row_idx": 24,
+      "row": {
+        "image": {
+          "src": "https://datasets-server.huggingface.co/cached-assets/Project-AgML/cocoa_monilia_detection/--/07aeef939a7009fc13202a812185607772759f2d/--/default/train/24/image/image.jpg?Expires=1792305244&Signature=fFRrCTWGuxa-saIrx8~10lpSWrCUpf~KK-AIVhjxCHwiMAP9zlXASyWfjPJC6ZSPDL1SryeSWStSMVO91INt1Y0f89HP2nAcYT-ApYFV8hYMCebGwVbrnWuCrkwmH7RXSLefI5Cc139qrNWRwzWP01pxSMSViHNBY9ULaUu2p4b8Lnu~aGcaG5kgxF05TfUNNf1shw6mPvOyn5bitgrOD-GAVM00jBazdsyMcwK5ckW2m208PAn9FTpm8-sJ6CwP-FBfELgQONudWIDO4~HxmtDUVRud-zXVZHe2lb1JGXPolBjrZPOy1AO8YXPRGUUzMCOERdNqT64a6Q3YliAKow__&Key-Pair-Id=K3C0L9WB6U5DUC",
+          "height": 8000,
+          "width": 6000
+        },
+        "objects": {
+          "bbox": [
+            [
+              937.3320000000001,
+              1314.0000000000002,
+              5350.664,
+              4243.5
+            ]
+          ],
+          "categories": [
+            0
+          ]
+        },
+        "treatment": "h0"
+      },
+      "truncated_cells": []
+    },
+    {
+      "row_idx": 25,
+      "row": {
+        "image": {
+          "src": "https://datasets-server.huggingface.co/cached-assets/Project-AgML/cocoa_monilia_detection/--/07aeef939a7009fc13202a812185607772759f2d/--/default/train/25/image/image.jpg?Expires=1792305244&Signature=jvTJd3GUXjMz6D6kBgAZsff1mTry8SJYnvYZ9PPLvagOEpGh1yMn2BNM7GHv-Mj6Q4kVfpnuLZ7Oa5E653QLf64MjqTE0izmPmBuclf6gh2z-qiI1XDQ90pmcCWIqjPxSLT9ViZ2UlIFhp~18ECLC80sWMh5e0JhMa~FU0pzRGJNHibp8jcPpd5lbISk8M5INRdgfdpFMxF-JiJs1Z4jcS3CzmxzdIjHK2Onis4feCWEttgJw4HoRZVwKS7~D9MuZbEID4zEwp7HCYXlK-A4WWaevIivgIwb3~WZR7t3vzzWBkNXO0vnix~TS6JQ3ObrFlHnGEY4GtWKUXX4chaZ0Q__&Key-Pair-Id=K3C0L9WB6U5DUC",
+          "height": 3472,
+          "width": 3472
+        },
+        "objects": {
+          "bbox": [
+            [
+              1267.9987039999999,
+              458.0002000000002,
+              1058.001728,
+              2741.001648
+            ]
+          ],
+          "categories": [
+            0
+          ]
+        },
+        "treatment": "h0"
+      },
+      "truncated_cells": []
+    },
+    {
+      "row_idx": 26,
+      "row": {
+        "image": {
+          "src": "https://datasets-server.huggingface.co/cached-assets/Project-AgML/cocoa_monilia_detection/--/07aeef939a7009fc13202a812185607772759f2d/--/default/train/26/image/image.jpg?Expires=1792305243&Signature=Xgny4oNc6qVM6D3WiO~e~0lOqwAW~FhMN8RL6hZwtDe9BL9lsH5z5265uBWwhWj7zr9UzHzaWLSQZGMqNkBC-7mAl0fRayoFmpqHXUM3a7Ep-yzJxUQtefeKMp8673UBvqauSo17kW0VzEYwYjZL64qSVLUhyAtYFwZAGdwi5p6-4dBH3fG0QL06fxp-20AZluicx8er9zrUP7Iczfug-TU73vB9LMiUDK0D2sVL0aWVo~AXHo2DQnCMcN-sdbkSQtANooCMuDOhiFTFv3iQ8mqfoo3xGzMchog07aCstGmpDSa0HffoSsbGwmtS3vkwbEcMwP8PdItTIE1Qk64v~A__&Key-Pair-Id=K3C0L9WB6U5DUC",
+          "height": 3472,
+          "width": 3472
+        },
+        "objects": {
+          "bbox": [
+            [
+              1247.9999839999998,
+              381.9998559999999,
+              1085.0,
+              2914.0009919999998
+            ]
+          ],
+          "categories": [
+            0
+          ]
+        },
+        "treatment": "h0"
+      },
+      "truncated_cells": []
+    },
+    {
+      "row_idx": 27,
+      "row": {
+        "image": {
+          "src": "https://datasets-server.huggingface.co/cached-assets/Project-AgML/cocoa_monilia_detection/--/07aeef939a7009fc13202a812185607772759f2d/--/default/train/27/image/image.jpg?Expires=1792305244&Signature=oGO-chU7THtI5dfLjFWR4aMkWXc8McgGRDITpZ0I6RxmNiOYQ2IDIOLH9qrbcZQvRwtvDMwfyeQFCEcvvBRBF8XW6SsZGE0GmAIfr~suj-1nI2LEfN8vsniqLUs6gKIqoxVsjJUF~JiCDrPYv8t-GMYmERSA2czQE2UnUjNLGbU0waw-RQzP0ioQksKK6Mx7OeWedFRJpEw3AZn1o9sFtjmwd7YBVDqfvpq3AjrfNdxDOTd0WYqJXTVa9o6h-UPjLDOiWG-70h0Bih~GbwbQHRrdVRFzef6FGmpBSzPODRWx0qRpRY7ewe6EMuyVKZn0ZoICq4rGuQaN6GNJ-EvYUg__&Key-Pair-Id=K3C0L9WB6U5DUC",
+          "height": 3000,
+          "width": 3000
+        },
+        "objects": {
+          "bbox": [
+            [
+              829.3604999999999,
+              4.529999999999868,
+              1548.999,
+              2995.47
+            ]
+          ],
+          "categories": [
+            1
+          ]
+        },
+        "treatment": "h0"
+      },
+      "truncated_cells": []
+    },
+    {
+      "row_idx": 28,
+      "row": {
+        "image": {
+          "src": "https://datasets-server.huggingface.co/cached-assets/Project-AgML/cocoa_monilia_detection/--/07aeef939a7009fc13202a812185607772759f2d/--/default/train/28/image/image.jpg?Expires=1792305244&Signature=HQqaeWejhRbe~RfyyJRaxaUD09NqVTgDya8f0YmhU92b5RLrDct2J4PzU3rIoisC~PYXUNmpiAXQ8-KPIAjBjBBzA2bxekqPMzDxBX-BSAtewsnIdK3G2ftvG~Z7sZhikvuUYwAo~qSWe0criy16rq89g4vQdBg4tKh1Dao82HzbwsoyYEB87KDXSlLavLnEzYnnWsDisaO5cg~zARisgbJx4od3r-mwNq0-mOpZ2LumNm2VsKHBc-bKGLAWkXNJ8Rtte8LyXZ3ClDHmqRgBPoXJhkZMyLlncO2plccxTbUryZs-lkDyKeyJl6d5SEeCuKueU9LVq8RyR-b7EvmmTw__&Key-Pair-Id=K3C0L9WB6U5DUC",
+          "height": 2992,
+          "width": 2992
+        },
+        "objects": {
+          "bbox": [
+            [
+              1062.999256,
+              284.00063999999986,
+              1056.9988,
+              2004.9990400000002
+            ]
+          ],
+          "categories": [
+            0
+          ]
+        },
+        "treatment": "h0"
+      },
+      "truncated_cells": []
+    },
+    {
+      "row_idx": 29,
+      "row": {
+        "image": {
+          "src": "https://datasets-server.huggingface.co/cached-assets/Project-AgML/cocoa_monilia_detection/--/07aeef939a7009fc13202a812185607772759f2d/--/default/train/29/image/image.jpg?Expires=1792305244&Signature=dfrJcsKbh6e-~3mviWSiRyyWQgnO~bKgLhJSV72gIcZqBEQbgEhgylol~EJ4YnImYcPcxHyLgpYBdsaQNZqGIDuSaPQOs3KR8gz41LbAa0LrINbXRPsN9Y1aH5PPBQWspYIJ1PYTfvoICQ1o1v2AoG~-J~ScJNoWQHO1TzABbaHWfov-rXJyNpXSCe3SDKfusr-vdO7~wjxt9YT0yjLAszXayqpvoTY2TlWsXQneo8TS0v9nxQpmN1r5ekcGY5QSMwS-wDLpwgEJ04vEgtUwnmIxw1iT4gNO05E6oc6q1QlBWLz0AL6mRbtjBJS2AhbOCZ-3TL4NtEFc3W2M90TpoQ__&Key-Pair-Id=K3C0L9WB6U5DUC",
+          "height": 3072,
+          "width": 3072
+        },
+        "objects": {
+          "bbox": [
+            [
+              770.999808,
+              1195.99872,
+              969.99936,
+              1539.001344
+            ]
+          ],
+          "categories": [
+            0
+          ]
+        },
+        "treatment": "h0"
+      },
+      "truncated_cells": []
+    }
+  ],
+  "num_rows_total": 1950,
+  "num_rows_per_page": 100,
+  "partial": false
+}

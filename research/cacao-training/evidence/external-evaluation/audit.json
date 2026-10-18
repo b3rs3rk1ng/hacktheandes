@@ -1,0 +1,307 @@
+{
+  "source": "downloads/external-cocoa-yolov4.zip",
+  "mapping": {
+    "dataset": "Serrano/Torres Cocoa Diseases (YOLOv4), Kaggle version 2, external test only",
+    "require_class_files": true,
+    "classes": [
+      {
+        "source_id": 0,
+        "source_name": "Fitoftora",
+        "target_id": 2,
+        "target_name": "phytophthora",
+        "role": "other_disease"
+      },
+      {
+        "source_id": 1,
+        "source_name": "Monilia",
+        "target_id": 1,
+        "target_name": "monilia",
+        "role": "target_disease"
+      },
+      {
+        "source_id": 2,
+        "source_name": "Sana",
+        "target_id": 0,
+        "target_name": "healthy",
+        "role": "healthy"
+      }
+    ]
+  },
+  "box_frame_contract": "require-unoriented",
+  "source_images": 312,
+  "exported_images": 312,
+  "excluded_images": [],
+  "box_tolerance_normalized": 1e-06,
+  "repaired_boxes": 14,
+  "box_repairs": [
+    {
+      "source_image": "Enfermedades Cacao/Fito/Fito18.jpg",
+      "line": 5,
+      "source_class_id": 2,
+      "original_normalized_xyxy": [
+        0.466346,
+        0.9221155,
+        0.509936,
+        1.0000005
+      ],
+      "repaired_normalized_xyxy": [
+        0.466346,
+        0.9221155,
+        0.509936,
+        1.0
+      ],
+      "tolerance": 1e-06
+    },
+    {
+      "source_image": "Enfermedades Cacao/Fito/Fito24.jpg",
+      "line": 2,
+      "source_class_id": 2,
+      "original_normalized_xyxy": [
+        0.8233975,
+        0.8632215,
+        0.9689105,
+        1.0000005
+      ],
+      "repaired_normalized_xyxy": [
+        0.8233975,
+        0.8632215,
+        0.9689105,
+        1.0
+      ],
+      "tolerance": 1e-06
+    },
+    {
+      "source_image": "Enfermedades Cacao/Fito/Fito25.jpg",
+      "line": 1,
+      "source_class_id": 2,
+      "original_normalized_xyxy": [
+        0.6294875,
+        0.3125,
+        1.0000005,
+        0.996394
+      ],
+      "repaired_normalized_xyxy": [
+        0.6294875,
+        0.3125,
+        1.0,
+        0.996394
+      ],
+      "tolerance": 1e-06
+    },
+    {
+      "source_image": "Enfermedades Cacao/Fito/Fito49.jpg",
+      "line": 2,
+      "source_class_id": 2,
+      "original_normalized_xyxy": [
+        0.2391025,
+        0.8271635,
+        0.4910255,
+        1.0000005
+      ],
+      "repaired_normalized_xyxy": [
+        0.2391025,
+        0.8271635,
+        0.4910255,
+        1.0
+      ],
+      "tolerance": 1e-06
+    },
+    {
+      "source_image": "Enfermedades Cacao/Fito/Fito63.jpg",
+      "line": 6,
+      "source_class_id": 1,
+      "original_normalized_xyxy": [
+        0.5378205,
+        0.9221155,
+        0.8073714999999999,
+        1.0000005
+      ],
+      "repaired_normalized_xyxy": [
+        0.5378205,
+        0.9221155,
+        0.8073714999999999,
+        1.0
+      ],
+      "tolerance": 1e-06
+    },
+    {
+      "source_image": "Enfermedades Cacao/Fito/Fito9.jpg",
+      "line": 2,
+      "source_class_id": 2,
+      "original_normalized_xyxy": [
+        0.7096155,
+        0.42403849999999993,
+        1.0000005,
+        0.6283654999999999
+      ],
+      "repaired_normalized_xyxy": [
+        0.7096155,
+        0.42403849999999993,
+        1.0,
+        0.6283654999999999
+      ],
+      "tolerance": 1e-06
+    },
+    {
+      "source_image": "Enfermedades Cacao/Monilia/Monilia1.jpg",
+      "line": 5,
+      "source_class_id": 2,
+      "original_normalized_xyxy": [
+        0.11538499999999999,
+        0.9521635,
+        0.211539,
+        1.0000005
+      ],
+      "repaired_normalized_xyxy": [
+        0.11538499999999999,
+        0.9521635,
+        0.211539,
+        1.0
+      ],
+      "tolerance": 1e-06
+    },
+    {
+      "source_image": "Enfermedades Cacao/Monilia/Monilia61.jpg",
+      "line": 3,
+      "source_class_id": 2,
+      "original_normalized_xyxy": [
+        0.9208335,
+        0.8036055000000001,
+        1.0000005,
+        0.9216345
+      ],
+      "repaired_normalized_xyxy": [
+        0.9208335,
+        0.8036055000000001,
+        1.0,
+        0.9216345
+      ],
+      "tolerance": 1e-06
+    },
+    {
+      "source_image": "Enfermedades Cacao/Monilia/Monilia63.jpg",
+      "line": 3,
+      "source_class_id": 2,
+      "original_normalized_xyxy": [
+        0.8320515,
+        0.17980749999999998,
+        1.0000005,
+        0.45072049999999997
+      ],
+      "repaired_normalized_xyxy": [
+        0.8320515,
+        0.17980749999999998,
+        1.0,
+        0.45072049999999997
+      ],
+      "tolerance": 1e-06
+    },
+    {
+      "source_image": "Enfermedades Cacao/Monilia/Monilia77.jpg",
+      "line": 10,
+      "source_class_id": 2,
+      "original_normalized_xyxy": [
+        0.9746795,
+        0.087981,
+        1.0000005,
+        0.149039
+      ],
+      "repaired_normalized_xyxy": [
+        0.9746795,
+        0.087981,
+        1.0,
+        0.149039
+      ],
+      "tolerance": 1e-06
+    },
+    {
+      "source_image": "Enfermedades Cacao/Sana/Sana39.jpg",
+      "line": 8,
+      "source_class_id": 2,
+      "original_normalized_xyxy": [
+        0.9557695,
+        0.34254850000000003,
+        1.0000005,
+        0.3983175
+      ],
+      "repaired_normalized_xyxy": [
+        0.9557695,
+        0.34254850000000003,
+        1.0,
+        0.3983175
+      ],
+      "tolerance": 1e-06
+    },
+    {
+      "source_image": "Enfermedades Cacao/Sana/Sana4.jpg",
+      "line": 9,
+      "source_class_id": 2,
+      "original_normalized_xyxy": [
+        0.9208335,
+        0.41346150000000004,
+        1.0000005,
+        0.6975965000000001
+      ],
+      "repaired_normalized_xyxy": [
+        0.9208335,
+        0.41346150000000004,
+        1.0,
+        0.6975965000000001
+      ],
+      "tolerance": 1e-06
+    },
+    {
+      "source_image": "Enfermedades Cacao/Sana/Sana7.jpg",
+      "line": 10,
+      "source_class_id": 2,
+      "original_normalized_xyxy": [
+        0.9458335,
+        0.634375,
+        1.0000005,
+        0.720673
+      ],
+      "repaired_normalized_xyxy": [
+        0.9458335,
+        0.634375,
+        1.0,
+        0.720673
+      ],
+      "tolerance": 1e-06
+    },
+    {
+      "source_image": "Enfermedades Cacao/Sana/Sana95.jpg",
+      "line": 8,
+      "source_class_id": 2,
+      "original_normalized_xyxy": [
+        0.8945515,
+        0.5709135000000001,
+        1.0000005,
+        0.7588945
+      ],
+      "repaired_normalized_xyxy": [
+        0.8945515,
+        0.5709135000000001,
+        1.0,
+        0.7588945
+      ],
+      "tolerance": 1e-06
+    }
+  ],
+  "class_files": [
+    "Enfermedades Cacao/Fito/classes.txt",
+    "Enfermedades Cacao/Monilia/classes.txt",
+    "Enfermedades Cacao/Sana/classes.txt"
+  ],
+  "exif_orientations": {
+    "1": 312
+  },
+  "box_counts": {
+    "phytophthora": 227,
+    "healthy": 1219,
+    "monilia": 145
+  },
+  "pixel_duplicate_images": 0,
+  "manifest_sha256": "0d56e44855e4d3eb59abc45688fb68d6d2fe747f457ec247f110496a44febd75",
+  "evaluation_only": true,
+  "caution": "val YAML path aliases test only for validation-library compatibility; train is null; no fitting or threshold selection on external data"
+}

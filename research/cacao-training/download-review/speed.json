@@ -1,0 +1,20 @@
+[
+  {
+    "name": "zenodo",
+    "status": 206,
+    "seconds": 27.16085516699968,
+    "bytes": 3145728,
+    "MBps": 0.1158184446203316,
+    "range": "bytes 0-3145727/6187303002",
+    "url": "https://zenodo.org/records/17716661/files/CocoaMoniliaDataSet.zip?download=1"
+  },
+  {
+    "name": "hf",
+    "status": 206,
+    "seconds": 3.600499124993803,
+    "bytes": 3145728,
+    "MBps": 0.8736921995517536,
+    "range": "bytes 0-3145727/506804725",
+    "url": "https://us.aws.cdn.hf.co/xet-bridge-us/6aa824afd7494c050f506b4b/0b08d22def77a1d0aab7cfab0b000cdfc36768b4d7bc3063aa2a66a39653fd3d?X-Xet-Cas-Uid=public&user_id=public&response-content-disposition=attach"
+  }
+]

@@ -1,0 +1,50 @@
+[
+  {
+    "name": "Monilia.rar",
+    "url": "https://data.mendeley.com/public-files/datasets/ykbtpsyfv9/files/c090101b-7718-43fa-a4fb-f1f6604b338c/file_downloaded",
+    "resolved": "https://prod-dcd-datasets-public-files-eu-west-1.s3.eu-west-1.amazonaws.com/e238b7b7-1ba7-47bd-ae45-e082bf9dd61b",
+    "status": 206,
+    "headers": {
+      "x-amz-request-id": "Y6B4YNR7K8J9Z5WQ",
+      "x-amz-id-2": "Kj/9GfWAdT6UDk4W3g3grkEc5F40YqcJVVUDAnu0yMIOQJl+VDsWMmmaKZkL7oZWD534cKbG6Vk=",
+      "Content-Length": "16384",
+      "Accept-Ranges": "bytes",
+      "Content-Range": "bytes 0-16383/5710821257",
+      "Date": "Sun, 18 Oct 2026 06:14:49 GMT",
+      "Server": "AmazonS3",
+      "Last-Modified": "Thu, 08 Oct 2026 11:37:31 GMT",
+      "ETag": "\"5ffce6d84f53c0d55f07397976babe13-273\"",
+      "x-amz-version-id": "8cyBah9VMDcfaBb9FeZh5XSlJP0CQA0E",
+      "Content-Type": "application/octet-stream",
+      "Content-Disposition": "attachment; filename=\"Monilia.rar\"",
+      "x-amz-server-side-encryption": "AES256",
+      "Connection": "close"
+    },
+    "magic": "526172211a07010050eaaec01001050c",
+    "seconds": 1.3579130172729492
+  },
+  {
+    "name": "Sanos.rar",
+    "url": "https://data.mendeley.com/public-files/datasets/ykbtpsyfv9/files/48c379b8-dd3d-42e8-97f6-85b97cca0f3b/file_downloaded",
+    "resolved": "https://prod-dcd-datasets-public-files-eu-west-1.s3.eu-west-1.amazonaws.com/e90f64a7-71c9-40be-ac92-da681cbc6693",
+    "status": 206,
+    "headers": {
+      "x-amz-request-id": "Y6BECTVJ8GZN54F6",
+      "x-amz-id-2": "yr3212S7dlLaH1Fifq2lSMPH+IeYWdnYBQJcphar2G15yrp0cdnw0QF1+W2yKmqKdXTrqaYZi5c=",
+      "Content-Length": "16384",
+      "Accept-Ranges": "bytes",
+      "Content-Range": "bytes 0-16383/3143246055",
+      "Date": "Sun, 18 Oct 2026 06:14:49 GMT",
+      "Server": "AmazonS3",
+      "Last-Modified": "Thu, 08 Oct 2026 11:36:39 GMT",
+      "ETag": "\"26f1a5711ae716c439a27871a36d4f29-150\"",
+      "x-amz-version-id": "O9Z2RbHlKvE_BHiJWs4uCZQIrJCRtLe2",
+      "Content-Type": "application/octet-stream",
+      "Content-Disposition": "attachment; filename=\"Sanos.rar\"",
+      "x-amz-server-side-encryption": "AES256",
+      "Connection": "close"
+    },
+    "magic": "526172211a0701005afff6911001050c",
+    "seconds": 1.4001190662384033
+  }
+]

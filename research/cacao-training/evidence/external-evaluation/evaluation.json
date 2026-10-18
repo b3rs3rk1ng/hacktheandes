@@ -1,0 +1,2992 @@
+{
+  "weights_sha256": "58ccd2f239f5b2bfe202fa74036cce3edb5207d642a57a0c4b40d7c2610c7bc2",
+  "threshold": 0.21,
+  "threshold_fitted_on": "internal validation only",
+  "internal_report_sha256": "5341b8a1851c46b2cda99b70df8dae18e01f048ccd935f05c0dfd80c7720143d",
+  "manifest_sha256": "0d56e44855e4d3eb59abc45688fb68d6d2fe747f457ec247f110496a44febd75",
+  "mapping": {
+    "names": [
+      "healthy",
+      "monilia",
+      "phytophthora"
+    ],
+    "prediction_class_mapping": {
+      "h0": 0,
+      "m1": 1,
+      "m2": 1,
+      "m3": 1
+    },
+    "healthy_class": 0,
+    "target_disease_class": 1,
+    "other_disease_classes": [
+      2
+    ],
+    "duplicate_phash_distance": 4
+  },
+  "input_images": 312,
+  "eligible_images": 312,
+  "excluded_duplicates": [],
+  "other_disease_pods_predicted_as_target": {
+    "2": 110
+  },
+  "metrics": {
+    "images": 312,
+    "threshold": 0.21,
+    "matching_iou": 0.5,
+    "matching": "confidence-descending greedy, one-to-one, class-aware after explicit remapping",
+    "per_class": [
+      {
+        "class_id": 0,
+        "name": "healthy",
+        "gt_instances": 1219,
+        "tp": 126,
+        "fp": 33,
+        "fn": 1093,
+        "precision": 0.7924528301886793,
+        "recall": 0.10336341263330599,
+        "f1": 0.18287373004354138,
+        "precision_wilson_95": [
+          0.7228840112577166,
+          0.848223621119877
+        ],
+        "recall_wilson_95": [
+          0.08750101006413731,
+          0.12171781955211329
+        ]
+      },
+      {
+        "class_id": 1,
+        "name": "monilia",
+        "gt_instances": 145,
+        "tp": 77,
+        "fp": 222,
+        "fn": 68,
+        "precision": 0.25752508361204013,
+        "recall": 0.5310344827586206,
+        "f1": 0.34684684684684686,
+        "precision_wilson_95": [
+          0.2112565760724955,
+          0.3099450435318685
+        ],
+        "recall_wilson_95": [
+          0.45005839110919255,
+          0.610408632469514
+        ]
+      },
+      {
+        "class_id": 2,
+        "name": "phytophthora",
+        "gt_instances": 227,
+        "tp": 0,
+        "fp": 0,
+        "fn": 227,
+        "precision": null,
+        "recall": 0.0,
+        "f1": 0.0,
+        "precision_wilson_95": null,
+        "recall_wilson_95": [
+          0.0,
+          0.016641113083928197
+        ]
+      }
+    ],
+    "healthy_mistaken_actions": {
+      "healthy_gt_instances": 1219,
+      "healthy_pods_targeted_as_symptomatic": 82,
+      "per_100_healthy_pods": 6.726825266611977,
+      "definition": "symptom predictions matched class-agnostically to all GT at IoU>=0.5; count matched healthy GT"
+    },
+    "confusion": {
+      "rows": "ground truth",
+      "columns": "prediction",
+      "names": [
+        "healthy",
+        "monilia",
+        "phytophthora",
+        "background"
+      ],
+      "matrix": [
+        [
+          112,
+          75,
+          0,
+          1032
+        ],
+        [
+          6,
+          77,
+          0,
+          62
+        ],
+        [
+          14,
+          108,
+          0,
+          105
+        ],
+        [
+          27,
+          39,
+          0,
+          0
+        ]
+      ]
+    },
+    "uncertainty_note": "Wilson intervals treat pods as independent; same-tree/capture dependence can widen uncertainty.",
+    "per_image": [
+      {
+        "id": "04c41a8704e44ae9d65e7644",
+        "image": "/home/f3mt0/hacktheandes-cacao-training/data/external-v2/images/test/04c41a8704e44ae9d65e7644.jpg",
+        "predictions": 1,
+        "exact_stage_tp": 0,
+        "exact_stage_fp": 1,
+        "exact_stage_fn": 11,
+        "healthy_mistaken_actions": 0
+      },
+      {
+        "id": "cb3cb33f61c0f37760484a4b",
+        "image": "/home/f3mt0/hacktheandes-cacao-training/data/external-v2/images/test/cb3cb33f61c0f37760484a4b.jpg",
+        "predictions": 1,
+        "exact_stage_tp": 0,
+        "exact_stage_fp": 1,
+        "exact_stage_fn": 1,
+        "healthy_mistaken_actions": 0
+      },
+      {
+        "id": "ce035c5edf2e6c3e1d1bbdbe",
+        "image": "/home/f3mt0/hacktheandes-cacao-training/data/external-v2/images/test/ce035c5edf2e6c3e1d1bbdbe.jpg",
+        "predictions": 1,
+        "exact_stage_tp": 0,
+        "exact_stage_fp": 1,
+        "exact_stage_fn": 6,
+        "healthy_mistaken_actions": 0
+      },
+      {
+        "id": "4ad0189567d9c084f0176c65",
+        "image": "/home/f3mt0/hacktheandes-cacao-training/data/external-v2/images/test/4ad0189567d9c084f0176c65.jpg",
+        "predictions": 1,
+        "exact_stage_tp": 0,
+        "exact_stage_fp": 1,
+        "exact_stage_fn": 2,
+        "healthy_mistaken_actions": 0
+      },
+      {
+        "id": "db4b5738df846697a5036cf8",
+        "image": "/home/f3mt0/hacktheandes-cacao-training/data/external-v2/images/test/db4b5738df846697a5036cf8.jpg",
+        "predictions": 1,
+        "exact_stage_tp": 0,
+        "exact_stage_fp": 1,
+        "exact_stage_fn": 4,
+        "healthy_mistaken_actions": 0
+      },
+      {
+        "id": "83b22f124ce93db17d623a9d",
+        "image": "/home/f3mt0/hacktheandes-cacao-training/data/external-v2/images/test/83b22f124ce93db17d623a9d.jpg",
+        "predictions": 1,
+        "exact_stage_tp": 0,
+        "exact_stage_fp": 1,
+        "exact_stage_fn": 2,
+        "healthy_mistaken_actions": 0
+      },
+      {
+        "id": "821ddb2ef6ebfbcd84b34c0d",
+        "image": "/home/f3mt0/hacktheandes-cacao-training/data/external-v2/images/test/821ddb2ef6ebfbcd84b34c0d.jpg",
+        "predictions": 2,
+        "exact_stage_tp": 0,
+        "exact_stage_fp": 2,
+        "exact_stage_fn": 6,
+        "healthy_mistaken_actions": 1
+      },
+      {
+        "id": "10706fac29ea59d5ffb40b3a",
+        "image": "/home/f3mt0/hacktheandes-cacao-training/data/external-v2/images/test/10706fac29ea59d5ffb40b3a.jpg",
+        "predictions": 1,
+        "exact_stage_tp": 0,
+        "exact_stage_fp": 1,
+        "exact_stage_fn": 8,
+        "healthy_mistaken_actions": 0
+      },
+      {
+        "id": "23798615dadc73be0d6a5731",
+        "image": "/home/f3mt0/hacktheandes-cacao-training/data/external-v2/images/test/23798615dadc73be0d6a5731.jpg",
+        "predictions": 1,
+        "exact_stage_tp": 0,
+        "exact_stage_fp": 1,
+        "exact_stage_fn": 9,
+        "healthy_mistaken_actions": 0
+      },
+      {
+        "id": "89b822e01afea38bced2a6ca",
+        "image": "/home/f3mt0/hacktheandes-cacao-training/data/external-v2/images/test/89b822e01afea38bced2a6ca.jpg",
+        "predictions": 2,
+        "exact_stage_tp": 0,
+        "exact_stage_fp": 2,
+        "exact_stage_fn": 2,
+        "healthy_mistaken_actions": 0
+      },
+      {
+        "id": "de37257a217e0af1734f7f7c",
+        "image": "/home/f3mt0/hacktheandes-cacao-training/data/external-v2/images/test/de37257a217e0af1734f7f7c.jpg",
+        "predictions": 1,
+        "exact_stage_tp": 0,
+        "exact_stage_fp": 1,
+        "exact_stage_fn": 3,
+        "healthy_mistaken_actions": 0
+      },
+      {
+        "id": "9660fb16842215fc41bd1b8d",
+        "image": "/home/f3mt0/hacktheandes-cacao-training/data/external-v2/images/test/9660fb16842215fc41bd1b8d.jpg",
+        "predictions": 1,
+        "exact_stage_tp": 0,
+        "exact_stage_fp": 1,
+        "exact_stage_fn": 3,
+        "healthy_mistaken_actions": 0
+      },
+      {
+        "id": "630305e0926613530d0ce8df",
+        "image": "/home/f3mt0/hacktheandes-cacao-training/data/external-v2/images/test/630305e0926613530d0ce8df.jpg",
+        "predictions": 1,
+        "exact_stage_tp": 0,
+        "exact_stage_fp": 1,
+        "exact_stage_fn": 1,
+        "healthy_mistaken_actions": 0
+      },
+      {
+        "id": "d5a6c536112045d39759fe5f",
+        "image": "/home/f3mt0/hacktheandes-cacao-training/data/external-v2/images/test/d5a6c536112045d39759fe5f.jpg",
+        "predictions": 1,
+        "exact_stage_tp": 0,
+        "exact_stage_fp": 1,
+        "exact_stage_fn": 5,
+        "healthy_mistaken_actions": 0
+      },
+      {
+        "id": "7dcb5096bd46135d2576ea92",
+        "image": "/home/f3mt0/hacktheandes-cacao-training/data/external-v2/images/test/7dcb5096bd46135d2576ea92.jpg",
+        "predictions": 1,
+        "exact_stage_tp": 1,
+        "exact_stage_fp": 0,
+        "exact_stage_fn": 1,
+        "healthy_mistaken_actions": 0
+      },
+      {
+        "id": "abd05da19b7ed155d38d87e1",
+        "image": "/home/f3mt0/hacktheandes-cacao-training/data/external-v2/images/test/abd05da19b7ed155d38d87e1.jpg",
+        "predictions": 1,
+        "exact_stage_tp": 0,
+        "exact_stage_fp": 1,
+        "exact_stage_fn": 3,
+        "healthy_mistaken_actions": 0
+      },
+      {
+        "id": "57115c2ed7a577dd9b7cd21a",
+        "image": "/home/f3mt0/hacktheandes-cacao-training/data/external-v2/images/test/57115c2ed7a577dd9b7cd21a.jpg",
+        "predictions": 1,
+        "exact_stage_tp": 0,
+        "exact_stage_fp": 1,
+        "exact_stage_fn": 3,
+        "healthy_mistaken_actions": 0
+      },
+      {
+        "id": "1c67bdcb17cc6cc02718d952",
+        "image": "/home/f3mt0/hacktheandes-cacao-training/data/external-v2/images/test/1c67bdcb17cc6cc02718d952.jpg",
+        "predictions": 3,
+        "exact_stage_tp": 1,
+        "exact_stage_fp": 2,
+        "exact_stage_fn": 6,
+        "healthy_mistaken_actions": 1
+      },
+      {
+        "id": "27e347c3b029bd4204f0762d",
+        "image": "/home/f3mt0/hacktheandes-cacao-training/data/external-v2/images/test/27e347c3b029bd4204f0762d.jpg",
+        "predictions": 1,
+        "exact_stage_tp": 0,
+        "exact_stage_fp": 1,
+        "exact_stage_fn": 2,
+        "healthy_mistaken_actions": 0
+      },
+      {
+        "id": "4b7b5e002fce21ab1a1fcdb4",
+        "image": "/home/f3mt0/hacktheandes-cacao-training/data/external-v2/images/test/4b7b5e002fce21ab1a1fcdb4.jpg",
+        "predictions": 2,
+        "exact_stage_tp": 0,
+        "exact_stage_fp": 2,
+        "exact_stage_fn": 7,
+        "healthy_mistaken_actions": 0
+      },
+      {
+        "id": "e1df9a8c06480ad87154e1ac",
+        "image": "/home/f3mt0/hacktheandes-cacao-training/data/external-v2/images/test/e1df9a8c06480ad87154e1ac.jpg",
+        "predictions": 1,
+        "exact_stage_tp": 0,
+        "exact_stage_fp": 1,
+        "exact_stage_fn": 5,
+        "healthy_mistaken_actions": 0
+      },
+      {
+        "id": "6833767f7d56203793209317",
+        "image": "/home/f3mt0/hacktheandes-cacao-training/data/external-v2/images/test/6833767f7d56203793209317.jpg",
+        "predictions": 2,
+        "exact_stage_tp": 0,
+        "exact_stage_fp": 2,
+        "exact_stage_fn": 4,
+        "healthy_mistaken_actions": 1
+      },
+      {
+        "id": "8545a0ca8162f3ec9b918973",
+        "image": "/home/f3mt0/hacktheandes-cacao-training/data/external-v2/images/test/8545a0ca8162f3ec9b918973.jpg",
+        "predictions": 2,
+        "exact_stage_tp": 0,
+        "exact_stage_fp": 2,
+        "exact_stage_fn": 5,
+        "healthy_mistaken_actions": 0
+      },
+      {
+        "id": "6284845fdc95d62046c2c6ba",
+        "image": "/home/f3mt0/hacktheandes-cacao-training/data/external-v2/images/test/6284845fdc95d62046c2c6ba.jpg",
+        "predictions": 1,
+        "exact_stage_tp": 0,
+        "exact_stage_fp": 1,
+        "exact_stage_fn": 6,
+        "healthy_mistaken_actions": 0
+      },
+      {
+        "id": "72edb78a9c73ab0f1b4d8469",
+        "image": "/home/f3mt0/hacktheandes-cacao-training/data/external-v2/images/test/72edb78a9c73ab0f1b4d8469.jpg",
+        "predictions": 2,
+        "exact_stage_tp": 0,
+        "exact_stage_fp": 2,
+        "exact_stage_fn": 4,
+        "healthy_mistaken_actions": 0
+      },
+      {
+        "id": "f4b318396a1a166686887fa6",
+        "image": "/home/f3mt0/hacktheandes-cacao-training/data/external-v2/images/test/f4b318396a1a166686887fa6.jpg",
+        "predictions": 1,
+        "exact_stage_tp": 0,
+        "exact_stage_fp": 1,
+        "exact_stage_fn": 4,
+        "healthy_mistaken_actions": 0
+      },
+      {
+        "id": "c74ebce92532209d0861f256",
+        "image": "/home/f3mt0/hacktheandes-cacao-training/data/external-v2/images/test/c74ebce92532209d0861f256.jpg",
+        "predictions": 3,
+        "exact_stage_tp": 2,
+        "exact_stage_fp": 1,
+        "exact_stage_fn": 7,
+        "healthy_mistaken_actions": 0
+      },
+      {
+        "id": "d786fb017ce7806d655d596e",
+        "image": "/home/f3mt0/hacktheandes-cacao-training/data/external-v2/images/test/d786fb017ce7806d655d596e.jpg",
+        "predictions": 3,
+        "exact_stage_tp": 2,
+        "exact_stage_fp": 1,
+        "exact_stage_fn": 1,
+        "healthy_mistaken_actions": 0
+      },
+      {
+        "id": "5cbea10b9555c7897205e317",
+        "image": "/home/f3mt0/hacktheandes-cacao-training/data/external-v2/images/test/5cbea10b9555c7897205e317.jpg",
+        "predictions": 1,
+        "exact_stage_tp": 0,
+        "exact_stage_fp": 1,
+        "exact_stage_fn": 4,
+        "healthy_mistaken_actions": 0
+      },
+      {
+        "id": "a3e46f89ea892f436c2c1dce",
+        "image": "/home/f3mt0/hacktheandes-cacao-training/data/external-v2/images/test/a3e46f89ea892f436c2c1dce.jpg",
+        "predictions": 1,
+        "exact_stage_tp": 0,
+        "exact_stage_fp": 1,
+        "exact_stage_fn": 1,
+        "healthy_mistaken_actions": 0
+      },
+      {
+        "id": "7811c869055bf2b25f4ac9f0",
+        "image": "/home/f3mt0/hacktheandes-cacao-training/data/external-v2/images/test/7811c869055bf2b25f4ac9f0.jpg",
+        "predictions": 1,
+        "exact_stage_tp": 0,
+        "exact_stage_fp": 1,
+        "exact_stage_fn": 11,
+        "healthy_mistaken_actions": 0
+      },
+      {
+        "id": "3a5a4ab72a9c6efb5049b13d",
+        "image": "/home/f3mt0/hacktheandes-cacao-training/data/external-v2/images/test/3a5a4ab72a9c6efb5049b13d.jpg",
+        "predictions": 2,
+        "exact_stage_tp": 0,
+        "exact_stage_fp": 2,
+        "exact_stage_fn": 5,
+        "healthy_mistaken_actions": 1
+      },
+      {
+        "id": "d3d16e97616467e567ccdd19",
+        "image": "/home/f3mt0/hacktheandes-cacao-training/data/external-v2/images/test/d3d16e97616467e567ccdd19.jpg",
+        "predictions": 1,
+        "exact_stage_tp": 0,
+        "exact_stage_fp": 1,
+        "exact_stage_fn": 4,
+        "healthy_mistaken_actions": 0
+      },
+      {
+        "id": "3b8166074f53dc6dc0c73d7f",
+        "image": "/home/f3mt0/hacktheandes-cacao-training/data/external-v2/images/test/3b8166074f53dc6dc0c73d7f.jpg",
+        "predictions": 1,
+        "exact_stage_tp": 0,
+        "exact_stage_fp": 1,
+        "exact_stage_fn": 4,
+        "healthy_mistaken_actions": 0
+      },
+      {
+        "id": "edfd37be5926141137624c6a",
+        "image": "/home/f3mt0/hacktheandes-cacao-training/data/external-v2/images/test/edfd37be5926141137624c6a.jpg",
+        "predictions": 1,
+        "exact_stage_tp": 0,
+        "exact_stage_fp": 1,
+        "exact_stage_fn": 2,
+        "healthy_mistaken_actions": 0
+      },
+      {
+        "id": "2f5ba6eca5ba3bc26f285d6a",
+        "image": "/home/f3mt0/hacktheandes-cacao-training/data/external-v2/images/test/2f5ba6eca5ba3bc26f285d6a.jpg",
+        "predictions": 3,
+        "exact_stage_tp": 0,
+        "exact_stage_fp": 3,
+        "exact_stage_fn": 12,
+        "healthy_mistaken_actions": 1
+      },
+      {
+        "id": "08c600a3067abe24f44d2d98",
+        "image": "/home/f3mt0/hacktheandes-cacao-training/data/external-v2/images/test/08c600a3067abe24f44d2d98.jpg",
+        "predictions": 1,
+        "exact_stage_tp": 0,
+        "exact_stage_fp": 1,
+        "exact_stage_fn": 4,
+        "healthy_mistaken_actions": 0
+      },
+      {
+        "id": "a647e9bedb403602cab957a6",
+        "image": "/home/f3mt0/hacktheandes-cacao-training/data/external-v2/images/test/a647e9bedb403602cab957a6.jpg",
+        "predictions": 1,
+        "exact_stage_tp": 0,
+        "exact_stage_fp": 1,
+        "exact_stage_fn": 3,
+        "healthy_mistaken_actions": 0
+      },
+      {
+        "id": "82bfcf1b184d3aa9e92fb60f",
+        "image": "/home/f3mt0/hacktheandes-cacao-training/data/external-v2/images/test/82bfcf1b184d3aa9e92fb60f.jpg",
+        "predictions": 1,
+        "exact_stage_tp": 0,
+        "exact_stage_fp": 1,
+        "exact_stage_fn": 5,
+        "healthy_mistaken_actions": 0
+      },
+      {
+        "id": "73e63c65959a5eaf626545d4",
+        "image": "/home/f3mt0/hacktheandes-cacao-training/data/external-v2/images/test/73e63c65959a5eaf626545d4.jpg",
+        "predictions": 1,
+        "exact_stage_tp": 0,
+        "exact_stage_fp": 1,
+        "exact_stage_fn": 4,
+        "healthy_mistaken_actions": 0
+      },
+      {
+        "id": "f2add1181d24e13c398a3503",
+        "image": "/home/f3mt0/hacktheandes-cacao-training/data/external-v2/images/test/f2add1181d24e13c398a3503.jpg",
+        "predictions": 2,
+        "exact_stage_tp": 1,
+        "exact_stage_fp": 1,
+        "exact_stage_fn": 2,
+        "healthy_mistaken_actions": 0
+      },
+      {
+        "id": "572f0895f4e88e81456c7cb6",
+        "image": "/home/f3mt0/hacktheandes-cacao-training/data/external-v2/images/test/572f0895f4e88e81456c7cb6.jpg",
+        "predictions": 2,
+        "exact_stage_tp": 0,
+        "exact_stage_fp": 2,
+        "exact_stage_fn": 5,
+        "healthy_mistaken_actions": 0
+      },
+      {
+        "id": "ddf67f773a06f11a3db5cfd6",
+        "image": "/home/f3mt0/hacktheandes-cacao-training/data/external-v2/images/test/ddf67f773a06f11a3db5cfd6.jpg",
+        "predictions": 2,
+        "exact_stage_tp": 0,
+        "exact_stage_fp": 2,
+        "exact_stage_fn": 2,
+        "healthy_mistaken_actions": 0
+      },
+      {
+        "id": "62bef28159eae8276885c924",
+        "image": "/home/f3mt0/hacktheandes-cacao-training/data/external-v2/images/test/62bef28159eae8276885c924.jpg",
+        "predictions": 3,
+        "exact_stage_tp": 1,
+        "exact_stage_fp": 2,
+        "exact_stage_fn": 5,
+        "healthy_mistaken_actions": 0
+      },
+      {
+        "id": "548295b0489f7d77278b9cd8",
+        "image": "/home/f3mt0/hacktheandes-cacao-training/data/external-v2/images/test/548295b0489f7d77278b9cd8.jpg",
+        "predictions": 1,
+        "exact_stage_tp": 0,
+        "exact_stage_fp": 1,
+        "exact_stage_fn": 7,
+        "healthy_mistaken_actions": 0
+      },
+      {
+        "id": "5d09171effc5f0602000ed4f",
+        "image": "/home/f3mt0/hacktheandes-cacao-training/data/external-v2/images/test/5d09171effc5f0602000ed4f.jpg",
+        "predictions": 1,
+        "exact_stage_tp": 0,
+        "exact_stage_fp": 1,
+        "exact_stage_fn": 2,
+        "healthy_mistaken_actions": 0
+      },
+      {
+        "id": "a104cdb4f950fc7fecfa8c94",
+        "image": "/home/f3mt0/hacktheandes-cacao-training/data/external-v2/images/test/a104cdb4f950fc7fecfa8c94.jpg",
+        "predictions": 1,
+        "exact_stage_tp": 0,
+        "exact_stage_fp": 1,
+        "exact_stage_fn": 6,
+        "healthy_mistaken_actions": 0
+      },
+      {
+        "id": "877360585ce43efd7be32cd0",
+        "image": "/home/f3mt0/hacktheandes-cacao-training/data/external-v2/images/test/877360585ce43efd7be32cd0.jpg",
+        "predictions": 2,
+        "exact_stage_tp": 1,
+        "exact_stage_fp": 1,
+        "exact_stage_fn": 1,
+        "healthy_mistaken_actions": 0
+      },
+      {
+        "id": "5bf60b569cfc16778ad0d11a",
+        "image": "/home/f3mt0/hacktheandes-cacao-training/data/external-v2/images/test/5bf60b569cfc16778ad0d11a.jpg",
+        "predictions": 5,
+        "exact_stage_tp": 2,
+        "exact_stage_fp": 3,
+        "exact_stage_fn": 1,
+        "healthy_mistaken_actions": 0
+      },
+      {
+        "id": "95d96694b13e422eb07d2fd7",
+        "image": "/home/f3mt0/hacktheandes-cacao-training/data/external-v2/images/test/95d96694b13e422eb07d2fd7.jpg",
+        "predictions": 2,
+        "exact_stage_tp": 0,
+        "exact_stage_fp": 2,
+        "exact_stage_fn": 6,
+        "healthy_mistaken_actions": 0
+      },
+      {
+        "id": "b1e770c81b4eaede92d1aa41",
+        "image": "/home/f3mt0/hacktheandes-cacao-training/data/external-v2/images/test/b1e770c81b4eaede92d1aa41.jpg",
+        "predictions": 2,
+        "exact_stage_tp": 1,
+        "exact_stage_fp": 1,
+        "exact_stage_fn": 9,
+        "healthy_mistaken_actions": 1
+      },
+      {
+        "id": "8ae4fb3a62381a38d89e30f4",
+        "image": "/home/f3mt0/hacktheandes-cacao-training/data/external-v2/images/test/8ae4fb3a62381a38d89e30f4.jpg",
+        "predictions": 1,
+        "exact_stage_tp": 0,
+        "exact_stage_fp": 1,
+        "exact_stage_fn": 6,
+        "healthy_mistaken_actions": 0
+      },
+      {
+        "id": "46e2404d54bd7061930cb6c1",
+        "image": "/home/f3mt0/hacktheandes-cacao-training/data/external-v2/images/test/46e2404d54bd7061930cb6c1.jpg",
+        "predictions": 1,
+        "exact_stage_tp": 0,
+        "exact_stage_fp": 1,
+        "exact_stage_fn": 3,
+        "healthy_mistaken_actions": 0
+      },
+      {
+        "id": "9188ce668e76f380683b774a",
+        "image": "/home/f3mt0/hacktheandes-cacao-training/data/external-v2/images/test/9188ce668e76f380683b774a.jpg",
+        "predictions": 2,
+        "exact_stage_tp": 0,
+        "exact_stage_fp": 2,
+        "exact_stage_fn": 5,
+        "healthy_mistaken_actions": 0
+      },
+      {
+        "id": "e9baee74f11033cde05b75ac",
+        "image": "/home/f3mt0/hacktheandes-cacao-training/data/external-v2/images/test/e9baee74f11033cde05b75ac.jpg",
+        "predictions": 2,
+        "exact_stage_tp": 0,
+        "exact_stage_fp": 2,
+        "exact_stage_fn": 2,
+        "healthy_mistaken_actions": 0
+      },
+      {
+        "id": "bb2dcd808d0d38b9ce99786c",
+        "image": "/home/f3mt0/hacktheandes-cacao-training/data/external-v2/images/test/bb2dcd808d0d38b9ce99786c.jpg",
+        "predictions": 0,
+        "exact_stage_tp": 0,
+        "exact_stage_fp": 0,
+        "exact_stage_fn": 1,
+        "healthy_mistaken_actions": 0
+      },
+      {
+        "id": "c22b1e0a59ef0fa968808d94",
+        "image": "/home/f3mt0/hacktheandes-cacao-training/data/external-v2/images/test/c22b1e0a59ef0fa968808d94.jpg",
+        "predictions": 1,
+        "exact_stage_tp": 0,
+        "exact_stage_fp": 1,
+        "exact_stage_fn": 1,
+        "healthy_mistaken_actions": 0
+      },
+      {
+        "id": "c91f3755b0e3b1edf17f55fc",
+        "image": "/home/f3mt0/hacktheandes-cacao-training/data/external-v2/images/test/c91f3755b0e3b1edf17f55fc.jpg",
+        "predictions": 1,
+        "exact_stage_tp": 0,
+        "exact_stage_fp": 1,
+        "exact_stage_fn": 4,
+        "healthy_mistaken_actions": 0
+      },
+      {
+        "id": "277e07204e682be548ad4273",
+        "image": "/home/f3mt0/hacktheandes-cacao-training/data/external-v2/images/test/277e07204e682be548ad4273.jpg",
+        "predictions": 2,
+        "exact_stage_tp": 0,
+        "exact_stage_fp": 2,
+        "exact_stage_fn": 5,
+        "healthy_mistaken_actions": 0
+      },
+      {
+        "id": "0e3281a717e424c69cac8ebd",
+        "image": "/home/f3mt0/hacktheandes-cacao-training/data/external-v2/images/test/0e3281a717e424c69cac8ebd.jpg",
+        "predictions": 2,
+        "exact_stage_tp": 1,
+        "exact_stage_fp": 1,
+        "exact_stage_fn": 6,
+        "healthy_mistaken_actions": 0
+      },
+      {
+        "id": "5e9ac9856edde11177746a0f",
+        "image": "/home/f3mt0/hacktheandes-cacao-training/data/external-v2/images/test/5e9ac9856edde11177746a0f.jpg",
+        "predictions": 1,
+        "exact_stage_tp": 0,
+        "exact_stage_fp": 1,
+        "exact_stage_fn": 5,
+        "healthy_mistaken_actions": 0
+      },
+      {
+        "id": "0c373d9972f4daf4c02d7cc4",
+        "image": "/home/f3mt0/hacktheandes-cacao-training/data/external-v2/images/test/0c373d9972f4daf4c02d7cc4.jpg",
+        "predictions": 0,
+        "exact_stage_tp": 0,
+        "exact_stage_fp": 0,
+        "exact_stage_fn": 7,
+        "healthy_mistaken_actions": 0
+      },
+      {
+        "id": "673e016640707f9dabe0b040",
+        "image": "/home/f3mt0/hacktheandes-cacao-training/data/external-v2/images/test/673e016640707f9dabe0b040.jpg",
+        "predictions": 3,
+        "exact_stage_tp": 0,
+        "exact_stage_fp": 3,
+        "exact_stage_fn": 5,
+        "healthy_mistaken_actions": 1
+      },
+      {
+        "id": "240ba2f27306a8192742c103",
+        "image": "/home/f3mt0/hacktheandes-cacao-training/data/external-v2/images/test/240ba2f27306a8192742c103.jpg",
+        "predictions": 1,
+        "exact_stage_tp": 0,
+        "exact_stage_fp": 1,
+        "exact_stage_fn": 7,
+        "healthy_mistaken_actions": 0
+      },
+      {
+        "id": "e7ba27b81f33ae45e7db05ba",
+        "image": "/home/f3mt0/hacktheandes-cacao-training/data/external-v2/images/test/e7ba27b81f33ae45e7db05ba.jpg",
+        "predictions": 2,
+        "exact_stage_tp": 1,
+        "exact_stage_fp": 1,
+        "exact_stage_fn": 8,
+        "healthy_mistaken_actions": 0
+      },
+      {
+        "id": "d9575b07779cb85519af1d0c",
+        "image": "/home/f3mt0/hacktheandes-cacao-training/data/external-v2/images/test/d9575b07779cb85519af1d0c.jpg",
+        "predictions": 2,
+        "exact_stage_tp": 0,
+        "exact_stage_fp": 2,
+        "exact_stage_fn": 2,
+        "healthy_mistaken_actions": 0
+      },
+      {
+        "id": "88ba90b16a690e2419dd587a",
+        "image": "/home/f3mt0/hacktheandes-cacao-training/data/external-v2/images/test/88ba90b16a690e2419dd587a.jpg",
+        "predictions": 1,
+        "exact_stage_tp": 0,
+        "exact_stage_fp": 1,
+        "exact_stage_fn": 2,
+        "healthy_mistaken_actions": 0
+      },
+      {
+        "id": "7024311e748f68962ccf5c64",
+        "image": "/home/f3mt0/hacktheandes-cacao-training/data/external-v2/images/test/7024311e748f68962ccf5c64.jpg",
+        "predictions": 4,
+        "exact_stage_tp": 2,
+        "exact_stage_fp": 2,
+        "exact_stage_fn": 5,
+        "healthy_mistaken_actions": 0
+      },
+      {
+        "id": "cbfc9f281899642700dab7d6",
+        "image": "/home/f3mt0/hacktheandes-cacao-training/data/external-v2/images/test/cbfc9f281899642700dab7d6.jpg",
+        "predictions": 1,
+        "exact_stage_tp": 0,
+        "exact_stage_fp": 1,
+        "exact_stage_fn": 3,
+        "healthy_mistaken_actions": 0
+      },
+      {
+        "id": "26fd54602391319ac9f8602a",
+        "image": "/home/f3mt0/hacktheandes-cacao-training/data/external-v2/images/test/26fd54602391319ac9f8602a.jpg",
+        "predictions": 1,
+        "exact_stage_tp": 0,
+        "exact_stage_fp": 1,
+        "exact_stage_fn": 2,
+        "healthy_mistaken_actions": 0
+      },
+      {
+        "id": "4c1ce06bf2712989bb66ad02",
+        "image": "/home/f3mt0/hacktheandes-cacao-training/data/external-v2/images/test/4c1ce06bf2712989bb66ad02.jpg",
+        "predictions": 1,
+        "exact_stage_tp": 0,
+        "exact_stage_fp": 1,
+        "exact_stage_fn": 6,
+        "healthy_mistaken_actions": 0
+      },
+      {
+        "id": "bfacac38e4c86425f9565654",
+        "image": "/home/f3mt0/hacktheandes-cacao-training/data/external-v2/images/test/bfacac38e4c86425f9565654.jpg",
+        "predictions": 2,
+        "exact_stage_tp": 0,
+        "exact_stage_fp": 2,
+        "exact_stage_fn": 2,
+        "healthy_mistaken_actions": 0
+      },
+      {
+        "id": "675c8cf212cc490ab183955b",
+        "image": "/home/f3mt0/hacktheandes-cacao-training/data/external-v2/images/test/675c8cf212cc490ab183955b.jpg",
+        "predictions": 2,
+        "exact_stage_tp": 1,
+        "exact_stage_fp": 1,
+        "exact_stage_fn": 1,
+        "healthy_mistaken_actions": 1
+      },
+      {
+        "id": "f2e1db453ceead76985395dd",
+        "image": "/home/f3mt0/hacktheandes-cacao-training/data/external-v2/images/test/f2e1db453ceead76985395dd.jpg",
+        "predictions": 2,
+        "exact_stage_tp": 0,
+        "exact_stage_fp": 2,
+        "exact_stage_fn": 2,
+        "healthy_mistaken_actions": 0
+      },
+      {
+        "id": "e3fd2c7e160986af2dd4e99e",
+        "image": "/home/f3mt0/hacktheandes-cacao-training/data/external-v2/images/test/e3fd2c7e160986af2dd4e99e.jpg",
+        "predictions": 2,
+        "exact_stage_tp": 1,
+        "exact_stage_fp": 1,
+        "exact_stage_fn": 2,
+        "healthy_mistaken_actions": 0
+      },
+      {
+        "id": "b410389f73cfd750615a161e",
+        "image": "/home/f3mt0/hacktheandes-cacao-training/data/external-v2/images/test/b410389f73cfd750615a161e.jpg",
+        "predictions": 1,
+        "exact_stage_tp": 0,
+        "exact_stage_fp": 1,
+        "exact_stage_fn": 2,
+        "healthy_mistaken_actions": 0
+      },
+      {
+        "id": "4942d44629cc6febf40d1fce",
+        "image": "/home/f3mt0/hacktheandes-cacao-training/data/external-v2/images/test/4942d44629cc6febf40d1fce.jpg",
+        "predictions": 1,
+        "exact_stage_tp": 0,
+        "exact_stage_fp": 1,
+        "exact_stage_fn": 2,
+        "healthy_mistaken_actions": 0
+      },
+      {
+        "id": "b9ffb170feff135feaf0a656",
+        "image": "/home/f3mt0/hacktheandes-cacao-training/data/external-v2/images/test/b9ffb170feff135feaf0a656.jpg",
+        "predictions": 1,
+        "exact_stage_tp": 0,
+        "exact_stage_fp": 1,
+        "exact_stage_fn": 2,
+        "healthy_mistaken_actions": 0
+      },
+      {
+        "id": "bbb363e86ab004fcc5495b72",
+        "image": "/home/f3mt0/hacktheandes-cacao-training/data/external-v2/images/test/bbb363e86ab004fcc5495b72.jpg",
+        "predictions": 1,
+        "exact_stage_tp": 0,
+        "exact_stage_fp": 1,
+        "exact_stage_fn": 2,
+        "healthy_mistaken_actions": 0
+      },
+      {
+        "id": "f5fb40f3b260ddc284cb4935",
+        "image": "/home/f3mt0/hacktheandes-cacao-training/data/external-v2/images/test/f5fb40f3b260ddc284cb4935.jpg",
+        "predictions": 1,
+        "exact_stage_tp": 0,
+        "exact_stage_fp": 1,
+        "exact_stage_fn": 2,
+        "healthy_mistaken_actions": 0
+      },
+      {
+        "id": "7eb49d8e229f1a480af0b342",
+        "image": "/home/f3mt0/hacktheandes-cacao-training/data/external-v2/images/test/7eb49d8e229f1a480af0b342.jpg",
+        "predictions": 1,
+        "exact_stage_tp": 0,
+        "exact_stage_fp": 1,
+        "exact_stage_fn": 1,
+        "healthy_mistaken_actions": 0
+      },
+      {
+        "id": "2d4c7b09a8f10f962e312a7f",
+        "image": "/home/f3mt0/hacktheandes-cacao-training/data/external-v2/images/test/2d4c7b09a8f10f962e312a7f.jpg",
+        "predictions": 1,
+        "exact_stage_tp": 0,
+        "exact_stage_fp": 1,
+        "exact_stage_fn": 1,
+        "healthy_mistaken_actions": 0
+      },
+      {
+        "id": "a46376aa28f8f790b7820ded",
+        "image": "/home/f3mt0/hacktheandes-cacao-training/data/external-v2/images/test/a46376aa28f8f790b7820ded.jpg",
+        "predictions": 1,
+        "exact_stage_tp": 0,
+        "exact_stage_fp": 1,
+        "exact_stage_fn": 4,
+        "healthy_mistaken_actions": 0
+      },
+      {
+        "id": "9e263e6e7c8ab0875f0eb0a8",
+        "image": "/home/f3mt0/hacktheandes-cacao-training/data/external-v2/images/test/9e263e6e7c8ab0875f0eb0a8.jpg",
+        "predictions": 3,
+        "exact_stage_tp": 0,
+        "exact_stage_fp": 3,
+        "exact_stage_fn": 7,
+        "healthy_mistaken_actions": 0
+      },
+      {
+        "id": "fa725a51b1575381042b1e91",
+        "image": "/home/f3mt0/hacktheandes-cacao-training/data/external-v2/images/test/fa725a51b1575381042b1e91.jpg",
+        "predictions": 2,
+        "exact_stage_tp": 1,
+        "exact_stage_fp": 1,
+        "exact_stage_fn": 2,
+        "healthy_mistaken_actions": 0
+      },
+      {
+        "id": "59b34355d3f78cf1cb2820dd",
+        "image": "/home/f3mt0/hacktheandes-cacao-training/data/external-v2/images/test/59b34355d3f78cf1cb2820dd.jpg",
+        "predictions": 1,
+        "exact_stage_tp": 0,
+        "exact_stage_fp": 1,
+        "exact_stage_fn": 4,
+        "healthy_mistaken_actions": 0
+      },
+      {
+        "id": "a7042ad14ae51fdb5a0853c8",
+        "image": "/home/f3mt0/hacktheandes-cacao-training/data/external-v2/images/test/a7042ad14ae51fdb5a0853c8.jpg",
+        "predictions": 3,
+        "exact_stage_tp": 2,
+        "exact_stage_fp": 1,
+        "exact_stage_fn": 2,
+        "healthy_mistaken_actions": 0
+      },
+      {
+        "id": "e7ddb34d329f675280964cc9",
+        "image": "/home/f3mt0/hacktheandes-cacao-training/data/external-v2/images/test/e7ddb34d329f675280964cc9.jpg",
+        "predictions": 1,
+        "exact_stage_tp": 0,
+        "exact_stage_fp": 1,
+        "exact_stage_fn": 7,
+        "healthy_mistaken_actions": 0
+      },
+      {
+        "id": "5bfdabe0f4d723c7a9637179",
+        "image": "/home/f3mt0/hacktheandes-cacao-training/data/external-v2/images/test/5bfdabe0f4d723c7a9637179.jpg",
+        "predictions": 1,
+        "exact_stage_tp": 0,
+        "exact_stage_fp": 1,
+        "exact_stage_fn": 2,
+        "healthy_mistaken_actions": 0
+      },
+      {
+        "id": "b79d26ee2b46d6fed552e585",
+        "image": "/home/f3mt0/hacktheandes-cacao-training/data/external-v2/images/test/b79d26ee2b46d6fed552e585.jpg",
+        "predictions": 1,
+        "exact_stage_tp": 0,
+        "exact_stage_fp": 1,
+        "exact_stage_fn": 6,
+        "healthy_mistaken_actions": 0
+      },
+      {
+        "id": "e5870778aa3f6b3de925a6ca",
+        "image": "/home/f3mt0/hacktheandes-cacao-training/data/external-v2/images/test/e5870778aa3f6b3de925a6ca.jpg",
+        "predictions": 2,
+        "exact_stage_tp": 1,
+        "exact_stage_fp": 1,
+        "exact_stage_fn": 14,
+        "healthy_mistaken_actions": 0
+      },
+      {
+        "id": "8a2b7ea3c31326fc9752b6b0",
+        "image": "/home/f3mt0/hacktheandes-cacao-training/data/external-v2/images/test/8a2b7ea3c31326fc9752b6b0.jpg",
+        "predictions": 1,
+        "exact_stage_tp": 0,
+        "exact_stage_fp": 1,
+        "exact_stage_fn": 4,
+        "healthy_mistaken_actions": 0
+      },
+      {
+        "id": "c82267c26dca43b05e7fc7ed",
+        "image": "/home/f3mt0/hacktheandes-cacao-training/data/external-v2/images/test/c82267c26dca43b05e7fc7ed.jpg",
+        "predictions": 3,
+        "exact_stage_tp": 1,
+        "exact_stage_fp": 2,
+        "exact_stage_fn": 10,
+        "healthy_mistaken_actions": 1
+      },
+      {
+        "id": "507d000842f35d1466c27640",
+        "image": "/home/f3mt0/hacktheandes-cacao-training/data/external-v2/images/test/507d000842f35d1466c27640.jpg",
+        "predictions": 1,
+        "exact_stage_tp": 0,
+        "exact_stage_fp": 1,
+        "exact_stage_fn": 5,
+        "healthy_mistaken_actions": 0
+      },
+      {
+        "id": "bcc14fabb9b2a7a3c6465afe",
+        "image": "/home/f3mt0/hacktheandes-cacao-training/data/external-v2/images/test/bcc14fabb9b2a7a3c6465afe.jpg",
+        "predictions": 2,
+        "exact_stage_tp": 0,
+        "exact_stage_fp": 2,
+        "exact_stage_fn": 4,
+        "healthy_mistaken_actions": 0
+      },
+      {
+        "id": "115405ff7cc26f9f34f363bb",
+        "image": "/home/f3mt0/hacktheandes-cacao-training/data/external-v2/images/test/115405ff7cc26f9f34f363bb.jpg",
+        "predictions": 4,
+        "exact_stage_tp": 0,
+        "exact_stage_fp": 4,
+        "exact_stage_fn": 7,
+        "healthy_mistaken_actions": 0
+      },
+      {
+        "id": "bf6c61551f361cf4bf0740e2",
+        "image": "/home/f3mt0/hacktheandes-cacao-training/data/external-v2/images/test/bf6c61551f361cf4bf0740e2.jpg",
+        "predictions": 1,
+        "exact_stage_tp": 0,
+        "exact_stage_fp": 1,
+        "exact_stage_fn": 5,
+        "healthy_mistaken_actions": 0
+      },
+      {
+        "id": "b5272abbaf8929bcba7d2eb1",
+        "image": "/home/f3mt0/hacktheandes-cacao-training/data/external-v2/images/test/b5272abbaf8929bcba7d2eb1.jpg",
+        "predictions": 0,
+        "exact_stage_tp": 0,
+        "exact_stage_fp": 0,
+        "exact_stage_fn": 6,
+        "healthy_mistaken_actions": 0
+      },
+      {
+        "id": "797efbf0e2c82a51997e7a5f",
+        "image": "/home/f3mt0/hacktheandes-cacao-training/data/external-v2/images/test/797efbf0e2c82a51997e7a5f.jpg",
+        "predictions": 3,
+        "exact_stage_tp": 1,
+        "exact_stage_fp": 2,
+        "exact_stage_fn": 6,
+        "healthy_mistaken_actions": 0
+      },
+      {
+        "id": "ec3995a1e7e1fcf2776e46c3",
+        "image": "/home/f3mt0/hacktheandes-cacao-training/data/external-v2/images/test/ec3995a1e7e1fcf2776e46c3.jpg",
+        "predictions": 2,
+        "exact_stage_tp": 2,
+        "exact_stage_fp": 0,
+        "exact_stage_fn": 6,
+        "healthy_mistaken_actions": 0
+      },
+      {
+        "id": "fb0b6597bfa77a731e4ce137",
+        "image": "/home/f3mt0/hacktheandes-cacao-training/data/external-v2/images/test/fb0b6597bfa77a731e4ce137.jpg",
+        "predictions": 1,
+        "exact_stage_tp": 0,
+        "exact_stage_fp": 1,
+        "exact_stage_fn": 10,
+        "healthy_mistaken_actions": 0
+      },
+      {
+        "id": "1225d2897a373f78d113c1c7",
+        "image": "/home/f3mt0/hacktheandes-cacao-training/data/external-v2/images/test/1225d2897a373f78d113c1c7.jpg",
+        "predictions": 1,
+        "exact_stage_tp": 0,
+        "exact_stage_fp": 1,
+        "exact_stage_fn": 5,
+        "healthy_mistaken_actions": 0
+      },
+      {
+        "id": "f950cd0312c318bcb6de948f",
+        "image": "/home/f3mt0/hacktheandes-cacao-training/data/external-v2/images/test/f950cd0312c318bcb6de948f.jpg",
+        "predictions": 1,
+        "exact_stage_tp": 0,
+        "exact_stage_fp": 1,
+        "exact_stage_fn": 3,
+        "healthy_mistaken_actions": 0
+      },
+      {
+        "id": "84a892a280d34688e309829c",
+        "image": "/home/f3mt0/hacktheandes-cacao-training/data/external-v2/images/test/84a892a280d34688e309829c.jpg",
+        "predictions": 2,
+        "exact_stage_tp": 0,
+        "exact_stage_fp": 2,
+        "exact_stage_fn": 2,
+        "healthy_mistaken_actions": 0
+      },
+      {
+        "id": "8162018faf71bec4bf2e1b5f",
+        "image": "/home/f3mt0/hacktheandes-cacao-training/data/external-v2/images/test/8162018faf71bec4bf2e1b5f.jpg",
+        "predictions": 1,
+        "exact_stage_tp": 0,
+        "exact_stage_fp": 1,
+        "exact_stage_fn": 2,
+        "healthy_mistaken_actions": 0
+      },
+      {
+        "id": "5aba75e1515db4484d8eceae",
+        "image": "/home/f3mt0/hacktheandes-cacao-training/data/external-v2/images/test/5aba75e1515db4484d8eceae.jpg",
+        "predictions": 1,
+        "exact_stage_tp": 0,
+        "exact_stage_fp": 1,
+        "exact_stage_fn": 8,
+        "healthy_mistaken_actions": 0
+      },
+      {
+        "id": "1135886cd4aa87a1e1a6a686",
+        "image": "/home/f3mt0/hacktheandes-cacao-training/data/external-v2/images/test/1135886cd4aa87a1e1a6a686.jpg",
+        "predictions": 1,
+        "exact_stage_tp": 0,
+        "exact_stage_fp": 1,
+        "exact_stage_fn": 2,
+        "healthy_mistaken_actions": 0
+      },
+      {
+        "id": "a79c49fe675cd1af5aa75e5a",
+        "image": "/home/f3mt0/hacktheandes-cacao-training/data/external-v2/images/test/a79c49fe675cd1af5aa75e5a.jpg",
+        "predictions": 1,
+        "exact_stage_tp": 1,
+        "exact_stage_fp": 0,
+        "exact_stage_fn": 4,
+        "healthy_mistaken_actions": 0
+      },
+      {
+        "id": "b951588d60b46fc14fd42aba",
+        "image": "/home/f3mt0/hacktheandes-cacao-training/data/external-v2/images/test/b951588d60b46fc14fd42aba.jpg",
+        "predictions": 1,
+        "exact_stage_tp": 1,
+        "exact_stage_fp": 0,
+        "exact_stage_fn": 0,
+        "healthy_mistaken_actions": 0
+      },
+      {
+        "id": "a7ce166b5af220f830c0ba53",
+        "image": "/home/f3mt0/hacktheandes-cacao-training/data/external-v2/images/test/a7ce166b5af220f830c0ba53.jpg",
+        "predictions": 1,
+        "exact_stage_tp": 1,
+        "exact_stage_fp": 0,
+        "exact_stage_fn": 0,
+        "healthy_mistaken_actions": 0
+      },
+      {
+        "id": "a9b3cc2a54b82be6940fca53",
+        "image": "/home/f3mt0/hacktheandes-cacao-training/data/external-v2/images/test/a9b3cc2a54b82be6940fca53.jpg",
+        "predictions": 1,
+        "exact_stage_tp": 1,
+        "exact_stage_fp": 0,
+        "exact_stage_fn": 0,
+        "healthy_mistaken_actions": 0
+      },
+      {
+        "id": "b0c53f4cafc5a4a6e854059c",
+        "image": "/home/f3mt0/hacktheandes-cacao-training/data/external-v2/images/test/b0c53f4cafc5a4a6e854059c.jpg",
+        "predictions": 1,
+        "exact_stage_tp": 1,
+        "exact_stage_fp": 0,
+        "exact_stage_fn": 0,
+        "healthy_mistaken_actions": 0
+      },
+      {
+        "id": "ccac20e9b9f38058f0047c77",
+        "image": "/home/f3mt0/hacktheandes-cacao-training/data/external-v2/images/test/ccac20e9b9f38058f0047c77.jpg",
+        "predictions": 1,
+        "exact_stage_tp": 0,
+        "exact_stage_fp": 1,
+        "exact_stage_fn": 8,
+        "healthy_mistaken_actions": 0
+      },
+      {
+        "id": "d9ab2acaae8e33bd4c492b21",
+        "image": "/home/f3mt0/hacktheandes-cacao-training/data/external-v2/images/test/d9ab2acaae8e33bd4c492b21.jpg",
+        "predictions": 1,
+        "exact_stage_tp": 0,
+        "exact_stage_fp": 1,
+        "exact_stage_fn": 8,
+        "healthy_mistaken_actions": 0
+      },
+      {
+        "id": "cfb06a46a75334901f3099d3",
+        "image": "/home/f3mt0/hacktheandes-cacao-training/data/external-v2/images/test/cfb06a46a75334901f3099d3.jpg",
+        "predictions": 1,
+        "exact_stage_tp": 1,
+        "exact_stage_fp": 0,
+        "exact_stage_fn": 7,
+        "healthy_mistaken_actions": 0
+      },
+      {
+        "id": "47445da0c0a150bd3247e554",
+        "image": "/home/f3mt0/hacktheandes-cacao-training/data/external-v2/images/test/47445da0c0a150bd3247e554.jpg",
+        "predictions": 2,
+        "exact_stage_tp": 1,
+        "exact_stage_fp": 1,
+        "exact_stage_fn": 0,
+        "healthy_mistaken_actions": 0
+      },
+      {
+        "id": "41964c1892184db130716183",
+        "image": "/home/f3mt0/hacktheandes-cacao-training/data/external-v2/images/test/41964c1892184db130716183.jpg",
+        "predictions": 1,
+        "exact_stage_tp": 1,
+        "exact_stage_fp": 0,
+        "exact_stage_fn": 2,
+        "healthy_mistaken_actions": 0
+      },
+      {
+        "id": "af109964116a09535d2924db",
+        "image": "/home/f3mt0/hacktheandes-cacao-training/data/external-v2/images/test/af109964116a09535d2924db.jpg",
+        "predictions": 1,
+        "exact_stage_tp": 1,
+        "exact_stage_fp": 0,
+        "exact_stage_fn": 2,
+        "healthy_mistaken_actions": 0
+      },
+      {
+        "id": "cdde09fe154640317408b42b",
+        "image": "/home/f3mt0/hacktheandes-cacao-training/data/external-v2/images/test/cdde09fe154640317408b42b.jpg",
+        "predictions": 1,
+        "exact_stage_tp": 1,
+        "exact_stage_fp": 0,
+        "exact_stage_fn": 4,
+        "healthy_mistaken_actions": 0
+      },
+      {
+        "id": "fa0727aa77d408627fc22e4d",
+        "image": "/home/f3mt0/hacktheandes-cacao-training/data/external-v2/images/test/fa0727aa77d408627fc22e4d.jpg",
+        "predictions": 0,
+        "exact_stage_tp": 0,
+        "exact_stage_fp": 0,
+        "exact_stage_fn": 1,
+        "healthy_mistaken_actions": 0
+      },
+      {
+        "id": "ae3d3c8785eaf05346ba6674",
+        "image": "/home/f3mt0/hacktheandes-cacao-training/data/external-v2/images/test/ae3d3c8785eaf05346ba6674.jpg",
+        "predictions": 1,
+        "exact_stage_tp": 0,
+        "exact_stage_fp": 1,
+        "exact_stage_fn": 6,
+        "healthy_mistaken_actions": 0
+      },
+      {
+        "id": "c0dadcae65b4cef4c8623df4",
+        "image": "/home/f3mt0/hacktheandes-cacao-training/data/external-v2/images/test/c0dadcae65b4cef4c8623df4.jpg",
+        "predictions": 1,
+        "exact_stage_tp": 1,
+        "exact_stage_fp": 0,
+        "exact_stage_fn": 0,
+        "healthy_mistaken_actions": 0
+      },
+      {
+        "id": "32deece7b8accca56968fb68",
+        "image": "/home/f3mt0/hacktheandes-cacao-training/data/external-v2/images/test/32deece7b8accca56968fb68.jpg",
+        "predictions": 1,
+        "exact_stage_tp": 1,
+        "exact_stage_fp": 0,
+        "exact_stage_fn": 8,
+        "healthy_mistaken_actions": 0
+      },
+      {
+        "id": "fcae3ae5aecbaa65f27ef825",
+        "image": "/home/f3mt0/hacktheandes-cacao-training/data/external-v2/images/test/fcae3ae5aecbaa65f27ef825.jpg",
+        "predictions": 2,
+        "exact_stage_tp": 2,
+        "exact_stage_fp": 0,
+        "exact_stage_fn": 0,
+        "healthy_mistaken_actions": 0
+      },
+      {
+        "id": "452430d87fca134a59911dcd",
+        "image": "/home/f3mt0/hacktheandes-cacao-training/data/external-v2/images/test/452430d87fca134a59911dcd.jpg",
+        "predictions": 2,
+        "exact_stage_tp": 1,
+        "exact_stage_fp": 1,
+        "exact_stage_fn": 4,
+        "healthy_mistaken_actions": 0
+      },
+      {
+        "id": "1a9114ae98aae25f9d74b250",
+        "image": "/home/f3mt0/hacktheandes-cacao-training/data/external-v2/images/test/1a9114ae98aae25f9d74b250.jpg",
+        "predictions": 1,
+        "exact_stage_tp": 1,
+        "exact_stage_fp": 0,
+        "exact_stage_fn": 4,
+        "healthy_mistaken_actions": 0
+      },
+      {
+        "id": "74f89b09377c403043520a72",
+        "image": "/home/f3mt0/hacktheandes-cacao-training/data/external-v2/images/test/74f89b09377c403043520a72.jpg",
+        "predictions": 1,
+        "exact_stage_tp": 1,
+        "exact_stage_fp": 0,
+        "exact_stage_fn": 0,
+        "healthy_mistaken_actions": 0
+      },
+      {
+        "id": "f237ad2a6238140dfc9a0a0d",
+        "image": "/home/f3mt0/hacktheandes-cacao-training/data/external-v2/images/test/f237ad2a6238140dfc9a0a0d.jpg",
+        "predictions": 1,
+        "exact_stage_tp": 1,
+        "exact_stage_fp": 0,
+        "exact_stage_fn": 0,
+        "healthy_mistaken_actions": 0
+      },
+      {
+        "id": "71e4cd1fd3d26d44fc65cd50",
+        "image": "/home/f3mt0/hacktheandes-cacao-training/data/external-v2/images/test/71e4cd1fd3d26d44fc65cd50.jpg",
+        "predictions": 2,
+        "exact_stage_tp": 1,
+        "exact_stage_fp": 1,
+        "exact_stage_fn": 0,
+        "healthy_mistaken_actions": 0
+      },
+      {
+        "id": "61bf71c171b24972bb63b335",
+        "image": "/home/f3mt0/hacktheandes-cacao-training/data/external-v2/images/test/61bf71c171b24972bb63b335.jpg",
+        "predictions": 1,
+        "exact_stage_tp": 1,
+        "exact_stage_fp": 0,
+        "exact_stage_fn": 0,
+        "healthy_mistaken_actions": 0
+      },
+      {
+        "id": "10d4b3ae49e61bdaa9dbe584",
+        "image": "/home/f3mt0/hacktheandes-cacao-training/data/external-v2/images/test/10d4b3ae49e61bdaa9dbe584.jpg",
+        "predictions": 1,
+        "exact_stage_tp": 1,
+        "exact_stage_fp": 0,
+        "exact_stage_fn": 1,
+        "healthy_mistaken_actions": 0
+      },
+      {
+        "id": "a2d5ae277aab971dafd906ad",
+        "image": "/home/f3mt0/hacktheandes-cacao-training/data/external-v2/images/test/a2d5ae277aab971dafd906ad.jpg",
+        "predictions": 1,
+        "exact_stage_tp": 0,
+        "exact_stage_fp": 1,
+        "exact_stage_fn": 8,
+        "healthy_mistaken_actions": 0
+      },
+      {
+        "id": "e76bf269b97e3d2a4706ff50",
+        "image": "/home/f3mt0/hacktheandes-cacao-training/data/external-v2/images/test/e76bf269b97e3d2a4706ff50.jpg",
+        "predictions": 1,
+        "exact_stage_tp": 0,
+        "exact_stage_fp": 1,
+        "exact_stage_fn": 2,
+        "healthy_mistaken_actions": 0
+      },
+      {
+        "id": "5e998d7371000ab3e26bc7d9",
+        "image": "/home/f3mt0/hacktheandes-cacao-training/data/external-v2/images/test/5e998d7371000ab3e26bc7d9.jpg",
+        "predictions": 1,
+        "exact_stage_tp": 0,
+        "exact_stage_fp": 1,
+        "exact_stage_fn": 5,
+        "healthy_mistaken_actions": 0
+      },
+      {
+        "id": "e60b7a6455e67bdcfe63ed15",
+        "image": "/home/f3mt0/hacktheandes-cacao-training/data/external-v2/images/test/e60b7a6455e67bdcfe63ed15.jpg",
+        "predictions": 1,
+        "exact_stage_tp": 1,
+        "exact_stage_fp": 0,
+        "exact_stage_fn": 0,
+        "healthy_mistaken_actions": 0
+      },
+      {
+        "id": "692c7d746954020dfa379515",
+        "image": "/home/f3mt0/hacktheandes-cacao-training/data/external-v2/images/test/692c7d746954020dfa379515.jpg",
+        "predictions": 1,
+        "exact_stage_tp": 1,
+        "exact_stage_fp": 0,
+        "exact_stage_fn": 5,
+        "healthy_mistaken_actions": 0
+      },
+      {
+        "id": "10d890dd9a6b733cc910a0f2",
+        "image": "/home/f3mt0/hacktheandes-cacao-training/data/external-v2/images/test/10d890dd9a6b733cc910a0f2.jpg",
+        "predictions": 1,
+        "exact_stage_tp": 1,
+        "exact_stage_fp": 0,
+        "exact_stage_fn": 0,
+        "healthy_mistaken_actions": 0
+      },
+      {
+        "id": "5dfd203a64534a17da4fd6a3",
+        "image": "/home/f3mt0/hacktheandes-cacao-training/data/external-v2/images/test/5dfd203a64534a17da4fd6a3.jpg",
+        "predictions": 2,
+        "exact_stage_tp": 1,
+        "exact_stage_fp": 1,
+        "exact_stage_fn": 4,
+        "healthy_mistaken_actions": 0
+      },
+      {
+        "id": "57283610262ff356db6bbf19",
+        "image": "/home/f3mt0/hacktheandes-cacao-training/data/external-v2/images/test/57283610262ff356db6bbf19.jpg",
+        "predictions": 1,
+        "exact_stage_tp": 1,
+        "exact_stage_fp": 0,
+        "exact_stage_fn": 6,
+        "healthy_mistaken_actions": 0
+      },
+      {
+        "id": "53a57138073059a78e6df58a",
+        "image": "/home/f3mt0/hacktheandes-cacao-training/data/external-v2/images/test/53a57138073059a78e6df58a.jpg",
+        "predictions": 1,
+        "exact_stage_tp": 1,
+        "exact_stage_fp": 0,
+        "exact_stage_fn": 0,
+        "healthy_mistaken_actions": 0
+      },
+      {
+        "id": "d06a301019ac77c44efe3361",
+        "image": "/home/f3mt0/hacktheandes-cacao-training/data/external-v2/images/test/d06a301019ac77c44efe3361.jpg",
+        "predictions": 2,
+        "exact_stage_tp": 1,
+        "exact_stage_fp": 1,
+        "exact_stage_fn": 1,
+        "healthy_mistaken_actions": 0
+      },
+      {
+        "id": "7a908e275bd04d2e89f26526",
+        "image": "/home/f3mt0/hacktheandes-cacao-training/data/external-v2/images/test/7a908e275bd04d2e89f26526.jpg",
+        "predictions": 1,
+        "exact_stage_tp": 1,
+        "exact_stage_fp": 0,
+        "exact_stage_fn": 1,
+        "healthy_mistaken_actions": 0
+      },
+      {
+        "id": "34646c5a32eb3e41253aedb3",
+        "image": "/home/f3mt0/hacktheandes-cacao-training/data/external-v2/images/test/34646c5a32eb3e41253aedb3.jpg",
+        "predictions": 1,
+        "exact_stage_tp": 1,
+        "exact_stage_fp": 0,
+        "exact_stage_fn": 10,
+        "healthy_mistaken_actions": 0
+      },
+      {
+        "id": "d2beb1807b97304cf75f1622",
+        "image": "/home/f3mt0/hacktheandes-cacao-training/data/external-v2/images/test/d2beb1807b97304cf75f1622.jpg",
+        "predictions": 1,
+        "exact_stage_tp": 1,
+        "exact_stage_fp": 0,
+        "exact_stage_fn": 6,
+        "healthy_mistaken_actions": 0
+      },
+      {
+        "id": "8d9c32a2ea4568fc91a43444",
+        "image": "/home/f3mt0/hacktheandes-cacao-training/data/external-v2/images/test/8d9c32a2ea4568fc91a43444.jpg",
+        "predictions": 2,
+        "exact_stage_tp": 1,
+        "exact_stage_fp": 1,
+        "exact_stage_fn": 2,
+        "healthy_mistaken_actions": 1
+      },
+      {
+        "id": "56ec9b2f2fb8e032a0b6d522",
+        "image": "/home/f3mt0/hacktheandes-cacao-training/data/external-v2/images/test/56ec9b2f2fb8e032a0b6d522.jpg",
+        "predictions": 0,
+        "exact_stage_tp": 0,
+        "exact_stage_fp": 0,
+        "exact_stage_fn": 3,
+        "healthy_mistaken_actions": 0
+      },
+      {
+        "id": "00ee68fc6c62978ac4dfc3a6",
+        "image": "/home/f3mt0/hacktheandes-cacao-training/data/external-v2/images/test/00ee68fc6c62978ac4dfc3a6.jpg",
+        "predictions": 1,
+        "exact_stage_tp": 1,
+        "exact_stage_fp": 0,
+        "exact_stage_fn": 5,
+        "healthy_mistaken_actions": 0
+      },
+      {
+        "id": "c82c6f48de50da0dd3578c69",
+        "image": "/home/f3mt0/hacktheandes-cacao-training/data/external-v2/images/test/c82c6f48de50da0dd3578c69.jpg",
+        "predictions": 1,
+        "exact_stage_tp": 1,
+        "exact_stage_fp": 0,
+        "exact_stage_fn": 0,
+        "healthy_mistaken_actions": 0
+      },
+      {
+        "id": "c1c637c2daa12208454cfe49",
+        "image": "/home/f3mt0/hacktheandes-cacao-training/data/external-v2/images/test/c1c637c2daa12208454cfe49.jpg",
+        "predictions": 2,
+        "exact_stage_tp": 1,
+        "exact_stage_fp": 1,
+        "exact_stage_fn": 6,
+        "healthy_mistaken_actions": 0
+      },
+      {
+        "id": "5f03cc6f73efc474cb037979",
+        "image": "/home/f3mt0/hacktheandes-cacao-training/data/external-v2/images/test/5f03cc6f73efc474cb037979.jpg",
+        "predictions": 3,
+        "exact_stage_tp": 2,
+        "exact_stage_fp": 1,
+        "exact_stage_fn": 6,
+        "healthy_mistaken_actions": 1
+      },
+      {
+        "id": "e6e1cc0df568a1e1cc2ec6da",
+        "image": "/home/f3mt0/hacktheandes-cacao-training/data/external-v2/images/test/e6e1cc0df568a1e1cc2ec6da.jpg",
+        "predictions": 1,
+        "exact_stage_tp": 1,
+        "exact_stage_fp": 0,
+        "exact_stage_fn": 0,
+        "healthy_mistaken_actions": 0
+      },
+      {
+        "id": "01262d7f38e258f11d26d12f",
+        "image": "/home/f3mt0/hacktheandes-cacao-training/data/external-v2/images/test/01262d7f38e258f11d26d12f.jpg",
+        "predictions": 1,
+        "exact_stage_tp": 1,
+        "exact_stage_fp": 0,
+        "exact_stage_fn": 0,
+        "healthy_mistaken_actions": 0
+      },
+      {
+        "id": "cee055e39c8bacf0757ecd1c",
+        "image": "/home/f3mt0/hacktheandes-cacao-training/data/external-v2/images/test/cee055e39c8bacf0757ecd1c.jpg",
+        "predictions": 1,
+        "exact_stage_tp": 1,
+        "exact_stage_fp": 0,
+        "exact_stage_fn": 2,
+        "healthy_mistaken_actions": 0
+      },
+      {
+        "id": "0ab36d5d0be04d5a3c96db13",
+        "image": "/home/f3mt0/hacktheandes-cacao-training/data/external-v2/images/test/0ab36d5d0be04d5a3c96db13.jpg",
+        "predictions": 1,
+        "exact_stage_tp": 1,
+        "exact_stage_fp": 0,
+        "exact_stage_fn": 2,
+        "healthy_mistaken_actions": 0
+      },
+      {
+        "id": "c78d82e0465fb4c5ef94675a",
+        "image": "/home/f3mt0/hacktheandes-cacao-training/data/external-v2/images/test/c78d82e0465fb4c5ef94675a.jpg",
+        "predictions": 1,
+        "exact_stage_tp": 1,
+        "exact_stage_fp": 0,
+        "exact_stage_fn": 2,
+        "healthy_mistaken_actions": 0
+      },
+      {
+        "id": "4a88958a9a07e5fb885a9aec",
+        "image": "/home/f3mt0/hacktheandes-cacao-training/data/external-v2/images/test/4a88958a9a07e5fb885a9aec.jpg",
+        "predictions": 0,
+        "exact_stage_tp": 0,
+        "exact_stage_fp": 0,
+        "exact_stage_fn": 1,
+        "healthy_mistaken_actions": 0
+      },
+      {
+        "id": "832e31398fe735207952ebf4",
+        "image": "/home/f3mt0/hacktheandes-cacao-training/data/external-v2/images/test/832e31398fe735207952ebf4.jpg",
+        "predictions": 1,
+        "exact_stage_tp": 1,
+        "exact_stage_fp": 0,
+        "exact_stage_fn": 3,
+        "healthy_mistaken_actions": 0
+      },
+      {
+        "id": "5af8cc9fb77503e1f3339d62",
+        "image": "/home/f3mt0/hacktheandes-cacao-training/data/external-v2/images/test/5af8cc9fb77503e1f3339d62.jpg",
+        "predictions": 2,
+        "exact_stage_tp": 0,
+        "exact_stage_fp": 2,
+        "exact_stage_fn": 6,
+        "healthy_mistaken_actions": 2
+      },
+      {
+        "id": "83749bd14f8b1a6d2d560b59",
+        "image": "/home/f3mt0/hacktheandes-cacao-training/data/external-v2/images/test/83749bd14f8b1a6d2d560b59.jpg",
+        "predictions": 1,
+        "exact_stage_tp": 0,
+        "exact_stage_fp": 1,
+        "exact_stage_fn": 5,
+        "healthy_mistaken_actions": 0
+      },
+      {
+        "id": "e1045fcf2f090a3c5670d7c2",
+        "image": "/home/f3mt0/hacktheandes-cacao-training/data/external-v2/images/test/e1045fcf2f090a3c5670d7c2.jpg",
+        "predictions": 1,
+        "exact_stage_tp": 1,
+        "exact_stage_fp": 0,
+        "exact_stage_fn": 2,
+        "healthy_mistaken_actions": 0
+      },
+      {
+        "id": "037c2aceabb24ee890fbb7c2",
+        "image": "/home/f3mt0/hacktheandes-cacao-training/data/external-v2/images/test/037c2aceabb24ee890fbb7c2.jpg",
+        "predictions": 2,
+        "exact_stage_tp": 1,
+        "exact_stage_fp": 1,
+        "exact_stage_fn": 4,
+        "healthy_mistaken_actions": 0
+      },
+      {
+        "id": "887d2f6eda102d7b35dfdb65",
+        "image": "/home/f3mt0/hacktheandes-cacao-training/data/external-v2/images/test/887d2f6eda102d7b35dfdb65.jpg",
+        "predictions": 1,
+        "exact_stage_tp": 1,
+        "exact_stage_fp": 0,
+        "exact_stage_fn": 1,
+        "healthy_mistaken_actions": 0
+      },
+      {
+        "id": "7499debf9f77188c66cb2e21",
+        "image": "/home/f3mt0/hacktheandes-cacao-training/data/external-v2/images/test/7499debf9f77188c66cb2e21.jpg",
+        "predictions": 2,
+        "exact_stage_tp": 1,
+        "exact_stage_fp": 1,
+        "exact_stage_fn": 1,
+        "healthy_mistaken_actions": 0
+      },
+      {
+        "id": "39389b27ef08270dc98cbe43",
+        "image": "/home/f3mt0/hacktheandes-cacao-training/data/external-v2/images/test/39389b27ef08270dc98cbe43.jpg",
+        "predictions": 1,
+        "exact_stage_tp": 0,
+        "exact_stage_fp": 1,
+        "exact_stage_fn": 2,
+        "healthy_mistaken_actions": 0
+      },
+      {
+        "id": "9b26293cfe5567a0e9157f7e",
+        "image": "/home/f3mt0/hacktheandes-cacao-training/data/external-v2/images/test/9b26293cfe5567a0e9157f7e.jpg",
+        "predictions": 1,
+        "exact_stage_tp": 0,
+        "exact_stage_fp": 1,
+        "exact_stage_fn": 1,
+        "healthy_mistaken_actions": 0
+      },
+      {
+        "id": "ae87f84fb304407cbe7b2c1f",
+        "image": "/home/f3mt0/hacktheandes-cacao-training/data/external-v2/images/test/ae87f84fb304407cbe7b2c1f.jpg",
+        "predictions": 1,
+        "exact_stage_tp": 1,
+        "exact_stage_fp": 0,
+        "exact_stage_fn": 0,
+        "healthy_mistaken_actions": 0
+      },
+      {
+        "id": "895f4bdc0a2b20966bc87686",
+        "image": "/home/f3mt0/hacktheandes-cacao-training/data/external-v2/images/test/895f4bdc0a2b20966bc87686.jpg",
+        "predictions": 1,
+        "exact_stage_tp": 1,
+        "exact_stage_fp": 0,
+        "exact_stage_fn": 0,
+        "healthy_mistaken_actions": 0
+      },
+      {
+        "id": "f3500bef74d91e3745cf46eb",
+        "image": "/home/f3mt0/hacktheandes-cacao-training/data/external-v2/images/test/f3500bef74d91e3745cf46eb.jpg",
+        "predictions": 2,
+        "exact_stage_tp": 2,
+        "exact_stage_fp": 0,
+        "exact_stage_fn": 1,
+        "healthy_mistaken_actions": 0
+      },
+      {
+        "id": "7779a5e0adc523999433a241",
+        "image": "/home/f3mt0/hacktheandes-cacao-training/data/external-v2/images/test/7779a5e0adc523999433a241.jpg",
+        "predictions": 6,
+        "exact_stage_tp": 3,
+        "exact_stage_fp": 3,
+        "exact_stage_fn": 4,
+        "healthy_mistaken_actions": 2
+      },
+      {
+        "id": "0937cfa732669ad8c1c2ee14",
+        "image": "/home/f3mt0/hacktheandes-cacao-training/data/external-v2/images/test/0937cfa732669ad8c1c2ee14.jpg",
+        "predictions": 1,
+        "exact_stage_tp": 0,
+        "exact_stage_fp": 1,
+        "exact_stage_fn": 5,
+        "healthy_mistaken_actions": 1
+      },
+      {
+        "id": "ab0c3362bdf49433e5f5bba2",
+        "image": "/home/f3mt0/hacktheandes-cacao-training/data/external-v2/images/test/ab0c3362bdf49433e5f5bba2.jpg",
+        "predictions": 1,
+        "exact_stage_tp": 1,
+        "exact_stage_fp": 0,
+        "exact_stage_fn": 2,
+        "healthy_mistaken_actions": 0
+      },
+      {
+        "id": "90f6df4be1a3ab1123b90557",
+        "image": "/home/f3mt0/hacktheandes-cacao-training/data/external-v2/images/test/90f6df4be1a3ab1123b90557.jpg",
+        "predictions": 1,
+        "exact_stage_tp": 1,
+        "exact_stage_fp": 0,
+        "exact_stage_fn": 2,
+        "healthy_mistaken_actions": 0
+      },
+      {
+        "id": "2481320e817fa99e16822b43",
+        "image": "/home/f3mt0/hacktheandes-cacao-training/data/external-v2/images/test/2481320e817fa99e16822b43.jpg",
+        "predictions": 1,
+        "exact_stage_tp": 0,
+        "exact_stage_fp": 1,
+        "exact_stage_fn": 6,
+        "healthy_mistaken_actions": 0
+      },
+      {
+        "id": "1f77660dcf69ec818d2bc4e2",
+        "image": "/home/f3mt0/hacktheandes-cacao-training/data/external-v2/images/test/1f77660dcf69ec818d2bc4e2.jpg",
+        "predictions": 1,
+        "exact_stage_tp": 1,
+        "exact_stage_fp": 0,
+        "exact_stage_fn": 2,
+        "healthy_mistaken_actions": 0
+      },
+      {
+        "id": "c20ac437f9ac8f6da7b7162f",
+        "image": "/home/f3mt0/hacktheandes-cacao-training/data/external-v2/images/test/c20ac437f9ac8f6da7b7162f.jpg",
+        "predictions": 0,
+        "exact_stage_tp": 0,
+        "exact_stage_fp": 0,
+        "exact_stage_fn": 2,
+        "healthy_mistaken_actions": 0
+      },
+      {
+        "id": "9b7ef31d123dbfebbd7492eb",
+        "image": "/home/f3mt0/hacktheandes-cacao-training/data/external-v2/images/test/9b7ef31d123dbfebbd7492eb.jpg",
+        "predictions": 1,
+        "exact_stage_tp": 1,
+        "exact_stage_fp": 0,
+        "exact_stage_fn": 0,
+        "healthy_mistaken_actions": 0
+      },
+      {
+        "id": "5679781360e60d5f3b14cce0",
+        "image": "/home/f3mt0/hacktheandes-cacao-training/data/external-v2/images/test/5679781360e60d5f3b14cce0.jpg",
+        "predictions": 1,
+        "exact_stage_tp": 1,
+        "exact_stage_fp": 0,
+        "exact_stage_fn": 6,
+        "healthy_mistaken_actions": 0
+      },
+      {
+        "id": "b77d9800d987d84261ed11d6",
+        "image": "/home/f3mt0/hacktheandes-cacao-training/data/external-v2/images/test/b77d9800d987d84261ed11d6.jpg",
+        "predictions": 0,
+        "exact_stage_tp": 0,
+        "exact_stage_fp": 0,
+        "exact_stage_fn": 1,
+        "healthy_mistaken_actions": 0
+      },
+      {
+        "id": "11b4f247e2da784b9a7a2013",
+        "image": "/home/f3mt0/hacktheandes-cacao-training/data/external-v2/images/test/11b4f247e2da784b9a7a2013.jpg",
+        "predictions": 1,
+        "exact_stage_tp": 1,
+        "exact_stage_fp": 0,
+        "exact_stage_fn": 2,
+        "healthy_mistaken_actions": 0
+      },
+      {
+        "id": "2b83386a1fb8853107acb5bc",
+        "image": "/home/f3mt0/hacktheandes-cacao-training/data/external-v2/images/test/2b83386a1fb8853107acb5bc.jpg",
+        "predictions": 3,
+        "exact_stage_tp": 1,
+        "exact_stage_fp": 2,
+        "exact_stage_fn": 3,
+        "healthy_mistaken_actions": 0
+      },
+      {
+        "id": "306ff52be3f55e55b9e6dc0d",
+        "image": "/home/f3mt0/hacktheandes-cacao-training/data/external-v2/images/test/306ff52be3f55e55b9e6dc0d.jpg",
+        "predictions": 1,
+        "exact_stage_tp": 1,
+        "exact_stage_fp": 0,
+        "exact_stage_fn": 1,
+        "healthy_mistaken_actions": 0
+      },
+      {
+        "id": "10bba9a5cc2ef0824ca6892d",
+        "image": "/home/f3mt0/hacktheandes-cacao-training/data/external-v2/images/test/10bba9a5cc2ef0824ca6892d.jpg",
+        "predictions": 1,
+        "exact_stage_tp": 1,
+        "exact_stage_fp": 0,
+        "exact_stage_fn": 0,
+        "healthy_mistaken_actions": 0
+      },
+      {
+        "id": "aecd4ee2f8de4df7c3e110f4",
+        "image": "/home/f3mt0/hacktheandes-cacao-training/data/external-v2/images/test/aecd4ee2f8de4df7c3e110f4.jpg",
+        "predictions": 1,
+        "exact_stage_tp": 1,
+        "exact_stage_fp": 0,
+        "exact_stage_fn": 0,
+        "healthy_mistaken_actions": 0
+      },
+      {
+        "id": "159c2fbd6716f1a9bebcb77e",
+        "image": "/home/f3mt0/hacktheandes-cacao-training/data/external-v2/images/test/159c2fbd6716f1a9bebcb77e.jpg",
+        "predictions": 1,
+        "exact_stage_tp": 1,
+        "exact_stage_fp": 0,
+        "exact_stage_fn": 4,
+        "healthy_mistaken_actions": 0
+      },
+      {
+        "id": "40195fe43bb172334bf8294d",
+        "image": "/home/f3mt0/hacktheandes-cacao-training/data/external-v2/images/test/40195fe43bb172334bf8294d.jpg",
+        "predictions": 2,
+        "exact_stage_tp": 1,
+        "exact_stage_fp": 1,
+        "exact_stage_fn": 2,
+        "healthy_mistaken_actions": 0
+      },
+      {
+        "id": "a60098ef97c9f77c1b660faf",
+        "image": "/home/f3mt0/hacktheandes-cacao-training/data/external-v2/images/test/a60098ef97c9f77c1b660faf.jpg",
+        "predictions": 1,
+        "exact_stage_tp": 0,
+        "exact_stage_fp": 1,
+        "exact_stage_fn": 6,
+        "healthy_mistaken_actions": 1
+      },
+      {
+        "id": "bb3aaf81ee412a85ee145203",
+        "image": "/home/f3mt0/hacktheandes-cacao-training/data/external-v2/images/test/bb3aaf81ee412a85ee145203.jpg",
+        "predictions": 1,
+        "exact_stage_tp": 0,
+        "exact_stage_fp": 1,
+        "exact_stage_fn": 2,
+        "healthy_mistaken_actions": 0
+      },
+      {
+        "id": "af4ebc7ad6c6c4378b9fda94",
+        "image": "/home/f3mt0/hacktheandes-cacao-training/data/external-v2/images/test/af4ebc7ad6c6c4378b9fda94.jpg",
+        "predictions": 2,
+        "exact_stage_tp": 2,
+        "exact_stage_fp": 0,
+        "exact_stage_fn": 8,
+        "healthy_mistaken_actions": 0
+      },
+      {
+        "id": "61b36647ed49ea11a2014200",
+        "image": "/home/f3mt0/hacktheandes-cacao-training/data/external-v2/images/test/61b36647ed49ea11a2014200.jpg",
+        "predictions": 2,
+        "exact_stage_tp": 0,
+        "exact_stage_fp": 2,
+        "exact_stage_fn": 18,
+        "healthy_mistaken_actions": 1
+      },
+      {
+        "id": "4c1f2a44b10a82bb23165171",
+        "image": "/home/f3mt0/hacktheandes-cacao-training/data/external-v2/images/test/4c1f2a44b10a82bb23165171.jpg",
+        "predictions": 2,
+        "exact_stage_tp": 1,
+        "exact_stage_fp": 1,
+        "exact_stage_fn": 4,
+        "healthy_mistaken_actions": 1
+      },
+      {
+        "id": "d02afdec9be714a00c610fdd",
+        "image": "/home/f3mt0/hacktheandes-cacao-training/data/external-v2/images/test/d02afdec9be714a00c610fdd.jpg",
+        "predictions": 5,
+        "exact_stage_tp": 3,
+        "exact_stage_fp": 2,
+        "exact_stage_fn": 3,
+        "healthy_mistaken_actions": 0
+      },
+      {
+        "id": "77f2cfff5d93582ef792cda5",
+        "image": "/home/f3mt0/hacktheandes-cacao-training/data/external-v2/images/test/77f2cfff5d93582ef792cda5.jpg",
+        "predictions": 1,
+        "exact_stage_tp": 1,
+        "exact_stage_fp": 0,
+        "exact_stage_fn": 8,
+        "healthy_mistaken_actions": 0
+      },
+      {
+        "id": "988773060c67a4b35096dc76",
+        "image": "/home/f3mt0/hacktheandes-cacao-training/data/external-v2/images/test/988773060c67a4b35096dc76.jpg",
+        "predictions": 2,
+        "exact_stage_tp": 2,
+        "exact_stage_fp": 0,
+        "exact_stage_fn": 3,
+        "healthy_mistaken_actions": 0
+      },
+      {
+        "id": "579df133829ed5f0cb22dcfd",
+        "image": "/home/f3mt0/hacktheandes-cacao-training/data/external-v2/images/test/579df133829ed5f0cb22dcfd.jpg",
+        "predictions": 2,
+        "exact_stage_tp": 1,
+        "exact_stage_fp": 1,
+        "exact_stage_fn": 4,
+        "healthy_mistaken_actions": 0
+      },
+      {
+        "id": "29e97550b680b9d6f75a5751",
+        "image": "/home/f3mt0/hacktheandes-cacao-training/data/external-v2/images/test/29e97550b680b9d6f75a5751.jpg",
+        "predictions": 1,
+        "exact_stage_tp": 1,
+        "exact_stage_fp": 0,
+        "exact_stage_fn": 7,
+        "healthy_mistaken_actions": 0
+      },
+      {
+        "id": "a4b8044661fa166265432319",
+        "image": "/home/f3mt0/hacktheandes-cacao-training/data/external-v2/images/test/a4b8044661fa166265432319.jpg",
+        "predictions": 1,
+        "exact_stage_tp": 0,
+        "exact_stage_fp": 1,
+        "exact_stage_fn": 19,
+        "healthy_mistaken_actions": 1
+      },
+      {
+        "id": "7716014fe08ec319486ca91f",
+        "image": "/home/f3mt0/hacktheandes-cacao-training/data/external-v2/images/test/7716014fe08ec319486ca91f.jpg",
+        "predictions": 1,
+        "exact_stage_tp": 1,
+        "exact_stage_fp": 0,
+        "exact_stage_fn": 3,
+        "healthy_mistaken_actions": 0
+      },
+      {
+        "id": "774a05f6bc9c9220d61d8d67",
+        "image": "/home/f3mt0/hacktheandes-cacao-training/data/external-v2/images/test/774a05f6bc9c9220d61d8d67.jpg",
+        "predictions": 0,
+        "exact_stage_tp": 0,
+        "exact_stage_fp": 0,
+        "exact_stage_fn": 5,
+        "healthy_mistaken_actions": 0
+      },
+      {
+        "id": "61a4d525bdd738c08e3b9c83",
+        "image": "/home/f3mt0/hacktheandes-cacao-training/data/external-v2/images/test/61a4d525bdd738c08e3b9c83.jpg",
+        "predictions": 1,
+        "exact_stage_tp": 1,
+        "exact_stage_fp": 0,
+        "exact_stage_fn": 4,
+        "healthy_mistaken_actions": 0
+      },
+      {
+        "id": "33305923e243a113312d9144",
+        "image": "/home/f3mt0/hacktheandes-cacao-training/data/external-v2/images/test/33305923e243a113312d9144.jpg",
+        "predictions": 2,
+        "exact_stage_tp": 2,
+        "exact_stage_fp": 0,
+        "exact_stage_fn": 8,
+        "healthy_mistaken_actions": 0
+      },
+      {
+        "id": "c4a0e8a3bad07c22206ac4eb",
+        "image": "/home/f3mt0/hacktheandes-cacao-training/data/external-v2/images/test/c4a0e8a3bad07c22206ac4eb.jpg",
+        "predictions": 1,
+        "exact_stage_tp": 0,
+        "exact_stage_fp": 1,
+        "exact_stage_fn": 1,
+        "healthy_mistaken_actions": 0
+      },
+      {
+        "id": "455ca676f64cac0474061f89",
+        "image": "/home/f3mt0/hacktheandes-cacao-training/data/external-v2/images/test/455ca676f64cac0474061f89.jpg",
+        "predictions": 2,
+        "exact_stage_tp": 1,
+        "exact_stage_fp": 1,
+        "exact_stage_fn": 0,
+        "healthy_mistaken_actions": 0
+      },
+      {
+        "id": "c057ba82b2be954bd2e5adfd",
+        "image": "/home/f3mt0/hacktheandes-cacao-training/data/external-v2/images/test/c057ba82b2be954bd2e5adfd.jpg",
+        "predictions": 1,
+        "exact_stage_tp": 1,
+        "exact_stage_fp": 0,
+        "exact_stage_fn": 2,
+        "healthy_mistaken_actions": 0
+      },
+      {
+        "id": "168e2c0d7a16e569f5be44e5",
+        "image": "/home/f3mt0/hacktheandes-cacao-training/data/external-v2/images/test/168e2c0d7a16e569f5be44e5.jpg",
+        "predictions": 1,
+        "exact_stage_tp": 1,
+        "exact_stage_fp": 0,
+        "exact_stage_fn": 2,
+        "healthy_mistaken_actions": 0
+      },
+      {
+        "id": "01e0bfb615ef2de115f9ef07",
+        "image": "/home/f3mt0/hacktheandes-cacao-training/data/external-v2/images/test/01e0bfb615ef2de115f9ef07.jpg",
+        "predictions": 1,
+        "exact_stage_tp": 1,
+        "exact_stage_fp": 0,
+        "exact_stage_fn": 0,
+        "healthy_mistaken_actions": 0
+      },
+      {
+        "id": "95ae3b8cf39be40d865eecb9",
+        "image": "/home/f3mt0/hacktheandes-cacao-training/data/external-v2/images/test/95ae3b8cf39be40d865eecb9.jpg",
+        "predictions": 1,
+        "exact_stage_tp": 1,
+        "exact_stage_fp": 0,
+        "exact_stage_fn": 0,
+        "healthy_mistaken_actions": 0
+      },
+      {
+        "id": "ba680357806f65fe463bfe4d",
+        "image": "/home/f3mt0/hacktheandes-cacao-training/data/external-v2/images/test/ba680357806f65fe463bfe4d.jpg",
+        "predictions": 1,
+        "exact_stage_tp": 1,
+        "exact_stage_fp": 0,
+        "exact_stage_fn": 0,
+        "healthy_mistaken_actions": 0
+      },
+      {
+        "id": "e5d7135b18e87bbf7a6cd32c",
+        "image": "/home/f3mt0/hacktheandes-cacao-training/data/external-v2/images/test/e5d7135b18e87bbf7a6cd32c.jpg",
+        "predictions": 0,
+        "exact_stage_tp": 0,
+        "exact_stage_fp": 0,
+        "exact_stage_fn": 1,
+        "healthy_mistaken_actions": 0
+      },
+      {
+        "id": "1b96805b41137480facd3a84",
+        "image": "/home/f3mt0/hacktheandes-cacao-training/data/external-v2/images/test/1b96805b41137480facd3a84.jpg",
+        "predictions": 2,
+        "exact_stage_tp": 1,
+        "exact_stage_fp": 1,
+        "exact_stage_fn": 4,
+        "healthy_mistaken_actions": 0
+      },
+      {
+        "id": "5efa26aba2c0c6b6ba480faa",
+        "image": "/home/f3mt0/hacktheandes-cacao-training/data/external-v2/images/test/5efa26aba2c0c6b6ba480faa.jpg",
+        "predictions": 1,
+        "exact_stage_tp": 1,
+        "exact_stage_fp": 0,
+        "exact_stage_fn": 3,
+        "healthy_mistaken_actions": 0
+      },
+      {
+        "id": "f60e13a8b61b29488d72dbd0",
+        "image": "/home/f3mt0/hacktheandes-cacao-training/data/external-v2/images/test/f60e13a8b61b29488d72dbd0.jpg",
+        "predictions": 1,
+        "exact_stage_tp": 0,
+        "exact_stage_fp": 1,
+        "exact_stage_fn": 3,
+        "healthy_mistaken_actions": 0
+      },
+      {
+        "id": "1bc9e3a5463c731c3517d061",
+        "image": "/home/f3mt0/hacktheandes-cacao-training/data/external-v2/images/test/1bc9e3a5463c731c3517d061.jpg",
+        "predictions": 1,
+        "exact_stage_tp": 1,
+        "exact_stage_fp": 0,
+        "exact_stage_fn": 0,
+        "healthy_mistaken_actions": 0
+      },
+      {
+        "id": "ce0053997710ba92e8d5bb90",
+        "image": "/home/f3mt0/hacktheandes-cacao-training/data/external-v2/images/test/ce0053997710ba92e8d5bb90.jpg",
+        "predictions": 3,
+        "exact_stage_tp": 1,
+        "exact_stage_fp": 2,
+        "exact_stage_fn": 3,
+        "healthy_mistaken_actions": 1
+      },
+      {
+        "id": "1c3e4d14278e94c1014d02be",
+        "image": "/home/f3mt0/hacktheandes-cacao-training/data/external-v2/images/test/1c3e4d14278e94c1014d02be.jpg",
+        "predictions": 1,
+        "exact_stage_tp": 0,
+        "exact_stage_fp": 1,
+        "exact_stage_fn": 3,
+        "healthy_mistaken_actions": 1
+      },
+      {
+        "id": "f8186a90cd87549cec4eb523",
+        "image": "/home/f3mt0/hacktheandes-cacao-training/data/external-v2/images/test/f8186a90cd87549cec4eb523.jpg",
+        "predictions": 3,
+        "exact_stage_tp": 1,
+        "exact_stage_fp": 2,
+        "exact_stage_fn": 4,
+        "healthy_mistaken_actions": 2
+      },
+      {
+        "id": "20d4fa30799c5084de3787fe",
+        "image": "/home/f3mt0/hacktheandes-cacao-training/data/external-v2/images/test/20d4fa30799c5084de3787fe.jpg",
+        "predictions": 2,
+        "exact_stage_tp": 1,
+        "exact_stage_fp": 1,
+        "exact_stage_fn": 5,
+        "healthy_mistaken_actions": 0
+      },
+      {
+        "id": "a2605a6e5dbda9c16fc21b73",
+        "image": "/home/f3mt0/hacktheandes-cacao-training/data/external-v2/images/test/a2605a6e5dbda9c16fc21b73.jpg",
+        "predictions": 1,
+        "exact_stage_tp": 1,
+        "exact_stage_fp": 0,
+        "exact_stage_fn": 2,
+        "healthy_mistaken_actions": 0
+      },
+      {
+        "id": "72afa745d6e9f1d83e7fafc2",
+        "image": "/home/f3mt0/hacktheandes-cacao-training/data/external-v2/images/test/72afa745d6e9f1d83e7fafc2.jpg",
+        "predictions": 2,
+        "exact_stage_tp": 1,
+        "exact_stage_fp": 1,
+        "exact_stage_fn": 2,
+        "healthy_mistaken_actions": 1
+      },
+      {
+        "id": "69692cb5281dee23acd1682d",
+        "image": "/home/f3mt0/hacktheandes-cacao-training/data/external-v2/images/test/69692cb5281dee23acd1682d.jpg",
+        "predictions": 3,
+        "exact_stage_tp": 1,
+        "exact_stage_fp": 2,
+        "exact_stage_fn": 7,
+        "healthy_mistaken_actions": 2
+      },
+      {
+        "id": "245ab18d036721b13859eb6b",
+        "image": "/home/f3mt0/hacktheandes-cacao-training/data/external-v2/images/test/245ab18d036721b13859eb6b.jpg",
+        "predictions": 3,
+        "exact_stage_tp": 2,
+        "exact_stage_fp": 1,
+        "exact_stage_fn": 5,
+        "healthy_mistaken_actions": 1
+      },
+      {
+        "id": "316861ef577d2646f42e87ea",
+        "image": "/home/f3mt0/hacktheandes-cacao-training/data/external-v2/images/test/316861ef577d2646f42e87ea.jpg",
+        "predictions": 2,
+        "exact_stage_tp": 2,
+        "exact_stage_fp": 0,
+        "exact_stage_fn": 1,
+        "healthy_mistaken_actions": 0
+      },
+      {
+        "id": "d2f242b4bf44eb2925c79e4f",
+        "image": "/home/f3mt0/hacktheandes-cacao-training/data/external-v2/images/test/d2f242b4bf44eb2925c79e4f.jpg",
+        "predictions": 2,
+        "exact_stage_tp": 1,
+        "exact_stage_fp": 1,
+        "exact_stage_fn": 3,
+        "healthy_mistaken_actions": 1
+      },
+      {
+        "id": "96ea09ed852ff2af0fb62887",
+        "image": "/home/f3mt0/hacktheandes-cacao-training/data/external-v2/images/test/96ea09ed852ff2af0fb62887.jpg",
+        "predictions": 4,
+        "exact_stage_tp": 2,
+        "exact_stage_fp": 2,
+        "exact_stage_fn": 3,
+        "healthy_mistaken_actions": 2
+      },
+      {
+        "id": "a196cfe898501f1086327720",
+        "image": "/home/f3mt0/hacktheandes-cacao-training/data/external-v2/images/test/a196cfe898501f1086327720.jpg",
+        "predictions": 1,
+        "exact_stage_tp": 1,
+        "exact_stage_fp": 0,
+        "exact_stage_fn": 0,
+        "healthy_mistaken_actions": 0
+      },
+      {
+        "id": "f3cc071d2250b5228c0877a6",
+        "image": "/home/f3mt0/hacktheandes-cacao-training/data/external-v2/images/test/f3cc071d2250b5228c0877a6.jpg",
+        "predictions": 3,
+        "exact_stage_tp": 3,
+        "exact_stage_fp": 0,
+        "exact_stage_fn": 2,
+        "healthy_mistaken_actions": 0
+      },
+      {
+        "id": "051f9e402727170d12697206",
+        "image": "/home/f3mt0/hacktheandes-cacao-training/data/external-v2/images/test/051f9e402727170d12697206.jpg",
+        "predictions": 1,
+        "exact_stage_tp": 1,
+        "exact_stage_fp": 0,
+        "exact_stage_fn": 0,
+        "healthy_mistaken_actions": 0
+      },
+      {
+        "id": "ac1429ec4e46ec31fad35775",
+        "image": "/home/f3mt0/hacktheandes-cacao-training/data/external-v2/images/test/ac1429ec4e46ec31fad35775.jpg",
+        "predictions": 2,
+        "exact_stage_tp": 1,
+        "exact_stage_fp": 1,
+        "exact_stage_fn": 4,
+        "healthy_mistaken_actions": 0
+      },
+      {
+        "id": "2fddcfc169e0d1fe2bd1d9a5",
+        "image": "/home/f3mt0/hacktheandes-cacao-training/data/external-v2/images/test/2fddcfc169e0d1fe2bd1d9a5.jpg",
+        "predictions": 3,
+        "exact_stage_tp": 1,
+        "exact_stage_fp": 2,
+        "exact_stage_fn": 4,
+        "healthy_mistaken_actions": 2
+      },
+      {
+        "id": "dee2854e68554518519988ff",
+        "image": "/home/f3mt0/hacktheandes-cacao-training/data/external-v2/images/test/dee2854e68554518519988ff.jpg",
+        "predictions": 2,
+        "exact_stage_tp": 2,
+        "exact_stage_fp": 0,
+        "exact_stage_fn": 3,
+        "healthy_mistaken_actions": 0
+      },
+      {
+        "id": "8589b33559333d7bd61246a1",
+        "image": "/home/f3mt0/hacktheandes-cacao-training/data/external-v2/images/test/8589b33559333d7bd61246a1.jpg",
+        "predictions": 0,
+        "exact_stage_tp": 0,
+        "exact_stage_fp": 0,
+        "exact_stage_fn": 7,
+        "healthy_mistaken_actions": 0
+      },
+      {
+        "id": "980b9d5fb2c93b39b183c600",
+        "image": "/home/f3mt0/hacktheandes-cacao-training/data/external-v2/images/test/980b9d5fb2c93b39b183c600.jpg",
+        "predictions": 3,
+        "exact_stage_tp": 1,
+        "exact_stage_fp": 2,
+        "exact_stage_fn": 2,
+        "healthy_mistaken_actions": 1
+      },
+      {
+        "id": "1c5d94cc80f74571a88c48ad",
+        "image": "/home/f3mt0/hacktheandes-cacao-training/data/external-v2/images/test/1c5d94cc80f74571a88c48ad.jpg",
+        "predictions": 2,
+        "exact_stage_tp": 0,
+        "exact_stage_fp": 2,
+        "exact_stage_fn": 4,
+        "healthy_mistaken_actions": 2
+      },
+      {
+        "id": "c0aa8da7c4b3fcdc30df5514",
+        "image": "/home/f3mt0/hacktheandes-cacao-training/data/external-v2/images/test/c0aa8da7c4b3fcdc30df5514.jpg",
+        "predictions": 1,
+        "exact_stage_tp": 1,
+        "exact_stage_fp": 0,
+        "exact_stage_fn": 5,
+        "healthy_mistaken_actions": 0
+      },
+      {
+        "id": "a95a2b45fc188d0437599a07",
+        "image": "/home/f3mt0/hacktheandes-cacao-training/data/external-v2/images/test/a95a2b45fc188d0437599a07.jpg",
+        "predictions": 3,
+        "exact_stage_tp": 2,
+        "exact_stage_fp": 1,
+        "exact_stage_fn": 10,
+        "healthy_mistaken_actions": 1
+      },
+      {
+        "id": "f8107163583fa878c8bf20b0",
+        "image": "/home/f3mt0/hacktheandes-cacao-training/data/external-v2/images/test/f8107163583fa878c8bf20b0.jpg",
+        "predictions": 3,
+        "exact_stage_tp": 3,
+        "exact_stage_fp": 0,
+        "exact_stage_fn": 6,
+        "healthy_mistaken_actions": 0
+      },
+      {
+        "id": "adb124ba1ffea65bebc74a6c",
+        "image": "/home/f3mt0/hacktheandes-cacao-training/data/external-v2/images/test/adb124ba1ffea65bebc74a6c.jpg",
+        "predictions": 5,
+        "exact_stage_tp": 3,
+        "exact_stage_fp": 2,
+        "exact_stage_fn": 1,
+        "healthy_mistaken_actions": 1
+      },
+      {
+        "id": "6b2dea412d8958a24a6ddf63",
+        "image": "/home/f3mt0/hacktheandes-cacao-training/data/external-v2/images/test/6b2dea412d8958a24a6ddf63.jpg",
+        "predictions": 2,
+        "exact_stage_tp": 1,
+        "exact_stage_fp": 1,
+        "exact_stage_fn": 1,
+        "healthy_mistaken_actions": 1
+      },
+      {
+        "id": "91dad0153f839b4e03094088",
+        "image": "/home/f3mt0/hacktheandes-cacao-training/data/external-v2/images/test/91dad0153f839b4e03094088.jpg",
+        "predictions": 1,
+        "exact_stage_tp": 0,
+        "exact_stage_fp": 1,
+        "exact_stage_fn": 5,
+        "healthy_mistaken_actions": 1
+      },
+      {
+        "id": "f2f2994a590cb3e832cf4203",
+        "image": "/home/f3mt0/hacktheandes-cacao-training/data/external-v2/images/test/f2f2994a590cb3e832cf4203.jpg",
+        "predictions": 2,
+        "exact_stage_tp": 1,
+        "exact_stage_fp": 1,
+        "exact_stage_fn": 6,
+        "healthy_mistaken_actions": 1
+      },
+      {
+        "id": "cda819866baf1411095d1afb",
+        "image": "/home/f3mt0/hacktheandes-cacao-training/data/external-v2/images/test/cda819866baf1411095d1afb.jpg",
+        "predictions": 1,
+        "exact_stage_tp": 0,
+        "exact_stage_fp": 1,
+        "exact_stage_fn": 7,
+        "healthy_mistaken_actions": 1
+      },
+      {
+        "id": "fe453f80bbcef62d10fbb15b",
+        "image": "/home/f3mt0/hacktheandes-cacao-training/data/external-v2/images/test/fe453f80bbcef62d10fbb15b.jpg",
+        "predictions": 0,
+        "exact_stage_tp": 0,
+        "exact_stage_fp": 0,
+        "exact_stage_fn": 11,
+        "healthy_mistaken_actions": 0
+      },
+      {
+        "id": "0547f0c859b0d6ba612dbe06",
+        "image": "/home/f3mt0/hacktheandes-cacao-training/data/external-v2/images/test/0547f0c859b0d6ba612dbe06.jpg",
+        "predictions": 1,
+        "exact_stage_tp": 1,
+        "exact_stage_fp": 0,
+        "exact_stage_fn": 5,
+        "healthy_mistaken_actions": 0
+      },
+      {
+        "id": "594c8d614320100bd71b4ea4",
+        "image": "/home/f3mt0/hacktheandes-cacao-training/data/external-v2/images/test/594c8d614320100bd71b4ea4.jpg",
+        "predictions": 1,
+        "exact_stage_tp": 0,
+        "exact_stage_fp": 1,
+        "exact_stage_fn": 1,
+        "healthy_mistaken_actions": 1
+      },
+      {
+        "id": "e3d513e67c56a35c04acd22c",
+        "image": "/home/f3mt0/hacktheandes-cacao-training/data/external-v2/images/test/e3d513e67c56a35c04acd22c.jpg",
+        "predictions": 1,
+        "exact_stage_tp": 0,
+        "exact_stage_fp": 1,
+        "exact_stage_fn": 4,
+        "healthy_mistaken_actions": 1
+      },
+      {
+        "id": "2202d5a4fc71b198124a2a46",
+        "image": "/home/f3mt0/hacktheandes-cacao-training/data/external-v2/images/test/2202d5a4fc71b198124a2a46.jpg",
+        "predictions": 2,
+        "exact_stage_tp": 2,
+        "exact_stage_fp": 0,
+        "exact_stage_fn": 16,
+        "healthy_mistaken_actions": 0
+      },
+      {
+        "id": "23fbae834a7ffd605294da4d",
+        "image": "/home/f3mt0/hacktheandes-cacao-training/data/external-v2/images/test/23fbae834a7ffd605294da4d.jpg",
+        "predictions": 2,
+        "exact_stage_tp": 2,
+        "exact_stage_fp": 0,
+        "exact_stage_fn": 19,
+        "healthy_mistaken_actions": 0
+      },
+      {
+        "id": "cb0ef42e5eb4a805c0243c45",
+        "image": "/home/f3mt0/hacktheandes-cacao-training/data/external-v2/images/test/cb0ef42e5eb4a805c0243c45.jpg",
+        "predictions": 2,
+        "exact_stage_tp": 1,
+        "exact_stage_fp": 1,
+        "exact_stage_fn": 8,
+        "healthy_mistaken_actions": 1
+      },
+      {
+        "id": "50871dd04da968b30395b828",
+        "image": "/home/f3mt0/hacktheandes-cacao-training/data/external-v2/images/test/50871dd04da968b30395b828.jpg",
+        "predictions": 1,
+        "exact_stage_tp": 1,
+        "exact_stage_fp": 0,
+        "exact_stage_fn": 9,
+        "healthy_mistaken_actions": 0
+      },
+      {
+        "id": "49b8b009979fa7a085629372",
+        "image": "/home/f3mt0/hacktheandes-cacao-training/data/external-v2/images/test/49b8b009979fa7a085629372.jpg",
+        "predictions": 0,
+        "exact_stage_tp": 0,
+        "exact_stage_fp": 0,
+        "exact_stage_fn": 8,
+        "healthy_mistaken_actions": 0
+      },
+      {
+        "id": "8728c149160100a6b7a3430d",
+        "image": "/home/f3mt0/hacktheandes-cacao-training/data/external-v2/images/test/8728c149160100a6b7a3430d.jpg",
+        "predictions": 0,
+        "exact_stage_tp": 0,
+        "exact_stage_fp": 0,
+        "exact_stage_fn": 6,
+        "healthy_mistaken_actions": 0
+      },
+      {
+        "id": "2fb2a84e6c84a4087b2cefab",
+        "image": "/home/f3mt0/hacktheandes-cacao-training/data/external-v2/images/test/2fb2a84e6c84a4087b2cefab.jpg",
+        "predictions": 1,
+        "exact_stage_tp": 1,
+        "exact_stage_fp": 0,
+        "exact_stage_fn": 4,
+        "healthy_mistaken_actions": 0
+      },
+      {
+        "id": "8853982368380a7b996b7025",
+        "image": "/home/f3mt0/hacktheandes-cacao-training/data/external-v2/images/test/8853982368380a7b996b7025.jpg",
+        "predictions": 1,
+        "exact_stage_tp": 1,
+        "exact_stage_fp": 0,
+        "exact_stage_fn": 17,
+        "healthy_mistaken_actions": 0
+      },
+      {
+        "id": "1b5848ca33056a47ca54cc62",
+        "image": "/home/f3mt0/hacktheandes-cacao-training/data/external-v2/images/test/1b5848ca33056a47ca54cc62.jpg",
+        "predictions": 3,
+        "exact_stage_tp": 1,
+        "exact_stage_fp": 2,
+        "exact_stage_fn": 9,
+        "healthy_mistaken_actions": 2
+      },
+      {
+        "id": "f8411eb9c77533b8f8844322",
+        "image": "/home/f3mt0/hacktheandes-cacao-training/data/external-v2/images/test/f8411eb9c77533b8f8844322.jpg",
+        "predictions": 4,
+        "exact_stage_tp": 0,
+        "exact_stage_fp": 4,
+        "exact_stage_fn": 14,
+        "healthy_mistaken_actions": 3
+      },
+      {
+        "id": "88190062abb41ed0c8e528f0",
+        "image": "/home/f3mt0/hacktheandes-cacao-training/data/external-v2/images/test/88190062abb41ed0c8e528f0.jpg",
+        "predictions": 1,
+        "exact_stage_tp": 0,
+        "exact_stage_fp": 1,
+        "exact_stage_fn": 5,
+        "healthy_mistaken_actions": 1
+      },
+      {
+        "id": "ce23730c59742cfce62e9e3f",
+        "image": "/home/f3mt0/hacktheandes-cacao-training/data/external-v2/images/test/ce23730c59742cfce62e9e3f.jpg",
+        "predictions": 0,
+        "exact_stage_tp": 0,
+        "exact_stage_fp": 0,
+        "exact_stage_fn": 26,
+        "healthy_mistaken_actions": 0
+      },
+      {
+        "id": "24c0f524e3a66cecf3286343",
+        "image": "/home/f3mt0/hacktheandes-cacao-training/data/external-v2/images/test/24c0f524e3a66cecf3286343.jpg",
+        "predictions": 2,
+        "exact_stage_tp": 0,
+        "exact_stage_fp": 2,
+        "exact_stage_fn": 3,
+        "healthy_mistaken_actions": 2
+      },
+      {
+        "id": "86cb12f2d3fb597cdef7f466",
+        "image": "/home/f3mt0/hacktheandes-cacao-training/data/external-v2/images/test/86cb12f2d3fb597cdef7f466.jpg",
+        "predictions": 1,
+        "exact_stage_tp": 0,
+        "exact_stage_fp": 1,
+        "exact_stage_fn": 5,
+        "healthy_mistaken_actions": 1
+      },
+      {
+        "id": "3a6c6e7a27867afb477b1f08",
+        "image": "/home/f3mt0/hacktheandes-cacao-training/data/external-v2/images/test/3a6c6e7a27867afb477b1f08.jpg",
+        "predictions": 4,
+        "exact_stage_tp": 3,
+        "exact_stage_fp": 1,
+        "exact_stage_fn": 9,
+        "healthy_mistaken_actions": 1
+      },
+      {
+        "id": "cf500fc0fb2e792288740656",
+        "image": "/home/f3mt0/hacktheandes-cacao-training/data/external-v2/images/test/cf500fc0fb2e792288740656.jpg",
+        "predictions": 3,
+        "exact_stage_tp": 1,
+        "exact_stage_fp": 2,
+        "exact_stage_fn": 6,
+        "healthy_mistaken_actions": 2
+      },
+      {
+        "id": "023410be385e63b3d01b4755",
+        "image": "/home/f3mt0/hacktheandes-cacao-training/data/external-v2/images/test/023410be385e63b3d01b4755.jpg",
+        "predictions": 1,
+        "exact_stage_tp": 0,
+        "exact_stage_fp": 1,
+        "exact_stage_fn": 4,
+        "healthy_mistaken_actions": 1
+      },
+      {
+        "id": "0029049a85f2e3449a6fb803",
+        "image": "/home/f3mt0/hacktheandes-cacao-training/data/external-v2/images/test/0029049a85f2e3449a6fb803.jpg",
+        "predictions": 1,
+        "exact_stage_tp": 1,
+        "exact_stage_fp": 0,
+        "exact_stage_fn": 2,
+        "healthy_mistaken_actions": 0
+      },
+      {
+        "id": "0be5d517d044209928d55349",
+        "image": "/home/f3mt0/hacktheandes-cacao-training/data/external-v2/images/test/0be5d517d044209928d55349.jpg",
+        "predictions": 1,
+        "exact_stage_tp": 0,
+        "exact_stage_fp": 1,
+        "exact_stage_fn": 12,
+        "healthy_mistaken_actions": 1
+      },
+      {
+        "id": "699d79a448ee26e9f7454434",
+        "image": "/home/f3mt0/hacktheandes-cacao-training/data/external-v2/images/test/699d79a448ee26e9f7454434.jpg",
+        "predictions": 1,
+        "exact_stage_tp": 0,
+        "exact_stage_fp": 1,
+        "exact_stage_fn": 19,
+        "healthy_mistaken_actions": 1
+      },
+      {
+        "id": "d388207a12fbf8dc1dc7ed62",
+        "image": "/home/f3mt0/hacktheandes-cacao-training/data/external-v2/images/test/d388207a12fbf8dc1dc7ed62.jpg",
+        "predictions": 3,
+        "exact_stage_tp": 2,
+        "exact_stage_fp": 1,
+        "exact_stage_fn": 9,
+        "healthy_mistaken_actions": 1
+      },
+      {
+        "id": "fea7c6b9d4843daa435d958c",
+        "image": "/home/f3mt0/hacktheandes-cacao-training/data/external-v2/images/test/fea7c6b9d4843daa435d958c.jpg",
+        "predictions": 3,
+        "exact_stage_tp": 2,
+        "exact_stage_fp": 1,
+        "exact_stage_fn": 4,
+        "healthy_mistaken_actions": 1
+      },
+      {
+        "id": "d4688a8f81ea9e75ae154026",
+        "image": "/home/f3mt0/hacktheandes-cacao-training/data/external-v2/images/test/d4688a8f81ea9e75ae154026.jpg",
+        "predictions": 0,
+        "exact_stage_tp": 0,
+        "exact_stage_fp": 0,
+        "exact_stage_fn": 3,
+        "healthy_mistaken_actions": 0
+      },
+      {
+        "id": "285e91f9e6ada884c8f373ff",
+        "image": "/home/f3mt0/hacktheandes-cacao-training/data/external-v2/images/test/285e91f9e6ada884c8f373ff.jpg",
+        "predictions": 0,
+        "exact_stage_tp": 0,
+        "exact_stage_fp": 0,
+        "exact_stage_fn": 6,
+        "healthy_mistaken_actions": 0
+      },
+      {
+        "id": "30199e0d1a9c46aa1f8db4e8",
+        "image": "/home/f3mt0/hacktheandes-cacao-training/data/external-v2/images/test/30199e0d1a9c46aa1f8db4e8.jpg",
+        "predictions": 1,
+        "exact_stage_tp": 1,
+        "exact_stage_fp": 0,
+        "exact_stage_fn": 2,
+        "healthy_mistaken_actions": 0
+      },
+      {
+        "id": "f76fdf69eec68b8b3fec450d",
+        "image": "/home/f3mt0/hacktheandes-cacao-training/data/external-v2/images/test/f76fdf69eec68b8b3fec450d.jpg",
+        "predictions": 2,
+        "exact_stage_tp": 1,
+        "exact_stage_fp": 1,
+        "exact_stage_fn": 5,
+        "healthy_mistaken_actions": 1
+      },
+      {
+        "id": "0fbd2b6d4ec26b26d41d13f5",
+        "image": "/home/f3mt0/hacktheandes-cacao-training/data/external-v2/images/test/0fbd2b6d4ec26b26d41d13f5.jpg",
+        "predictions": 4,
+        "exact_stage_tp": 4,
+        "exact_stage_fp": 0,
+        "exact_stage_fn": 1,
+        "healthy_mistaken_actions": 0
+      },
+      {
+        "id": "973ac9fc37fd7357178a41f8",
+        "image": "/home/f3mt0/hacktheandes-cacao-training/data/external-v2/images/test/973ac9fc37fd7357178a41f8.jpg",
+        "predictions": 2,
+        "exact_stage_tp": 1,
+        "exact_stage_fp": 1,
+        "exact_stage_fn": 2,
+        "healthy_mistaken_actions": 1
+      },
+      {
+        "id": "8872a5fdd7856ab586c159b6",
+        "image": "/home/f3mt0/hacktheandes-cacao-training/data/external-v2/images/test/8872a5fdd7856ab586c159b6.jpg",
+        "predictions": 1,
+        "exact_stage_tp": 1,
+        "exact_stage_fp": 0,
+        "exact_stage_fn": 9,
+        "healthy_mistaken_actions": 0
+      },
+      {
+        "id": "d9314a933cb186c158132def",
+        "image": "/home/f3mt0/hacktheandes-cacao-training/data/external-v2/images/test/d9314a933cb186c158132def.jpg",
+        "predictions": 2,
+        "exact_stage_tp": 1,
+        "exact_stage_fp": 1,
+        "exact_stage_fn": 16,
+        "healthy_mistaken_actions": 0
+      },
+      {
+        "id": "3b87975cc2518bad889abec8",
+        "image": "/home/f3mt0/hacktheandes-cacao-training/data/external-v2/images/test/3b87975cc2518bad889abec8.jpg",
+        "predictions": 0,
+        "exact_stage_tp": 0,
+        "exact_stage_fp": 0,
+        "exact_stage_fn": 4,
+        "healthy_mistaken_actions": 0
+      },
+      {
+        "id": "3d87c80b4b01b2de9090fc0f",
+        "image": "/home/f3mt0/hacktheandes-cacao-training/data/external-v2/images/test/3d87c80b4b01b2de9090fc0f.jpg",
+        "predictions": 2,
+        "exact_stage_tp": 2,
+        "exact_stage_fp": 0,
+        "exact_stage_fn": 4,
+        "healthy_mistaken_actions": 0
+      },
+      {
+        "id": "6ee632da9cb38bb73e031dcc",
+        "image": "/home/f3mt0/hacktheandes-cacao-training/data/external-v2/images/test/6ee632da9cb38bb73e031dcc.jpg",
+        "predictions": 1,
+        "exact_stage_tp": 0,
+        "exact_stage_fp": 1,
+        "exact_stage_fn": 18,
+        "healthy_mistaken_actions": 1
+      },
+      {
+        "id": "0efc16b805842741bd054013",
+        "image": "/home/f3mt0/hacktheandes-cacao-training/data/external-v2/images/test/0efc16b805842741bd054013.jpg",
+        "predictions": 0,
+        "exact_stage_tp": 0,
+        "exact_stage_fp": 0,
+        "exact_stage_fn": 4,
+        "healthy_mistaken_actions": 0
+      },
+      {
+        "id": "ffc4c78380fe700db3170d7f",
+        "image": "/home/f3mt0/hacktheandes-cacao-training/data/external-v2/images/test/ffc4c78380fe700db3170d7f.jpg",
+        "predictions": 3,
+        "exact_stage_tp": 1,
+        "exact_stage_fp": 2,
+        "exact_stage_fn": 6,
+        "healthy_mistaken_actions": 2
+      },
+      {
+        "id": "8e6f5e79fba8c328cd2dd767",
+        "image": "/home/f3mt0/hacktheandes-cacao-training/data/external-v2/images/test/8e6f5e79fba8c328cd2dd767.jpg",
+        "predictions": 4,
+        "exact_stage_tp": 1,
+        "exact_stage_fp": 3,
+        "exact_stage_fn": 10,
+        "healthy_mistaken_actions": 3
+      },
+      {
+        "id": "c897adb37301cb2e6f104d29",
+        "image": "/home/f3mt0/hacktheandes-cacao-training/data/external-v2/images/test/c897adb37301cb2e6f104d29.jpg",
+        "predictions": 0,
+        "exact_stage_tp": 0,
+        "exact_stage_fp": 0,
+        "exact_stage_fn": 1,
+        "healthy_mistaken_actions": 0
+      },
+      {
+        "id": "b269b43a4209c7da8fa0ff8b",
+        "image": "/home/f3mt0/hacktheandes-cacao-training/data/external-v2/images/test/b269b43a4209c7da8fa0ff8b.jpg",
+        "predictions": 1,
+        "exact_stage_tp": 1,
+        "exact_stage_fp": 0,
+        "exact_stage_fn": 4,
+        "healthy_mistaken_actions": 0
+      },
+      {
+        "id": "0552ecd39f2d9811da343a3c",
+        "image": "/home/f3mt0/hacktheandes-cacao-training/data/external-v2/images/test/0552ecd39f2d9811da343a3c.jpg",
+        "predictions": 2,
+        "exact_stage_tp": 2,
+        "exact_stage_fp": 0,
+        "exact_stage_fn": 12,
+        "healthy_mistaken_actions": 0
+      },
+      {
+        "id": "31a262fb89086719ee0b8af5",
+        "image": "/home/f3mt0/hacktheandes-cacao-training/data/external-v2/images/test/31a262fb89086719ee0b8af5.jpg",
+        "predictions": 1,
+        "exact_stage_tp": 1,
+        "exact_stage_fp": 0,
+        "exact_stage_fn": 5,
+        "healthy_mistaken_actions": 0
+      },
+      {
+        "id": "f1a874c50b6312805ed47b26",
+        "image": "/home/f3mt0/hacktheandes-cacao-training/data/external-v2/images/test/f1a874c50b6312805ed47b26.jpg",
+        "predictions": 0,
+        "exact_stage_tp": 0,
+        "exact_stage_fp": 0,
+        "exact_stage_fn": 9,
+        "healthy_mistaken_actions": 0
+      },
+      {
+        "id": "04f92b162b80176a60936c90",
+        "image": "/home/f3mt0/hacktheandes-cacao-training/data/external-v2/images/test/04f92b162b80176a60936c90.jpg",
+        "predictions": 0,
+        "exact_stage_tp": 0,
+        "exact_stage_fp": 0,
+        "exact_stage_fn": 3,
+        "healthy_mistaken_actions": 0
+      },
+      {
+        "id": "cb00adfa181f28fb988064d0",
+        "image": "/home/f3mt0/hacktheandes-cacao-training/data/external-v2/images/test/cb00adfa181f28fb988064d0.jpg",
+        "predictions": 2,
+        "exact_stage_tp": 1,
+        "exact_stage_fp": 1,
+        "exact_stage_fn": 3,
+        "healthy_mistaken_actions": 1
+      },
+      {
+        "id": "c23bd8014bde2661f6e10e1b",
+        "image": "/home/f3mt0/hacktheandes-cacao-training/data/external-v2/images/test/c23bd8014bde2661f6e10e1b.jpg",
+        "predictions": 1,
+        "exact_stage_tp": 1,
+        "exact_stage_fp": 0,
+        "exact_stage_fn": 8,
+        "healthy_mistaken_actions": 0
+      },
+      {
+        "id": "3bff85e896b903c5aeccff13",
+        "image": "/home/f3mt0/hacktheandes-cacao-training/data/external-v2/images/test/3bff85e896b903c5aeccff13.jpg",
+        "predictions": 3,
+        "exact_stage_tp": 2,
+        "exact_stage_fp": 1,
+        "exact_stage_fn": 1,
+        "healthy_mistaken_actions": 1
+      },
+      {
+        "id": "f5ed3b87bc072c4265d46f62",
+        "image": "/home/f3mt0/hacktheandes-cacao-training/data/external-v2/images/test/f5ed3b87bc072c4265d46f62.jpg",
+        "predictions": 1,
+        "exact_stage_tp": 0,
+        "exact_stage_fp": 1,
+        "exact_stage_fn": 10,
+        "healthy_mistaken_actions": 1
+      },
+      {
+        "id": "379e87e2c72694f24a030823",
+        "image": "/home/f3mt0/hacktheandes-cacao-training/data/external-v2/images/test/379e87e2c72694f24a030823.jpg",
+        "predictions": 2,
+        "exact_stage_tp": 1,
+        "exact_stage_fp": 1,
+        "exact_stage_fn": 2,
+        "healthy_mistaken_actions": 1
+      },
+      {
+        "id": "e4ba1aef9d12dc559313f177",
+        "image": "/home/f3mt0/hacktheandes-cacao-training/data/external-v2/images/test/e4ba1aef9d12dc559313f177.jpg",
+        "predictions": 1,
+        "exact_stage_tp": 0,
+        "exact_stage_fp": 1,
+        "exact_stage_fn": 7,
+        "healthy_mistaken_actions": 1
+      },
+      {
+        "id": "138eb179e830f0f206eb0601",
+        "image": "/home/f3mt0/hacktheandes-cacao-training/data/external-v2/images/test/138eb179e830f0f206eb0601.jpg",
+        "predictions": 2,
+        "exact_stage_tp": 1,
+        "exact_stage_fp": 1,
+        "exact_stage_fn": 2,
+        "healthy_mistaken_actions": 1
+      },
+      {
+        "id": "2049ec012d89310881a5629a",
+        "image": "/home/f3mt0/hacktheandes-cacao-training/data/external-v2/images/test/2049ec012d89310881a5629a.jpg",
+        "predictions": 2,
+        "exact_stage_tp": 1,
+        "exact_stage_fp": 1,
+        "exact_stage_fn": 1,
+        "healthy_mistaken_actions": 1
+      },
+      {
+        "id": "da2ba4a045ed24faccf76307",
+        "image": "/home/f3mt0/hacktheandes-cacao-training/data/external-v2/images/test/da2ba4a045ed24faccf76307.jpg",
+        "predictions": 1,
+        "exact_stage_tp": 1,
+        "exact_stage_fp": 0,
+        "exact_stage_fn": 5,
+        "healthy_mistaken_actions": 0
+      },
+      {
+        "id": "c0334651340576e385d7762f",
+        "image": "/home/f3mt0/hacktheandes-cacao-training/data/external-v2/images/test/c0334651340576e385d7762f.jpg",
+        "predictions": 1,
+        "exact_stage_tp": 0,
+        "exact_stage_fp": 1,
+        "exact_stage_fn": 4,
+        "healthy_mistaken_actions": 1
+      },
+      {
+        "id": "a4bc658c68a77768c599a89c",
+        "image": "/home/f3mt0/hacktheandes-cacao-training/data/external-v2/images/test/a4bc658c68a77768c599a89c.jpg",
+        "predictions": 1,
+        "exact_stage_tp": 0,
+        "exact_stage_fp": 1,
+        "exact_stage_fn": 5,
+        "healthy_mistaken_actions": 1
+      },
+      {
+        "id": "ca67f278931b7a2cd30bce50",
+        "image": "/home/f3mt0/hacktheandes-cacao-training/data/external-v2/images/test/ca67f278931b7a2cd30bce50.jpg",
+        "predictions": 1,
+        "exact_stage_tp": 1,
+        "exact_stage_fp": 0,
+        "exact_stage_fn": 2,
+        "healthy_mistaken_actions": 0
+      },
+      {
+        "id": "01e0cd902a5f1cef68be6f81",
+        "image": "/home/f3mt0/hacktheandes-cacao-training/data/external-v2/images/test/01e0cd902a5f1cef68be6f81.jpg",
+        "predictions": 2,
+        "exact_stage_tp": 1,
+        "exact_stage_fp": 1,
+        "exact_stage_fn": 3,
+        "healthy_mistaken_actions": 0
+      },
+      {
+        "id": "fee9d6b4c0991c62c0fceb29",
+        "image": "/home/f3mt0/hacktheandes-cacao-training/data/external-v2/images/test/fee9d6b4c0991c62c0fceb29.jpg",
+        "predictions": 1,
+        "exact_stage_tp": 0,
+        "exact_stage_fp": 1,
+        "exact_stage_fn": 9,
+        "healthy_mistaken_actions": 0
+      },
+      {
+        "id": "205895d8ab2e1a1bf207adce",
+        "image": "/home/f3mt0/hacktheandes-cacao-training/data/external-v2/images/test/205895d8ab2e1a1bf207adce.jpg",
+        "predictions": 1,
+        "exact_stage_tp": 1,
+        "exact_stage_fp": 0,
+        "exact_stage_fn": 11,
+        "healthy_mistaken_actions": 0
+      },
+      {
+        "id": "fb61a219bd9c6e0818b0972e",
+        "image": "/home/f3mt0/hacktheandes-cacao-training/data/external-v2/images/test/fb61a219bd9c6e0818b0972e.jpg",
+        "predictions": 1,
+        "exact_stage_tp": 1,
+        "exact_stage_fp": 0,
+        "exact_stage_fn": 5,
+        "healthy_mistaken_actions": 0
+      },
+      {
+        "id": "791fb040434c125c37ad9e30",
+        "image": "/home/f3mt0/hacktheandes-cacao-training/data/external-v2/images/test/791fb040434c125c37ad9e30.jpg",
+        "predictions": 3,
+        "exact_stage_tp": 2,
+        "exact_stage_fp": 1,
+        "exact_stage_fn": 4,
+        "healthy_mistaken_actions": 0
+      },
+      {
+        "id": "c45073c23c0c05f2a3523f25",
+        "image": "/home/f3mt0/hacktheandes-cacao-training/data/external-v2/images/test/c45073c23c0c05f2a3523f25.jpg",
+        "predictions": 0,
+        "exact_stage_tp": 0,
+        "exact_stage_fp": 0,
+        "exact_stage_fn": 4,
+        "healthy_mistaken_actions": 0
+      },
+      {
+        "id": "5db6ea1ff769b81e9d0cc4f9",
+        "image": "/home/f3mt0/hacktheandes-cacao-training/data/external-v2/images/test/5db6ea1ff769b81e9d0cc4f9.jpg",
+        "predictions": 1,
+        "exact_stage_tp": 0,
+        "exact_stage_fp": 1,
+        "exact_stage_fn": 5,
+        "healthy_mistaken_actions": 0
+      },
+      {
+        "id": "a74e0c48cdd6e12b2cbdf1aa",
+        "image": "/home/f3mt0/hacktheandes-cacao-training/data/external-v2/images/test/a74e0c48cdd6e12b2cbdf1aa.jpg",
+        "predictions": 1,
+        "exact_stage_tp": 0,
+        "exact_stage_fp": 1,
+        "exact_stage_fn": 7,
+        "healthy_mistaken_actions": 1
+      },
+      {
+        "id": "b56c170f0a39906dba521c7b",
+        "image": "/home/f3mt0/hacktheandes-cacao-training/data/external-v2/images/test/b56c170f0a39906dba521c7b.jpg",
+        "predictions": 3,
+        "exact_stage_tp": 1,
+        "exact_stage_fp": 2,
+        "exact_stage_fn": 5,
+        "healthy_mistaken_actions": 0
+      },
+      {
+        "id": "8cd0f7116abcb31ee5e3070e",
+        "image": "/home/f3mt0/hacktheandes-cacao-training/data/external-v2/images/test/8cd0f7116abcb31ee5e3070e.jpg",
+        "predictions": 1,
+        "exact_stage_tp": 1,
+        "exact_stage_fp": 0,
+        "exact_stage_fn": 8,
+        "healthy_mistaken_actions": 0
+      },
+      {
+        "id": "260d9bc00ded5ed670723703",
+        "image": "/home/f3mt0/hacktheandes-cacao-training/data/external-v2/images/test/260d9bc00ded5ed670723703.jpg",
+        "predictions": 1,
+        "exact_stage_tp": 0,
+        "exact_stage_fp": 1,
+        "exact_stage_fn": 2,
+        "healthy_mistaken_actions": 1
+      },
+      {
+        "id": "1d6c34da9ba9fa741d3acf79",
+        "image": "/home/f3mt0/hacktheandes-cacao-training/data/external-v2/images/test/1d6c34da9ba9fa741d3acf79.jpg",
+        "predictions": 1,
+        "exact_stage_tp": 0,
+        "exact_stage_fp": 1,
+        "exact_stage_fn": 4,
+        "healthy_mistaken_actions": 1
+      },
+      {
+        "id": "b3014d98720096672bf0b308",
+        "image": "/home/f3mt0/hacktheandes-cacao-training/data/external-v2/images/test/b3014d98720096672bf0b308.jpg",
+        "predictions": 2,
+        "exact_stage_tp": 1,
+        "exact_stage_fp": 1,
+        "exact_stage_fn": 6,
+        "healthy_mistaken_actions": 0
+      },
+      {
+        "id": "07c13440a130e2d2308095c2",
+        "image": "/home/f3mt0/hacktheandes-cacao-training/data/external-v2/images/test/07c13440a130e2d2308095c2.jpg",
+        "predictions": 1,
+        "exact_stage_tp": 0,
+        "exact_stage_fp": 1,
+        "exact_stage_fn": 16,
+        "healthy_mistaken_actions": 0
+      }
+    ],
+    "any_annotated_disease": {
+      "healthy": {
+        "original_class_id": 0,
+        "tp": 126,
+        "fp": 33,
+        "fn": 1093,
+        "precision": 0.7924528301886793,
+        "recall": 0.10336341263330599,
+        "f1": 0.18287373004354138,
+        "precision_wilson_95": [
+          0.7228840112577166,
+          0.848223621119877
+        ],
+        "recall_wilson_95": [
+          0.08750101006413731,
+          0.12171781955211329
+        ]
+      },
+      "symptomatic": {
+        "original_class_ids": [
+          1,
+          2
+        ],
+        "tp": 187,
+        "fp": 112,
+        "fn": 185,
+        "precision": 0.6254180602006689,
+        "recall": 0.5026881720430108,
+        "f1": 0.5573770491803278,
+        "precision_wilson_95": [
+          0.5692910874925196,
+          0.6783632471948783
+        ],
+        "recall_wilson_95": [
+          0.4521120488249919,
+          0.5532093438874448
+        ]
+      }
+    }
+  },
+  "limitations": [
+    "External still photos, not flight or camera-motion validation.",
+    "No test-time threshold fitting; duplicate checks are conservative perceptual proxies.",
+    "Labels are public-dataset annotations, not independent laboratory diagnoses.",
+    "Classes in other_disease_classes count as false positives for the specific target disease, and as positives for any-annotated-disease metrics."
+  ]
+}

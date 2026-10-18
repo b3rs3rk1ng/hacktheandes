@@ -1,0 +1,30 @@
+[
+  {
+    "file": "fruitnet_mobilenetv2.h5",
+    "url": "https://raw.githubusercontent.com/OleksandrKlanovets/fruitnet/42f9d4f39cc6caf3ef84d42eb95dd842c99662f1/config/fruit_classifier_v3_transfer_learning.h5",
+    "size": 9428816,
+    "sha256": "5f8d4564a4687372e6e229411fc77dad545a6efb20059f014a88770fc09e8499",
+    "executed": false
+  },
+  {
+    "file": "akash_best.pt",
+    "url": "https://raw.githubusercontent.com/AKASH-ALAM/Fruit_Quality_Detection_Using_Deep_Learning/2c9ab8de378b9a196c71bd42cef60649b434902f/model/fruit_quality/weights/best.pt",
+    "size": 6211946,
+    "sha256": "4a1eed6035735b380343a57d2ff12b669f4ade83aee43a30acd86b691553617a",
+    "executed": false
+  },
+  {
+    "file": "akash_best.onnx",
+    "url": "https://raw.githubusercontent.com/AKASH-ALAM/Fruit_Quality_Detection_Using_Deep_Learning/2c9ab8de378b9a196c71bd42cef60649b434902f/model/fruit_quality/weights/best.onnx",
+    "size": 12144721,
+    "sha256": "c76ccd5e40b06c45e30c6d5249214993cbef4ccbd4be153f1e6295473e8070b6",
+    "executed": false
+  },
+  {
+    "file": "ausjahk_model.safetensors",
+    "url": "https://huggingface.co/ausjahk/fruits-fresh-rotten-from-scratch/resolve/0cd3827f4a5e38be308680cb26e9730a7169984f/model.safetensors",
+    "size": 44772544,
+    "sha256": "6cf6a81096d3b73f52629affc7fcdd280864b1006c67bfa0c24969e68c508a61",
+    "executed": false
+  }
+]

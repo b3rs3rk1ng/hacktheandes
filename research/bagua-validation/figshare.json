@@ -1,0 +1,198 @@
+{
+  "files": [
+    {
+      "id": 64270374,
+      "name": "1zRY_DWuK8gKThnqTUx17OMbplJrDrjZg",
+      "size": 0,
+      "is_link_only": true,
+      "download_url": "https://drive.google.com/drive/folders/1zRY_DWuK8gKThnqTUx17OMbplJrDrjZg",
+      "supplied_md5": "",
+      "computed_md5": "",
+      "mimetype": "undefined"
+    }
+  ],
+  "folder_structure": {},
+  "authors": [
+    {
+      "id": 23839038,
+      "full_name": "Josep Haamil Gonzalez Herrera",
+      "first_name": "Josep Haamil",
+      "last_name": "Gonzalez Herrera",
+      "is_active": false,
+      "url_name": "_",
+      "orcid_id": ""
+    },
+    {
+      "id": 21351260,
+      "full_name": "Heling Kristtel Masgo Ventura",
+      "first_name": "Heling Kristtel",
+      "last_name": "Masgo Ventura",
+      "is_active": true,
+      "url_name": "Heling_Kristtel_Masgo_Ventura",
+      "orcid_id": ""
+    },
+    {
+      "id": 21351512,
+      "full_name": "Roberto Carlos Santa Cruz Acosta",
+      "first_name": "Roberto Carlos",
+      "last_name": "Santa Cruz Acosta",
+      "is_active": false,
+      "url_name": "_",
+      "orcid_id": "0000-0001-8802-9083"
+    },
+    {
+      "id": 23839051,
+      "full_name": "Carlos Luis Lobat\u00f3n Arenas",
+      "first_name": "Carlos",
+      "last_name": "Luis Lobat\u00f3n Arenas",
+      "is_active": false,
+      "url_name": "_",
+      "orcid_id": ""
+    },
+    {
+      "id": 23839054,
+      "full_name": "Pompeyo Ferro",
+      "first_name": "Pompeyo",
+      "last_name": "Ferro",
+      "is_active": false,
+      "url_name": "_",
+      "orcid_id": ""
+    },
+    {
+      "id": 23839055,
+      "full_name": "Euclines Ticona Chay\u00f1a",
+      "first_name": "Euclines",
+      "last_name": "Ticona Chay\u00f1a",
+      "is_active": false,
+      "url_name": "_",
+      "orcid_id": ""
+    },
+    {
+      "id": 23839068,
+      "full_name": "Jos\u00e9 Miguel Ojeda-P\u00e9rez",
+      "first_name": "Jos\u00e9",
+      "last_name": "Miguel Ojeda-P\u00e9rez",
+      "is_active": false,
+      "url_name": "_",
+      "orcid_id": ""
+    },
+    {
+      "id": 23839057,
+      "full_name": "Jos\u00e9 Marchena-Dioses",
+      "first_name": "Jos\u00e9",
+      "last_name": "Marchena-Dioses",
+      "is_active": false,
+      "url_name": "_",
+      "orcid_id": ""
+    },
+    {
+      "id": 23839075,
+      "full_name": "Jaime Mundaca Araujo",
+      "first_name": "Jaime",
+      "last_name": "Mundaca Araujo",
+      "is_active": false,
+      "url_name": "_",
+      "orcid_id": ""
+    },
+    {
+      "id": 23839816,
+      "full_name": "Oscar Enrique Salazar Carbonel",
+      "first_name": "Oscar",
+      "last_name": "Enrique Salazar Carbonel",
+      "is_active": false,
+      "url_name": "_",
+      "orcid_id": ""
+    },
+    {
+      "id": 11763818,
+      "full_name": "Eli Morales Rojas",
+      "first_name": "Eli",
+      "last_name": "Morales Rojas",
+      "is_active": true,
+      "url_name": "Eli_Morales_Rojas",
+      "orcid_id": ""
+    }
+  ],
+  "custom_fields": [],
+  "figshare_url": "https://figshare.com/articles/dataset/Detecci_n_de_la_moniliasis_en_los_frutos_del_cacao_mediante_el_aprendizaje_profundo_y_YOLOv8_un_estudio_de_caso_en_la_provincia_de_Bagua_al_norte_de_Per_/32178402",
+  "download_disabled": false,
+  "description": "<p dir=\"ltr\">La moniliasis, causada por Moniliophthora roreri, es una de las principales enfermedades que afectan a la producci\u00f3n de cacao y que provoca p\u00e9rdidas significativas en regiones tropicales como la Amazon\u00eda peruana.</p>",
+  "funding": null,
+  "funding_list": [],
+  "version": 1,
+  "status": "public",
+  "size": 0,
+  "created_date": "2026-05-05T19:14:53Z",
+  "modified_date": "2026-05-05T19:14:53Z",
+  "is_public": true,
+  "is_confidential": false,
+  "is_metadata_record": false,
+  "confidential_reason": "",
+  "metadata_reason": "",
+  "license": {
+    "value": 1,
+    "name": "CC BY 4.0",
+    "url": "https://creativecommons.org/licenses/by/4.0/"
+  },
+  "tags": [
+    "Cocoa pods",
+    "disease",
+    "moniliasis",
+    "deep learning",
+    "YOLOv8"
+  ],
+  "keywords": [
+    "Cocoa pods",
+    "disease",
+    "moniliasis",
+    "deep learning",
+    "YOLOv8"
+  ],
+  "categories": [
+    {
+      "id": 28864,
+      "title": "Artificial intelligence not elsewhere classified",
+      "parent_id": 28825,
+      "path": "/28798/28825/28864",
+      "source_id": "460299",
+      "taxonomy_id": 100
+    },
+    {
+      "id": 26560,
+      "title": "Environmentally sustainable engineering",
+      "parent_id": 26554,
+      "path": "/26212/26554/26560",
+      "source_id": "401102",
+      "taxonomy_id": 100
+    }
+  ],
+  "references": [],
+  "has_linked_file": true,
+  "citation": "Gonzalez Herrera, Josep Haamil; Masgo Ventura, Heling Kristtel; Santa Cruz Acosta, Roberto Carlos; Luis Lobat\u00f3n Arenas, Carlos; Ferro, Pompeyo; Ticona Chay\u00f1a, Euclines; et al. (2026). Detecci\u00f3n de la moniliasis en los frutos del cacao mediante el aprendizaje profundo y YOLOv8: un estudio de caso en la provincia de Bagua, al norte de Per\u00fa. figshare. Dataset. https://doi.org/10.6084/m9.figshare.32178402.v1",
+  "related_materials": [],
+  "is_embargoed": false,
+  "embargo_date": null,
+  "embargo_type": null,
+  "embargo_title": "",
+  "embargo_reason": "",
+  "embargo_options": [],
+  "id": 32178402,
+  "title": "Detecci\u00f3n de la moniliasis en los frutos del cacao mediante el aprendizaje profundo y YOLOv8: un estudio de caso en la provincia de Bagua, al norte de Per\u00fa",
+  "doi": "10.6084/m9.figshare.32178402.v1",
+  "handle": "",
+  "url": "https://api.figshare.com/v2/articles/32178402",
+  "published_date": "2026-05-05T19:14:53Z",
+  "thumb": "",
+  "defined_type": 3,
+  "defined_type_name": "dataset",
+  "group_id": null,
+  "url_private_api": "https://api.figshare.com/v2/account/articles/32178402",
+  "url_public_api": "https://api.figshare.com/v2/articles/32178402",
+  "url_private_html": "https://figshare.com/account/articles/32178402",
+  "url_public_html": "https://figshare.com/articles/dataset/Detecci_n_de_la_moniliasis_en_los_frutos_del_cacao_mediante_el_aprendizaje_profundo_y_YOLOv8_un_estudio_de_caso_en_la_provincia_de_Bagua_al_norte_de_Per_/32178402",
+  "timeline": {
+    "posted": "2026-05-05T19:14:53"
+  },
+  "resource_title": null,
+  "resource_doi": null
+}

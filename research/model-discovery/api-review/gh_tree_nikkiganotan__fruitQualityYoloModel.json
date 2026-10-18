@@ -1,0 +1,31 @@
+{
+  "sha": "1907250783fb1e6a325501d256bc7f28a1af01fa",
+  "url": "https://api.github.com/repos/nikkiganotan/fruitQualityYoloModel/git/trees/1907250783fb1e6a325501d256bc7f28a1af01fa",
+  "tree": [
+    {
+      "path": "README.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2f5ae68cbbeae9645eed0cf47fe9ab52e5eb8fe3",
+      "size": 121,
+      "url": "https://api.github.com/repos/nikkiganotan/fruitQualityYoloModel/git/blobs/2f5ae68cbbeae9645eed0cf47fe9ab52e5eb8fe3"
+    },
+    {
+      "path": "hubconf.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "729dac4cec568030638f8d168a821a6a5d648699",
+      "size": 2925,
+      "url": "https://api.github.com/repos/nikkiganotan/fruitQualityYoloModel/git/blobs/729dac4cec568030638f8d168a821a6a5d648699"
+    },
+    {
+      "path": "yolov5s.pt",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "255a1052d7ca6508022f18893e15bb7fef6f2219",
+      "size": 14749585,
+      "url": "https://api.github.com/repos/nikkiganotan/fruitQualityYoloModel/git/blobs/255a1052d7ca6508022f18893e15bb7fef6f2219"
+    }
+  ],
+  "truncated": false
+}

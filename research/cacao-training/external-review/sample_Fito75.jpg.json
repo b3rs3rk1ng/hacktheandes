@@ -1,0 +1,34 @@
+{
+    "description": "",
+    "tags": [],
+    "size": {
+        "height": 4160,
+        "width": 3120
+    },
+    "objects": [
+        {
+            "id": 12891746,
+            "classId": 19770,
+            "description": "",
+            "geometryType": "rectangle",
+            "labelerLogin": "gr@datasetninja.com",
+            "createdAt": "2023-07-03T15:02:47.833Z",
+            "updatedAt": "2023-07-03T15:02:47.833Z",
+            "tags": [],
+            "classTitle": "phytophthora",
+            "points": {
+                "exterior": [
+                    [
+                        1514,
+                        1341
+                    ],
+                    [
+                        2296,
+                        2782
+                    ]
+                ],
+                "interior": []
+            }
+        }
+    ]
+}

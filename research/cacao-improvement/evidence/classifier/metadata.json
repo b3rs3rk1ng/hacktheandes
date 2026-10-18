@@ -1,0 +1,68 @@
+{
+  "name": "cacao-roi-three-class-gate-v2",
+  "architecture": "efficientnet_b0",
+  "head_path": "classifier.1",
+  "class_names": [
+    "healthy",
+    "monilia",
+    "phytophthora"
+  ],
+  "input_size": 256,
+  "preprocessing": {
+    "mode": "pad_square",
+    "rgb_fill": [
+      114,
+      114,
+      114
+    ],
+    "mean": [
+      0.485,
+      0.456,
+      0.406
+    ],
+    "std": [
+      0.229,
+      0.224,
+      0.225
+    ]
+  },
+  "roi": {
+    "padding_fraction": 0.1,
+    "min_side_pixels": 32,
+    "reference_image_max_side": 1280
+  },
+  "training": {
+    "seed": 20261019,
+    "device": "cuda:0",
+    "epochs": 25,
+    "patience": 6,
+    "batch": 32,
+    "workers": 2,
+    "lr": 0.0003,
+    "weight_decay": 0.0001,
+    "label_smoothing": 0.03,
+    "class_weighting": "sqrt_inverse",
+    "motion_probability": 0.25,
+    "motion_kernels": [
+      3,
+      5
+    ],
+    "brightness": 0.3,
+    "contrast": 0.3,
+    "saturation": 0.15
+  },
+  "manifest_sha256": "ffd74b79ce2d4a8f9d6a60113eaf6e2adea074a952bff631f201c8ec28d32221",
+  "train_counts": [
+    2862,
+    2040,
+    354
+  ],
+  "train_crops": 5256,
+  "val_crops": 525,
+  "excluded_too_small": {
+    "train": [],
+    "val": []
+  },
+  "selection_metric": "validation macro F1 only",
+  "torch_version": "2.11.0+cu130"
+}

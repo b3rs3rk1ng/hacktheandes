@@ -1,0 +1,1 @@
+{"query_url": "https://api.semanticscholar.org/graph/v1/paper/search?query=apple+fruit+disease+detection+orchard+dataset+weights&limit=8&fields=title%2Cyear%2Curl%2Cabstract%2CopenAccessPdf%2CexternalIds", "error": "HTTP Error 429: "}

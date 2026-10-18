@@ -1,0 +1,49 @@
+{
+  "_id": "6a99c81ce0276a392a63e850",
+  "id": "ausjahk/fruit-fresh-rotten-cnn-from-scratch",
+  "private": false,
+  "pipeline_tag": "image-classification",
+  "tags": [
+    "pytorch",
+    "image-classification",
+    "cnn",
+    "from-scratch",
+    "fruits",
+    "region:us"
+  ],
+  "downloads": 9,
+  "likes": 0,
+  "modelId": "ausjahk/fruit-fresh-rotten-cnn-from-scratch",
+  "author": "ausjahk",
+  "sha": "9405400af9609eaed66aab694ec259097b423565",
+  "lastModified": "2026-09-03T19:18:53.000Z",
+  "gated": false,
+  "disabled": false,
+  "model-index": null,
+  "config": {},
+  "cardData": {
+    "tags": [
+      "image-classification",
+      "cnn",
+      "from-scratch",
+      "fruits"
+    ]
+  },
+  "siblings": [
+    {
+      "rfilename": ".gitattributes"
+    },
+    {
+      "rfilename": "README.md"
+    },
+    {
+      "rfilename": "config.json"
+    },
+    {
+      "rfilename": "pytorch_model.bin"
+    }
+  ],
+  "spaces": [],
+  "createdAt": "2026-09-03T19:18:52.000Z",
+  "usedStorage": 18357159
+}

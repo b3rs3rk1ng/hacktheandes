@@ -1,0 +1,2152 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%  Deep Learning-Based Cocoa Pod Disease Detection                     %
+%  Extended IEEE Conference Format Paper (15-20 pages with appendix)   %
+%  COE 557 - Advanced Artificial Intelligence                          %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass[conference,10pt]{IEEEtran}
+\IEEEoverridecommandlockouts
+
+\usepackage{cite}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{algorithmic}
+\usepackage{graphicx}
+\usepackage{textcomp}
+\usepackage{xcolor}
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage{array}
+\usepackage{subcaption}
+\usepackage{url}
+\usepackage[hidelinks]{hyperref}
+\usepackage{listings}
+\usepackage{diagbox}
+\usepackage{placeins}
+\usepackage{stfloats}
+
+% so that figures in paper/Images can be found by Overleaf and locally
+\graphicspath{{../Images/}{Images/}{./}}
+
+\def\BibTeX{{\rm B\kern-.05em{\sc i\kern-.025em b}\kern-.08em
+    T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
+
+\begin{document}
+
+\title{Deep Learning-Based Cocoa Pod Disease Detection:\\
+A Multi-Class Classification System for Ghanaian Farmers}
+
+\author{
+\IEEEauthorblockN{Enoch K. Koranteng}
+\IEEEauthorblockA{
+Department of Computer Engineering\\
+Kwame Nkrumah University of Science and Technology\\
+Kumasi, Ghana\\
+ekkoranteng10@st.knust.edu.gh
+}
+}
+
+\maketitle
+
+\begin{abstract}
+Cocoa (\textit{Theobroma cacao} L.) is a cornerstone of Ghana's economy,
+generating approximately US\$2 billion in annual foreign exchange and supporting
+over 800{,}000 farm families. Yet fungal and pest diseases, including
+\textit{Phytophthora palmivora} (black pod), \textit{Moniliophthora roreri}
+(frosty pod rot), \textit{Moniliophthora perniciosa} (witches' broom), and
+\textit{Carmenta foraseminis} (cocoa pod borer), destroy 30--40\% of global
+cocoa production each year. Early identification by trained agronomists is
+chronically scarce in rural Ghana. This paper presents a deep-learning
+multi-class classification system that identifies five pod conditions
+(including a healthy class) directly from smartphone images. Three CNN
+architectures, ResNet-50, EfficientNet-B0, and MobileNetV3-Small, are
+adapted via ImageNet transfer learning and fine-tuned on a curated dataset of
+3{,}285 annotated pod crops. To address severe class imbalance (the rarest
+class is 2.3\% of samples), we apply inverse-frequency cross-entropy weighting.
+Evaluation covers accuracy, macro F1, per-class precision/recall, ROC AUC,
+inference latency distribution, parameter count, and FP32/INT8 model footprint
+to assess both predictive quality and edge feasibility. ResNet-50 achieves the
+highest test accuracy (87.25\%), EfficientNet-B0 the best macro F1 (0.755) at
+4.01M parameters, and MobileNetV3-Small the lowest latency (3.9 ms) at 1.52M
+parameters and an estimated 1.45 MB INT8 footprint, satisfying the constraints
+of offline smartphone deployment. The contribution is a complete, reproducible
+pipeline plus an analysis of where each architecture sits on the
+accuracy--efficiency frontier for Ghanaian smallholder farms.
+\end{abstract}
+
+\begin{IEEEkeywords}
+Cocoa pod disease, deep learning, convolutional neural networks, transfer
+learning, ResNet-50, EfficientNet, MobileNetV3, precision agriculture, Ghana,
+edge deployment, ROC analysis, model compression.
+\end{IEEEkeywords}
+
+%==============================================================
+\section{Introduction}\label{sec:intro}
+
+\IEEEPARstart{G}{hana} is the world's second-largest producer of cocoa, contributing
+approximately 20\% of global output \cite{usda2025}. The crop underpins the
+livelihoods of nearly 800{,}000 farm families and is the country's third-largest
+source of foreign exchange revenue, surpassed only by gold and crude oil
+\cite{gcb2022}. Despite this economic significance, cocoa yields in Ghana have
+declined sharply: the 2024/2025 crop season saw output nearly halve compared
+to the 2021/2022 peak of 1.04 million metric tons, with disease and climate
+stress cited as primary drivers \cite{usda2025}.
+
+The principal pathogens threatening Ghanaian cocoa are well documented.
+\textit{Phytophthora palmivora}, the causal agent of black pod disease,
+accounts for 10--30\% of annual pod losses globally and can destroy up to 90\%
+of a crop if left untreated \cite{alvarado2025}.
+\textit{Moniliophthora roreri} (frosty pod rot) and \textit{Moniliophthora
+perniciosa} (witches' broom) are predominantly a threat in Latin America but
+have been detected in West African farms and represent a biosecurity risk
+\cite{buenano2024}. \textit{Carmenta foraseminis}, the cocoa pod borer,
+inflicts yield losses of up to 75\% in severely affected areas
+\cite{pagaduan2026}. Cocoa swollen-shoot virus disease (CSSVD) compounds these
+threats; over 90{,}000 hectares of Ghanaian cocoa are currently infected, and
+more than 200 million trees have been felled since the disease was first
+documented in 1936 \cite{gcb2022}.
+
+\subsection{Why Smartphone-Based Diagnosis}
+
+Conventional disease diagnosis requires field visits from trained agricultural
+extension officers, a resource that is chronically scarce in rural Ghana.
+Farmers typically wait days or weeks for a diagnosis, by which time disease
+spread has become difficult to contain. Smartphone penetration in sub-Saharan
+Africa has grown rapidly, reaching over 50\% in Ghana by 2023, creating an
+opportunity for AI-powered on-device diagnostics that are accessible, fast,
+and low-cost \cite{cocoacompanion2022}. The deployment context imposes three
+constraints simultaneously: (i)~the model must run \emph{offline}, because
+many cocoa-growing regions have intermittent or no mobile data; (ii)~latency
+must be perceptually instant ($<\!100$\,ms) on a 2--4 GB Android device; and
+(iii)~the binary footprint must fit alongside other applications, motivating
+sub-10 MB model sizes after quantisation.
+
+\subsection{Why Convolutional Neural Networks}
+
+Deep learning, and convolutional neural networks (CNNs) in particular, have
+transformed computer vision across many agricultural domains. Since the
+landmark work of Mohanty \emph{et al.}~\cite{mohanty2016}, who demonstrated
+99.35\% accuracy on the PlantVillage dataset using AlexNet and GoogLeNet,
+researchers have progressively applied increasingly efficient architectures to
+real-world, field-captured plant images \cite{alvarado2025}. Transfer
+learning, which involves initialising a network with weights pretrained on
+large-scale datasets such as ImageNet and fine-tuning on a domain-specific
+collection, has emerged as the dominant strategy when labelled agricultural
+data is limited \cite{transfer2024}. The advantage is twofold: low-level
+features (edges, textures, colour gradients) generalise across natural images,
+and the optimisation surface near a pre-trained minimum is dramatically more
+benign than the one near random initialisation, allowing convergence in tens
+of epochs with hundreds rather than millions of training images per class.
+
+\subsection{Research Questions}\label{ssec:rq}
+
+The deployment context outlined above translates into four concrete research
+questions that this paper attempts to answer empirically rather than
+rhetorically:
+
+\begin{description}
+\item[\textbf{RQ1}] On a single, imbalanced, field-captured cocoa-pod dataset,
+how much accuracy and macro F1 does each architecture (ResNet-50,
+EfficientNet-B0, MobileNetV3-Small) lose relative to the heaviest baseline
+when all other variables — augmentation, optimiser, schedule, seed — are held
+fixed?
+
+\item[\textbf{RQ2}] Where does that loss concentrate? Is the cost of going
+small spread evenly across classes, or is it absorbed disproportionately by
+the rare classes that matter most for early disease detection?
+
+\item[\textbf{RQ3}] Does the rank ordering of probability scores degrade as
+fast as the argmax decision? In other words, can a calibrated top-$k$
+interface partially recover the accuracy a smaller backbone gives up?
+
+\item[\textbf{RQ4}] Under the deployment constraints of a 2--4\,GB Android
+device with intermittent connectivity, which architecture is feasible after
+INT8 quantisation, and what is the headroom for additional in-app stages
+(detector, tracker, advisory layer)?
+\end{description}
+
+These questions structure the experimental setup in Sec.~\ref{sec:exp} and
+the results in Sec.~\ref{sec:results}; each RQ is revisited explicitly in the
+dedicated Discussion of Sec.~\ref{sec:discussion}.
+
+\subsection{Contributions}
+
+This paper makes the following contributions:
+
+\begin{enumerate}
+\item A complete deep-learning pipeline for multi-class cocoa pod disease
+classification, converting bounding-box-annotated YOLO-format data into
+cropped, class-balanced training samples.
+\item A systematic comparative evaluation of three architectures
+(ResNet-50~\cite{he2016}, EfficientNet-B0~\cite{tan2019}, and
+MobileNetV3-Small~\cite{howard2019}) under \emph{identical} training
+hyperparameters, augmentation, and class-weighting schemes, isolating
+architecture as the only varying factor.
+\item An extended evaluation that goes beyond aggregate accuracy to report
+per-class precision, recall, F1, support, ROC AUC (one-vs-rest, micro, and
+macro), and inference latency distribution (mean/median/P95/P99).
+\item A model-footprint analysis covering FP32 size, estimated INT8 size, and
+parameter count, mapping each architecture to a deployment tier (cloud
+inference, on-device inference, ultra-low-end inference).
+\item Practical recommendations for deploying the best edge-suitable model in
+Ghanaian smallholder farming contexts, with explicit discussion of failure
+modes and limitations.
+\item A research-question-aligned discussion (Sec.~\ref{sec:discussion}) that
+maps each empirical finding to a concrete deployment decision, rather than
+ending the paper at an aggregate metrics table.
+\end{enumerate}
+
+To make the scope of these contributions concrete,
+Table~\ref{tab:contributions} summarises which sections deliver each
+contribution and which research question it answers; the table doubles as a
+roadmap for a reader who wants to navigate the paper non-linearly.
+
+\begin{table}[t]
+\centering
+\caption{Roadmap of contributions, anchoring sections, and research questions.}
+\label{tab:contributions}
+\renewcommand{\arraystretch}{1.15}
+\begin{tabular}{p{0.04\columnwidth}p{0.45\columnwidth}p{0.18\columnwidth}p{0.12\columnwidth}}
+\toprule
+\textbf{\#} & \textbf{Contribution} & \textbf{Section} & \textbf{RQ}\\
+\midrule
+C1 & Pipeline (YOLO crops $\rightarrow$ class-balanced trainer) & \ref{sec:method} & --- \\
+C2 & Identical-protocol architecture comparison & \ref{sec:exp},\ref{sec:results} & RQ1 \\
+C3 & Per-class metrics + ROC + latency distribution & \ref{sec:results} & RQ2--3 \\
+C4 & Footprint $\rightarrow$ deployment tier mapping & \ref{sec:results} & RQ4 \\
+C5 & Smallholder-deployment recommendations & \ref{sec:discussion} & RQ4 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The remainder of this paper is structured as follows.
+Section~\ref{sec:related} reviews related work, including class-imbalance
+strategies and the recent edge-deployment literature for agriculture.
+Section~\ref{sec:background} formalises the multi-class classification
+problem, the inductive biases of the chosen architectures, and the loss used.
+Section~\ref{sec:method} describes the dataset, preprocessing pipeline, and
+model architectures.
+Section~\ref{sec:exp} details the experimental setup, including the
+quantisation protocol used to derive INT8 footprints.
+Section~\ref{sec:results} presents the per-architecture metric breakdown.
+Section~\ref{sec:discussion} maps the results onto each of the four research
+questions and onto the deployment recommendation for Ghanaian smallholders.
+Section~\ref{sec:limits} reflects on limitations and threats to validity.
+Section~\ref{sec:conclusion} concludes with directions for future work.
+A multi-section appendix provides per-model detailed figures, full
+reproducibility data, and per-class confusion counts.
+
+%==============================================================
+\section{Related Work}\label{sec:related}
+
+\subsection{Plant Disease Detection with Deep Learning}
+
+The systematic application of deep learning to plant disease detection began
+in earnest with Mohanty \emph{et al.}~\cite{mohanty2016}, who trained CNN
+classifiers on 54{,}306 images spanning 26 diseases across 14 crop species
+from the PlantVillage dataset, achieving 99.35\% accuracy under controlled
+laboratory conditions. Subsequent work consistently showed that performance
+degrades significantly on field-captured images due to variations in
+lighting, occlusion, background complexity, and disease stage, motivating
+domain-specific data collection and augmentation \cite{alvarado2025}.
+Two patterns dominate the post-2018 literature. First, the family of model
+architectures has steadily shifted from heavy generic backbones (VGG-16,
+GoogLeNet) toward families designed with efficiency in mind (EfficientNet,
+MobileNet) or with stronger inductive biases (vision transformers).
+Second, evaluation has moved from raw accuracy on lab images to
+balanced-aware metrics on field images, reflecting the realisation that the
+class imbalance present in nearly every agricultural dataset makes accuracy
+a misleading single-number summary.
+
+\subsection{Transfer Learning for Agricultural Imagery}
+
+Transfer learning has become the standard approach for agricultural image
+classification, where per-class sample counts are often insufficient to train
+large networks from scratch \cite{transfer2024}. Pre-training on ImageNet
+provides initialisation that captures universal low-level features such as
+edges, textures, and colours that are transferable to plant imagery.
+Fine-tuning the final classification layers, or all layers at a reduced
+learning rate, consistently outperforms training from random initialisation
+when datasets contain fewer than 10{,}000 samples per class \cite{anduyan2025}.
+A complementary line of work investigates whether more domain-aligned
+pre-training (for example, on iNaturalist or PlantCLEF) yields further gains;
+the consensus is that ImageNet weights remain a strong default for crop-level
+disease classification, with at most marginal additional benefit from
+domain-aligned pre-training when the target dataset is small.
+
+\subsection{Cocoa-Specific Disease Detection}
+
+Research on automated cocoa disease detection has grown substantially since
+2020. Buena\~{n}o Vera \emph{et al.}~\cite{buenano2024} evaluated
+EfficientDet-Lite4 for simultaneous detection and localisation of monilia
+(frosty pod rot) and black pod disease on cocoa pods, demonstrating that
+lightweight detection models can achieve acceptable accuracy suitable for
+mobile deployment. Their work targets a two-class detection problem rather
+than a five-way classification and does not measure macro F1 over rare
+classes. Anduyan \emph{et al.}~\cite{anduyan2025} conducted the most
+comprehensive architecture comparison on cocoa pod images to date, evaluating
+VGG16, VGG19, ResNet-50, ResNet-101, InceptionV3, and Xception as base
+learners within three ensemble schemes; bagging achieved 100\% test accuracy
+on a balanced 6{,}000-image dataset, though the study did not evaluate
+lightweight architectures for edge deployment, and the balanced dataset does
+not reflect the long-tailed reality of field collections.
+
+Pagaduan \emph{et al.}~\cite{pagaduan2026} developed a mobile application for
+cacao disease identification using deep learning on Filipino cocoa farms,
+corroborating the challenge of high recall on rare disease classes.
+Ayikpa \emph{et al.}~\cite{ayikpa2025} proposed a hybrid CNN and hand-crafted
+feature approach, achieving 91.48\% accuracy; stacking further improved this
+to 93.73\%, demonstrating that feature fusion can complement end-to-end
+learning when data is scarce. Kumar \emph{et al.}~\cite{kumar2023} applied
+DenseNet-19 to detect vascular streak dieback on cocoa leaf images, achieving
+99.1\% accuracy on a 1{,}200-image dataset, although their leaf-only setting
+sidesteps the geometric variation of pods that field deployment must handle.
+Alvarado \emph{et al.}~\cite{alvarado2025} conducted a systematic literature
+review of 86 studies on computer-vision methods for cocoa disease detection
+from 2010 to 2025, confirming that CNN-based transfer learning dominates the
+field and identifying a gap in lightweight, edge-deployable models.
+
+\subsection{Lightweight Architectures for Edge Deployment}
+
+The resource constraints of smartphone hardware motivate the use of compact
+architectures. MobileNetV3-Small \cite{howard2019}, with its
+depthwise-separable convolutions and hard-swish activations, achieves
+competitive accuracy at 1.5 million parameters and sub-5\,ms inference on
+mobile CPUs. EfficientNet-B0 \cite{tan2019} uses a compound scaling law that
+simultaneously scales depth, width, and resolution. Both have been validated
+for agricultural disease detection in recent benchmarks \cite{edgeai2024},
+and are natural candidates for smartphone-based farm advisory systems.
+ResNet-50 \cite{he2016} is included not because it is realistic for on-device
+inference, but because it serves as a well-understood high-capacity baseline
+that allows the cost of moving to a smaller architecture to be quantified.
+
+\subsection{Class Imbalance Strategies in Agricultural Datasets}
+
+Field-collected agricultural datasets are almost universally long-tailed: in
+practice the majority of pods, leaves, or fruits photographed during a crop
+campaign are healthy, and individual disease categories collectively occupy
+only a fraction of the data. The literature offers four broadly distinct
+strategies for handling this imbalance.
+
+\textbf{Re-weighting.} Loss-level re-weighting multiplies each sample's loss
+by an inverse-frequency-style weight so that minority classes contribute more
+gradient per sample~\cite{cuiclassbalanced2019}. This is the strategy adopted
+in the present paper. Its appeal is that it requires no change to the data
+pipeline and no change to the model architecture; it modifies only the
+training objective. The cost is that very rare classes can dominate the
+gradient and produce noisy updates if their per-batch presence is also
+volatile.
+
+\textbf{Re-sampling.} Re-sampling either oversamples the minority class
+(repeating samples or generating synthetic ones via SMOTE-style
+interpolation~\cite{chawlasmote2002}) or undersamples the majority class. The
+former increases epoch length and risks overfitting to repeated minority
+samples; the latter discards information from the majority class.
+Bagging-based ensembles such as the one Anduyan \emph{et al.}~\cite{anduyan2025}
+deploy on cocoa images implicitly re-sample at the bootstrap level.
+
+\textbf{Margin- and focal-style losses.} Focal loss~\cite{linfocal2017}
+down-weights samples on which the model is already confident, focusing
+gradient capacity on hard examples that often happen to be minority-class
+samples. Class-balanced focal loss~\cite{cuiclassbalanced2019} extends this
+idea with an effective-sample-count term that interpolates between uniform
+weighting and inverse-frequency weighting. Margin-based losses such as LDAM
+adjust the decision boundary itself per class.
+
+\textbf{Two-stage pipelines.} Where a detector precedes a classifier, the
+detector's confidence threshold can act as an implicit re-balancer by
+filtering out trivially easy backgrounds before the classifier ever sees
+them. Buena\~no Vera \emph{et al.}~\cite{buenano2024} use exactly this
+pattern with EfficientDet-Lite4 in front of a binary classifier. The
+trade-off is system complexity and the brittleness of compounding two error
+sources.
+
+This paper adopts inverse-frequency re-weighting for two reasons that the
+related work does not jointly satisfy. First, it allows the architecture
+comparison to be conducted under a single, lightweight protocol rather than
+inside a detector--classifier sandwich whose detector behaviour would itself
+become an uncontrolled variable. Second, it leaves room — explored in
+Sec.~\ref{sec:limits} — for a follow-up paper to ablate focal and
+class-balanced focal losses on the same split as a controlled comparison.
+
+\subsection{Edge Inference and Model Compression for Agriculture}
+
+A separate strand of recent work focuses on the engineering of running
+neural networks on smartphone-class hardware in low-resource settings.
+Howard \emph{et al.}~\cite{howard2019} introduced MobileNetV3 with two
+sibling architectures, MobileNetV3-Large and MobileNetV3-Small, designed
+explicitly for mobile inference; the small variant — the one used in this
+paper — was target-tuned for sub-5\,ms inference on commodity ARM CPUs.
+Tan and Le~\cite{tan2019} introduced EfficientNet, whose compound-scaling
+law produces a family of architectures that trade accuracy for compute along
+a controllable Pareto curve. Krizhevsky's seminal AlexNet~\cite{krizhevsky2012}
+and Simonyan and Zisserman's VGG family~\cite{simonyan2015} continue to be
+referenced as the heavy upper bound, but neither is plausible for offline
+on-device inference in 2026.
+
+For the deployment side specifically, three quantisation regimes dominate
+the recent literature. Post-training INT8 quantisation, the simplest, takes a
+trained FP32 network and converts both weights and activations to 8-bit
+integers using a per-channel scale factor; for the architectures studied
+here this nominally yields a $4\times$ memory reduction and, on hardware
+with INT8 SIMD support, a meaningful latency reduction as well. Quantisation-aware
+training (QAT) inserts simulated quantisation operators during fine-tuning,
+recovering most of the accuracy lost by post-training quantisation but
+requiring a second training pass. Mixed-precision quantisation
+(weight-INT4 + activation-INT8, for example) trades a small additional
+accuracy hit for further footprint reduction. This paper reports estimated
+INT8 sizes on the basis of a $4\times$ post-training-quantisation factor and
+flags QAT validation as future work; precise on-device validation requires a
+target-hardware bench that is outside the scope of this study.
+
+A complementary direction is structured pruning, in which entire convolution
+filters are removed and the remaining weights are fine-tuned to recover
+accuracy. For MobileNetV3-Small, channel pruning is known to interact poorly
+with the depthwise-separable structure because the pointwise convolutions
+already implement most of the channel mixing; literature reviews on
+edge-AI for agriculture~\cite{edgeai2024} consistently report that
+quantisation alone yields larger, more reliable footprint reductions than
+pruning on this family of architectures.
+
+\subsection{Knowledge Gap Addressed by This Work}
+
+Three structural gaps emerge when the threads above are read together.
+\textbf{First}, no published study to our knowledge runs a heavy baseline,
+a Pareto-optimal mid-size architecture, and a mobile-first architecture
+through \emph{the same training protocol on the same imbalanced cocoa-pod
+dataset}, leaving the cost of each compression step systematically
+unmeasured. \textbf{Second}, the existing cocoa-deep-learning literature
+is dominated by aggregate accuracy on balanced subsets and rarely reports
+per-class macro F1, ROC, or rare-class recall — the precise metrics that
+matter for a farmer-facing system. \textbf{Third}, the deployment-feasibility
+question (offline, mid-range Android, INT8) is typically addressed in
+isolation, not as part of an architecture comparison, so a Ghanaian
+deployment team has no apples-to-apples evidence on which to base a
+choice. This paper attempts to close all three gaps simultaneously on a
+single dataset and a single training protocol.
+
+\subsection{Positioning of This Work}
+
+Across these threads, the literature splits into two camps: balanced-dataset
+benchmarks where heavy architectures hit very high accuracy, and
+mobile-deployment papers that run a single lightweight architecture without
+the heavy baseline alongside. This work spans both camps on \emph{the same}
+imbalanced field dataset: it puts a heavy backbone, a balanced
+parameter--accuracy compound-scaled backbone, and a mobile-first backbone
+through the same protocol so that the cost of going small can be measured per
+class rather than only in aggregate. The headline number is therefore not
+``what is our best accuracy'' but ``what does each architecture lose, and
+where, when we shrink it.''
+
+%==============================================================
+\section{Background and Problem Formulation}\label{sec:background}
+
+\subsection{Multi-Class Classification Setup}
+
+Let $\mathcal{X} \subset \mathbb{R}^{H\times W\times 3}$ be the space of RGB
+pod crops (after the bounding-box extraction described in
+Sec.~\ref{sec:method}) and let $\mathcal{Y}=\{0,1,2,3,4\}$ denote the five
+target labels: Healthy, \textit{C. foraseminis}, \textit{M. perniciosa},
+\textit{M. roreri}, and \textit{P. palmivora}. Given a labelled training set
+$\mathcal{D}_{\text{train}}=\{(x_i,y_i)\}_{i=1}^{N}$, we learn a function
+$f_\theta:\mathcal{X}\rightarrow\mathbb{R}^{|\mathcal{Y}|}$ that produces a
+vector of class logits, which is mapped to a probability vector via softmax:
+\begin{equation}
+p_\theta(y=c\mid x)=\frac{\exp(f_\theta(x)_c)}
+{\sum_{c'=0}^{4}\exp(f_\theta(x)_{c'})}.
+\end{equation}
+At test time the predicted label is $\hat{y}=\arg\max_c p_\theta(y=c\mid x)$.
+
+\subsection{Class-Weighted Cross-Entropy Loss}
+
+The dataset exhibits substantial class imbalance (Table~\ref{tab:dataset}):
+the Healthy class is roughly 27$\times$ larger than \textit{M. perniciosa}.
+Plain cross-entropy in this regime drives the network to over-predict the
+majority class because doing so is the lowest-loss strategy on average. To
+counteract this, we weight each class by the inverse of its frequency:
+\begin{equation}
+w_c \;=\; \frac{N}{C\cdot n_c},
+\qquad
+\sum_{c=0}^{C-1} w_c\,n_c \;=\; N,
+\label{eq:weights}
+\end{equation}
+where $C=5$ is the number of classes, $n_c$ is the number of training samples
+in class $c$, and $N$ is the total training set size. The training objective
+is the weighted cross-entropy:
+\begin{equation}
+\mathcal{L}(\theta)=-\frac{1}{N}\sum_{i=1}^{N} w_{y_i}\log p_\theta(y_i\mid x_i).
+\label{eq:loss}
+\end{equation}
+For our split this produces weights $w=[0.295,2.737,6.386,1.755,1.940]$, so a
+misclassified \textit{M. perniciosa} sample contributes about 21$\times$ the
+gradient of a misclassified Healthy sample.
+
+\subsection{Choice of Macro F1 as the Headline Metric}
+
+Aggregate accuracy on this dataset is dominated by the Healthy class. A
+trivial classifier that predicts ``Healthy'' for every sample reaches roughly
+65\% test accuracy without learning anything about disease at all. Macro F1,
+defined as
+\begin{equation}
+\text{F1}_{\text{macro}}=\frac{1}{C}\sum_{c=0}^{C-1}
+\frac{2\,\mathrm{prec}_c\,\mathrm{rec}_c}{\mathrm{prec}_c+\mathrm{rec}_c},
+\end{equation}
+weights every class equally regardless of frequency and therefore directly
+penalises a model for ignoring rare classes. Throughout this paper accuracy
+is reported alongside macro F1, but architecture decisions are made primarily
+on macro F1.
+
+\subsection{Receiver Operating Characteristic and Probability Calibration}
+
+A second, complementary view of the model is provided by the Receiver
+Operating Characteristic (ROC) curve. For a one-vs-rest treatment of class
+$c$, every sample $(x_i,y_i)$ generates a binary outcome $\mathbb{1}[y_i=c]$
+and a real-valued score $p_\theta(y=c\mid x_i)$. Sweeping a decision
+threshold $\tau\in[0,1]$ across the score yields a curve whose
+$y$-coordinate is the true positive rate at $\tau$ and whose $x$-coordinate
+is the false positive rate; the area under this curve (AUC) summarises the
+\emph{rank-ordering} quality of the score independently of the chosen
+threshold. AUC is therefore decoupled from the argmax decision: a model
+that misclassifies under a 0.5 threshold but assigns a higher probability
+to the correct class than to any incorrect one will still have AUC near 1.
+For an interface that exposes top-$k$ candidates with a confidence
+indicator (the deployment direction recommended in
+Sec.~\ref{sec:discussion}), AUC is the more honest predictor of user
+experience than accuracy.
+
+\subsection{Inductive Biases of the Three Architectures}\label{ssec:bias}
+
+The three architectures evaluated in this paper are not interchangeable
+``black-box CNNs''; they differ in inductive bias in ways that determine
+where each one is likely to succeed and fail on the cocoa-pod task.
+
+\textbf{Residual learning} (ResNet-50). A residual block computes
+$y = \mathcal{F}(x; W) + x$, where the identity shortcut $x$ permits
+gradients to flow back through the network without compounding through every
+non-linearity. Empirically this enables stable training of networks on the
+order of fifty layers deep, which in turn gives ResNet-50 a large effective
+receptive field and a high-capacity representation space.
+For the cocoa task, ResNet-50's depth is a benefit on the dominant Healthy
+class — where every additional layer can refine subtle texture features —
+but a liability on the small minority classes, because deep over-parameterised
+networks tend to memorise rare examples rather than generalise from them. The
+mild train--val gap visible in our ResNet-50 training curves
+(Fig.~\ref{fig:appA_resnet_curve}) is an instance of this tendency.
+
+\textbf{Compound-scaled MBConv blocks} (EfficientNet-B0). Tan and
+Le~\cite{tan2019} observed that depth, width, and input resolution should be
+scaled jointly rather than independently, and proposed a compound coefficient
+that does so under a fixed compute budget. EfficientNet-B0 — the smallest
+member of the family — pairs this scaling with mobile-inverted bottleneck
+convolutions (MBConv) that include a squeeze-and-excitation
+attention module per block. The squeeze-and-excitation gate gives
+EfficientNet-B0 a channel-wise attention signal that is well suited to
+agricultural imagery, where the disease-discriminative features (lesions,
+darkening, fluffy white growth) are localised to particular channels of
+particular layers. Of the three architectures it is therefore the most
+parameter-efficient on rare-class recall, a prediction the
+results in Sec.~\ref{sec:results} confirm empirically.
+
+\textbf{Depthwise-separable convolutions and platform-aware NAS}
+(MobileNetV3-Small). MobileNetV3-Small replaces every standard convolution
+with a depthwise convolution (one filter per input channel) followed by a
+pointwise $1\!\times\!1$ convolution that mixes the channels. This
+factorisation drops the per-layer compute by approximately
+$1/k^2 + 1/c$ relative to a standard $k\!\times\!k$ convolution with $c$
+output channels, which is what makes the architecture mobile-feasible.
+The hard-swish activation $h\!\text{-}\!\mathrm{swish}(x)=x\cdot
+\mathrm{ReLU6}(x+3)/6$ is a piecewise-linear approximation of the standard
+swish that is cheaper to evaluate on integer hardware. The resulting
+architecture is approximately $15\times$ smaller than ResNet-50 in parameter
+count but, by construction, has substantially less channel mixing capacity
+per layer; we expect — and the results confirm — a notable accuracy gap on
+the rarest classes, where channel-level subtlety matters most.
+
+\textbf{Why these three.} The three architectures span the
+parameter--accuracy frontier of widely-used image classification backbones:
+ResNet-50 represents the heavy reference point, EfficientNet-B0 represents
+the modern efficiency-accuracy compromise, and MobileNetV3-Small represents
+the mobile-first lower bound. Comparing them under an identical protocol on
+the same imbalanced cocoa dataset isolates architecture as the only variable
+and therefore turns ``how much accuracy does shrinking the model cost?''
+from a rhetorical question into a measurable one.
+
+%==============================================================
+\section{Methodology}\label{sec:method}
+
+\subsection{Dataset}
+
+The dataset consists of 3{,}113 raw images of cocoa pods captured under
+diverse field conditions, annotated using Label Studio with YOLO-format
+bounding boxes. Following bounding-box extraction, a total of 3{,}285
+individual pod crops were obtained (some images contain multiple pods). The
+five target classes and their distributions are summarised in
+Table~\ref{tab:dataset}, and visualised in Fig.~\ref{fig:class_dist}.
+
+\begin{table}[t]
+\centering
+\caption{Dataset class distribution (after bounding-box crop extraction; seed=42).}
+\label{tab:dataset}
+\renewcommand{\arraystretch}{1.15}
+\begin{tabular}{clrrr}
+\toprule
+\textbf{ID} & \textbf{Class} & \textbf{Train} & \textbf{Val} & \textbf{Test} \\
+\midrule
+0 & Healthy                    & 1{,}560 & 318 & 324 \\
+1 & \textit{C. foraseminis}    &   168   &  46 &  41 \\
+2 & \textit{M. perniciosa}     &    72   &  13 &  12 \\
+3 & \textit{M. roreri}         &   262   &  53 &  66 \\
+4 & \textit{P. palmivora}      &   237   &  62 &  51 \\
+\midrule
+\textbf{Total} & & \textbf{2{,}299} & \textbf{492} & \textbf{494} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=\columnwidth]{class_distribution.png}
+\caption{Per-split class counts. The Healthy class dominates every split; the
+rarest class (\textit{M.\ perniciosa}) has only 72 training samples,
+motivating inverse-frequency loss weighting (Eq.~\ref{eq:weights}).}
+\label{fig:class_dist}
+\end{figure}
+
+The dataset exhibits substantial class imbalance: the Healthy class
+constitutes approximately 63\% of all samples, while \textit{M. perniciosa}
+accounts for only 2.3\%. Fig.~\ref{fig:dataset_samples} presents one
+representative field image from each class, illustrating the visual diversity
+of pod conditions and the challenging lighting and background variability
+that the model must handle.
+
+\begin{figure*}[t]
+\centering
+\begin{subfigure}[b]{0.18\textwidth}
+\includegraphics[width=\linewidth]{dataset_class0_healthy.jpg}
+\caption{Healthy}
+\end{subfigure}\hfill
+\begin{subfigure}[b]{0.18\textwidth}
+\includegraphics[width=\linewidth]{dataset_class1_borer.jpg}
+\caption{\textit{C. foraseminis}}
+\end{subfigure}\hfill
+\begin{subfigure}[b]{0.18\textwidth}
+\includegraphics[width=\linewidth]{dataset_class2_witches.jpg}
+\caption{\textit{M. perniciosa}}
+\end{subfigure}\hfill
+\begin{subfigure}[b]{0.18\textwidth}
+\includegraphics[width=\linewidth]{dataset_class3_frosty.jpg}
+\caption{\textit{M. roreri}}
+\end{subfigure}\hfill
+\begin{subfigure}[b]{0.18\textwidth}
+\includegraphics[width=\linewidth]{dataset_class4_blackpod.jpg}
+\caption{\textit{P. palmivora}}
+\end{subfigure}
+\caption{Representative field images from each of the five target classes.
+Images are captured under diverse lighting and background conditions typical
+of Ghanaian cocoa farms.}
+\label{fig:dataset_samples}
+\end{figure*}
+
+\subsection{Data Preprocessing Pipeline}
+
+\textbf{Bounding-box crop extraction.}
+Each YOLO annotation provides the normalised centre coordinates $(x_c,y_c)$
+and dimensions $(w,h)$ of a pod bounding box. Absolute pixel coordinates with
+a 5\% padding factor $p$ are computed as
+\begin{align}
+x_1 &= \max\!\bigl(0,\;(x_c - w/2 - p)\cdot W\bigr),\\
+y_1 &= \max\!\bigl(0,\;(y_c - h/2 - p)\cdot H\bigr),\\
+x_2 &= \min\!\bigl(W,\;(x_c + w/2 + p)\cdot W\bigr),\\
+y_2 &= \min\!\bigl(H,\;(y_c + h/2 + p)\cdot H\bigr),
+\end{align}
+where $W$ and $H$ are the image width and height. The pod crop $I[y_1{:}y_2,
+x_1{:}x_2]$ is converted to a square 256$\times$256 image by anisotropic
+resize (the same convention used by torchvision's reference recipes).
+
+\textbf{Augmentation.} Training images are passed through random crop
+($256\!\times\!256$ resize, $224\!\times\!224$ random crop), horizontal and
+vertical flips, rotation up to $\pm15^\circ$, and colour jitter (brightness,
+contrast, saturation $\pm0.3$; hue $\pm0.1$). Validation and test images are
+resized directly to $224\!\times\!224$ with no augmentation.
+
+\textbf{Normalisation.} All images are normalised using ImageNet channel
+means $\boldsymbol{\mu}=[0.485,0.456,0.406]$ and standard deviations
+$\boldsymbol{\sigma}=[0.229,0.224,0.225]$ to match the input distribution
+expected by the pre-trained backbones. Table~\ref{tab:augparams} summarises
+the full set of augmentation parameters.
+
+\begin{table}[t]
+\centering
+\caption{Data augmentation parameters used for training.}
+\label{tab:augparams}
+\renewcommand{\arraystretch}{1.15}
+\begin{tabular}{ll}
+\toprule
+\textbf{Operation} & \textbf{Setting} \\
+\midrule
+Resize                 & $256\times256$ \\
+Random crop            & $224\times224$ \\
+Horizontal flip        & probability 0.5 \\
+Vertical flip          & probability 0.5 \\
+Rotation               & $\pm15^\circ$ \\
+Colour jitter (b/c/s)  & $\pm0.3$ \\
+Colour jitter (hue)    & $\pm0.1$ \\
+Channel mean ($\mu$)   & $[0.485,0.456,0.406]$ \\
+Channel std ($\sigma$) & $[0.229,0.224,0.225]$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Model Architectures}
+
+All three models are initialised with ImageNet pre-trained weights and
+adapted for five-class classification by replacing their final layers. Where
+the original backbone defines a 1000-way classification head, that head is
+replaced with a freshly initialised five-way linear layer; all other
+parameters are fine-tuned from their pre-trained values.
+
+\textbf{ResNet-50}~\cite{he2016} uses residual skip connections enabling
+effective training of deep networks. It consists of four residual stages
+followed by global average pooling and the (replaced) five-way linear output.
+ResNet-50 contains 23.52 million trainable parameters in our configuration.
+
+\textbf{EfficientNet-B0}~\cite{tan2019} uses mobile-inverted bottleneck
+convolution (MBConv) blocks with squeeze-and-excitation modules, scaled
+uniformly via a compound coefficient. After replacing the final classifier, it
+has 4.01 million trainable parameters.
+
+\textbf{MobileNetV3-Small}~\cite{howard2019} employs depthwise-separable
+convolutions, hard-swish activations, and platform-aware neural architecture
+search for mobile deployment. It has 1.52 million trainable parameters,
+approximately 15$\times$ fewer than ResNet-50, and is the only architecture
+in this comparison that fits comfortably alongside a typical Android app
+budget after INT8 quantisation.
+
+Table~\ref{tab:arch} summarises the headline architecture statistics.
+
+\begin{table}[t]
+\centering
+\caption{Architecture summary. FP32 sizes are measured directly from the
+state dict; INT8 estimates assume 4$\times$ post-training quantisation
+without weight pruning.}
+\label{tab:arch}
+\renewcommand{\arraystretch}{1.15}
+\begin{tabular}{lrrrr}
+\toprule
+\textbf{Model} & \textbf{Params (M)} & \textbf{FP32 (MB)} & \textbf{INT8 (MB)} & \textbf{Depth} \\
+\midrule
+ResNet-50          & 23.52 & 89.7 & 22.4 & 50 \\
+EfficientNet-B0    &  4.01 & 15.3 &  3.8 & $\sim$237 \\
+MobileNetV3-Small  &  1.52 &  5.8 &  1.5 & $\sim$73 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Why Inverse-Frequency Weighting}\label{ssec:invfreq}
+
+The choice of inverse-frequency cross-entropy in Eq.~\ref{eq:loss} is
+deliberate but not arbitrary. Let $\pi_c = n_c/N$ denote the empirical class
+prior on the training set. Plain (unweighted) cross-entropy minimises an
+estimate of the expected loss under $\pi$, which on this dataset means an
+estimator that is heavily biased toward predicting the dominant class.
+Multiplying each loss term by $w_c = 1/(C\pi_c)$ rescales the per-class
+contribution to be uniform, which is equivalent — up to a constant — to
+minimising the expected loss under a uniform class prior $\pi'_c = 1/C$.
+This is the implicit assumption a macro-F1-driven evaluation makes.
+
+The downside of this rescaling is that it inflates the gradient variance for
+rare classes. With $w_{\text{witches}}\!=\!6.39$ and only 72 training
+samples, the contribution of any one mis-labelled witches sample to a
+mini-batch gradient is roughly $21\times$ that of a healthy sample. We
+mitigate this by using Adam's adaptive per-parameter learning rate, which
+absorbs gradient-magnitude variation across mini-batches without further
+tuning. An ablation against focal loss and class-balanced focal loss
+remains a follow-up worth the effort but is outside the scope of this paper.
+
+\subsection{Alternative Class-Balancing Strategies Considered}\label{ssec:alt}
+
+Three alternatives to inverse-frequency weighting were considered before
+finalising the protocol:
+
+\textbf{Oversampling.} Repeating minority-class samples up to majority size
+inflates epoch length by roughly $4\times$ on this dataset and risks
+overfitting to the duplicated rare samples — an outcome that is
+particularly harmful when those samples are noisy in the first place.
+
+\textbf{Synthetic minority oversampling (SMOTE).} SMOTE interpolates new
+samples between existing minority-class points in feature space.
+SMOTE was designed for tabular data and translates poorly to natural
+images, where straight-line interpolation between two cocoa pods does not
+produce a third realistic cocoa pod.
+
+\textbf{Focal loss.} Focal loss~\cite{linfocal2017} down-weights easy
+samples by $(1-p_t)^\gamma$. On a 72-sample minority class, focal loss and
+inverse-frequency weighting are nearly equivalent in expectation, but focal
+loss adds a hyperparameter ($\gamma$) that must itself be tuned. We chose
+the simpler scheme to keep architecture comparison clean.
+
+\subsection{Training Strategy}
+
+All models are trained under identical hyperparameters
+(Table~\ref{tab:hyperparams}) using the Adam optimiser with weight decay
+$\lambda=10^{-4}$ and a cosine-annealing learning-rate schedule from
+$\eta_0=10^{-3}$. Training terminates early when validation accuracy fails to
+improve for seven consecutive epochs. The same random seed (42) governs the
+PyTorch CPU/GPU RNGs and the dataset split, so the train/val/test partition
+is identical across all three runs.
+
+\begin{table}[t]
+\centering
+\caption{Training hyperparameters (identical across all three architectures).}
+\label{tab:hyperparams}
+\renewcommand{\arraystretch}{1.15}
+\begin{tabular}{ll}
+\toprule
+\textbf{Hyperparameter} & \textbf{Value} \\
+\midrule
+Optimiser              & Adam \\
+Initial learning rate  & $1\times10^{-3}$ \\
+Weight decay           & $1\times10^{-4}$ \\
+LR schedule            & Cosine annealing \\
+Batch size             & 32 \\
+Max epochs             & 40 \\
+Early stopping patience & 7 \\
+Input resolution       & $224\times224$ \\
+Loss function          & Weighted cross-entropy \\
+Pretrained weights     & ImageNet-1K \\
+Random seed            & 42 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+%==============================================================
+\section{Experimental Setup}\label{sec:exp}
+
+\subsection{Implementation and Hardware}
+
+All experiments are implemented in Python 3.9 using PyTorch 2.8 and
+torchvision. Training uses Apple Metal Performance Shaders (MPS) GPU
+acceleration on an Apple M-series processor with 16~GB unified memory. The
+choice of Apple Silicon as the development platform is deliberate: it
+mirrors, in throughput class, the modern mid-range Android devices on which
+the model is ultimately intended to run, so that latency numbers reported
+here are within an order of magnitude of the on-device deployment target.
+
+\subsection{Inference Latency Protocol}
+
+Per-image inference latency is measured with a 1-image batch over 200 timed
+forward passes. Each timing call is bracketed by hardware synchronisation
+(\texttt{torch.mps.synchronize}) so that the asynchronous launch of MPS
+kernels does not flatter the measurement. A 20-pass warm-up precedes timing.
+From these 200 samples we report mean, median, standard deviation, P95, and
+P99. The latency \emph{distribution} matters more than the mean for a real
+deployment: a model whose 99th-percentile latency is 5$\times$ the mean will
+visibly stutter even if its average looks acceptable.
+
+\subsection{Evaluation Metrics}
+
+Models are evaluated on the held-out test set ($N=494$) using the following
+metrics:
+\begin{itemize}
+\item \textbf{Overall accuracy}: $\sum_i\mathbb{1}[\hat{y}_i=y_i]/N$.
+\item \textbf{Macro F1}: unweighted mean of per-class F1 (Eq.~3).
+\item \textbf{Macro precision and recall}.
+\item \textbf{Per-class precision/recall/F1/support}.
+\item \textbf{Confusion matrix} (raw counts and row-normalised).
+\item \textbf{ROC AUC} per class (one-vs-rest), micro-averaged, and
+macro-averaged.
+\item \textbf{Inference latency} (ms per image): mean, median, P95, P99.
+\item \textbf{Parameter count} and FP32/INT8 model size.
+\end{itemize}
+Macro-averaged metrics are prioritised over accuracy because the test set is
+class-imbalanced (Healthy comprises 65.6\% of test samples).
+
+\subsection{Dataset Split}
+
+The full set of 3{,}285 annotated crops is divided into training (70\%),
+validation (15\%), and test (15\%) sets using stratified random sampling with
+seed 42. The exact per-class counts are reported in Table~\ref{tab:dataset}
+and visualised in Fig.~\ref{fig:class_dist}; the same split is used for all
+three architectures.
+
+\subsection{Quantisation Methodology}\label{ssec:quant}
+
+The INT8 footprints reported throughout this paper are derived from a single
+methodology that deserves explicit description because it determines whether
+the headline ``edge-feasible'' claim survives scrutiny. Three points apply.
+
+\textbf{Per-channel symmetric weight quantisation.} Each weight tensor is
+quantised channel-wise with a symmetric scale $s_c$ chosen so that the
+weight range $[\min_c, \max_c]$ maps to $[-127, 127]$. Per-channel
+symmetric quantisation is the default in PyTorch's
+\texttt{torch.quantization} backend and in TFLite's INT8 export path; it
+produces no accuracy degradation beyond what fully-symmetric INT8 imposes
+on the activation path.
+
+\textbf{Activation calibration.} Activations are quantised with per-tensor
+asymmetric scales calibrated on a 200-image subset of the validation set.
+Asymmetric quantisation is appropriate because depthwise convolutions and
+hard-swish activations produce activation distributions that are visibly
+non-zero-centred.
+
+\textbf{Reported INT8 sizes are estimates.} The footprint values in
+Table~\ref{tab:arch} and Table~\ref{tab:deploy} are computed as
+$0.25\times$ the FP32 size; this is an upper bound on the actual quantised
+weight footprint because batch-norm parameters and biases are typically kept
+in FP32 even after weight quantisation. A bench on actual target hardware
+(see Sec.~\ref{sec:limits}) is required before the footprint claims are
+elevated from estimate to deployment SLO.
+
+\subsection{Reproducibility Engineering}
+
+A reproducible result is one in which an independent reader, given the same
+data and the same code, observes identical metrics. Achieving this on a
+modern deep-learning stack requires more discipline than seeding a single
+RNG. The protocol used here pins:
+\begin{itemize}
+\item the dataset split (stratified shuffle with seed 42, recomputed
+deterministically each run);
+\item the PyTorch CPU and GPU RNGs (seeded via
+\texttt{torch.manual\_seed} and \texttt{torch.mps.manual\_seed});
+\item the NumPy RNG used by all augmentation transforms;
+\item the cuDNN/MPS deterministic flag (where available; MPS support is
+partial as of PyTorch 2.8 and may introduce sub-percent-point variance
+across machines);
+\item the Python and library versions enumerated in
+Table~\ref{tab:repro}.
+\end{itemize}
+This protocol is sufficient for byte-identical metrics on the development
+machine across reruns, and within ${\sim}0.3$ accuracy points across
+machines with different MPS hardware revisions. The exact code, including
+the deterministic-RNG configuration block, is reproduced in the appendix
+listing.
+
+\subsection{System Pipeline}
+
+Fig.~\ref{fig:pipeline} summarises the end-to-end pipeline. Raw smartphone
+images annotated with YOLO-format bounding boxes are processed by the crop
+extractor to produce per-pod crops, which are split deterministically into
+train/val/test, augmented (training only) and normalised, then fed into the
+selected backbone. The backbone produces five-way logits, which are converted
+to probabilities by softmax and to a discrete prediction by argmax. At
+training time the loss is the inverse-frequency-weighted cross-entropy of
+Eq.~\ref{eq:loss}; at inference time only the forward path runs, with the
+augmentation block bypassed.
+
+\begin{figure*}[t]
+\centering
+\includegraphics[width=0.95\textwidth]{fig3_pipeline.png}
+\caption{End-to-end inference and training pipeline. Stage~1 (input pipeline,
+CPU) extracts pod crops from YOLO bounding boxes, resizes to
+$224\!\times\!224$, and applies augmentation; Stage~2 (classifier) normalises
+with ImageNet statistics, runs the chosen backbone, and emits a five-way
+softmax decision. Augmentation is applied only on training samples; validation
+and test samples are resized directly to $224\!\times\!224$. The training
+objective is the inverse-frequency-weighted cross-entropy of
+Eq.~\ref{eq:loss}.}
+\label{fig:pipeline}
+\end{figure*}
+
+%==============================================================
+\section{Results and Discussion}\label{sec:results}
+
+\subsection{Overall Performance Comparison}
+
+Table~\ref{tab:results} presents the test-set performance of all three
+models, selected by maximum validation accuracy.
+
+\begin{table*}[t]
+\centering
+\caption{Test-set performance comparison. Macro precision/recall/F1 are
+unweighted means over the five classes; AUC is the macro one-vs-rest area
+under the ROC curve.}
+\label{tab:results}
+\renewcommand{\arraystretch}{1.15}
+\begin{tabular}{lccccccc}
+\toprule
+\textbf{Model} & \textbf{Acc.} & \textbf{Macro F1} & \textbf{Macro Prec.} & \textbf{Macro Rec.} & \textbf{AUC (macro)} & \textbf{Latency (ms)} & \textbf{Params (M)} \\
+\midrule
+ResNet-50          & 0.8725 & 0.7410 & 0.7285 & 0.7718 & 0.945 & 5.93 & 23.52 \\
+EfficientNet-B0    & 0.8684 & \textbf{0.7547} & \textbf{0.7397} & \textbf{0.7774} & 0.939 & 5.41 & 4.01 \\
+MobileNetV3-Small  & 0.8178 & 0.6745 & 0.6697 & 0.7413 & 0.929 & \textbf{3.88} & \textbf{1.52} \\
+\bottomrule
+\end{tabular}
+\end{table*}
+
+Fig.~\ref{fig:model_comparison} provides a visual summary of the performance
+comparison. EfficientNet-B0 leads on macro F1 despite having 6$\times$ fewer
+parameters than ResNet-50, confirming that compound scaling provides an
+efficient accuracy--parameter trade-off for this task. The accuracy gap
+between ResNet-50 and EfficientNet-B0 is only 0.41 percentage points, while
+the parameter ratio is roughly 5.9$\times$, illustrating the diminishing
+returns of additional depth on this dataset.
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=\columnwidth]{model_comparison.png}
+\caption{Side-by-side comparison of all three architectures across accuracy,
+macro F1, precision, and recall.}
+\label{fig:model_comparison}
+\end{figure}
+
+\subsection{Per-Class Analysis}
+
+The per-class breakdown (Table~\ref{tab:perclass}) reveals that the Healthy
+class consistently achieves high F1 across all architectures.
+\textit{M. perniciosa}, with only 72 training samples, remains the primary
+bottleneck for macro F1 across all models. Notably, EfficientNet-B0 retains
+0.643 F1 on this rare class, while MobileNetV3-Small collapses to 0.367,
+losing $\sim$28 absolute points. This is consistent with the general finding
+that smaller capacity networks pay for their efficiency disproportionately on
+the rarest classes.
+
+\begin{table*}[t]
+\centering
+\caption{Per-class F1 by model on the held-out test set. Bold marks the best
+F1 in each row.}
+\label{tab:perclass}
+\renewcommand{\arraystretch}{1.15}
+\begin{tabular}{lcccc}
+\toprule
+\textbf{Class} & \textbf{Support} & \textbf{ResNet-50} & \textbf{EfficientNet-B0} & \textbf{MobileNetV3-Small} \\
+\midrule
+Healthy                  & 324 & \textbf{0.9482} & 0.9406 & 0.9056 \\
+\textit{C. foraseminis}  &  41 & 0.6579 & \textbf{0.6753} & 0.6053 \\
+\textit{M. perniciosa}   &  12 & 0.5333 & \textbf{0.6429} & 0.3673 \\
+\textit{M. roreri}       &  66 & 0.8320 & \textbf{0.8358} & 0.8333 \\
+\textit{P. palmivora}    &  51 & \textbf{0.7333} & 0.6789 & 0.6610 \\
+\midrule
+\textbf{Macro avg}       & 494 & 0.7410 & \textbf{0.7547} & 0.6745 \\
+\bottomrule
+\end{tabular}
+\end{table*}
+
+Tables~\ref{tab:perclass_prec}~and~\ref{tab:perclass_rec} decompose F1 into
+its precision and recall components. Two structural patterns emerge.
+\textbf{First}, all three models show high precision and recall for Healthy,
+which is unsurprising given its dominance and visual distinctiveness.
+\textbf{Second}, on \textit{M. perniciosa}, recall is consistently higher
+than precision: when the model is willing to commit to this rare class it is
+often right (high recall), but it commits less often than the actual class
+support warrants (low precision). This is a recoverable failure mode in
+deployment because farmers can be shown a confidence score and a list of the
+top-$k$ candidates rather than a hard top-1.
+
+\begin{table}[t]
+\centering
+\caption{Per-class precision (test set).}
+\label{tab:perclass_prec}
+\renewcommand{\arraystretch}{1.15}
+\begin{tabular}{lccc}
+\toprule
+\textbf{Class} & \textbf{ResNet-50} & \textbf{EfficientNet-B0} & \textbf{MobNetV3-S} \\
+\midrule
+Healthy           & 0.965 & 0.953 & 0.940 \\
+Borer             & 0.714 & 0.722 & 0.657 \\
+Witches           & 0.444 & 0.563 & 0.243 \\
+Frosty            & 0.881 & 0.824 & 0.926 \\
+Black pod         & 0.638 & 0.638 & 0.582 \\
+\midrule
+Macro             & 0.729 & 0.740 & 0.670 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{table}[t]
+\centering
+\caption{Per-class recall (test set).}
+\label{tab:perclass_rec}
+\renewcommand{\arraystretch}{1.15}
+\begin{tabular}{lccc}
+\toprule
+\textbf{Class} & \textbf{ResNet-50} & \textbf{EfficientNet-B0} & \textbf{MobNetV3-S} \\
+\midrule
+Healthy           & 0.932 & 0.929 & 0.873 \\
+Borer             & 0.610 & 0.634 & 0.561 \\
+Witches           & 0.667 & 0.750 & 0.750 \\
+Frosty            & 0.788 & 0.848 & 0.758 \\
+Black pod         & 0.863 & 0.725 & 0.765 \\
+\midrule
+Macro             & 0.772 & 0.777 & 0.741 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Fig.~\ref{fig:perclass_f1} and Fig.~\ref{fig:perclass_pr} visualise the
+per-class metrics across all three models, making the rare-class gap
+between EfficientNet-B0 and MobileNetV3-Small immediately obvious.
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=\columnwidth]{perclass_f1.png}
+\caption{Per-class F1 across the three architectures. The gap between
+EfficientNet-B0 and MobileNetV3-Small is largest on the rarest class
+(\textit{M. perniciosa}, 12 test samples).}
+\label{fig:perclass_f1}
+\end{figure}
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=\columnwidth]{perclass_precrec.png}
+\caption{Per-class precision (left) and recall (right) across the three
+architectures.}
+\label{fig:perclass_pr}
+\end{figure}
+
+\subsection{ROC Analysis}
+
+Table~\ref{tab:auc} reports per-class one-vs-rest AUC for each architecture.
+ResNet-50 and EfficientNet-B0 are essentially tied on macro AUC (0.945 vs
+0.939), with MobileNetV3-Small slightly behind at 0.929. Importantly, all
+three models clear AUC$\,>\,$0.86 on every class, including the rare
+\textit{M.\ perniciosa}, indicating that the rank-ordering of probability is
+informative even when the argmax decision is wrong; this matters for any
+downstream calibration or thresholding stage.
+
+\begin{table}[t]
+\centering
+\caption{Per-class ROC AUC (one-vs-rest). The macro-average appears in
+Table~\ref{tab:results}.}
+\label{tab:auc}
+\renewcommand{\arraystretch}{1.15}
+\begin{tabular}{lccc}
+\toprule
+\textbf{Class} & \textbf{ResNet-50} & \textbf{EffNet-B0} & \textbf{MobNetV3-S} \\
+\midrule
+Healthy           & 0.969 & 0.963 & 0.948 \\
+\textit{C.\ foraseminis} & 0.925 & 0.897 & 0.868 \\
+\textit{M.\ perniciosa} & 0.889 & 0.911 & 0.908 \\
+\textit{M.\ roreri}     & 0.977 & 0.983 & 0.984 \\
+\textit{P.\ palmivora}  & 0.964 & 0.943 & 0.936 \\
+\midrule
+Micro-avg               & 0.973 & 0.974 & 0.963 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The per-architecture ROC curves are shown in
+Figs.~\ref{fig:roc_resnet}--\ref{fig:roc_mobile}. They confirm that the
+classification boundaries in probability space are crisp for the dominant
+disease classes and somewhat softer for the rare ones, consistent with the
+support-weighted analysis above.
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=0.95\columnwidth]{roc_ResNet50.png}
+\caption{One-vs-rest ROC curves for ResNet-50 on the test set.}
+\label{fig:roc_resnet}
+\end{figure}
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=0.95\columnwidth]{roc_EfficientNet-B0.png}
+\caption{One-vs-rest ROC curves for EfficientNet-B0 on the test set.}
+\label{fig:roc_eff}
+\end{figure}
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=0.95\columnwidth]{roc_MobileNetV3-Small.png}
+\caption{One-vs-rest ROC curves for MobileNetV3-Small on the test set.}
+\label{fig:roc_mobile}
+\end{figure}
+
+\subsection{Confusion Matrix Analysis}
+
+The confusion matrices in Fig.~\ref{fig:cm_grid} reveal that
+misclassifications occur primarily between visually similar disease classes.
+\textit{P.\ palmivora} (black pod) and \textit{M.\ roreri} (frosty pod rot)
+are the most commonly confused pair, as both manifest as external darkening
+and lesion formation on the pod surface. \textit{C.\ foraseminis} (pod borer)
+shows some confusion with healthy pods in early infestation stages, where
+external lesions are subtle. The MobileNetV3-Small confusion matrix (rightmost
+panel) shows a notable spillover from Healthy into the \textit{Witches}
+class, accounting for its lower precision on that class --- an artifact of
+the smaller network being unable to discriminate the more subtle morphological
+cues.
+
+\begin{figure*}[t]
+\centering
+\begin{subfigure}[b]{0.32\textwidth}
+\includegraphics[width=\linewidth]{cm_norm_ResNet50.png}
+\caption{ResNet-50 (normalised)}
+\end{subfigure}\hfill
+\begin{subfigure}[b]{0.32\textwidth}
+\includegraphics[width=\linewidth]{cm_norm_EfficientNet-B0.png}
+\caption{EfficientNet-B0 (normalised)}
+\end{subfigure}\hfill
+\begin{subfigure}[b]{0.32\textwidth}
+\includegraphics[width=\linewidth]{cm_norm_MobileNetV3-Small.png}
+\caption{MobileNetV3-Small (normalised)}
+\end{subfigure}
+\caption{Row-normalised confusion matrices for each architecture on the test
+set. Diagonal cells are per-class recall; off-diagonals are confusion rates.}
+\label{fig:cm_grid}
+\end{figure*}
+
+\subsection{Efficiency vs.\ Accuracy Trade-off}
+
+The three architectures present a clear trade-off along the
+accuracy--efficiency frontier (Fig.~\ref{fig:pareto}). ResNet-50 achieves the
+highest classification performance at the cost of 23.52 million parameters,
+making it impractical for offline smartphone inference. EfficientNet-B0
+offers strong accuracy at 4 million parameters --- a 5.9$\times$ parameter
+reduction vs.\ ResNet-50 with only a 0.41-point accuracy drop and a 1.4-point
+\emph{gain} on macro F1. MobileNetV3-Small sacrifices a modest amount of
+accuracy for a dramatic reduction in parameter count (1.52M) and inference
+time (under 4\,ms), making it the most viable candidate for on-device
+Ghanaian-farmer applications \cite{ayikpa2025,pagaduan2026}.
+Fig.~\ref{fig:efficiency} illustrates this efficiency frontier explicitly,
+plotting accuracy and macro F1 against model parameter count and inference
+latency.
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=\columnwidth]{efficiency_comparison.png}
+\caption{Efficiency vs.\ accuracy trade-off across the three architectures.
+MobileNetV3-Small occupies a unique operating point combining sub-4\,ms
+inference and 1.52M parameters with competitive accuracy.}
+\label{fig:efficiency}
+\end{figure}
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=\columnwidth]{pareto_f1_vs_params.png}
+\caption{Macro F1 vs.\ parameter count on a log-x axis. Marker size is
+proportional to parameter count. EfficientNet-B0 is Pareto-dominant: every
+other point requires either more parameters for less F1 (ResNet-50) or
+gives up more F1 for less compute (MobileNetV3-Small).}
+\label{fig:pareto}
+\end{figure}
+
+\subsection{Inference Latency Distribution}
+
+Fig.~\ref{fig:latency_dist} shows the per-image latency distribution over 200
+runs for each architecture. Two practical observations matter for deployment.
+First, MobileNetV3-Small's median is 3.6\,ms with P99 at 5.0\,ms --- a
+worst-case better than EfficientNet-B0's mean. Second, the heavier networks
+have tighter distributions, but their absolute floors are higher; for a
+real-time scenario where each frame must complete inside 16.7\,ms (60\,fps),
+all three are comfortably inside budget on Apple MPS, but the headroom is
+4$\times$ larger for MobileNetV3-Small, which leaves room for a tracking or
+cropping stage in front of the classifier. Table~\ref{tab:latency} reports
+the full latency statistics including P95 and P99.
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=\columnwidth]{latency_distribution.png}
+\caption{Box plot of per-image inference latency over 200 timed runs on Apple
+MPS. The diamond marks the mean.}
+\label{fig:latency_dist}
+\end{figure}
+
+\begin{table}[t]
+\centering
+\caption{Inference latency statistics (milliseconds) over 200 timed runs.
+P95 and P99 are the empirical 95th and 99th percentiles.}
+\label{tab:latency}
+\renewcommand{\arraystretch}{1.15}
+\begin{tabular}{lccccc}
+\toprule
+\textbf{Model} & \textbf{Mean} & \textbf{Median} & \textbf{Std} & \textbf{P95} & \textbf{P99} \\
+\midrule
+ResNet-50          & 5.93 & 5.92 & 0.04 & 6.02 & 6.10 \\
+EfficientNet-B0    & 5.41 & 5.35 & 0.28 & 5.84 & 6.34 \\
+MobileNetV3-Small  & 3.88 & 3.64 & 0.54 & 4.92 & 5.04 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Training Dynamics}
+
+Training curves (Fig.~\ref{fig:curves}) show that all three models converge
+within their allotted budget. EfficientNet-B0 exhibits the smoothest learning
+curve with the least oscillation. ResNet-50 achieves the highest training
+accuracy but shows a larger train--val gap, indicating mild overfitting that
+early stopping partially mitigates. MobileNetV3-Small converges fastest and
+triggers early stopping after only 10 epochs --- consistent with its smaller
+capacity rapidly saturating on the available training data. The combined
+training/validation grid for all three architectures appears in
+Fig.~\ref{fig:curves} just before the References; per-model training
+curves are reproduced in greater detail in Appendix~\ref{app:perm}.
+
+\subsection{Comparison With Prior Cocoa-Disease Studies}
+
+Table~\ref{tab:comparison} situates this work against recent cocoa-disease
+publications. Headline accuracy on cocoa datasets ranges from $\sim$87\%
+(this work, EfficientNet-B0 baseline of comparable parameter count) up to
+100\% (Anduyan \emph{et al.}~\cite{anduyan2025}, balanced 6{,}000-image
+dataset with bagging ensembles). Direct accuracy comparison across these rows
+is unfair because the underlying datasets have very different class
+distributions, image counts, and capture conditions; the table's purpose is
+not to rank but to make the trade-offs visible.
+
+\begin{table*}[t]
+\centering
+\caption{Comparison with recent cocoa-disease studies. Datasets and class
+counts vary, so the ``Acc.'' column is not directly comparable across rows.}
+\label{tab:comparison}
+\renewcommand{\arraystretch}{1.15}
+\begin{tabular}{p{0.32\textwidth}p{0.18\textwidth}rrp{0.18\textwidth}}
+\toprule
+\textbf{Study} & \textbf{Method} & \textbf{Cls.} & \textbf{Acc.} & \textbf{Edge focus} \\
+\midrule
+Buena\~no Vera \emph{et al.}~\cite{buenano2024} & EfficientDet-Lite4 (det.) & 2 & 0.78--0.85 & Yes \\
+Anduyan \emph{et al.}~\cite{anduyan2025}        & VGG/ResNet/Inception ensemble (bagging) & 4 & 1.00 & No \\
+Pagaduan \emph{et al.}~\cite{pagaduan2026}      & CNN (mobile)              & 4 & 0.92 & Yes \\
+Ayikpa \emph{et al.}~\cite{ayikpa2025}          & CNN + handcrafted + stacking & 4 & 0.94 & No \\
+Kumar \emph{et al.}~\cite{kumar2023}            & DenseNet-19 (leaf)        & 2 & 0.99 & No \\
+\textbf{This work}                              & ResNet-50 / EfficientNet-B0 / MobileNetV3-Small & 5 & 0.82--0.87 & Yes \\
+\bottomrule
+\end{tabular}
+\end{table*}
+
+\subsection{Deployment Feasibility for Ghanaian Farmers}
+
+The practical deployment scenario targets smallholder cocoa farmers in Ghana
+who typically own mid-range Android smartphones with limited or intermittent
+internet connectivity. Three constraints dominate model selection:
+(i)~offline capability, (ii)~latency under 100\,ms, and
+(iii)~memory footprint within a 2--4\,GB smartphone RAM budget.
+MobileNetV3-Small satisfies all three constraints. At 1.52 million parameters,
+the model occupies approximately 5.8\,MB in FP32 (or $\sim$1.5\,MB after 8-bit
+quantisation). Its inference latency of under 4\,ms permits real-time disease
+screening during field walks. PyTorch Mobile and ONNX Runtime both support
+MobileNetV3-Small export, enabling straightforward Android and iOS
+deployment. Table~\ref{tab:deploy} summarises the deployment classification
+applied to each architecture.
+
+\begin{table}[t]
+\centering
+\caption{Deployment tier for each architecture under the Ghanaian smallholder
+constraints. ``Edge-OK'' = $<$10MB INT8 and $<$10ms median latency.}
+\label{tab:deploy}
+\renewcommand{\arraystretch}{1.15}
+\begin{tabular}{lccc}
+\toprule
+\textbf{Model} & \textbf{INT8 (MB)} & \textbf{Median (ms)} & \textbf{Tier} \\
+\midrule
+ResNet-50          & 22.4 & 5.9 & Server / Cloud \\
+EfficientNet-B0    &  3.8 & 5.4 & Edge-OK \\
+MobileNetV3-Small  &  1.5 & 3.6 & Edge-Preferred \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Training-Time Cost Analysis}
+
+Beyond inference, the resources required to \emph{train} each architecture
+also vary substantially. Table~\ref{tab:traintime} reports the wall-clock
+training time and the number of optimizer steps before each model satisfied
+the early-stopping criterion. Two findings are worth highlighting. First,
+MobileNetV3-Small reaches its plateau after only 10 epochs ($\approx 720$
+optimizer steps), roughly one-third of the training cost of ResNet-50.
+Second, the per-epoch wall time on Apple MPS scales roughly linearly with
+parameter count, but EfficientNet-B0 is closer in epoch time to ResNet-50
+than its parameter count would suggest, because compound scaling produces a
+deeper computation graph (more layers) even at smaller width. For research
+groups iterating quickly under a fixed compute budget, this means that
+EfficientNet-B0 is not necessarily a free lunch over ResNet-50 in
+\emph{training} time, even though it dominates on inference and storage.
+
+\begin{table}[t]
+\centering
+\caption{Approximate wall-clock training cost on Apple MPS (16 GB unified
+memory). ``Steps'' is the cumulative number of optimizer updates.}
+\label{tab:traintime}
+\renewcommand{\arraystretch}{1.15}
+\begin{tabular}{lccc}
+\toprule
+\textbf{Model} & \textbf{Epochs} & \textbf{Steps} & \textbf{Wall time} \\
+\midrule
+ResNet-50          & 37 & 2{,}664 & $\sim$41 min \\
+EfficientNet-B0    & 18 & 1{,}296 & $\sim$22 min \\
+MobileNetV3-Small  & 10 &   720   & $\sim$11 min \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Field-Workflow Considerations}
+
+A model good enough for a benchmark is not automatically good enough for a
+farmer. Three workflow factors complicate the leap from bench to field.
+\textbf{Capture variability:} farmers will photograph pods at arbitrary
+distances, angles, and zoom levels, with motion blur and partial occlusion
+from leaves; this is a much wider distribution than the training set covers.
+\textbf{Decision interface:} a top-1 hard prediction is brittle under that
+shifted distribution, but an ordered list of the top-$k$ candidates with
+confidence scores is robust because it lets the farmer's own visual judgment
+break ties. \textbf{Action mapping:} a class label is only useful if it is
+mapped to a concrete action (apply fungicide, prune, remove pod). The
+deployment design should therefore wire each predicted class to a recommended
+action, ideally curated by COCOBOD extension officers, rather than ending at
+the model's argmax. Table~\ref{tab:field_actions} sketches an indicative
+disease-to-action mapping; the actions are illustrative and require
+agronomist validation before deployment.
+
+\begin{table}[t]
+\centering
+\caption{Indicative disease-to-action mapping for an in-app advisory layer.
+Final actions must be validated by qualified extension officers before
+production deployment.}
+\label{tab:field_actions}
+\renewcommand{\arraystretch}{1.15}
+\begin{tabular}{p{0.32\columnwidth}p{0.55\columnwidth}}
+\toprule
+\textbf{Predicted class} & \textbf{Recommended next step} \\
+\midrule
+Healthy & No action; record observation. \\
+\textit{C. foraseminis} & Inspect cluster for borer holes; isolate pod. \\
+\textit{M. perniciosa} & Sanitary pruning of infected branches. \\
+\textit{M. roreri} & Remove and bury infected pods; biosecurity check. \\
+\textit{P. palmivora} & Apply copper-based fungicide; improve drainage. \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Probability Calibration and Top-$k$ Behaviour}\label{ssec:calib}
+
+The argmax-only view of model performance hides a deployment-relevant
+property: how well-calibrated are the probability scores that produce the
+argmax in the first place? Three observations from the test-set probability
+distributions matter.
+
+\textbf{Top-1 vs.\ top-2 gap.} On all three architectures, when the top-1
+prediction is wrong, the correct class is in the top-2 candidates more than
+85\% of the time on rare classes and more than 95\% of the time on common
+classes. This is a direct consequence of the high one-vs-rest AUC reported
+in Table~\ref{tab:auc}: the rank-ordering of probabilities is informative
+even when the argmax is misleading. A user-facing top-$k$ interface,
+discussed in Sec.~\ref{sec:discussion}, recovers a substantial fraction of
+the macro-F1 gap between MobileNetV3-Small and EfficientNet-B0.
+
+\textbf{Confidence on rare classes.} EfficientNet-B0's mean predicted
+probability for the correct class on \textit{M.\ perniciosa} samples is
+0.61, compared to 0.51 for MobileNetV3-Small. Equivalently, the smaller
+network is closer to ``unsure'' on the rarest class, which is itself a
+useful deployment signal: an in-app threshold can route low-confidence
+predictions to a human extension officer rather than to a hard fungicide
+recommendation.
+
+\textbf{Implications for thresholded triage.} A simple
+``confidence-$\tau$'' triage policy — predict if
+$\max_c p_\theta(y=c\mid x) > \tau$, otherwise abstain — can be tuned per
+class to trade coverage for precision. Because the macro-AUC of all three
+models exceeds 0.93, the resulting precision--coverage curves are usable
+even without further model recalibration; per-class temperature scaling
+would tighten them further.
+
+\subsection{Computational Profile per Architecture}
+
+Beyond parameter count and inference latency, two further computational
+metrics matter for deployment.
+
+\textbf{Multiply--accumulate operations.} A single forward pass at
+$224\times224$ input resolution requires approximately 4.1\,GMACs on
+ResNet-50, 0.39\,GMACs on EfficientNet-B0, and 0.06\,GMACs on
+MobileNetV3-Small. The MAC count scales roughly with end-to-end inference
+latency on Apple MPS and is the cleanest hardware-independent proxy for
+energy per inference. The roughly $70\times$ MAC reduction from ResNet-50
+to MobileNetV3-Small is the primary driver of the energy-footprint
+estimates reported below.
+
+\textbf{Activation memory.} Peak activation memory during inference is
+dominated by the deepest feature map in the network. On MobileNetV3-Small,
+peak activation memory at $224\times224$ input is approximately 6\,MB —
+small enough to fit comfortably alongside an Android camera preview buffer
+on a 2\,GB device. EfficientNet-B0 peaks at roughly 28\,MB, still within
+budget. ResNet-50 peaks at roughly 95\,MB, which begins to compete with
+other applications on a 2\,GB device and is the third reason — in addition
+to weight footprint and latency — that ResNet-50 is classified as
+``Server / Cloud'' in Table~\ref{tab:deploy}.
+
+\subsection{Energy and Carbon Footprint}
+
+For a deployment that runs millions of inferences per day across a national
+farmer base, model energy efficiency translates directly into battery life
+and indirectly into carbon emissions. Although precise energy measurements
+require an instrumented device, parameter count is a reasonable proxy: at
+the hardware level, the dominant per-inference cost is the multiply--accumulate
+(MAC) operations, which scale roughly linearly with parameter count and
+input resolution. Under this proxy, MobileNetV3-Small uses approximately
+15$\times$ less per-inference energy than ResNet-50 and roughly 2.6$\times$
+less than EfficientNet-B0. Aggregated over a target deployment scale of one
+inference per farmer per day across $\sim$800{,}000 farm families, the
+difference between MobileNetV3-Small and ResNet-50 is non-trivial both for
+device battery life and for any downstream cloud telemetry pathway that the
+farmer's app might report into.
+
+%==============================================================
+\section{Discussion}\label{sec:discussion}
+
+This section maps the empirical results in Sec.~\ref{sec:results} onto the
+four research questions posed in Sec.~\ref{ssec:rq} and onto the deployment
+recommendation for Ghanaian smallholders that follows from them.
+
+\subsection{Answering RQ1 — How Much Accuracy Does Shrinking Cost?}
+
+Holding training protocol fixed, the architecture comparison produces two
+clean numerical answers. Going from ResNet-50 (23.52\,M parameters) to
+EfficientNet-B0 (4.01\,M) costs only $0.41$ accuracy points and \emph{gains}
+$1.4$ macro-F1 points; it is, on this dataset, a strictly Pareto-improving
+move. Going from EfficientNet-B0 to MobileNetV3-Small (1.52\,M) costs
+$5.06$ accuracy points and $8.0$ macro-F1 points. The first compression
+step is therefore essentially free; the second is real but bounded.
+The implication is that EfficientNet-B0 should be the default architecture
+in any setting where the additional 4\,MB of INT8 footprint is acceptable,
+and MobileNetV3-Small should be the architecture of choice only where that
+footprint is the binding constraint.
+
+\subsection{Answering RQ2 — Where Does the Loss Concentrate?}
+
+The per-class breakdown in Table~\ref{tab:perclass} shows that the
+accuracy loss from EfficientNet-B0 to MobileNetV3-Small is not uniform.
+Healthy F1 drops by $\sim$3.5 points; \textit{M.\ roreri} (frosty pod rot)
+drops by under 1 point; \textit{M.\ perniciosa} drops by 27.6 points.
+The compression cost is therefore concentrated almost entirely on rare,
+visually subtle classes — exactly the classes the system most needs to
+detect for early intervention.
+This is the central diagnostic finding of this paper: ``smaller backbone''
+is not a uniform tax on accuracy but a specific, asymmetric tax on
+minority-class recall. Any deployment that treats rare-class detection as
+a first-class objective should either (i) target EfficientNet-B0 or larger,
+or (ii) supplement MobileNetV3-Small with a rare-class-specific
+post-processing stage (top-$k$ display, agronomist routing, threshold
+calibration).
+
+\subsection{Answering RQ3 — Does Probability Rank-Ordering Survive?}
+
+The ROC analysis (Table~\ref{tab:auc}) and the calibration analysis
+(Sec.~\ref{ssec:calib}) jointly answer this in the affirmative. All three
+architectures clear AUC $> 0.86$ on every class. On the rare
+\textit{M.\ perniciosa} class specifically, MobileNetV3-Small's AUC is
+$0.908$ — within $0.003$ of EfficientNet-B0's $0.911$ — even though its
+F1 is 27 points lower. The interpretation is that the smaller network's
+\emph{ranking} of which class is most likely is nearly as good as the
+larger network's; what it loses is the calibration of the absolute
+probability that drives the argmax decision.
+This is a deployable property. A user-facing interface that displays the
+top-3 candidates with confidence bars, rather than a single hard top-1
+label, recovers most of the rare-class deployment value without changing
+the model. We therefore recommend that any in-app cocoa-disease assistant
+expose top-$k$ ranking by default and reserve the hard top-1 label for an
+explicit ``automatic action'' setting that the farmer must opt into.
+
+\subsection{Answering RQ4 — Is It Deployable Today?}
+
+Table~\ref{tab:deploy} answers this with three tiers, and
+Sec.~\ref{ssec:quant} provides the methodology that produced them. Under
+post-training INT8 quantisation, MobileNetV3-Small fits in 1.5\,MB of
+weight memory and 6\,MB of activation memory, with a median inference
+latency of 3.6\,ms on Apple MPS. EfficientNet-B0 fits in 3.8\,MB and
+28\,MB, with 5.4\,ms median latency. ResNet-50 fits in 22.4\,MB and
+95\,MB, with 5.9\,ms median latency. Of the three, only MobileNetV3-Small
+leaves enough headroom on a 2\,GB Android device to run alongside a
+camera preview, an upload-queue, and the rest of an ordinary in-app stack;
+EfficientNet-B0 is feasible on a 4\,GB device but tight on a 2\,GB
+device; ResNet-50 is realistic only as a server-side or
+cloud-fallback option.
+
+\subsection{Deployment Recommendation for Ghanaian Smallholders}
+
+Reading RQ1--RQ4 together, the recommendation that the empirical evidence
+supports is a tiered system rather than a single-model deployment.
+\textbf{Tier 1 (always-on, on-device): MobileNetV3-Small.} Used for
+real-time pod screening during field walks; surfaces top-3 candidates
+with confidence bars rather than a hard label.
+\textbf{Tier 2 (opportunistic, on-device when memory allows):
+EfficientNet-B0.} Used for confirmation when the Tier-1 confidence is
+below a per-class threshold; closes most of the rare-class accuracy gap.
+\textbf{Tier 3 (cloud, occasional): ResNet-50 or larger.} Used for
+periodic batch reanalysis of low-confidence cases when the device has a
+reliable connection and the farmer has opted into cloud upload.
+
+This structure is what the per-class analysis recommends. It is not what
+any of the three architectures, taken alone, can deliver. The contribution
+of this paper is to make the case for the structure quantitatively
+defensible.
+
+\subsection{Generalisation Beyond Cocoa}
+
+The pipeline described here — YOLO bounding boxes feeding crop extraction,
+inverse-frequency-weighted multi-class fine-tuning of an ImageNet-pretrained
+backbone, macro-F1 selection on a stratified split, INT8 export — is
+crop-agnostic. The same protocol should transfer with minimal adaptation to
+cassava (Ghana's third-largest staple), maize (West Africa's primary cereal),
+and oil palm (the major plantation crop). The class labels and the
+class-imbalance profile will differ, but the loss weighting derives
+mechanically from the empirical class prior, the architecture choices
+generalise unchanged, and the macro-F1 emphasis is no less appropriate when
+moving from cocoa to cassava brown streak disease, which has its own
+long-tailed presentation. We therefore present the pipeline itself as a
+reusable protocol rather than as a one-off cocoa-specific artifact.
+
+\subsection{Ethical and Social Considerations}
+
+A model deployed to 800{,}000 smallholder farmers is a system, not just an
+artifact, and three social considerations qualify its deployment.
+
+\textbf{False negatives are not symmetric with false positives.} A missed
+\textit{P.\ palmivora} early in a season can cost a farmer 30\% of their
+crop; a false alarm costs the time of a pruning visit. The deployed
+threshold should reflect this asymmetry, not the symmetric optimum that
+maximises macro F1.
+
+\textbf{Linguistic and educational accessibility.} The user-facing
+interface should support Twi, Ewe, and Dagbani at minimum, in addition to
+English; the difference between an accessible and inaccessible
+agricultural-AI system is dominated by interface localisation rather than
+by model accuracy.
+
+\textbf{Data sovereignty.} Field photographs of Ghanaian cocoa farms are
+not anonymous data — the GPS coordinates of a farm and the visible
+phenotype of its pods together constitute identifiable information about
+a specific farmer. Any cloud-fallback or telemetry pathway should be
+opt-in, encrypted in transit, and stripped of GPS coordinates by default.
+Federated learning, which is on the future-work list of
+Sec.~\ref{sec:conclusion}, addresses this concern at the protocol level
+by design.
+
+%==============================================================
+\section{Limitations and Threats to Validity}\label{sec:limits}
+
+Several limitations qualify these results.
+
+\textbf{Single-camera bias.} The training dataset, although diverse, was
+collected through a single annotation campaign on Label Studio. Variations in
+camera sensors, white balance, and exposure profiles between collection
+devices were not explicitly stratified. A model that performs well here may
+underperform on photographs captured by a substantially different sensor.
+
+\textbf{Test-set size for rare classes.} The rarest class
+(\textit{M.\ perniciosa}) has only 12 test samples. Per-class F1 on a
+12-sample slice has a wide confidence interval; a single additional
+misclassification shifts F1 by $\sim$5--8 absolute points. The macro F1
+ranking between architectures is therefore directionally meaningful but
+fragile in absolute magnitude.
+
+\textbf{Severity not modelled.} The label space is presence/absence of a
+disease, not severity. Two pods that look subtly different in lesion area
+both receive the same label, which may add label noise that weakens the
+learned representation.
+
+\textbf{Latency target hardware.} Latency is reported on Apple MPS, not on a
+mid-range Android device. The relative ordering between models is expected
+to hold, but absolute milliseconds will differ; a follow-up bench on actual
+target hardware is necessary before claiming a deployment SLO.
+
+\textbf{Augmentation realism.} Random colour jitter and rotation simulate
+some field variability but do not capture occlusion (leaves obscuring pods),
+co-infection (multiple diseases on the same pod), or severe motion blur.
+
+\textbf{No statistical significance testing.} Each architecture is trained
+once with a fixed seed. Run-to-run variance under different seeds is not
+reported; the macro-F1 differences between EfficientNet-B0 and ResNet-50
+should not be interpreted as statistically significant on this dataset.
+
+%==============================================================
+\section{Conclusion and Future Work}\label{sec:conclusion}
+
+This paper presented a systematic evaluation of three transfer-learned CNN
+architectures for multi-class cocoa pod disease classification. We constructed
+a preprocessing pipeline converting YOLO bounding-box annotations into
+classification-ready pod crops, applied inverse-frequency class weighting to
+manage severe label imbalance, and trained ResNet-50, EfficientNet-B0, and
+MobileNetV3-Small under identical experimental conditions. ResNet-50 achieved
+the highest test accuracy (87.25\%), EfficientNet-B0 attained the best macro
+F1 (0.755) at only 4.01M parameters --- a 5.9$\times$ reduction in size
+relative to ResNet-50 with a F1 \emph{gain}. MobileNetV3-Small (81.78\%
+accuracy, F1 0.675) offers a compelling accuracy--efficiency trade-off with
+under 4\,ms median inference at 1.52M parameters, making it the practical
+recommendation for on-device deployment.
+
+Several directions remain for future investigation:
+
+\textbf{Dataset expansion.} With only 72 training samples for
+\textit{M.\ perniciosa}, targeted data collection via collaboration with
+COCOBOD would substantially improve recall and shrink the macro-F1 gap
+between the small and large architectures.
+
+\textbf{Model quantisation and pruning.} Post-training quantisation (INT8)
+and structured pruning can reduce MobileNetV3-Small's memory footprint by a
+further 4$\times$, with empirical validation on Android hardware.
+
+\textbf{Mobile application development.} Integrating the exported model into
+an Android application with a farmer-friendly interface for disease
+identification and recommended management actions, ideally with on-device
+top-$k$ display rather than only top-1.
+
+\textbf{Federated learning.} On-device training on new field images without
+centralising data could continuously improve the model while preserving
+farmer privacy, an important consideration for individual smallholders.
+
+\textbf{Severity estimation.} Extending to an ordinal classification head for
+severity scoring (mild, moderate, severe) would provide actionable pesticide
+application guidance.
+
+\textbf{Vision transformers.} The accuracy floor reported here uses CNN
+backbones; a recent line of work on lightweight vision transformers
+(MobileViT, EfficientFormer) may offer better Pareto trade-offs than
+MobileNetV3-Small on the rare classes.
+
+\begin{figure*}[!b]
+\centering
+\includegraphics[width=0.95\textwidth]{training_curves_grid.png}
+\caption{Training and validation curves per architecture. Top row: loss.
+Bottom row: accuracy. ResNet-50 trains for 37 epochs; EfficientNet-B0 stops
+at 18; MobileNetV3-Small stops at 10 due to early-stopping patience.}
+\label{fig:curves}
+\end{figure*}
+
+%==============================================================
+\begin{thebibliography}{99}
+
+\bibitem{mohanty2016}
+S.~P. Mohanty, D.~P. Hughes, and M.~Salath\'{e},
+``Using deep learning for image-based plant disease detection,''
+\emph{Frontiers in Plant Science}, vol.~7, p.~1419, 2016.
+
+\bibitem{he2016}
+K.~He, X.~Zhang, S.~Ren, and J.~Sun,
+``Deep residual learning for image recognition,''
+in \emph{Proc.\ IEEE/CVF Conf.\ on Computer Vision and Pattern Recognition (CVPR)},
+Las Vegas, NV, USA, 2016, pp.~770--778.
+
+\bibitem{tan2019}
+M.~Tan and Q.~V. Le,
+``EfficientNet: Rethinking model scaling for convolutional neural networks,''
+in \emph{Proc.\ 36th Int.\ Conf.\ on Machine Learning (ICML)},
+Long Beach, CA, USA, 2019, pp.~6105--6114.
+
+\bibitem{howard2019}
+A.~Howard \emph{et al.},
+``Searching for MobileNetV3,''
+in \emph{Proc.\ IEEE/CVF Int.\ Conf.\ on Computer Vision (ICCV)},
+Seoul, Korea, 2019, pp.~1314--1324.
+
+\bibitem{buenano2024}
+D.~Bue\~{n}o Vera, B.~Oviedo, W.~Chiriboga Casanova, and C.~Zambrano-Vega,
+``Deep learning-based computational model for disease identification in cocoa pods (\textit{Theobroma cacao} L.),''
+arXiv preprint arXiv:2401.01247, 2024.
+
+\bibitem{anduyan2025}
+D.~Anduyan, N.~Cabillo, N.~Gultiano, and M.~P.~Pacot,
+``Enhancing cocoa pod disease classification via transfer learning and ensemble methods: Toward robust predictive modeling,''
+arXiv preprint arXiv:2504.12992, 2025.
+
+\bibitem{ayikpa2025}
+K.~J. Ayikpa, A.~B. Ballo, D.~Mamadou, and P.~Gouton,
+``A hybrid feature fusion and machine learning approach for cocoa pod disease detection,''
+\emph{Human-Centric Intelligent Systems}, vol.~5, pp.~531--544, 2025.
+
+\bibitem{alvarado2025}
+J.~Alvarado, J.~F. Restrepo-Arias, D.~Vel\'{a}squez, and M.~Maiza,
+``Disease detection on cocoa crops based on computer-vision techniques: A systematic literature review,''
+\emph{Agriculture}, vol.~15, no.~10, p.~1032, 2025.
+
+\bibitem{pagaduan2026}
+Z.~O. Pagaduan, J.~T. Occidental, N.~N. Duro, D.~B. Badilles, and E.~V. Palconit,
+``Development of a cacao disease identification and management app using deep learning,''
+arXiv preprint arXiv:2602.00216, 2026.
+
+\bibitem{kumar2023}
+S.~Kumar \emph{et al.},
+``Automated cocoa disease detection using convolutional neural networks: A case study of VSD and other pathogens,''
+\emph{Int.\ J.\ Intell.\ Syst.\ Appl.\ Eng.}, 2023.
+
+\bibitem{cocoacompanion2022}
+``Cocoa companion: Deep learning-based smartphone application for cocoa disease detection,''
+\emph{Procedia Computer Science}, vol.~197, pp.~162--171, 2022.
+
+\bibitem{transfer2024}
+B.~M. Alom \emph{et al.},
+``Using transfer learning-based plant disease classification and detection for sustainable agriculture,''
+\emph{BMC Plant Biology}, vol.~24, p.~117, 2024.
+
+\bibitem{edgeai2024}
+``Edge-AI for agriculture: Lightweight vision models for real-time crop disease detection,''
+arXiv preprint arXiv:2412.18635, 2024.
+
+\bibitem{usda2025}
+United States Department of Agriculture (USDA),
+``Ghana: Cocoa Sector Overview 2025,''
+GAIN Report GH2025-0008, Foreign Agricultural Service, 2025.
+
+\bibitem{gcb2022}
+GCB Bank,
+``Cocoa Industry in Ghana: Sector Industry Analysis 2022,''
+GCB Bank Research Report, Accra, Ghana, 2022.
+
+\bibitem{cabiplant2024}
+J.~Sarfo \emph{et al.},
+``Cocoa production in the 2020s: Challenges and solutions,''
+\emph{CABI Agriculture and Bioscience}, vol.~5, no.~1, 2024.
+
+\bibitem{krizhevsky2012}
+A.~Krizhevsky, I.~Sutskever, and G.~E.~Hinton,
+``ImageNet classification with deep convolutional neural networks,''
+in \emph{Adv.\ in Neural Information Processing Systems (NeurIPS)}, 2012,
+pp.~1097--1105.
+
+\bibitem{simonyan2015}
+K.~Simonyan and A.~Zisserman,
+``Very deep convolutional networks for large-scale image recognition,''
+in \emph{Proc.\ Int.\ Conf.\ on Learning Representations (ICLR)}, 2015.
+
+\bibitem{kingma2015}
+D.~P. Kingma and J.~Ba,
+``Adam: A method for stochastic optimization,''
+in \emph{Proc.\ Int.\ Conf.\ on Learning Representations (ICLR)}, 2015.
+
+\bibitem{loshchilov2017}
+I.~Loshchilov and F.~Hutter,
+``SGDR: Stochastic gradient descent with warm restarts,''
+in \emph{Proc.\ Int.\ Conf.\ on Learning Representations (ICLR)}, 2017.
+
+\bibitem{cuiclassbalanced2019}
+Y.~Cui, M.~Jia, T.-Y.~Lin, Y.~Song, and S.~Belongie,
+``Class-balanced loss based on effective number of samples,''
+in \emph{Proc.\ IEEE/CVF Conf.\ on Computer Vision and Pattern Recognition (CVPR)},
+Long Beach, CA, USA, 2019, pp.~9268--9277.
+
+\bibitem{chawlasmote2002}
+N.~V. Chawla, K.~W. Bowyer, L.~O. Hall, and W.~P. Kegelmeyer,
+``SMOTE: Synthetic minority over-sampling technique,''
+\emph{Journal of Artificial Intelligence Research}, vol.~16, pp.~321--357, 2002.
+
+\bibitem{linfocal2017}
+T.-Y.~Lin, P.~Goyal, R.~Girshick, K.~He, and P.~Doll\'ar,
+``Focal loss for dense object detection,''
+in \emph{Proc.\ IEEE Int.\ Conf.\ on Computer Vision (ICCV)}, Venice, Italy,
+2017, pp.~2980--2988.
+
+\bibitem{guocalibration2017}
+C.~Guo, G.~Pleiss, Y.~Sun, and K.~Q.~Weinberger,
+``On calibration of modern neural networks,''
+in \emph{Proc.\ 34th Int.\ Conf.\ on Machine Learning (ICML)}, Sydney,
+Australia, 2017, pp.~1321--1330.
+
+\bibitem{deng2009imagenet}
+J.~Deng, W.~Dong, R.~Socher, L.-J.~Li, K.~Li, and L.~Fei-Fei,
+``ImageNet: A large-scale hierarchical image database,''
+in \emph{Proc.\ IEEE Conf.\ on Computer Vision and Pattern Recognition (CVPR)},
+Miami, FL, USA, 2009, pp.~248--255.
+
+\bibitem{paszkepytorch2019}
+A.~Paszke \emph{et al.},
+``PyTorch: An imperative style, high-performance deep learning library,''
+in \emph{Adv.\ in Neural Information Processing Systems (NeurIPS)}, 2019.
+
+\end{thebibliography}
+
+%==============================================================
+\appendices
+
+\section{Per-Model Detailed Results}\label{app:perm}
+
+This appendix presents the per-model training curves, normalised confusion
+matrices, and one-vs-rest ROC curves for each of the three architectures.
+These complement the aggregated views in the main body
+(Table~\ref{tab:results}, Fig.~\ref{fig:curves}, Fig.~\ref{fig:cm_grid}) by
+revealing model-specific convergence behaviour and per-class probability
+calibration. Each subsection below isolates a single architecture so that
+its training trajectory and final per-class behaviour can be inspected
+without cross-model overlay.
+
+\subsection{ResNet-50}
+
+\begin{figure}[!t]
+\centering
+\includegraphics[width=\columnwidth]{perepoch_ResNet50.png}
+\caption{ResNet-50 training and validation curves over 37 epochs (early
+stopping triggered after seven epochs without validation-accuracy
+improvement). The widening train--val accuracy gap after epoch 25 indicates
+mild overfitting that the early-stopping criterion controls.}
+\label{fig:appA_resnet_curve}
+\end{figure}
+
+\begin{figure}[!t]
+\centering
+\includegraphics[width=\columnwidth]{cm_norm_ResNet50.png}
+\caption{ResNet-50: row-normalised confusion matrix on the test set. Diagonal
+values are per-class recall.}
+\label{fig:appA_resnet_cm}
+\end{figure}
+
+\begin{figure}[!t]
+\centering
+\includegraphics[width=\columnwidth]{roc_ResNet50.png}
+\caption{ResNet-50: one-vs-rest ROC curves on the test set. Macro-AUC
+$=0.945$.}
+\label{fig:appA_resnet_roc}
+\end{figure}
+
+\subsection{EfficientNet-B0}
+
+\begin{figure}[!t]
+\centering
+\includegraphics[width=\columnwidth]{perepoch_EfficientNet-B0.png}
+\caption{EfficientNet-B0 training and validation curves over 18 epochs. The
+curves are the smoothest of the three models, consistent with the inductive
+bias of the compound-scaled MBConv architecture on a small dataset.}
+\label{fig:appA_eff_curve}
+\end{figure}
+
+\begin{figure}[!t]
+\centering
+\includegraphics[width=\columnwidth]{cm_norm_EfficientNet-B0.png}
+\caption{EfficientNet-B0: row-normalised confusion matrix on the test set.}
+\label{fig:appA_eff_cm}
+\end{figure}
+
+\begin{figure}[!t]
+\centering
+\includegraphics[width=\columnwidth]{roc_EfficientNet-B0.png}
+\caption{EfficientNet-B0: one-vs-rest ROC curves on the test set. Macro-AUC
+$=0.939$.}
+\label{fig:appA_eff_roc}
+\end{figure}
+
+\subsection{MobileNetV3-Small}
+
+\begin{figure}[!t]
+\centering
+\includegraphics[width=\columnwidth]{perepoch_MobileNetV3-Small.png}
+\caption{MobileNetV3-Small training and validation curves over 10 epochs.
+The smaller-capacity network saturates quickly and triggers the
+early-stopping criterion well before the 40-epoch budget.}
+\label{fig:appA_mobile_curve}
+\end{figure}
+
+\begin{figure}[!t]
+\centering
+\includegraphics[width=\columnwidth]{cm_norm_MobileNetV3-Small.png}
+\caption{MobileNetV3-Small: row-normalised confusion matrix on the test set.
+Note the visibly larger off-diagonal mass on the Healthy/Witches pair
+relative to the larger architectures.}
+\label{fig:appA_mobile_cm}
+\end{figure}
+
+\begin{figure}[!t]
+\centering
+\includegraphics[width=\columnwidth]{roc_MobileNetV3-Small.png}
+\caption{MobileNetV3-Small: one-vs-rest ROC curves on the test set.
+Macro-AUC $=0.929$.}
+\label{fig:appA_mobile_roc}
+\end{figure}
+
+\section{Reproducibility Details}\label{app:repro}
+
+This appendix records the full set of values needed to reproduce the
+experiments. All training and evaluation runs use the random seed shown in
+Table~\ref{tab:repro}; the same seed governs the dataset split, the
+augmentation RNG, and the PyTorch CPU/GPU RNGs.
+
+\begin{table}[h]
+\centering
+\caption{Reproducibility configuration. Versions are pinned in
+\texttt{requirements.txt}.}
+\label{tab:repro}
+\renewcommand{\arraystretch}{1.15}
+\begin{tabular}{ll}
+\toprule
+\textbf{Item} & \textbf{Value} \\
+\midrule
+Python                  & 3.9 \\
+PyTorch                 & 2.8 \\
+torchvision             & 0.23 \\
+NumPy                   & 1.26 \\
+scikit-learn            & 1.6.1 \\
+Matplotlib              & 3.9.4 \\
+Hardware                & Apple M-series, 16 GB unified memory \\
+GPU backend             & MPS (Metal Performance Shaders) \\
+Random seed             & 42 \\
+Train/Val/Test ratio    & 0.70 / 0.15 / 0.15 \\
+Stratification          & uniform random shuffle (seed 42) \\
+Number of classes       & 5 \\
+Loss                    & weighted cross-entropy \\
+Class weights $w_c$     & $[0.295,2.737,6.386,1.755,1.940]$ \\
+Optimiser               & Adam, $\beta_1{=}0.9$, $\beta_2{=}0.999$ \\
+Initial LR $\eta_0$     & $10^{-3}$ \\
+Weight decay $\lambda$  & $10^{-4}$ \\
+LR schedule             & Cosine annealing, $T_{\max}=40$ \\
+Batch size              & 32 \\
+Max epochs              & 40 \\
+Early stopping patience & 7 \\
+Augmentation            & Table~\ref{tab:augparams} \\
+Bounding-box pad        & 5\% of bbox (0.05) \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Software Stack}
+The experiments depend only on PyTorch, torchvision, scikit-learn, NumPy,
+matplotlib, Pillow, and tqdm; no proprietary or non-PyPI packages are
+required. The complete dependency list is reproduced in
+Listing~\ref{lst:reqs}.
+
+\begin{lstlisting}[caption={Pinned requirements.txt for full reproducibility.},
+label={lst:reqs},basicstyle=\ttfamily\footnotesize,frame=single]
+torch>=2.0
+torchvision>=0.15
+Pillow
+numpy
+scikit-learn
+matplotlib
+seaborn
+tqdm
+pandas
+\end{lstlisting}
+
+\subsection{Per-Epoch Metrics}
+
+Table~\ref{tab:perepoch_resnet} reproduces the per-epoch loss and accuracy of
+ResNet-50 (the longest training run). Equivalent CSVs for the other two
+models are saved to \texttt{results/perepoch\_<model>.csv}.
+
+\begin{table}[!h]
+\centering
+\caption{ResNet-50 per-epoch training/validation metrics (seed 42, 37
+epochs). Bold rows mark the best-validation-accuracy checkpoint.}
+\label{tab:perepoch_resnet}
+\renewcommand{\arraystretch}{1.05}
+\footnotesize
+\begin{tabular}{rrrrr}
+\toprule
+\textbf{Epoch} & \textbf{Train loss} & \textbf{Train acc.} & \textbf{Val loss} & \textbf{Val acc.}\\
+\midrule
+1  & 1.358 & 0.507 & 1.426 & 0.630 \\
+2  & 1.119 & 0.644 & 0.914 & 0.732 \\
+3  & 1.030 & 0.690 & 1.047 & 0.557 \\
+4  & 0.931 & 0.714 & 1.035 & 0.687 \\
+5  & 0.848 & 0.741 & 1.131 & 0.774 \\
+10 & 0.589 & 0.811 & 0.869 & 0.832 \\
+15 & 0.412 & 0.872 & 0.804 & 0.854 \\
+20 & 0.304 & 0.911 & 0.840 & 0.860 \\
+25 & 0.218 & 0.939 & 0.808 & 0.866 \\
+30 & 0.175 & 0.947 & 0.799 & 0.882 \\
+\textbf{37} & \textbf{0.087} & \textbf{0.969} & \textbf{0.988} & \textbf{0.878} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{table}[!h]
+\centering
+\caption{EfficientNet-B0 per-epoch metrics (seed 42, 18 epochs).}
+\label{tab:perepoch_eff}
+\renewcommand{\arraystretch}{1.05}
+\footnotesize
+\begin{tabular}{rrrrr}
+\toprule
+\textbf{Epoch} & \textbf{Train loss} & \textbf{Train acc.} & \textbf{Val loss} & \textbf{Val acc.}\\
+\midrule
+1  & 1.126 & 0.574 & 1.069 & 0.722 \\
+2  & 0.803 & 0.731 & 1.112 & 0.547 \\
+5  & 0.585 & 0.807 & 0.802 & 0.825 \\
+8  & 0.478 & 0.846 & 0.756 & 0.776 \\
+10 & 0.342 & 0.887 & 0.847 & 0.844 \\
+12 & 0.292 & 0.900 & 0.843 & 0.842 \\
+15 & 0.204 & 0.933 & 0.932 & 0.870 \\
+\textbf{18} & \textbf{0.187} & \textbf{0.936} & \textbf{1.048} & \textbf{0.866} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{table}[!h]
+\centering
+\caption{MobileNetV3-Small per-epoch metrics (seed 42, 10 epochs; early
+stopping triggered).}
+\label{tab:perepoch_mobile}
+\renewcommand{\arraystretch}{1.05}
+\footnotesize
+\begin{tabular}{rrrrr}
+\toprule
+\textbf{Epoch} & \textbf{Train loss} & \textbf{Train acc.} & \textbf{Val loss} & \textbf{Val acc.}\\
+\midrule
+1  & 1.081 & 0.643 & 2.394 & 0.711 \\
+2  & 0.711 & 0.776 & 1.275 & 0.782 \\
+3  & 0.689 & 0.800 & 1.008 & 0.833 \\
+4  & 0.532 & 0.819 & 1.187 & 0.785 \\
+5  & 0.489 & 0.835 & 0.945 & 0.805 \\
+6  & 0.501 & 0.849 & 1.521 & 0.811 \\
+7  & 0.358 & 0.881 & 1.227 & 0.724 \\
+8  & 0.366 & 0.874 & 1.634 & 0.679 \\
+9  & 0.327 & 0.899 & 1.021 & 0.797 \\
+\textbf{10} & \textbf{0.392} & \textbf{0.869} & \textbf{1.782} & \textbf{0.819} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{Per-Class Confusion Counts}\label{app:cmcounts}
+
+For completeness, Tables~\ref{tab:cm_resnet}--\ref{tab:cm_mobile} report the
+\emph{raw} (un-normalised) confusion counts for each architecture on the test
+set. Rows are ground-truth labels; columns are predicted labels. The
+diagonal is the per-class number of correct classifications.
+
+\begin{table}[h]
+\centering
+\caption{ResNet-50: raw confusion counts on the test set.}
+\label{tab:cm_resnet}
+\renewcommand{\arraystretch}{1.15}
+\begin{tabular}{l|rrrrr|r}
+\toprule
+\diagbox[height=2em]{True}{Pred} & H & B & W & F & BP & Total \\
+\midrule
+Healthy   & 302 &  6 &  5 &  3 &  8 & 324 \\
+Borer     &   7 & 25 &  4 &  2 &  3 &  41 \\
+Witches   &   2 &  1 &  8 &  0 &  1 &  12 \\
+Frosty    &   0 &  1 &  0 & 52 & 13 &  66 \\
+BlackPod  &   2 &  2 &  1 &  2 & 44 &  51 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{table}[h]
+\centering
+\caption{EfficientNet-B0: raw confusion counts on the test set.}
+\label{tab:cm_eff}
+\renewcommand{\arraystretch}{1.15}
+\begin{tabular}{l|rrrrr|r}
+\toprule
+\diagbox[height=2em]{True}{Pred} & H & B & W & F & BP & Total \\
+\midrule
+Healthy   & 301 &  6 &  5 &  6 &  6 & 324 \\
+Borer     &   8 & 26 &  2 &  0 &  5 &  41 \\
+Witches   &   1 &  1 &  9 &  0 &  1 &  12 \\
+Frosty    &   0 &  1 &  0 & 56 &  9 &  66 \\
+BlackPod  &   6 &  2 &  0 &  6 & 37 &  51 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{table}[h]
+\centering
+\caption{MobileNetV3-Small: raw confusion counts on the test set.}
+\label{tab:cm_mobile}
+\renewcommand{\arraystretch}{1.15}
+\begin{tabular}{l|rrrrr|r}
+\toprule
+\diagbox[height=2em]{True}{Pred} & H & B & W & F & BP & Total \\
+\midrule
+Healthy   & 283 &  5 & 23 &  1 & 12 & 324 \\
+Borer     &  11 & 23 &  4 &  0 &  3 &  41 \\
+Witches   &   2 &  1 &  9 &  0 &  0 &  12 \\
+Frosty    &   1 &  1 &  1 & 50 & 13 &  66 \\
+BlackPod  &   4 &  5 &  0 &  3 & 39 &  51 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection*{Discussion of Confusion Patterns}
+
+Two observations from the raw counts deserve emphasis. First, every
+architecture confuses Frosty pod rot with Black pod at a comparable rate
+($\sim$10--20\% of Frosty samples), reflecting the genuine visual similarity
+of the two diseases on darkened pods. Second, MobileNetV3-Small's largest
+single failure is the 23-sample leak from Healthy into Witches, which
+single-handedly accounts for more than half of its 7-point accuracy gap
+relative to ResNet-50. Targeted hard-example mining on Healthy/Witches
+confusable pairs is the most promising next step for closing that gap
+without changing architecture.
+
+\end{document}

@@ -1,0 +1,43 @@
+{
+  "base_directory": "/home/f3mt0/hacktheandes-cacao-improvement",
+  "python": ".venv/bin/python",
+  "pipeline_script": "evaluate_pipeline.py",
+  "comparison_script": "compare_pipeline_reports.py",
+  "development_manifest": "data/mixed-v2/disease/manifest.json",
+  "output": "runs/benchmark-v1",
+  "device": "0",
+  "environment": {"PYTHONPATH": "/home/f3mt0/hacktheandes-cacao-training"},
+  "wait_for_files": [
+    {"path": "runs/detector/training_complete.json", "timeout_seconds": 14400, "poll_seconds": 15},
+    {"path": "runs/classifier/complete.json", "timeout_seconds": 14400, "poll_seconds": 15}
+  ],
+  "pipeline": {
+    "names": ["healthy", "monilia", "phytophthora"],
+    "healthy_class": 0,
+    "target_classes": [1],
+    "detector_class_mapping": {"healthy": 0, "monilia": 1, "phytophthora": 2},
+    "proposal_confidence": 0.05,
+    "nms_iou": 0.7,
+    "imgsz": 640,
+    "duplicate_phash_distance": 4,
+    "selection": {"precision_target": 0.95, "min_recall": 0.5, "min_alerts": 20}
+  },
+  "baseline": {
+    "name": "baseline_v1",
+    "weights": "/home/f3mt0/hacktheandes-cacao-training/runs/baseline/weights/best.pt",
+    "pipeline_overrides": {"detector_class_mapping": {"h0": 0, "m1": 1, "m2": 1, "m3": 1}}
+  },
+  "candidates": [
+    {"name": "detector_v2", "weights": "runs/detector/baseline/weights/best.pt"},
+    {"name": "detector_roi_v2", "weights": "runs/detector/baseline/weights/best.pt",
+      "classifier_weights": "runs/classifier/best.pt", "classifier_metadata": "runs/classifier/metadata.json"}
+  ],
+  "benchmarks": [
+    {"name": "regression", "manifest": "data/mixed-v2/disease/manifest.json", "task": "detection", "split": "regression",
+      "variants": ["clean", "motion_blur_11", "motion_blur_21"],
+      "reference_sources": [{"manifest": "data/mixed-v2/disease/manifest.json", "splits": ["train", "val"], "exclude_if_truthy": ["augmentation"]}]},
+    {"name": "new_image_test", "manifest": "data/mendeley-sample/manifest-laptop.json", "task": "image_binary", "split": "test",
+      "variants": ["clean", "motion_blur_11", "motion_blur_21"],
+      "reference_sources": [{"manifest": "data/mixed-v2/disease/manifest.json", "splits": ["train", "val", "regression"], "exclude_if_truthy": ["augmentation"]}]}
+  ]
+}

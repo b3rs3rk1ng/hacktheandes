@@ -1,0 +1,104 @@
+{
+  "phase": "done",
+  "label": "Mazorca depositada",
+  "simulation_time": 56.58,
+  "trial_time": 47.71,
+  "position": [
+    -1.8,
+    -1.45,
+    0.97
+  ],
+  "target_position": [
+    -1.117,
+    -1.415,
+    0.195
+  ],
+  "velocity": [
+    0.0,
+    -0.0,
+    0.0,
+    0.0,
+    -0.0,
+    0.0
+  ],
+  "orientation": [
+    1.0,
+    0.0,
+    -0.0,
+    -0.0,
+    1.0,
+    0.0,
+    0.0,
+    -0.0,
+    1.0
+  ],
+  "waypoint": [
+    -1.7999999999999998,
+    -1.45,
+    0.97
+  ],
+  "gripper_locked": false,
+  "grip_present": false,
+  "stem_attached": 0,
+  "payload_attached": false,
+  "result": "deposited",
+  "events": [
+    {
+      "phase": "takeoff",
+      "time": 8.864,
+      "label": "Despegando"
+    },
+    {
+      "phase": "approach",
+      "time": 11.84,
+      "label": "Acercándose al árbol"
+    },
+    {
+      "phase": "align",
+      "time": 15.904,
+      "label": "Alineando la pinza"
+    },
+    {
+      "phase": "grip",
+      "time": 18.784,
+      "label": "Sujetando la mazorca"
+    },
+    {
+      "phase": "cut",
+      "time": 19.792,
+      "label": "Corte simulado del tallo"
+    },
+    {
+      "phase": "retreat",
+      "time": 20.8,
+      "label": "Retirando la mazorca"
+    },
+    {
+      "phase": "transport",
+      "time": 24.0,
+      "label": "Llevando al recipiente"
+    },
+    {
+      "phase": "release",
+      "time": 27.92,
+      "label": "Soltando la mazorca"
+    },
+    {
+      "phase": "verify",
+      "time": 28.736,
+      "label": "Comprobando depósito"
+    },
+    {
+      "phase": "done",
+      "time": 30.752,
+      "label": "Mazorca depositada"
+    }
+  ],
+  "updated_at": 1792293967.5862892,
+  "engine": "Webots R2025a / ODE",
+  "limits": [
+    "Objetivo y posición conocidos por el simulador; sin diagnóstico de enfermedad.",
+    "Agarre idealizado con conector; corte representado soltando la unión.",
+    "Control de empuje y actitud simplificado; sin aerodinámica de hélices ni viento."
+  ]
+}

@@ -1,0 +1,82 @@
+{
+    "description": "",
+    "tags": [],
+    "size": {
+        "height": 4160,
+        "width": 3120
+    },
+    "objects": [
+        {
+            "id": 12891481,
+            "classId": 19770,
+            "description": "",
+            "geometryType": "rectangle",
+            "labelerLogin": "gr@datasetninja.com",
+            "createdAt": "2023-07-03T15:02:25.535Z",
+            "updatedAt": "2023-07-03T15:02:25.535Z",
+            "tags": [],
+            "classTitle": "phytophthora",
+            "points": {
+                "exterior": [
+                    [
+                        1218,
+                        1123
+                    ],
+                    [
+                        2431,
+                        3853
+                    ]
+                ],
+                "interior": []
+            }
+        },
+        {
+            "id": 12891480,
+            "classId": 19772,
+            "description": "",
+            "geometryType": "rectangle",
+            "labelerLogin": "gr@datasetninja.com",
+            "createdAt": "2023-07-03T15:02:25.534Z",
+            "updatedAt": "2023-07-03T15:02:25.534Z",
+            "tags": [],
+            "classTitle": "healthy",
+            "points": {
+                "exterior": [
+                    [
+                        1922,
+                        1276
+                    ],
+                    [
+                        2640,
+                        2172
+                    ]
+                ],
+                "interior": []
+            }
+        },
+        {
+            "id": 12891479,
+            "classId": 19771,
+            "description": "",
+            "geometryType": "rectangle",
+            "labelerLogin": "gr@datasetninja.com",
+            "createdAt": "2023-07-03T15:02:25.533Z",
+            "updatedAt": "2023-07-03T15:02:25.533Z",
+            "tags": [],
+            "classTitle": "monilia",
+            "points": {
+                "exterior": [
+                    [
+                        2082,
+                        1081
+                    ],
+                    [
+                        2651,
+                        1717
+                    ]
+                ],
+                "interior": []
+            }
+        }
+    ]
+}

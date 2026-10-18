@@ -1,0 +1,86 @@
+{
+  "id": "cacao-4-18-pod-6",
+  "pod_id": "cacao-4-18-pod-6",
+  "plant_id": "cacao-4-18",
+  "position": [
+    3.9642031646665585,
+    22.26858716011278,
+    0.39271250160059756
+  ],
+  "status": "awaiting_review",
+  "robot_id": null,
+  "created_at": 1792326031.01836,
+  "drone_frame": "4400c051-e3d6-424c-88bd-ec0bed2458aa",
+  "confidence": 0.7429307699203491,
+  "verification": [],
+  "evidence": {
+    "id": "2e8998b239da7b7ea98952d2c720ef753592902efd8736c7c69cb7d45c57324e",
+    "image_url": "/api/review/evidence/2e8998b239da7b7ea98952d2c720ef753592902efd8736c7c69cb7d45c57324e.jpg",
+    "crop_url": "/api/review/evidence/2e8998b239da7b7ea98952d2c720ef753592902efd8736c7c69cb7d45c57324e-crop.jpg",
+    "original_url": "/api/review/evidence/2e8998b239da7b7ea98952d2c720ef753592902efd8736c7c69cb7d45c57324e-original.jpg",
+    "frame_id": "4400c051-e3d6-424c-88bd-ec0bed2458aa",
+    "captured_at": 1792326891.8724902,
+    "bbox": [
+      365,
+      232,
+      415,
+      323
+    ],
+    "width": 640,
+    "height": 323,
+    "camera": {
+      "position": [
+        4.7393179932653755,
+        0.6753036736041232,
+        -22.03330938082198
+      ],
+      "quaternion": [
+        0.046755089957479096,
+        0.6964974050397912,
+        0.024889968955825223,
+        0.7156017158876039
+      ],
+      "vertical_fov_degrees": 58,
+      "aspect": 1.9807427785419531
+    },
+    "localization": {
+      "prediction_index": 0,
+      "pod_id": "cacao-4-18-pod-6",
+      "version": 1,
+      "projected_bbox": [
+        354.1279951054398,
+        224.42646048829286,
+        421.6732407279,
+        323
+      ],
+      "box_iou": 0.6833325727031778,
+      "visible_samples": 5,
+      "sample_count": 5,
+      "distance_m": 0.8579139825391066
+    },
+    "sha256_original": "774013a9439098b80ba326cf8e052eac58fe04476fbb4d07c06ae0abdc84229d"
+  },
+  "review": {
+    "decision": "pending",
+    "revision": 3,
+    "previous_decision": "pending",
+    "reason": "La captura anterior no comprobaba visibilidad del fruto"
+  },
+  "previous_evidence": {
+    "id": "7426fc6d2bbe18f7042fc778b7887ae131bc883c48310576333386d529370f92",
+    "image_url": "/api/review/evidence/7426fc6d2bbe18f7042fc778b7887ae131bc883c48310576333386d529370f92.jpg",
+    "crop_url": "/api/review/evidence/7426fc6d2bbe18f7042fc778b7887ae131bc883c48310576333386d529370f92-crop.jpg",
+    "original_url": "/api/review/evidence/7426fc6d2bbe18f7042fc778b7887ae131bc883c48310576333386d529370f92-original.jpg",
+    "frame_id": "57e921ae-8226-4f52-affe-a289793da56d",
+    "captured_at": 1792326030.583735,
+    "bbox": [
+      246,
+      0,
+      369,
+      323
+    ],
+    "width": 640,
+    "height": 323,
+    "sha256_original": "135f51d6b4d1ca1bd9395bc7fa67a8486ade74ee60c717e0832b3708e65044f1"
+  }
+}

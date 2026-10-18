@@ -1,0 +1,29 @@
+{
+  "name": "cacao improvement round 2",
+  "seed": 20261019,
+  "architecture_candidates": [
+    "yolo11s_3_class",
+    "yolo11s_3_class_plus_efficientnet_b0_roi"
+  ],
+  "model_selection": {
+    "split": "val",
+    "target": "monilia",
+    "precision_target": 0.95,
+    "min_recall": 0.5,
+    "min_alerts": 20,
+    "rule": "If feasible, maximum F1; otherwise maximum precision among nonvacuous candidates. Use only validation reports. Freeze before new external image inference."
+  },
+  "sources": {
+    "cocoa_monilia": "existing train/val; old test protected regression",
+    "serrano_torres": "previously inspected external test now development train/val",
+    "mendeley_ykbtpsyfv9_v1": "ENTIRE cohort reserved for test; predeclared 400-image sample, no model tuning"
+  },
+  "external_task": "image alert classification, not object detection; photos do not supply boxes",
+  "baseline": "Original four-class YOLO11n, remapped to canonical classes and calibrated on the same validation policy, class-agnostic NMS",
+  "motion": "Synthetic training blur and frozen stress tests only; no real drone footage available",
+  "config_sha256": {
+    "mixed_config.json": "bf33a1b95ef1744147682637a4805e13e1b2fa002be896e44fde0e07ec8ab568",
+    "training_config.json": "b0bf5c5a609b301ace7ebed51f37bfa2a63a2074632b7a4e5a5e05e2020bd480",
+    "classifier_config.json": "66e6a6e1fd5f1526b99fa7685304f9f209902e6c921c325b071a3e6776d17ed6"
+  }
+}

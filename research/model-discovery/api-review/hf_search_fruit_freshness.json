@@ -1,0 +1,360 @@
+[
+  {
+    "_id": "66eff77b5e21be2819b7d547",
+    "id": "Aryaman9999/Freshness-Fruit_Vegies",
+    "author": "Aryaman9999",
+    "gated": false,
+    "lastModified": "2024-09-22T17:05:40.000Z",
+    "likes": 0,
+    "trendingScore": 0,
+    "private": false,
+    "sha": "c67ef67afef0e38ecb4f368dd3718c5cc87623c7",
+    "config": {
+      "architectures": [
+        "ViTForImageClassification"
+      ],
+      "model_type": "vit"
+    },
+    "downloads": 51,
+    "tags": [
+      "tensorboard",
+      "safetensors",
+      "vit",
+      "autotrain",
+      "image-classification",
+      "dataset:jojogo9/freshness_of_fruits_and_veges_256",
+      "base_model:google/vit-base-patch16-224",
+      "base_model:finetune:google/vit-base-patch16-224",
+      "region:us"
+    ],
+    "pipeline_tag": "image-classification",
+    "createdAt": "2024-09-22T10:54:51.000Z",
+    "modelId": "Aryaman9999/Freshness-Fruit_Vegies",
+    "siblings": [
+      {
+        "rfilename": ".gitattributes"
+      },
+      {
+        "rfilename": "README.md"
+      },
+      {
+        "rfilename": "config.json"
+      },
+      {
+        "rfilename": "model.safetensors"
+      },
+      {
+        "rfilename": "preprocessor_config.json"
+      },
+      {
+        "rfilename": "runs/Sep22_10-54-51_r-aryaman9999-first-try-40utvozt-f0591-tmbfb/events.out.tfevents.1727002492.r-aryaman9999-first-try-40utvozt-f0591-tmbfb.113.0"
+      },
+      {
+        "rfilename": "training_args.bin"
+      },
+      {
+        "rfilename": "training_params.json"
+      }
+    ]
+  },
+  {
+    "_id": "678ee0fa57626f86dc4df691",
+    "id": "charlesniswander/fruit_freshness_demo",
+    "author": "charlesniswander",
+    "gated": false,
+    "lastModified": "2025-01-20T23:49:26.000Z",
+    "likes": 0,
+    "trendingScore": 0,
+    "private": false,
+    "sha": "2c3179d3002e43bdc078e31ac24fea5ba9d0692f",
+    "config": {
+      "architectures": [
+        "ViTForImageClassification"
+      ],
+      "model_type": "vit"
+    },
+    "downloads": 8,
+    "tags": [
+      "tensorboard",
+      "safetensors",
+      "vit",
+      "image-classification",
+      "pytorch",
+      "huggingpics",
+      "model-index",
+      "region:us"
+    ],
+    "pipeline_tag": "image-classification",
+    "createdAt": "2025-01-20T23:49:14.000Z",
+    "modelId": "charlesniswander/fruit_freshness_demo",
+    "siblings": [
+      {
+        "rfilename": ".gitattributes"
+      },
+      {
+        "rfilename": "README.md"
+      },
+      {
+        "rfilename": "config.json"
+      },
+      {
+        "rfilename": "images/fresh_apple.jpg"
+      },
+      {
+        "rfilename": "images/fresh_banana.jpg"
+      },
+      {
+        "rfilename": "images/rotten_apple.jpg"
+      },
+      {
+        "rfilename": "images/rotten_banana.jpg"
+      },
+      {
+        "rfilename": "model.safetensors"
+      },
+      {
+        "rfilename": "preprocessor_config.json"
+      },
+      {
+        "rfilename": "runs/events.out.tfevents.1737416733.71a0388f6dbb.3176.0"
+      }
+    ]
+  },
+  {
+    "_id": "68cb0e0462bf95e1b9d19b7a",
+    "id": "isthatlak/fruit_freshness_model",
+    "author": "isthatlak",
+    "gated": false,
+    "lastModified": "2025-09-17T19:41:19.000Z",
+    "likes": 0,
+    "trendingScore": 0,
+    "private": false,
+    "sha": "b956c35f9037bcd3c59ca5552b4cff806c7ef106",
+    "config": {},
+    "downloads": 0,
+    "tags": [
+      "region:us"
+    ],
+    "createdAt": "2025-09-17T19:37:40.000Z",
+    "modelId": "isthatlak/fruit_freshness_model",
+    "siblings": [
+      {
+        "rfilename": ".gitattributes"
+      },
+      {
+        "rfilename": "fruit_freshness_model.h5"
+      }
+    ]
+  },
+  {
+    "_id": "699f6d735f3bd7d354b030c1",
+    "id": "laurapayancepe/fruit-freshness-model",
+    "author": "laurapayancepe",
+    "gated": false,
+    "lastModified": "2026-02-26T09:40:23.000Z",
+    "likes": 0,
+    "trendingScore": 0,
+    "private": false,
+    "sha": "142f533d9fc130add64d5235e22fccf0adf0d1e5",
+    "config": {},
+    "downloads": 0,
+    "tags": [
+      "region:us"
+    ],
+    "createdAt": "2026-02-25T21:45:23.000Z",
+    "modelId": "laurapayancepe/fruit-freshness-model",
+    "siblings": [
+      {
+        "rfilename": ".gitattributes"
+      },
+      {
+        "rfilename": "best.pt"
+      }
+    ]
+  },
+  {
+    "_id": "69c726887d77aba79965bd6a",
+    "id": "JokMaker/fruit-freshness-vgg16",
+    "author": "JokMaker",
+    "gated": false,
+    "lastModified": "2026-03-28T01:01:29.000Z",
+    "likes": 0,
+    "trendingScore": 0,
+    "private": false,
+    "sha": "7f5cd1856057a97a467a021613b3ead59326a874",
+    "config": {},
+    "downloads": 5,
+    "tags": [
+      "keras",
+      "license:mit",
+      "region:us"
+    ],
+    "library_name": "keras",
+    "createdAt": "2026-03-28T00:53:28.000Z",
+    "modelId": "JokMaker/fruit-freshness-vgg16",
+    "siblings": [
+      {
+        "rfilename": ".gitattributes"
+      },
+      {
+        "rfilename": "README.md"
+      },
+      {
+        "rfilename": "class_names.json"
+      },
+      {
+        "rfilename": "fruit_model_final.keras"
+      }
+    ]
+  },
+  {
+    "_id": "6a282d323ef0e48e6ce91441",
+    "id": "RynHrmn/phi2-fruit-freshness-lora",
+    "author": "RynHrmn",
+    "gated": "manual",
+    "lastModified": "2026-06-09T15:18:49.000Z",
+    "likes": 0,
+    "trendingScore": 0,
+    "private": false,
+    "sha": "609e686bf67977ce5aa0bc7dd26fb4960a8064d6",
+    "config": {},
+    "downloads": 0,
+    "tags": [
+      "region:us"
+    ],
+    "createdAt": "2026-06-09T15:11:46.000Z",
+    "modelId": "RynHrmn/phi2-fruit-freshness-lora",
+    "siblings": [
+      {
+        "rfilename": ".gitattributes"
+      },
+      {
+        "rfilename": "phi2-fruit-freshness-lora/README.md"
+      },
+      {
+        "rfilename": "phi2-fruit-freshness-lora/adapter_config.json"
+      },
+      {
+        "rfilename": "phi2-fruit-freshness-lora/tokenizer.json"
+      },
+      {
+        "rfilename": "phi2-fruit-freshness-lora/tokenizer_config.json"
+      }
+    ]
+  },
+  {
+    "_id": "6a3fa82b1831ca8ca8d15ce6",
+    "id": "Senu-12/fruit-freshness-classifier",
+    "author": "Senu-12",
+    "gated": false,
+    "lastModified": "2026-06-27T11:02:57.000Z",
+    "likes": 0,
+    "trendingScore": 0,
+    "private": false,
+    "sha": "409c55a15256a8cd876773e3b8008cd450faa20c",
+    "config": {},
+    "downloads": 140,
+    "tags": [
+      "keras",
+      "license:apache-2.0",
+      "region:us"
+    ],
+    "library_name": "keras",
+    "createdAt": "2026-06-27T10:38:35.000Z",
+    "modelId": "Senu-12/fruit-freshness-classifier",
+    "siblings": [
+      {
+        "rfilename": ".gitattributes"
+      },
+      {
+        "rfilename": "README.md"
+      },
+      {
+        "rfilename": "cnn/cnn_model.keras"
+      },
+      {
+        "rfilename": "mobilenet/mobilenet_model.keras"
+      }
+    ]
+  },
+  {
+    "_id": "6a8e6a31011a57c4c04f4df0",
+    "id": "Aniket2003333333/fruit-veg-freshness-mobilenetv2",
+    "author": "Aniket2003333333",
+    "gated": false,
+    "lastModified": "2026-08-26T04:23:44.000Z",
+    "likes": 0,
+    "trendingScore": 0,
+    "private": false,
+    "sha": "a192bc62a49c31c6b0e24a695368eb9e535ee7c6",
+    "config": {},
+    "downloads": 0,
+    "tags": [
+      "image-classification",
+      "pytorch",
+      "mobilenetv2",
+      "fruit-freshness",
+      "vegetable-freshness",
+      "dataset:raghavrpotdar/fresh-and-stale-images-of-fruits-and-vegetables",
+      "license:apache-2.0",
+      "region:us"
+    ],
+    "pipeline_tag": "image-classification",
+    "createdAt": "2026-08-26T04:23:13.000Z",
+    "modelId": "Aniket2003333333/fruit-veg-freshness-mobilenetv2",
+    "siblings": [
+      {
+        "rfilename": ".gitattributes"
+      },
+      {
+        "rfilename": "README.md"
+      },
+      {
+        "rfilename": "freshness_mobilenetv2_state_dict.pth"
+      },
+      {
+        "rfilename": "freshness_mobilenetv2_traced.pt"
+      }
+    ]
+  },
+  {
+    "_id": "6a8e991c03cd280fcad7de64",
+    "id": "Piyu12/fruit-veg-freshness-mobilenetv2",
+    "author": "Piyu12",
+    "gated": false,
+    "lastModified": "2026-08-26T07:43:51.000Z",
+    "likes": 1,
+    "trendingScore": 0,
+    "private": false,
+    "sha": "10b117bb88ec0f96c8e02947854fbd8a6626ec39",
+    "config": {},
+    "downloads": 0,
+    "tags": [
+      "image-classification",
+      "pytorch",
+      "mobilenetv2",
+      "fruit-freshness",
+      "vegetable-freshness",
+      "dataset:raghavrpotdar/fresh-and-stale-images-of-fruits-and-vegetables",
+      "license:apache-2.0",
+      "region:us"
+    ],
+    "pipeline_tag": "image-classification",
+    "createdAt": "2026-08-26T07:43:24.000Z",
+    "modelId": "Piyu12/fruit-veg-freshness-mobilenetv2",
+    "siblings": [
+      {
+        "rfilename": ".gitattributes"
+      },
+      {
+        "rfilename": "README.md"
+      },
+      {
+        "rfilename": "freshness_mobilenetv2_state_dict.pth"
+      },
+      {
+        "rfilename": "freshness_mobilenetv2_traced.pt"
+      }
+    ]
+  }
+]

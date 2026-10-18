@@ -1,0 +1,225 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns="http://www.w3.org/2005/Atom">
+  <id>https://arxiv.org/api/DCTt+tcnxVhtqHMaxAx+/SYtWnw</id>
+  <title>arXiv Query: search_query=all:apple AND (all:rot OR all:disease OR all:scab) AND all:detection&amp;id_list=&amp;start=0&amp;max_results=8</title>
+  <updated>2026-10-18T04:44:04Z</updated>
+  <link href="https://arxiv.org/api/query?search_query=all:apple+AND+((all:rot+OR+(all:disease+OR+all:scab))+AND+all:detection)&amp;start=0&amp;max_results=8&amp;id_list=" type="application/atom+xml"/>
+  <opensearch:itemsPerPage>8</opensearch:itemsPerPage>
+  <opensearch:totalResults>22</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <entry>
+    <id>http://arxiv.org/abs/2302.08818v1</id>
+    <title>Apple scab detection in orchards using deep learning on colour and multispectral images</title>
+    <updated>2023-02-17T11:33:17Z</updated>
+    <link href="https://arxiv.org/abs/2302.08818v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2302.08818v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Apple scab is a fungal disease caused by Venturia inaequalis. Disease is of particular concern for growers, as it causes significant damage to fruit and leaves, leading to loss of fruit and yield. This article examines the ability of deep learning and hyperspectral imaging to accurately identify an apple symptom infection in apple trees. In total, 168 image scenes were collected using conventional RGB and Visible to Near-infrared (VIS-NIR) spectral imaging (8 channels) in infected orchards. Spectral data were preprocessed with an Artificial Neural Network (ANN) trained in segmentation to detect scab pixels based on spectral information. Linear Discriminant Analysis (LDA) was used to find the most discriminating channels in spectral data based on the healthy leaf and scab infested leaf spectra. Five combinations of false-colour images were created from the spectral data and the segmentation net results. The images were trained and evaluated with a modified version of the YOLOv5 network. Despite the promising results of deep learning using RGB images (P=0.8, mAP@50=0.73), the detection of apple scab in apple trees using multispectral imaging proved to be a difficult task. The high-light environment of the open field made it difficult to collect a balanced spectrum from the multispectral camera, since the infrared channel and the visible channels needed to be constantly balanced so that they did not overexpose in the images.</summary>
+    <category term="cs.CV" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2023-02-17T11:33:17Z</published>
+    <arxiv:comment>6 pages, 7 figures, 3 tables</arxiv:comment>
+    <arxiv:primary_category term="cs.CV"/>
+    <author>
+      <name>Robert Rouš</name>
+    </author>
+    <author>
+      <name>Joseph Peller</name>
+    </author>
+    <author>
+      <name>Gerrit Polder</name>
+    </author>
+    <author>
+      <name>Selwin Hageraats</name>
+    </author>
+    <author>
+      <name>Thijs Ruigrok</name>
+    </author>
+    <author>
+      <name>Pieter M. Blok</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2004.02325v3</id>
+    <title>Hyper-spectral NIR and MIR data and optimal wavebands for detection of apple tree diseases</title>
+    <updated>2020-04-24T07:42:03Z</updated>
+    <link href="https://arxiv.org/abs/2004.02325v3" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2004.02325v3" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Plant diseases can lead to dramatic losses in yield and quality of food, becoming a problem of high priority for farmers. Apple scab, moniliasis, and powdery mildew are the most significant apple tree diseases worldwide and may cause between 50% and 60% in yield losses annually; they are controlled by fungicide use with huge financial and time expenses. This research proposes a modern approach for analyzing the spectral data in Near-Infrared and Mid-Infrared ranges of the apple tree diseases at different stages. Using the obtained spectra, we found optimal spectral bands for detecting particular disease and discriminating it from other diseases and healthy trees. The proposed instrument will provide farmers with accurate, real-time information on different stages of apple tree diseases, enabling more effective timing, and selecting the fungicide application, resulting in better control and increasing yield. The obtained dataset, as well as scripts in Matlab for processing data and finding optimal spectral bands, are available via the link: https://yadi.sk/d/ZqfGaNlYVR3TUA</summary>
+    <category term="cs.CV" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2020-04-05T21:51:13Z</published>
+    <arxiv:comment>Paper presented at the ICLR 2020 Workshop on Computer Vision for Agriculture (CV4A)</arxiv:comment>
+    <arxiv:primary_category term="cs.CV"/>
+    <author>
+      <name>Dmitrii Shadrin</name>
+      <arxiv:affiliation>Center for Computational and Data-Intensive Science and Engineering, Skolkovo Institute of Science and Technology</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Mariia Pukalchik</name>
+      <arxiv:affiliation>Center for Computational and Data-Intensive Science and Engineering, Skolkovo Institute of Science and Technology</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Anastasia Uryasheva</name>
+      <arxiv:affiliation>Space Center, Skolkovo Institute of Science and Technology</arxiv:affiliation>
+      <arxiv:affiliation>Tsuru Robotics</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Evgeny Tsykunov</name>
+      <arxiv:affiliation>Space Center, Skolkovo Institute of Science and Technology</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Grigoriy Yashin</name>
+      <arxiv:affiliation>Space Center, Skolkovo Institute of Science and Technology</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Nikita Rodichenko</name>
+      <arxiv:affiliation>Tsuru Robotics</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Dzmitry Tsetserukou</name>
+      <arxiv:affiliation>Space Center, Skolkovo Institute of Science and Technology</arxiv:affiliation>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2004.11958v1</id>
+    <title>The Plant Pathology 2020 challenge dataset to classify foliar disease of apples</title>
+    <updated>2020-04-24T19:36:37Z</updated>
+    <link href="https://arxiv.org/abs/2004.11958v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2004.11958v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Apple orchards in the U.S. are under constant threat from a large number of pathogens and insects. Appropriate and timely deployment of disease management depends on early disease detection. Incorrect and delayed diagnosis can result in either excessive or inadequate use of chemicals, with increased production costs, environmental, and health impacts. We have manually captured 3,651 high-quality, real-life symptom images of multiple apple foliar diseases, with variable illumination, angles, surfaces, and noise. A subset, expert-annotated to create a pilot dataset for apple scab, cedar apple rust, and healthy leaves, was made available to the Kaggle community for 'Plant Pathology Challenge'; part of the Fine-Grained Visual Categorization (FGVC) workshop at CVPR 2020 (Computer Vision and Pattern Recognition). We also trained an off-the-shelf convolutional neural network (CNN) on this data for disease classification and achieved 97% accuracy on a held-out test set. This dataset will contribute towards development and deployment of machine learning-based automated plant disease classification algorithms to ultimately realize fast and accurate disease detection. We will continue to add images to the pilot dataset for a larger, more comprehensive expert-annotated dataset for future Kaggle competitions and to explore more advanced methods for disease classification and quantification.</summary>
+    <category term="cs.CV" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="eess.IV" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2020-04-24T19:36:37Z</published>
+    <arxiv:comment>11 pages, 5 figures, Kaggle competition website: https://www.kaggle.com/c/plant-pathology-2020-fgvc7, CVPR fine-grained visual categorization website: https://sites.google.com/view/fgvc7/competitions</arxiv:comment>
+    <arxiv:primary_category term="cs.CV"/>
+    <author>
+      <name>Ranjita Thapa</name>
+      <arxiv:affiliation>Plant Pathology and Plant-Microbe Biology Section, Cornell University, Geneva, NY</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Noah Snavely</name>
+      <arxiv:affiliation>Cornell Tech</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Serge Belongie</name>
+      <arxiv:affiliation>Cornell Tech</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Awais Khan</name>
+      <arxiv:affiliation>Plant Pathology and Plant-Microbe Biology Section, Cornell University, Geneva, NY</arxiv:affiliation>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2512.22990v2</id>
+    <title>A Low-Cost UAV Deep Learning Pipeline for Integrated Apple Disease Diagnosis,Freshness Assessment, and Fruit Detection</title>
+    <updated>2026-01-01T19:22:39Z</updated>
+    <link href="https://arxiv.org/abs/2512.22990v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2512.22990v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Apple orchards require timely disease detection, fruit quality assessment, and yield estimation, yet existing UAV-based systems address such tasks in isolation and often rely on costly multispectral sensors. This paper presents a unified, low-cost RGB-only UAV-based orchard intelligent pipeline integrating ResNet50 for leaf disease detection, VGG 16 for apple freshness determination, and YOLOv8 for real-time apple detection and localization. The system runs on an ESP32-CAM and Raspberry Pi, providing fully offline on-site inference without cloud support. Experiments demonstrate 98.9% accuracy for leaf disease classification, 97.4% accuracy for freshness classification, and 0.857 F1 score for apple detection. The framework provides an accessible and scalable alternative to multispectral UAV solutions, supporting practical precision agriculture on affordable hardware.</summary>
+    <category term="cs.CV" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2025-12-28T16:19:35Z</published>
+    <arxiv:comment>This revision fixes minor typographical and phrasing issues</arxiv:comment>
+    <arxiv:primary_category term="cs.CV"/>
+    <author>
+      <name>Soham Dutta</name>
+    </author>
+    <author>
+      <name>Soham Banerjee</name>
+    </author>
+    <author>
+      <name>Sneha Mahata</name>
+    </author>
+    <author>
+      <name>Anindya Sen</name>
+    </author>
+    <author>
+      <name>Sayantani Datta</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2603.23112v1</id>
+    <title>Active Robotic Perception for Disease Detection and Mapping in Apple Trees</title>
+    <updated>2026-03-24T12:05:46Z</updated>
+    <link href="https://arxiv.org/abs/2603.23112v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2603.23112v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Large-scale orchard production requires timely and precise disease monitoring, yet routine manual scouting is labor-intensive and financially impractical at the scale of modern operations. As a result, disease outbreaks are often detected late and tracked at coarse spatial resolutions, typically at the orchard-block level. We present an autonomous mobile active perception system for targeted disease detection and mapping in dormant apple trees, demonstrated on one of the most devastating diseases affecting apple today -- fire blight. The system integrates flash-illuminated stereo RGB sensing, real-time depth estimation, instance-level segmentation, and confidence-aware semantic 3D mapping to achieve precise localization of disease symptoms. Semantic predictions are fused into the volumetric occupancy map representation enabling the tracking of both occupancy and per-voxel semantic confidence, building actionable spatial maps for growers. To actively refine observations within complex canopies, we evaluate three viewpoint planning strategies within a unified perception-action loop: a deterministic geometric baseline, a volumetric next-best-view planner that maximizes unknown-space reduction, and a semantic next-best-view planner that prioritizes low-confidence symptomatic regions. Experiments on a fabricated lab tree and five simulated symptomatic trees demonstrate reliable symptom localization and mapping as a precursor to a field evaluation. In simulation, the semantic planner achieves the highest F1 score (0.6106) after 30 viewpoints, while the volumetric planner achieves the highest ROI coverage (85.82\%). In the lab setting, the semantic planner attains the highest final F1 (0.9058), with both next-best-view planners substantially improving coverage over the baseline.</summary>
+    <category term="cs.RO" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-03-24T12:05:46Z</published>
+    <arxiv:comment>8 pages, 6 figures, IROS 2026 conference</arxiv:comment>
+    <arxiv:primary_category term="cs.RO"/>
+    <author>
+      <name>Hayden Feddock</name>
+    </author>
+    <author>
+      <name>Francisco Yandun</name>
+    </author>
+    <author>
+      <name>Srđan Aćimović</name>
+    </author>
+    <author>
+      <name>Abhisesh Silwal</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2007.02980v1</id>
+    <title>Deep Learning for Apple Diseases: Classification and Identification</title>
+    <updated>2020-07-06T18:08:58Z</updated>
+    <link href="https://arxiv.org/abs/2007.02980v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2007.02980v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Diseases and pests cause huge economic loss to the apple industry every year. The identification of various apple diseases is challenging for the farmers as the symptoms produced by different diseases may be very similar, and may be present simultaneously. This paper is an attempt to provide the timely and accurate detection and identification of apple diseases. In this study, we propose a deep learning based approach for identification and classification of apple diseases. The first part of the study is dataset creation which includes data collection and data labelling. Next, we train a Convolutional Neural Network (CNN) model on the prepared dataset for automatic classification of apple diseases. CNNs are end-to-end learning algorithms which perform automatic feature extraction and learn complex features directly from raw images, making them suitable for wide variety of tasks like image classification, object detection, segmentation etc. We applied transfer learning to initialize the parameters of the proposed deep model. Data augmentation techniques like rotation, translation, reflection and scaling were also applied to prevent overfitting. The proposed CNN model obtained encouraging results, reaching around 97.18% of accuracy on our prepared dataset. The results validate that the proposed method is effective in classifying various types of apple diseases and can be used as a practical tool by farmers.</summary>
+    <category term="cs.CV" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2020-07-06T18:08:58Z</published>
+    <arxiv:primary_category term="cs.CV"/>
+    <author>
+      <name>Asif Iqbal Khan</name>
+    </author>
+    <author>
+      <name>SMK Quadri</name>
+    </author>
+    <author>
+      <name>Saba Banday</name>
+    </author>
+    <arxiv:doi>10.1504/IJCISTUDIES.2021.10033513</arxiv:doi>
+    <link rel="related" href="https://doi.org/10.1504/IJCISTUDIES.2021.10033513" title="doi"/>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2210.00298v1</id>
+    <title>An Ensemble of Convolutional Neural Networks to Detect Foliar Diseases in Apple Plants</title>
+    <updated>2022-10-01T15:40:04Z</updated>
+    <link href="https://arxiv.org/abs/2210.00298v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2210.00298v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Apple diseases, if not diagnosed early, can lead to massive resource loss and pose a serious threat to humans and animals who consume the infected apples. Hence, it is critical to diagnose these diseases early in order to manage plant health and minimize the risks associated with them. However, the conventional approach of monitoring plant diseases entails manual scouting and analyzing the features, texture, color, and shape of the plant leaves, resulting in delayed diagnosis and misjudgments. Our work proposes an ensembled system of Xception, InceptionResNet, and MobileNet architectures to detect 5 different types of apple plant diseases. The model has been trained on the publicly available Plant Pathology 2021 dataset and can classify multiple diseases in a given plant leaf. The system has achieved outstanding results in multi-class and multi-label classification and can be used in a real-time setting to monitor large apple plantations to aid the farmers manage their yields effectively.</summary>
+    <category term="cs.CV" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2022-10-01T15:40:04Z</published>
+    <arxiv:comment>6 pages, 4 figures, 1 table</arxiv:comment>
+    <arxiv:primary_category term="cs.CV"/>
+    <author>
+      <name>Kush Vora</name>
+    </author>
+    <author>
+      <name>Dishant Padalia</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/1405.4930v5</id>
+    <title>Adapted Approach for Fruit Disease Identification using Images</title>
+    <updated>2014-08-04T00:31:32Z</updated>
+    <link href="https://arxiv.org/abs/1405.4930v5" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/1405.4930v5" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Diseases in fruit cause devastating problem in economic losses and production in agricultural industry worldwide. In this paper, an adaptive approach for the identification of fruit diseases is proposed and experimentally validated. The image processing based proposed approach is composed of the following main steps; in the first step K-Means clustering technique is used for the defect segmentation, in the second step some state of the art features are extracted from the segmented image, and finally images are classified into one of the classes by using a Multi-class Support Vector Machine. We have considered diseases of apple as a test case and evaluated our approach for three types of apple diseases namely apple scab, apple blotch and apple rot. Our experimental results express that the proposed solution can significantly support accurate detection and automatic identification of fruit diseases. The classification accuracy for the proposed solution is achieved up to 93%.</summary>
+    <category term="cs.CV" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2014-05-20T01:40:38Z</published>
+    <arxiv:comment>15 pages, 8 figures, 1 table</arxiv:comment>
+    <arxiv:primary_category term="cs.CV"/>
+    <arxiv:journal_ref>International Journal of Computer Vision and Image Processing (IJCVIP) 2, no. 3 (2012): 44-58</arxiv:journal_ref>
+    <author>
+      <name>Shiv Ram Dubey</name>
+    </author>
+    <author>
+      <name>Anand Singh Jalal</name>
+    </author>
+  </entry>
+</feed>

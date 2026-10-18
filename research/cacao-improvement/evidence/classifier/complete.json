@@ -1,0 +1,7 @@
+{
+  "best_epoch": 3,
+  "best_validation_macro_f1": 0.8518058977230311,
+  "best": "/home/f3mt0/hacktheandes-cacao-improvement/runs/classifier/best.pt",
+  "weights_sha256": "bc25908e39d9b28c816feb3bbd9dc9fefae31b573b466b2d4738bcacacdf0f4a",
+  "elapsed_seconds": 131.60122432606295
+}

@@ -1,0 +1,2591 @@
+{
+    "bean_disease_uganda": {
+        "ml_task": "image_classification",
+        "ag_task": "disease_classification",
+        "location": {
+            "continent": "africa",
+            "country": "uganda"
+        },
+        "sensor_modality": "rgb",
+        "real_synthetic": "real",
+        "platform": "handheld",
+        "input_data_format": "jpg",
+        "annotation_format": "directory_names",
+        "n_images": "1295",
+        "docs_url": "https://github.com/AI-Lab-Makerere/ibean/",
+        "classes": {
+            "0": "angular_leaf_spot",
+            "1": "bean_rust",
+            "2": "healthy"
+        },
+        "external_image_sources": [],
+        "stats": {
+            "mean": [
+                0.484832227230072,
+                0.5186858773231506,
+                0.31070876121520996
+            ],
+            "std": [
+                0.18201105296611786,
+                0.1994817703962326,
+                0.16856099665164948
+            ]
+        },
+        "parent_dataset": "",
+        "extra_metadata": {}
+    },
+    "carrot_weeds_germany": {
+        "ml_task": "semantic_segmentation",
+        "ag_task": "weed_segmentation",
+        "location": {
+            "continent": "europe",
+            "country": "germany"
+        },
+        "sensor_modality": "rgb",
+        "real_synthetic": "real",
+        "platform": "ground_mobile",
+        "input_data_format": "png",
+        "annotation_format": "image",
+        "n_images": "60",
+        "docs_url": "https://github.com/cwfid/dataset",
+        "classes": {
+            "0": "carrot",
+            "1": "weeds"
+        },
+        "external_image_sources": [],
+        "stats": {
+            "mean": [
+                0.2736402750015259,
+                0.31067565083503723,
+                0.2736402750015259
+            ],
+            "std": [
+                0.08643443882465363,
+                0.0995175763964653,
+                0.08643443882465363
+            ]
+        },
+        "parent_dataset": "",
+        "extra_metadata": {}
+    },
+    "plant_seedlings_aarhus": {
+        "ml_task": "image_classification",
+        "ag_task": "weed_classification",
+        "location": {
+            "continent": "europe",
+            "country": "denmark"
+        },
+        "sensor_modality": "rgb",
+        "real_synthetic": "real",
+        "platform": "ground_fixed",
+        "input_data_format": "png",
+        "annotation_format": "directory_names",
+        "n_images": "5539",
+        "docs_url": "https://vision.eng.au.dk/plant-seedlings-dataset/",
+        "classes": {
+            "0": "maize",
+            "1": "common_wheat",
+            "2": "sugar_beet",
+            "3": "scentless_mayweed",
+            "4": "common_chickweed",
+            "5": "shepherds_purse",
+            "6": "cleavers",
+            "7": "charlock",
+            "8": "fat_hen",
+            "9": "smallflowered_cranesbill",
+            "10": "black_grass",
+            "11": "loose_silkybent"
+        },
+        "external_image_sources": [],
+        "stats": {
+            "mean": [
+                0.3287692368030548,
+                0.28884512186050415,
+                0.20677343010902405
+            ],
+            "std": [
+                0.09281572699546814,
+                0.09644099324941635,
+                0.10552676767110825
+            ]
+        },
+        "parent_dataset": "",
+        "extra_metadata": {}
+    },
+    "soybean_weed_uav_brazil": {
+        "ml_task": "image_classification",
+        "ag_task": "weed_classification",
+        "location": {
+            "continent": "south_america",
+            "country": "brazil"
+        },
+        "sensor_modality": "rgb",
+        "real_synthetic": "real",
+        "platform": "uav",
+        "input_data_format": "tif",
+        "annotation_format": "directory_names",
+        "n_images": "15336",
+        "docs_url": "https://data.mendeley.com/datasets/3fmjm7ncc6/2",
+        "classes": {
+            "0": "broadleaf",
+            "1": "grass",
+            "2": "soil",
+            "3": "soybean"
+        },
+        "external_image_sources": [],
+        "stats": {
+            "mean": [
+                0.32902154326438904,
+                0.33378341794013977,
+                0.1865464597940445
+            ],
+            "std": [
+                0.24514122307300568,
+                0.2491522580385208,
+                0.1570599377155304
+            ]
+        },
+        "parent_dataset": "",
+        "extra_metadata": {}
+    },
+    "sugarcane_damage_usa": {
+        "ml_task": "image_classification",
+        "ag_task": "damage_classification",
+        "location": {
+            "continent": "north_america",
+            "country": "usa"
+        },
+        "sensor_modality": "rgb",
+        "platform": "ground_fixed",
+        "input_data_format": "bmp",
+        "annotation_format": "directory_names",
+        "n_images": "153",
+        "docs_url": "https://github.com/The77Lab/SugarcaneBilletsDataset",
+        "classes": {
+            "0": "cracked",
+            "1": "crushed",
+            "2": "no_buds",
+            "3": "two_buds",
+            "4": "single_damaged_buds",
+            "5": "no_damage"
+        },
+        "external_image_sources": [],
+        "stats": {
+            "mean": [
+                0.24388393759727478,
+                0.24691258370876312,
+                0.26203399896621704
+            ],
+            "std": [
+                0.22363615036010742,
+                0.21735334396362305,
+                0.1923859715461731
+            ]
+        },
+        "parent_dataset": "",
+        "extra_metadata": {}
+    },
+    "crop_weeds_greece": {
+        "ml_task": "image_classification",
+        "ag_task": "weed_classification",
+        "location": {
+            "continent": "europe",
+            "country": "greece"
+        },
+        "sensor_modality": "rgb",
+        "platform": "handheld",
+        "input_data_format": "jpg",
+        "annotation_format": "directory_names",
+        "n_images": "508",
+        "docs_url": "https://github.com/AUAgroup/early-crop-weed",
+        "classes": {
+            "0": "black_nightshade",
+            "1": "velvet_leaf",
+            "2": "cotton",
+            "3": "tomato"
+        },
+        "external_image_sources": [],
+        "stats": {
+            "mean": [
+                0.7247000336647034,
+                0.6694437265396118,
+                0.5436030030250549
+            ],
+            "std": [
+                0.16351649165153503,
+                0.15307274460792542,
+                0.13750970363616943
+            ]
+        },
+        "parent_dataset": "",
+        "extra_metadata": {}
+    },
+    "sugarbeet_weed_segmentation": {
+        "ml_task": "semantic_segmentation",
+        "ag_task": "weed_segmentation",
+        "location": {
+            "continent": "none",
+            "country": "none"
+        },
+        "sensor_modality": "rgb",
+        "real_synthetic": "real",
+        "platform": "ground",
+        "input_data_format": "png",
+        "annotation_format": "image",
+        "n_images": "125",
+        "docs_url": "https://github.com/inkyusa/weedNet",
+        "stats": {
+            "mean": [
+                0.374398797750473,
+                0.374398797750473,
+                0.374398797750473
+            ],
+            "std": [
+                0.16996806859970093,
+                0.16996806859970093,
+                0.16996806859970093
+            ]
+        },
+        "classes": {
+            "0": "sugar_beet",
+            "1": "random_weeds"
+        },
+        "external_image_sources": [],
+        "parent_dataset": "",
+        "extra_metadata": {}
+    },
+    "rangeland_weeds_australia": {
+        "ml_task": "image_classification",
+        "ag_task": "weed_classification",
+        "location": {
+            "continent": "oceania",
+            "country": "australia"
+        },
+        "sensor_modality": "rgb",
+        "real_synthetic": "real",
+        "platform": "ground",
+        "input_data_format": "jpg",
+        "annotation_format": "directory_names",
+        "n_images": "17509",
+        "docs_url": "https://github.com/AlexOlsen/DeepWeeds",
+        "classes": {
+            "0": "chinee_apple",
+            "1": "lantana",
+            "2": "negative",
+            "3": "parkinsonia",
+            "4": "parthenium",
+            "5": "prickly_acacia",
+            "6": "rubber_vine",
+            "7": "siam_weed",
+            "8": "snake_weed"
+        },
+        "external_image_sources": [],
+        "stats": {
+            "mean": [
+                0.3785800635814667,
+                0.38957375288009644,
+                0.3797687590122223
+            ],
+            "std": [
+                0.22421929240226746,
+                0.22450383007526398,
+                0.22274655103683472
+            ]
+        },
+        "parent_dataset": "",
+        "extra_metadata": {}
+    },
+    "fruit_detection_worldwide": {
+        "ml_task": "object_detection",
+        "ag_task": "fruit_detection",
+        "location": {
+            "continent": "worldwide",
+            "country": "worldwide"
+        },
+        "sensor_modality": "rgb",
+        "real_synthetic": "real",
+        "platform": "mixed",
+        "input_data_format": "jpg",
+        "annotation_format": "coco_json",
+        "n_images": "565",
+        "docs_url": "https://drive.google.com/drive/folders/1CmsZb1caggLRN7ANfika8WuPiywo4mBb",
+        "stats": {
+            "mean": [
+                0.3779049813747406,
+                0.4085286557674408,
+                0.28682708740234375
+            ],
+            "std": [
+                0.2306382656097412,
+                0.22500208020210266,
+                0.2183498740196228
+            ]
+        },
+        "classes": {
+            "1": "avocado",
+            "2": "rockmelon",
+            "3": "apple",
+            "4": "orange",
+            "5": "strawberry",
+            "6": "mango",
+            "7": "capsicum"
+        },
+        "external_image_sources": [],
+        "parent_dataset": "",
+        "extra_metadata": {}
+    },
+    "leaf_counting_denmark": {
+        "ml_task": "image_classification",
+        "ag_task": "leaf_counting",
+        "location": {
+            "continent": "europe",
+            "country": "denmark"
+        },
+        "platform": "mixed",
+        "input_data_format": "png",
+        "annotation_format": "directory_names",
+        "n_images": "9372",
+        "docs_url": "https://vision.eng.au.dk/leaf-counting-dataset/",
+        "classes": {
+            "0": "1",
+            "1": "2",
+            "2": "3",
+            "3": "4",
+            "4": "5",
+            "5": "6",
+            "6": "7",
+            "7": "8",
+            "8": "9+"
+        },
+        "external_image_sources": [],
+        "stats": {
+            "mean": [
+                0.42661556601524353,
+                0.427418053150177,
+                0.3417948782444
+            ],
+            "std": [
+                0.12296482920646667,
+                0.14348869025707245,
+                0.1148977279663086
+            ]
+        },
+        "parent_dataset": "",
+        "extra_metadata": {}
+    },
+    "apple_detection_usa": {
+        "ml_task": "object_detection",
+        "ag_task": "fruit_detection",
+        "location": {
+            "continent": "north_america",
+            "country": "usa"
+        },
+        "sensor_modality": "rgb",
+        "real_synthetic": "real",
+        "platform": "ground",
+        "input_data_format": "png",
+        "annotation_format": "coco_json",
+        "n_images": "2290",
+        "docs_url": "https://hdl.handle.net/2376/17721",
+        "stats": {
+            "mean": [
+                0.2810896933078766,
+                0.29005560278892517,
+                0.2775411605834961
+            ],
+            "std": [
+                0.18863406777381897,
+                0.18647761642932892,
+                0.1885077804327011
+            ]
+        },
+        "classes": {
+            "1": "apple"
+        },
+        "external_image_sources": [],
+        "parent_dataset": "",
+        "extra_metadata": {}
+    },
+    "mango_detection_australia": {
+        "ml_task": "object_detection",
+        "ag_task": "fruit_detection",
+        "location": {
+            "continent": "oceania",
+            "country": "australia"
+        },
+        "sensor_modality": "rgb",
+        "real_synthetic": "real",
+        "platform": "handheld",
+        "input_data_format": "jpg",
+        "annotation_format": "coco_json",
+        "n_images": "1242",
+        "docs_url": "https://researchdata.edu.au/mangoyolo-set/1697505",
+        "stats": {
+            "mean": [
+                0.07288186252117157,
+                0.1193767637014389,
+                0.050045181065797806
+            ],
+            "std": [
+                0.058673080056905746,
+                0.07924807816743851,
+                0.043408144265413284
+            ]
+        },
+        "classes": {
+            "1": "mango"
+        },
+        "external_image_sources": [],
+        "parent_dataset": "",
+        "extra_metadata": {}
+    },
+    "tomato_ripeness_detection": {
+        "ml_task": "object_detection",
+        "ag_task": "fruit_ripeness_detection",
+        "location": {
+            "continent": "worldwide",
+            "country": "worldwide"
+        },
+        "sensor_modality": "rgb",
+        "real_synthetic": "real",
+        "platform": "ground",
+        "input_data_format": "jpg",
+        "annotation_format": "coco_json",
+        "n_images": "804",
+        "docs_url": "https://www.kaggle.com/datasets/nexuswho/laboro-tomato",
+        "classes": {
+            "1": "b_fully_ripened",
+            "2": "b_half_ripened",
+            "3": "b_green",
+            "4": "l_fully_ripened",
+            "5": "l_half_ripened",
+            "6": "l_green"
+        },
+        "external_image_sources": [],
+        "stats": {
+            "mean": [
+                0.46756285429000854,
+                0.5048850178718567,
+                0.317764014005661
+            ],
+            "std": [
+                0.21034087240695953,
+                0.19280721247196198,
+                0.22368815541267395
+            ]
+        },
+        "parent_dataset": "",
+        "extra_metadata": {}
+    },
+    "apple_flower_segmentation": {
+        "ml_task": "semantic_segmentation",
+        "ag_task": "flower_segmentation",
+        "location": {
+            "continent": "north_america",
+            "country": "usa"
+        },
+        "sensor_modality": "rgb",
+        "real_synthetic": "real",
+        "platform": "ground",
+        "input_data_format": "jpg",
+        "annotation_format": "image",
+        "n_images": "148",
+        "docs_url": "https://data.nal.usda.gov/dataset/data-multi-species-fruit-flower-detection-using-refined-semantic-segmentation-network",
+        "stats": {
+            "mean": [
+                0.4580204486846924,
+                0.47888585925102234,
+                0.4053090512752533
+            ],
+            "std": [
+                0.2040298879146576,
+                0.19258278608322144,
+                0.2156316637992859
+            ]
+        },
+        "classes": {
+            "0": "apple"
+        },
+        "external_image_sources": [],
+        "parent_dataset": "",
+        "extra_metadata": {}
+    },
+    "apple_segmentation_minnesota": {
+        "ml_task": "semantic_segmentation",
+        "ag_task": "fruit_segmentation",
+        "location": {
+            "continent": "north_america",
+            "country": "usa"
+        },
+        "sensor_modality": "rgb",
+        "real_synthetic": "real",
+        "platform": "ground",
+        "input_data_format": "png",
+        "annotation_format": "image",
+        "n_images": "670",
+        "docs_url": "https://rsn.umn.edu/projects/orchard-monitoring/minneapple",
+        "stats": {
+            "mean": [
+                0.3736153841018677,
+                0.43716397881507874,
+                0.33839237689971924
+            ],
+            "std": [
+                0.2627662420272827,
+                0.28767505288124084,
+                0.33136168122291565
+            ]
+        },
+        "classes": {
+            "0": "apple"
+        },
+        "external_image_sources": [],
+        "parent_dataset": "",
+        "extra_metadata": {}
+    },
+    "rice_seedling_segmentation": {
+        "ml_task": "semantic_segmentation",
+        "ag_task": "weed_segmentation",
+        "location": {
+            "continent": "asia",
+            "country": "china"
+        },
+        "sensor_modality": "rgb",
+        "real_synthetic": "real",
+        "platform": "handheld",
+        "input_data_format": "jpg",
+        "annotation_format": "image",
+        "n_images": "224",
+        "docs_url": "https://github.com/kabbas570/CED-Net-Crops-and-Weeds-Segmentation-for-Smart-Farming-Using-a-Small-Cascaded-Encoder-Decoder-Archi",
+        "stats": {
+            "mean": [
+                0.6552301049232483,
+                0.7014582753181458,
+                0.6353084444999695
+            ],
+            "std": [
+                0.08477462828159332,
+                0.1075846329331398,
+                0.11058590561151505
+            ]
+        },
+        "classes": {
+            "0": "Rice",
+            "1": "Weed"
+        },
+        "external_image_sources": [],
+        "parent_dataset": "",
+        "extra_metadata": {}
+    },
+    "plant_village_classification": {
+        "ml_task": "image_classification",
+        "ag_task": "disease_classification",
+        "location": {
+            "continent": "north_america",
+            "country": "usa"
+        },
+        "sensor_modality": "rgb",
+        "real_synthetic": "real",
+        "platform": "ground",
+        "input_data_format": "jpg",
+        "annotation_format": "directory_names",
+        "n_images": "55448",
+        "docs_url": "https://github.com/spMohanty/PlantVillage-Dataset",
+        "classes": {
+            "0": "Apple___Apple_scab",
+            "1": "Apple___Black_rot",
+            "2": "Apple___Cedar_apple_rust",
+            "3": "Apple___healthy",
+            "4": "Background_without_leaves",
+            "5": "Blueberry___healthy",
+            "6": "Cherry___Powdery_mildew",
+            "7": "Cherry___healthy",
+            "8": "Corn___Cercospora_leaf_spot Gray_leaf_spot",
+            "9": "Corn___Common_rust",
+            "10": "Corn___Northern_Leaf_Blight",
+            "11": "Corn___healthy",
+            "12": "Grape___Black_rot",
+            "13": "Grape___Esca_(Black_Measles)",
+            "14": "Grape___Leaf_blight_(Isariopsis_Leaf_Spot)",
+            "15": "Grape___healthy",
+            "16": "Orange___Haunglongbing_(Citrus_greening)",
+            "17": "Peach___Bacterial_spot",
+            "18": "Peach___healthy",
+            "19": "Pepper,_bell___Bacterial_spot",
+            "20": "Pepper,_bell___healthy",
+            "21": "Potato___Early_blight",
+            "22": "Potato___Late_blight",
+            "23": "Potato___healthy",
+            "24": "Raspberry___healthy",
+            "25": "Soybean___healthy",
+            "26": "Squash___Powdery_mildew",
+            "27": "Strawberry___Leaf_scorch",
+            "28": "Strawberry___healthy",
+            "29": "Tomato___Bacterial_spot",
+            "30": "Tomato___Early_blight",
+            "31": "Tomato___Late_blight",
+            "32": "Tomato___Leaf_Mold",
+            "33": "Tomato___Septoria_leaf_spot",
+            "34": "Tomato___Spider_mites Two-spotted_spider_mite",
+            "35": "Tomato___Target_Spot",
+            "36": "Tomato___Tomato_Yellow_Leaf_Curl_Virus",
+            "37": "Tomato___Tomato_mosaic_virus",
+            "38": "Tomato___healthy"
+        },
+        "external_image_sources": [],
+        "stats": {
+            "mean": [
+                0.46678444743156433,
+                0.4892062544822693,
+                0.4119776785373688
+            ],
+            "std": [
+                0.17720915377140045,
+                0.15169931948184967,
+                0.19375933706760406
+            ]
+        },
+        "parent_dataset": "",
+        "extra_metadata": {}
+    },
+    "autonomous_greenhouse_regression": {
+        "ml_task": "image_regression",
+        "ag_task": "ag_regression",
+        "sensor_modality": "rgb",
+        "real_synthetic": "real",
+        "platform": "ground",
+        "input_data_format": "png",
+        "annotation_format": "json",
+        "n_images": "389",
+        "docs_url": "https://data.4tu.nl/articles/dataset/3rd_Autonomous_Greenhouse_Challenge_Online_Challenge_Lettuce_Images/15023088/1",
+        "location": {
+            "continent": "europe",
+            "country": "netherlands"
+        },
+        "classes": {
+            "regression": {
+                "0": "FreshWeightShoot",
+                "1": "DryWeightShoot",
+                "2": "Height",
+                "3": "Diameter",
+                "4": "LeafArea"
+            },
+            "classification": {
+                "0": "Aphylion",
+                "1": "Lugano",
+                "2": "Salanova",
+                "3": "Satine"
+            }
+        },
+        "external_image_sources": [
+            "depth"
+        ],
+        "stats": {
+            "mean": [
+                0.4848844110965729,
+                0.45935600996017456,
+                0.4063475430011749
+            ],
+            "std": [
+                0.13606780767440796,
+                0.13940763473510742,
+                0.19247490167617798
+            ]
+        },
+        "parent_dataset": "",
+        "extra_metadata": {}
+    },
+    "grape_detection_syntheticday": {
+        "classes": {
+            "1": "grape"
+        },
+        "ml_task": "object_detection",
+        "ag_task": "fruit_detection",
+        "location": {
+            "continent": "digital",
+            "country": "digital"
+        },
+        "sensor_modality": "rgb",
+        "real_synthetic": "synthetic",
+        "platform": "ground",
+        "input_data_format": "jpg",
+        "annotation_format": "coco_json",
+        "n_images": "448",
+        "docs_url": "N/A",
+        "external_image_sources": [],
+        "stats": {
+            "mean": [
+                0.24965472519397736,
+                0.2763761281967163,
+                0.20683138072490692
+            ],
+            "std": [
+                0.15098054707050323,
+                0.18630442023277283,
+                0.2241816222667694
+            ]
+        },
+        "parent_dataset": "",
+        "extra_metadata": {}
+    },
+    "grape_detection_californiaday": {
+        "classes": {
+            "1": "grape"
+        },
+        "ml_task": "object_detection",
+        "ag_task": "fruit_detection",
+        "location": {
+            "continent": "north_america",
+            "country": "usa"
+        },
+        "sensor_modality": "rgb",
+        "real_synthetic": "real",
+        "platform": "ground",
+        "input_data_format": "jpg",
+        "annotation_format": "image",
+        "n_images": "126",
+        "docs_url": "",
+        "external_image_sources": [],
+        "stats": {
+            "mean": [
+                0.4455319046974182,
+                0.4638977646827698,
+                0.27496835589408875
+            ],
+            "std": [
+                0.2677213251590729,
+                0.25918272137641907,
+                0.2625304162502289
+            ]
+        },
+        "parent_dataset": "",
+        "extra_metadata": {}
+    },
+    "grape_detection_californianight": {
+        "classes": {
+            "1": "grape"
+        },
+        "ml_task": "object_detection",
+        "ag_task": "fruit_detection",
+        "location": {
+            "continent": "north_america",
+            "country": "usa"
+        },
+        "sensor_modality": "rgb",
+        "real_synthetic": "real",
+        "platform": "ground",
+        "input_data_format": "jpg",
+        "annotation_format": "image",
+        "n_images": "150",
+        "docs_url": "",
+        "external_image_sources": [],
+        "stats": {
+            "mean": [
+                0.22235676646232605,
+                0.21305303275585175,
+                0.22475562989711761
+            ],
+            "std": [
+                0.20471057295799255,
+                0.20105913281440735,
+                0.20582404732704163
+            ]
+        },
+        "parent_dataset": "",
+        "extra_metadata": {}
+    },
+    "guava_disease_pakistan": {
+        "classes": {
+            "0": "Canker",
+            "1": "Dot",
+            "2": "Mummification",
+            "3": "Rust"
+        },
+        "ml_task": "image_classification",
+        "ag_task": "disease_classification",
+        "location": {
+            "continent": "asia",
+            "country": "pakistan"
+        },
+        "sensor_modality": "rgb",
+        "platform": "ground",
+        "input_data_format": "jpg",
+        "annotation_format": "directory_names",
+        "n_images": "306",
+        "docs_url": "https://data.mendeley.com/datasets/s8x6jn5cvr/1",
+        "external_image_sources": [],
+        "stats": {
+            "mean": [
+                0.44554802775382996,
+                0.45087501406669617,
+                0.32288917899131775
+            ],
+            "std": [
+                0.18661096692085266,
+                0.18359650671482086,
+                0.18744416534900665
+            ]
+        },
+        "parent_dataset": "",
+        "extra_metadata": {}
+    },
+    "apple_detection_spain": {
+        "classes": {
+            "1": "apple"
+        },
+        "ml_task": "object_detection",
+        "ag_task": "fruit_detection",
+        "location": {
+            "continent": "europe",
+            "country": "spain"
+        },
+        "sensor_modality": "rgb",
+        "platform": "ground",
+        "input_data_format": "jpg",
+        "annotation_format": "coco_json",
+        "n_images": "967",
+        "docs_url": "https://www.grap.udl.cat/en/publications/KFuji_RGBDS_database.html",
+        "external_image_sources": [],
+        "stats": {
+            "mean": [
+                0.3745550215244293,
+                0.4699203670024872,
+                0.3931747078895569
+            ],
+            "std": [
+                0.2724320888519287,
+                0.27973315119743347,
+                0.2829023003578186
+            ]
+        },
+        "parent_dataset": "",
+        "extra_metadata": {}
+    },
+    "apple_detection_drone_brazil": {
+        "classes": {
+            "1": "apple"
+        },
+        "ml_task": "object_detection",
+        "ag_task": "fruit_detection",
+        "location": {
+            "continent": "south_america",
+            "country": "brazil"
+        },
+        "sensor_modality": "rgb",
+        "platform": "ground",
+        "input_data_format": "jpg",
+        "annotation_format": "coco_json",
+        "n_images": "689",
+        "docs_url": "https://github.com/thsant/add256/tree/zenodo-1.0",
+        "external_image_sources": [],
+        "stats": {
+            "mean": [
+                0.3362397849559784,
+                0.48177945613861084,
+                0.32026395201683044
+            ],
+            "std": [
+                0.18435567617416382,
+                0.1873108297586441,
+                0.1734534204006195
+            ]
+        },
+        "parent_dataset": "",
+        "extra_metadata": {}
+    },
+    "plant_doc_classification": {
+        "classes": {
+            "0": "Corn leaf blight",
+            "1": "Tomato Early blight leaf",
+            "2": "Potato leaf early blight",
+            "3": "Potato leaf late blight",
+            "4": "Blueberry leaf",
+            "5": "grape leaf black rot",
+            "6": "Bell_pepper leaf spot",
+            "7": "Cherry leaf",
+            "8": "Peach leaf",
+            "9": "Soyabean leaf",
+            "10": "Strawberry leaf",
+            "11": "Apple Scab Leaf",
+            "12": "Corn rust leaf",
+            "13": "Apple leaf",
+            "14": "Corn Gray leaf spot",
+            "15": "Tomato leaf mosaic virus",
+            "16": "Tomato mold leaf",
+            "17": "Tomato leaf yellow virus",
+            "18": "Tomato leaf bacterial spot",
+            "19": "Tomato leaf late blight",
+            "20": "Squash Powdery mildew leaf",
+            "21": "Bell_pepper leaf",
+            "22": "grape leaf",
+            "23": "Apple rust leaf",
+            "24": "Tomato Septoria leaf spot",
+            "25": "Tomato leaf",
+            "26": "Raspberry leaf",
+            "27": "Tomato two spotted spider mites leaf"
+        },
+        "ml_task": "image_classification",
+        "ag_task": "disease_classification",
+        "location": {
+            "continent": "worldwide",
+            "country": "worldwide"
+        },
+        "sensor_modality": "rgb",
+        "real_synthetic": "real",
+        "platform": "ground",
+        "input_data_format": "jpg",
+        "annotation_format": "directory_names",
+        "n_images": "2598",
+        "docs_url": "https://github.com/pratikkayal/PlantDoc-Dataset",
+        "external_image_sources": [],
+        "stats": {
+            "mean": [
+                0.48221418261528015,
+                0.549874484539032,
+                0.3833079934120178
+            ],
+            "std": [
+                0.21240688860416412,
+                0.2036021202802658,
+                0.22107268869876862
+            ]
+        },
+        "parent_dataset": "",
+        "extra_metadata": {}
+    },
+    "plant_doc_detection": {
+        "classes": {
+            "1": "Corn leaf blight",
+            "2": "Tomato Early blight leaf",
+            "3": "Potato leaf early blight",
+            "4": "Potato leaf late blight",
+            "5": "Blueberry leaf",
+            "6": "grape leaf black rot",
+            "7": "Bell_pepper leaf spot",
+            "8": "Cherry leaf",
+            "9": "Peach leaf",
+            "10": "Soyabean leaf",
+            "11": "Strawberry leaf",
+            "12": "Apple Scab Leaf",
+            "13": "Corn rust leaf",
+            "14": "Apple leaf",
+            "15": "Corn Gray leaf spot",
+            "16": "Tomato leaf mosaic virus",
+            "17": "Tomato mold leaf",
+            "18": "Tomato leaf yellow virus",
+            "19": "Tomato leaf bacterial spot",
+            "20": "Tomato leaf late blight",
+            "21": "Squash Powdery mildew leaf",
+            "22": "Bell_pepper leaf",
+            "23": "grape leaf",
+            "24": "Apple rust leaf",
+            "25": "Tomato Septoria leaf spot",
+            "26": "Tomato leaf",
+            "27": "Raspberry leaf",
+            "28": "Potato leaf",
+            "29": "Tomato two spotted spider mites leaf"
+        },
+        "ml_task": "object_detection",
+        "ag_task": "disease_detection",
+        "location": {
+            "continent": "worldwide",
+            "country": "worldwide"
+        },
+        "sensor_modality": "rgb",
+        "real_synthetic": "real",
+        "platform": "ground",
+        "input_data_format": "jpg",
+        "annotation_format": "coco_json",
+        "n_images": "2346",
+        "docs_url": "https://github.com/pratikkayal/PlantDoc-Object-Detection-Dataset",
+        "external_image_sources": [],
+        "stats": {
+            "mean": [
+                0.4765770733356476,
+                0.5437355637550354,
+                0.3779796361923218
+            ],
+            "std": [
+                0.21106934547424316,
+                0.2036709189414978,
+                0.21807792782783508
+            ]
+        },
+        "parent_dataset": "",
+        "extra_metadata": {}
+    },
+    "wheat_head_counting": {
+        "classes": {
+            "1": "Wheat Head"
+        },
+        "ml_task": "object_detection",
+        "ag_task": "wheat_head_counting",
+        "location": {
+            "continent": "worldwide",
+            "country": "worldwide"
+        },
+        "sensor_modality": "rgb",
+        "real_synthetic": "real",
+        "platform": "ground",
+        "input_data_format": "jpg",
+        "annotation_format": "coco_json",
+        "n_images": "6512",
+        "docs_url": "https://zenodo.org/record/5092309",
+        "external_image_sources": [],
+        "stats": {
+            "mean": [
+                0.371184766292572,
+                0.36074304580688477,
+                0.23014496266841888
+            ],
+            "std": [
+                0.2190379649400711,
+                0.21708978712558746,
+                0.17700935900211334
+            ]
+        },
+        "parent_dataset": "",
+        "extra_metadata": {}
+    },
+    "peachpear_flower_segmentation": {
+        "classes": {
+            "1": "Flower"
+        },
+        "ml_task": "semantic_segmentation",
+        "ag_task": "flower_segmentation",
+        "location": {
+            "continent": "worldwide",
+            "country": "worldwide"
+        },
+        "sensor_modality": "rgb",
+        "real_synthetic": "real",
+        "platform": "handheld/ground",
+        "input_data_format": "jpg",
+        "annotation_format": "image",
+        "n_images": "42",
+        "docs_url": "https://data.nal.usda.gov/dataset/data-multi-species-fruit-flower-detection-using-refined-semantic-segmentation-network",
+        "external_image_sources": [],
+        "stats": {
+            "mean": [
+                0.4377596378326416,
+                0.4347001910209656,
+                0.4147627353668213
+            ],
+            "std": [
+                0.20811232924461365,
+                0.2141699343919754,
+                0.2441396266222
+            ]
+        },
+        "parent_dataset": "",
+        "extra_metadata": {}
+    },
+    "red_grapes_and_leaves_segmentation": {
+        "classes": {
+            "1": "Leaf",
+            "2": "Grape"
+        },
+        "ml_task": "semantic_segmentation",
+        "ag_task": "vineyard_scene_segmentation",
+        "location": {
+            "continent": "europe",
+            "country": "greece"
+        },
+        "sensor_modality": "rgb",
+        "real_synthetic": "real",
+        "platform": "handheld/ground",
+        "input_data_format": "jpg",
+        "annotation_format": "image",
+        "n_images": "258",
+        "docs_url": "https://link.springer.com/chapter/10.1007/978-3-030-48791-1_22",
+        "external_image_sources": [],
+        "stats": {
+            "mean": [
+                0.392019122838974,
+                0.49319183826446533,
+                0.5254659056663513
+            ],
+            "std": [
+                0.2721235156059265,
+                0.2871488034725189,
+                0.2831265926361084
+            ]
+        },
+        "parent_dataset": "",
+        "extra_metadata": {}
+    },
+    "white_grapes_and_leaves_segmentation": {
+        "classes": {
+            "1": "Leaf",
+            "2": "Grape"
+        },
+        "ml_task": "semantic_segmentation",
+        "ag_task": "vineyard_scene_segmentation",
+        "location": {
+            "continent": "europe",
+            "country": "greece"
+        },
+        "sensor_modality": "rgb",
+        "real_synthetic": "real",
+        "platform": "handheld/ground",
+        "input_data_format": "jpg",
+        "annotation_format": "image",
+        "n_images": "273",
+        "docs_url": "https://link.springer.com/chapter/10.1007/978-3-030-48791-1_22",
+        "external_image_sources": [],
+        "stats": {
+            "mean": [
+                0.30906906723976135,
+                0.47296029329299927,
+                0.5238653421401978
+            ],
+            "std": [
+                0.23329640924930573,
+                0.24588093161582947,
+                0.25335168838500977
+            ]
+        },
+        "parent_dataset": "",
+        "extra_metadata": {}
+    },
+    "ghai_romaine_detection": {
+        "classes": {
+            "1": "romaine"
+        },
+        "ml_task": "object_detection",
+        "ag_task": "crop_detection",
+        "location": {
+            "continent": "north_america",
+            "country": "usa"
+        },
+        "sensor_modality": "rgb",
+        "real_synthetic": "real",
+        "platform": "handheld/ground",
+        "input_data_format": "jpg",
+        "annotation_format": "coco_json",
+        "n_images": "500",
+        "docs_url": "https://github.com/AxisAg/GHAIDatasets/blob/main/datasets/romaine.md",
+        "external_image_sources": [],
+        "stats": {
+            "mean": [
+                0.3551516532897949,
+                0.4719887971878052,
+                0.33378446102142334
+            ],
+            "std": [
+                0.253168523311615,
+                0.26515713334083557,
+                0.2393222600221634
+            ]
+        },
+        "parent_dataset": "",
+        "extra_metadata": {}
+    },
+    "ghai_green_cabbage_detection": {
+        "classes": {
+            "1": "green_cabbage"
+        },
+        "ml_task": "object_detection",
+        "ag_task": "crop_detection",
+        "location": {
+            "continent": "north_america",
+            "country": "usa"
+        },
+        "sensor_modality": "rgb",
+        "real_synthetic": "real",
+        "platform": "handheld/ground",
+        "input_data_format": "jpg",
+        "annotation_format": "coco_json",
+        "n_images": "500",
+        "docs_url": "https://github.com/AxisAg/GHAIDatasets/blob/main/datasets/green_cabbage.md",
+        "external_image_sources": [],
+        "stats": {
+            "mean": [
+                0.4649180769920349,
+                0.49569201469421387,
+                0.46829652786254883
+            ],
+            "std": [
+                0.28846681118011475,
+                0.27976617217063904,
+                0.276553213596344
+            ]
+        },
+        "parent_dataset": "",
+        "extra_metadata": {}
+    },
+    "ghai_iceberg_lettuce_detection": {
+        "classes": {
+            "1": "iceberg_lettuce"
+        },
+        "ml_task": "object_detection",
+        "ag_task": "crop_detection",
+        "location": {
+            "continent": "north_america",
+            "country": "usa"
+        },
+        "sensor_modality": "rgb",
+        "real_synthetic": "real",
+        "platform": "handheld/ground",
+        "input_data_format": "jpg",
+        "annotation_format": "coco_json",
+        "n_images": "500",
+        "docs_url": "https://github.com/AxisAg/GHAIDatasets/blob/main/datasets/iceberg.md",
+        "external_image_sources": [],
+        "stats": {
+            "mean": [
+                0.3193310499191284,
+                0.4143226742744446,
+                0.3003973960876465
+            ],
+            "std": [
+                0.2828165590763092,
+                0.2841264605522156,
+                0.25660744309425354
+            ]
+        },
+        "parent_dataset": "",
+        "extra_metadata": {}
+    },
+    "riseholme_strawberry_classification_2021": {
+        "classes": {
+            "0": "anomalous",
+            "1": "occluded",
+            "2": "ripe",
+            "3": "unripe"
+        },
+        "ml_task": "image_classification",
+        "ag_task": "disease_classification",
+        "sensor_modality": "rgb",
+        "real_synthetic": "real",
+        "platform": "ground",
+        "input_data_format": "png",
+        "annotation_format": "directory_names",
+        "n_images": "3520",
+        "docs_url": "https://github.com/ctyeong/Riseholme-2021",
+        "location": {
+            "continent": "europe",
+            "country": "uk"
+        },
+        "external_image_sources": [],
+        "stats": {
+            "mean": [
+                0.5753851532936096,
+                0.46378713846206665,
+                0.36370429396629333
+            ],
+            "std": [
+                0.19837889075279236,
+                0.19222107529640198,
+                0.1773509532213211
+            ]
+        },
+        "parent_dataset": "",
+        "extra_metadata": {}
+    },
+    "ghai_broccoli_detection": {
+        "classes": {
+            "1": "canopy",
+            "2": "crown"
+        },
+        "ml_task": "object_detection",
+        "ag_task": "crop_detection",
+        "location": {
+            "continent": "north_america",
+            "country": "usa"
+        },
+        "sensor_modality": "rgb",
+        "real_synthetic": "real",
+        "platform": "handheld/ground",
+        "input_data_format": "jpg",
+        "annotation_format": "coco_json",
+        "n_images": "500",
+        "docs_url": "https://github.com/AxisAg/GHAIDatasets/blob/main/datasets/broccoli.md",
+        "external_image_sources": [],
+        "stats": {
+            "mean": [
+                0.42832377552986145,
+                0.45015057921409607,
+                0.43816232681274414
+            ],
+            "std": [
+                0.24546495079994202,
+                0.23975253105163574,
+                0.23829665780067444
+            ]
+        },
+        "parent_dataset": "",
+        "extra_metadata": {}
+    },
+    "bean_synthetic_earlygrowth_aerial": {
+        "classes": {
+            "1": "leaves",
+            "2": "branches"
+        },
+        "ml_task": "semantic_segmentation",
+        "ag_task": "plant_segmentation",
+        "location": {
+            "continent": "digital",
+            "country": "digital"
+        },
+        "sensor_modality": "rgb",
+        "real_synthetic": "synthetic",
+        "platform": "aerial",
+        "input_data_format": "jpg",
+        "annotation_format": "image",
+        "n_images": "2500",
+        "docs_url": "https://github.com/Project-AgML/AgML/blob/main/docs/datasets/bean_synthetic_earlygrowth_aerial.md",
+        "external_image_sources": [],
+        "stats": {
+            "mean": [
+                0.24804304540157318,
+                0.2218194305896759,
+                0.16611839830875397
+            ],
+            "std": [
+                0.10789012163877487,
+                0.12054657936096191,
+                0.08992248773574829
+            ]
+        },
+        "parent_dataset": "",
+        "extra_metadata": {}
+    },
+    "ghai_strawberry_fruit_detection": {
+        "classes": {
+            "1": "Bud",
+            "2": "Calyx",
+            "3": "Detached Fruit",
+            "4": "Flower",
+            "5": "Large green",
+            "6": "Leaf",
+            "7": "Ripe fruit",
+            "8": "Small Green",
+            "9": "Stem",
+            "10": "Unripe fruit"
+        },
+        "ml_task": "object_detection",
+        "ag_task": "crop_detection",
+        "location": {
+            "continent": "north_america",
+            "country": "usa"
+        },
+        "sensor_modality": "rgb",
+        "real_synthetic": "real",
+        "platform": "handheld/ground",
+        "input_data_format": "jpg",
+        "annotation_format": "coco_json",
+        "n_images": "500",
+        "docs_url": "https://github.com/AxisAg/GHAIDatasets/blob/main/datasets/strawberry.md",
+        "external_image_sources": [],
+        "stats": {
+            "mean": [
+                0.49159616231918335,
+                0.5238277316093445,
+                0.4485996663570404
+            ],
+            "std": [
+                0.18163496255874634,
+                0.16137710213661194,
+                0.18042609095573425
+            ]
+        },
+        "parent_dataset": "",
+        "extra_metadata": {}
+    },
+    "vegann_multicrop_presence_segmentation": {
+        "classes": {
+            "1": "plant"
+        },
+        "ml_task": "semantic_segmentation",
+        "ag_task": "vegetation_segmentation",
+        "location": {
+            "continent": "worldwide",
+            "country": "worldwide"
+        },
+        "sensor_modality": "rgb",
+        "real_synthetic": "real",
+        "platform": "aerial",
+        "input_data_format": "png",
+        "annotation_format": "image",
+        "n_images": "3775",
+        "docs_url": "https://zenodo.org/records/7636408",
+        "stats": {
+            "mean": [
+                16.391704559326172,
+                18.685382843017578,
+                14.235113143920898
+            ],
+            "std": [
+                4.5903120040893555,
+                5.818264007568359,
+                4.189508438110352
+            ]
+        },
+        "parent_dataset": "",
+        "extra_metadata": {}
+    },
+    "corn_maize_leaf_disease": {
+        "classes": {
+            "0": "Blight",
+            "1": "Common_Rust",
+            "2": "Gray_Leaf_Spot",
+            "3": "Healthy"
+        },
+        "ml_task": "image_classification",
+        "ag_task": "disease_classification",
+        "location": {
+            "continent": "worldwide",
+            "country": "worldwide"
+        },
+        "sensor_modality": "rgb",
+        "real_synthetic": "real",
+        "platform": "handheld",
+        "input_data_format": [
+            "jpg",
+            "png",
+            "jpeg",
+            "JPG"
+        ],
+        "annotation_format": "directory_names",
+        "n_images": "4188",
+        "docs_url": "https://www.kaggle.com/datasets/smaranjitghose/corn-or-maize-leaf-disease-dataset/data",
+        "stats": {
+            "mean": [
+                0.4375976622104645,
+                0.49800175428390503,
+                0.3756123483181
+            ],
+            "std": [
+                0.17942173779010773,
+                0.1671891063451767,
+                0.17422494292259216
+            ]
+        },
+        "parent_dataset": "",
+        "extra_metadata": {}
+    },
+    "tomato_leaf_disease": {
+        "classes": {
+            "0": "Bacterial Spot",
+            "1": "Early Blight",
+            "2": "Healthy",
+            "3": "Late Blight",
+            "4": "Leaf Mold",
+            "5": "Septoria Leaf Spot",
+            "6": "Spider Mites Two-spotted Spider Mite",
+            "7": "Target Spot",
+            "8": "Tomato Mosaic Virus",
+            "9": "Tomato Yellow Leaf Curl Virus"
+        },
+        "ml_task": "image_classification",
+        "ag_task": "disease_classification",
+        "location": {
+            "continent": "worldwide",
+            "country": "worldwide"
+        },
+        "sensor_modality": "rgb",
+        "real_synthetic": "real",
+        "platform": "handheld",
+        "input_data_format": [
+            "jpeg"
+        ],
+        "annotation_format": "directory_names",
+        "n_images": "11000",
+        "docs_url": "https://www.kaggle.com/datasets/kaustubhb999/tomatoleaf?resource=download",
+        "stats": {
+            "mean": [
+                0.4527473449707031,
+                0.4633065462112427,
+                0.41868826746940613
+            ],
+            "std": [
+                0.16920849680900574,
+                0.1477183699607849,
+                0.18538573384284973
+            ]
+        },
+        "parent_dataset": "",
+        "extra_metadata": {}
+    },
+    "vine_virus_photo_dataset": {
+        "classes": {
+            "0": "Leafroll 3",
+            "1": "No Virus",
+            "2": "Other Red",
+            "3": "Red Blotch"
+        },
+        "ml_task": "image_classification",
+        "ag_task": "disease_classification",
+        "location": {
+            "continent": "worldwide",
+            "country": "worldwide"
+        },
+        "sensor_modality": "rgb",
+        "real_synthetic": "real",
+        "platform": "handheld/ground",
+        "input_data_format": [
+            "jpg",
+            "png",
+            "jpeg",
+            "JPG"
+        ],
+        "annotation_format": "directory_names",
+        "n_images": "3866",
+        "docs_url": "",
+        "stats": {
+            "mean": [
+                0.44989314675331116,
+                0.4489104151725769,
+                0.29500243067741394
+            ],
+            "std": [
+                0.2310592532157898,
+                0.2280450314283371,
+                0.23016904294490814
+            ]
+        },
+        "parent_dataset": "",
+        "extra_metadata": {}
+    },
+    "embrapa_wgisd_grape_detection": {
+        "classes": {
+            "0": "Chardonnay",
+            "1": "PinotGris",
+            "2": "PinotNoir"
+        },
+        "ml_task": "object_detection",
+        "ag_task": "fruit_detection",
+        "location": {
+            "continent": "worldwide",
+            "country": "worldwide"
+        },
+        "sensor_modality": "rgb",
+        "real_synthetic": "real",
+        "platform": "handheld/ground",
+        "input_data_format": "jpg",
+        "annotation_format": "coco_json",
+        "n_images": "239",
+        "docs_url": "https://github.com/thsant/wgisd/tree/master",
+        "external_image_sources": [],
+        "stats": {
+            "mean": [
+                0.5015993118286133,
+                0.5361655354499817,
+                0.4303760826587677
+            ],
+            "std": [
+                0.2352389246225357,
+                0.2119981199502945,
+                0.2218495011329651
+            ]
+        },
+        "parent_dataset": "",
+        "extra_metadata": {}
+    },
+    "growliflower_cauliflower_segmentation": {
+        "classes": {
+            "1": "maskLeaves",
+            "2": "maskPlants",
+            "3": "maskStems",
+            "4": "maskVoid"
+        },
+        "ml_task": "semantic_segmentation",
+        "ag_task": "crop_segmentation",
+        "location": {
+            "continent": "worldwide",
+            "country": "worldwide"
+        },
+        "sensor_modality": "rgb",
+        "real_synthetic": "real",
+        "platform": "handheld/ground",
+        "input_data_format": "jpg",
+        "annotation_format": "image",
+        "n_images": "1542",
+        "docs_url": "https://phenoroam.phenorob.de/geonetwork/srv/eng/catalog.search#/metadata/cb328232-31f5-4b84-a929-8e1ee551d66a",
+        "stats": {
+            "mean": [
+                0.48514866828918457,
+                0.4264565408229828,
+                0.33096641302108765
+            ],
+            "std": [
+                0.12302214652299881,
+                0.1260126680135727,
+                0.11423511058092117
+            ]
+        },
+        "parent_dataset": "",
+        "extra_metadata": {}
+    },
+    "strawberry_detection_2023": {
+        "classes": {
+            "0": "strawberry",
+            "1": "flower",
+            "2": "green",
+            "3": "large_white",
+            "4": "pink",
+            "5": "red",
+            "6": "small_white"
+        },
+        "ml_task": "object_detection",
+        "ag_task": "fruit_detection",
+        "location": {
+            "continent": "north_america",
+            "country": "usa"
+        },
+        "sensor_modality": "rgb",
+        "real_synthetic": "real",
+        "platform": "handheld/ground",
+        "annotation_format": "coco_json",
+        "input_data_format": "jpg",
+        "n_images": "204",
+        "docs_url": "https://universe.roboflow.com/strawberrydet/strawberry_2023/3",
+        "external_image_sources": [],
+        "stats": {
+            "mean": [
+                0.2719569802284241,
+                0.2755374312400818,
+                0.2003764510154724
+            ],
+            "std": [
+                0.14823083579540253,
+                0.1477075070142746,
+                0.14832836389541626
+            ]
+        },
+        "parent_dataset": "",
+        "extra_metadata": {}
+    },
+    "strawberry_detection_2022": {
+        "classes": {
+            "0": "strawberry",
+            "1": "flower",
+            "2": "green",
+            "3": "large_white",
+            "4": "pink",
+            "5": "red",
+            "6": "small_white"
+        },
+        "ml_task": "object_detection",
+        "ag_task": "fruit_detection",
+        "location": {
+            "continent": "north_america",
+            "country": "usa"
+        },
+        "sensor_modality": "rgb",
+        "real_synthetic": "real",
+        "platform": "handheld/ground",
+        "annotation_format": "coco_json",
+        "input_data_format": "jpg",
+        "n_images": "175",
+        "docs_url": "https://universe.roboflow.com/strawberrydet/strawberry_2022/dataset/4",
+        "external_image_sources": [],
+        "stats": {
+            "mean": [
+                0.287511944770813,
+                0.3060769736766815,
+                0.29882678389549255
+            ],
+            "std": [
+                0.21001286804676056,
+                0.19917000830173492,
+                0.20504336059093475
+            ]
+        },
+        "parent_dataset": "",
+        "extra_metadata": {}
+    },
+    "almond_harvest_2021": {
+        "classes": {
+            "0": "Visible Fruit/Flower",
+            "1": "Partially Visible Fruit/Flower",
+            "2": "Visible Occluded Fruit/Flower",
+            "3": "Partially Visible Occluded Fruit/Flower"
+        },
+        "ml_task": "object_detection",
+        "ag_task": "fruit_detection",
+        "location": {
+            "continent": "north_america",
+            "country": "usa"
+        },
+        "sensor_modality": "rgb",
+        "real_synthetic": "real",
+        "platform": "ground",
+        "annotation_format": "coco_json",
+        "input_data_format": "jpg",
+        "n_images": "50",
+        "docs_url": "",
+        "external_image_sources": [],
+        "stats": {
+            "mean": [
+                0.1509094387292862,
+                0.15222010016441345,
+                0.14836227893829346
+            ],
+            "std": [
+                0.16955046355724335,
+                0.1702313870191574,
+                0.1667901575565338
+            ]
+        },
+        "parent_dataset": "",
+        "extra_metadata": {}
+    },
+    "almond_bloom_2023": {
+        "classes": {
+            "0": "Visible Fruit/Flower"
+        },
+        "ml_task": "object_detection",
+        "ag_task": "flower_detection",
+        "location": {
+            "continent": "north_america",
+            "country": "usa"
+        },
+        "sensor_modality": "rgb",
+        "real_synthetic": "real",
+        "platform": "ground",
+        "annotation_format": "coco_json",
+        "input_data_format": "jpg",
+        "n_images": "100",
+        "docs_url": "",
+        "external_image_sources": [],
+        "stats": {
+            "mean": [
+                0.32803982496261597,
+                0.34916892647743225,
+                0.3486247956752777
+            ],
+            "std": [
+                0.23713527619838715,
+                0.24729833006858826,
+                0.23989765346050262
+            ]
+        },
+        "parent_dataset": "",
+        "extra_metadata": {}
+    },
+    "gemini_flower_detection_2022": {
+        "classes": {
+            "1": "object"
+        },
+        "ml_task": "object_detection",
+        "ag_task": "flower_detection",
+        "location": {
+            "continent": "north_america",
+            "country": "usa"
+        },
+        "sensor_modality": "rgb",
+        "real_synthetic": "real",
+        "platform": "ground",
+        "annotation_format": "coco_json",
+        "input_data_format": "jpg",
+        "n_images": "134",
+        "docs_url": "http://gemini-breeding.github.io/",
+        "external_image_sources": [],
+        "stats": {
+            "mean": [
+                0.43233251571655273,
+                0.46158429980278015,
+                0.3074590265750885
+            ],
+            "std": [
+                0.15803606808185577,
+                0.1518802046775818,
+                0.1447635143995285
+            ]
+        },
+        "parent_dataset": "",
+        "extra_metadata": {}
+    },
+    "gemini_leaf_detection_2022": {
+        "classes": {
+            "1": "object"
+        },
+        "ml_task": "object_detection",
+        "ag_task": "leaf_detection",
+        "location": {
+            "continent": "north_america",
+            "country": "usa"
+        },
+        "sensor_modality": "rgb",
+        "real_synthetic": "real",
+        "platform": "ground",
+        "annotation_format": "coco_json",
+        "input_data_format": "jpg",
+        "n_images": "25",
+        "docs_url": "http://gemini-breeding.github.io/",
+        "external_image_sources": [],
+        "stats": {
+            "mean": [
+                0.5152409672737122,
+                0.48080527782440186,
+                0.4170548915863037
+            ],
+            "std": [
+                0.17544656991958618,
+                0.1531846821308136,
+                0.13160519301891327
+            ]
+        },
+        "parent_dataset": "",
+        "extra_metadata": {}
+    },
+    "gemini_pod_detection_2022": {
+        "classes": {
+            "1": "object"
+        },
+        "ml_task": "object_detection",
+        "ag_task": "pod_detection",
+        "location": {
+            "continent": "north_america",
+            "country": "usa"
+        },
+        "sensor_modality": "rgb",
+        "real_synthetic": "real",
+        "platform": "ground",
+        "annotation_format": "coco_json",
+        "input_data_format": "jpg",
+        "n_images": "98",
+        "docs_url": "http://gemini-breeding.github.io/",
+        "external_image_sources": [],
+        "stats": {
+            "mean": [
+                0.4158003032207489,
+                0.47277751564979553,
+                0.28544333577156067
+            ],
+            "std": [
+                0.16562676429748535,
+                0.1610204428434372,
+                0.1648048311471939
+            ]
+        },
+        "parent_dataset": "",
+        "extra_metadata": {}
+    },
+    "gemini_plant_detection_2022": {
+        "classes": {
+            "1": "plant",
+            "2": "weed"
+        },
+        "ml_task": "object_detection",
+        "ag_task": "plant_detection",
+        "location": {
+            "continent": "north_america",
+            "country": "usa"
+        },
+        "sensor_modality": "rgb",
+        "real_synthetic": "real",
+        "platform": "ground",
+        "annotation_format": "coco_json",
+        "input_data_format": "jpg",
+        "n_images": "402",
+        "docs_url": "http://gemini-breeding.github.io/",
+        "external_image_sources": [],
+        "stats": {
+            "mean": [
+                0.5137307047843933,
+                0.47968026995658875,
+                0.4163574278354645
+            ],
+            "std": [
+                0.17421172559261322,
+                0.15248580276966095,
+                0.13018731772899628
+            ]
+        },
+        "parent_dataset": "",
+        "extra_metadata": {}
+    },
+    "paddy_disease_classification": {
+        "ml_task": "image_classification",
+        "ag_task": "disease_classification",
+        "location": {
+            "continent": "asia",
+            "country": "india"
+        },
+        "sensor_modality": "rgb",
+        "real_synthetic": "real",
+        "platform": "uav",
+        "input_data_format": "jpg",
+        "annotation_format": "directory_names",
+        "n_images": "10407",
+        "docs_url": "https://www.kaggle.com/competitions/paddy-disease-classification/data",
+        "classes": {
+            "0": "bacterial_leaf_blight",
+            "1": "bacterial_leaf_streak",
+            "2": "bacterial_panicle_blight",
+            "3": "blast",
+            "4": "brown_spot",
+            "5": "dead_heart",
+            "6": "downy_mildew",
+            "7": "hispa",
+            "8": "normal",
+            "9": "tungro"
+        },
+        "external_image_sources": [],
+        "stats": {
+            "mean": [
+                0.49716252088546753,
+                0.5882205963134766,
+                0.2304224669933319
+            ],
+            "std": [
+                0.23286384344100952,
+                0.23301087319850922,
+                0.1900700032711029
+            ]
+        },
+        "parent_dataset": "",
+        "extra_metadata": {}
+    },
+    "onion_leaf_classification": {
+        "ml_task": "image_classification",
+        "ag_task": "leaf_classification",
+        "location": {
+            "continent": "asia",
+            "country": "india"
+        },
+        "sensor_modality": "rgb",
+        "real_synthetic": "real",
+        "platform": "uav",
+        "input_data_format": "jpg",
+        "annotation_format": "directory_names",
+        "n_images": "4502",
+        "docs_url": "https://www.researchgate.net/publication/380611658_Dataset_of_Chilli_and_Onion_Plant_Leaf_Images_for_Classification_and_Detection",
+        "classes": {
+            "0": "healthy",
+            "1": "iris_yellow_virus",
+            "2": "leaf_blight",
+            "3": "purple_blotch"
+        },
+        "external_image_sources": [],
+        "stats": {
+            "mean": [
+                0.49259838461875916,
+                0.5055249929428101,
+                0.33485615253448486
+            ],
+            "std": [
+                0.18601194024085999,
+                0.14629681408405304,
+                0.15651942789554596
+            ]
+        },
+        "parent_dataset": "",
+        "extra_metadata": {}
+    },
+    "chilli_leaf_classification": {
+        "ml_task": "image_classification",
+        "ag_task": "leaf_classification",
+        "location": {
+            "continent": "asia",
+            "country": "india"
+        },
+        "sensor_modality": "rgb",
+        "real_synthetic": "real",
+        "platform": "uav",
+        "input_data_format": "jpg",
+        "annotation_format": "directory_names",
+        "n_images": "10974",
+        "docs_url": "https://www.researchgate.net/publication/380611658_Dataset_of_Chilli_and_Onion_Plant_Leaf_Images_for_Classification_and_Detection",
+        "classes": {
+            "0": "cercospora",
+            "1": "healthy",
+            "2": "mites_and_trips",
+            "3": "nutritional",
+            "4": "powdery_mildew"
+        },
+        "external_image_sources": [],
+        "stats": {
+            "mean": [
+                0.5395056009292603,
+                0.5616798996925354,
+                0.4004570543766022
+            ],
+            "std": [
+                0.17784084379673004,
+                0.1770888715982437,
+                0.18177233636379242
+            ]
+        },
+        "parent_dataset": "",
+        "extra_metadata": {}
+    },
+    "orange_leaf_disease_classification": {
+        "ml_task": "image_classification",
+        "ag_task": "disease_classification",
+        "location": {
+            "continent": "asia",
+            "country": "bangladesh"
+        },
+        "sensor_modality": "rgb",
+        "real_synthetic": "real",
+        "platform": "uav",
+        "input_data_format": "jpeg",
+        "annotation_format": "directory_names",
+        "n_images": "5813",
+        "docs_url": "https://www.sciencedirect.com/science/article/pii/S2352340924006802#sec0004",
+        "classes": {
+            "0": "citrus_canker",
+            "1": "citrus_greening",
+            "2": "citrus_mealybugs",
+            "3": "die_back",
+            "4": "foliage_damaged",
+            "5": "healthy_leaf",
+            "6": "powdery_mildew",
+            "7": "shot_hole",
+            "8": "spiny_whitefly",
+            "9": "yellow_dragon",
+            "10": "yellow_leaves"
+        },
+        "external_image_sources": [],
+        "stats": {
+            "mean": [
+                0.641664981842041,
+                0.645190954208374,
+                0.5412733554840088
+            ],
+            "std": [
+                0.21496868133544922,
+                0.19639450311660767,
+                0.2651123106479645
+            ]
+        },
+        "parent_dataset": "",
+        "extra_metadata": {}
+    },
+    "papaya_leaf_disease_classification": {
+        "ml_task": "image_classification",
+        "ag_task": "disease_classification",
+        "location": {
+            "continent": "asia",
+            "country": "bangladesh"
+        },
+        "sensor_modality": "rgb",
+        "real_synthetic": "real",
+        "platform": "uav",
+        "input_data_format": "jpg",
+        "annotation_format": "directory_names",
+        "n_images": "2159",
+        "docs_url": "https://www.sciencedirect.com/science/article/pii/S2352340924008734",
+        "classes": {
+            "0": "Anthracnose",
+            "1": "BacterialSpot",
+            "2": "Curl",
+            "3": "Healthy",
+            "4": "RingSpot"
+        },
+        "external_image_sources": [],
+        "stats": {
+            "mean": [
+                0.4037705361843109,
+                0.5427719950675964,
+                0.29178404808044434
+            ],
+            "std": [
+                0.1690509021282196,
+                0.15967564284801483,
+                0.14206627011299133
+            ]
+        },
+        "parent_dataset": "",
+        "extra_metadata": {}
+    },
+    "blackgram_plant_leaf_disease_classification": {
+        "ml_task": "image_classification",
+        "ag_task": "disease_classification",
+        "location": {
+            "continent": "asia",
+            "country": "india"
+        },
+        "sensor_modality": "rgb",
+        "real_synthetic": "real",
+        "platform": "uav",
+        "input_data_format": "jpg",
+        "annotation_format": "directory_names",
+        "n_images": "1007",
+        "docs_url": "https://www.sciencedirect.com/science/article/pii/S2352340922009295",
+        "classes": {
+            "0": "anthracnose",
+            "1": "healthy",
+            "2": "leaf_crinckle",
+            "3": "powdery_mildew",
+            "4": "yellow_mosaic"
+        },
+        "external_image_sources": [],
+        "stats": {
+            "mean": [
+                0.4454658031463623,
+                0.5082071423530579,
+                0.3293055593967438
+            ],
+            "std": [
+                0.19813409447669983,
+                0.1792915314435959,
+                0.16840000450611115
+            ]
+        },
+        "parent_dataset": "",
+        "extra_metadata": {}
+    },
+    "arabica_coffee_leaf_disease_classification": {
+        "ml_task": "image_classification",
+        "ag_task": "disease_classification",
+        "location": {
+            "continent": "africa",
+            "country": "kenya"
+        },
+        "sensor_modality": "rgb",
+        "real_synthetic": "real",
+        "platform": "uav",
+        "input_data_format": [
+            "jpg",
+            "jpeg"
+        ],
+        "annotation_format": "directory_names",
+        "n_images": "58549",
+        "docs_url": "https://www.sciencedirect.com/science/article/pii/S2352340921004261?via%3Dihub#sec0001",
+        "classes": {
+            "0": "Cerscospora",
+            "1": "Healthy",
+            "2": "Leaf_rust",
+            "3": "Miner",
+            "4": "Phoma"
+        },
+        "external_image_sources": [],
+        "stats": {
+            "mean": [
+                0.4663342535495758,
+                0.6128407716751099,
+                0.40549468994140625
+            ],
+            "std": [
+                0.1319405734539032,
+                0.10137982666492462,
+                0.13884715735912323
+            ]
+        },
+        "parent_dataset": "",
+        "extra_metadata": {}
+    },
+    "banana_leaf_disease_classification": {
+        "ml_task": "image_classification",
+        "ag_task": "disease_classification",
+        "location": {
+            "continent": "africa",
+            "country": "ethiopia"
+        },
+        "sensor_modality": "rgb",
+        "real_synthetic": "real",
+        "platform": "uav",
+        "input_data_format": "jpg",
+        "annotation_format": "directory_names",
+        "n_images": "1288",
+        "docs_url": "https://www.researchgate.net/publication/380900090_Sigatoka_and_Xanthomonas_Banana_Leaf_Disease_Detection_Via_Transfer_Learning",
+        "classes": {
+            "0": "healthy",
+            "1": "segatoka",
+            "2": "xamthomonas"
+        },
+        "external_image_sources": [],
+        "stats": {
+            "mean": [
+                0.4403895437717438,
+                0.4788191020488739,
+                0.22997669875621796
+            ],
+            "std": [
+                0.2052917778491974,
+                0.20397576689720154,
+                0.18596293032169342
+            ]
+        },
+        "parent_dataset": "",
+        "extra_metadata": {}
+    },
+    "coconut_tree_disease_classification": {
+        "ml_task": "image_classification",
+        "ag_task": "disease_classification",
+        "location": {
+            "continent": "asia",
+            "country": "india"
+        },
+        "sensor_modality": "rgb",
+        "real_synthetic": "real",
+        "platform": "uav",
+        "input_data_format": "jpg",
+        "annotation_format": "directory_names",
+        "n_images": "5798",
+        "docs_url": "https://www.sciencedirect.com/science/article/pii/S2352340923007692#sec0003",
+        "classes": {
+            "0": "Bud_Root_Dropping",
+            "1": "Bud_Rot",
+            "2": "Gray_Leaf_Spot",
+            "3": "Leaf_Rot",
+            "4": "Stem_Bleeding"
+        },
+        "external_image_sources": [],
+        "stats": {
+            "mean": [
+                0.49172350764274597,
+                0.49519237875938416,
+                0.4346628189086914
+            ],
+            "std": [
+                0.2121831327676773,
+                0.20774872601032257,
+                0.22041980922222137
+            ]
+        },
+        "parent_dataset": "",
+        "extra_metadata": {}
+    },
+    "rice_leaf_disease_classification": {
+        "ml_task": "image_classification",
+        "ag_task": "disease_classification",
+        "location": {
+            "continent": "worldwide",
+            "country": "worldwide"
+        },
+        "sensor_modality": "rgb",
+        "real_synthetic": "real",
+        "platform": "uav",
+        "input_data_format": "jpg",
+        "annotation_format": "directory_names",
+        "n_images": "3829",
+        "docs_url": "https://www.kaggle.com/datasets/anshulm257/rice-disease-dataset/data",
+        "classes": {
+            "0": "Bacterial_Leaf_Blight",
+            "1": "Brown_Spot",
+            "2": "Healthy_Rice_Leaf",
+            "3": "Leaf_Blast",
+            "4": "Leaf_Scald",
+            "5": "Sheath_Blight"
+        },
+        "external_image_sources": [],
+        "stats": {
+            "mean": [
+                0.3801848888397217,
+                0.5112283229827881,
+                0.24517497420310974
+            ],
+            "std": [
+                0.1857737898826599,
+                0.1747269332408905,
+                0.13470299541950226
+            ]
+        },
+        "parent_dataset": "",
+        "extra_metadata": {}
+    },
+    "tea_leaf_disease_classification": {
+        "ml_task": "image_classification",
+        "ag_task": "disease_classification",
+        "location": {
+            "continent": "asia",
+            "country": "india"
+        },
+        "sensor_modality": "rgb",
+        "real_synthetic": "real",
+        "platform": "uav",
+        "input_data_format": "jpg",
+        "annotation_format": "directory_names",
+        "n_images": "5867",
+        "docs_url": "https://www.kaggle.com/datasets/saikatdatta1994/tea-leaf-disease",
+        "classes": {
+            "0": "algal_spot",
+            "1": "brown_blight",
+            "2": "gray_blight",
+            "3": "healthy",
+            "4": "helopeltis",
+            "5": "red_spot"
+        },
+        "external_image_sources": [],
+        "stats": {
+            "mean": [
+                0.720391035079956,
+                0.7148104310035706,
+                0.7214117646217346
+            ],
+            "std": [
+                0.2642996311187744,
+                0.24272359907627106,
+                0.32473450899124146
+            ]
+        },
+        "parent_dataset": "",
+        "extra_metadata": {}
+    },
+    "betel_leaf_disease_classification": {
+        "ml_task": "image_classification",
+        "ag_task": "disease_classification",
+        "location": {
+            "continent": "asia",
+            "country": "bangladesh"
+        },
+        "sensor_modality": "rgb",
+        "real_synthetic": "real",
+        "platform": "uav",
+        "input_data_format": "jpg",
+        "annotation_format": "directory_names",
+        "n_images": "3589",
+        "docs_url": "https://www.semanticscholar.org/paper/Betel-Leaf-Diseases-Classification-using-Machine-A-David-Mukunthan/38208c9d2306444e3b9f8593715a46e2dcf26f44#paper-topics",
+        "classes": {
+            "0": "Bacterial_Leaf_Disease",
+            "1": "Dried_Leaf",
+            "2": "Fungal_Brown_Spot_Disease",
+            "3": "Healthy_Leaf"
+        },
+        "external_image_sources": [],
+        "stats": {
+            "mean": [
+                0.44302278757095337,
+                0.5203492045402527,
+                0.32380297780036926
+            ],
+            "std": [
+                0.18618987500667572,
+                0.19697120785713196,
+                0.21828916668891907
+            ]
+        },
+        "parent_dataset": "",
+        "extra_metadata": {}
+    },
+    "java_plum_leaf_disease_classification": {
+        "ml_task": "image_classification",
+        "ag_task": "disease_classification",
+        "location": {
+            "continent": "asia",
+            "country": "bangladesh"
+        },
+        "sensor_modality": "rgb",
+        "real_synthetic": "real",
+        "platform": "uav",
+        "input_data_format": "jpg",
+        "annotation_format": "directory_names",
+        "n_images": "2400",
+        "docs_url": "https://www.sciencedirect.com/science/article/pii/S2772375524001059#sec0003",
+        "classes": {
+            "0": "Bacterial_Spot",
+            "1": "Brown_Blight",
+            "2": "Dry",
+            "3": "Healthy",
+            "4": "Powdery_Mildew",
+            "5": "Sooty_Mold"
+        },
+        "external_image_sources": [],
+        "stats": {
+            "mean": [
+                0.6888663172721863,
+                0.7057309746742249,
+                0.6495749950408936
+            ],
+            "std": [
+                0.21865394711494446,
+                0.20790858566761017,
+                0.3019416928291321
+            ]
+        },
+        "parent_dataset": "",
+        "extra_metadata": {}
+    },
+    "sunflower_disease_classification": {
+        "ml_task": "image_classification",
+        "ag_task": "disease_classification",
+        "location": {
+            "continent": "asia",
+            "country": "bangladesh"
+        },
+        "sensor_modality": "rgb",
+        "real_synthetic": "real",
+        "platform": "uav",
+        "input_data_format": "jpg",
+        "annotation_format": "directory_names",
+        "n_images": "2358",
+        "docs_url": "https://www.sciencedirect.com/science/article/pii/S2352340922002542",
+        "classes": {
+            "0": "Downy_mildew",
+            "1": "Fresh_leaf",
+            "2": "Gray_mold",
+            "3": "Leaf_scars"
+        },
+        "external_image_sources": [],
+        "stats": {
+            "mean": [
+                0.45603200793266296,
+                0.45415663719177246,
+                0.2436216175556183
+            ],
+            "std": [
+                0.22495068609714508,
+                0.21411556005477905,
+                0.17952653765678406
+            ]
+        },
+        "parent_dataset": "",
+        "extra_metadata": {}
+    },
+    "cucumber_disease_classification": {
+        "ml_task": "image_classification",
+        "ag_task": "disease_classification",
+        "location": {
+            "continent": "asia",
+            "country": "bangladesh"
+        },
+        "sensor_modality": "rgb",
+        "real_synthetic": "real",
+        "platform": "uav",
+        "input_data_format": "jpg",
+        "annotation_format": "directory_names",
+        "n_images": "7689",
+        "docs_url": "https://www.sciencedirect.com/science/article/pii/S2352340923004389",
+        "classes": {
+            "0": "Anthracnose",
+            "1": "Bacterial_Wilt",
+            "2": "Belly_Rot",
+            "3": "Downy_Mildew",
+            "4": "Fresh_Cucumber",
+            "5": "Fresh_Leaf",
+            "6": "Gummy_Stem_Blight",
+            "7": "Pythium_Fruit_Rot"
+        },
+        "external_image_sources": [],
+        "stats": {
+            "mean": [
+                0.46584174036979675,
+                0.5267260074615479,
+                0.3983174264431
+            ],
+            "std": [
+                0.19197316467761993,
+                0.18358547985553741,
+                0.17932511866092682
+            ]
+        },
+        "parent_dataset": "",
+        "extra_metadata": {}
+    },
+    "soybean_insect_classification": {
+        "ml_task": "image_classification",
+        "ag_task": "pest_classification",
+        "location": {
+            "continent": "south_america",
+            "country": "brazil"
+        },
+        "sensor_modality": "rgb",
+        "real_synthetic": "real",
+        "platform": "uav",
+        "input_data_format": "jpg",
+        "annotation_format": "directory_names",
+        "n_images": "6410",
+        "docs_url": "https://data.mendeley.com/datasets/bycbh73438/1",
+        "classes": {
+            "0": "Caterpillar",
+            "1": "Diabrotica_speciosa",
+            "2": "Healthy"
+        },
+        "external_image_sources": [],
+        "parent_dataset": "",
+        "extra_metadata": {},
+        "stats": {
+            "mean": [
+                0.4129256308078766,
+                0.515846848487854,
+                0.3347107470035553
+            ],
+            "std": [
+                0.22007715702056885,
+                0.22993944585323334,
+                0.20302338898181915
+            ]
+        }
+    },
+    "mango_leaf_disease_classification": {
+        "ml_task": "image_classification",
+        "ag_task": "disease_classification",
+        "location": {
+            "continent": "asia",
+            "country": "bangladesh"
+        },
+        "sensor_modality": "rgb",
+        "real_synthetic": "real",
+        "platform": "handheld",
+        "input_data_format": "jpg",
+        "annotation_format": "directory_names",
+        "n_images": "4000",
+        "docs_url": "https://data.mendeley.com/datasets/hxsnvwty3r/1",
+        "classes": {
+            "0": "Anthracnose",
+            "1": "Bacterial_Canker",
+            "2": "Cutting_Weevil",
+            "3": "Die_Back",
+            "4": "Gall_Midge",
+            "5": "Healthy",
+            "6": "Powdery_Mildew",
+            "7": "Sooty_Mold"
+        },
+        "external_image_sources": [],
+        "parent_dataset": "",
+        "extra_metadata": {},
+        "stats": {
+            "mean": [
+                0.6656161465062932,
+                0.6908410777008502,
+                0.6897037347395488
+            ],
+            "std": [
+                0.19750956584037743,
+                0.18696074420471073,
+                0.2579291888749908
+            ]
+        }
+    },
+    "susnato_plant_disease_detection_processed": {
+        "ml_task": "object_detection",
+        "ag_task": null,
+        "location": null,
+        "sensor_modality": "RGB",
+        "real_synthetic": null,
+        "platform": null,
+        "input_data_format": "jpg",
+        "annotation_format": "coco_json",
+        "n_images": "2324",
+        "docs_url": "https://huggingface.co/datasets/susnato/plant_disease_detection_processed",
+        "classes": null,
+        "stats": null,
+        "parent_dataset": "",
+        "external_image_sources": [],
+        "extra_metadata": {
+            "title": "susnato/plant_disease_detection_processed",
+            "description": "This Dataset is created from processing the files from this GitHub repository : PlantDoc-Object-Detection-Dataset\nCitation\nBibTeX:\n@inproceedings{10.1145/3371158.3371196,\nauthor = {Singh, Davinder and Jain, Naman and Jain, Pranjali and Kayal, Pratik and Kumawat, Sudhakar and Batra, Nipun},\ntitle = {PlantDoc: A Dataset for Visual Plant Disease Detection},\nyear = {2020},\nisbn = {9781450377386},\npublisher = {Association for Computing Machinery},\naddress = {New York, NY, USA},\nurl =\u2026 See the full description on the dataset page: https://huggingface.co/datasets/susnato/plant_disease_detection_processed.",
+            "source_provenance": {
+                "source_type": "huggingface",
+                "external_id": "susnato/plant_disease_detection_processed",
+                "source_url": "https://huggingface.co/datasets/susnato/plant_disease_detection_processed",
+                "download_url": null,
+                "raw_metadata": {
+                    "id": "susnato/plant_disease_detection_processed",
+                    "tags": [
+                        "task_categories:object-detection",
+                        "license:cc-by-4.0",
+                        "size_categories:1K<n<10K",
+                        "format:parquet",
+                        "modality:image",
+                        "library:datasets",
+                        "library:dask",
+                        "library:mlcroissant",
+                        "library:polars",
+                        "region:us"
+                    ],
+                    "downloads": 130,
+                    "likes": 9,
+                    "gated": false,
+                    "private": false
+                }
+            }
+        }
+    }
+}

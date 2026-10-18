@@ -1,0 +1,8 @@
+{
+  "names": ["healthy", "monilia", "phytophthora"],
+  "prediction_class_mapping": {"h0": 0, "m1": 1, "m2": 1, "m3": 1},
+  "healthy_class": 0,
+  "target_disease_class": 1,
+  "other_disease_classes": [2],
+  "duplicate_phash_distance": 4
+}

@@ -1,0 +1,52 @@
+{
+  "_id": "68cfdc7592a499aa8bf6dd0d",
+  "id": "diboworks/rotten_fruit_classifier",
+  "private": false,
+  "pipeline_tag": "image-classification",
+  "library_name": "keras",
+  "tags": [
+    "keras",
+    "onnx",
+    "image-classification",
+    "license:apache-2.0",
+    "region:us"
+  ],
+  "downloads": 6,
+  "likes": 1,
+  "modelId": "diboworks/rotten_fruit_classifier",
+  "author": "diboworks",
+  "sha": "f44a288ef13f2e0901b2e370ad9117551f027897",
+  "lastModified": "2025-09-27T11:07:01.000Z",
+  "gated": false,
+  "disabled": false,
+  "model-index": null,
+  "config": {},
+  "cardData": {
+    "license": "apache-2.0",
+    "metrics": [
+      "accuracy"
+    ],
+    "pipeline_tag": "image-classification",
+    "library_name": "keras"
+  },
+  "siblings": [
+    {
+      "rfilename": ".gitattributes"
+    },
+    {
+      "rfilename": "README.md"
+    },
+    {
+      "rfilename": "quantized_oxmodel.onnx"
+    },
+    {
+      "rfilename": "rotten_fruits_and_veg_classify.h5"
+    },
+    {
+      "rfilename": "rotten_fruits_classifier.keras"
+    }
+  ],
+  "spaces": [],
+  "createdAt": "2025-09-21T11:07:33.000Z",
+  "usedStorage": 237647299
+}

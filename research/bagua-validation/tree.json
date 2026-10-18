@@ -1,0 +1,515 @@
+{
+  "sha": "fc46338263d8ea208616f4f97fd0cf2884c493b3",
+  "url": "https://api.github.com/repos/Unclefee/Cocoa-Pod-Disease-Detection/git/trees/fc46338263d8ea208616f4f97fd0cf2884c493b3",
+  "tree": [
+    {
+      "path": ".gitignore",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "865b89cfecc724302d9ee7367c4e50e9980c6de5",
+      "size": 184,
+      "url": "https://api.github.com/repos/Unclefee/Cocoa-Pod-Disease-Detection/git/blobs/865b89cfecc724302d9ee7367c4e50e9980c6de5"
+    },
+    {
+      "path": "Deep_Learning_Based_Cocoa_Pod_Disease_Detection.pdf",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "6718555f24f7fea995aba2e61c470020cab4f423",
+      "size": 2332204,
+      "url": "https://api.github.com/repos/Unclefee/Cocoa-Pod-Disease-Detection/git/blobs/6718555f24f7fea995aba2e61c470020cab4f423"
+    },
+    {
+      "path": "LICENSE",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e1498fec15b11deb1c080219ebb341d4c181829b",
+      "size": 1075,
+      "url": "https://api.github.com/repos/Unclefee/Cocoa-Pod-Disease-Detection/git/blobs/e1498fec15b11deb1c080219ebb341d4c181829b"
+    },
+    {
+      "path": "README.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "73cd9a25b6181481deb9488160fd698300e415f3",
+      "size": 3307,
+      "url": "https://api.github.com/repos/Unclefee/Cocoa-Pod-Disease-Detection/git/blobs/73cd9a25b6181481deb9488160fd698300e415f3"
+    },
+    {
+      "path": "figures",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "633aa1e12310a540d9e8e85f3cb82a5fcbf87fb0",
+      "url": "https://api.github.com/repos/Unclefee/Cocoa-Pod-Disease-Detection/git/trees/633aa1e12310a540d9e8e85f3cb82a5fcbf87fb0"
+    },
+    {
+      "path": "figures/class_distribution.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "bdb1ed2a84933b72c3f8b787dbcc57faf8ca5b7d",
+      "size": 30526,
+      "url": "https://api.github.com/repos/Unclefee/Cocoa-Pod-Disease-Detection/git/blobs/bdb1ed2a84933b72c3f8b787dbcc57faf8ca5b7d"
+    },
+    {
+      "path": "figures/cm_norm_EfficientNet-B0.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "520aa8b2cc5139eb7dce78f195cea4becec26e9c",
+      "size": 50222,
+      "url": "https://api.github.com/repos/Unclefee/Cocoa-Pod-Disease-Detection/git/blobs/520aa8b2cc5139eb7dce78f195cea4becec26e9c"
+    },
+    {
+      "path": "figures/cm_norm_MobileNetV3-Small.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "9dc29bb591602591b27d2773be5dc36522bb7574",
+      "size": 52557,
+      "url": "https://api.github.com/repos/Unclefee/Cocoa-Pod-Disease-Detection/git/blobs/9dc29bb591602591b27d2773be5dc36522bb7574"
+    },
+    {
+      "path": "figures/cm_norm_ResNet50.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "928681031c5ff8f4b6c26165aca0bb597d5d3887",
+      "size": 50443,
+      "url": "https://api.github.com/repos/Unclefee/Cocoa-Pod-Disease-Detection/git/blobs/928681031c5ff8f4b6c26165aca0bb597d5d3887"
+    },
+    {
+      "path": "figures/dataset_class0_healthy.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "0552061604135299ee5e2455b333cc756ff2eb4a",
+      "size": 130810,
+      "url": "https://api.github.com/repos/Unclefee/Cocoa-Pod-Disease-Detection/git/blobs/0552061604135299ee5e2455b333cc756ff2eb4a"
+    },
+    {
+      "path": "figures/dataset_class1_borer.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "01e14c4d454c75b9f3ea1b4de5796233129d4098",
+      "size": 232517,
+      "url": "https://api.github.com/repos/Unclefee/Cocoa-Pod-Disease-Detection/git/blobs/01e14c4d454c75b9f3ea1b4de5796233129d4098"
+    },
+    {
+      "path": "figures/dataset_class2_witches.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ccccc251f8185421e42d015de91b215c33cdc426",
+      "size": 138436,
+      "url": "https://api.github.com/repos/Unclefee/Cocoa-Pod-Disease-Detection/git/blobs/ccccc251f8185421e42d015de91b215c33cdc426"
+    },
+    {
+      "path": "figures/dataset_class3_frosty.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b6a80e2003772995ab2271ef8f1c18171628c66e",
+      "size": 132652,
+      "url": "https://api.github.com/repos/Unclefee/Cocoa-Pod-Disease-Detection/git/blobs/b6a80e2003772995ab2271ef8f1c18171628c66e"
+    },
+    {
+      "path": "figures/dataset_class4_blackpod.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "213ba6f2b4b624dbfc164a644cec9b0934ce6b4d",
+      "size": 157846,
+      "url": "https://api.github.com/repos/Unclefee/Cocoa-Pod-Disease-Detection/git/blobs/213ba6f2b4b624dbfc164a644cec9b0934ce6b4d"
+    },
+    {
+      "path": "figures/efficiency_comparison.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3a846eac82b077c65317c6c22e27ab9aae897dfb",
+      "size": 29168,
+      "url": "https://api.github.com/repos/Unclefee/Cocoa-Pod-Disease-Detection/git/blobs/3a846eac82b077c65317c6c22e27ab9aae897dfb"
+    },
+    {
+      "path": "figures/fig1_training_curves.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "66a29ed8c41383e4a950a07beaf0446724a3a53a",
+      "size": 199431,
+      "url": "https://api.github.com/repos/Unclefee/Cocoa-Pod-Disease-Detection/git/blobs/66a29ed8c41383e4a950a07beaf0446724a3a53a"
+    },
+    {
+      "path": "figures/fig2_resnet50_cm.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "035e25bbfc82a2c4e268fa734d253d7e7214b539",
+      "size": 67995,
+      "url": "https://api.github.com/repos/Unclefee/Cocoa-Pod-Disease-Detection/git/blobs/035e25bbfc82a2c4e268fa734d253d7e7214b539"
+    },
+    {
+      "path": "figures/fig3_efficientnet_cm.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "529baaa53e547f55111f2996d169adde52cef444",
+      "size": 262708,
+      "url": "https://api.github.com/repos/Unclefee/Cocoa-Pod-Disease-Detection/git/blobs/529baaa53e547f55111f2996d169adde52cef444"
+    },
+    {
+      "path": "figures/fig3_pipeline.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e846b1b4be464493230e142d9fb232b421853e47",
+      "size": 272612,
+      "url": "https://api.github.com/repos/Unclefee/Cocoa-Pod-Disease-Detection/git/blobs/e846b1b4be464493230e142d9fb232b421853e47"
+    },
+    {
+      "path": "figures/fig4_mobilenet_cm.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e927c7bb28a7eaf20745d632d7fd9e4ebc899798",
+      "size": 68784,
+      "url": "https://api.github.com/repos/Unclefee/Cocoa-Pod-Disease-Detection/git/blobs/e927c7bb28a7eaf20745d632d7fd9e4ebc899798"
+    },
+    {
+      "path": "figures/latency_distribution.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3b6e5063b2b9ce873a55b84d34566aca72a3993a",
+      "size": 31268,
+      "url": "https://api.github.com/repos/Unclefee/Cocoa-Pod-Disease-Detection/git/blobs/3b6e5063b2b9ce873a55b84d34566aca72a3993a"
+    },
+    {
+      "path": "figures/model_comparison.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d4de2cb0b10f378c9623cecd02c613d9546f24dc",
+      "size": 36752,
+      "url": "https://api.github.com/repos/Unclefee/Cocoa-Pod-Disease-Detection/git/blobs/d4de2cb0b10f378c9623cecd02c613d9546f24dc"
+    },
+    {
+      "path": "figures/pareto_f1_vs_params.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d44dfd0900dc85ea8036306360fb3fdf39523a90",
+      "size": 38888,
+      "url": "https://api.github.com/repos/Unclefee/Cocoa-Pod-Disease-Detection/git/blobs/d44dfd0900dc85ea8036306360fb3fdf39523a90"
+    },
+    {
+      "path": "figures/perclass_f1.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3adbb13b3dbe07b0a3cb566571ae62d9d3a8d36c",
+      "size": 34543,
+      "url": "https://api.github.com/repos/Unclefee/Cocoa-Pod-Disease-Detection/git/blobs/3adbb13b3dbe07b0a3cb566571ae62d9d3a8d36c"
+    },
+    {
+      "path": "figures/perclass_precrec.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "dd1343a97cec963b0deb3d7cc4037dfd3bf0e8ed",
+      "size": 36458,
+      "url": "https://api.github.com/repos/Unclefee/Cocoa-Pod-Disease-Detection/git/blobs/dd1343a97cec963b0deb3d7cc4037dfd3bf0e8ed"
+    },
+    {
+      "path": "figures/perepoch_EfficientNet-B0.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e91121b25500d3dde655887ebf04f6316b681555",
+      "size": 84984,
+      "url": "https://api.github.com/repos/Unclefee/Cocoa-Pod-Disease-Detection/git/blobs/e91121b25500d3dde655887ebf04f6316b681555"
+    },
+    {
+      "path": "figures/perepoch_MobileNetV3-Small.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "bbaa1d318e3155b1b61707029e7a44b2d8e2d052",
+      "size": 74253,
+      "url": "https://api.github.com/repos/Unclefee/Cocoa-Pod-Disease-Detection/git/blobs/bbaa1d318e3155b1b61707029e7a44b2d8e2d052"
+    },
+    {
+      "path": "figures/perepoch_ResNet50.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "649f1072ab3cd0c23a2b61b4ee4d6b465db7a44c",
+      "size": 84625,
+      "url": "https://api.github.com/repos/Unclefee/Cocoa-Pod-Disease-Detection/git/blobs/649f1072ab3cd0c23a2b61b4ee4d6b465db7a44c"
+    },
+    {
+      "path": "figures/pipeline_diagram.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3b50b8e3b8cf33954a586770756a4d1b68a87912",
+      "size": 121063,
+      "url": "https://api.github.com/repos/Unclefee/Cocoa-Pod-Disease-Detection/git/blobs/3b50b8e3b8cf33954a586770756a4d1b68a87912"
+    },
+    {
+      "path": "figures/roc_EfficientNet-B0.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "24f47bc0495765410f29deed25c4ab74e198c0ff",
+      "size": 53013,
+      "url": "https://api.github.com/repos/Unclefee/Cocoa-Pod-Disease-Detection/git/blobs/24f47bc0495765410f29deed25c4ab74e198c0ff"
+    },
+    {
+      "path": "figures/roc_MobileNetV3-Small.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "9ab24d8b831956971dba1d45b752bc5894ce0d9d",
+      "size": 54974,
+      "url": "https://api.github.com/repos/Unclefee/Cocoa-Pod-Disease-Detection/git/blobs/9ab24d8b831956971dba1d45b752bc5894ce0d9d"
+    },
+    {
+      "path": "figures/roc_ResNet50.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "0f8b509465b74cf5b3575487957e7bdfc3d1b536",
+      "size": 52932,
+      "url": "https://api.github.com/repos/Unclefee/Cocoa-Pod-Disease-Detection/git/blobs/0f8b509465b74cf5b3575487957e7bdfc3d1b536"
+    },
+    {
+      "path": "figures/training_curves_grid.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "0d4b287d48cb1ef04a173f67ce8f8074fb4ac5ee",
+      "size": 172430,
+      "url": "https://api.github.com/repos/Unclefee/Cocoa-Pod-Disease-Detection/git/blobs/0d4b287d48cb1ef04a173f67ce8f8074fb4ac5ee"
+    },
+    {
+      "path": "paper",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "86e61e6f7cc5d2502d5807b03ebd2ebbc4cfa490",
+      "url": "https://api.github.com/repos/Unclefee/Cocoa-Pod-Disease-Detection/git/trees/86e61e6f7cc5d2502d5807b03ebd2ebbc4cfa490"
+    },
+    {
+      "path": "paper/cocoa_ieee_extended.tex",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "676ac2b967a936f7558b605077176600f89a9a2c",
+      "size": 101148,
+      "url": "https://api.github.com/repos/Unclefee/Cocoa-Pod-Disease-Detection/git/blobs/676ac2b967a936f7558b605077176600f89a9a2c"
+    },
+    {
+      "path": "requirements.txt",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ee7d1c8751af9f8d9d0225aa5f6b0df99fc0dd1a",
+      "size": 142,
+      "url": "https://api.github.com/repos/Unclefee/Cocoa-Pod-Disease-Detection/git/blobs/ee7d1c8751af9f8d9d0225aa5f6b0df99fc0dd1a"
+    },
+    {
+      "path": "results",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "59331df92765649365885d695cc819831e2bd7d8",
+      "url": "https://api.github.com/repos/Unclefee/Cocoa-Pod-Disease-Detection/git/trees/59331df92765649365885d695cc819831e2bd7d8"
+    },
+    {
+      "path": "results/EfficientNet-B0_labels.npy",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c6f3c66bd2d7e6cad40a325b5a0e5b243d0ba5fa",
+      "size": 4080,
+      "url": "https://api.github.com/repos/Unclefee/Cocoa-Pod-Disease-Detection/git/blobs/c6f3c66bd2d7e6cad40a325b5a0e5b243d0ba5fa"
+    },
+    {
+      "path": "results/EfficientNet-B0_latencies.npy",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "8ca9270ab96394a7658cbc4d3240cfce36712c97",
+      "size": 1728,
+      "url": "https://api.github.com/repos/Unclefee/Cocoa-Pod-Disease-Detection/git/blobs/8ca9270ab96394a7658cbc4d3240cfce36712c97"
+    },
+    {
+      "path": "results/EfficientNet-B0_metrics.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "edd64f96945868f7beea48f658b8c6bd75f5d81d",
+      "size": 154,
+      "url": "https://api.github.com/repos/Unclefee/Cocoa-Pod-Disease-Detection/git/blobs/edd64f96945868f7beea48f658b8c6bd75f5d81d"
+    },
+    {
+      "path": "results/EfficientNet-B0_preds.npy",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3fa4ca7206ed43f8894153fdb4aa0463f78a1613",
+      "size": 4080,
+      "url": "https://api.github.com/repos/Unclefee/Cocoa-Pod-Disease-Detection/git/blobs/3fa4ca7206ed43f8894153fdb4aa0463f78a1613"
+    },
+    {
+      "path": "results/EfficientNet-B0_probs.npy",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "16db0a7a534929db92044394616993584fef9c76",
+      "size": 10008,
+      "url": "https://api.github.com/repos/Unclefee/Cocoa-Pod-Disease-Detection/git/blobs/16db0a7a534929db92044394616993584fef9c76"
+    },
+    {
+      "path": "results/MobileNetV3-Small_labels.npy",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c6f3c66bd2d7e6cad40a325b5a0e5b243d0ba5fa",
+      "size": 4080,
+      "url": "https://api.github.com/repos/Unclefee/Cocoa-Pod-Disease-Detection/git/blobs/c6f3c66bd2d7e6cad40a325b5a0e5b243d0ba5fa"
+    },
+    {
+      "path": "results/MobileNetV3-Small_latencies.npy",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "9367c6d250ecc29dbf494009e096b62a09393fe1",
+      "size": 1728,
+      "url": "https://api.github.com/repos/Unclefee/Cocoa-Pod-Disease-Detection/git/blobs/9367c6d250ecc29dbf494009e096b62a09393fe1"
+    },
+    {
+      "path": "results/MobileNetV3-Small_metrics.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "367491a726a8bfc9a246c00a39eb4ccb36e94c65",
+      "size": 155,
+      "url": "https://api.github.com/repos/Unclefee/Cocoa-Pod-Disease-Detection/git/blobs/367491a726a8bfc9a246c00a39eb4ccb36e94c65"
+    },
+    {
+      "path": "results/MobileNetV3-Small_preds.npy",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "4f984890e51ccd3535c4a3442792d482324be9dd",
+      "size": 4080,
+      "url": "https://api.github.com/repos/Unclefee/Cocoa-Pod-Disease-Detection/git/blobs/4f984890e51ccd3535c4a3442792d482324be9dd"
+    },
+    {
+      "path": "results/MobileNetV3-Small_probs.npy",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2227c90cb6e6b52cf2cbf93bd75c2dce0b68c332",
+      "size": 10008,
+      "url": "https://api.github.com/repos/Unclefee/Cocoa-Pod-Disease-Detection/git/blobs/2227c90cb6e6b52cf2cbf93bd75c2dce0b68c332"
+    },
+    {
+      "path": "results/ResNet50_labels.npy",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c6f3c66bd2d7e6cad40a325b5a0e5b243d0ba5fa",
+      "size": 4080,
+      "url": "https://api.github.com/repos/Unclefee/Cocoa-Pod-Disease-Detection/git/blobs/c6f3c66bd2d7e6cad40a325b5a0e5b243d0ba5fa"
+    },
+    {
+      "path": "results/ResNet50_latencies.npy",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "754fd285e16ebd212d0d8aba86693089b0b76432",
+      "size": 1728,
+      "url": "https://api.github.com/repos/Unclefee/Cocoa-Pod-Disease-Detection/git/blobs/754fd285e16ebd212d0d8aba86693089b0b76432"
+    },
+    {
+      "path": "results/ResNet50_metrics.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b758513e87a778f83bca91c6df330f5c7940872b",
+      "size": 155,
+      "url": "https://api.github.com/repos/Unclefee/Cocoa-Pod-Disease-Detection/git/blobs/b758513e87a778f83bca91c6df330f5c7940872b"
+    },
+    {
+      "path": "results/ResNet50_preds.npy",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "0e08c9e35f6ac7480750b44f44a76b935ad2d160",
+      "size": 4080,
+      "url": "https://api.github.com/repos/Unclefee/Cocoa-Pod-Disease-Detection/git/blobs/0e08c9e35f6ac7480750b44f44a76b935ad2d160"
+    },
+    {
+      "path": "results/ResNet50_probs.npy",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "fb11418d0bff337dab4fc136e58687eb4b9f0106",
+      "size": 10008,
+      "url": "https://api.github.com/repos/Unclefee/Cocoa-Pod-Disease-Detection/git/blobs/fb11418d0bff337dab4fc136e58687eb4b9f0106"
+    },
+    {
+      "path": "results/all_metrics.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "1e8c7dc069e87b3a439a2a8e4ef101d0f81f7e77",
+      "size": 572,
+      "url": "https://api.github.com/repos/Unclefee/Cocoa-Pod-Disease-Detection/git/blobs/1e8c7dc069e87b3a439a2a8e4ef101d0f81f7e77"
+    },
+    {
+      "path": "results/extended_metrics.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "39615a6be51f354448b3e0f30ca68fc922af0ee1",
+      "size": 6096,
+      "url": "https://api.github.com/repos/Unclefee/Cocoa-Pod-Disease-Detection/git/blobs/39615a6be51f354448b3e0f30ca68fc922af0ee1"
+    },
+    {
+      "path": "results/perepoch_EfficientNet-B0.csv",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f2a20bb8c358bd822f80d95bbe05366b8100acd5",
+      "size": 593,
+      "url": "https://api.github.com/repos/Unclefee/Cocoa-Pod-Disease-Detection/git/blobs/f2a20bb8c358bd822f80d95bbe05366b8100acd5"
+    },
+    {
+      "path": "results/perepoch_MobileNetV3-Small.csv",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c44e20ceff8961982e1956cbb40a0c8562d96921",
+      "size": 345,
+      "url": "https://api.github.com/repos/Unclefee/Cocoa-Pod-Disease-Detection/git/blobs/c44e20ceff8961982e1956cbb40a0c8562d96921"
+    },
+    {
+      "path": "results/perepoch_ResNet50.csv",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "4c1c925a53627a778ae8576d938e9ec624f79658",
+      "size": 1182,
+      "url": "https://api.github.com/repos/Unclefee/Cocoa-Pod-Disease-Detection/git/blobs/4c1c925a53627a778ae8576d938e9ec624f79658"
+    },
+    {
+      "path": "results/training_log.txt",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c39f017a9ccead5fb42191daa351b31974505c9c",
+      "size": 300534,
+      "url": "https://api.github.com/repos/Unclefee/Cocoa-Pod-Disease-Detection/git/blobs/c39f017a9ccead5fb42191daa351b31974505c9c"
+    },
+    {
+      "path": "src",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "ff6c977a3b99e9d31c4dd5bc31fc7b1d6801e5ef",
+      "url": "https://api.github.com/repos/Unclefee/Cocoa-Pod-Disease-Detection/git/trees/ff6c977a3b99e9d31c4dd5bc31fc7b1d6801e5ef"
+    },
+    {
+      "path": "src/dataset.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "932b5820d268bff935ae985039dcf927b8f055cd",
+      "size": 4644,
+      "url": "https://api.github.com/repos/Unclefee/Cocoa-Pod-Disease-Detection/git/blobs/932b5820d268bff935ae985039dcf927b8f055cd"
+    },
+    {
+      "path": "src/evaluate.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "663abf444279ea662ac4901dabf1e23e01e3acdd",
+      "size": 5198,
+      "url": "https://api.github.com/repos/Unclefee/Cocoa-Pod-Disease-Detection/git/blobs/663abf444279ea662ac4901dabf1e23e01e3acdd"
+    },
+    {
+      "path": "src/main.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "1fef0e3c198aacc58f676ebbf79ddefb964c653e",
+      "size": 3540,
+      "url": "https://api.github.com/repos/Unclefee/Cocoa-Pod-Disease-Detection/git/blobs/1fef0e3c198aacc58f676ebbf79ddefb964c653e"
+    },
+    {
+      "path": "src/models.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "6672d3985810108748b56caae1e3d35595a7ad46",
+      "size": 1143,
+      "url": "https://api.github.com/repos/Unclefee/Cocoa-Pod-Disease-Detection/git/blobs/6672d3985810108748b56caae1e3d35595a7ad46"
+    },
+    {
+      "path": "src/train.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "131442058e53d742f4b2d3bffd31e0ab55080954",
+      "size": 3204,
+      "url": "https://api.github.com/repos/Unclefee/Cocoa-Pod-Disease-Detection/git/blobs/131442058e53d742f4b2d3bffd31e0ab55080954"
+    }
+  ],
+  "truncated": false
+}

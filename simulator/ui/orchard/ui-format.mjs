@@ -1,0 +1,1 @@
+export function displayNumber(value,digits=1,deadband=0){if(!Number.isFinite(value))return '—';const rounded=Number((Math.abs(value)<deadband?0:value).toFixed(digits));return (Object.is(rounded,-0)?0:rounded).toFixed(digits)}

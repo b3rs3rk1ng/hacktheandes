@@ -1,0 +1,40 @@
+{
+  "_id": "69c4efbeca37f988ed3c5e6d",
+  "id": "M-Parames01/fruit-disease-model",
+  "private": false,
+  "library_name": "keras",
+  "tags": [
+    "keras",
+    "license:mit",
+    "region:us"
+  ],
+  "downloads": 4,
+  "likes": 0,
+  "modelId": "M-Parames01/fruit-disease-model",
+  "author": "M-Parames01",
+  "sha": "817cd6381160168c24c8e64a38a09e5dda4ae405",
+  "lastModified": "2026-03-26T08:36:31.000Z",
+  "gated": false,
+  "disabled": false,
+  "model-index": null,
+  "config": {},
+  "cardData": {
+    "license": "mit"
+  },
+  "siblings": [
+    {
+      "rfilename": ".gitattributes"
+    },
+    {
+      "rfilename": "README.md"
+    },
+    {
+      "rfilename": "fusion_resume_model_1.keras"
+    }
+  ],
+  "spaces": [
+    "M-Parames01/fruit-disease-app"
+  ],
+  "createdAt": "2026-03-26T08:35:10.000Z",
+  "usedStorage": 36247391
+}

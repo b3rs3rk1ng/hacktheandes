@@ -1,0 +1,525 @@
+{
+  "name": "cacao-monilia-yolo11s-v2",
+  "created_date": "2026-10-18",
+  "status": "research_and_simulation_prototype",
+  "selected_by": "validation only; frozen before external/regression inference",
+  "detector": {
+    "file": "artifacts/detector-yolo11s.pt",
+    "bytes": 19164314,
+    "sha256": "4a72c36e6aed0db8c5f39b637a918da28e4386644ceb52c7b9d8446efb9a9d33"
+  },
+  "class_names": [
+    "healthy",
+    "monilia",
+    "phytophthora"
+  ],
+  "healthy_meaning": "no visible symptoms annotated; not proof of pathogen absence",
+  "inference_policy": {
+    "image_size": 640,
+    "proposal_confidence": 0.05,
+    "nms_iou": 0.7,
+    "agnostic_nms": true,
+    "target_classes": [
+      1
+    ],
+    "monilia_alert_threshold": 0.74,
+    "precision": "FP32",
+    "roi_classifier_required": false
+  },
+  "training": {
+    "epochs": 40,
+    "batch": 8,
+    "gpu": "NVIDIA RTX 4060 Laptop 8GB",
+    "original_train_images": 1655,
+    "augmented_train_images": 1655,
+    "validation_images": 278,
+    "seed": 20261019,
+    "legacy_test_role": "regression; not training"
+  },
+  "validation": {
+    "threshold": 0.74,
+    "unit": "annotated_object",
+    "tp": 168,
+    "fp": 8,
+    "fn": 65,
+    "precision": 0.9545454545454546,
+    "recall": 0.721030042918455,
+    "f1": 0.8215158924205379,
+    "precision_wilson_95": [
+      0.9128822753639693,
+      0.9767902231199511
+    ],
+    "recall_wilson_95": [
+      0.6602144279138044,
+      0.7746756479743803
+    ],
+    "alerts": 176,
+    "images": 278,
+    "matching_iou": 0.5,
+    "recall_by_source_annotation": [
+      {
+        "source": "cocoa_monilia_v2",
+        "class": "m1",
+        "source_class_ids": [
+          1
+        ],
+        "gt": 31,
+        "tp": 11,
+        "fn": 20,
+        "recall": 0.3548387096774194
+      },
+      {
+        "source": "cocoa_monilia_v2",
+        "class": "m2",
+        "source_class_ids": [
+          2
+        ],
+        "gt": 69,
+        "tp": 60,
+        "fn": 9,
+        "recall": 0.8695652173913043
+      },
+      {
+        "source": "cocoa_monilia_v2",
+        "class": "m3",
+        "source_class_ids": [
+          3
+        ],
+        "gt": 104,
+        "tp": 82,
+        "fn": 22,
+        "recall": 0.7884615384615384
+      },
+      {
+        "source": "serrano_torres_v2",
+        "class": "monilia",
+        "source_class_ids": [
+          1
+        ],
+        "gt": 29,
+        "tp": 15,
+        "fn": 14,
+        "recall": 0.5172413793103449
+      }
+    ],
+    "target_gt_without_source_annotation": 0,
+    "source_annotation_recall_note": "A merged GT may have multiple provenance strata; it counts once per (source,class). Provenance never changes matching or threshold selection."
+  },
+  "external_image_test": {
+    "eligible_images": 399,
+    "healthy_images": 199,
+    "monilia_images": 200,
+    "results": {
+      "clean": {
+        "metrics": {
+          "unit": "image",
+          "tp": 191,
+          "fp": 8,
+          "fn": 9,
+          "precision": 0.9597989949748744,
+          "recall": 0.955,
+          "f1": 0.9573934837092731,
+          "precision_wilson_95": [
+            0.92269130297867,
+            0.9794911259189975
+          ],
+          "recall_wilson_95": [
+            0.9167032959981803,
+            0.976147456998507
+          ],
+          "tn": 191,
+          "accuracy": 0.9573934837092731,
+          "specificity": 0.9597989949748744,
+          "false_alarm_rate": 0.04020100502512563,
+          "negative_classes": {
+            "0": {
+              "images": 199,
+              "false_alarms": 8
+            }
+          },
+          "alerts": 199,
+          "images": 399
+        },
+        "latency": {
+          "samples": 399,
+          "p50_ms": 10.159525088965893,
+          "p95_ms": 11.411359161138535,
+          "mean_ms": 10.305131991559588,
+          "cuda_synchronized": true,
+          "proposal_stats": {
+            "proposals": 562,
+            "classified": 0,
+            "discarded_small_rois": 0
+          },
+          "includes": "disk decode, synthetic corruption if any, YOLO preprocessing/NMS, optional all-ROI classification, CPU output transfer and CUDA sync",
+          "excludes": "capture, networking, robot planning/actuation, output file writes"
+        }
+      },
+      "motion_blur_11": {
+        "metrics": {
+          "unit": "image",
+          "tp": 191,
+          "fp": 5,
+          "fn": 9,
+          "precision": 0.9744897959183674,
+          "recall": 0.955,
+          "f1": 0.9646464646464646,
+          "precision_wilson_95": [
+            0.9416823647208152,
+            0.9890554366224324
+          ],
+          "recall_wilson_95": [
+            0.9167032959981803,
+            0.976147456998507
+          ],
+          "tn": 194,
+          "accuracy": 0.9649122807017544,
+          "specificity": 0.9748743718592965,
+          "false_alarm_rate": 0.02512562814070352,
+          "negative_classes": {
+            "0": {
+              "images": 199,
+              "false_alarms": 5
+            }
+          },
+          "alerts": 196,
+          "images": 399
+        },
+        "latency": {
+          "samples": 399,
+          "p50_ms": 11.841787956655025,
+          "p95_ms": 12.77025977615267,
+          "mean_ms": 11.886952214414501,
+          "cuda_synchronized": true,
+          "proposal_stats": {
+            "proposals": 532,
+            "classified": 0,
+            "discarded_small_rois": 0
+          },
+          "includes": "disk decode, synthetic corruption if any, YOLO preprocessing/NMS, optional all-ROI classification, CPU output transfer and CUDA sync",
+          "excludes": "capture, networking, robot planning/actuation, output file writes"
+        }
+      },
+      "motion_blur_21": {
+        "metrics": {
+          "unit": "image",
+          "tp": 192,
+          "fp": 14,
+          "fn": 8,
+          "precision": 0.9320388349514563,
+          "recall": 0.96,
+          "f1": 0.9458128078817734,
+          "precision_wilson_95": [
+            0.8891707287068104,
+            0.9590887191656804
+          ],
+          "recall_wilson_95": [
+            0.923067931799067,
+            0.9795943679338476
+          ],
+          "tn": 185,
+          "accuracy": 0.9448621553884712,
+          "specificity": 0.9296482412060302,
+          "false_alarm_rate": 0.07035175879396985,
+          "negative_classes": {
+            "0": {
+              "images": 199,
+              "false_alarms": 14
+            }
+          },
+          "alerts": 206,
+          "images": 399
+        },
+        "latency": {
+          "samples": 399,
+          "p50_ms": 37.146670976653695,
+          "p95_ms": 38.42895582783967,
+          "mean_ms": 37.21535959010267,
+          "cuda_synchronized": true,
+          "proposal_stats": {
+            "proposals": 441,
+            "classified": 0,
+            "discarded_small_rois": 0
+          },
+          "includes": "disk decode, synthetic corruption if any, YOLO preprocessing/NMS, optional all-ROI classification, CPU output transfer and CUDA sync",
+          "excludes": "capture, networking, robot planning/actuation, output file writes"
+        }
+      }
+    },
+    "report": "evidence/benchmark-v1/benchmarks/new_image_test/detector_v2/evaluation.json"
+  },
+  "regression_object_test": {
+    "eligible_images": 247,
+    "results": {
+      "clean": {
+        "metrics": {
+          "unit": "annotated_object",
+          "tp": 148,
+          "fp": 31,
+          "fn": 32,
+          "precision": 0.8268156424581006,
+          "recall": 0.8222222222222222,
+          "f1": 0.8245125348189415,
+          "precision_wilson_95": [
+            0.764672115559935,
+            0.8752265198733864
+          ],
+          "recall_wilson_95": [
+            0.7598143914987452,
+            0.8711640653962152
+          ],
+          "alerts": 179,
+          "images": 247,
+          "matching_iou": 0.5,
+          "negative_classes": {
+            "0": {
+              "gt_pods": 80,
+              "pods_with_matched_target_alert": 29
+            }
+          },
+          "recall_by_source_annotation": [
+            {
+              "source": "cocoa_monilia_v2",
+              "class": "m1",
+              "source_class_ids": [
+                1
+              ],
+              "gt": 70,
+              "tp": 44,
+              "fn": 26,
+              "recall": 0.6285714285714286
+            },
+            {
+              "source": "cocoa_monilia_v2",
+              "class": "m2",
+              "source_class_ids": [
+                2
+              ],
+              "gt": 42,
+              "tp": 40,
+              "fn": 2,
+              "recall": 0.9523809523809523
+            },
+            {
+              "source": "cocoa_monilia_v2",
+              "class": "m3",
+              "source_class_ids": [
+                3
+              ],
+              "gt": 68,
+              "tp": 64,
+              "fn": 4,
+              "recall": 0.9411764705882353
+            }
+          ],
+          "target_gt_without_source_annotation": 0
+        },
+        "latency": {
+          "samples": 247,
+          "p50_ms": 10.870866011828184,
+          "p95_ms": 12.291601998731494,
+          "mean_ms": 10.987510934834056,
+          "cuda_synchronized": true,
+          "proposal_stats": {
+            "proposals": 302,
+            "classified": 0,
+            "discarded_small_rois": 0
+          },
+          "includes": "disk decode, synthetic corruption if any, YOLO preprocessing/NMS, optional all-ROI classification, CPU output transfer and CUDA sync",
+          "excludes": "capture, networking, robot planning/actuation, output file writes"
+        }
+      },
+      "motion_blur_11": {
+        "metrics": {
+          "unit": "annotated_object",
+          "tp": 131,
+          "fp": 22,
+          "fn": 49,
+          "precision": 0.8562091503267973,
+          "recall": 0.7277777777777777,
+          "f1": 0.7867867867867868,
+          "precision_wilson_95": [
+            0.7918831500079815,
+            0.9030861573395872
+          ],
+          "recall_wilson_95": [
+            0.658501486914975,
+            0.78753500847629
+          ],
+          "alerts": 153,
+          "images": 247,
+          "matching_iou": 0.5,
+          "negative_classes": {
+            "0": {
+              "gt_pods": 80,
+              "pods_with_matched_target_alert": 21
+            }
+          },
+          "recall_by_source_annotation": [
+            {
+              "source": "cocoa_monilia_v2",
+              "class": "m1",
+              "source_class_ids": [
+                1
+              ],
+              "gt": 70,
+              "tp": 33,
+              "fn": 37,
+              "recall": 0.4714285714285714
+            },
+            {
+              "source": "cocoa_monilia_v2",
+              "class": "m2",
+              "source_class_ids": [
+                2
+              ],
+              "gt": 42,
+              "tp": 34,
+              "fn": 8,
+              "recall": 0.8095238095238095
+            },
+            {
+              "source": "cocoa_monilia_v2",
+              "class": "m3",
+              "source_class_ids": [
+                3
+              ],
+              "gt": 68,
+              "tp": 64,
+              "fn": 4,
+              "recall": 0.9411764705882353
+            }
+          ],
+          "target_gt_without_source_annotation": 0
+        },
+        "latency": {
+          "samples": 247,
+          "p50_ms": 13.057515025138855,
+          "p95_ms": 14.326721522957087,
+          "mean_ms": 13.115128904754515,
+          "cuda_synchronized": true,
+          "proposal_stats": {
+            "proposals": 293,
+            "classified": 0,
+            "discarded_small_rois": 0
+          },
+          "includes": "disk decode, synthetic corruption if any, YOLO preprocessing/NMS, optional all-ROI classification, CPU output transfer and CUDA sync",
+          "excludes": "capture, networking, robot planning/actuation, output file writes"
+        }
+      },
+      "motion_blur_21": {
+        "metrics": {
+          "unit": "annotated_object",
+          "tp": 120,
+          "fp": 31,
+          "fn": 60,
+          "precision": 0.7947019867549668,
+          "recall": 0.6666666666666666,
+          "f1": 0.7250755287009063,
+          "precision_wilson_95": [
+            0.723351226843357,
+            0.851430234645337
+          ],
+          "recall_wilson_95": [
+            0.5949523288522202,
+            0.7314158385072421
+          ],
+          "alerts": 151,
+          "images": 247,
+          "matching_iou": 0.5,
+          "negative_classes": {
+            "0": {
+              "gt_pods": 80,
+              "pods_with_matched_target_alert": 27
+            }
+          },
+          "recall_by_source_annotation": [
+            {
+              "source": "cocoa_monilia_v2",
+              "class": "m1",
+              "source_class_ids": [
+                1
+              ],
+              "gt": 70,
+              "tp": 43,
+              "fn": 27,
+              "recall": 0.6142857142857143
+            },
+            {
+              "source": "cocoa_monilia_v2",
+              "class": "m2",
+              "source_class_ids": [
+                2
+              ],
+              "gt": 42,
+              "tp": 31,
+              "fn": 11,
+              "recall": 0.7380952380952381
+            },
+            {
+              "source": "cocoa_monilia_v2",
+              "class": "m3",
+              "source_class_ids": [
+                3
+              ],
+              "gt": 68,
+              "tp": 46,
+              "fn": 22,
+              "recall": 0.6764705882352942
+            }
+          ],
+          "target_gt_without_source_annotation": 0
+        },
+        "latency": {
+          "samples": 247,
+          "p50_ms": 43.354785069823265,
+          "p95_ms": 44.705450045876205,
+          "mean_ms": 43.345550149641475,
+          "cuda_synchronized": true,
+          "proposal_stats": {
+            "proposals": 295,
+            "classified": 0,
+            "discarded_small_rois": 0
+          },
+          "includes": "disk decode, synthetic corruption if any, YOLO preprocessing/NMS, optional all-ROI classification, CPU output transfer and CUDA sync",
+          "excludes": "capture, networking, robot planning/actuation, output file writes"
+        }
+      }
+    },
+    "report": "evidence/benchmark-v1/benchmarks/regression/detector_v2/evaluation.json"
+  },
+  "unselected_roi_classifier": {
+    "weights": {
+      "file": "artifacts/roi-efficientnet-b0.pt",
+      "bytes": 16324271,
+      "sha256": "bc25908e39d9b28c816feb3bbd9dc9fefae31b573b466b2d4738bcacacdf0f4a"
+    },
+    "metadata": {
+      "file": "artifacts/roi-metadata.json",
+      "bytes": 1273,
+      "sha256": "8e516b1c40400e31539764518a5b915327964d1aaaad888099d456370fdc2235"
+    },
+    "reason": "lower validation F1/recall under the same policy; not evaluated on new test"
+  },
+  "limitations": [
+    "New external labels are image-level; localization cannot be verified.",
+    "Disease and background/capture setup correlate in the new source; background reliance was not measured.",
+    "Legacy regression is development-influenced and still alerts on 29/80 healthy annotated pods.",
+    "Early m1 recall is 44/70 in regression.",
+    "Blur is synthetic; no real flight/video, camera hardware or robot-removal validation.",
+    "Confidence scores have not been calibrated as disease probabilities.",
+    "No economic savings or autonomous removal safety demonstrated."
+  ],
+  "licensing": {
+    "ultralytics_base": "AGPL-3.0 unless separate commercial license",
+    "cocoa_monilia": "CC BY 4.0",
+    "mendeley_test": "CC BY 4.0",
+    "serrano_development": "Database open license; contents copyright original authors. Check source terms before redistribution."
+  },
+  "source_code_sha256": {
+    "evaluate_pipeline.py": "9840484bf66f297bc928e3a093893a3af28a83f767686a2b2113f09438c0fb1c",
+    "run_benchmark.py": "ea065d47164f5b50d655bdcb9513f152a9539e17f3c8673e09f8911122574cca",
+    "build_mixed_dataset.py": "ff58aecd8d4cea584d260b73c5c0667dd1ca3158433fe7a1a9b0f7fd76b939e2",
+    "train_classifier.py": "18ae688c403d77b67601ca8c75b67a8b187d84f5fd1802044632a0af3ef9e2df"
+  }
+}

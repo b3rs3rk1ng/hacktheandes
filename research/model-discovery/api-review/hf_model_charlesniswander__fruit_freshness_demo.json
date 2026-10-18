@@ -1,0 +1,123 @@
+{
+  "_id": "678ee0fa57626f86dc4df691",
+  "id": "charlesniswander/fruit_freshness_demo",
+  "private": false,
+  "pipeline_tag": "image-classification",
+  "tags": [
+    "tensorboard",
+    "safetensors",
+    "vit",
+    "image-classification",
+    "pytorch",
+    "huggingpics",
+    "model-index",
+    "region:us"
+  ],
+  "downloads": 8,
+  "likes": 0,
+  "modelId": "charlesniswander/fruit_freshness_demo",
+  "author": "charlesniswander",
+  "sha": "2c3179d3002e43bdc078e31ac24fea5ba9d0692f",
+  "lastModified": "2025-01-20T23:49:26.000Z",
+  "gated": false,
+  "disabled": false,
+  "model-index": [
+    {
+      "name": "fruit_freshness_demo",
+      "results": [
+        {
+          "task": {
+            "name": "Image Classification",
+            "type": "image-classification"
+          },
+          "metrics": [
+            {
+              "name": "Accuracy",
+              "type": "accuracy",
+              "value": 0.3483146131038666,
+              "verified": false
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "config": {
+    "architectures": [
+      "ViTForImageClassification"
+    ],
+    "model_type": "vit"
+  },
+  "cardData": {
+    "tags": [
+      "image-classification",
+      "pytorch",
+      "huggingpics"
+    ],
+    "metrics": [
+      "accuracy"
+    ],
+    "model-index": [
+      {
+        "name": "fruit_freshness_demo",
+        "results": [
+          {
+            "task": {
+              "name": "Image Classification",
+              "type": "image-classification"
+            },
+            "metrics": [
+              {
+                "name": "Accuracy",
+                "type": "accuracy",
+                "value": 0.3483146131038666,
+                "verified": false
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "siblings": [
+    {
+      "rfilename": ".gitattributes"
+    },
+    {
+      "rfilename": "README.md"
+    },
+    {
+      "rfilename": "config.json"
+    },
+    {
+      "rfilename": "images/fresh_apple.jpg"
+    },
+    {
+      "rfilename": "images/fresh_banana.jpg"
+    },
+    {
+      "rfilename": "images/rotten_apple.jpg"
+    },
+    {
+      "rfilename": "images/rotten_banana.jpg"
+    },
+    {
+      "rfilename": "model.safetensors"
+    },
+    {
+      "rfilename": "preprocessor_config.json"
+    },
+    {
+      "rfilename": "runs/events.out.tfevents.1737416733.71a0388f6dbb.3176.0"
+    }
+  ],
+  "spaces": [],
+  "createdAt": "2025-01-20T23:49:14.000Z",
+  "safetensors": {
+    "parameters": {
+      "F32": 85801732
+    },
+    "total": 85801732
+  },
+  "usedStorage": 343367403
+}

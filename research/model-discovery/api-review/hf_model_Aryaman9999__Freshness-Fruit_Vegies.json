@@ -1,0 +1,111 @@
+{
+  "_id": "66eff77b5e21be2819b7d547",
+  "id": "Aryaman9999/Freshness-Fruit_Vegies",
+  "private": false,
+  "pipeline_tag": "image-classification",
+  "tags": [
+    "tensorboard",
+    "safetensors",
+    "vit",
+    "autotrain",
+    "image-classification",
+    "dataset:jojogo9/freshness_of_fruits_and_veges_256",
+    "base_model:google/vit-base-patch16-224",
+    "base_model:finetune:google/vit-base-patch16-224",
+    "region:us"
+  ],
+  "downloads": 51,
+  "likes": 0,
+  "modelId": "Aryaman9999/Freshness-Fruit_Vegies",
+  "author": "Aryaman9999",
+  "sha": "c67ef67afef0e38ecb4f368dd3718c5cc87623c7",
+  "lastModified": "2024-09-22T17:05:40.000Z",
+  "gated": false,
+  "disabled": false,
+  "widgetData": [
+    {
+      "src": "https://huggingface.co/datasets/mishig/sample_images/resolve/main/tiger.jpg",
+      "example_title": "Tiger"
+    },
+    {
+      "src": "https://huggingface.co/datasets/mishig/sample_images/resolve/main/teapot.jpg",
+      "example_title": "Teapot"
+    },
+    {
+      "src": "https://huggingface.co/datasets/mishig/sample_images/resolve/main/palace.jpg",
+      "example_title": "Palace"
+    }
+  ],
+  "model-index": null,
+  "config": {
+    "architectures": [
+      "ViTForImageClassification"
+    ],
+    "model_type": "vit"
+  },
+  "cardData": {
+    "tags": [
+      "autotrain",
+      "image-classification"
+    ],
+    "base_model": "google/vit-base-patch16-224",
+    "widget": [
+      {
+        "src": "https://huggingface.co/datasets/mishig/sample_images/resolve/main/tiger.jpg",
+        "example_title": "Tiger"
+      },
+      {
+        "src": "https://huggingface.co/datasets/mishig/sample_images/resolve/main/teapot.jpg",
+        "example_title": "Teapot"
+      },
+      {
+        "src": "https://huggingface.co/datasets/mishig/sample_images/resolve/main/palace.jpg",
+        "example_title": "Palace"
+      }
+    ],
+    "datasets": [
+      "jojogo9/freshness_of_fruits_and_veges_256"
+    ],
+    "pipeline_tag": "image-classification"
+  },
+  "siblings": [
+    {
+      "rfilename": ".gitattributes"
+    },
+    {
+      "rfilename": "README.md"
+    },
+    {
+      "rfilename": "config.json"
+    },
+    {
+      "rfilename": "model.safetensors"
+    },
+    {
+      "rfilename": "preprocessor_config.json"
+    },
+    {
+      "rfilename": "runs/Sep22_10-54-51_r-aryaman9999-first-try-40utvozt-f0591-tmbfb/events.out.tfevents.1727002492.r-aryaman9999-first-try-40utvozt-f0591-tmbfb.113.0"
+    },
+    {
+      "rfilename": "training_args.bin"
+    },
+    {
+      "rfilename": "training_params.json"
+    }
+  ],
+  "spaces": [
+    "YogitaJain/classification",
+    "scicat3218/food-ai-X",
+    "scicat3218/food-ai-beta3",
+    "scicat3218/food-ai-alpha1"
+  ],
+  "createdAt": "2024-09-22T10:54:51.000Z",
+  "safetensors": {
+    "parameters": {
+      "F32": 85817112
+    },
+    "total": 85817112
+  },
+  "usedStorage": 343625075
+}

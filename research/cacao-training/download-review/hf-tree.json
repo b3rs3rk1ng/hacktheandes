@@ -1,0 +1,80 @@
+[
+  {
+    "type": "directory",
+    "oid": "1de10203554c1a35c3781f8f2ca1d6093334d81a",
+    "size": 0,
+    "path": "data"
+  },
+  {
+    "type": "file",
+    "oid": "bed0738c7eeb449bca98b5d2f33c89a1ee56349a",
+    "size": 2504,
+    "path": ".gitattributes"
+  },
+  {
+    "type": "file",
+    "oid": "ef6e6cc8febf85938719b100b56022d816284f03",
+    "size": 1858,
+    "path": "README.md"
+  },
+  {
+    "type": "file",
+    "oid": "7acc1e5c52c8bbdd65b73ea82221700d835cd0b4",
+    "size": 506804725,
+    "lfs": {
+      "oid": "3b4ec2ff1f667781b6e3f94d6fedcc4ea6e54242e046223ca6ed54f14e2d2c14",
+      "size": 506804725,
+      "pointerSize": 134
+    },
+    "xetHash": "0b08d22def77a1d0aab7cfab0b000cdfc36768b4d7bc3063aa2a66a39653fd3d",
+    "path": "data/train-00000-of-00005.parquet"
+  },
+  {
+    "type": "file",
+    "oid": "c06774ca01757f150e8120ab5a4b1e0b5806a160",
+    "size": 497353261,
+    "lfs": {
+      "oid": "5249c68949a6d98afc71f73befc0287d49923f97b853f31cec3a0c2c53dcf1db",
+      "size": 497353261,
+      "pointerSize": 134
+    },
+    "xetHash": "8a1ec0a2a9dc0338a1f052b5f0be3564c8ee4e9512b8f8b04afa8b82b2fd4659",
+    "path": "data/train-00001-of-00005.parquet"
+  },
+  {
+    "type": "file",
+    "oid": "72d06fa934c30f1b58c52c3d9583a1c3169103e9",
+    "size": 461561271,
+    "lfs": {
+      "oid": "61a1994827fe90dbb45c85687a78def30794aa88ac8b9c22263f9ca85569cd1c",
+      "size": 461561271,
+      "pointerSize": 134
+    },
+    "xetHash": "37e68f08b5b348549d0e04887dd167df1432d57e3177b99010adb9b52a1079a4",
+    "path": "data/train-00002-of-00005.parquet"
+  },
+  {
+    "type": "file",
+    "oid": "699f90c072f835c3a3cf734585419aa906669d2b",
+    "size": 578139667,
+    "lfs": {
+      "oid": "27d73a2344e1bbdfe2854801cef3c084cd5fffeea097c674e8e2f4bb5d94bde8",
+      "size": 578139667,
+      "pointerSize": 134
+    },
+    "xetHash": "37019dafdf881eb7ba6839cec817795614e7b65fdfcb3142f77afe21b3ef955d",
+    "path": "data/train-00003-of-00005.parquet"
+  },
+  {
+    "type": "file",
+    "oid": "c769d5a27dda0f0bdf9acca7140b9d791dd5d820",
+    "size": 623967075,
+    "lfs": {
+      "oid": "3079a5db0d7fcf90defdd99d6fd64d5e38b8022be5193df98d72985d3bc9c3e9",
+      "size": 623967075,
+      "pointerSize": 134
+    },
+    "xetHash": "94ba1202956f32df16f6efa6b2f73a88a78a5af7b77e8330f886f7f18b450cec",
+    "path": "data/train-00004-of-00005.parquet"
+  }
+]

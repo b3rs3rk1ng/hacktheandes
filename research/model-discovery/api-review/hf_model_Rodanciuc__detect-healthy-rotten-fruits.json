@@ -1,0 +1,47 @@
+{
+  "_id": "66624a9f7f4d9731a73dab4c",
+  "id": "Rodanciuc/detect-healthy-rotten-fruits",
+  "private": false,
+  "tags": [
+    "onnx",
+    "region:us"
+  ],
+  "downloads": 0,
+  "likes": 0,
+  "modelId": "Rodanciuc/detect-healthy-rotten-fruits",
+  "author": "Rodanciuc",
+  "sha": "06a5d61a1c932f31f20df2a5a1b248e047685883",
+  "lastModified": "2024-06-07T00:04:59.000Z",
+  "gated": false,
+  "disabled": false,
+  "widgetData": [
+    {
+      "src": "https://example.com/path_to_your_image.jpg",
+      "example_title": "Example Image"
+    }
+  ],
+  "model-index": null,
+  "config": {},
+  "cardData": {
+    "widget": [
+      {
+        "src": "https://example.com/path_to_your_image.jpg",
+        "example_title": "Example Image"
+      }
+    ]
+  },
+  "siblings": [
+    {
+      "rfilename": ".gitattributes"
+    },
+    {
+      "rfilename": "README.md"
+    },
+    {
+      "rfilename": "model.onnx"
+    }
+  ],
+  "spaces": [],
+  "createdAt": "2024-06-06T23:47:43.000Z",
+  "usedStorage": 102466837
+}

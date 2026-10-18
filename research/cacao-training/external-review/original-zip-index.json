@@ -1,0 +1,4391 @@
+[
+  {
+    "name": "Enfermedades Cacao/Fito/Fito1.jpg",
+    "size": 4795156,
+    "compressed": 4794691,
+    "offset": 0,
+    "crc32": "ab2c3fb8"
+  },
+  {
+    "name": "Enfermedades Cacao/Fito/Fito1.txt",
+    "size": 418,
+    "compressed": 193,
+    "offset": 4794774,
+    "crc32": "013fe0d6"
+  },
+  {
+    "name": "Enfermedades Cacao/Fito/Fito10.jpg",
+    "size": 5912105,
+    "compressed": 5913099,
+    "offset": 4795050,
+    "crc32": "94ded592"
+  },
+  {
+    "name": "Enfermedades Cacao/Fito/Fito10.txt",
+    "size": 38,
+    "compressed": 32,
+    "offset": 10708233,
+    "crc32": "ddf7b744"
+  },
+  {
+    "name": "Enfermedades Cacao/Fito/Fito100.jpg",
+    "size": 4974530,
+    "compressed": 4973116,
+    "offset": 10708349,
+    "crc32": "4ba25252"
+  },
+  {
+    "name": "Enfermedades Cacao/Fito/Fito100.txt",
+    "size": 228,
+    "compressed": 113,
+    "offset": 15681550,
+    "crc32": "ae6aa56d"
+  },
+  {
+    "name": "Enfermedades Cacao/Fito/Fito101.jpg",
+    "size": 5033667,
+    "compressed": 5030688,
+    "offset": 15681748,
+    "crc32": "db1a6b7b"
+  },
+  {
+    "name": "Enfermedades Cacao/Fito/Fito101.txt",
+    "size": 76,
+    "compressed": 56,
+    "offset": 20712521,
+    "crc32": "ff562821"
+  },
+  {
+    "name": "Enfermedades Cacao/Fito/Fito102.jpg",
+    "size": 5233910,
+    "compressed": 5233044,
+    "offset": 20712662,
+    "crc32": "a68f0230"
+  },
+  {
+    "name": "Enfermedades Cacao/Fito/Fito102.txt",
+    "size": 152,
+    "compressed": 84,
+    "offset": 25945791,
+    "crc32": "3d84ea1f"
+  },
+  {
+    "name": "Enfermedades Cacao/Fito/Fito103.jpg",
+    "size": 4189083,
+    "compressed": 4187088,
+    "offset": 25945960,
+    "crc32": "9185816f"
+  },
+  {
+    "name": "Enfermedades Cacao/Fito/Fito103.txt",
+    "size": 76,
+    "compressed": 56,
+    "offset": 30133133,
+    "crc32": "2dcdc807"
+  },
+  {
+    "name": "Enfermedades Cacao/Fito/Fito104.jpg",
+    "size": 4963932,
+    "compressed": 4964961,
+    "offset": 30133274,
+    "crc32": "c6359790"
+  },
+  {
+    "name": "Enfermedades Cacao/Fito/Fito104.txt",
+    "size": 228,
+    "compressed": 116,
+    "offset": 35098320,
+    "crc32": "0ffd24ff"
+  },
+  {
+    "name": "Enfermedades Cacao/Fito/Fito105.jpg",
+    "size": 5327629,
+    "compressed": 5310510,
+    "offset": 35098521,
+    "crc32": "cf7be6c9"
+  },
+  {
+    "name": "Enfermedades Cacao/Fito/Fito105.txt",
+    "size": 304,
+    "compressed": 143,
+    "offset": 40409116,
+    "crc32": "9b0d34b0"
+  },
+  {
+    "name": "Enfermedades Cacao/Fito/Fito106.jpg",
+    "size": 4752402,
+    "compressed": 4751315,
+    "offset": 40409344,
+    "crc32": "aeec4301"
+  },
+  {
+    "name": "Enfermedades Cacao/Fito/Fito106.txt",
+    "size": 342,
+    "compressed": 160,
+    "offset": 45160744,
+    "crc32": "020a1b60"
+  },
+  {
+    "name": "Enfermedades Cacao/Fito/Fito107.jpg",
+    "size": 4022538,
+    "compressed": 4015364,
+    "offset": 45160989,
+    "crc32": "79055227"
+  },
+  {
+    "name": "Enfermedades Cacao/Fito/Fito107.txt",
+    "size": 76,
+    "compressed": 56,
+    "offset": 49176438,
+    "crc32": "a838bdf6"
+  },
+  {
+    "name": "Enfermedades Cacao/Fito/Fito11.jpg",
+    "size": 5162052,
+    "compressed": 5162044,
+    "offset": 49176579,
+    "crc32": "2ae2cfc1"
+  },
+  {
+    "name": "Enfermedades Cacao/Fito/Fito11.txt",
+    "size": 114,
+    "compressed": 71,
+    "offset": 54338707,
+    "crc32": "130d7963"
+  },
+  {
+    "name": "Enfermedades Cacao/Fito/Fito12.jpg",
+    "size": 5451239,
+    "compressed": 5452370,
+    "offset": 54338862,
+    "crc32": "ef7cbe4c"
+  },
+  {
+    "name": "Enfermedades Cacao/Fito/Fito12.txt",
+    "size": 114,
+    "compressed": 70,
+    "offset": 59791316,
+    "crc32": "f7accbca"
+  },
+  {
+    "name": "Enfermedades Cacao/Fito/Fito13.jpg",
+    "size": 3829441,
+    "compressed": 3825910,
+    "offset": 59791470,
+    "crc32": "c1ca9cdf"
+  },
+  {
+    "name": "Enfermedades Cacao/Fito/Fito13.txt",
+    "size": 38,
+    "compressed": 38,
+    "offset": 63617464,
+    "crc32": "16c20415"
+  },
+  {
+    "name": "Enfermedades Cacao/Fito/Fito14.jpg",
+    "size": 5229188,
+    "compressed": 5224997,
+    "offset": 63617586,
+    "crc32": "af951810"
+  },
+  {
+    "name": "Enfermedades Cacao/Fito/Fito14.txt",
+    "size": 190,
+    "compressed": 99,
+    "offset": 68842667,
+    "crc32": "500e948a"
+  },
+  {
+    "name": "Enfermedades Cacao/Fito/Fito15.jpg",
+    "size": 6204761,
+    "compressed": 6206108,
+    "offset": 68842850,
+    "crc32": "b2413b6f"
+  },
+  {
+    "name": "Enfermedades Cacao/Fito/Fito15.txt",
+    "size": 76,
+    "compressed": 55,
+    "offset": 75049042,
+    "crc32": "a9b1cfce"
+  },
+  {
+    "name": "Enfermedades Cacao/Fito/Fito16.jpg",
+    "size": 5377951,
+    "compressed": 5378709,
+    "offset": 75049181,
+    "crc32": "7fdecac0"
+  },
+  {
+    "name": "Enfermedades Cacao/Fito/Fito16.txt",
+    "size": 114,
+    "compressed": 69,
+    "offset": 80427974,
+    "crc32": "f6321c9d"
+  },
+  {
+    "name": "Enfermedades Cacao/Fito/Fito17.jpg",
+    "size": 5562234,
+    "compressed": 5563388,
+    "offset": 80428127,
+    "crc32": "3ca85372"
+  },
+  {
+    "name": "Enfermedades Cacao/Fito/Fito17.txt",
+    "size": 114,
+    "compressed": 70,
+    "offset": 85991599,
+    "crc32": "bd9b438f"
+  },
+  {
+    "name": "Enfermedades Cacao/Fito/Fito18.jpg",
+    "size": 5838525,
+    "compressed": 5839649,
+    "offset": 85991753,
+    "crc32": "14982eea"
+  },
+  {
+    "name": "Enfermedades Cacao/Fito/Fito18.txt",
+    "size": 266,
+    "compressed": 132,
+    "offset": 91831486,
+    "crc32": "dabddf15"
+  },
+  {
+    "name": "Enfermedades Cacao/Fito/Fito19.jpg",
+    "size": 4299072,
+    "compressed": 4283064,
+    "offset": 91831702,
+    "crc32": "c356655c"
+  },
+  {
+    "name": "Enfermedades Cacao/Fito/Fito19.txt",
+    "size": 76,
+    "compressed": 55,
+    "offset": 96114850,
+    "crc32": "6424d847"
+  },
+  {
+    "name": "Enfermedades Cacao/Fito/Fito2.jpg",
+    "size": 6337415,
+    "compressed": 6337489,
+    "offset": 96114989,
+    "crc32": "a645f3e8"
+  },
+  {
+    "name": "Enfermedades Cacao/Fito/Fito2.txt",
+    "size": 266,
+    "compressed": 132,
+    "offset": 102452561,
+    "crc32": "23f48927"
+  },
+  {
+    "name": "Enfermedades Cacao/Fito/Fito20.jpg",
+    "size": 6318580,
+    "compressed": 6319902,
+    "offset": 102452776,
+    "crc32": "907ffd45"
+  },
+  {
+    "name": "Enfermedades Cacao/Fito/Fito20.txt",
+    "size": 190,
+    "compressed": 101,
+    "offset": 108772762,
+    "crc32": "5474d038"
+  },
+  {
+    "name": "Enfermedades Cacao/Fito/Fito21.jpg",
+    "size": 5289775,
+    "compressed": 5290855,
+    "offset": 108772947,
+    "crc32": "d8c6e3c0"
+  },
+  {
+    "name": "Enfermedades Cacao/Fito/Fito21.txt",
+    "size": 152,
+    "compressed": 85,
+    "offset": 114063886,
+    "crc32": "71538a00"
+  },
+  {
+    "name": "Enfermedades Cacao/Fito/Fito22.jpg",
+    "size": 5721244,
+    "compressed": 5722499,
+    "offset": 114064055,
+    "crc32": "f3dc25d5"
+  },
+  {
+    "name": "Enfermedades Cacao/Fito/Fito22.txt",
+    "size": 190,
+    "compressed": 101,
+    "offset": 119786638,
+    "crc32": "8b38f54b"
+  },
+  {
+    "name": "Enfermedades Cacao/Fito/Fito23.jpg",
+    "size": 5166080,
+    "compressed": 5166956,
+    "offset": 119786823,
+    "crc32": "6e42e16a"
+  },
+  {
+    "name": "Enfermedades Cacao/Fito/Fito23.txt",
+    "size": 228,
+    "compressed": 113,
+    "offset": 124953863,
+    "crc32": "572b316e"
+  },
+  {
+    "name": "Enfermedades Cacao/Fito/Fito24.jpg",
+    "size": 4904559,
+    "compressed": 4905404,
+    "offset": 124954060,
+    "crc32": "7707ecac"
+  },
+  {
+    "name": "Enfermedades Cacao/Fito/Fito24.txt",
+    "size": 152,
+    "compressed": 86,
+    "offset": 129859548,
+    "crc32": "2951fa3a"
+  },
+  {
+    "name": "Enfermedades Cacao/Fito/Fito25.jpg",
+    "size": 4540765,
+    "compressed": 4540183,
+    "offset": 129859718,
+    "crc32": "7cdde8c4"
+  },
+  {
+    "name": "Enfermedades Cacao/Fito/Fito25.txt",
+    "size": 152,
+    "compressed": 84,
+    "offset": 134399985,
+    "crc32": "43a1c668"
+  },
+  {
+    "name": "Enfermedades Cacao/Fito/Fito26.jpg",
+    "size": 5201241,
+    "compressed": 5202425,
+    "offset": 134400153,
+    "crc32": "3e785dba"
+  },
+  {
+    "name": "Enfermedades Cacao/Fito/Fito26.txt",
+    "size": 342,
+    "compressed": 162,
+    "offset": 139602662,
+    "crc32": "defc9fd9"
+  },
+  {
+    "name": "Enfermedades Cacao/Fito/Fito27.jpg",
+    "size": 5310257,
+    "compressed": 5311352,
+    "offset": 139602908,
+    "crc32": "84a51355"
+  },
+  {
+    "name": "Enfermedades Cacao/Fito/Fito27.txt",
+    "size": 114,
+    "compressed": 70,
+    "offset": 144914344,
+    "crc32": "3876258c"
+  },
+  {
+    "name": "Enfermedades Cacao/Fito/Fito28.jpg",
+    "size": 6157745,
+    "compressed": 6155552,
+    "offset": 144914498,
+    "crc32": "2246f471"
+  },
+  {
+    "name": "Enfermedades Cacao/Fito/Fito28.txt",
+    "size": 152,
+    "compressed": 85,
+    "offset": 151070134,
+    "crc32": "75c9c668"
+  },
+  {
+    "name": "Enfermedades Cacao/Fito/Fito29.jpg",
+    "size": 5277563,
+    "compressed": 5267405,
+    "offset": 151070303,
+    "crc32": "62b0c574"
+  },
+  {
+    "name": "Enfermedades Cacao/Fito/Fito29.txt",
+    "size": 38,
+    "compressed": 38,
+    "offset": 156337792,
+    "crc32": "43e8c982"
+  },
+  {
+    "name": "Enfermedades Cacao/Fito/Fito3.jpg",
+    "size": 5142674,
+    "compressed": 5142944,
+    "offset": 156337914,
+    "crc32": "f1dea99d"
+  },
+  {
+    "name": "Enfermedades Cacao/Fito/Fito3.txt",
+    "size": 418,
+    "compressed": 188,
+    "offset": 161480941,
+    "crc32": "ee11cfbc"
+  },
+  {
+    "name": "Enfermedades Cacao/Fito/Fito30.jpg",
+    "size": 6390309,
+    "compressed": 6389426,
+    "offset": 161481212,
+    "crc32": "1e344cb8"
+  },
+  {
+    "name": "Enfermedades Cacao/Fito/Fito30.txt",
+    "size": 190,
+    "compressed": 100,
+    "offset": 167870722,
+    "crc32": "2c6dbb24"
+  },
+  {
+    "name": "Enfermedades Cacao/Fito/Fito31.jpg",
+    "size": 5107894,
+    "compressed": 5104842,
+    "offset": 167870906,
+    "crc32": "29e2505a"
+  },
+  {
+    "name": "Enfermedades Cacao/Fito/Fito31.txt",
+    "size": 152,
+    "compressed": 87,
+    "offset": 172975832,
+    "crc32": "98c74b4b"
+  },
+  {
+    "name": "Enfermedades Cacao/Fito/Fito32.jpg",
+    "size": 4887599,
+    "compressed": 4888883,
+    "offset": 172976003,
+    "crc32": "8f8f4a26"
+  },
+  {
+    "name": "Enfermedades Cacao/Fito/Fito32.txt",
+    "size": 152,
+    "compressed": 85,
+    "offset": 177864970,
+    "crc32": "094cba07"
+  },
+  {
+    "name": "Enfermedades Cacao/Fito/Fito33.jpg",
+    "size": 5487859,
+    "compressed": 5488461,
+    "offset": 177865139,
+    "crc32": "9a5c4097"
+  },
+  {
+    "name": "Enfermedades Cacao/Fito/Fito33.txt",
+    "size": 76,
+    "compressed": 55,
+    "offset": 183353684,
+    "crc32": "0d16f92d"
+  },
+  {
+    "name": "Enfermedades Cacao/Fito/Fito34.jpg",
+    "size": 5108623,
+    "compressed": 5109038,
+    "offset": 183353823,
+    "crc32": "5457f72e"
+  },
+  {
+    "name": "Enfermedades Cacao/Fito/Fito34.txt",
+    "size": 456,
+    "compressed": 205,
+    "offset": 188462945,
+    "crc32": "d0f31453"
+  },
+  {
+    "name": "Enfermedades Cacao/Fito/Fito35.jpg",
+    "size": 5012073,
+    "compressed": 5008547,
+    "offset": 188463234,
+    "crc32": "a67c81ae"
+  },
+  {
+    "name": "Enfermedades Cacao/Fito/Fito35.txt",
+    "size": 152,
+    "compressed": 87,
+    "offset": 193471865,
+    "crc32": "53d68935"
+  },
+  {
+    "name": "Enfermedades Cacao/Fito/Fito36.jpg",
+    "size": 5911240,
+    "compressed": 5912134,
+    "offset": 193472036,
+    "crc32": "ae22c266"
+  },
+  {
+    "name": "Enfermedades Cacao/Fito/Fito36.txt",
+    "size": 114,
+    "compressed": 70,
+    "offset": 199384254,
+    "crc32": "725da739"
+  },
+  {
+    "name": "Enfermedades Cacao/Fito/Fito37.jpg",
+    "size": 5234784,
+    "compressed": 5236000,
+    "offset": 199384408,
+    "crc32": "b84d560b"
+  },
+  {
+    "name": "Enfermedades Cacao/Fito/Fito37.txt",
+    "size": 190,
+    "compressed": 101,
+    "offset": 204620492,
+    "crc32": "d88f5541"
+  },
+  {
+    "name": "Enfermedades Cacao/Fito/Fito38.jpg",
+    "size": 6140384,
+    "compressed": 6141728,
+    "offset": 204620677,
+    "crc32": "a97649b0"
+  },
+  {
+    "name": "Enfermedades Cacao/Fito/Fito38.txt",
+    "size": 152,
+    "compressed": 86,
+    "offset": 210762489,
+    "crc32": "d87e5f91"
+  },
+  {
+    "name": "Enfermedades Cacao/Fito/Fito39.jpg",
+    "size": 4869207,
+    "compressed": 4870166,
+    "offset": 210762659,
+    "crc32": "ae3ac604"
+  },
+  {
+    "name": "Enfermedades Cacao/Fito/Fito39.txt",
+    "size": 114,
+    "compressed": 71,
+    "offset": 215632909,
+    "crc32": "e1078d4a"
+  },
+  {
+    "name": "Enfermedades Cacao/Fito/Fito4.jpg",
+    "size": 5553062,
+    "compressed": 5553905,
+    "offset": 215633064,
+    "crc32": "6054f98c"
+  },
+  {
+    "name": "Enfermedades Cacao/Fito/Fito4.txt",
+    "size": 190,
+    "compressed": 102,
+    "offset": 221187052,
+    "crc32": "591c5cbb"
+  },
+  {
+    "name": "Enfermedades Cacao/Fito/Fito40.jpg",
+    "size": 4955695,
+    "compressed": 4954387,
+    "offset": 221187237,
+    "crc32": "d37cbc45"
+  },
+  {
+    "name": "Enfermedades Cacao/Fito/Fito40.txt",
+    "size": 76,
+    "compressed": 54,
+    "offset": 226141708,
+    "crc32": "1e46ed3f"
+  },
+  {
+    "name": "Enfermedades Cacao/Fito/Fito41.jpg",
+    "size": 5404596,
+    "compressed": 5405797,
+    "offset": 226141846,
+    "crc32": "4995495d"
+  },
+  {
+    "name": "Enfermedades Cacao/Fito/Fito41.txt",
+    "size": 228,
+    "compressed": 114,
+    "offset": 231547727,
+    "crc32": "abef78e9"
+  },
+  {
+    "name": "Enfermedades Cacao/Fito/Fito42.jpg",
+    "size": 4553434,
+    "compressed": 4554117,
+    "offset": 231547925,
+    "crc32": "c3534363"
+  },
+  {
+    "name": "Enfermedades Cacao/Fito/Fito42.txt",
+    "size": 266,
+    "compressed": 133,
+    "offset": 236102126,
+    "crc32": "8f0c7274"
+  },
+  {
+    "name": "Enfermedades Cacao/Fito/Fito43.jpg",
+    "size": 5650579,
+    "compressed": 5651700,
+    "offset": 236102343,
+    "crc32": "bc1f1b3a"
+  },
+  {
+    "name": "Enfermedades Cacao/Fito/Fito43.txt",
+    "size": 76,
+    "compressed": 56,
+    "offset": 241754127,
+    "crc32": "7189b929"
+  },
+  {
+    "name": "Enfermedades Cacao/Fito/Fito44.jpg",
+    "size": 5551251,
+    "compressed": 5552810,
+    "offset": 241754267,
+    "crc32": "3f68ef9b"
+  },
+  {
+    "name": "Enfermedades Cacao/Fito/Fito44.txt",
+    "size": 228,
+    "compressed": 121,
+    "offset": 247307161,
+    "crc32": "bfb76a95"
+  },
+  {
+    "name": "Enfermedades Cacao/Fito/Fito45.jpg",
+    "size": 6035149,
+    "compressed": 6036491,
+    "offset": 247307366,
+    "crc32": "5b3fd144"
+  },
+  {
+    "name": "Enfermedades Cacao/Fito/Fito45.txt",
+    "size": 76,
+    "compressed": 56,
+    "offset": 253343941,
+    "crc32": "7d91b8db"
+  },
+  {
+    "name": "Enfermedades Cacao/Fito/Fito46.jpg",
+    "size": 5300454,
+    "compressed": 5301559,
+    "offset": 253344081,
+    "crc32": "306b2a18"
+  },
+  {
+    "name": "Enfermedades Cacao/Fito/Fito46.txt",
+    "size": 114,
+    "compressed": 70,
+    "offset": 258645724,
+    "crc32": "61fde014"
+  },
+  {
+    "name": "Enfermedades Cacao/Fito/Fito47.jpg",
+    "size": 6024757,
+    "compressed": 6026077,
+    "offset": 258645878,
+    "crc32": "6747e82d"
+  },
+  {
+    "name": "Enfermedades Cacao/Fito/Fito47.txt",
+    "size": 228,
+    "compressed": 118,
+    "offset": 264672039,
+    "crc32": "6fca0b06"
+  },
+  {
+    "name": "Enfermedades Cacao/Fito/Fito48.jpg",
+    "size": 5490040,
+    "compressed": 5489371,
+    "offset": 264672241,
+    "crc32": "fdfda9d2"
+  },
+  {
+    "name": "Enfermedades Cacao/Fito/Fito48.txt",
+    "size": 380,
+    "compressed": 177,
+    "offset": 270161696,
+    "crc32": "3c182804"
+  },
+  {
+    "name": "Enfermedades Cacao/Fito/Fito49.jpg",
+    "size": 4024861,
+    "compressed": 4018627,
+    "offset": 270161957,
+    "crc32": "6a79c863"
+  },
+  {
+    "name": "Enfermedades Cacao/Fito/Fito49.txt",
+    "size": 228,
+    "compressed": 115,
+    "offset": 274180668,
+    "crc32": "64f0d87b"
+  },
+  {
+    "name": "Enfermedades Cacao/Fito/Fito5.jpg",
+    "size": 5401277,
+    "compressed": 5400020,
+    "offset": 274180867,
+    "crc32": "ac95d62b"
+  },
+  {
+    "name": "Enfermedades Cacao/Fito/Fito5.txt",
+    "size": 114,
+    "compressed": 70,
+    "offset": 279580970,
+    "crc32": "050957d2"
+  },
+  {
+    "name": "Enfermedades Cacao/Fito/Fito50.jpg",
+    "size": 4248068,
+    "compressed": 4246836,
+    "offset": 279581123,
+    "crc32": "d330c7ea"
+  },
+  {
+    "name": "Enfermedades Cacao/Fito/Fito50.txt",
+    "size": 190,
+    "compressed": 101,
+    "offset": 283828043,
+    "crc32": "b8895ee1"
+  },
+  {
+    "name": "Enfermedades Cacao/Fito/Fito51.jpg",
+    "size": 4431314,
+    "compressed": 4432208,
+    "offset": 283828228,
+    "crc32": "68d39eac"
+  },
+  {
+    "name": "Enfermedades Cacao/Fito/Fito51.txt",
+    "size": 76,
+    "compressed": 54,
+    "offset": 288260520,
+    "crc32": "c118401a"
+  },
+  {
+    "name": "Enfermedades Cacao/Fito/Fito52.jpg",
+    "size": 4711673,
+    "compressed": 4712362,
+    "offset": 288260658,
+    "crc32": "e80b5565"
+  },
+  {
+    "name": "Enfermedades Cacao/Fito/Fito52.txt",
+    "size": 38,
+    "compressed": 38,
+    "offset": 292973104,
+    "crc32": "2c14cf07"
+  },
+  {
+    "name": "Enfermedades Cacao/Fito/Fito53.jpg",
+    "size": 5076385,
+    "compressed": 5077605,
+    "offset": 292973226,
+    "crc32": "071cb9dc"
+  },
+  {
+    "name": "Enfermedades Cacao/Fito/Fito53.txt",
+    "size": 38,
+    "compressed": 38,
+    "offset": 298050915,
+    "crc32": "4c881ebe"
+  },
+  {
+    "name": "Enfermedades Cacao/Fito/Fito54.jpg",
+    "size": 5158630,
+    "compressed": 5159460,
+    "offset": 298051037,
+    "crc32": "7e68a9eb"
+  },
+  {
+    "name": "Enfermedades Cacao/Fito/Fito54.txt",
+    "size": 152,
+    "compressed": 86,
+    "offset": 303210581,
+    "crc32": "1658a25e"
+  },
+  {
+    "name": "Enfermedades Cacao/Fito/Fito55.jpg",
+    "size": 6639671,
+    "compressed": 6640812,
+    "offset": 303210751,
+    "crc32": "d1c43290"
+  },
+  {
+    "name": "Enfermedades Cacao/Fito/Fito55.txt",
+    "size": 190,
+    "compressed": 102,
+    "offset": 309851647,
+    "crc32": "ff7af8f7"
+  },
+  {
+    "name": "Enfermedades Cacao/Fito/Fito56.jpg",
+    "size": 5361198,
+    "compressed": 5360423,
+    "offset": 309851833,
+    "crc32": "77560df3"
+  },
+  {
+    "name": "Enfermedades Cacao/Fito/Fito56.txt",
+    "size": 266,
+    "compressed": 132,
+    "offset": 315212340,
+    "crc32": "337248e4"
+  },
+  {
+    "name": "Enfermedades Cacao/Fito/Fito57.jpg",
+    "size": 4570458,
+    "compressed": 4561745,
+    "offset": 315212556,
+    "crc32": "aee6ee98"
+  },
+  {
+    "name": "Enfermedades Cacao/Fito/Fito57.txt",
+    "size": 190,
+    "compressed": 100,
+    "offset": 319774385,
+    "crc32": "52f0275b"
+  },
+  {
+    "name": "Enfermedades Cacao/Fito/Fito58.jpg",
+    "size": 6797022,
+    "compressed": 6798627,
+    "offset": 319774569,
+    "crc32": "9fdce59e"
+  },
+  {
+    "name": "Enfermedades Cacao/Fito/Fito58.txt",
+    "size": 266,
+    "compressed": 130,
+    "offset": 326573280,
+    "crc32": "83120e9f"
+  },
+  {
+    "name": "Enfermedades Cacao/Fito/Fito59.jpg",
+    "size": 5117737,
+    "compressed": 5118871,
+    "offset": 326573494,
+    "crc32": "f1067604"
+  },
+  {
+    "name": "Enfermedades Cacao/Fito/Fito59.txt",
+    "size": 190,
+    "compressed": 99,
+    "offset": 331692449,
+    "crc32": "286e114b"
+  },
+  {
+    "name": "Enfermedades Cacao/Fito/Fito6.jpg",
+    "size": 4567391,
+    "compressed": 4557927,
+    "offset": 331692632,
+    "crc32": "446940c0"
+  },
+  {
+    "name": "Enfermedades Cacao/Fito/Fito6.txt",
+    "size": 266,
+    "compressed": 134,
+    "offset": 336250642,
+    "crc32": "dc7557ce"
+  },
+  {
+    "name": "Enfermedades Cacao/Fito/Fito60.jpg",
+    "size": 6228110,
+    "compressed": 6229355,
+    "offset": 336250859,
+    "crc32": "da93089f"
+  },
+  {
+    "name": "Enfermedades Cacao/Fito/Fito60.txt",
+    "size": 342,
+    "compressed": 159,
+    "offset": 342480298,
+    "crc32": "e8659d78"
+  },
+  {
+    "name": "Enfermedades Cacao/Fito/Fito61.jpg",
+    "size": 6890008,
+    "compressed": 6890959,
+    "offset": 342480541,
+    "crc32": "5e7389a3"
+  },
+  {
+    "name": "Enfermedades Cacao/Fito/Fito61.txt",
+    "size": 76,
+    "compressed": 55,
+    "offset": 349371584,
+    "crc32": "655ff476"
+  },
+  {
+    "name": "Enfermedades Cacao/Fito/Fito62.jpg",
+    "size": 5166732,
+    "compressed": 5167656,
+    "offset": 349371723,
+    "crc32": "2423c653"
+  },
+  {
+    "name": "Enfermedades Cacao/Fito/Fito62.txt",
+    "size": 76,
+    "compressed": 56,
+    "offset": 354539463,
+    "crc32": "dd8356e1"
+  },
+  {
+    "name": "Enfermedades Cacao/Fito/Fito63.jpg",
+    "size": 6483516,
+    "compressed": 6479282,
+    "offset": 354539603,
+    "crc32": "f371ec3d"
+  },
+  {
+    "name": "Enfermedades Cacao/Fito/Fito63.txt",
+    "size": 266,
+    "compressed": 135,
+    "offset": 361018969,
+    "crc32": "d3eeba9a"
+  },
+  {
+    "name": "Enfermedades Cacao/Fito/Fito64.jpg",
+    "size": 6540036,
+    "compressed": 6541695,
+    "offset": 361019188,
+    "crc32": "8efeb265"
+  },
+  {
+    "name": "Enfermedades Cacao/Fito/Fito64.txt",
+    "size": 114,
+    "compressed": 71,
+    "offset": 367560967,
+    "crc32": "fd0a2c60"
+  },
+  {
+    "name": "Enfermedades Cacao/Fito/Fito65.jpg",
+    "size": 3980507,
+    "compressed": 3952447,
+    "offset": 367561122,
+    "crc32": "99fcfca9"
+  },
+  {
+    "name": "Enfermedades Cacao/Fito/Fito65.txt",
+    "size": 76,
+    "compressed": 54,
+    "offset": 371513653,
+    "crc32": "ffaca20b"
+  },
+  {
+    "name": "Enfermedades Cacao/Fito/Fito66.jpg",
+    "size": 5378410,
+    "compressed": 5377121,
+    "offset": 371513791,
+    "crc32": "de48d3e0"
+  },
+  {
+    "name": "Enfermedades Cacao/Fito/Fito66.txt",
+    "size": 228,
+    "compressed": 113,
+    "offset": 376890996,
+    "crc32": "70c73973"
+  },
+  {
+    "name": "Enfermedades Cacao/Fito/Fito67.jpg",
+    "size": 4822713,
+    "compressed": 4814605,
+    "offset": 376891193,
+    "crc32": "a21f1556"
+  },
+  {
+    "name": "Enfermedades Cacao/Fito/Fito67.txt",
+    "size": 76,
+    "compressed": 55,
+    "offset": 381705882,
+    "crc32": "0028f96e"
+  },
+  {
+    "name": "Enfermedades Cacao/Fito/Fito68.jpg",
+    "size": 5551539,
+    "compressed": 5550983,
+    "offset": 381706021,
+    "crc32": "251da232"
+  },
+  {
+    "name": "Enfermedades Cacao/Fito/Fito68.txt",
+    "size": 76,
+    "compressed": 56,
+    "offset": 387257088,
+    "crc32": "f871c463"
+  },
+  {
+    "name": "Enfermedades Cacao/Fito/Fito69.jpg",
+    "size": 6628250,
+    "compressed": 6629712,
+    "offset": 387257228,
+    "crc32": "644e38ca"
+  },
+  {
+    "name": "Enfermedades Cacao/Fito/Fito69.txt",
+    "size": 76,
+    "compressed": 55,
+    "offset": 393887024,
+    "crc32": "fe297f11"
+  },
+  {
+    "name": "Enfermedades Cacao/Fito/Fito7.jpg",
+    "size": 4622697,
+    "compressed": 4612652,
+    "offset": 393887163,
+    "crc32": "d899d714"
+  },
+  {
+    "name": "Enfermedades Cacao/Fito/Fito7.txt",
+    "size": 114,
+    "compressed": 70,
+    "offset": 398499898,
+    "crc32": "c97cfee0"
+  },
+  {
+    "name": "Enfermedades Cacao/Fito/Fito70.jpg",
+    "size": 6428320,
+    "compressed": 6429745,
+    "offset": 398500051,
+    "crc32": "badd3863"
+  },
+  {
+    "name": "Enfermedades Cacao/Fito/Fito70.txt",
+    "size": 76,
+    "compressed": 56,
+    "offset": 404929880,
+    "crc32": "772539b0"
+  },
+  {
+    "name": "Enfermedades Cacao/Fito/Fito71.jpg",
+    "size": 5422823,
+    "compressed": 5423986,
+    "offset": 404930020,
+    "crc32": "c4c35cb8"
+  },
+  {
+    "name": "Enfermedades Cacao/Fito/Fito71.txt",
+    "size": 76,
+    "compressed": 55,
+    "offset": 410354090,
+    "crc32": "efc85031"
+  },
+  {
+    "name": "Enfermedades Cacao/Fito/Fito72.jpg",
+    "size": 5168423,
+    "compressed": 5168865,
+    "offset": 410354229,
+    "crc32": "58025e34"
+  },
+  {
+    "name": "Enfermedades Cacao/Fito/Fito72.txt",
+    "size": 76,
+    "compressed": 55,
+    "offset": 415523178,
+    "crc32": "9d9f78fc"
+  },
+  {
+    "name": "Enfermedades Cacao/Fito/Fito73.jpg",
+    "size": 4994494,
+    "compressed": 4994789,
+    "offset": 415523317,
+    "crc32": "7748d77d"
+  },
+  {
+    "name": "Enfermedades Cacao/Fito/Fito73.txt",
+    "size": 76,
+    "compressed": 55,
+    "offset": 420518190,
+    "crc32": "e48a5eff"
+  },
+  {
+    "name": "Enfermedades Cacao/Fito/Fito74.jpg",
+    "size": 5259846,
+    "compressed": 5260307,
+    "offset": 420518329,
+    "crc32": "9bc3ae20"
+  },
+  {
+    "name": "Enfermedades Cacao/Fito/Fito74.txt",
+    "size": 76,
+    "compressed": 56,
+    "offset": 425778720,
+    "crc32": "e20cbb48"
+  },
+  {
+    "name": "Enfermedades Cacao/Fito/Fito75.jpg",
+    "size": 6218617,
+    "compressed": 6220086,
+    "offset": 425778860,
+    "crc32": "0c268480"
+  },
+  {
+    "name": "Enfermedades Cacao/Fito/Fito75.txt",
+    "size": 38,
+    "compressed": 38,
+    "offset": 431999030,
+    "crc32": "07a2d2eb"
+  },
+  {
+    "name": "Enfermedades Cacao/Fito/Fito76.jpg",
+    "size": 6098554,
+    "compressed": 6099995,
+    "offset": 431999152,
+    "crc32": "f33278c6"
+  },
+  {
+    "name": "Enfermedades Cacao/Fito/Fito76.txt",
+    "size": 38,
+    "compressed": 37,
+    "offset": 438099231,
+    "crc32": "f14824b9"
+  },
+  {
+    "name": "Enfermedades Cacao/Fito/Fito77.jpg",
+    "size": 5265469,
+    "compressed": 5266529,
+    "offset": 438099352,
+    "crc32": "e8f1aa4b"
+  },
+  {
+    "name": "Enfermedades Cacao/Fito/Fito77.txt",
+    "size": 152,
+    "compressed": 86,
+    "offset": 443365965,
+    "crc32": "aa37ee64"
+  },
+  {
+    "name": "Enfermedades Cacao/Fito/Fito78.jpg",
+    "size": 4977422,
+    "compressed": 4976887,
+    "offset": 443366135,
+    "crc32": "7d7aea61"
+  },
+  {
+    "name": "Enfermedades Cacao/Fito/Fito78.txt",
+    "size": 266,
+    "compressed": 131,
+    "offset": 448343106,
+    "crc32": "2b5e828f"
+  },
+  {
+    "name": "Enfermedades Cacao/Fito/Fito79.jpg",
+    "size": 4757962,
+    "compressed": 4758991,
+    "offset": 448343321,
+    "crc32": "62300d32"
+  },
+  {
+    "name": "Enfermedades Cacao/Fito/Fito79.txt",
+    "size": 114,
+    "compressed": 71,
+    "offset": 453102396,
+    "crc32": "4d643ac0"
+  },
+  {
+    "name": "Enfermedades Cacao/Fito/Fito8.jpg",
+    "size": 5456748,
+    "compressed": 5457857,
+    "offset": 453102551,
+    "crc32": "7d399265"
+  },
+  {
+    "name": "Enfermedades Cacao/Fito/Fito8.txt",
+    "size": 152,
+    "compressed": 83,
+    "offset": 458560491,
+    "crc32": "42aa09a5"
+  },
+  {
+    "name": "Enfermedades Cacao/Fito/Fito80.jpg",
+    "size": 5539717,
+    "compressed": 5540863,
+    "offset": 458560657,
+    "crc32": "7b1bc937"
+  },
+  {
+    "name": "Enfermedades Cacao/Fito/Fito80.txt",
+    "size": 152,
+    "compressed": 84,
+    "offset": 464101604,
+    "crc32": "884585bd"
+  },
+  {
+    "name": "Enfermedades Cacao/Fito/Fito81.jpg",
+    "size": 5439580,
+    "compressed": 5440351,
+    "offset": 464101772,
+    "crc32": "a0bd9643"
+  },
+  {
+    "name": "Enfermedades Cacao/Fito/Fito81.txt",
+    "size": 266,
+    "compressed": 130,
+    "offset": 469542207,
+    "crc32": "78002cbd"
+  },
+  {
+    "name": "Enfermedades Cacao/Fito/Fito82.jpg",
+    "size": 5772088,
+    "compressed": 5772426,
+    "offset": 469542421,
+    "crc32": "0fae1438"
+  },
+  {
+    "name": "Enfermedades Cacao/Fito/Fito82.txt",
+    "size": 76,
+    "compressed": 55,
+    "offset": 475314931,
+    "crc32": "85e15a85"
+  },
+  {
+    "name": "Enfermedades Cacao/Fito/Fito83.jpg",
+    "size": 5362845,
+    "compressed": 5363941,
+    "offset": 475315070,
+    "crc32": "6e1a4d53"
+  },
+  {
+    "name": "Enfermedades Cacao/Fito/Fito83.txt",
+    "size": 228,
+    "compressed": 116,
+    "offset": 480679095,
+    "crc32": "adb35777"
+  },
+  {
+    "name": "Enfermedades Cacao/Fito/Fito84.jpg",
+    "size": 7155673,
+    "compressed": 7157099,
+    "offset": 480679295,
+    "crc32": "c4657204"
+  },
+  {
+    "name": "Enfermedades Cacao/Fito/Fito84.txt",
+    "size": 570,
+    "compressed": 248,
+    "offset": 487836478,
+    "crc32": "ed263cc8"
+  },
+  {
+    "name": "Enfermedades Cacao/Fito/Fito85.jpg",
+    "size": 6187909,
+    "compressed": 6189315,
+    "offset": 487836810,
+    "crc32": "a69500b9"
+  },
+  {
+    "name": "Enfermedades Cacao/Fito/Fito85.txt",
+    "size": 152,
+    "compressed": 85,
+    "offset": 494026209,
+    "crc32": "e1037d5a"
+  },
+  {
+    "name": "Enfermedades Cacao/Fito/Fito86.jpg",
+    "size": 6520407,
+    "compressed": 6520819,
+    "offset": 494026378,
+    "crc32": "30cdbe56"
+  },
+  {
+    "name": "Enfermedades Cacao/Fito/Fito86.txt",
+    "size": 418,
+    "compressed": 192,
+    "offset": 500547281,
+    "crc32": "09ba3eff"
+  },
+  {
+    "name": "Enfermedades Cacao/Fito/Fito87.jpg",
+    "size": 6004277,
+    "compressed": 6004196,
+    "offset": 500547557,
+    "crc32": "52adfb30"
+  },
+  {
+    "name": "Enfermedades Cacao/Fito/Fito87.txt",
+    "size": 190,
+    "compressed": 100,
+    "offset": 506551837,
+    "crc32": "259e8160"
+  },
+  {
+    "name": "Enfermedades Cacao/Fito/Fito88.jpg",
+    "size": 4833926,
+    "compressed": 4834430,
+    "offset": 506552021,
+    "crc32": "15a39764"
+  },
+  {
+    "name": "Enfermedades Cacao/Fito/Fito88.txt",
+    "size": 152,
+    "compressed": 85,
+    "offset": 511386535,
+    "crc32": "a4917f5c"
+  },
+  {
+    "name": "Enfermedades Cacao/Fito/Fito89.jpg",
+    "size": 7091565,
+    "compressed": 7091496,
+    "offset": 511386704,
+    "crc32": "9b89a112"
+  },
+  {
+    "name": "Enfermedades Cacao/Fito/Fito89.txt",
+    "size": 266,
+    "compressed": 130,
+    "offset": 518478284,
+    "crc32": "a18ab445"
+  },
+  {
+    "name": "Enfermedades Cacao/Fito/Fito9.jpg",
+    "size": 4318221,
+    "compressed": 4310067,
+    "offset": 518478498,
+    "crc32": "d1b5095c"
+  },
+  {
+    "name": "Enfermedades Cacao/Fito/Fito9.txt",
+    "size": 190,
+    "compressed": 103,
+    "offset": 522788648,
+    "crc32": "09676ce4"
+  },
+  {
+    "name": "Enfermedades Cacao/Fito/Fito90.jpg",
+    "size": 5345662,
+    "compressed": 5343896,
+    "offset": 522788834,
+    "crc32": "c86dd108"
+  },
+  {
+    "name": "Enfermedades Cacao/Fito/Fito90.txt",
+    "size": 228,
+    "compressed": 120,
+    "offset": 528132814,
+    "crc32": "b953bcb7"
+  },
+  {
+    "name": "Enfermedades Cacao/Fito/Fito91.jpg",
+    "size": 6441332,
+    "compressed": 6442078,
+    "offset": 528133018,
+    "crc32": "67f0dc54"
+  },
+  {
+    "name": "Enfermedades Cacao/Fito/Fito91.txt",
+    "size": 266,
+    "compressed": 133,
+    "offset": 534575180,
+    "crc32": "3724c70d"
+  },
+  {
+    "name": "Enfermedades Cacao/Fito/Fito92.jpg",
+    "size": 5166624,
+    "compressed": 5166634,
+    "offset": 534575397,
+    "crc32": "6198135b"
+  },
+  {
+    "name": "Enfermedades Cacao/Fito/Fito92.txt",
+    "size": 304,
+    "compressed": 149,
+    "offset": 539742115,
+    "crc32": "cad0c167"
+  },
+  {
+    "name": "Enfermedades Cacao/Fito/Fito93.jpg",
+    "size": 5196316,
+    "compressed": 5186492,
+    "offset": 539742348,
+    "crc32": "b30825e9"
+  },
+  {
+    "name": "Enfermedades Cacao/Fito/Fito93.txt",
+    "size": 380,
+    "compressed": 175,
+    "offset": 544928924,
+    "crc32": "4144058d"
+  },
+  {
+    "name": "Enfermedades Cacao/Fito/Fito94.jpg",
+    "size": 4048642,
+    "compressed": 4027563,
+    "offset": 544929183,
+    "crc32": "061b6d3e"
+  },
+  {
+    "name": "Enfermedades Cacao/Fito/Fito94.txt",
+    "size": 190,
+    "compressed": 100,
+    "offset": 548956830,
+    "crc32": "6b0fe526"
+  },
+  {
+    "name": "Enfermedades Cacao/Fito/Fito95.jpg",
+    "size": 3677850,
+    "compressed": 3676595,
+    "offset": 548957014,
+    "crc32": "55dedce5"
+  },
+  {
+    "name": "Enfermedades Cacao/Fito/Fito95.txt",
+    "size": 114,
+    "compressed": 69,
+    "offset": 552633693,
+    "crc32": "b81bc833"
+  },
+  {
+    "name": "Enfermedades Cacao/Fito/Fito96.jpg",
+    "size": 5426364,
+    "compressed": 5421704,
+    "offset": 552633846,
+    "crc32": "b31f9ea9"
+  },
+  {
+    "name": "Enfermedades Cacao/Fito/Fito96.txt",
+    "size": 76,
+    "compressed": 56,
+    "offset": 558055634,
+    "crc32": "55081563"
+  },
+  {
+    "name": "Enfermedades Cacao/Fito/Fito97.jpg",
+    "size": 5347249,
+    "compressed": 5344226,
+    "offset": 558055774,
+    "crc32": "75c7c434"
+  },
+  {
+    "name": "Enfermedades Cacao/Fito/Fito97.txt",
+    "size": 76,
+    "compressed": 56,
+    "offset": 563400084,
+    "crc32": "c5ff4034"
+  },
+  {
+    "name": "Enfermedades Cacao/Fito/Fito98.jpg",
+    "size": 5704391,
+    "compressed": 5704827,
+    "offset": 563400224,
+    "crc32": "3d9853be"
+  },
+  {
+    "name": "Enfermedades Cacao/Fito/Fito98.txt",
+    "size": 304,
+    "compressed": 144,
+    "offset": 569105135,
+    "crc32": "78d9cc8a"
+  },
+  {
+    "name": "Enfermedades Cacao/Fito/Fito99.jpg",
+    "size": 4365992,
+    "compressed": 4365905,
+    "offset": 569105363,
+    "crc32": "b7f73e76"
+  },
+  {
+    "name": "Enfermedades Cacao/Fito/Fito99.txt",
+    "size": 76,
+    "compressed": 55,
+    "offset": 573471352,
+    "crc32": "83719049"
+  },
+  {
+    "name": "Enfermedades Cacao/Fito/classes.txt",
+    "size": 26,
+    "compressed": 25,
+    "offset": 573471491,
+    "crc32": "959ef80b"
+  },
+  {
+    "name": "Enfermedades Cacao/Monilia/Monilia1.jpg",
+    "size": 5056963,
+    "compressed": 5057606,
+    "offset": 573471601,
+    "crc32": "4b3606e2"
+  },
+  {
+    "name": "Enfermedades Cacao/Monilia/Monilia1.txt",
+    "size": 190,
+    "compressed": 101,
+    "offset": 578529296,
+    "crc32": "7a884d3f"
+  },
+  {
+    "name": "Enfermedades Cacao/Monilia/Monilia10.jpg",
+    "size": 4823012,
+    "compressed": 4823718,
+    "offset": 578529486,
+    "crc32": "9fa6994e"
+  },
+  {
+    "name": "Enfermedades Cacao/Monilia/Monilia10.txt",
+    "size": 38,
+    "compressed": 34,
+    "offset": 583353294,
+    "crc32": "aa72580d"
+  },
+  {
+    "name": "Enfermedades Cacao/Monilia/Monilia100.jpg",
+    "size": 3547985,
+    "compressed": 3547602,
+    "offset": 583353418,
+    "crc32": "ce6e307f"
+  },
+  {
+    "name": "Enfermedades Cacao/Monilia/Monilia100.txt",
+    "size": 38,
+    "compressed": 39,
+    "offset": 586901111,
+    "crc32": "f7b7fa57"
+  },
+  {
+    "name": "Enfermedades Cacao/Monilia/Monilia101.jpg",
+    "size": 4726984,
+    "compressed": 4728212,
+    "offset": 586901241,
+    "crc32": "34706906"
+  },
+  {
+    "name": "Enfermedades Cacao/Monilia/Monilia101.txt",
+    "size": 38,
+    "compressed": 39,
+    "offset": 591629544,
+    "crc32": "3829c305"
+  },
+  {
+    "name": "Enfermedades Cacao/Monilia/Monilia102.jpg",
+    "size": 5841301,
+    "compressed": 5842547,
+    "offset": 591629674,
+    "crc32": "3653c618"
+  },
+  {
+    "name": "Enfermedades Cacao/Monilia/Monilia102.txt",
+    "size": 38,
+    "compressed": 38,
+    "offset": 597472312,
+    "crc32": "18fcd509"
+  },
+  {
+    "name": "Enfermedades Cacao/Monilia/Monilia103.jpg",
+    "size": 4532846,
+    "compressed": 4533610,
+    "offset": 597472441,
+    "crc32": "4a9c7224"
+  },
+  {
+    "name": "Enfermedades Cacao/Monilia/Monilia103.txt",
+    "size": 304,
+    "compressed": 145,
+    "offset": 602006142,
+    "crc32": "2b1b1e00"
+  },
+  {
+    "name": "Enfermedades Cacao/Monilia/Monilia104.jpg",
+    "size": 4813470,
+    "compressed": 4813862,
+    "offset": 602006378,
+    "crc32": "756b3d9b"
+  },
+  {
+    "name": "Enfermedades Cacao/Monilia/Monilia104.txt",
+    "size": 304,
+    "compressed": 147,
+    "offset": 606820331,
+    "crc32": "e02e52cc"
+  },
+  {
+    "name": "Enfermedades Cacao/Monilia/Monilia105.jpg",
+    "size": 5673760,
+    "compressed": 5673568,
+    "offset": 606820569,
+    "crc32": "0b38d72f"
+  },
+  {
+    "name": "Enfermedades Cacao/Monilia/Monilia105.txt",
+    "size": 304,
+    "compressed": 142,
+    "offset": 612494228,
+    "crc32": "09b14dea"
+  },
+  {
+    "name": "Enfermedades Cacao/Monilia/Monilia11.jpg",
+    "size": 3918481,
+    "compressed": 3911940,
+    "offset": 612494461,
+    "crc32": "286dc79a"
+  },
+  {
+    "name": "Enfermedades Cacao/Monilia/Monilia11.txt",
+    "size": 38,
+    "compressed": 33,
+    "offset": 616406491,
+    "crc32": "0fc5dd66"
+  },
+  {
+    "name": "Enfermedades Cacao/Monilia/Monilia12.jpg",
+    "size": 4416932,
+    "compressed": 4417798,
+    "offset": 616406614,
+    "crc32": "82e40249"
+  },
+  {
+    "name": "Enfermedades Cacao/Monilia/Monilia12.txt",
+    "size": 114,
+    "compressed": 72,
+    "offset": 620824502,
+    "crc32": "a2d5ce29"
+  },
+  {
+    "name": "Enfermedades Cacao/Monilia/Monilia13.jpg",
+    "size": 4376932,
+    "compressed": 4378015,
+    "offset": 620824664,
+    "crc32": "659000cb"
+  },
+  {
+    "name": "Enfermedades Cacao/Monilia/Monilia13.txt",
+    "size": 114,
+    "compressed": 71,
+    "offset": 625202769,
+    "crc32": "4b9de607"
+  },
+  {
+    "name": "Enfermedades Cacao/Monilia/Monilia14.jpg",
+    "size": 7636826,
+    "compressed": 7638591,
+    "offset": 625202930,
+    "crc32": "3ec12828"
+  },
+  {
+    "name": "Enfermedades Cacao/Monilia/Monilia14.txt",
+    "size": 190,
+    "compressed": 102,
+    "offset": 632841611,
+    "crc32": "ab776a4c"
+  },
+  {
+    "name": "Enfermedades Cacao/Monilia/Monilia15.jpg",
+    "size": 6634392,
+    "compressed": 6635894,
+    "offset": 632841803,
+    "crc32": "7045fef3"
+  },
+  {
+    "name": "Enfermedades Cacao/Monilia/Monilia15.txt",
+    "size": 38,
+    "compressed": 38,
+    "offset": 639477787,
+    "crc32": "ff5e0c51"
+  },
+  {
+    "name": "Enfermedades Cacao/Monilia/Monilia16.jpg",
+    "size": 5491212,
+    "compressed": 5492301,
+    "offset": 639477915,
+    "crc32": "dc0257c2"
+  },
+  {
+    "name": "Enfermedades Cacao/Monilia/Monilia16.txt",
+    "size": 228,
+    "compressed": 117,
+    "offset": 644970306,
+    "crc32": "8640a4fc"
+  },
+  {
+    "name": "Enfermedades Cacao/Monilia/Monilia17.jpg",
+    "size": 4430406,
+    "compressed": 4425357,
+    "offset": 644970513,
+    "crc32": "550e3c25"
+  },
+  {
+    "name": "Enfermedades Cacao/Monilia/Monilia17.txt",
+    "size": 38,
+    "compressed": 37,
+    "offset": 649395960,
+    "crc32": "36d40e92"
+  },
+  {
+    "name": "Enfermedades Cacao/Monilia/Monilia18.jpg",
+    "size": 4907451,
+    "compressed": 4904346,
+    "offset": 649396087,
+    "crc32": "44cd9498"
+  },
+  {
+    "name": "Enfermedades Cacao/Monilia/Monilia18.txt",
+    "size": 342,
+    "compressed": 162,
+    "offset": 654300523,
+    "crc32": "428bb9c1"
+  },
+  {
+    "name": "Enfermedades Cacao/Monilia/Monilia19.jpg",
+    "size": 5874454,
+    "compressed": 5875694,
+    "offset": 654300775,
+    "crc32": "8344b2d3"
+  },
+  {
+    "name": "Enfermedades Cacao/Monilia/Monilia19.txt",
+    "size": 76,
+    "compressed": 54,
+    "offset": 660176559,
+    "crc32": "bf833aa8"
+  },
+  {
+    "name": "Enfermedades Cacao/Monilia/Monilia2.jpg",
+    "size": 6205480,
+    "compressed": 6206664,
+    "offset": 660176703,
+    "crc32": "adda0335"
+  },
+  {
+    "name": "Enfermedades Cacao/Monilia/Monilia2.txt",
+    "size": 190,
+    "compressed": 101,
+    "offset": 666383456,
+    "crc32": "6ab09e33"
+  },
+  {
+    "name": "Enfermedades Cacao/Monilia/Monilia20.jpg",
+    "size": 5657117,
+    "compressed": 5658320,
+    "offset": 666383646,
+    "crc32": "da6d2116"
+  },
+  {
+    "name": "Enfermedades Cacao/Monilia/Monilia20.txt",
+    "size": 190,
+    "compressed": 98,
+    "offset": 672042056,
+    "crc32": "d3fbe2c8"
+  },
+  {
+    "name": "Enfermedades Cacao/Monilia/Monilia21.jpg",
+    "size": 5418110,
+    "compressed": 5419241,
+    "offset": 672042244,
+    "crc32": "aa33d712"
+  },
+  {
+    "name": "Enfermedades Cacao/Monilia/Monilia21.txt",
+    "size": 38,
+    "compressed": 34,
+    "offset": 677461575,
+    "crc32": "2350751c"
+  },
+  {
+    "name": "Enfermedades Cacao/Monilia/Monilia22.jpg",
+    "size": 4443481,
+    "compressed": 4444265,
+    "offset": 677461699,
+    "crc32": "48fd0527"
+  },
+  {
+    "name": "Enfermedades Cacao/Monilia/Monilia22.txt",
+    "size": 38,
+    "compressed": 38,
+    "offset": 681906054,
+    "crc32": "5d672919"
+  },
+  {
+    "name": "Enfermedades Cacao/Monilia/Monilia23.jpg",
+    "size": 4010466,
+    "compressed": 4010222,
+    "offset": 681906182,
+    "crc32": "a28eedb4"
+  },
+  {
+    "name": "Enfermedades Cacao/Monilia/Monilia23.txt",
+    "size": 38,
+    "compressed": 38,
+    "offset": 685916494,
+    "crc32": "f4130803"
+  },
+  {
+    "name": "Enfermedades Cacao/Monilia/Monilia24.jpg",
+    "size": 4690561,
+    "compressed": 4691436,
+    "offset": 685916622,
+    "crc32": "de05e830"
+  },
+  {
+    "name": "Enfermedades Cacao/Monilia/Monilia24.txt",
+    "size": 38,
+    "compressed": 32,
+    "offset": 690608148,
+    "crc32": "8809af79"
+  },
+  {
+    "name": "Enfermedades Cacao/Monilia/Monilia25.jpg",
+    "size": 4539561,
+    "compressed": 4538418,
+    "offset": 690608270,
+    "crc32": "87f7a149"
+  },
+  {
+    "name": "Enfermedades Cacao/Monilia/Monilia25.txt",
+    "size": 76,
+    "compressed": 56,
+    "offset": 695146778,
+    "crc32": "5d97f4a6"
+  },
+  {
+    "name": "Enfermedades Cacao/Monilia/Monilia26.jpg",
+    "size": 4099195,
+    "compressed": 4086889,
+    "offset": 695146924,
+    "crc32": "f61582d5"
+  },
+  {
+    "name": "Enfermedades Cacao/Monilia/Monilia26.txt",
+    "size": 304,
+    "compressed": 147,
+    "offset": 699233903,
+    "crc32": "83244774"
+  },
+  {
+    "name": "Enfermedades Cacao/Monilia/Monilia27.jpg",
+    "size": 6290121,
+    "compressed": 6291498,
+    "offset": 699234140,
+    "crc32": "9a57bc35"
+  },
+  {
+    "name": "Enfermedades Cacao/Monilia/Monilia27.txt",
+    "size": 76,
+    "compressed": 56,
+    "offset": 705525728,
+    "crc32": "4ad44c11"
+  },
+  {
+    "name": "Enfermedades Cacao/Monilia/Monilia28.jpg",
+    "size": 6223169,
+    "compressed": 6224578,
+    "offset": 705525874,
+    "crc32": "3ff25fae"
+  },
+  {
+    "name": "Enfermedades Cacao/Monilia/Monilia28.txt",
+    "size": 190,
+    "compressed": 99,
+    "offset": 711750542,
+    "crc32": "187dd3f2"
+  },
+  {
+    "name": "Enfermedades Cacao/Monilia/Monilia29.jpg",
+    "size": 6639663,
+    "compressed": 6641166,
+    "offset": 711750731,
+    "crc32": "0c093409"
+  },
+  {
+    "name": "Enfermedades Cacao/Monilia/Monilia29.txt",
+    "size": 38,
+    "compressed": 37,
+    "offset": 718391987,
+    "crc32": "4c206b32"
+  },
+  {
+    "name": "Enfermedades Cacao/Monilia/Monilia3.jpg",
+    "size": 5141049,
+    "compressed": 5141849,
+    "offset": 718392114,
+    "crc32": "12c107a8"
+  },
+  {
+    "name": "Enfermedades Cacao/Monilia/Monilia3.txt",
+    "size": 228,
+    "compressed": 119,
+    "offset": 723534052,
+    "crc32": "7f47adba"
+  },
+  {
+    "name": "Enfermedades Cacao/Monilia/Monilia30.jpg",
+    "size": 5671233,
+    "compressed": 5671958,
+    "offset": 723534260,
+    "crc32": "d0d96d21"
+  },
+  {
+    "name": "Enfermedades Cacao/Monilia/Monilia30.txt",
+    "size": 38,
+    "compressed": 37,
+    "offset": 729206308,
+    "crc32": "760fb44f"
+  },
+  {
+    "name": "Enfermedades Cacao/Monilia/Monilia31.jpg",
+    "size": 4757108,
+    "compressed": 4758286,
+    "offset": 729206435,
+    "crc32": "6d310b9f"
+  },
+  {
+    "name": "Enfermedades Cacao/Monilia/Monilia31.txt",
+    "size": 190,
+    "compressed": 101,
+    "offset": 733964811,
+    "crc32": "b33d3680"
+  },
+  {
+    "name": "Enfermedades Cacao/Monilia/Monilia32.jpg",
+    "size": 6012059,
+    "compressed": 6013163,
+    "offset": 733965002,
+    "crc32": "c8688a51"
+  },
+  {
+    "name": "Enfermedades Cacao/Monilia/Monilia32.txt",
+    "size": 266,
+    "compressed": 132,
+    "offset": 739978255,
+    "crc32": "33eb0f31"
+  },
+  {
+    "name": "Enfermedades Cacao/Monilia/Monilia33.jpg",
+    "size": 5591004,
+    "compressed": 5583486,
+    "offset": 739978477,
+    "crc32": "1ea7d237"
+  },
+  {
+    "name": "Enfermedades Cacao/Monilia/Monilia33.txt",
+    "size": 38,
+    "compressed": 38,
+    "offset": 745562053,
+    "crc32": "767568fc"
+  },
+  {
+    "name": "Enfermedades Cacao/Monilia/Monilia34.jpg",
+    "size": 5073401,
+    "compressed": 5073178,
+    "offset": 745562181,
+    "crc32": "8b406a2f"
+  },
+  {
+    "name": "Enfermedades Cacao/Monilia/Monilia34.txt",
+    "size": 76,
+    "compressed": 56,
+    "offset": 750635449,
+    "crc32": "a48176c2"
+  },
+  {
+    "name": "Enfermedades Cacao/Monilia/Monilia35.jpg",
+    "size": 6074909,
+    "compressed": 6076224,
+    "offset": 750635595,
+    "crc32": "0e9f9271"
+  },
+  {
+    "name": "Enfermedades Cacao/Monilia/Monilia35.txt",
+    "size": 76,
+    "compressed": 54,
+    "offset": 756711909,
+    "crc32": "db09f16f"
+  },
+  {
+    "name": "Enfermedades Cacao/Monilia/Monilia36.jpg",
+    "size": 5427364,
+    "compressed": 5428177,
+    "offset": 756712053,
+    "crc32": "08a634d4"
+  },
+  {
+    "name": "Enfermedades Cacao/Monilia/Monilia36.txt",
+    "size": 418,
+    "compressed": 193,
+    "offset": 762140320,
+    "crc32": "e7c757d0"
+  },
+  {
+    "name": "Enfermedades Cacao/Monilia/Monilia37.jpg",
+    "size": 5549808,
+    "compressed": 5550608,
+    "offset": 762140603,
+    "crc32": "4a512ee8"
+  },
+  {
+    "name": "Enfermedades Cacao/Monilia/Monilia37.txt",
+    "size": 266,
+    "compressed": 131,
+    "offset": 767691301,
+    "crc32": "313bb480"
+  },
+  {
+    "name": "Enfermedades Cacao/Monilia/Monilia38.jpg",
+    "size": 4040154,
+    "compressed": 4040923,
+    "offset": 767691522,
+    "crc32": "9ce3df01"
+  },
+  {
+    "name": "Enfermedades Cacao/Monilia/Monilia38.txt",
+    "size": 114,
+    "compressed": 71,
+    "offset": 771732535,
+    "crc32": "9a59984b"
+  },
+  {
+    "name": "Enfermedades Cacao/Monilia/Monilia39.jpg",
+    "size": 4683031,
+    "compressed": 4678457,
+    "offset": 771732696,
+    "crc32": "4e314b87"
+  },
+  {
+    "name": "Enfermedades Cacao/Monilia/Monilia39.txt",
+    "size": 114,
+    "compressed": 73,
+    "offset": 776411243,
+    "crc32": "82ef2469"
+  },
+  {
+    "name": "Enfermedades Cacao/Monilia/Monilia4.jpg",
+    "size": 4718463,
+    "compressed": 4716224,
+    "offset": 776411406,
+    "crc32": "afc6d41d"
+  },
+  {
+    "name": "Enfermedades Cacao/Monilia/Monilia4.txt",
+    "size": 228,
+    "compressed": 118,
+    "offset": 781127719,
+    "crc32": "2a65966e"
+  },
+  {
+    "name": "Enfermedades Cacao/Monilia/Monilia40.jpg",
+    "size": 4751891,
+    "compressed": 4752689,
+    "offset": 781127926,
+    "crc32": "61f4a7c9"
+  },
+  {
+    "name": "Enfermedades Cacao/Monilia/Monilia40.txt",
+    "size": 38,
+    "compressed": 38,
+    "offset": 785880705,
+    "crc32": "3da1d3a8"
+  },
+  {
+    "name": "Enfermedades Cacao/Monilia/Monilia41.jpg",
+    "size": 4931538,
+    "compressed": 4932353,
+    "offset": 785880833,
+    "crc32": "a772c2b5"
+  },
+  {
+    "name": "Enfermedades Cacao/Monilia/Monilia41.txt",
+    "size": 266,
+    "compressed": 129,
+    "offset": 790813276,
+    "crc32": "cc47ff6b"
+  },
+  {
+    "name": "Enfermedades Cacao/Monilia/Monilia42.jpg",
+    "size": 5062736,
+    "compressed": 5063755,
+    "offset": 790813495,
+    "crc32": "493bf432"
+  },
+  {
+    "name": "Enfermedades Cacao/Monilia/Monilia42.txt",
+    "size": 304,
+    "compressed": 148,
+    "offset": 795877340,
+    "crc32": "42634186"
+  },
+  {
+    "name": "Enfermedades Cacao/Monilia/Monilia43.jpg",
+    "size": 5400718,
+    "compressed": 5401852,
+    "offset": 795877578,
+    "crc32": "228f1724"
+  },
+  {
+    "name": "Enfermedades Cacao/Monilia/Monilia43.txt",
+    "size": 38,
+    "compressed": 32,
+    "offset": 801279520,
+    "crc32": "ad96754f"
+  },
+  {
+    "name": "Enfermedades Cacao/Monilia/Monilia44.jpg",
+    "size": 4714828,
+    "compressed": 4715727,
+    "offset": 801279642,
+    "crc32": "e7d4a1c1"
+  },
+  {
+    "name": "Enfermedades Cacao/Monilia/Monilia44.txt",
+    "size": 38,
+    "compressed": 38,
+    "offset": 805995459,
+    "crc32": "b3dacf93"
+  },
+  {
+    "name": "Enfermedades Cacao/Monilia/Monilia45.jpg",
+    "size": 4848294,
+    "compressed": 4847667,
+    "offset": 805995587,
+    "crc32": "f6b0a3ff"
+  },
+  {
+    "name": "Enfermedades Cacao/Monilia/Monilia45.txt",
+    "size": 114,
+    "compressed": 71,
+    "offset": 810843344,
+    "crc32": "b6cc83c4"
+  },
+  {
+    "name": "Enfermedades Cacao/Monilia/Monilia46.jpg",
+    "size": 5763620,
+    "compressed": 5763872,
+    "offset": 810843505,
+    "crc32": "52980ab2"
+  },
+  {
+    "name": "Enfermedades Cacao/Monilia/Monilia46.txt",
+    "size": 114,
+    "compressed": 71,
+    "offset": 816607467,
+    "crc32": "06cc1579"
+  },
+  {
+    "name": "Enfermedades Cacao/Monilia/Monilia47.jpg",
+    "size": 5245313,
+    "compressed": 5246302,
+    "offset": 816607628,
+    "crc32": "5344d539"
+  },
+  {
+    "name": "Enfermedades Cacao/Monilia/Monilia47.txt",
+    "size": 114,
+    "compressed": 72,
+    "offset": 821854020,
+    "crc32": "e9fca70b"
+  },
+  {
+    "name": "Enfermedades Cacao/Monilia/Monilia48.jpg",
+    "size": 4571922,
+    "compressed": 4571150,
+    "offset": 821854182,
+    "crc32": "61378b6a"
+  },
+  {
+    "name": "Enfermedades Cacao/Monilia/Monilia48.txt",
+    "size": 38,
+    "compressed": 38,
+    "offset": 826425422,
+    "crc32": "4b7aac41"
+  },
+  {
+    "name": "Enfermedades Cacao/Monilia/Monilia49.jpg",
+    "size": 5071767,
+    "compressed": 5068388,
+    "offset": 826425550,
+    "crc32": "4c855547"
+  },
+  {
+    "name": "Enfermedades Cacao/Monilia/Monilia49.txt",
+    "size": 152,
+    "compressed": 87,
+    "offset": 831494028,
+    "crc32": "33c81eb1"
+  },
+  {
+    "name": "Enfermedades Cacao/Monilia/Monilia5.jpg",
+    "size": 5396054,
+    "compressed": 5396686,
+    "offset": 831494205,
+    "crc32": "341c873f"
+  },
+  {
+    "name": "Enfermedades Cacao/Monilia/Monilia5.txt",
+    "size": 228,
+    "compressed": 114,
+    "offset": 836890980,
+    "crc32": "7ef6a90a"
+  },
+  {
+    "name": "Enfermedades Cacao/Monilia/Monilia50.jpg",
+    "size": 4983517,
+    "compressed": 4984265,
+    "offset": 836891183,
+    "crc32": "f2fb9c89"
+  },
+  {
+    "name": "Enfermedades Cacao/Monilia/Monilia50.txt",
+    "size": 190,
+    "compressed": 98,
+    "offset": 841875538,
+    "crc32": "56b1743d"
+  },
+  {
+    "name": "Enfermedades Cacao/Monilia/Monilia51.jpg",
+    "size": 5753660,
+    "compressed": 5754692,
+    "offset": 841875726,
+    "crc32": "88019d14"
+  },
+  {
+    "name": "Enfermedades Cacao/Monilia/Monilia51.txt",
+    "size": 114,
+    "compressed": 71,
+    "offset": 847630508,
+    "crc32": "43672649"
+  },
+  {
+    "name": "Enfermedades Cacao/Monilia/Monilia52.jpg",
+    "size": 6485932,
+    "compressed": 6487365,
+    "offset": 847630669,
+    "crc32": "a2cdf6c5"
+  },
+  {
+    "name": "Enfermedades Cacao/Monilia/Monilia52.txt",
+    "size": 190,
+    "compressed": 100,
+    "offset": 854118124,
+    "crc32": "c0a1f5b2"
+  },
+  {
+    "name": "Enfermedades Cacao/Monilia/Monilia53.jpg",
+    "size": 4970575,
+    "compressed": 4971734,
+    "offset": 854118314,
+    "crc32": "45842874"
+  },
+  {
+    "name": "Enfermedades Cacao/Monilia/Monilia53.txt",
+    "size": 76,
+    "compressed": 55,
+    "offset": 859090138,
+    "crc32": "cc1ad98f"
+  },
+  {
+    "name": "Enfermedades Cacao/Monilia/Monilia54.jpg",
+    "size": 5190308,
+    "compressed": 5191397,
+    "offset": 859090283,
+    "crc32": "674c2ce6"
+  },
+  {
+    "name": "Enfermedades Cacao/Monilia/Monilia54.txt",
+    "size": 76,
+    "compressed": 55,
+    "offset": 864281770,
+    "crc32": "28b01f94"
+  },
+  {
+    "name": "Enfermedades Cacao/Monilia/Monilia55.jpg",
+    "size": 6349794,
+    "compressed": 6351193,
+    "offset": 864281915,
+    "crc32": "29388e40"
+  },
+  {
+    "name": "Enfermedades Cacao/Monilia/Monilia55.txt",
+    "size": 76,
+    "compressed": 55,
+    "offset": 870633198,
+    "crc32": "dd4e0abd"
+  },
+  {
+    "name": "Enfermedades Cacao/Monilia/Monilia56.jpg",
+    "size": 6044343,
+    "compressed": 6045797,
+    "offset": 870633343,
+    "crc32": "1dbbece2"
+  },
+  {
+    "name": "Enfermedades Cacao/Monilia/Monilia56.txt",
+    "size": 38,
+    "compressed": 38,
+    "offset": 876679230,
+    "crc32": "40ed4d54"
+  },
+  {
+    "name": "Enfermedades Cacao/Monilia/Monilia57.jpg",
+    "size": 4834526,
+    "compressed": 4832376,
+    "offset": 876679358,
+    "crc32": "32155018"
+  },
+  {
+    "name": "Enfermedades Cacao/Monilia/Monilia57.txt",
+    "size": 38,
+    "compressed": 38,
+    "offset": 881511824,
+    "crc32": "8631b63e"
+  },
+  {
+    "name": "Enfermedades Cacao/Monilia/Monilia58.jpg",
+    "size": 4927320,
+    "compressed": 4926194,
+    "offset": 881511952,
+    "crc32": "0990cf56"
+  },
+  {
+    "name": "Enfermedades Cacao/Monilia/Monilia58.txt",
+    "size": 38,
+    "compressed": 38,
+    "offset": 886438236,
+    "crc32": "0fb24055"
+  },
+  {
+    "name": "Enfermedades Cacao/Monilia/Monilia59.jpg",
+    "size": 5463430,
+    "compressed": 5463134,
+    "offset": 886438364,
+    "crc32": "e81da8f2"
+  },
+  {
+    "name": "Enfermedades Cacao/Monilia/Monilia59.txt",
+    "size": 114,
+    "compressed": 70,
+    "offset": 891901588,
+    "crc32": "e2282101"
+  },
+  {
+    "name": "Enfermedades Cacao/Monilia/Monilia6.jpg",
+    "size": 5597931,
+    "compressed": 5598934,
+    "offset": 891901748,
+    "crc32": "6c1dcf17"
+  },
+  {
+    "name": "Enfermedades Cacao/Monilia/Monilia6.txt",
+    "size": 266,
+    "compressed": 132,
+    "offset": 897500771,
+    "crc32": "22eb5d06"
+  },
+  {
+    "name": "Enfermedades Cacao/Monilia/Monilia60.jpg",
+    "size": 5215205,
+    "compressed": 5215994,
+    "offset": 897500992,
+    "crc32": "5b3e68b8"
+  },
+  {
+    "name": "Enfermedades Cacao/Monilia/Monilia60.txt",
+    "size": 190,
+    "compressed": 103,
+    "offset": 902717076,
+    "crc32": "df787823"
+  },
+  {
+    "name": "Enfermedades Cacao/Monilia/Monilia61.jpg",
+    "size": 4946544,
+    "compressed": 4937106,
+    "offset": 902717269,
+    "crc32": "668913d0"
+  },
+  {
+    "name": "Enfermedades Cacao/Monilia/Monilia61.txt",
+    "size": 114,
+    "compressed": 70,
+    "offset": 907654465,
+    "crc32": "8f44ece0"
+  },
+  {
+    "name": "Enfermedades Cacao/Monilia/Monilia62.jpg",
+    "size": 5147608,
+    "compressed": 5147818,
+    "offset": 907654625,
+    "crc32": "a07dbde4"
+  },
+  {
+    "name": "Enfermedades Cacao/Monilia/Monilia62.txt",
+    "size": 114,
+    "compressed": 67,
+    "offset": 912802533,
+    "crc32": "90a0be43"
+  },
+  {
+    "name": "Enfermedades Cacao/Monilia/Monilia63.jpg",
+    "size": 5478144,
+    "compressed": 5479034,
+    "offset": 912802690,
+    "crc32": "db2fbf98"
+  },
+  {
+    "name": "Enfermedades Cacao/Monilia/Monilia63.txt",
+    "size": 228,
+    "compressed": 117,
+    "offset": 918281814,
+    "crc32": "9c155d8d"
+  },
+  {
+    "name": "Enfermedades Cacao/Monilia/Monilia64.jpg",
+    "size": 5374100,
+    "compressed": 5373981,
+    "offset": 918282021,
+    "crc32": "6b9a7431"
+  },
+  {
+    "name": "Enfermedades Cacao/Monilia/Monilia64.txt",
+    "size": 114,
+    "compressed": 69,
+    "offset": 923656092,
+    "crc32": "9e92bbdf"
+  },
+  {
+    "name": "Enfermedades Cacao/Monilia/Monilia65.jpg",
+    "size": 5721156,
+    "compressed": 5722488,
+    "offset": 923656251,
+    "crc32": "ce6833a3"
+  },
+  {
+    "name": "Enfermedades Cacao/Monilia/Monilia65.txt",
+    "size": 76,
+    "compressed": 55,
+    "offset": 929378829,
+    "crc32": "7c26eb7a"
+  },
+  {
+    "name": "Enfermedades Cacao/Monilia/Monilia66.jpg",
+    "size": 4001145,
+    "compressed": 3998422,
+    "offset": 929378974,
+    "crc32": "1798ab21"
+  },
+  {
+    "name": "Enfermedades Cacao/Monilia/Monilia66.txt",
+    "size": 38,
+    "compressed": 38,
+    "offset": 933377486,
+    "crc32": "dcf6b072"
+  },
+  {
+    "name": "Enfermedades Cacao/Monilia/Monilia67.jpg",
+    "size": 6748281,
+    "compressed": 6748853,
+    "offset": 933377614,
+    "crc32": "d1670ed7"
+  },
+  {
+    "name": "Enfermedades Cacao/Monilia/Monilia67.txt",
+    "size": 266,
+    "compressed": 128,
+    "offset": 940126557,
+    "crc32": "e85a8eb6"
+  },
+  {
+    "name": "Enfermedades Cacao/Monilia/Monilia68.jpg",
+    "size": 5261728,
+    "compressed": 5262773,
+    "offset": 940126775,
+    "crc32": "b40ebe8b"
+  },
+  {
+    "name": "Enfermedades Cacao/Monilia/Monilia68.txt",
+    "size": 38,
+    "compressed": 38,
+    "offset": 945389638,
+    "crc32": "0d29f1be"
+  },
+  {
+    "name": "Enfermedades Cacao/Monilia/Monilia69.jpg",
+    "size": 3357593,
+    "compressed": 3354708,
+    "offset": 945389766,
+    "crc32": "40e9b77d"
+  },
+  {
+    "name": "Enfermedades Cacao/Monilia/Monilia69.txt",
+    "size": 114,
+    "compressed": 68,
+    "offset": 948744564,
+    "crc32": "ee18a204"
+  },
+  {
+    "name": "Enfermedades Cacao/Monilia/Monilia7.jpg",
+    "size": 5256316,
+    "compressed": 5254711,
+    "offset": 948744722,
+    "crc32": "26278bdc"
+  },
+  {
+    "name": "Enfermedades Cacao/Monilia/Monilia7.txt",
+    "size": 152,
+    "compressed": 87,
+    "offset": 953999522,
+    "crc32": "6a03eced"
+  },
+  {
+    "name": "Enfermedades Cacao/Monilia/Monilia70.jpg",
+    "size": 4260798,
+    "compressed": 4261047,
+    "offset": 953999698,
+    "crc32": "00fee789"
+  },
+  {
+    "name": "Enfermedades Cacao/Monilia/Monilia70.txt",
+    "size": 76,
+    "compressed": 55,
+    "offset": 958260835,
+    "crc32": "6239787d"
+  },
+  {
+    "name": "Enfermedades Cacao/Monilia/Monilia71.jpg",
+    "size": 3300761,
+    "compressed": 3298117,
+    "offset": 958260980,
+    "crc32": "f775d4ed"
+  },
+  {
+    "name": "Enfermedades Cacao/Monilia/Monilia71.txt",
+    "size": 38,
+    "compressed": 34,
+    "offset": 961559187,
+    "crc32": "cb8c7acf"
+  },
+  {
+    "name": "Enfermedades Cacao/Monilia/Monilia72.jpg",
+    "size": 4122657,
+    "compressed": 4115193,
+    "offset": 961559311,
+    "crc32": "e188f3d3"
+  },
+  {
+    "name": "Enfermedades Cacao/Monilia/Monilia72.txt",
+    "size": 38,
+    "compressed": 38,
+    "offset": 965674594,
+    "crc32": "cbdcb687"
+  },
+  {
+    "name": "Enfermedades Cacao/Monilia/Monilia73.jpg",
+    "size": 5338144,
+    "compressed": 5337255,
+    "offset": 965674722,
+    "crc32": "2e95b92a"
+  },
+  {
+    "name": "Enfermedades Cacao/Monilia/Monilia73.txt",
+    "size": 190,
+    "compressed": 103,
+    "offset": 971012067,
+    "crc32": "de4c5bc0"
+  },
+  {
+    "name": "Enfermedades Cacao/Monilia/Monilia74.jpg",
+    "size": 5244750,
+    "compressed": 5245551,
+    "offset": 971012260,
+    "crc32": "5a201e4c"
+  },
+  {
+    "name": "Enfermedades Cacao/Monilia/Monilia74.txt",
+    "size": 114,
+    "compressed": 70,
+    "offset": 976257901,
+    "crc32": "6d4116a9"
+  },
+  {
+    "name": "Enfermedades Cacao/Monilia/Monilia75.jpg",
+    "size": 5509191,
+    "compressed": 5506662,
+    "offset": 976258061,
+    "crc32": "c8a682e3"
+  },
+  {
+    "name": "Enfermedades Cacao/Monilia/Monilia75.txt",
+    "size": 228,
+    "compressed": 115,
+    "offset": 981764813,
+    "crc32": "08c4f220"
+  },
+  {
+    "name": "Enfermedades Cacao/Monilia/Monilia76.jpg",
+    "size": 4584233,
+    "compressed": 4570335,
+    "offset": 981765018,
+    "crc32": "0ffd8f6d"
+  },
+  {
+    "name": "Enfermedades Cacao/Monilia/Monilia76.txt",
+    "size": 76,
+    "compressed": 56,
+    "offset": 986335443,
+    "crc32": "4e4f03c9"
+  },
+  {
+    "name": "Enfermedades Cacao/Monilia/Monilia77.jpg",
+    "size": 5082633,
+    "compressed": 5083078,
+    "offset": 986335589,
+    "crc32": "804ed1b9"
+  },
+  {
+    "name": "Enfermedades Cacao/Monilia/Monilia77.txt",
+    "size": 380,
+    "compressed": 176,
+    "offset": 991418757,
+    "crc32": "405882c8"
+  },
+  {
+    "name": "Enfermedades Cacao/Monilia/Monilia78.jpg",
+    "size": 6095271,
+    "compressed": 6090032,
+    "offset": 991419023,
+    "crc32": "ed85cf5f"
+  },
+  {
+    "name": "Enfermedades Cacao/Monilia/Monilia78.txt",
+    "size": 684,
+    "compressed": 300,
+    "offset": 997509145,
+    "crc32": "b98cc49a"
+  },
+  {
+    "name": "Enfermedades Cacao/Monilia/Monilia79.jpg",
+    "size": 4512368,
+    "compressed": 4506598,
+    "offset": 997509535,
+    "crc32": "26a9c398"
+  },
+  {
+    "name": "Enfermedades Cacao/Monilia/Monilia79.txt",
+    "size": 190,
+    "compressed": 101,
+    "offset": 1002016223,
+    "crc32": "0f6dc351"
+  },
+  {
+    "name": "Enfermedades Cacao/Monilia/Monilia8.jpg",
+    "size": 5289370,
+    "compressed": 5281076,
+    "offset": 1002016414,
+    "crc32": "2e3be45f"
+  },
+  {
+    "name": "Enfermedades Cacao/Monilia/Monilia8.txt",
+    "size": 228,
+    "compressed": 117,
+    "offset": 1007297579,
+    "crc32": "ca328110"
+  },
+  {
+    "name": "Enfermedades Cacao/Monilia/Monilia80.jpg",
+    "size": 5629884,
+    "compressed": 5629016,
+    "offset": 1007297785,
+    "crc32": "921753b3"
+  },
+  {
+    "name": "Enfermedades Cacao/Monilia/Monilia80.txt",
+    "size": 342,
+    "compressed": 158,
+    "offset": 1012926891,
+    "crc32": "af32a80a"
+  },
+  {
+    "name": "Enfermedades Cacao/Monilia/Monilia81.jpg",
+    "size": 5394630,
+    "compressed": 5393591,
+    "offset": 1012927139,
+    "crc32": "ccb12f63"
+  },
+  {
+    "name": "Enfermedades Cacao/Monilia/Monilia81.txt",
+    "size": 190,
+    "compressed": 103,
+    "offset": 1018320820,
+    "crc32": "a9e29ffc"
+  },
+  {
+    "name": "Enfermedades Cacao/Monilia/Monilia82.jpg",
+    "size": 4890922,
+    "compressed": 4887965,
+    "offset": 1018321013,
+    "crc32": "be866ac9"
+  },
+  {
+    "name": "Enfermedades Cacao/Monilia/Monilia82.txt",
+    "size": 190,
+    "compressed": 100,
+    "offset": 1023209068,
+    "crc32": "54ff7b14"
+  },
+  {
+    "name": "Enfermedades Cacao/Monilia/Monilia83.jpg",
+    "size": 6001452,
+    "compressed": 6001816,
+    "offset": 1023209258,
+    "crc32": "6617cccb"
+  },
+  {
+    "name": "Enfermedades Cacao/Monilia/Monilia83.txt",
+    "size": 304,
+    "compressed": 144,
+    "offset": 1029211164,
+    "crc32": "4c1105fc"
+  },
+  {
+    "name": "Enfermedades Cacao/Monilia/Monilia84.jpg",
+    "size": 7127353,
+    "compressed": 7125727,
+    "offset": 1029211398,
+    "crc32": "40975e48"
+  },
+  {
+    "name": "Enfermedades Cacao/Monilia/Monilia84.txt",
+    "size": 722,
+    "compressed": 304,
+    "offset": 1036337215,
+    "crc32": "c85f5968"
+  },
+  {
+    "name": "Enfermedades Cacao/Monilia/Monilia85.jpg",
+    "size": 4991481,
+    "compressed": 4984722,
+    "offset": 1036337609,
+    "crc32": "0c884211"
+  },
+  {
+    "name": "Enfermedades Cacao/Monilia/Monilia85.txt",
+    "size": 152,
+    "compressed": 86,
+    "offset": 1041322421,
+    "crc32": "c7f665b2"
+  },
+  {
+    "name": "Enfermedades Cacao/Monilia/Monilia86.jpg",
+    "size": 5407125,
+    "compressed": 5406327,
+    "offset": 1041322597,
+    "crc32": "189d874a"
+  },
+  {
+    "name": "Enfermedades Cacao/Monilia/Monilia86.txt",
+    "size": 190,
+    "compressed": 103,
+    "offset": 1046729014,
+    "crc32": "b6d553ec"
+  },
+  {
+    "name": "Enfermedades Cacao/Monilia/Monilia87.jpg",
+    "size": 5095939,
+    "compressed": 5093892,
+    "offset": 1046729207,
+    "crc32": "8d15adb1"
+  },
+  {
+    "name": "Enfermedades Cacao/Monilia/Monilia87.txt",
+    "size": 190,
+    "compressed": 102,
+    "offset": 1051823189,
+    "crc32": "7647a521"
+  },
+  {
+    "name": "Enfermedades Cacao/Monilia/Monilia88.jpg",
+    "size": 5694538,
+    "compressed": 5695579,
+    "offset": 1051823381,
+    "crc32": "e6066cb2"
+  },
+  {
+    "name": "Enfermedades Cacao/Monilia/Monilia88.txt",
+    "size": 380,
+    "compressed": 179,
+    "offset": 1057519050,
+    "crc32": "563890a8"
+  },
+  {
+    "name": "Enfermedades Cacao/Monilia/Monilia89.jpg",
+    "size": 4931386,
+    "compressed": 4932327,
+    "offset": 1057519319,
+    "crc32": "fd46de24"
+  },
+  {
+    "name": "Enfermedades Cacao/Monilia/Monilia89.txt",
+    "size": 38,
+    "compressed": 33,
+    "offset": 1062451736,
+    "crc32": "9e8ef0d1"
+  },
+  {
+    "name": "Enfermedades Cacao/Monilia/Monilia9.jpg",
+    "size": 4137921,
+    "compressed": 4131738,
+    "offset": 1062451859,
+    "crc32": "be692726"
+  },
+  {
+    "name": "Enfermedades Cacao/Monilia/Monilia9.txt",
+    "size": 38,
+    "compressed": 31,
+    "offset": 1066583686,
+    "crc32": "b9abc2ad"
+  },
+  {
+    "name": "Enfermedades Cacao/Monilia/Monilia90.jpg",
+    "size": 3928260,
+    "compressed": 3923066,
+    "offset": 1066583806,
+    "crc32": "ee830fd5"
+  },
+  {
+    "name": "Enfermedades Cacao/Monilia/Monilia90.txt",
+    "size": 114,
+    "compressed": 71,
+    "offset": 1070506962,
+    "crc32": "7b8890db"
+  },
+  {
+    "name": "Enfermedades Cacao/Monilia/Monilia91.jpg",
+    "size": 3552415,
+    "compressed": 3549362,
+    "offset": 1070507123,
+    "crc32": "9915c283"
+  },
+  {
+    "name": "Enfermedades Cacao/Monilia/Monilia91.txt",
+    "size": 114,
+    "compressed": 70,
+    "offset": 1074056575,
+    "crc32": "1b71f8fb"
+  },
+  {
+    "name": "Enfermedades Cacao/Monilia/Monilia92.jpg",
+    "size": 3106599,
+    "compressed": 3103276,
+    "offset": 1074056735,
+    "crc32": "9fd993f2"
+  },
+  {
+    "name": "Enfermedades Cacao/Monilia/Monilia92.txt",
+    "size": 38,
+    "compressed": 34,
+    "offset": 1077160101,
+    "crc32": "bd441716"
+  },
+  {
+    "name": "Enfermedades Cacao/Monilia/Monilia93.jpg",
+    "size": 3843220,
+    "compressed": 3842683,
+    "offset": 1077160225,
+    "crc32": "b8b620b3"
+  },
+  {
+    "name": "Enfermedades Cacao/Monilia/Monilia93.txt",
+    "size": 38,
+    "compressed": 32,
+    "offset": 1081002998,
+    "crc32": "54f761f3"
+  },
+  {
+    "name": "Enfermedades Cacao/Monilia/Monilia94.jpg",
+    "size": 4695630,
+    "compressed": 4696417,
+    "offset": 1081003120,
+    "crc32": "3b0a1440"
+  },
+  {
+    "name": "Enfermedades Cacao/Monilia/Monilia94.txt",
+    "size": 38,
+    "compressed": 39,
+    "offset": 1085699627,
+    "crc32": "630e80e7"
+  },
+  {
+    "name": "Enfermedades Cacao/Monilia/Monilia95.jpg",
+    "size": 340910,
+    "compressed": 340379,
+    "offset": 1085699756,
+    "crc32": "43c104c9"
+  },
+  {
+    "name": "Enfermedades Cacao/Monilia/Monilia95.txt",
+    "size": 38,
+    "compressed": 31,
+    "offset": 1086040225,
+    "crc32": "d767743e"
+  },
+  {
+    "name": "Enfermedades Cacao/Monilia/Monilia96.jpg",
+    "size": 2426180,
+    "compressed": 2423355,
+    "offset": 1086040346,
+    "crc32": "6c5e9503"
+  },
+  {
+    "name": "Enfermedades Cacao/Monilia/Monilia96.txt",
+    "size": 190,
+    "compressed": 101,
+    "offset": 1088463791,
+    "crc32": "7b4a92d3"
+  },
+  {
+    "name": "Enfermedades Cacao/Monilia/Monilia97.jpg",
+    "size": 3564059,
+    "compressed": 3558834,
+    "offset": 1088463982,
+    "crc32": "04da7122"
+  },
+  {
+    "name": "Enfermedades Cacao/Monilia/Monilia97.txt",
+    "size": 152,
+    "compressed": 86,
+    "offset": 1092022906,
+    "crc32": "a3bab517"
+  },
+  {
+    "name": "Enfermedades Cacao/Monilia/Monilia98.jpg",
+    "size": 3650513,
+    "compressed": 3650619,
+    "offset": 1092023082,
+    "crc32": "b7e94fe9"
+  },
+  {
+    "name": "Enfermedades Cacao/Monilia/Monilia98.txt",
+    "size": 114,
+    "compressed": 73,
+    "offset": 1095673791,
+    "crc32": "44772e1b"
+  },
+  {
+    "name": "Enfermedades Cacao/Monilia/Monilia99.jpg",
+    "size": 4855055,
+    "compressed": 4856294,
+    "offset": 1095673954,
+    "crc32": "b5ea69c6"
+  },
+  {
+    "name": "Enfermedades Cacao/Monilia/Monilia99.txt",
+    "size": 38,
+    "compressed": 34,
+    "offset": 1100530338,
+    "crc32": "1694629d"
+  },
+  {
+    "name": "Enfermedades Cacao/Monilia/classes.txt",
+    "size": 26,
+    "compressed": 25,
+    "offset": 1100530462,
+    "crc32": "959ef80b"
+  },
+  {
+    "name": "Enfermedades Cacao/Sana/Sana1.jpg",
+    "size": 5657738,
+    "compressed": 5656353,
+    "offset": 1100530575,
+    "crc32": "8c6ef158"
+  },
+  {
+    "name": "Enfermedades Cacao/Sana/Sana1.txt",
+    "size": 152,
+    "compressed": 86,
+    "offset": 1106187011,
+    "crc32": "1586b0e6"
+  },
+  {
+    "name": "Enfermedades Cacao/Sana/Sana10.jpg",
+    "size": 4916078,
+    "compressed": 4915259,
+    "offset": 1106187180,
+    "crc32": "5e4b6f27"
+  },
+  {
+    "name": "Enfermedades Cacao/Sana/Sana10.txt",
+    "size": 114,
+    "compressed": 71,
+    "offset": 1111102523,
+    "crc32": "e8ad81ae"
+  },
+  {
+    "name": "Enfermedades Cacao/Sana/Sana100.jpg",
+    "size": 4975415,
+    "compressed": 4976247,
+    "offset": 1111102678,
+    "crc32": "ec69c516"
+  },
+  {
+    "name": "Enfermedades Cacao/Sana/Sana100.txt",
+    "size": 190,
+    "compressed": 102,
+    "offset": 1116079010,
+    "crc32": "9fd2d9b1"
+  },
+  {
+    "name": "Enfermedades Cacao/Sana/Sana11.jpg",
+    "size": 5468592,
+    "compressed": 5469755,
+    "offset": 1116079197,
+    "crc32": "6e80c685"
+  },
+  {
+    "name": "Enfermedades Cacao/Sana/Sana11.txt",
+    "size": 228,
+    "compressed": 117,
+    "offset": 1121549036,
+    "crc32": "a9dbba85"
+  },
+  {
+    "name": "Enfermedades Cacao/Sana/Sana12.jpg",
+    "size": 4451732,
+    "compressed": 4451758,
+    "offset": 1121549237,
+    "crc32": "85895b0e"
+  },
+  {
+    "name": "Enfermedades Cacao/Sana/Sana12.txt",
+    "size": 114,
+    "compressed": 69,
+    "offset": 1126001079,
+    "crc32": "ec78e3d4"
+  },
+  {
+    "name": "Enfermedades Cacao/Sana/Sana13.jpg",
+    "size": 4059337,
+    "compressed": 4052944,
+    "offset": 1126001232,
+    "crc32": "f55cddea"
+  },
+  {
+    "name": "Enfermedades Cacao/Sana/Sana13.txt",
+    "size": 114,
+    "compressed": 72,
+    "offset": 1130054260,
+    "crc32": "4415f380"
+  },
+  {
+    "name": "Enfermedades Cacao/Sana/Sana14.jpg",
+    "size": 5641115,
+    "compressed": 5641684,
+    "offset": 1130054416,
+    "crc32": "6d53989a"
+  },
+  {
+    "name": "Enfermedades Cacao/Sana/Sana14.txt",
+    "size": 304,
+    "compressed": 145,
+    "offset": 1135696184,
+    "crc32": "db4a4b88"
+  },
+  {
+    "name": "Enfermedades Cacao/Sana/Sana15.jpg",
+    "size": 5479647,
+    "compressed": 5480665,
+    "offset": 1135696413,
+    "crc32": "98436351"
+  },
+  {
+    "name": "Enfermedades Cacao/Sana/Sana15.txt",
+    "size": 266,
+    "compressed": 129,
+    "offset": 1141177162,
+    "crc32": "f80009d7"
+  },
+  {
+    "name": "Enfermedades Cacao/Sana/Sana16.jpg",
+    "size": 5878723,
+    "compressed": 5880145,
+    "offset": 1141177375,
+    "crc32": "ce9f914c"
+  },
+  {
+    "name": "Enfermedades Cacao/Sana/Sana16.txt",
+    "size": 114,
+    "compressed": 70,
+    "offset": 1147057604,
+    "crc32": "780a720e"
+  },
+  {
+    "name": "Enfermedades Cacao/Sana/Sana17.jpg",
+    "size": 5358284,
+    "compressed": 5359419,
+    "offset": 1147057758,
+    "crc32": "569ce5d7"
+  },
+  {
+    "name": "Enfermedades Cacao/Sana/Sana17.txt",
+    "size": 152,
+    "compressed": 85,
+    "offset": 1152417261,
+    "crc32": "d9f166ca"
+  },
+  {
+    "name": "Enfermedades Cacao/Sana/Sana18.jpg",
+    "size": 5614436,
+    "compressed": 5615529,
+    "offset": 1152417430,
+    "crc32": "e2f92277"
+  },
+  {
+    "name": "Enfermedades Cacao/Sana/Sana18.txt",
+    "size": 190,
+    "compressed": 104,
+    "offset": 1158033043,
+    "crc32": "5531b7d8"
+  },
+  {
+    "name": "Enfermedades Cacao/Sana/Sana19.jpg",
+    "size": 5767766,
+    "compressed": 5769031,
+    "offset": 1158033231,
+    "crc32": "07745ef4"
+  },
+  {
+    "name": "Enfermedades Cacao/Sana/Sana19.txt",
+    "size": 38,
+    "compressed": 38,
+    "offset": 1163802346,
+    "crc32": "262e739d"
+  },
+  {
+    "name": "Enfermedades Cacao/Sana/Sana2.jpg",
+    "size": 5606441,
+    "compressed": 5607628,
+    "offset": 1163802468,
+    "crc32": "825ab8a1"
+  },
+  {
+    "name": "Enfermedades Cacao/Sana/Sana2.txt",
+    "size": 190,
+    "compressed": 102,
+    "offset": 1169410179,
+    "crc32": "e252d949"
+  },
+  {
+    "name": "Enfermedades Cacao/Sana/Sana20.jpg",
+    "size": 6492356,
+    "compressed": 6492925,
+    "offset": 1169410364,
+    "crc32": "4e3044f2"
+  },
+  {
+    "name": "Enfermedades Cacao/Sana/Sana20.txt",
+    "size": 38,
+    "compressed": 37,
+    "offset": 1175903373,
+    "crc32": "0dba0173"
+  },
+  {
+    "name": "Enfermedades Cacao/Sana/Sana21.jpg",
+    "size": 6502555,
+    "compressed": 6504104,
+    "offset": 1175903494,
+    "crc32": "dbcea9b4"
+  },
+  {
+    "name": "Enfermedades Cacao/Sana/Sana21.txt",
+    "size": 190,
+    "compressed": 100,
+    "offset": 1182407682,
+    "crc32": "dde7235a"
+  },
+  {
+    "name": "Enfermedades Cacao/Sana/Sana22.jpg",
+    "size": 5566944,
+    "compressed": 5567020,
+    "offset": 1182407866,
+    "crc32": "59dfcce6"
+  },
+  {
+    "name": "Enfermedades Cacao/Sana/Sana22.txt",
+    "size": 190,
+    "compressed": 102,
+    "offset": 1187974970,
+    "crc32": "7b101d6d"
+  },
+  {
+    "name": "Enfermedades Cacao/Sana/Sana23.jpg",
+    "size": 5036887,
+    "compressed": 5036019,
+    "offset": 1187975156,
+    "crc32": "9f33050d"
+  },
+  {
+    "name": "Enfermedades Cacao/Sana/Sana23.txt",
+    "size": 190,
+    "compressed": 103,
+    "offset": 1193011259,
+    "crc32": "651b66de"
+  },
+  {
+    "name": "Enfermedades Cacao/Sana/Sana24.jpg",
+    "size": 5996016,
+    "compressed": 5996185,
+    "offset": 1193011446,
+    "crc32": "5bd81492"
+  },
+  {
+    "name": "Enfermedades Cacao/Sana/Sana24.txt",
+    "size": 266,
+    "compressed": 131,
+    "offset": 1199007715,
+    "crc32": "f4119a3b"
+  },
+  {
+    "name": "Enfermedades Cacao/Sana/Sana25.jpg",
+    "size": 5491066,
+    "compressed": 5485919,
+    "offset": 1199007930,
+    "crc32": "d9b1c945"
+  },
+  {
+    "name": "Enfermedades Cacao/Sana/Sana25.txt",
+    "size": 114,
+    "compressed": 70,
+    "offset": 1204493933,
+    "crc32": "4b77190e"
+  },
+  {
+    "name": "Enfermedades Cacao/Sana/Sana26.jpg",
+    "size": 5996039,
+    "compressed": 5996666,
+    "offset": 1204494087,
+    "crc32": "884c0a5a"
+  },
+  {
+    "name": "Enfermedades Cacao/Sana/Sana26.txt",
+    "size": 152,
+    "compressed": 87,
+    "offset": 1210490837,
+    "crc32": "b08e9046"
+  },
+  {
+    "name": "Enfermedades Cacao/Sana/Sana27.jpg",
+    "size": 5939728,
+    "compressed": 5941104,
+    "offset": 1210491008,
+    "crc32": "5e22100c"
+  },
+  {
+    "name": "Enfermedades Cacao/Sana/Sana27.txt",
+    "size": 228,
+    "compressed": 114,
+    "offset": 1216432196,
+    "crc32": "53b29cc0"
+  },
+  {
+    "name": "Enfermedades Cacao/Sana/Sana28.jpg",
+    "size": 5959449,
+    "compressed": 5959334,
+    "offset": 1216432394,
+    "crc32": "6e7d5fb1"
+  },
+  {
+    "name": "Enfermedades Cacao/Sana/Sana28.txt",
+    "size": 456,
+    "compressed": 205,
+    "offset": 1222391812,
+    "crc32": "f2afd6fd"
+  },
+  {
+    "name": "Enfermedades Cacao/Sana/Sana29.jpg",
+    "size": 6300961,
+    "compressed": 6302388,
+    "offset": 1222392101,
+    "crc32": "4f65a1b6"
+  },
+  {
+    "name": "Enfermedades Cacao/Sana/Sana29.txt",
+    "size": 342,
+    "compressed": 155,
+    "offset": 1228694573,
+    "crc32": "8dc050f3"
+  },
+  {
+    "name": "Enfermedades Cacao/Sana/Sana3.jpg",
+    "size": 5659334,
+    "compressed": 5660280,
+    "offset": 1228694812,
+    "crc32": "4565b819"
+  },
+  {
+    "name": "Enfermedades Cacao/Sana/Sana3.txt",
+    "size": 152,
+    "compressed": 87,
+    "offset": 1234355175,
+    "crc32": "603b2b8e"
+  },
+  {
+    "name": "Enfermedades Cacao/Sana/Sana30.jpg",
+    "size": 4904515,
+    "compressed": 4905451,
+    "offset": 1234355345,
+    "crc32": "5e29dc07"
+  },
+  {
+    "name": "Enfermedades Cacao/Sana/Sana30.txt",
+    "size": 76,
+    "compressed": 55,
+    "offset": 1239260880,
+    "crc32": "92536e76"
+  },
+  {
+    "name": "Enfermedades Cacao/Sana/Sana31.jpg",
+    "size": 5631658,
+    "compressed": 5632838,
+    "offset": 1239261019,
+    "crc32": "b2fe6353"
+  },
+  {
+    "name": "Enfermedades Cacao/Sana/Sana31.txt",
+    "size": 190,
+    "compressed": 100,
+    "offset": 1244893941,
+    "crc32": "7abfb1b7"
+  },
+  {
+    "name": "Enfermedades Cacao/Sana/Sana32.jpg",
+    "size": 6276942,
+    "compressed": 6276295,
+    "offset": 1244894125,
+    "crc32": "2155f25e"
+  },
+  {
+    "name": "Enfermedades Cacao/Sana/Sana32.txt",
+    "size": 266,
+    "compressed": 132,
+    "offset": 1251170504,
+    "crc32": "4341e7af"
+  },
+  {
+    "name": "Enfermedades Cacao/Sana/Sana33.jpg",
+    "size": 5717569,
+    "compressed": 5718614,
+    "offset": 1251170720,
+    "crc32": "b2f7e9fd"
+  },
+  {
+    "name": "Enfermedades Cacao/Sana/Sana33.txt",
+    "size": 266,
+    "compressed": 128,
+    "offset": 1256889418,
+    "crc32": "aa98d085"
+  },
+  {
+    "name": "Enfermedades Cacao/Sana/Sana34.jpg",
+    "size": 6857589,
+    "compressed": 6859155,
+    "offset": 1256889630,
+    "crc32": "69f96b37"
+  },
+  {
+    "name": "Enfermedades Cacao/Sana/Sana34.txt",
+    "size": 418,
+    "compressed": 193,
+    "offset": 1263748869,
+    "crc32": "125bf3b0"
+  },
+  {
+    "name": "Enfermedades Cacao/Sana/Sana35.jpg",
+    "size": 7225795,
+    "compressed": 7223983,
+    "offset": 1263749146,
+    "crc32": "1b0c145e"
+  },
+  {
+    "name": "Enfermedades Cacao/Sana/Sana35.txt",
+    "size": 228,
+    "compressed": 115,
+    "offset": 1270973213,
+    "crc32": "7a01e2e9"
+  },
+  {
+    "name": "Enfermedades Cacao/Sana/Sana36.jpg",
+    "size": 5600458,
+    "compressed": 5600430,
+    "offset": 1270973412,
+    "crc32": "991d6635"
+  },
+  {
+    "name": "Enfermedades Cacao/Sana/Sana36.txt",
+    "size": 38,
+    "compressed": 33,
+    "offset": 1276573926,
+    "crc32": "6c284eb6"
+  },
+  {
+    "name": "Enfermedades Cacao/Sana/Sana37.jpg",
+    "size": 5814877,
+    "compressed": 5816129,
+    "offset": 1276574043,
+    "crc32": "06259884"
+  },
+  {
+    "name": "Enfermedades Cacao/Sana/Sana37.txt",
+    "size": 152,
+    "compressed": 86,
+    "offset": 1282390256,
+    "crc32": "02da3c67"
+  },
+  {
+    "name": "Enfermedades Cacao/Sana/Sana38.jpg",
+    "size": 5775131,
+    "compressed": 5775285,
+    "offset": 1282390426,
+    "crc32": "60f922f2"
+  },
+  {
+    "name": "Enfermedades Cacao/Sana/Sana38.txt",
+    "size": 684,
+    "compressed": 295,
+    "offset": 1288165795,
+    "crc32": "e452d0a0"
+  },
+  {
+    "name": "Enfermedades Cacao/Sana/Sana39.jpg",
+    "size": 6684503,
+    "compressed": 6685961,
+    "offset": 1288166174,
+    "crc32": "2b29376e"
+  },
+  {
+    "name": "Enfermedades Cacao/Sana/Sana39.txt",
+    "size": 798,
+    "compressed": 331,
+    "offset": 1294852219,
+    "crc32": "5e646204"
+  },
+  {
+    "name": "Enfermedades Cacao/Sana/Sana4.jpg",
+    "size": 6018973,
+    "compressed": 6018608,
+    "offset": 1294852634,
+    "crc32": "436b642e"
+  },
+  {
+    "name": "Enfermedades Cacao/Sana/Sana4.txt",
+    "size": 342,
+    "compressed": 162,
+    "offset": 1300871325,
+    "crc32": "08d92c65"
+  },
+  {
+    "name": "Enfermedades Cacao/Sana/Sana40.jpg",
+    "size": 6697426,
+    "compressed": 6699001,
+    "offset": 1300871570,
+    "crc32": "19ca1c2b"
+  },
+  {
+    "name": "Enfermedades Cacao/Sana/Sana40.txt",
+    "size": 380,
+    "compressed": 172,
+    "offset": 1307570655,
+    "crc32": "3527b2dd"
+  },
+  {
+    "name": "Enfermedades Cacao/Sana/Sana41.jpg",
+    "size": 6218955,
+    "compressed": 6217880,
+    "offset": 1307570911,
+    "crc32": "400ca879"
+  },
+  {
+    "name": "Enfermedades Cacao/Sana/Sana41.txt",
+    "size": 304,
+    "compressed": 138,
+    "offset": 1313788875,
+    "crc32": "274db9e9"
+  },
+  {
+    "name": "Enfermedades Cacao/Sana/Sana42.jpg",
+    "size": 4503869,
+    "compressed": 4504592,
+    "offset": 1313789097,
+    "crc32": "3fd10734"
+  },
+  {
+    "name": "Enfermedades Cacao/Sana/Sana42.txt",
+    "size": 228,
+    "compressed": 113,
+    "offset": 1318293773,
+    "crc32": "508472ac"
+  },
+  {
+    "name": "Enfermedades Cacao/Sana/Sana43.jpg",
+    "size": 8348521,
+    "compressed": 8350624,
+    "offset": 1318293970,
+    "crc32": "34980f91"
+  },
+  {
+    "name": "Enfermedades Cacao/Sana/Sana43.txt",
+    "size": 190,
+    "compressed": 102,
+    "offset": 1326644678,
+    "crc32": "a1c953d8"
+  },
+  {
+    "name": "Enfermedades Cacao/Sana/Sana44.jpg",
+    "size": 5978138,
+    "compressed": 5979565,
+    "offset": 1326644864,
+    "crc32": "5d4b6643"
+  },
+  {
+    "name": "Enfermedades Cacao/Sana/Sana44.txt",
+    "size": 684,
+    "compressed": 282,
+    "offset": 1332624513,
+    "crc32": "7c8a1f41"
+  },
+  {
+    "name": "Enfermedades Cacao/Sana/Sana45.jpg",
+    "size": 6531694,
+    "compressed": 6532189,
+    "offset": 1332624879,
+    "crc32": "de8934b7"
+  },
+  {
+    "name": "Enfermedades Cacao/Sana/Sana45.txt",
+    "size": 380,
+    "compressed": 175,
+    "offset": 1339157152,
+    "crc32": "d674898f"
+  },
+  {
+    "name": "Enfermedades Cacao/Sana/Sana46.jpg",
+    "size": 6339613,
+    "compressed": 6339536,
+    "offset": 1339157411,
+    "crc32": "434a8dac"
+  },
+  {
+    "name": "Enfermedades Cacao/Sana/Sana46.txt",
+    "size": 532,
+    "compressed": 225,
+    "offset": 1345497031,
+    "crc32": "9ca8623d"
+  },
+  {
+    "name": "Enfermedades Cacao/Sana/Sana47.jpg",
+    "size": 5912292,
+    "compressed": 5913593,
+    "offset": 1345497340,
+    "crc32": "0728d041"
+  },
+  {
+    "name": "Enfermedades Cacao/Sana/Sana47.txt",
+    "size": 190,
+    "compressed": 101,
+    "offset": 1351411017,
+    "crc32": "90013a5d"
+  },
+  {
+    "name": "Enfermedades Cacao/Sana/Sana48.jpg",
+    "size": 6754558,
+    "compressed": 6755126,
+    "offset": 1351411202,
+    "crc32": "651f2316"
+  },
+  {
+    "name": "Enfermedades Cacao/Sana/Sana48.txt",
+    "size": 988,
+    "compressed": 397,
+    "offset": 1358166412,
+    "crc32": "5fe5634d"
+  },
+  {
+    "name": "Enfermedades Cacao/Sana/Sana49.jpg",
+    "size": 6311691,
+    "compressed": 6311665,
+    "offset": 1358166893,
+    "crc32": "524a6947"
+  },
+  {
+    "name": "Enfermedades Cacao/Sana/Sana49.txt",
+    "size": 114,
+    "compressed": 71,
+    "offset": 1364478642,
+    "crc32": "816ccefe"
+  },
+  {
+    "name": "Enfermedades Cacao/Sana/Sana5.jpg",
+    "size": 5597692,
+    "compressed": 5591044,
+    "offset": 1364478797,
+    "crc32": "6f46da1f"
+  },
+  {
+    "name": "Enfermedades Cacao/Sana/Sana5.txt",
+    "size": 190,
+    "compressed": 100,
+    "offset": 1370069924,
+    "crc32": "40403cac"
+  },
+  {
+    "name": "Enfermedades Cacao/Sana/Sana50.jpg",
+    "size": 5133836,
+    "compressed": 5134078,
+    "offset": 1370070107,
+    "crc32": "282b9707"
+  },
+  {
+    "name": "Enfermedades Cacao/Sana/Sana50.txt",
+    "size": 456,
+    "compressed": 203,
+    "offset": 1375204269,
+    "crc32": "203693df"
+  },
+  {
+    "name": "Enfermedades Cacao/Sana/Sana51.jpg",
+    "size": 5798012,
+    "compressed": 5796837,
+    "offset": 1375204556,
+    "crc32": "5c7def5a"
+  },
+  {
+    "name": "Enfermedades Cacao/Sana/Sana51.txt",
+    "size": 266,
+    "compressed": 130,
+    "offset": 1381001477,
+    "crc32": "c2c96161"
+  },
+  {
+    "name": "Enfermedades Cacao/Sana/Sana52.jpg",
+    "size": 4669984,
+    "compressed": 4664483,
+    "offset": 1381001691,
+    "crc32": "04a3dd8e"
+  },
+  {
+    "name": "Enfermedades Cacao/Sana/Sana52.txt",
+    "size": 152,
+    "compressed": 85,
+    "offset": 1385666258,
+    "crc32": "5eb27364"
+  },
+  {
+    "name": "Enfermedades Cacao/Sana/Sana53.jpg",
+    "size": 4060747,
+    "compressed": 4059047,
+    "offset": 1385666427,
+    "crc32": "9a7043d4"
+  },
+  {
+    "name": "Enfermedades Cacao/Sana/Sana53.txt",
+    "size": 114,
+    "compressed": 71,
+    "offset": 1389725558,
+    "crc32": "154ada17"
+  },
+  {
+    "name": "Enfermedades Cacao/Sana/Sana54.jpg",
+    "size": 4945310,
+    "compressed": 4943317,
+    "offset": 1389725713,
+    "crc32": "d1671c0c"
+  },
+  {
+    "name": "Enfermedades Cacao/Sana/Sana54.txt",
+    "size": 456,
+    "compressed": 205,
+    "offset": 1394669114,
+    "crc32": "912179fe"
+  },
+  {
+    "name": "Enfermedades Cacao/Sana/Sana55.jpg",
+    "size": 6219088,
+    "compressed": 6220411,
+    "offset": 1394669403,
+    "crc32": "4f7f7ee1"
+  },
+  {
+    "name": "Enfermedades Cacao/Sana/Sana55.txt",
+    "size": 722,
+    "compressed": 304,
+    "offset": 1400889898,
+    "crc32": "b66d5abd"
+  },
+  {
+    "name": "Enfermedades Cacao/Sana/Sana56.jpg",
+    "size": 5154440,
+    "compressed": 5155555,
+    "offset": 1400890286,
+    "crc32": "19e147c0"
+  },
+  {
+    "name": "Enfermedades Cacao/Sana/Sana56.txt",
+    "size": 418,
+    "compressed": 191,
+    "offset": 1406045925,
+    "crc32": "183090dd"
+  },
+  {
+    "name": "Enfermedades Cacao/Sana/Sana57.jpg",
+    "size": 6684938,
+    "compressed": 6686443,
+    "offset": 1406046200,
+    "crc32": "f53a20ef"
+  },
+  {
+    "name": "Enfermedades Cacao/Sana/Sana57.txt",
+    "size": 228,
+    "compressed": 114,
+    "offset": 1412732727,
+    "crc32": "e99053c6"
+  },
+  {
+    "name": "Enfermedades Cacao/Sana/Sana58.jpg",
+    "size": 5353117,
+    "compressed": 5354237,
+    "offset": 1412732925,
+    "crc32": "d4bde3da"
+  },
+  {
+    "name": "Enfermedades Cacao/Sana/Sana58.txt",
+    "size": 114,
+    "compressed": 70,
+    "offset": 1418087246,
+    "crc32": "695d745f"
+  },
+  {
+    "name": "Enfermedades Cacao/Sana/Sana59.jpg",
+    "size": 6739998,
+    "compressed": 6740677,
+    "offset": 1418087400,
+    "crc32": "6d2dcbb9"
+  },
+  {
+    "name": "Enfermedades Cacao/Sana/Sana59.txt",
+    "size": 228,
+    "compressed": 115,
+    "offset": 1424828161,
+    "crc32": "c2de1566"
+  },
+  {
+    "name": "Enfermedades Cacao/Sana/Sana6.jpg",
+    "size": 4318798,
+    "compressed": 4319608,
+    "offset": 1424828360,
+    "crc32": "0b579e06"
+  },
+  {
+    "name": "Enfermedades Cacao/Sana/Sana6.txt",
+    "size": 114,
+    "compressed": 71,
+    "offset": 1429148051,
+    "crc32": "b47d2f61"
+  },
+  {
+    "name": "Enfermedades Cacao/Sana/Sana60.jpg",
+    "size": 4896187,
+    "compressed": 4895156,
+    "offset": 1429148205,
+    "crc32": "8178eb02"
+  },
+  {
+    "name": "Enfermedades Cacao/Sana/Sana60.txt",
+    "size": 228,
+    "compressed": 115,
+    "offset": 1434043445,
+    "crc32": "28cfe922"
+  },
+  {
+    "name": "Enfermedades Cacao/Sana/Sana61.jpg",
+    "size": 5568665,
+    "compressed": 5567263,
+    "offset": 1434043644,
+    "crc32": "94e117f7"
+  },
+  {
+    "name": "Enfermedades Cacao/Sana/Sana61.txt",
+    "size": 190,
+    "compressed": 101,
+    "offset": 1439610991,
+    "crc32": "8a0af1b7"
+  },
+  {
+    "name": "Enfermedades Cacao/Sana/Sana62.jpg",
+    "size": 5657026,
+    "compressed": 5655992,
+    "offset": 1439611176,
+    "crc32": "77873000"
+  },
+  {
+    "name": "Enfermedades Cacao/Sana/Sana62.txt",
+    "size": 114,
+    "compressed": 70,
+    "offset": 1445267252,
+    "crc32": "5c12e611"
+  },
+  {
+    "name": "Enfermedades Cacao/Sana/Sana63.jpg",
+    "size": 5986658,
+    "compressed": 5988061,
+    "offset": 1445267406,
+    "crc32": "37a96ee9"
+  },
+  {
+    "name": "Enfermedades Cacao/Sana/Sana63.txt",
+    "size": 380,
+    "compressed": 173,
+    "offset": 1451255551,
+    "crc32": "899529c5"
+  },
+  {
+    "name": "Enfermedades Cacao/Sana/Sana64.jpg",
+    "size": 5557247,
+    "compressed": 5557597,
+    "offset": 1451255808,
+    "crc32": "14ce1942"
+  },
+  {
+    "name": "Enfermedades Cacao/Sana/Sana64.txt",
+    "size": 646,
+    "compressed": 280,
+    "offset": 1456813489,
+    "crc32": "3384fabe"
+  },
+  {
+    "name": "Enfermedades Cacao/Sana/Sana65.jpg",
+    "size": 6293671,
+    "compressed": 6295213,
+    "offset": 1456813853,
+    "crc32": "7acc7b1f"
+  },
+  {
+    "name": "Enfermedades Cacao/Sana/Sana65.txt",
+    "size": 152,
+    "compressed": 85,
+    "offset": 1463109150,
+    "crc32": "4a840537"
+  },
+  {
+    "name": "Enfermedades Cacao/Sana/Sana66.jpg",
+    "size": 6671039,
+    "compressed": 6671326,
+    "offset": 1463109319,
+    "crc32": "34c6733e"
+  },
+  {
+    "name": "Enfermedades Cacao/Sana/Sana66.txt",
+    "size": 228,
+    "compressed": 116,
+    "offset": 1469780729,
+    "crc32": "a3aad7ae"
+  },
+  {
+    "name": "Enfermedades Cacao/Sana/Sana67.jpg",
+    "size": 4628440,
+    "compressed": 4613478,
+    "offset": 1469780929,
+    "crc32": "cb48d939"
+  },
+  {
+    "name": "Enfermedades Cacao/Sana/Sana67.txt",
+    "size": 684,
+    "compressed": 295,
+    "offset": 1474394491,
+    "crc32": "bcc01215"
+  },
+  {
+    "name": "Enfermedades Cacao/Sana/Sana68.jpg",
+    "size": 7035023,
+    "compressed": 7035430,
+    "offset": 1474394870,
+    "crc32": "9cc49a36"
+  },
+  {
+    "name": "Enfermedades Cacao/Sana/Sana68.txt",
+    "size": 152,
+    "compressed": 85,
+    "offset": 1481430384,
+    "crc32": "b474b4c3"
+  },
+  {
+    "name": "Enfermedades Cacao/Sana/Sana69.jpg",
+    "size": 5987742,
+    "compressed": 5989152,
+    "offset": 1481430553,
+    "crc32": "15364028"
+  },
+  {
+    "name": "Enfermedades Cacao/Sana/Sana69.txt",
+    "size": 266,
+    "compressed": 134,
+    "offset": 1487419789,
+    "crc32": "f6ac36e3"
+  },
+  {
+    "name": "Enfermedades Cacao/Sana/Sana7.jpg",
+    "size": 5952806,
+    "compressed": 5953793,
+    "offset": 1487420007,
+    "crc32": "8637c03a"
+  },
+  {
+    "name": "Enfermedades Cacao/Sana/Sana7.txt",
+    "size": 418,
+    "compressed": 193,
+    "offset": 1493373883,
+    "crc32": "f5f79d94"
+  },
+  {
+    "name": "Enfermedades Cacao/Sana/Sana70.jpg",
+    "size": 7678507,
+    "compressed": 7670417,
+    "offset": 1493374159,
+    "crc32": "1b259502"
+  },
+  {
+    "name": "Enfermedades Cacao/Sana/Sana70.txt",
+    "size": 38,
+    "compressed": 38,
+    "offset": 1501044660,
+    "crc32": "9458c03b"
+  },
+  {
+    "name": "Enfermedades Cacao/Sana/Sana71.jpg",
+    "size": 5342696,
+    "compressed": 5343764,
+    "offset": 1501044782,
+    "crc32": "2354fd76"
+  },
+  {
+    "name": "Enfermedades Cacao/Sana/Sana71.txt",
+    "size": 190,
+    "compressed": 100,
+    "offset": 1506388630,
+    "crc32": "d732ef48"
+  },
+  {
+    "name": "Enfermedades Cacao/Sana/Sana72.jpg",
+    "size": 4879895,
+    "compressed": 4879292,
+    "offset": 1506388814,
+    "crc32": "5a21ebaf"
+  },
+  {
+    "name": "Enfermedades Cacao/Sana/Sana72.txt",
+    "size": 532,
+    "compressed": 232,
+    "offset": 1511268190,
+    "crc32": "dd666c3f"
+  },
+  {
+    "name": "Enfermedades Cacao/Sana/Sana73.jpg",
+    "size": 6163024,
+    "compressed": 6164334,
+    "offset": 1511268506,
+    "crc32": "e169b6a4"
+  },
+  {
+    "name": "Enfermedades Cacao/Sana/Sana73.txt",
+    "size": 228,
+    "compressed": 116,
+    "offset": 1517432924,
+    "crc32": "53e607cb"
+  },
+  {
+    "name": "Enfermedades Cacao/Sana/Sana74.jpg",
+    "size": 5834652,
+    "compressed": 5835943,
+    "offset": 1517433124,
+    "crc32": "78135001"
+  },
+  {
+    "name": "Enfermedades Cacao/Sana/Sana74.txt",
+    "size": 342,
+    "compressed": 160,
+    "offset": 1523269151,
+    "crc32": "3dc7e9cb"
+  },
+  {
+    "name": "Enfermedades Cacao/Sana/Sana75.jpg",
+    "size": 4661580,
+    "compressed": 4658652,
+    "offset": 1523269395,
+    "crc32": "5ed170f0"
+  },
+  {
+    "name": "Enfermedades Cacao/Sana/Sana75.txt",
+    "size": 114,
+    "compressed": 70,
+    "offset": 1527928131,
+    "crc32": "2301fc6d"
+  },
+  {
+    "name": "Enfermedades Cacao/Sana/Sana76.jpg",
+    "size": 5167492,
+    "compressed": 5161805,
+    "offset": 1527928285,
+    "crc32": "59270f75"
+  },
+  {
+    "name": "Enfermedades Cacao/Sana/Sana76.txt",
+    "size": 152,
+    "compressed": 85,
+    "offset": 1533090174,
+    "crc32": "7bd56a95"
+  },
+  {
+    "name": "Enfermedades Cacao/Sana/Sana77.jpg",
+    "size": 4963749,
+    "compressed": 4964756,
+    "offset": 1533090343,
+    "crc32": "34f51ab7"
+  },
+  {
+    "name": "Enfermedades Cacao/Sana/Sana77.txt",
+    "size": 342,
+    "compressed": 160,
+    "offset": 1538055183,
+    "crc32": "a6ba8e09"
+  },
+  {
+    "name": "Enfermedades Cacao/Sana/Sana78.jpg",
+    "size": 6200534,
+    "compressed": 6200874,
+    "offset": 1538055427,
+    "crc32": "1b53291c"
+  },
+  {
+    "name": "Enfermedades Cacao/Sana/Sana78.txt",
+    "size": 114,
+    "compressed": 69,
+    "offset": 1544256385,
+    "crc32": "8a864a0c"
+  },
+  {
+    "name": "Enfermedades Cacao/Sana/Sana79.jpg",
+    "size": 5525446,
+    "compressed": 5524629,
+    "offset": 1544256538,
+    "crc32": "77317117"
+  },
+  {
+    "name": "Enfermedades Cacao/Sana/Sana79.txt",
+    "size": 380,
+    "compressed": 176,
+    "offset": 1549781251,
+    "crc32": "b5919890"
+  },
+  {
+    "name": "Enfermedades Cacao/Sana/Sana8.jpg",
+    "size": 6351170,
+    "compressed": 6352574,
+    "offset": 1549781511,
+    "crc32": "31790ea0"
+  },
+  {
+    "name": "Enfermedades Cacao/Sana/Sana8.txt",
+    "size": 114,
+    "compressed": 72,
+    "offset": 1556134168,
+    "crc32": "68014bd6"
+  },
+  {
+    "name": "Enfermedades Cacao/Sana/Sana80.jpg",
+    "size": 7849524,
+    "compressed": 7850017,
+    "offset": 1556134323,
+    "crc32": "62e4aa00"
+  },
+  {
+    "name": "Enfermedades Cacao/Sana/Sana80.txt",
+    "size": 266,
+    "compressed": 126,
+    "offset": 1563984424,
+    "crc32": "427b609b"
+  },
+  {
+    "name": "Enfermedades Cacao/Sana/Sana81.jpg",
+    "size": 6304976,
+    "compressed": 6305017,
+    "offset": 1563984634,
+    "crc32": "210cd1aa"
+  },
+  {
+    "name": "Enfermedades Cacao/Sana/Sana81.txt",
+    "size": 114,
+    "compressed": 71,
+    "offset": 1570289735,
+    "crc32": "e05df41f"
+  },
+  {
+    "name": "Enfermedades Cacao/Sana/Sana82.jpg",
+    "size": 5195943,
+    "compressed": 5196408,
+    "offset": 1570289890,
+    "crc32": "6a2643c9"
+  },
+  {
+    "name": "Enfermedades Cacao/Sana/Sana82.txt",
+    "size": 76,
+    "compressed": 55,
+    "offset": 1575486382,
+    "crc32": "6833289b"
+  },
+  {
+    "name": "Enfermedades Cacao/Sana/Sana83.jpg",
+    "size": 5548262,
+    "compressed": 5539387,
+    "offset": 1575486521,
+    "crc32": "63e05df2"
+  },
+  {
+    "name": "Enfermedades Cacao/Sana/Sana83.txt",
+    "size": 228,
+    "compressed": 113,
+    "offset": 1581025992,
+    "crc32": "8ba04370"
+  },
+  {
+    "name": "Enfermedades Cacao/Sana/Sana84.jpg",
+    "size": 5127830,
+    "compressed": 5126377,
+    "offset": 1581026189,
+    "crc32": "1f7b5973"
+  },
+  {
+    "name": "Enfermedades Cacao/Sana/Sana84.txt",
+    "size": 152,
+    "compressed": 84,
+    "offset": 1586152650,
+    "crc32": "8676a73f"
+  },
+  {
+    "name": "Enfermedades Cacao/Sana/Sana85.jpg",
+    "size": 4695904,
+    "compressed": 4692512,
+    "offset": 1586152818,
+    "crc32": "f7cd82e9"
+  },
+  {
+    "name": "Enfermedades Cacao/Sana/Sana85.txt",
+    "size": 190,
+    "compressed": 101,
+    "offset": 1590845414,
+    "crc32": "6f5dcc7a"
+  },
+  {
+    "name": "Enfermedades Cacao/Sana/Sana86.jpg",
+    "size": 4393001,
+    "compressed": 4394017,
+    "offset": 1590845599,
+    "crc32": "35241632"
+  },
+  {
+    "name": "Enfermedades Cacao/Sana/Sana86.txt",
+    "size": 114,
+    "compressed": 71,
+    "offset": 1595239700,
+    "crc32": "a5c25e75"
+  },
+  {
+    "name": "Enfermedades Cacao/Sana/Sana87.jpg",
+    "size": 4670146,
+    "compressed": 4665858,
+    "offset": 1595239855,
+    "crc32": "2f331c32"
+  },
+  {
+    "name": "Enfermedades Cacao/Sana/Sana87.txt",
+    "size": 152,
+    "compressed": 86,
+    "offset": 1599905797,
+    "crc32": "2c993b2a"
+  },
+  {
+    "name": "Enfermedades Cacao/Sana/Sana88.jpg",
+    "size": 6498315,
+    "compressed": 6498615,
+    "offset": 1599905967,
+    "crc32": "748d4f39"
+  },
+  {
+    "name": "Enfermedades Cacao/Sana/Sana88.txt",
+    "size": 342,
+    "compressed": 158,
+    "offset": 1606404666,
+    "crc32": "eddec2c0"
+  },
+  {
+    "name": "Enfermedades Cacao/Sana/Sana89.jpg",
+    "size": 5066401,
+    "compressed": 5066929,
+    "offset": 1606404908,
+    "crc32": "5b27c2e6"
+  },
+  {
+    "name": "Enfermedades Cacao/Sana/Sana89.txt",
+    "size": 456,
+    "compressed": 206,
+    "offset": 1611471921,
+    "crc32": "1f88edc7"
+  },
+  {
+    "name": "Enfermedades Cacao/Sana/Sana9.jpg",
+    "size": 4943179,
+    "compressed": 4944227,
+    "offset": 1611472211,
+    "crc32": "2e43c7da"
+  },
+  {
+    "name": "Enfermedades Cacao/Sana/Sana9.txt",
+    "size": 228,
+    "compressed": 115,
+    "offset": 1616416521,
+    "crc32": "c25a91f9"
+  },
+  {
+    "name": "Enfermedades Cacao/Sana/Sana90.jpg",
+    "size": 6447824,
+    "compressed": 6449492,
+    "offset": 1616416719,
+    "crc32": "97e16649"
+  },
+  {
+    "name": "Enfermedades Cacao/Sana/Sana90.txt",
+    "size": 228,
+    "compressed": 118,
+    "offset": 1622866295,
+    "crc32": "4baaf116"
+  },
+  {
+    "name": "Enfermedades Cacao/Sana/Sana91.jpg",
+    "size": 6032819,
+    "compressed": 6034171,
+    "offset": 1622866497,
+    "crc32": "01cf79b3"
+  },
+  {
+    "name": "Enfermedades Cacao/Sana/Sana91.txt",
+    "size": 152,
+    "compressed": 86,
+    "offset": 1628900752,
+    "crc32": "0028342d"
+  },
+  {
+    "name": "Enfermedades Cacao/Sana/Sana92.jpg",
+    "size": 4570492,
+    "compressed": 4568879,
+    "offset": 1628900922,
+    "crc32": "2d4be855"
+  },
+  {
+    "name": "Enfermedades Cacao/Sana/Sana92.txt",
+    "size": 190,
+    "compressed": 102,
+    "offset": 1633469885,
+    "crc32": "3f3b0d00"
+  },
+  {
+    "name": "Enfermedades Cacao/Sana/Sana93.jpg",
+    "size": 5275644,
+    "compressed": 5276741,
+    "offset": 1633470071,
+    "crc32": "4ec6d9dc"
+  },
+  {
+    "name": "Enfermedades Cacao/Sana/Sana93.txt",
+    "size": 266,
+    "compressed": 132,
+    "offset": 1638746896,
+    "crc32": "8d04a451"
+  },
+  {
+    "name": "Enfermedades Cacao/Sana/Sana94.jpg",
+    "size": 5230033,
+    "compressed": 5226901,
+    "offset": 1638747112,
+    "crc32": "c2055231"
+  },
+  {
+    "name": "Enfermedades Cacao/Sana/Sana94.txt",
+    "size": 228,
+    "compressed": 117,
+    "offset": 1643974097,
+    "crc32": "12a9479a"
+  },
+  {
+    "name": "Enfermedades Cacao/Sana/Sana95.jpg",
+    "size": 5469215,
+    "compressed": 5470310,
+    "offset": 1643974298,
+    "crc32": "a4850cfd"
+  },
+  {
+    "name": "Enfermedades Cacao/Sana/Sana95.txt",
+    "size": 342,
+    "compressed": 159,
+    "offset": 1649444692,
+    "crc32": "e62c809d"
+  },
+  {
+    "name": "Enfermedades Cacao/Sana/Sana96.jpg",
+    "size": 6383850,
+    "compressed": 6384502,
+    "offset": 1649444935,
+    "crc32": "6662f40b"
+  },
+  {
+    "name": "Enfermedades Cacao/Sana/Sana96.txt",
+    "size": 76,
+    "compressed": 55,
+    "offset": 1655829521,
+    "crc32": "c5c6f52d"
+  },
+  {
+    "name": "Enfermedades Cacao/Sana/Sana97.jpg",
+    "size": 5320702,
+    "compressed": 5321797,
+    "offset": 1655829660,
+    "crc32": "97b75f34"
+  },
+  {
+    "name": "Enfermedades Cacao/Sana/Sana97.txt",
+    "size": 152,
+    "compressed": 86,
+    "offset": 1661151541,
+    "crc32": "59190b09"
+  },
+  {
+    "name": "Enfermedades Cacao/Sana/Sana98.jpg",
+    "size": 5304654,
+    "compressed": 5303436,
+    "offset": 1661151711,
+    "crc32": "7032824a"
+  },
+  {
+    "name": "Enfermedades Cacao/Sana/Sana98.txt",
+    "size": 266,
+    "compressed": 130,
+    "offset": 1666455231,
+    "crc32": "275fc8ca"
+  },
+  {
+    "name": "Enfermedades Cacao/Sana/Sana99.jpg",
+    "size": 4838631,
+    "compressed": 4837425,
+    "offset": 1666455445,
+    "crc32": "09519ac9"
+  },
+  {
+    "name": "Enfermedades Cacao/Sana/Sana99.txt",
+    "size": 608,
+    "compressed": 263,
+    "offset": 1671292954,
+    "crc32": "7aa38fa9"
+  },
+  {
+    "name": "Enfermedades Cacao/Sana/classes.txt",
+    "size": 26,
+    "compressed": 25,
+    "offset": 1671293301,
+    "crc32": "959ef80b"
+  }
+]

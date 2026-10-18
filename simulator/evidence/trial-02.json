@@ -1,0 +1,104 @@
+{
+  "phase": "done",
+  "label": "Mazorca depositada",
+  "simulation_time": 96.34,
+  "trial_time": 22.7,
+  "position": [
+    -1.8,
+    -1.45,
+    0.97
+  ],
+  "target_position": [
+    -1.081,
+    -1.434,
+    0.195
+  ],
+  "velocity": [
+    -0.004,
+    0.0,
+    -0.0,
+    -0.0,
+    0.006,
+    0.0
+  ],
+  "orientation": [
+    1.0,
+    0.0,
+    0.001,
+    -0.0,
+    1.0,
+    -0.0,
+    -0.001,
+    0.0,
+    1.0
+  ],
+  "waypoint": [
+    -1.7999999999999998,
+    -1.45,
+    0.97
+  ],
+  "gripper_locked": false,
+  "grip_present": false,
+  "stem_attached": 0,
+  "payload_attached": false,
+  "result": "deposited",
+  "events": [
+    {
+      "phase": "takeoff",
+      "time": 73.632,
+      "label": "Despegando"
+    },
+    {
+      "phase": "approach",
+      "time": 76.608,
+      "label": "Acercándose al árbol"
+    },
+    {
+      "phase": "align",
+      "time": 80.672,
+      "label": "Alineando la pinza"
+    },
+    {
+      "phase": "grip",
+      "time": 83.552,
+      "label": "Sujetando la mazorca"
+    },
+    {
+      "phase": "cut",
+      "time": 84.56,
+      "label": "Corte simulado del tallo"
+    },
+    {
+      "phase": "retreat",
+      "time": 85.568,
+      "label": "Retirando la mazorca"
+    },
+    {
+      "phase": "transport",
+      "time": 88.768,
+      "label": "Llevando al recipiente"
+    },
+    {
+      "phase": "release",
+      "time": 92.688,
+      "label": "Soltando la mazorca"
+    },
+    {
+      "phase": "verify",
+      "time": 93.504,
+      "label": "Comprobando depósito"
+    },
+    {
+      "phase": "done",
+      "time": 95.52,
+      "label": "Mazorca depositada"
+    }
+  ],
+  "updated_at": 1792294008.5890343,
+  "engine": "Webots R2025a / ODE",
+  "limits": [
+    "Objetivo y posición conocidos por el simulador; sin diagnóstico de enfermedad.",
+    "Agarre idealizado con conector; corte representado soltando la unión.",
+    "Control de empuje y actitud simplificado; sin aerodinámica de hélices ni viento."
+  ]
+}

@@ -1,0 +1,245 @@
+[
+  {
+    "_id": "65dcc3f752eca001fd5b50c1",
+    "id": "Iputuekasuartana/mdl-rotten-fruits-classify",
+    "author": "Iputuekasuartana",
+    "gated": false,
+    "lastModified": "2024-02-28T11:56:57.000Z",
+    "likes": 0,
+    "trendingScore": 0,
+    "private": false,
+    "sha": "90cf3d22d0d1a45fe37dbee595111649065e1081",
+    "config": {},
+    "downloads": 0,
+    "tags": [
+      "safetensors",
+      "image-classification",
+      "region:us"
+    ],
+    "pipeline_tag": "image-classification",
+    "createdAt": "2024-02-26T17:01:43.000Z",
+    "modelId": "Iputuekasuartana/mdl-rotten-fruits-classify",
+    "siblings": [
+      {
+        "rfilename": ".gitattributes"
+      },
+      {
+        "rfilename": "README.md"
+      },
+      {
+        "rfilename": "model.safetensors"
+      }
+    ]
+  },
+  {
+    "_id": "66624a9f7f4d9731a73dab4c",
+    "id": "Rodanciuc/detect-healthy-rotten-fruits",
+    "author": "Rodanciuc",
+    "gated": false,
+    "lastModified": "2024-06-07T00:04:59.000Z",
+    "likes": 0,
+    "trendingScore": 0,
+    "private": false,
+    "sha": "06a5d61a1c932f31f20df2a5a1b248e047685883",
+    "config": {},
+    "downloads": 0,
+    "tags": [
+      "onnx",
+      "region:us"
+    ],
+    "createdAt": "2024-06-06T23:47:43.000Z",
+    "modelId": "Rodanciuc/detect-healthy-rotten-fruits",
+    "siblings": [
+      {
+        "rfilename": ".gitattributes"
+      },
+      {
+        "rfilename": "README.md"
+      },
+      {
+        "rfilename": "model.onnx"
+      }
+    ]
+  },
+  {
+    "_id": "68cfdc7592a499aa8bf6dd0d",
+    "id": "diboworks/rotten_fruit_classifier",
+    "author": "diboworks",
+    "gated": false,
+    "lastModified": "2025-09-27T11:07:01.000Z",
+    "likes": 1,
+    "trendingScore": 0,
+    "private": false,
+    "sha": "f44a288ef13f2e0901b2e370ad9117551f027897",
+    "config": {},
+    "downloads": 6,
+    "tags": [
+      "keras",
+      "onnx",
+      "image-classification",
+      "license:apache-2.0",
+      "region:us"
+    ],
+    "pipeline_tag": "image-classification",
+    "library_name": "keras",
+    "createdAt": "2025-09-21T11:07:33.000Z",
+    "modelId": "diboworks/rotten_fruit_classifier",
+    "siblings": [
+      {
+        "rfilename": ".gitattributes"
+      },
+      {
+        "rfilename": "README.md"
+      },
+      {
+        "rfilename": "quantized_oxmodel.onnx"
+      },
+      {
+        "rfilename": "rotten_fruits_and_veg_classify.h5"
+      },
+      {
+        "rfilename": "rotten_fruits_classifier.keras"
+      }
+    ]
+  },
+  {
+    "_id": "6a296a9a80815e20f09b57d9",
+    "id": "JustFormen/Fruits_fresh_and_rotten",
+    "author": "JustFormen",
+    "gated": false,
+    "lastModified": "2026-06-10T13:46:02.000Z",
+    "likes": 0,
+    "trendingScore": 0,
+    "private": false,
+    "sha": "18d83c3acef8671b4f8eb702649fe57ed9e891f5",
+    "config": {},
+    "downloads": 0,
+    "tags": [
+      "region:us"
+    ],
+    "createdAt": "2026-06-10T13:46:02.000Z",
+    "modelId": "JustFormen/Fruits_fresh_and_rotten",
+    "siblings": [
+      {
+        "rfilename": ".gitattributes"
+      }
+    ]
+  },
+  {
+    "_id": "6a99c81ce0276a392a63e850",
+    "id": "ausjahk/fruit-fresh-rotten-cnn-from-scratch",
+    "author": "ausjahk",
+    "gated": false,
+    "lastModified": "2026-09-03T19:18:53.000Z",
+    "likes": 0,
+    "trendingScore": 0,
+    "private": false,
+    "sha": "9405400af9609eaed66aab694ec259097b423565",
+    "config": {},
+    "downloads": 9,
+    "tags": [
+      "pytorch",
+      "image-classification",
+      "cnn",
+      "from-scratch",
+      "fruits",
+      "region:us"
+    ],
+    "pipeline_tag": "image-classification",
+    "createdAt": "2026-09-03T19:18:52.000Z",
+    "modelId": "ausjahk/fruit-fresh-rotten-cnn-from-scratch",
+    "siblings": [
+      {
+        "rfilename": ".gitattributes"
+      },
+      {
+        "rfilename": "README.md"
+      },
+      {
+        "rfilename": "config.json"
+      },
+      {
+        "rfilename": "pytorch_model.bin"
+      }
+    ]
+  },
+  {
+    "_id": "6a99cabfd475182fd626c5ef",
+    "id": "ausjahk/fruits-fresh-rotten-from-scratch",
+    "author": "ausjahk",
+    "gated": false,
+    "lastModified": "2026-09-03T19:35:21.000Z",
+    "likes": 0,
+    "trendingScore": 0,
+    "private": false,
+    "sha": "0cd3827f4a5e38be308680cb26e9730a7169984f",
+    "config": {
+      "architectures": [
+        "ResNetForImageClassification"
+      ],
+      "model_type": "resnet"
+    },
+    "downloads": 25,
+    "tags": [
+      "transformers",
+      "safetensors",
+      "resnet",
+      "image-classification",
+      "generated_from_trainer",
+      "dataset:imagefolder",
+      "base_model:microsoft/resnet-18",
+      "base_model:finetune:microsoft/resnet-18",
+      "license:apache-2.0",
+      "model-index",
+      "endpoints_compatible",
+      "region:us"
+    ],
+    "pipeline_tag": "image-classification",
+    "library_name": "transformers",
+    "createdAt": "2026-09-03T19:30:07.000Z",
+    "modelId": "ausjahk/fruits-fresh-rotten-from-scratch",
+    "siblings": [
+      {
+        "rfilename": ".gitattributes"
+      },
+      {
+        "rfilename": "README.md"
+      },
+      {
+        "rfilename": "config.json"
+      },
+      {
+        "rfilename": "model.safetensors"
+      },
+      {
+        "rfilename": "preprocessor_config.json"
+      },
+      {
+        "rfilename": "training_args.bin"
+      }
+    ]
+  },
+  {
+    "_id": "6a9fbe1f68ba14c9c8cf0c46",
+    "id": "sandeepece15/cnn-fresh-rotten-fruit",
+    "author": "sandeepece15",
+    "gated": false,
+    "lastModified": "2026-09-08T07:49:51.000Z",
+    "likes": 0,
+    "trendingScore": 0,
+    "private": false,
+    "sha": "87e4ca878b54ac230d88ae4759647c5d58049138",
+    "config": {},
+    "downloads": 0,
+    "tags": [
+      "region:us"
+    ],
+    "createdAt": "2026-09-08T07:49:51.000Z",
+    "modelId": "sandeepece15/cnn-fresh-rotten-fruit",
+    "siblings": [
+      {
+        "rfilename": ".gitattributes"
+      }
+    ]
+  }
+]

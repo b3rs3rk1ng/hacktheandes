@@ -1,0 +1,195 @@
+{
+  "enabled": true,
+  "returning": false,
+  "tasks": {
+    "cacao-0-18-pod-1": {
+      "id": "cacao-0-18-pod-1",
+      "pod_id": "cacao-0-18-pod-1",
+      "plant_id": "cacao-0-18",
+      "position": [
+        4.04615515343057,
+        6.077372384111112,
+        0.7109224685542082
+      ],
+      "status": "rejected",
+      "robot_id": "ground-3",
+      "created_at": 1792325659.603437,
+      "drone_frame": "71be6dd1-9cee-4153-b9bf-7af99b46df2e",
+      "confidence": 0.8039774894714355,
+      "verification": [],
+      "heartbeat": 1792325716.1312788,
+      "verification_started": 1792325697.920356,
+      "reason": "La cámara terrestre no confirmó la alerta en dos fotogramas",
+      "review": {
+        "decision": "pending",
+        "revision": 1
+      }
+    },
+    "cacao-1-18-pod-4": {
+      "id": "cacao-1-18-pod-4",
+      "pod_id": "cacao-1-18-pod-4",
+      "plant_id": "cacao-1-18",
+      "position": [
+        4.162289585940371,
+        9.698346458065926,
+        0.17694895534973254
+      ],
+      "status": "awaiting_review",
+      "robot_id": null,
+      "created_at": 1792325683.361037,
+      "drone_frame": "09ceceb8-d476-4668-b7e9-9387896aa77e",
+      "confidence": 0.797145664691925,
+      "verification": [],
+      "heartbeat": 1792325845.3348258,
+      "verification_started": 1792325725.3220744,
+      "review": {
+        "decision": "pending",
+        "revision": 1
+      }
+    },
+    "cacao-2-19-pod-5": {
+      "id": "cacao-2-19-pod-5",
+      "pod_id": "cacao-2-19-pod-5",
+      "plant_id": "cacao-2-19",
+      "position": [
+        8.292661196241685,
+        13.771584781430585,
+        0.306463780171788
+      ],
+      "status": "claimed",
+      "robot_id": "ground-2",
+      "created_at": 1792325887.786779,
+      "drone_frame": "b4b1b6e4-3d82-45e7-9789-37855cc12acc",
+      "confidence": 0.8228418231010437,
+      "verification": [],
+      "evidence": {
+        "id": "5cfd83d17a49af30646cc5aca24dce268f8951a1fac709645443314d2c0c310e",
+        "image_url": "/api/review/evidence/5cfd83d17a49af30646cc5aca24dce268f8951a1fac709645443314d2c0c310e.jpg",
+        "crop_url": "/api/review/evidence/5cfd83d17a49af30646cc5aca24dce268f8951a1fac709645443314d2c0c310e-crop.jpg",
+        "original_url": "/api/review/evidence/5cfd83d17a49af30646cc5aca24dce268f8951a1fac709645443314d2c0c310e-original.jpg",
+        "frame_id": "b4b1b6e4-3d82-45e7-9789-37855cc12acc",
+        "captured_at": 1792325887.4404984,
+        "bbox": [
+          417,
+          213,
+          476,
+          323
+        ],
+        "width": 640,
+        "height": 323,
+        "sha256_original": "36b65e84396d50a22fbddbd75a6c7b15a13ad03f8e6c3ec7130a9f3076630189"
+      },
+      "review": {
+        "decision": "approve",
+        "revision": 2,
+        "previous_revision": 1,
+        "decided_at": 1792325934.4253173,
+        "actor": "operador local",
+        "note": "Prueba funcional de la demo: aprobar y comprobar regreso al objetivo."
+      },
+      "heartbeat": 1792325993.3339868
+    }
+  },
+  "removed": [],
+  "robots": {
+    "ground-1": {
+      "id": "ground-1",
+      "position": [
+        1.9999929803475867,
+        -7.999999988581675,
+        -0.02322825210988399
+      ],
+      "soc": 1,
+      "phase": "idle",
+      "task_id": null,
+      "updated_at": 1792325993.3339748
+    },
+    "ground-2": {
+      "id": "ground-2",
+      "position": [
+        9.026060307883318,
+        5.976544826111427,
+        0.5711156831443479
+      ],
+      "soc": 0.9986453389622412,
+      "phase": "navigating",
+      "task_id": "cacao-2-19-pod-5",
+      "updated_at": 1792325993.3339777
+    },
+    "ground-3": {
+      "id": "ground-3",
+      "position": [
+        6.814881239271609,
+        -8.063611157930042,
+        -0.024641488337703146
+      ],
+      "soc": 1,
+      "phase": "idle",
+      "task_id": null,
+      "updated_at": 1792325993.333988
+    }
+  },
+  "events": [
+    {
+      "time": 1792325659.603439,
+      "kind": "alert_located",
+      "task_id": "cacao-0-18-pod-1",
+      "robot_id": null
+    },
+    {
+      "time": 1792325660.0016458,
+      "kind": "assigned",
+      "task_id": "cacao-0-18-pod-1",
+      "robot_id": "ground-3"
+    },
+    {
+      "time": 1792325683.361039,
+      "kind": "alert_located",
+      "task_id": "cacao-1-18-pod-4",
+      "robot_id": null
+    },
+    {
+      "time": 1792325684.2556713,
+      "kind": "assigned",
+      "task_id": "cacao-1-18-pod-4",
+      "robot_id": "ground-2"
+    },
+    {
+      "time": 1792325697.9203577,
+      "kind": "verifying",
+      "task_id": "cacao-0-18-pod-1",
+      "robot_id": "ground-3"
+    },
+    {
+      "time": 1792325716.131283,
+      "kind": "rejected",
+      "task_id": "cacao-0-18-pod-1",
+      "robot_id": "ground-3"
+    },
+    {
+      "time": 1792325725.3220751,
+      "kind": "verifying",
+      "task_id": "cacao-1-18-pod-4",
+      "robot_id": "ground-2"
+    },
+    {
+      "time": 1792325887.7867808,
+      "kind": "alert_located",
+      "task_id": "cacao-2-19-pod-5",
+      "robot_id": null
+    },
+    {
+      "time": 1792325934.4253209,
+      "kind": "human_approved",
+      "task_id": "cacao-2-19-pod-5",
+      "robot_id": null
+    },
+    {
+      "time": 1792325963.0942397,
+      "kind": "assigned",
+      "task_id": "cacao-2-19-pod-5",
+      "robot_id": "ground-2"
+    }
+  ],
+  "epoch": 1
+}

@@ -1,0 +1,20 @@
+[
+  {
+    "name": "Enfermedades Cacao/Fito/Fito1.jpg",
+    "raw_size": [
+      3120,
+      4160
+    ],
+    "exif_orientation": 1,
+    "header_bytes": 65536
+  },
+  {
+    "name": "Enfermedades Cacao/Monilia/Monilia1.jpg",
+    "raw_size": [
+      3120,
+      4160
+    ],
+    "exif_orientation": 1,
+    "header_bytes": 65536
+  }
+]

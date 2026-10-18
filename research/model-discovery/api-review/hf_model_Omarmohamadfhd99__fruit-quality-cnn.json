@@ -1,0 +1,37 @@
+{
+  "_id": "69439df13c77d921442b8c08",
+  "id": "Omarmohamadfhd99/fruit-quality-cnn",
+  "private": false,
+  "tags": [
+    "cnn",
+    "region:us"
+  ],
+  "downloads": 5,
+  "likes": 0,
+  "modelId": "Omarmohamadfhd99/fruit-quality-cnn",
+  "author": "Omarmohamadfhd99",
+  "sha": "6fd105619cff7008e71dbf3db1f79087771f5da8",
+  "lastModified": "2025-12-18T06:23:59.000Z",
+  "gated": false,
+  "disabled": false,
+  "config": {
+    "model_type": "cnn"
+  },
+  "siblings": [
+    {
+      "rfilename": ".gitattributes"
+    },
+    {
+      "rfilename": "README.md"
+    },
+    {
+      "rfilename": "config.json"
+    },
+    {
+      "rfilename": "fruit_cnn_model.h5"
+    }
+  ],
+  "spaces": [],
+  "createdAt": "2025-12-18T06:23:45.000Z",
+  "usedStorage": 44529192
+}

@@ -1,0 +1,10 @@
+{
+  "url": "https://altered-fountain-supporting-flux.trycloudflare.com",
+  "requests": 36,
+  "statuses": {
+    "200": 36
+  },
+  "median_ms": 926.0,
+  "maximum_ms": 2028,
+  "maximum_bytes": 10108
+}

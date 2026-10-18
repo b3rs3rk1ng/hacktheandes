@@ -1,0 +1,95 @@
+[
+  {
+    "_id": "67a2f8b0d5ad3369a6781914",
+    "id": "peachfawn/yolov8-plant-disease",
+    "author": "peachfawn",
+    "gated": false,
+    "lastModified": "2025-02-05T05:36:03.000Z",
+    "likes": 0,
+    "trendingScore": 0,
+    "private": false,
+    "sha": "51b4d25448dbb7a91d9332e6ad0e21c163ad43d0",
+    "config": {},
+    "downloads": 0,
+    "tags": [
+      "region:us"
+    ],
+    "createdAt": "2025-02-05T05:35:44.000Z",
+    "modelId": "peachfawn/yolov8-plant-disease",
+    "siblings": [
+      {
+        "rfilename": ".gitattributes"
+      },
+      {
+        "rfilename": "best.pt"
+      }
+    ]
+  },
+  {
+    "_id": "67a3f89a39b2bd4f552d5657",
+    "id": "peachfawn/yolov8-plant-disease-Better",
+    "author": "peachfawn",
+    "gated": false,
+    "lastModified": "2025-02-05T23:47:57.000Z",
+    "likes": 0,
+    "trendingScore": 0,
+    "private": false,
+    "sha": "371662c5acfd79e31206d6041a99e5257c28c3a5",
+    "config": {},
+    "downloads": 0,
+    "tags": [
+      "region:us"
+    ],
+    "createdAt": "2025-02-05T23:47:38.000Z",
+    "modelId": "peachfawn/yolov8-plant-disease-Better",
+    "siblings": [
+      {
+        "rfilename": ".gitattributes"
+      },
+      {
+        "rfilename": "best.pt"
+      }
+    ]
+  },
+  {
+    "_id": "6ac0a2ef1f2153fa716e2345",
+    "id": "ixrbhii/peach-disease-convnext",
+    "author": "ixrbhii",
+    "gated": false,
+    "lastModified": "2026-10-04T17:29:30.000Z",
+    "likes": 0,
+    "trendingScore": 0,
+    "private": false,
+    "sha": "bb32365090fd7d8578743691c9c9b660a002307a",
+    "config": {},
+    "downloads": 14,
+    "tags": [
+      "timm",
+      "safetensors",
+      "agriculture",
+      "plant-disease",
+      "convnext",
+      "image-classification",
+      "license:cc-by-4.0",
+      "region:us"
+    ],
+    "pipeline_tag": "image-classification",
+    "library_name": "timm",
+    "createdAt": "2026-10-03T06:38:39.000Z",
+    "modelId": "ixrbhii/peach-disease-convnext",
+    "siblings": [
+      {
+        "rfilename": ".gitattributes"
+      },
+      {
+        "rfilename": "README.md"
+      },
+      {
+        "rfilename": "config.json"
+      },
+      {
+        "rfilename": "model.safetensors"
+      }
+    ]
+  }
+]

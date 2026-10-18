@@ -1,0 +1,56 @@
+{
+  "_id": "6a8e991c03cd280fcad7de64",
+  "id": "Piyu12/fruit-veg-freshness-mobilenetv2",
+  "private": false,
+  "pipeline_tag": "image-classification",
+  "tags": [
+    "image-classification",
+    "pytorch",
+    "mobilenetv2",
+    "fruit-freshness",
+    "vegetable-freshness",
+    "dataset:raghavrpotdar/fresh-and-stale-images-of-fruits-and-vegetables",
+    "license:apache-2.0",
+    "region:us"
+  ],
+  "downloads": 0,
+  "likes": 1,
+  "modelId": "Piyu12/fruit-veg-freshness-mobilenetv2",
+  "author": "Piyu12",
+  "sha": "10b117bb88ec0f96c8e02947854fbd8a6626ec39",
+  "lastModified": "2026-08-26T07:43:51.000Z",
+  "gated": false,
+  "disabled": false,
+  "model-index": null,
+  "config": {},
+  "cardData": {
+    "license": "apache-2.0",
+    "tags": [
+      "image-classification",
+      "pytorch",
+      "mobilenetv2",
+      "fruit-freshness",
+      "vegetable-freshness"
+    ],
+    "datasets": [
+      "raghavrpotdar/fresh-and-stale-images-of-fruits-and-vegetables"
+    ]
+  },
+  "siblings": [
+    {
+      "rfilename": ".gitattributes"
+    },
+    {
+      "rfilename": "README.md"
+    },
+    {
+      "rfilename": "freshness_mobilenetv2_state_dict.pth"
+    },
+    {
+      "rfilename": "freshness_mobilenetv2_traced.pt"
+    }
+  ],
+  "spaces": [],
+  "createdAt": "2026-08-26T07:43:24.000Z",
+  "usedStorage": 18667625
+}

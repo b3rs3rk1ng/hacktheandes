@@ -1,0 +1,7000 @@
+{
+  "split": "val",
+  "task": "detection",
+  "threshold": 0.89,
+  "status": "precision_target_unmet_fallback_max_precision_at_minimum_recall_and_alerts",
+  "target_met": false,
+  "policy": {
+    "precision_target": 0.95,
+    "min_recall": 0.5,
+    "min_alerts": 20
+  },
+  "validation_metrics": {
+    "threshold": 0.89,
+    "unit": "annotated_object",
+    "tp": 145,
+    "fp": 21,
+    "fn": 88,
+    "precision": 0.8734939759036144,
+    "recall": 0.6223175965665236,
+    "f1": 0.7268170426065163,
+    "precision_wilson_95": [
+      0.8143443230120763,
+      0.9157483225704718
+    ],
+    "recall_wilson_95": [
+      0.558558665790114,
+      0.682108657759658
+    ],
+    "alerts": 166,
+    "images": 278,
+    "matching_iou": 0.5,
+    "recall_by_source_annotation": [
+      {
+        "source": "cocoa_monilia_v2",
+        "class": "m1",
+        "source_class_ids": [
+          1
+        ],
+        "gt": 31,
+        "tp": 10,
+        "fn": 21,
+        "recall": 0.3225806451612903
+      },
+      {
+        "source": "cocoa_monilia_v2",
+        "class": "m2",
+        "source_class_ids": [
+          2
+        ],
+        "gt": 69,
+        "tp": 47,
+        "fn": 22,
+        "recall": 0.6811594202898551
+      },
+      {
+        "source": "cocoa_monilia_v2",
+        "class": "m3",
+        "source_class_ids": [
+          3
+        ],
+        "gt": 104,
+        "tp": 79,
+        "fn": 25,
+        "recall": 0.7596153846153846
+      },
+      {
+        "source": "serrano_torres_v2",
+        "class": "monilia",
+        "source_class_ids": [
+          1
+        ],
+        "gt": 29,
+        "tp": 9,
+        "fn": 20,
+        "recall": 0.3103448275862069
+      }
+    ],
+    "target_gt_without_source_annotation": 0,
+    "source_annotation_recall_note": "A merged GT may have multiple provenance strata; it counts once per (source,class). Provenance never changes matching or threshold selection."
+  },
+  "curve": [
+    {
+      "threshold": 0.001,
+      "unit": "annotated_object",
+      "tp": 192,
+      "fp": 64,
+      "fn": 41,
+      "precision": 0.75,
+      "recall": 0.8240343347639485,
+      "f1": 0.7852760736196319,
+      "precision_wilson_95": [
+        0.6935249374688035,
+        0.7990831343182607
+      ],
+      "recall_wilson_95": [
+        0.7699986980623991,
+        0.8675585976571724
+      ],
+      "alerts": 256,
+      "images": 278,
+      "matching_iou": 0.5,
+      "recall_by_source_annotation": [
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "m1",
+          "source_class_ids": [
+            1
+          ],
+          "gt": 31,
+          "tp": 18,
+          "fn": 13,
+          "recall": 0.5806451612903226
+        },
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "m2",
+          "source_class_ids": [
+            2
+          ],
+          "gt": 69,
+          "tp": 63,
+          "fn": 6,
+          "recall": 0.9130434782608695
+        },
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "m3",
+          "source_class_ids": [
+            3
+          ],
+          "gt": 104,
+          "tp": 94,
+          "fn": 10,
+          "recall": 0.9038461538461539
+        },
+        {
+          "source": "serrano_torres_v2",
+          "class": "monilia",
+          "source_class_ids": [
+            1
+          ],
+          "gt": 29,
+          "tp": 17,
+          "fn": 12,
+          "recall": 0.5862068965517241
+        }
+      ],
+      "target_gt_without_source_annotation": 0,
+      "source_annotation_recall_note": "A merged GT may have multiple provenance strata; it counts once per (source,class). Provenance never changes matching or threshold selection."
+    },
+    {
+      "threshold": 0.01,
+      "unit": "annotated_object",
+      "tp": 192,
+      "fp": 64,
+      "fn": 41,
+      "precision": 0.75,
+      "recall": 0.8240343347639485,
+      "f1": 0.7852760736196319,
+      "precision_wilson_95": [
+        0.6935249374688035,
+        0.7990831343182607
+      ],
+      "recall_wilson_95": [
+        0.7699986980623991,
+        0.8675585976571724
+      ],
+      "alerts": 256,
+      "images": 278,
+      "matching_iou": 0.5,
+      "recall_by_source_annotation": [
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "m1",
+          "source_class_ids": [
+            1
+          ],
+          "gt": 31,
+          "tp": 18,
+          "fn": 13,
+          "recall": 0.5806451612903226
+        },
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "m2",
+          "source_class_ids": [
+            2
+          ],
+          "gt": 69,
+          "tp": 63,
+          "fn": 6,
+          "recall": 0.9130434782608695
+        },
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "m3",
+          "source_class_ids": [
+            3
+          ],
+          "gt": 104,
+          "tp": 94,
+          "fn": 10,
+          "recall": 0.9038461538461539
+        },
+        {
+          "source": "serrano_torres_v2",
+          "class": "monilia",
+          "source_class_ids": [
+            1
+          ],
+          "gt": 29,
+          "tp": 17,
+          "fn": 12,
+          "recall": 0.5862068965517241
+        }
+      ],
+      "target_gt_without_source_annotation": 0,
+      "source_annotation_recall_note": "A merged GT may have multiple provenance strata; it counts once per (source,class). Provenance never changes matching or threshold selection."
+    },
+    {
+      "threshold": 0.02,
+      "unit": "annotated_object",
+      "tp": 192,
+      "fp": 64,
+      "fn": 41,
+      "precision": 0.75,
+      "recall": 0.8240343347639485,
+      "f1": 0.7852760736196319,
+      "precision_wilson_95": [
+        0.6935249374688035,
+        0.7990831343182607
+      ],
+      "recall_wilson_95": [
+        0.7699986980623991,
+        0.8675585976571724
+      ],
+      "alerts": 256,
+      "images": 278,
+      "matching_iou": 0.5,
+      "recall_by_source_annotation": [
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "m1",
+          "source_class_ids": [
+            1
+          ],
+          "gt": 31,
+          "tp": 18,
+          "fn": 13,
+          "recall": 0.5806451612903226
+        },
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "m2",
+          "source_class_ids": [
+            2
+          ],
+          "gt": 69,
+          "tp": 63,
+          "fn": 6,
+          "recall": 0.9130434782608695
+        },
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "m3",
+          "source_class_ids": [
+            3
+          ],
+          "gt": 104,
+          "tp": 94,
+          "fn": 10,
+          "recall": 0.9038461538461539
+        },
+        {
+          "source": "serrano_torres_v2",
+          "class": "monilia",
+          "source_class_ids": [
+            1
+          ],
+          "gt": 29,
+          "tp": 17,
+          "fn": 12,
+          "recall": 0.5862068965517241
+        }
+      ],
+      "target_gt_without_source_annotation": 0,
+      "source_annotation_recall_note": "A merged GT may have multiple provenance strata; it counts once per (source,class). Provenance never changes matching or threshold selection."
+    },
+    {
+      "threshold": 0.03,
+      "unit": "annotated_object",
+      "tp": 192,
+      "fp": 64,
+      "fn": 41,
+      "precision": 0.75,
+      "recall": 0.8240343347639485,
+      "f1": 0.7852760736196319,
+      "precision_wilson_95": [
+        0.6935249374688035,
+        0.7990831343182607
+      ],
+      "recall_wilson_95": [
+        0.7699986980623991,
+        0.8675585976571724
+      ],
+      "alerts": 256,
+      "images": 278,
+      "matching_iou": 0.5,
+      "recall_by_source_annotation": [
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "m1",
+          "source_class_ids": [
+            1
+          ],
+          "gt": 31,
+          "tp": 18,
+          "fn": 13,
+          "recall": 0.5806451612903226
+        },
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "m2",
+          "source_class_ids": [
+            2
+          ],
+          "gt": 69,
+          "tp": 63,
+          "fn": 6,
+          "recall": 0.9130434782608695
+        },
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "m3",
+          "source_class_ids": [
+            3
+          ],
+          "gt": 104,
+          "tp": 94,
+          "fn": 10,
+          "recall": 0.9038461538461539
+        },
+        {
+          "source": "serrano_torres_v2",
+          "class": "monilia",
+          "source_class_ids": [
+            1
+          ],
+          "gt": 29,
+          "tp": 17,
+          "fn": 12,
+          "recall": 0.5862068965517241
+        }
+      ],
+      "target_gt_without_source_annotation": 0,
+      "source_annotation_recall_note": "A merged GT may have multiple provenance strata; it counts once per (source,class). Provenance never changes matching or threshold selection."
+    },
+    {
+      "threshold": 0.04,
+      "unit": "annotated_object",
+      "tp": 192,
+      "fp": 64,
+      "fn": 41,
+      "precision": 0.75,
+      "recall": 0.8240343347639485,
+      "f1": 0.7852760736196319,
+      "precision_wilson_95": [
+        0.6935249374688035,
+        0.7990831343182607
+      ],
+      "recall_wilson_95": [
+        0.7699986980623991,
+        0.8675585976571724
+      ],
+      "alerts": 256,
+      "images": 278,
+      "matching_iou": 0.5,
+      "recall_by_source_annotation": [
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "m1",
+          "source_class_ids": [
+            1
+          ],
+          "gt": 31,
+          "tp": 18,
+          "fn": 13,
+          "recall": 0.5806451612903226
+        },
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "m2",
+          "source_class_ids": [
+            2
+          ],
+          "gt": 69,
+          "tp": 63,
+          "fn": 6,
+          "recall": 0.9130434782608695
+        },
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "m3",
+          "source_class_ids": [
+            3
+          ],
+          "gt": 104,
+          "tp": 94,
+          "fn": 10,
+          "recall": 0.9038461538461539
+        },
+        {
+          "source": "serrano_torres_v2",
+          "class": "monilia",
+          "source_class_ids": [
+            1
+          ],
+          "gt": 29,
+          "tp": 17,
+          "fn": 12,
+          "recall": 0.5862068965517241
+        }
+      ],
+      "target_gt_without_source_annotation": 0,
+      "source_annotation_recall_note": "A merged GT may have multiple provenance strata; it counts once per (source,class). Provenance never changes matching or threshold selection."
+    },
+    {
+      "threshold": 0.05,
+      "unit": "annotated_object",
+      "tp": 192,
+      "fp": 64,
+      "fn": 41,
+      "precision": 0.75,
+      "recall": 0.8240343347639485,
+      "f1": 0.7852760736196319,
+      "precision_wilson_95": [
+        0.6935249374688035,
+        0.7990831343182607
+      ],
+      "recall_wilson_95": [
+        0.7699986980623991,
+        0.8675585976571724
+      ],
+      "alerts": 256,
+      "images": 278,
+      "matching_iou": 0.5,
+      "recall_by_source_annotation": [
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "m1",
+          "source_class_ids": [
+            1
+          ],
+          "gt": 31,
+          "tp": 18,
+          "fn": 13,
+          "recall": 0.5806451612903226
+        },
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "m2",
+          "source_class_ids": [
+            2
+          ],
+          "gt": 69,
+          "tp": 63,
+          "fn": 6,
+          "recall": 0.9130434782608695
+        },
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "m3",
+          "source_class_ids": [
+            3
+          ],
+          "gt": 104,
+          "tp": 94,
+          "fn": 10,
+          "recall": 0.9038461538461539
+        },
+        {
+          "source": "serrano_torres_v2",
+          "class": "monilia",
+          "source_class_ids": [
+            1
+          ],
+          "gt": 29,
+          "tp": 17,
+          "fn": 12,
+          "recall": 0.5862068965517241
+        }
+      ],
+      "target_gt_without_source_annotation": 0,
+      "source_annotation_recall_note": "A merged GT may have multiple provenance strata; it counts once per (source,class). Provenance never changes matching or threshold selection."
+    },
+    {
+      "threshold": 0.06,
+      "unit": "annotated_object",
+      "tp": 192,
+      "fp": 63,
+      "fn": 41,
+      "precision": 0.7529411764705882,
+      "recall": 0.8240343347639485,
+      "f1": 0.7868852459016393,
+      "precision_wilson_95": [
+        0.6965107175792508,
+        0.8018638495698297
+      ],
+      "recall_wilson_95": [
+        0.7699986980623991,
+        0.8675585976571724
+      ],
+      "alerts": 255,
+      "images": 278,
+      "matching_iou": 0.5,
+      "recall_by_source_annotation": [
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "m1",
+          "source_class_ids": [
+            1
+          ],
+          "gt": 31,
+          "tp": 18,
+          "fn": 13,
+          "recall": 0.5806451612903226
+        },
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "m2",
+          "source_class_ids": [
+            2
+          ],
+          "gt": 69,
+          "tp": 63,
+          "fn": 6,
+          "recall": 0.9130434782608695
+        },
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "m3",
+          "source_class_ids": [
+            3
+          ],
+          "gt": 104,
+          "tp": 94,
+          "fn": 10,
+          "recall": 0.9038461538461539
+        },
+        {
+          "source": "serrano_torres_v2",
+          "class": "monilia",
+          "source_class_ids": [
+            1
+          ],
+          "gt": 29,
+          "tp": 17,
+          "fn": 12,
+          "recall": 0.5862068965517241
+        }
+      ],
+      "target_gt_without_source_annotation": 0,
+      "source_annotation_recall_note": "A merged GT may have multiple provenance strata; it counts once per (source,class). Provenance never changes matching or threshold selection."
+    },
+    {
+      "threshold": 0.07,
+      "unit": "annotated_object",
+      "tp": 192,
+      "fp": 60,
+      "fn": 41,
+      "precision": 0.7619047619047619,
+      "recall": 0.8240343347639485,
+      "f1": 0.7917525773195876,
+      "precision_wilson_95": [
+        0.705634192426837,
+        0.8103103327820811
+      ],
+      "recall_wilson_95": [
+        0.7699986980623991,
+        0.8675585976571724
+      ],
+      "alerts": 252,
+      "images": 278,
+      "matching_iou": 0.5,
+      "recall_by_source_annotation": [
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "m1",
+          "source_class_ids": [
+            1
+          ],
+          "gt": 31,
+          "tp": 18,
+          "fn": 13,
+          "recall": 0.5806451612903226
+        },
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "m2",
+          "source_class_ids": [
+            2
+          ],
+          "gt": 69,
+          "tp": 63,
+          "fn": 6,
+          "recall": 0.9130434782608695
+        },
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "m3",
+          "source_class_ids": [
+            3
+          ],
+          "gt": 104,
+          "tp": 94,
+          "fn": 10,
+          "recall": 0.9038461538461539
+        },
+        {
+          "source": "serrano_torres_v2",
+          "class": "monilia",
+          "source_class_ids": [
+            1
+          ],
+          "gt": 29,
+          "tp": 17,
+          "fn": 12,
+          "recall": 0.5862068965517241
+        }
+      ],
+      "target_gt_without_source_annotation": 0,
+      "source_annotation_recall_note": "A merged GT may have multiple provenance strata; it counts once per (source,class). Provenance never changes matching or threshold selection."
+    },
+    {
+      "threshold": 0.08,
+      "unit": "annotated_object",
+      "tp": 191,
+      "fp": 57,
+      "fn": 42,
+      "precision": 0.7701612903225806,
+      "recall": 0.8197424892703863,
+      "f1": 0.7941787941787942,
+      "precision_wilson_95": [
+        0.7139151150986858,
+        0.8181656655141887
+      ],
+      "recall_wilson_95": [
+        0.7653266359055577,
+        0.8637861923210395
+      ],
+      "alerts": 248,
+      "images": 278,
+      "matching_iou": 0.5,
+      "recall_by_source_annotation": [
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "m1",
+          "source_class_ids": [
+            1
+          ],
+          "gt": 31,
+          "tp": 18,
+          "fn": 13,
+          "recall": 0.5806451612903226
+        },
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "m2",
+          "source_class_ids": [
+            2
+          ],
+          "gt": 69,
+          "tp": 63,
+          "fn": 6,
+          "recall": 0.9130434782608695
+        },
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "m3",
+          "source_class_ids": [
+            3
+          ],
+          "gt": 104,
+          "tp": 93,
+          "fn": 11,
+          "recall": 0.8942307692307693
+        },
+        {
+          "source": "serrano_torres_v2",
+          "class": "monilia",
+          "source_class_ids": [
+            1
+          ],
+          "gt": 29,
+          "tp": 17,
+          "fn": 12,
+          "recall": 0.5862068965517241
+        }
+      ],
+      "target_gt_without_source_annotation": 0,
+      "source_annotation_recall_note": "A merged GT may have multiple provenance strata; it counts once per (source,class). Provenance never changes matching or threshold selection."
+    },
+    {
+      "threshold": 0.09,
+      "unit": "annotated_object",
+      "tp": 191,
+      "fp": 56,
+      "fn": 42,
+      "precision": 0.7732793522267206,
+      "recall": 0.8197424892703863,
+      "f1": 0.7958333333333333,
+      "precision_wilson_95": [
+        0.7171097404479392,
+        0.8210788055551375
+      ],
+      "recall_wilson_95": [
+        0.7653266359055577,
+        0.8637861923210395
+      ],
+      "alerts": 247,
+      "images": 278,
+      "matching_iou": 0.5,
+      "recall_by_source_annotation": [
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "m1",
+          "source_class_ids": [
+            1
+          ],
+          "gt": 31,
+          "tp": 18,
+          "fn": 13,
+          "recall": 0.5806451612903226
+        },
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "m2",
+          "source_class_ids": [
+            2
+          ],
+          "gt": 69,
+          "tp": 63,
+          "fn": 6,
+          "recall": 0.9130434782608695
+        },
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "m3",
+          "source_class_ids": [
+            3
+          ],
+          "gt": 104,
+          "tp": 93,
+          "fn": 11,
+          "recall": 0.8942307692307693
+        },
+        {
+          "source": "serrano_torres_v2",
+          "class": "monilia",
+          "source_class_ids": [
+            1
+          ],
+          "gt": 29,
+          "tp": 17,
+          "fn": 12,
+          "recall": 0.5862068965517241
+        }
+      ],
+      "target_gt_without_source_annotation": 0,
+      "source_annotation_recall_note": "A merged GT may have multiple provenance strata; it counts once per (source,class). Provenance never changes matching or threshold selection."
+    },
+    {
+      "threshold": 0.1,
+      "unit": "annotated_object",
+      "tp": 190,
+      "fp": 55,
+      "fn": 43,
+      "precision": 0.7755102040816326,
+      "recall": 0.8154506437768241,
+      "f1": 0.7949790794979079,
+      "precision_wilson_95": [
+        0.7192412293199482,
+        0.8232728703794752
+      ],
+      "recall_wilson_95": [
+        0.760664564016412,
+        0.8600037967172107
+      ],
+      "alerts": 245,
+      "images": 278,
+      "matching_iou": 0.5,
+      "recall_by_source_annotation": [
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "m1",
+          "source_class_ids": [
+            1
+          ],
+          "gt": 31,
+          "tp": 17,
+          "fn": 14,
+          "recall": 0.5483870967741935
+        },
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "m2",
+          "source_class_ids": [
+            2
+          ],
+          "gt": 69,
+          "tp": 63,
+          "fn": 6,
+          "recall": 0.9130434782608695
+        },
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "m3",
+          "source_class_ids": [
+            3
+          ],
+          "gt": 104,
+          "tp": 93,
+          "fn": 11,
+          "recall": 0.8942307692307693
+        },
+        {
+          "source": "serrano_torres_v2",
+          "class": "monilia",
+          "source_class_ids": [
+            1
+          ],
+          "gt": 29,
+          "tp": 17,
+          "fn": 12,
+          "recall": 0.5862068965517241
+        }
+      ],
+      "target_gt_without_source_annotation": 0,
+      "source_annotation_recall_note": "A merged GT may have multiple provenance strata; it counts once per (source,class). Provenance never changes matching or threshold selection."
+    },
+    {
+      "threshold": 0.11,
+      "unit": "annotated_object",
+      "tp": 190,
+      "fp": 55,
+      "fn": 43,
+      "precision": 0.7755102040816326,
+      "recall": 0.8154506437768241,
+      "f1": 0.7949790794979079,
+      "precision_wilson_95": [
+        0.7192412293199482,
+        0.8232728703794752
+      ],
+      "recall_wilson_95": [
+        0.760664564016412,
+        0.8600037967172107
+      ],
+      "alerts": 245,
+      "images": 278,
+      "matching_iou": 0.5,
+      "recall_by_source_annotation": [
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "m1",
+          "source_class_ids": [
+            1
+          ],
+          "gt": 31,
+          "tp": 17,
+          "fn": 14,
+          "recall": 0.5483870967741935
+        },
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "m2",
+          "source_class_ids": [
+            2
+          ],
+          "gt": 69,
+          "tp": 63,
+          "fn": 6,
+          "recall": 0.9130434782608695
+        },
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "m3",
+          "source_class_ids": [
+            3
+          ],
+          "gt": 104,
+          "tp": 93,
+          "fn": 11,
+          "recall": 0.8942307692307693
+        },
+        {
+          "source": "serrano_torres_v2",
+          "class": "monilia",
+          "source_class_ids": [
+            1
+          ],
+          "gt": 29,
+          "tp": 17,
+          "fn": 12,
+          "recall": 0.5862068965517241
+        }
+      ],
+      "target_gt_without_source_annotation": 0,
+      "source_annotation_recall_note": "A merged GT may have multiple provenance strata; it counts once per (source,class). Provenance never changes matching or threshold selection."
+    },
+    {
+      "threshold": 0.12,
+      "unit": "annotated_object",
+      "tp": 190,
+      "fp": 55,
+      "fn": 43,
+      "precision": 0.7755102040816326,
+      "recall": 0.8154506437768241,
+      "f1": 0.7949790794979079,
+      "precision_wilson_95": [
+        0.7192412293199482,
+        0.8232728703794752
+      ],
+      "recall_wilson_95": [
+        0.760664564016412,
+        0.8600037967172107
+      ],
+      "alerts": 245,
+      "images": 278,
+      "matching_iou": 0.5,
+      "recall_by_source_annotation": [
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "m1",
+          "source_class_ids": [
+            1
+          ],
+          "gt": 31,
+          "tp": 17,
+          "fn": 14,
+          "recall": 0.5483870967741935
+        },
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "m2",
+          "source_class_ids": [
+            2
+          ],
+          "gt": 69,
+          "tp": 63,
+          "fn": 6,
+          "recall": 0.9130434782608695
+        },
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "m3",
+          "source_class_ids": [
+            3
+          ],
+          "gt": 104,
+          "tp": 93,
+          "fn": 11,
+          "recall": 0.8942307692307693
+        },
+        {
+          "source": "serrano_torres_v2",
+          "class": "monilia",
+          "source_class_ids": [
+            1
+          ],
+          "gt": 29,
+          "tp": 17,
+          "fn": 12,
+          "recall": 0.5862068965517241
+        }
+      ],
+      "target_gt_without_source_annotation": 0,
+      "source_annotation_recall_note": "A merged GT may have multiple provenance strata; it counts once per (source,class). Provenance never changes matching or threshold selection."
+    },
+    {
+      "threshold": 0.13,
+      "unit": "annotated_object",
+      "tp": 190,
+      "fp": 53,
+      "fn": 43,
+      "precision": 0.7818930041152263,
+      "recall": 0.8154506437768241,
+      "f1": 0.7983193277310925,
+      "precision_wilson_95": [
+        0.7258029708620551,
+        0.8292091436122678
+      ],
+      "recall_wilson_95": [
+        0.760664564016412,
+        0.8600037967172107
+      ],
+      "alerts": 243,
+      "images": 278,
+      "matching_iou": 0.5,
+      "recall_by_source_annotation": [
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "m1",
+          "source_class_ids": [
+            1
+          ],
+          "gt": 31,
+          "tp": 17,
+          "fn": 14,
+          "recall": 0.5483870967741935
+        },
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "m2",
+          "source_class_ids": [
+            2
+          ],
+          "gt": 69,
+          "tp": 63,
+          "fn": 6,
+          "recall": 0.9130434782608695
+        },
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "m3",
+          "source_class_ids": [
+            3
+          ],
+          "gt": 104,
+          "tp": 93,
+          "fn": 11,
+          "recall": 0.8942307692307693
+        },
+        {
+          "source": "serrano_torres_v2",
+          "class": "monilia",
+          "source_class_ids": [
+            1
+          ],
+          "gt": 29,
+          "tp": 17,
+          "fn": 12,
+          "recall": 0.5862068965517241
+        }
+      ],
+      "target_gt_without_source_annotation": 0,
+      "source_annotation_recall_note": "A merged GT may have multiple provenance strata; it counts once per (source,class). Provenance never changes matching or threshold selection."
+    },
+    {
+      "threshold": 0.14,
+      "unit": "annotated_object",
+      "tp": 189,
+      "fp": 53,
+      "fn": 44,
+      "precision": 0.78099173553719,
+      "recall": 0.8111587982832618,
+      "f1": 0.7957894736842105,
+      "precision_wilson_95": [
+        0.7247168801893776,
+        0.8284851739002556
+      ],
+      "recall_wilson_95": [
+        0.7560122192730315,
+        0.8562116739676165
+      ],
+      "alerts": 242,
+      "images": 278,
+      "matching_iou": 0.5,
+      "recall_by_source_annotation": [
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "m1",
+          "source_class_ids": [
+            1
+          ],
+          "gt": 31,
+          "tp": 17,
+          "fn": 14,
+          "recall": 0.5483870967741935
+        },
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "m2",
+          "source_class_ids": [
+            2
+          ],
+          "gt": 69,
+          "tp": 63,
+          "fn": 6,
+          "recall": 0.9130434782608695
+        },
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "m3",
+          "source_class_ids": [
+            3
+          ],
+          "gt": 104,
+          "tp": 92,
+          "fn": 12,
+          "recall": 0.8846153846153846
+        },
+        {
+          "source": "serrano_torres_v2",
+          "class": "monilia",
+          "source_class_ids": [
+            1
+          ],
+          "gt": 29,
+          "tp": 17,
+          "fn": 12,
+          "recall": 0.5862068965517241
+        }
+      ],
+      "target_gt_without_source_annotation": 0,
+      "source_annotation_recall_note": "A merged GT may have multiple provenance strata; it counts once per (source,class). Provenance never changes matching or threshold selection."
+    },
+    {
+      "threshold": 0.15,
+      "unit": "annotated_object",
+      "tp": 189,
+      "fp": 53,
+      "fn": 44,
+      "precision": 0.78099173553719,
+      "recall": 0.8111587982832618,
+      "f1": 0.7957894736842105,
+      "precision_wilson_95": [
+        0.7247168801893776,
+        0.8284851739002556
+      ],
+      "recall_wilson_95": [
+        0.7560122192730315,
+        0.8562116739676165
+      ],
+      "alerts": 242,
+      "images": 278,
+      "matching_iou": 0.5,
+      "recall_by_source_annotation": [
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "m1",
+          "source_class_ids": [
+            1
+          ],
+          "gt": 31,
+          "tp": 17,
+          "fn": 14,
+          "recall": 0.5483870967741935
+        },
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "m2",
+          "source_class_ids": [
+            2
+          ],
+          "gt": 69,
+          "tp": 63,
+          "fn": 6,
+          "recall": 0.9130434782608695
+        },
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "m3",
+          "source_class_ids": [
+            3
+          ],
+          "gt": 104,
+          "tp": 92,
+          "fn": 12,
+          "recall": 0.8846153846153846
+        },
+        {
+          "source": "serrano_torres_v2",
+          "class": "monilia",
+          "source_class_ids": [
+            1
+          ],
+          "gt": 29,
+          "tp": 17,
+          "fn": 12,
+          "recall": 0.5862068965517241
+        }
+      ],
+      "target_gt_without_source_annotation": 0,
+      "source_annotation_recall_note": "A merged GT may have multiple provenance strata; it counts once per (source,class). Provenance never changes matching or threshold selection."
+    },
+    {
+      "threshold": 0.16,
+      "unit": "annotated_object",
+      "tp": 189,
+      "fp": 51,
+      "fn": 44,
+      "precision": 0.7875,
+      "recall": 0.8111587982832618,
+      "f1": 0.7991543340380549,
+      "precision_wilson_95": [
+        0.731426260787346,
+        0.8345152352462576
+      ],
+      "recall_wilson_95": [
+        0.7560122192730315,
+        0.8562116739676165
+      ],
+      "alerts": 240,
+      "images": 278,
+      "matching_iou": 0.5,
+      "recall_by_source_annotation": [
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "m1",
+          "source_class_ids": [
+            1
+          ],
+          "gt": 31,
+          "tp": 17,
+          "fn": 14,
+          "recall": 0.5483870967741935
+        },
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "m2",
+          "source_class_ids": [
+            2
+          ],
+          "gt": 69,
+          "tp": 63,
+          "fn": 6,
+          "recall": 0.9130434782608695
+        },
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "m3",
+          "source_class_ids": [
+            3
+          ],
+          "gt": 104,
+          "tp": 92,
+          "fn": 12,
+          "recall": 0.8846153846153846
+        },
+        {
+          "source": "serrano_torres_v2",
+          "class": "monilia",
+          "source_class_ids": [
+            1
+          ],
+          "gt": 29,
+          "tp": 17,
+          "fn": 12,
+          "recall": 0.5862068965517241
+        }
+      ],
+      "target_gt_without_source_annotation": 0,
+      "source_annotation_recall_note": "A merged GT may have multiple provenance strata; it counts once per (source,class). Provenance never changes matching or threshold selection."
+    },
+    {
+      "threshold": 0.17,
+      "unit": "annotated_object",
+      "tp": 188,
+      "fp": 51,
+      "fn": 45,
+      "precision": 0.7866108786610879,
+      "recall": 0.8068669527896996,
+      "f1": 0.7966101694915254,
+      "precision_wilson_95": [
+        0.730348840820412,
+        0.8338052400573355
+      ],
+      "recall_wilson_95": [
+        0.7513693532352224,
+        0.8524100725124513
+      ],
+      "alerts": 239,
+      "images": 278,
+      "matching_iou": 0.5,
+      "recall_by_source_annotation": [
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "m1",
+          "source_class_ids": [
+            1
+          ],
+          "gt": 31,
+          "tp": 17,
+          "fn": 14,
+          "recall": 0.5483870967741935
+        },
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "m2",
+          "source_class_ids": [
+            2
+          ],
+          "gt": 69,
+          "tp": 62,
+          "fn": 7,
+          "recall": 0.8985507246376812
+        },
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "m3",
+          "source_class_ids": [
+            3
+          ],
+          "gt": 104,
+          "tp": 92,
+          "fn": 12,
+          "recall": 0.8846153846153846
+        },
+        {
+          "source": "serrano_torres_v2",
+          "class": "monilia",
+          "source_class_ids": [
+            1
+          ],
+          "gt": 29,
+          "tp": 17,
+          "fn": 12,
+          "recall": 0.5862068965517241
+        }
+      ],
+      "target_gt_without_source_annotation": 0,
+      "source_annotation_recall_note": "A merged GT may have multiple provenance strata; it counts once per (source,class). Provenance never changes matching or threshold selection."
+    },
+    {
+      "threshold": 0.18,
+      "unit": "annotated_object",
+      "tp": 188,
+      "fp": 51,
+      "fn": 45,
+      "precision": 0.7866108786610879,
+      "recall": 0.8068669527896996,
+      "f1": 0.7966101694915254,
+      "precision_wilson_95": [
+        0.730348840820412,
+        0.8338052400573355
+      ],
+      "recall_wilson_95": [
+        0.7513693532352224,
+        0.8524100725124513
+      ],
+      "alerts": 239,
+      "images": 278,
+      "matching_iou": 0.5,
+      "recall_by_source_annotation": [
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "m1",
+          "source_class_ids": [
+            1
+          ],
+          "gt": 31,
+          "tp": 17,
+          "fn": 14,
+          "recall": 0.5483870967741935
+        },
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "m2",
+          "source_class_ids": [
+            2
+          ],
+          "gt": 69,
+          "tp": 62,
+          "fn": 7,
+          "recall": 0.8985507246376812
+        },
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "m3",
+          "source_class_ids": [
+            3
+          ],
+          "gt": 104,
+          "tp": 92,
+          "fn": 12,
+          "recall": 0.8846153846153846
+        },
+        {
+          "source": "serrano_torres_v2",
+          "class": "monilia",
+          "source_class_ids": [
+            1
+          ],
+          "gt": 29,
+          "tp": 17,
+          "fn": 12,
+          "recall": 0.5862068965517241
+        }
+      ],
+      "target_gt_without_source_annotation": 0,
+      "source_annotation_recall_note": "A merged GT may have multiple provenance strata; it counts once per (source,class). Provenance never changes matching or threshold selection."
+    },
+    {
+      "threshold": 0.19,
+      "unit": "annotated_object",
+      "tp": 188,
+      "fp": 51,
+      "fn": 45,
+      "precision": 0.7866108786610879,
+      "recall": 0.8068669527896996,
+      "f1": 0.7966101694915254,
+      "precision_wilson_95": [
+        0.730348840820412,
+        0.8338052400573355
+      ],
+      "recall_wilson_95": [
+        0.7513693532352224,
+        0.8524100725124513
+      ],
+      "alerts": 239,
+      "images": 278,
+      "matching_iou": 0.5,
+      "recall_by_source_annotation": [
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "m1",
+          "source_class_ids": [
+            1
+          ],
+          "gt": 31,
+          "tp": 17,
+          "fn": 14,
+          "recall": 0.5483870967741935
+        },
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "m2",
+          "source_class_ids": [
+            2
+          ],
+          "gt": 69,
+          "tp": 62,
+          "fn": 7,
+          "recall": 0.8985507246376812
+        },
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "m3",
+          "source_class_ids": [
+            3
+          ],
+          "gt": 104,
+          "tp": 92,
+          "fn": 12,
+          "recall": 0.8846153846153846
+        },
+        {
+          "source": "serrano_torres_v2",
+          "class": "monilia",
+          "source_class_ids": [
+            1
+          ],
+          "gt": 29,
+          "tp": 17,
+          "fn": 12,
+          "recall": 0.5862068965517241
+        }
+      ],
+      "target_gt_without_source_annotation": 0,
+      "source_annotation_recall_note": "A merged GT may have multiple provenance strata; it counts once per (source,class). Provenance never changes matching or threshold selection."
+    },
+    {
+      "threshold": 0.2,
+      "unit": "annotated_object",
+      "tp": 187,
+      "fp": 50,
+      "fn": 46,
+      "precision": 0.7890295358649789,
+      "recall": 0.8025751072961373,
+      "f1": 0.7957446808510639,
+      "precision_wilson_95": [
+        0.7326860529664931,
+        0.8361528864371921
+      ],
+      "recall_wilson_95": [
+        0.7467357310558222,
+        0.8485992271988769
+      ],
+      "alerts": 237,
+      "images": 278,
+      "matching_iou": 0.5,
+      "recall_by_source_annotation": [
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "m1",
+          "source_class_ids": [
+            1
+          ],
+          "gt": 31,
+          "tp": 17,
+          "fn": 14,
+          "recall": 0.5483870967741935
+        },
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "m2",
+          "source_class_ids": [
+            2
+          ],
+          "gt": 69,
+          "tp": 61,
+          "fn": 8,
+          "recall": 0.8840579710144928
+        },
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "m3",
+          "source_class_ids": [
+            3
+          ],
+          "gt": 104,
+          "tp": 92,
+          "fn": 12,
+          "recall": 0.8846153846153846
+        },
+        {
+          "source": "serrano_torres_v2",
+          "class": "monilia",
+          "source_class_ids": [
+            1
+          ],
+          "gt": 29,
+          "tp": 17,
+          "fn": 12,
+          "recall": 0.5862068965517241
+        }
+      ],
+      "target_gt_without_source_annotation": 0,
+      "source_annotation_recall_note": "A merged GT may have multiple provenance strata; it counts once per (source,class). Provenance never changes matching or threshold selection."
+    },
+    {
+      "threshold": 0.21,
+      "unit": "annotated_object",
+      "tp": 187,
+      "fp": 48,
+      "fn": 46,
+      "precision": 0.7957446808510639,
+      "recall": 0.8025751072961373,
+      "f1": 0.7991452991452992,
+      "precision_wilson_95": [
+        0.7396382792170735,
+        0.8423377340191869
+      ],
+      "recall_wilson_95": [
+        0.7467357310558222,
+        0.8485992271988769
+      ],
+      "alerts": 235,
+      "images": 278,
+      "matching_iou": 0.5,
+      "recall_by_source_annotation": [
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "m1",
+          "source_class_ids": [
+            1
+          ],
+          "gt": 31,
+          "tp": 17,
+          "fn": 14,
+          "recall": 0.5483870967741935
+        },
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "m2",
+          "source_class_ids": [
+            2
+          ],
+          "gt": 69,
+          "tp": 61,
+          "fn": 8,
+          "recall": 0.8840579710144928
+        },
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "m3",
+          "source_class_ids": [
+            3
+          ],
+          "gt": 104,
+          "tp": 92,
+          "fn": 12,
+          "recall": 0.8846153846153846
+        },
+        {
+          "source": "serrano_torres_v2",
+          "class": "monilia",
+          "source_class_ids": [
+            1
+          ],
+          "gt": 29,
+          "tp": 17,
+          "fn": 12,
+          "recall": 0.5862068965517241
+        }
+      ],
+      "target_gt_without_source_annotation": 0,
+      "source_annotation_recall_note": "A merged GT may have multiple provenance strata; it counts once per (source,class). Provenance never changes matching or threshold selection."
+    },
+    {
+      "threshold": 0.22,
+      "unit": "annotated_object",
+      "tp": 186,
+      "fp": 48,
+      "fn": 47,
+      "precision": 0.7948717948717948,
+      "recall": 0.7982832618025751,
+      "f1": 0.7965738758029979,
+      "precision_wilson_95": [
+        0.7385711891689174,
+        0.8416472499722442
+      ],
+      "recall_wilson_95": [
+        0.7421111304952154,
+        0.8447793602665093
+      ],
+      "alerts": 234,
+      "images": 278,
+      "matching_iou": 0.5,
+      "recall_by_source_annotation": [
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "m1",
+          "source_class_ids": [
+            1
+          ],
+          "gt": 31,
+          "tp": 17,
+          "fn": 14,
+          "recall": 0.5483870967741935
+        },
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "m2",
+          "source_class_ids": [
+            2
+          ],
+          "gt": 69,
+          "tp": 61,
+          "fn": 8,
+          "recall": 0.8840579710144928
+        },
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "m3",
+          "source_class_ids": [
+            3
+          ],
+          "gt": 104,
+          "tp": 91,
+          "fn": 13,
+          "recall": 0.875
+        },
+        {
+          "source": "serrano_torres_v2",
+          "class": "monilia",
+          "source_class_ids": [
+            1
+          ],
+          "gt": 29,
+          "tp": 17,
+          "fn": 12,
+          "recall": 0.5862068965517241
+        }
+      ],
+      "target_gt_without_source_annotation": 0,
+      "source_annotation_recall_note": "A merged GT may have multiple provenance strata; it counts once per (source,class). Provenance never changes matching or threshold selection."
+    },
+    {
+      "threshold": 0.23,
+      "unit": "annotated_object",
+      "tp": 185,
+      "fp": 48,
+      "fn": 48,
+      "precision": 0.7939914163090128,
+      "recall": 0.7939914163090128,
+      "f1": 0.7939914163090128,
+      "precision_wilson_95": [
+        0.737495341027351,
+        0.8409506822413992
+      ],
+      "recall_wilson_95": [
+        0.737495341027351,
+        0.8409506822413992
+      ],
+      "alerts": 233,
+      "images": 278,
+      "matching_iou": 0.5,
+      "recall_by_source_annotation": [
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "m1",
+          "source_class_ids": [
+            1
+          ],
+          "gt": 31,
+          "tp": 17,
+          "fn": 14,
+          "recall": 0.5483870967741935
+        },
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "m2",
+          "source_class_ids": [
+            2
+          ],
+          "gt": 69,
+          "tp": 60,
+          "fn": 9,
+          "recall": 0.8695652173913043
+        },
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "m3",
+          "source_class_ids": [
+            3
+          ],
+          "gt": 104,
+          "tp": 91,
+          "fn": 13,
+          "recall": 0.875
+        },
+        {
+          "source": "serrano_torres_v2",
+          "class": "monilia",
+          "source_class_ids": [
+            1
+          ],
+          "gt": 29,
+          "tp": 17,
+          "fn": 12,
+          "recall": 0.5862068965517241
+        }
+      ],
+      "target_gt_without_source_annotation": 0,
+      "source_annotation_recall_note": "A merged GT may have multiple provenance strata; it counts once per (source,class). Provenance never changes matching or threshold selection."
+    },
+    {
+      "threshold": 0.24,
+      "unit": "annotated_object",
+      "tp": 185,
+      "fp": 47,
+      "fn": 48,
+      "precision": 0.7974137931034483,
+      "recall": 0.7939914163090128,
+      "f1": 0.7956989247311828,
+      "precision_wilson_95": [
+        0.74104502746759,
+        0.8440938225465581
+      ],
+      "recall_wilson_95": [
+        0.737495341027351,
+        0.8409506822413992
+      ],
+      "alerts": 232,
+      "images": 278,
+      "matching_iou": 0.5,
+      "recall_by_source_annotation": [
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "m1",
+          "source_class_ids": [
+            1
+          ],
+          "gt": 31,
+          "tp": 17,
+          "fn": 14,
+          "recall": 0.5483870967741935
+        },
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "m2",
+          "source_class_ids": [
+            2
+          ],
+          "gt": 69,
+          "tp": 60,
+          "fn": 9,
+          "recall": 0.8695652173913043
+        },
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "m3",
+          "source_class_ids": [
+            3
+          ],
+          "gt": 104,
+          "tp": 91,
+          "fn": 13,
+          "recall": 0.875
+        },
+        {
+          "source": "serrano_torres_v2",
+          "class": "monilia",
+          "source_class_ids": [
+            1
+          ],
+          "gt": 29,
+          "tp": 17,
+          "fn": 12,
+          "recall": 0.5862068965517241
+        }
+      ],
+      "target_gt_without_source_annotation": 0,
+      "source_annotation_recall_note": "A merged GT may have multiple provenance strata; it counts once per (source,class). Provenance never changes matching or threshold selection."
+    },
+    {
+      "threshold": 0.25,
+      "unit": "annotated_object",
+      "tp": 185,
+      "fp": 47,
+      "fn": 48,
+      "precision": 0.7974137931034483,
+      "recall": 0.7939914163090128,
+      "f1": 0.7956989247311828,
+      "precision_wilson_95": [
+        0.74104502746759,
+        0.8440938225465581
+      ],
+      "recall_wilson_95": [
+        0.737495341027351,
+        0.8409506822413992
+      ],
+      "alerts": 232,
+      "images": 278,
+      "matching_iou": 0.5,
+      "recall_by_source_annotation": [
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "m1",
+          "source_class_ids": [
+            1
+          ],
+          "gt": 31,
+          "tp": 17,
+          "fn": 14,
+          "recall": 0.5483870967741935
+        },
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "m2",
+          "source_class_ids": [
+            2
+          ],
+          "gt": 69,
+          "tp": 60,
+          "fn": 9,
+          "recall": 0.8695652173913043
+        },
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "m3",
+          "source_class_ids": [
+            3
+          ],
+          "gt": 104,
+          "tp": 91,
+          "fn": 13,
+          "recall": 0.875
+        },
+        {
+          "source": "serrano_torres_v2",
+          "class": "monilia",
+          "source_class_ids": [
+            1
+          ],
+          "gt": 29,
+          "tp": 17,
+          "fn": 12,
+          "recall": 0.5862068965517241
+        }
+      ],
+      "target_gt_without_source_annotation": 0,
+      "source_annotation_recall_note": "A merged GT may have multiple provenance strata; it counts once per (source,class). Provenance never changes matching or threshold selection."
+    },
+    {
+      "threshold": 0.26,
+      "unit": "annotated_object",
+      "tp": 185,
+      "fp": 47,
+      "fn": 48,
+      "precision": 0.7974137931034483,
+      "recall": 0.7939914163090128,
+      "f1": 0.7956989247311828,
+      "precision_wilson_95": [
+        0.74104502746759,
+        0.8440938225465581
+      ],
+      "recall_wilson_95": [
+        0.737495341027351,
+        0.8409506822413992
+      ],
+      "alerts": 232,
+      "images": 278,
+      "matching_iou": 0.5,
+      "recall_by_source_annotation": [
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "m1",
+          "source_class_ids": [
+            1
+          ],
+          "gt": 31,
+          "tp": 17,
+          "fn": 14,
+          "recall": 0.5483870967741935
+        },
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "m2",
+          "source_class_ids": [
+            2
+          ],
+          "gt": 69,
+          "tp": 60,
+          "fn": 9,
+          "recall": 0.8695652173913043
+        },
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "m3",
+          "source_class_ids": [
+            3
+          ],
+          "gt": 104,
+          "tp": 91,
+          "fn": 13,
+          "recall": 0.875
+        },
+        {
+          "source": "serrano_torres_v2",
+          "class": "monilia",
+          "source_class_ids": [
+            1
+          ],
+          "gt": 29,
+          "tp": 17,
+          "fn": 12,
+          "recall": 0.5862068965517241
+        }
+      ],
+      "target_gt_without_source_annotation": 0,
+      "source_annotation_recall_note": "A merged GT may have multiple provenance strata; it counts once per (source,class). Provenance never changes matching or threshold selection."
+    },
+    {
+      "threshold": 0.27,
+      "unit": "annotated_object",
+      "tp": 185,
+      "fp": 46,
+      "fn": 48,
+      "precision": 0.8008658008658008,
+      "recall": 0.7939914163090128,
+      "f1": 0.7974137931034483,
+      "precision_wilson_95": [
+        0.7446321747693682,
+        0.8472565006715772
+      ],
+      "recall_wilson_95": [
+        0.737495341027351,
+        0.8409506822413992
+      ],
+      "alerts": 231,
+      "images": 278,
+      "matching_iou": 0.5,
+      "recall_by_source_annotation": [
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "m1",
+          "source_class_ids": [
+            1
+          ],
+          "gt": 31,
+          "tp": 17,
+          "fn": 14,
+          "recall": 0.5483870967741935
+        },
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "m2",
+          "source_class_ids": [
+            2
+          ],
+          "gt": 69,
+          "tp": 60,
+          "fn": 9,
+          "recall": 0.8695652173913043
+        },
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "m3",
+          "source_class_ids": [
+            3
+          ],
+          "gt": 104,
+          "tp": 91,
+          "fn": 13,
+          "recall": 0.875
+        },
+        {
+          "source": "serrano_torres_v2",
+          "class": "monilia",
+          "source_class_ids": [
+            1
+          ],
+          "gt": 29,
+          "tp": 17,
+          "fn": 12,
+          "recall": 0.5862068965517241
+        }
+      ],
+      "target_gt_without_source_annotation": 0,
+      "source_annotation_recall_note": "A merged GT may have multiple provenance strata; it counts once per (source,class). Provenance never changes matching or threshold selection."
+    },
+    {
+      "threshold": 0.28,
+      "unit": "annotated_object",
+      "tp": 184,
+      "fp": 46,
+      "fn": 49,
+      "precision": 0.8,
+      "recall": 0.7896995708154506,
+      "f1": 0.7948164146868251,
+      "precision_wilson_95": [
+        0.7435672737592884,
+        0.8465761537405212
+      ],
+      "recall_wilson_95": [
+        0.7328881630270938,
+        0.837113392748682
+      ],
+      "alerts": 230,
+      "images": 278,
+      "matching_iou": 0.5,
+      "recall_by_source_annotation": [
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "m1",
+          "source_class_ids": [
+            1
+          ],
+          "gt": 31,
+          "tp": 17,
+          "fn": 14,
+          "recall": 0.5483870967741935
+        },
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "m2",
+          "source_class_ids": [
+            2
+          ],
+          "gt": 69,
+          "tp": 60,
+          "fn": 9,
+          "recall": 0.8695652173913043
+        },
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "m3",
+          "source_class_ids": [
+            3
+          ],
+          "gt": 104,
+          "tp": 91,
+          "fn": 13,
+          "recall": 0.875
+        },
+        {
+          "source": "serrano_torres_v2",
+          "class": "monilia",
+          "source_class_ids": [
+            1
+          ],
+          "gt": 29,
+          "tp": 16,
+          "fn": 13,
+          "recall": 0.5517241379310345
+        }
+      ],
+      "target_gt_without_source_annotation": 0,
+      "source_annotation_recall_note": "A merged GT may have multiple provenance strata; it counts once per (source,class). Provenance never changes matching or threshold selection."
+    },
+    {
+      "threshold": 0.29,
+      "unit": "annotated_object",
+      "tp": 183,
+      "fp": 46,
+      "fn": 50,
+      "precision": 0.7991266375545851,
+      "recall": 0.7854077253218884,
+      "f1": 0.7922077922077922,
+      "precision_wilson_95": [
+        0.7424934784933329,
+        0.8458897101960171
+      ],
+      "recall_wilson_95": [
+        0.7282894070300437,
+        0.8332676812527576
+      ],
+      "alerts": 229,
+      "images": 278,
+      "matching_iou": 0.5,
+      "recall_by_source_annotation": [
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "m1",
+          "source_class_ids": [
+            1
+          ],
+          "gt": 31,
+          "tp": 17,
+          "fn": 14,
+          "recall": 0.5483870967741935
+        },
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "m2",
+          "source_class_ids": [
+            2
+          ],
+          "gt": 69,
+          "tp": 60,
+          "fn": 9,
+          "recall": 0.8695652173913043
+        },
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "m3",
+          "source_class_ids": [
+            3
+          ],
+          "gt": 104,
+          "tp": 90,
+          "fn": 14,
+          "recall": 0.8653846153846154
+        },
+        {
+          "source": "serrano_torres_v2",
+          "class": "monilia",
+          "source_class_ids": [
+            1
+          ],
+          "gt": 29,
+          "tp": 16,
+          "fn": 13,
+          "recall": 0.5517241379310345
+        }
+      ],
+      "target_gt_without_source_annotation": 0,
+      "source_annotation_recall_note": "A merged GT may have multiple provenance strata; it counts once per (source,class). Provenance never changes matching or threshold selection."
+    },
+    {
+      "threshold": 0.3,
+      "unit": "annotated_object",
+      "tp": 183,
+      "fp": 45,
+      "fn": 50,
+      "precision": 0.8026315789473685,
+      "recall": 0.7854077253218884,
+      "f1": 0.7939262472885033,
+      "precision_wilson_95": [
+        0.7461394029116667,
+        0.8490949468977392
+      ],
+      "recall_wilson_95": [
+        0.7282894070300437,
+        0.8332676812527576
+      ],
+      "alerts": 228,
+      "images": 278,
+      "matching_iou": 0.5,
+      "recall_by_source_annotation": [
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "m1",
+          "source_class_ids": [
+            1
+          ],
+          "gt": 31,
+          "tp": 17,
+          "fn": 14,
+          "recall": 0.5483870967741935
+        },
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "m2",
+          "source_class_ids": [
+            2
+          ],
+          "gt": 69,
+          "tp": 60,
+          "fn": 9,
+          "recall": 0.8695652173913043
+        },
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "m3",
+          "source_class_ids": [
+            3
+          ],
+          "gt": 104,
+          "tp": 90,
+          "fn": 14,
+          "recall": 0.8653846153846154
+        },
+        {
+          "source": "serrano_torres_v2",
+          "class": "monilia",
+          "source_class_ids": [
+            1
+          ],
+          "gt": 29,
+          "tp": 16,
+          "fn": 13,
+          "recall": 0.5517241379310345
+        }
+      ],
+      "target_gt_without_source_annotation": 0,
+      "source_annotation_recall_note": "A merged GT may have multiple provenance strata; it counts once per (source,class). Provenance never changes matching or threshold selection."
+    },
+    {
+      "threshold": 0.31,
+      "unit": "annotated_object",
+      "tp": 183,
+      "fp": 45,
+      "fn": 50,
+      "precision": 0.8026315789473685,
+      "recall": 0.7854077253218884,
+      "f1": 0.7939262472885033,
+      "precision_wilson_95": [
+        0.7461394029116667,
+        0.8490949468977392
+      ],
+      "recall_wilson_95": [
+        0.7282894070300437,
+        0.8332676812527576
+      ],
+      "alerts": 228,
+      "images": 278,
+      "matching_iou": 0.5,
+      "recall_by_source_annotation": [
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "m1",
+          "source_class_ids": [
+            1
+          ],
+          "gt": 31,
+          "tp": 17,
+          "fn": 14,
+          "recall": 0.5483870967741935
+        },
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "m2",
+          "source_class_ids": [
+            2
+          ],
+          "gt": 69,
+          "tp": 60,
+          "fn": 9,
+          "recall": 0.8695652173913043
+        },
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "m3",
+          "source_class_ids": [
+            3
+          ],
+          "gt": 104,
+          "tp": 90,
+          "fn": 14,
+          "recall": 0.8653846153846154
+        },
+        {
+          "source": "serrano_torres_v2",
+          "class": "monilia",
+          "source_class_ids": [
+            1
+          ],
+          "gt": 29,
+          "tp": 16,
+          "fn": 13,
+          "recall": 0.5517241379310345
+        }
+      ],
+      "target_gt_without_source_annotation": 0,
+      "source_annotation_recall_note": "A merged GT may have multiple provenance strata; it counts once per (source,class). Provenance never changes matching or threshold selection."
+    },
+    {
+      "threshold": 0.32,
+      "unit": "annotated_object",
+      "tp": 182,
+      "fp": 45,
+      "fn": 51,
+      "precision": 0.801762114537445,
+      "recall": 0.7811158798283262,
+      "f1": 0.7913043478260869,
+      "precision_wilson_95": [
+        0.7450669693040458,
+        0.8484139448259181
+      ],
+      "recall_wilson_95": [
+        0.7236988930570895,
+        0.8294137277327375
+      ],
+      "alerts": 227,
+      "images": 278,
+      "matching_iou": 0.5,
+      "recall_by_source_annotation": [
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "m1",
+          "source_class_ids": [
+            1
+          ],
+          "gt": 31,
+          "tp": 17,
+          "fn": 14,
+          "recall": 0.5483870967741935
+        },
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "m2",
+          "source_class_ids": [
+            2
+          ],
+          "gt": 69,
+          "tp": 60,
+          "fn": 9,
+          "recall": 0.8695652173913043
+        },
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "m3",
+          "source_class_ids": [
+            3
+          ],
+          "gt": 104,
+          "tp": 89,
+          "fn": 15,
+          "recall": 0.8557692307692307
+        },
+        {
+          "source": "serrano_torres_v2",
+          "class": "monilia",
+          "source_class_ids": [
+            1
+          ],
+          "gt": 29,
+          "tp": 16,
+          "fn": 13,
+          "recall": 0.5517241379310345
+        }
+      ],
+      "target_gt_without_source_annotation": 0,
+      "source_annotation_recall_note": "A merged GT may have multiple provenance strata; it counts once per (source,class). Provenance never changes matching or threshold selection."
+    },
+    {
+      "threshold": 0.33,
+      "unit": "annotated_object",
+      "tp": 182,
+      "fp": 45,
+      "fn": 51,
+      "precision": 0.801762114537445,
+      "recall": 0.7811158798283262,
+      "f1": 0.7913043478260869,
+      "precision_wilson_95": [
+        0.7450669693040458,
+        0.8484139448259181
+      ],
+      "recall_wilson_95": [
+        0.7236988930570895,
+        0.8294137277327375
+      ],
+      "alerts": 227,
+      "images": 278,
+      "matching_iou": 0.5,
+      "recall_by_source_annotation": [
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "m1",
+          "source_class_ids": [
+            1
+          ],
+          "gt": 31,
+          "tp": 17,
+          "fn": 14,
+          "recall": 0.5483870967741935
+        },
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "m2",
+          "source_class_ids": [
+            2
+          ],
+          "gt": 69,
+          "tp": 60,
+          "fn": 9,
+          "recall": 0.8695652173913043
+        },
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "m3",
+          "source_class_ids": [
+            3
+          ],
+          "gt": 104,
+          "tp": 89,
+          "fn": 15,
+          "recall": 0.8557692307692307
+        },
+        {
+          "source": "serrano_torres_v2",
+          "class": "monilia",
+          "source_class_ids": [
+            1
+          ],
+          "gt": 29,
+          "tp": 16,
+          "fn": 13,
+          "recall": 0.5517241379310345
+        }
+      ],
+      "target_gt_without_source_annotation": 0,
+      "source_annotation_recall_note": "A merged GT may have multiple provenance strata; it counts once per (source,class). Provenance never changes matching or threshold selection."
+    },
+    {
+      "threshold": 0.34,
+      "unit": "annotated_object",
+      "tp": 181,
+      "fp": 45,
+      "fn": 52,
+      "precision": 0.8008849557522124,
+      "recall": 0.776824034334764,
+      "f1": 0.7886710239651417,
+      "precision_wilson_95": [
+        0.7439854609331055,
+        0.8477267597333039
+      ],
+      "recall_wilson_95": [
+        0.7191164499969148,
+        0.8255517032999377
+      ],
+      "alerts": 226,
+      "images": 278,
+      "matching_iou": 0.5,
+      "recall_by_source_annotation": [
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "m1",
+          "source_class_ids": [
+            1
+          ],
+          "gt": 31,
+          "tp": 17,
+          "fn": 14,
+          "recall": 0.5483870967741935
+        },
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "m2",
+          "source_class_ids": [
+            2
+          ],
+          "gt": 69,
+          "tp": 59,
+          "fn": 10,
+          "recall": 0.855072463768116
+        },
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "m3",
+          "source_class_ids": [
+            3
+          ],
+          "gt": 104,
+          "tp": 89,
+          "fn": 15,
+          "recall": 0.8557692307692307
+        },
+        {
+          "source": "serrano_torres_v2",
+          "class": "monilia",
+          "source_class_ids": [
+            1
+          ],
+          "gt": 29,
+          "tp": 16,
+          "fn": 13,
+          "recall": 0.5517241379310345
+        }
+      ],
+      "target_gt_without_source_annotation": 0,
+      "source_annotation_recall_note": "A merged GT may have multiple provenance strata; it counts once per (source,class). Provenance never changes matching or threshold selection."
+    },
+    {
+      "threshold": 0.35,
+      "unit": "annotated_object",
+      "tp": 179,
+      "fp": 45,
+      "fn": 54,
+      "precision": 0.7991071428571429,
+      "recall": 0.7682403433476395,
+      "f1": 0.7833698030634574,
+      "precision_wilson_95": [
+        0.7417947567458645,
+        0.8463335000410397
+      ],
+      "recall_wilson_95": [
+        0.7099751331624193,
+        0.8178040851484842
+      ],
+      "alerts": 224,
+      "images": 278,
+      "matching_iou": 0.5,
+      "recall_by_source_annotation": [
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "m1",
+          "source_class_ids": [
+            1
+          ],
+          "gt": 31,
+          "tp": 17,
+          "fn": 14,
+          "recall": 0.5483870967741935
+        },
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "m2",
+          "source_class_ids": [
+            2
+          ],
+          "gt": 69,
+          "tp": 59,
+          "fn": 10,
+          "recall": 0.855072463768116
+        },
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "m3",
+          "source_class_ids": [
+            3
+          ],
+          "gt": 104,
+          "tp": 87,
+          "fn": 17,
+          "recall": 0.8365384615384616
+        },
+        {
+          "source": "serrano_torres_v2",
+          "class": "monilia",
+          "source_class_ids": [
+            1
+          ],
+          "gt": 29,
+          "tp": 16,
+          "fn": 13,
+          "recall": 0.5517241379310345
+        }
+      ],
+      "target_gt_without_source_annotation": 0,
+      "source_annotation_recall_note": "A merged GT may have multiple provenance strata; it counts once per (source,class). Provenance never changes matching or threshold selection."
+    },
+    {
+      "threshold": 0.36,
+      "unit": "annotated_object",
+      "tp": 179,
+      "fp": 45,
+      "fn": 54,
+      "precision": 0.7991071428571429,
+      "recall": 0.7682403433476395,
+      "f1": 0.7833698030634574,
+      "precision_wilson_95": [
+        0.7417947567458645,
+        0.8463335000410397
+      ],
+      "recall_wilson_95": [
+        0.7099751331624193,
+        0.8178040851484842
+      ],
+      "alerts": 224,
+      "images": 278,
+      "matching_iou": 0.5,
+      "recall_by_source_annotation": [
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "m1",
+          "source_class_ids": [
+            1
+          ],
+          "gt": 31,
+          "tp": 17,
+          "fn": 14,
+          "recall": 0.5483870967741935
+        },
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "m2",
+          "source_class_ids": [
+            2
+          ],
+          "gt": 69,
+          "tp": 59,
+          "fn": 10,
+          "recall": 0.855072463768116
+        },
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "m3",
+          "source_class_ids": [
+            3
+          ],
+          "gt": 104,
+          "tp": 87,
+          "fn": 17,
+          "recall": 0.8365384615384616
+        },
+        {
+          "source": "serrano_torres_v2",
+          "class": "monilia",
+          "source_class_ids": [
+            1
+          ],
+          "gt": 29,
+          "tp": 16,
+          "fn": 13,
+          "recall": 0.5517241379310345
+        }
+      ],
+      "target_gt_without_source_annotation": 0,
+      "source_annotation_recall_note": "A merged GT may have multiple provenance strata; it counts once per (source,class). Provenance never changes matching or threshold selection."
+    },
+    {
+      "threshold": 0.37,
+      "unit": "annotated_object",
+      "tp": 179,
+      "fp": 45,
+      "fn": 54,
+      "precision": 0.7991071428571429,
+      "recall": 0.7682403433476395,
+      "f1": 0.7833698030634574,
+      "precision_wilson_95": [
+        0.7417947567458645,
+        0.8463335000410397
+      ],
+      "recall_wilson_95": [
+        0.7099751331624193,
+        0.8178040851484842
+      ],
+      "alerts": 224,
+      "images": 278,
+      "matching_iou": 0.5,
+      "recall_by_source_annotation": [
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "m1",
+          "source_class_ids": [
+            1
+          ],
+          "gt": 31,
+          "tp": 17,
+          "fn": 14,
+          "recall": 0.5483870967741935
+        },
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "m2",
+          "source_class_ids": [
+            2
+          ],
+          "gt": 69,
+          "tp": 59,
+          "fn": 10,
+          "recall": 0.855072463768116
+        },
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "m3",
+          "source_class_ids": [
+            3
+          ],
+          "gt": 104,
+          "tp": 87,
+          "fn": 17,
+          "recall": 0.8365384615384616
+        },
+        {
+          "source": "serrano_torres_v2",
+          "class": "monilia",
+          "source_class_ids": [
+            1
+          ],
+          "gt": 29,
+          "tp": 16,
+          "fn": 13,
+          "recall": 0.5517241379310345
+        }
+      ],
+      "target_gt_without_source_annotation": 0,
+      "source_annotation_recall_note": "A merged GT may have multiple provenance strata; it counts once per (source,class). Provenance never changes matching or threshold selection."
+    },
+    {
+      "threshold": 0.38,
+      "unit": "annotated_object",
+      "tp": 178,
+      "fp": 45,
+      "fn": 55,
+      "precision": 0.7982062780269058,
+      "recall": 0.7639484978540773,
+      "f1": 0.7807017543859649,
+      "precision_wilson_95": [
+        0.7406853244255092,
+        0.8456272512890091
+      ],
+      "recall_wilson_95": [
+        0.7054159566441791,
+        0.81391879417375
+      ],
+      "alerts": 223,
+      "images": 278,
+      "matching_iou": 0.5,
+      "recall_by_source_annotation": [
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "m1",
+          "source_class_ids": [
+            1
+          ],
+          "gt": 31,
+          "tp": 17,
+          "fn": 14,
+          "recall": 0.5483870967741935
+        },
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "m2",
+          "source_class_ids": [
+            2
+          ],
+          "gt": 69,
+          "tp": 59,
+          "fn": 10,
+          "recall": 0.855072463768116
+        },
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "m3",
+          "source_class_ids": [
+            3
+          ],
+          "gt": 104,
+          "tp": 87,
+          "fn": 17,
+          "recall": 0.8365384615384616
+        },
+        {
+          "source": "serrano_torres_v2",
+          "class": "monilia",
+          "source_class_ids": [
+            1
+          ],
+          "gt": 29,
+          "tp": 15,
+          "fn": 14,
+          "recall": 0.5172413793103449
+        }
+      ],
+      "target_gt_without_source_annotation": 0,
+      "source_annotation_recall_note": "A merged GT may have multiple provenance strata; it counts once per (source,class). Provenance never changes matching or threshold selection."
+    },
+    {
+      "threshold": 0.39,
+      "unit": "annotated_object",
+      "tp": 178,
+      "fp": 45,
+      "fn": 55,
+      "precision": 0.7982062780269058,
+      "recall": 0.7639484978540773,
+      "f1": 0.7807017543859649,
+      "precision_wilson_95": [
+        0.7406853244255092,
+        0.8456272512890091
+      ],
+      "recall_wilson_95": [
+        0.7054159566441791,
+        0.81391879417375
+      ],
+      "alerts": 223,
+      "images": 278,
+      "matching_iou": 0.5,
+      "recall_by_source_annotation": [
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "m1",
+          "source_class_ids": [
+            1
+          ],
+          "gt": 31,
+          "tp": 17,
+          "fn": 14,
+          "recall": 0.5483870967741935
+        },
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "m2",
+          "source_class_ids": [
+            2
+          ],
+          "gt": 69,
+          "tp": 59,
+          "fn": 10,
+          "recall": 0.855072463768116
+        },
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "m3",
+          "source_class_ids": [
+            3
+          ],
+          "gt": 104,
+          "tp": 87,
+          "fn": 17,
+          "recall": 0.8365384615384616
+        },
+        {
+          "source": "serrano_torres_v2",
+          "class": "monilia",
+          "source_class_ids": [
+            1
+          ],
+          "gt": 29,
+          "tp": 15,
+          "fn": 14,
+          "recall": 0.5172413793103449
+        }
+      ],
+      "target_gt_without_source_annotation": 0,
+      "source_annotation_recall_note": "A merged GT may have multiple provenance strata; it counts once per (source,class). Provenance never changes matching or threshold selection."
+    },
+    {
+      "threshold": 0.4,
+      "unit": "annotated_object",
+      "tp": 178,
+      "fp": 45,
+      "fn": 55,
+      "precision": 0.7982062780269058,
+      "recall": 0.7639484978540773,
+      "f1": 0.7807017543859649,
+      "precision_wilson_95": [
+        0.7406853244255092,
+        0.8456272512890091
+      ],
+      "recall_wilson_95": [
+        0.7054159566441791,
+        0.81391879417375
+      ],
+      "alerts": 223,
+      "images": 278,
+      "matching_iou": 0.5,
+      "recall_by_source_annotation": [
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "m1",
+          "source_class_ids": [
+            1
+          ],
+          "gt": 31,
+          "tp": 17,
+          "fn": 14,
+          "recall": 0.5483870967741935
+        },
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "m2",
+          "source_class_ids": [
+            2
+          ],
+          "gt": 69,
+          "tp": 59,
+          "fn": 10,
+          "recall": 0.855072463768116
+        },
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "m3",
+          "source_class_ids": [
+            3
+          ],
+          "gt": 104,
+          "tp": 87,
+          "fn": 17,
+          "recall": 0.8365384615384616
+        },
+        {
+          "source": "serrano_torres_v2",
+          "class": "monilia",
+          "source_class_ids": [
+            1
+          ],
+          "gt": 29,
+          "tp": 15,
+          "fn": 14,
+          "recall": 0.5172413793103449
+        }
+      ],
+      "target_gt_without_source_annotation": 0,
+      "source_annotation_recall_note": "A merged GT may have multiple provenance strata; it counts once per (source,class). Provenance never changes matching or threshold selection."
+    },
+    {
+      "threshold": 0.41,
+      "unit": "annotated_object",
+      "tp": 178,
+      "fp": 45,
+      "fn": 55,
+      "precision": 0.7982062780269058,
+      "recall": 0.7639484978540773,
+      "f1": 0.7807017543859649,
+      "precision_wilson_95": [
+        0.7406853244255092,
+        0.8456272512890091
+      ],
+      "recall_wilson_95": [
+        0.7054159566441791,
+        0.81391879417375
+      ],
+      "alerts": 223,
+      "images": 278,
+      "matching_iou": 0.5,
+      "recall_by_source_annotation": [
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "m1",
+          "source_class_ids": [
+            1
+          ],
+          "gt": 31,
+          "tp": 17,
+          "fn": 14,
+          "recall": 0.5483870967741935
+        },
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "m2",
+          "source_class_ids": [
+            2
+          ],
+          "gt": 69,
+          "tp": 59,
+          "fn": 10,
+          "recall": 0.855072463768116
+        },
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "m3",
+          "source_class_ids": [
+            3
+          ],
+          "gt": 104,
+          "tp": 87,
+          "fn": 17,
+          "recall": 0.8365384615384616
+        },
+        {
+          "source": "serrano_torres_v2",
+          "class": "monilia",
+          "source_class_ids": [
+            1
+          ],
+          "gt": 29,
+          "tp": 15,
+          "fn": 14,
+          "recall": 0.5172413793103449
+        }
+      ],
+      "target_gt_without_source_annotation": 0,
+      "source_annotation_recall_note": "A merged GT may have multiple provenance strata; it counts once per (source,class). Provenance never changes matching or threshold selection."
+    },
+    {
+      "threshold": 0.42,
+      "unit": "annotated_object",
+      "tp": 178,
+      "fp": 45,
+      "fn": 55,
+      "precision": 0.7982062780269058,
+      "recall": 0.7639484978540773,
+      "f1": 0.7807017543859649,
+      "precision_wilson_95": [
+        0.7406853244255092,
+        0.8456272512890091
+      ],
+      "recall_wilson_95": [
+        0.7054159566441791,
+        0.81391879417375
+      ],
+      "alerts": 223,
+      "images": 278,
+      "matching_iou": 0.5,
+      "recall_by_source_annotation": [
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "m1",
+          "source_class_ids": [
+            1
+          ],
+          "gt": 31,
+          "tp": 17,
+          "fn": 14,
+          "recall": 0.5483870967741935
+        },
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "m2",
+          "source_class_ids": [
+            2
+          ],
+          "gt": 69,
+          "tp": 59,
+          "fn": 10,
+          "recall": 0.855072463768116
+        },
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "m3",
+          "source_class_ids": [
+            3
+          ],
+          "gt": 104,
+          "tp": 87,
+          "fn": 17,
+          "recall": 0.8365384615384616
+        },
+        {
+          "source": "serrano_torres_v2",
+          "class": "monilia",
+          "source_class_ids": [
+            1
+          ],
+          "gt": 29,
+          "tp": 15,
+          "fn": 14,
+          "recall": 0.5172413793103449
+        }
+      ],
+      "target_gt_without_source_annotation": 0,
+      "source_annotation_recall_note": "A merged GT may have multiple provenance strata; it counts once per (source,class). Provenance never changes matching or threshold selection."
+    },
+    {
+      "threshold": 0.43,
+      "unit": "annotated_object",
+      "tp": 178,
+      "fp": 44,
+      "fn": 55,
+      "precision": 0.8018018018018018,
+      "recall": 0.7639484978540773,
+      "f1": 0.7824175824175824,
+      "precision_wilson_95": [
+        0.7444242973455744,
+        0.8489122879728404
+      ],
+      "recall_wilson_95": [
+        0.7054159566441791,
+        0.81391879417375
+      ],
+      "alerts": 222,
+      "images": 278,
+      "matching_iou": 0.5,
+      "recall_by_source_annotation": [
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "m1",
+          "source_class_ids": [
+            1
+          ],
+          "gt": 31,
+          "tp": 17,
+          "fn": 14,
+          "recall": 0.5483870967741935
+        },
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "m2",
+          "source_class_ids": [
+            2
+          ],
+          "gt": 69,
+          "tp": 59,
+          "fn": 10,
+          "recall": 0.855072463768116
+        },
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "m3",
+          "source_class_ids": [
+            3
+          ],
+          "gt": 104,
+          "tp": 87,
+          "fn": 17,
+          "recall": 0.8365384615384616
+        },
+        {
+          "source": "serrano_torres_v2",
+          "class": "monilia",
+          "source_class_ids": [
+            1
+          ],
+          "gt": 29,
+          "tp": 15,
+          "fn": 14,
+          "recall": 0.5172413793103449
+        }
+      ],
+      "target_gt_without_source_annotation": 0,
+      "source_annotation_recall_note": "A merged GT may have multiple provenance strata; it counts once per (source,class). Provenance never changes matching or threshold selection."
+    },
+    {
+      "threshold": 0.44,
+      "unit": "annotated_object",
+      "tp": 178,
+      "fp": 43,
+      "fn": 55,
+      "precision": 0.8054298642533937,
+      "recall": 0.7639484978540773,
+      "f1": 0.7841409691629956,
+      "precision_wilson_95": [
+        0.7482048522109525,
+        0.8522182223771705
+      ],
+      "recall_wilson_95": [
+        0.7054159566441791,
+        0.81391879417375
+      ],
+      "alerts": 221,
+      "images": 278,
+      "matching_iou": 0.5,
+      "recall_by_source_annotation": [
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "m1",
+          "source_class_ids": [
+            1
+          ],
+          "gt": 31,
+          "tp": 17,
+          "fn": 14,
+          "recall": 0.5483870967741935
+        },
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "m2",
+          "source_class_ids": [
+            2
+          ],
+          "gt": 69,
+          "tp": 59,
+          "fn": 10,
+          "recall": 0.855072463768116
+        },
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "m3",
+          "source_class_ids": [
+            3
+          ],
+          "gt": 104,
+          "tp": 87,
+          "fn": 17,
+          "recall": 0.8365384615384616
+        },
+        {
+          "source": "serrano_torres_v2",
+          "class": "monilia",
+          "source_class_ids": [
+            1
+          ],
+          "gt": 29,
+          "tp": 15,
+          "fn": 14,
+          "recall": 0.5172413793103449
+        }
+      ],
+      "target_gt_without_source_annotation": 0,
+      "source_annotation_recall_note": "A merged GT may have multiple provenance strata; it counts once per (source,class). Provenance never changes matching or threshold selection."
+    },
+    {
+      "threshold": 0.45,
+      "unit": "annotated_object",
+      "tp": 178,
+      "fp": 41,
+      "fn": 55,
+      "precision": 0.8127853881278538,
+      "recall": 0.7639484978540773,
+      "f1": 0.7876106194690266,
+      "precision_wilson_95": [
+        0.7558941167220949,
+        0.8588927399293635
+      ],
+      "recall_wilson_95": [
+        0.7054159566441791,
+        0.81391879417375
+      ],
+      "alerts": 219,
+      "images": 278,
+      "matching_iou": 0.5,
+      "recall_by_source_annotation": [
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "m1",
+          "source_class_ids": [
+            1
+          ],
+          "gt": 31,
+          "tp": 17,
+          "fn": 14,
+          "recall": 0.5483870967741935
+        },
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "m2",
+          "source_class_ids": [
+            2
+          ],
+          "gt": 69,
+          "tp": 59,
+          "fn": 10,
+          "recall": 0.855072463768116
+        },
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "m3",
+          "source_class_ids": [
+            3
+          ],
+          "gt": 104,
+          "tp": 87,
+          "fn": 17,
+          "recall": 0.8365384615384616
+        },
+        {
+          "source": "serrano_torres_v2",
+          "class": "monilia",
+          "source_class_ids": [
+            1
+          ],
+          "gt": 29,
+          "tp": 15,
+          "fn": 14,
+          "recall": 0.5172413793103449
+        }
+      ],
+      "target_gt_without_source_annotation": 0,
+      "source_annotation_recall_note": "A merged GT may have multiple provenance strata; it counts once per (source,class). Provenance never changes matching or threshold selection."
+    },
+    {
+      "threshold": 0.46,
+      "unit": "annotated_object",
+      "tp": 178,
+      "fp": 40,
+      "fn": 55,
+      "precision": 0.8165137614678899,
+      "recall": 0.7639484978540773,
+      "f1": 0.7893569844789357,
+      "precision_wilson_95": [
+        0.7598046112457505,
+        0.8622612583784665
+      ],
+      "recall_wilson_95": [
+        0.7054159566441791,
+        0.81391879417375
+      ],
+      "alerts": 218,
+      "images": 278,
+      "matching_iou": 0.5,
+      "recall_by_source_annotation": [
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "m1",
+          "source_class_ids": [
+            1
+          ],
+          "gt": 31,
+          "tp": 17,
+          "fn": 14,
+          "recall": 0.5483870967741935
+        },
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "m2",
+          "source_class_ids": [
+            2
+          ],
+          "gt": 69,
+          "tp": 59,
+          "fn": 10,
+          "recall": 0.855072463768116
+        },
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "m3",
+          "source_class_ids": [
+            3
+          ],
+          "gt": 104,
+          "tp": 87,
+          "fn": 17,
+          "recall": 0.8365384615384616
+        },
+        {
+          "source": "serrano_torres_v2",
+          "class": "monilia",
+          "source_class_ids": [
+            1
+          ],
+          "gt": 29,
+          "tp": 15,
+          "fn": 14,
+          "recall": 0.5172413793103449
+        }
+      ],
+      "target_gt_without_source_annotation": 0,
+      "source_annotation_recall_note": "A merged GT may have multiple provenance strata; it counts once per (source,class). Provenance never changes matching or threshold selection."
+    },
+    {
+      "threshold": 0.47,
+      "unit": "annotated_object",
+      "tp": 178,
+      "fp": 40,
+      "fn": 55,
+      "precision": 0.8165137614678899,
+      "recall": 0.7639484978540773,
+      "f1": 0.7893569844789357,
+      "precision_wilson_95": [
+        0.7598046112457505,
+        0.8622612583784665
+      ],
+      "recall_wilson_95": [
+        0.7054159566441791,
+        0.81391879417375
+      ],
+      "alerts": 218,
+      "images": 278,
+      "matching_iou": 0.5,
+      "recall_by_source_annotation": [
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "m1",
+          "source_class_ids": [
+            1
+          ],
+          "gt": 31,
+          "tp": 17,
+          "fn": 14,
+          "recall": 0.5483870967741935
+        },
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "m2",
+          "source_class_ids": [
+            2
+          ],
+          "gt": 69,
+          "tp": 59,
+          "fn": 10,
+          "recall": 0.855072463768116
+        },
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "m3",
+          "source_class_ids": [
+            3
+          ],
+          "gt": 104,
+          "tp": 87,
+          "fn": 17,
+          "recall": 0.8365384615384616
+        },
+        {
+          "source": "serrano_torres_v2",
+          "class": "monilia",
+          "source_class_ids": [
+            1
+          ],
+          "gt": 29,
+          "tp": 15,
+          "fn": 14,
+          "recall": 0.5172413793103449
+        }
+      ],
+      "target_gt_without_source_annotation": 0,
+      "source_annotation_recall_note": "A merged GT may have multiple provenance strata; it counts once per (source,class). Provenance never changes matching or threshold selection."
+    },
+    {
+      "threshold": 0.48,
+      "unit": "annotated_object",
+      "tp": 178,
+      "fp": 40,
+      "fn": 55,
+      "precision": 0.8165137614678899,
+      "recall": 0.7639484978540773,
+      "f1": 0.7893569844789357,
+      "precision_wilson_95": [
+        0.7598046112457505,
+        0.8622612583784665
+      ],
+      "recall_wilson_95": [
+        0.7054159566441791,
+        0.81391879417375
+      ],
+      "alerts": 218,
+      "images": 278,
+      "matching_iou": 0.5,
+      "recall_by_source_annotation": [
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "m1",
+          "source_class_ids": [
+            1
+          ],
+          "gt": 31,
+          "tp": 17,
+          "fn": 14,
+          "recall": 0.5483870967741935
+        },
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "m2",
+          "source_class_ids": [
+            2
+          ],
+          "gt": 69,
+          "tp": 59,
+          "fn": 10,
+          "recall": 0.855072463768116
+        },
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "m3",
+          "source_class_ids": [
+            3
+          ],
+          "gt": 104,
+          "tp": 87,
+          "fn": 17,
+          "recall": 0.8365384615384616
+        },
+        {
+          "source": "serrano_torres_v2",
+          "class": "monilia",
+          "source_class_ids": [
+            1
+          ],
+          "gt": 29,
+          "tp": 15,
+          "fn": 14,
+          "recall": 0.5172413793103449
+        }
+      ],
+      "target_gt_without_source_annotation": 0,
+      "source_annotation_recall_note": "A merged GT may have multiple provenance strata; it counts once per (source,class). Provenance never changes matching or threshold selection."
+    },
+    {
+      "threshold": 0.49,
+      "unit": "annotated_object",
+      "tp": 178,
+      "fp": 40,
+      "fn": 55,
+      "precision": 0.8165137614678899,
+      "recall": 0.7639484978540773,
+      "f1": 0.7893569844789357,
+      "precision_wilson_95": [
+        0.7598046112457505,
+        0.8622612583784665
+      ],
+      "recall_wilson_95": [
+        0.7054159566441791,
+        0.81391879417375
+      ],
+      "alerts": 218,
+      "images": 278,
+      "matching_iou": 0.5,
+      "recall_by_source_annotation": [
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "m1",
+          "source_class_ids": [
+            1
+          ],
+          "gt": 31,
+          "tp": 17,
+          "fn": 14,
+          "recall": 0.5483870967741935
+        },
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "m2",
+          "source_class_ids": [
+            2
+          ],
+          "gt": 69,
+          "tp": 59,
+          "fn": 10,
+          "recall": 0.855072463768116
+        },
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "m3",
+          "source_class_ids": [
+            3
+          ],
+          "gt": 104,
+          "tp": 87,
+          "fn": 17,
+          "recall": 0.8365384615384616
+        },
+        {
+          "source": "serrano_torres_v2",
+          "class": "monilia",
+          "source_class_ids": [
+            1
+          ],
+          "gt": 29,
+          "tp": 15,
+          "fn": 14,
+          "recall": 0.5172413793103449
+        }
+      ],
+      "target_gt_without_source_annotation": 0,
+      "source_annotation_recall_note": "A merged GT may have multiple provenance strata; it counts once per (source,class). Provenance never changes matching or threshold selection."
+    },
+    {
+      "threshold": 0.5,
+      "unit": "annotated_object",
+      "tp": 177,
+      "fp": 39,
+      "fn": 56,
+      "precision": 0.8194444444444444,
+      "recall": 0.759656652360515,
+      "f1": 0.7884187082405345,
+      "precision_wilson_95": [
+        0.7627108758817095,
+        0.8650142162837077
+      ],
+      "recall_wilson_95": [
+        0.7008642446357184,
+        0.8100260386892363
+      ],
+      "alerts": 216,
+      "images": 278,
+      "matching_iou": 0.5,
+      "recall_by_source_annotation": [
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "m1",
+          "source_class_ids": [
+            1
+          ],
+          "gt": 31,
+          "tp": 17,
+          "fn": 14,
+          "recall": 0.5483870967741935
+        },
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "m2",
+          "source_class_ids": [
+            2
+          ],
+          "gt": 69,
+          "tp": 58,
+          "fn": 11,
+          "recall": 0.8405797101449275
+        },
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "m3",
+          "source_class_ids": [
+            3
+          ],
+          "gt": 104,
+          "tp": 87,
+          "fn": 17,
+          "recall": 0.8365384615384616
+        },
+        {
+          "source": "serrano_torres_v2",
+          "class": "monilia",
+          "source_class_ids": [
+            1
+          ],
+          "gt": 29,
+          "tp": 15,
+          "fn": 14,
+          "recall": 0.5172413793103449
+        }
+      ],
+      "target_gt_without_source_annotation": 0,
+      "source_annotation_recall_note": "A merged GT may have multiple provenance strata; it counts once per (source,class). Provenance never changes matching or threshold selection."
+    },
+    {
+      "threshold": 0.51,
+      "unit": "annotated_object",
+      "tp": 177,
+      "fp": 39,
+      "fn": 56,
+      "precision": 0.8194444444444444,
+      "recall": 0.759656652360515,
+      "f1": 0.7884187082405345,
+      "precision_wilson_95": [
+        0.7627108758817095,
+        0.8650142162837077
+      ],
+      "recall_wilson_95": [
+        0.7008642446357184,
+        0.8100260386892363
+      ],
+      "alerts": 216,
+      "images": 278,
+      "matching_iou": 0.5,
+      "recall_by_source_annotation": [
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "m1",
+          "source_class_ids": [
+            1
+          ],
+          "gt": 31,
+          "tp": 17,
+          "fn": 14,
+          "recall": 0.5483870967741935
+        },
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "m2",
+          "source_class_ids": [
+            2
+          ],
+          "gt": 69,
+          "tp": 58,
+          "fn": 11,
+          "recall": 0.8405797101449275
+        },
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "m3",
+          "source_class_ids": [
+            3
+          ],
+          "gt": 104,
+          "tp": 87,
+          "fn": 17,
+          "recall": 0.8365384615384616
+        },
+        {
+          "source": "serrano_torres_v2",
+          "class": "monilia",
+          "source_class_ids": [
+            1
+          ],
+          "gt": 29,
+          "tp": 15,
+          "fn": 14,
+          "recall": 0.5172413793103449
+        }
+      ],
+      "target_gt_without_source_annotation": 0,
+      "source_annotation_recall_note": "A merged GT may have multiple provenance strata; it counts once per (source,class). Provenance never changes matching or threshold selection."
+    },
+    {
+      "threshold": 0.52,
+      "unit": "annotated_object",
+      "tp": 177,
+      "fp": 39,
+      "fn": 56,
+      "precision": 0.8194444444444444,
+      "recall": 0.759656652360515,
+      "f1": 0.7884187082405345,
+      "precision_wilson_95": [
+        0.7627108758817095,
+        0.8650142162837077
+      ],
+      "recall_wilson_95": [
+        0.7008642446357184,
+        0.8100260386892363
+      ],
+      "alerts": 216,
+      "images": 278,
+      "matching_iou": 0.5,
+      "recall_by_source_annotation": [
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "m1",
+          "source_class_ids": [
+            1
+          ],
+          "gt": 31,
+          "tp": 17,
+          "fn": 14,
+          "recall": 0.5483870967741935
+        },
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "m2",
+          "source_class_ids": [
+            2
+          ],
+          "gt": 69,
+          "tp": 58,
+          "fn": 11,
+          "recall": 0.8405797101449275
+        },
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "m3",
+          "source_class_ids": [
+            3
+          ],
+          "gt": 104,
+          "tp": 87,
+          "fn": 17,
+          "recall": 0.8365384615384616
+        },
+        {
+          "source": "serrano_torres_v2",
+          "class": "monilia",
+          "source_class_ids": [
+            1
+          ],
+          "gt": 29,
+          "tp": 15,
+          "fn": 14,
+          "recall": 0.5172413793103449
+        }
+      ],
+      "target_gt_without_source_annotation": 0,
+      "source_annotation_recall_note": "A merged GT may have multiple provenance strata; it counts once per (source,class). Provenance never changes matching or threshold selection."
+    },
+    {
+      "threshold": 0.53,
+      "unit": "annotated_object",
+      "tp": 177,
+      "fp": 38,
+      "fn": 56,
+      "precision": 0.8232558139534883,
+      "recall": 0.759656652360515,
+      "f1": 0.7901785714285714,
+      "precision_wilson_95": [
+        0.7667253506059768,
+        0.8684376607770192
+      ],
+      "recall_wilson_95": [
+        0.7008642446357184,
+        0.8100260386892363
+      ],
+      "alerts": 215,
+      "images": 278,
+      "matching_iou": 0.5,
+      "recall_by_source_annotation": [
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "m1",
+          "source_class_ids": [
+            1
+          ],
+          "gt": 31,
+          "tp": 17,
+          "fn": 14,
+          "recall": 0.5483870967741935
+        },
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "m2",
+          "source_class_ids": [
+            2
+          ],
+          "gt": 69,
+          "tp": 58,
+          "fn": 11,
+          "recall": 0.8405797101449275
+        },
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "m3",
+          "source_class_ids": [
+            3
+          ],
+          "gt": 104,
+          "tp": 87,
+          "fn": 17,
+          "recall": 0.8365384615384616
+        },
+        {
+          "source": "serrano_torres_v2",
+          "class": "monilia",
+          "source_class_ids": [
+            1
+          ],
+          "gt": 29,
+          "tp": 15,
+          "fn": 14,
+          "recall": 0.5172413793103449
+        }
+      ],
+      "target_gt_without_source_annotation": 0,
+      "source_annotation_recall_note": "A merged GT may have multiple provenance strata; it counts once per (source,class). Provenance never changes matching or threshold selection."
+    },
+    {
+      "threshold": 0.54,
+      "unit": "annotated_object",
+      "tp": 177,
+      "fp": 37,
+      "fn": 56,
+      "precision": 0.8271028037383178,
+      "recall": 0.759656652360515,
+      "f1": 0.7919463087248322,
+      "precision_wilson_95": [
+        0.7707873220298347,
+        0.8718818960239902
+      ],
+      "recall_wilson_95": [
+        0.7008642446357184,
+        0.8100260386892363
+      ],
+      "alerts": 214,
+      "images": 278,
+      "matching_iou": 0.5,
+      "recall_by_source_annotation": [
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "m1",
+          "source_class_ids": [
+            1
+          ],
+          "gt": 31,
+          "tp": 17,
+          "fn": 14,
+          "recall": 0.5483870967741935
+        },
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "m2",
+          "source_class_ids": [
+            2
+          ],
+          "gt": 69,
+          "tp": 58,
+          "fn": 11,
+          "recall": 0.8405797101449275
+        },
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "m3",
+          "source_class_ids": [
+            3
+          ],
+          "gt": 104,
+          "tp": 87,
+          "fn": 17,
+          "recall": 0.8365384615384616
+        },
+        {
+          "source": "serrano_torres_v2",
+          "class": "monilia",
+          "source_class_ids": [
+            1
+          ],
+          "gt": 29,
+          "tp": 15,
+          "fn": 14,
+          "recall": 0.5172413793103449
+        }
+      ],
+      "target_gt_without_source_annotation": 0,
+      "source_annotation_recall_note": "A merged GT may have multiple provenance strata; it counts once per (source,class). Provenance never changes matching or threshold selection."
+    },
+    {
+      "threshold": 0.55,
+      "unit": "annotated_object",
+      "tp": 177,
+      "fp": 36,
+      "fn": 56,
+      "precision": 0.8309859154929577,
+      "recall": 0.759656652360515,
+      "f1": 0.7937219730941704,
+      "precision_wilson_95": [
+        0.774897867344703,
+        0.8753467895896182
+      ],
+      "recall_wilson_95": [
+        0.7008642446357184,
+        0.8100260386892363
+      ],
+      "alerts": 213,
+      "images": 278,
+      "matching_iou": 0.5,
+      "recall_by_source_annotation": [
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "m1",
+          "source_class_ids": [
+            1
+          ],
+          "gt": 31,
+          "tp": 17,
+          "fn": 14,
+          "recall": 0.5483870967741935
+        },
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "m2",
+          "source_class_ids": [
+            2
+          ],
+          "gt": 69,
+          "tp": 58,
+          "fn": 11,
+          "recall": 0.8405797101449275
+        },
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "m3",
+          "source_class_ids": [
+            3
+          ],
+          "gt": 104,
+          "tp": 87,
+          "fn": 17,
+          "recall": 0.8365384615384616
+        },
+        {
+          "source": "serrano_torres_v2",
+          "class": "monilia",
+          "source_class_ids": [
+            1
+          ],
+          "gt": 29,
+          "tp": 15,
+          "fn": 14,
+          "recall": 0.5172413793103449
+        }
+      ],
+      "target_gt_without_source_annotation": 0,
+      "source_annotation_recall_note": "A merged GT may have multiple provenance strata; it counts once per (source,class). Provenance never changes matching or threshold selection."
+    },
+    {
+      "threshold": 0.56,
+      "unit": "annotated_object",
+      "tp": 177,
+      "fp": 36,
+      "fn": 56,
+      "precision": 0.8309859154929577,
+      "recall": 0.759656652360515,
+      "f1": 0.7937219730941704,
+      "precision_wilson_95": [
+        0.774897867344703,
+        0.8753467895896182
+      ],
+      "recall_wilson_95": [
+        0.7008642446357184,
+        0.8100260386892363
+      ],
+      "alerts": 213,
+      "images": 278,
+      "matching_iou": 0.5,
+      "recall_by_source_annotation": [
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "m1",
+          "source_class_ids": [
+            1
+          ],
+          "gt": 31,
+          "tp": 17,
+          "fn": 14,
+          "recall": 0.5483870967741935
+        },
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "m2",
+          "source_class_ids": [
+            2
+          ],
+          "gt": 69,
+          "tp": 58,
+          "fn": 11,
+          "recall": 0.8405797101449275
+        },
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "m3",
+          "source_class_ids": [
+            3
+          ],
+          "gt": 104,
+          "tp": 87,
+          "fn": 17,
+          "recall": 0.8365384615384616
+        },
+        {
+          "source": "serrano_torres_v2",
+          "class": "monilia",
+          "source_class_ids": [
+            1
+          ],
+          "gt": 29,
+          "tp": 15,
+          "fn": 14,
+          "recall": 0.5172413793103449
+        }
+      ],
+      "target_gt_without_source_annotation": 0,
+      "source_annotation_recall_note": "A merged GT may have multiple provenance strata; it counts once per (source,class). Provenance never changes matching or threshold selection."
+    },
+    {
+      "threshold": 0.57,
+      "unit": "annotated_object",
+      "tp": 176,
+      "fp": 36,
+      "fn": 57,
+      "precision": 0.8301886792452831,
+      "recall": 0.7553648068669528,
+      "f1": 0.7910112359550562,
+      "precision_wilson_95": [
+        0.7738784189169661,
+        0.8747458109456672
+      ],
+      "recall_wilson_95": [
+        0.696319862751228,
+        0.8061259530807522
+      ],
+      "alerts": 212,
+      "images": 278,
+      "matching_iou": 0.5,
+      "recall_by_source_annotation": [
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "m1",
+          "source_class_ids": [
+            1
+          ],
+          "gt": 31,
+          "tp": 17,
+          "fn": 14,
+          "recall": 0.5483870967741935
+        },
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "m2",
+          "source_class_ids": [
+            2
+          ],
+          "gt": 69,
+          "tp": 58,
+          "fn": 11,
+          "recall": 0.8405797101449275
+        },
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "m3",
+          "source_class_ids": [
+            3
+          ],
+          "gt": 104,
+          "tp": 87,
+          "fn": 17,
+          "recall": 0.8365384615384616
+        },
+        {
+          "source": "serrano_torres_v2",
+          "class": "monilia",
+          "source_class_ids": [
+            1
+          ],
+          "gt": 29,
+          "tp": 14,
+          "fn": 15,
+          "recall": 0.4827586206896552
+        }
+      ],
+      "target_gt_without_source_annotation": 0,
+      "source_annotation_recall_note": "A merged GT may have multiple provenance strata; it counts once per (source,class). Provenance never changes matching or threshold selection."
+    },
+    {
+      "threshold": 0.58,
+      "unit": "annotated_object",
+      "tp": 176,
+      "fp": 35,
+      "fn": 57,
+      "precision": 0.8341232227488151,
+      "recall": 0.7553648068669528,
+      "f1": 0.7927927927927928,
+      "precision_wilson_95": [
+        0.7780524589538124,
+        0.8782454491593422
+      ],
+      "recall_wilson_95": [
+        0.696319862751228,
+        0.8061259530807522
+      ],
+      "alerts": 211,
+      "images": 278,
+      "matching_iou": 0.5,
+      "recall_by_source_annotation": [
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "m1",
+          "source_class_ids": [
+            1
+          ],
+          "gt": 31,
+          "tp": 17,
+          "fn": 14,
+          "recall": 0.5483870967741935
+        },
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "m2",
+          "source_class_ids": [
+            2
+          ],
+          "gt": 69,
+          "tp": 58,
+          "fn": 11,
+          "recall": 0.8405797101449275
+        },
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "m3",
+          "source_class_ids": [
+            3
+          ],
+          "gt": 104,
+          "tp": 87,
+          "fn": 17,
+          "recall": 0.8365384615384616
+        },
+        {
+          "source": "serrano_torres_v2",
+          "class": "monilia",
+          "source_class_ids": [
+            1
+          ],
+          "gt": 29,
+          "tp": 14,
+          "fn": 15,
+          "recall": 0.4827586206896552
+        }
+      ],
+      "target_gt_without_source_annotation": 0,
+      "source_annotation_recall_note": "A merged GT may have multiple provenance strata; it counts once per (source,class). Provenance never changes matching or threshold selection."
+    },
+    {
+      "threshold": 0.59,
+      "unit": "annotated_object",
+      "tp": 175,
+      "fp": 35,
+      "fn": 58,
+      "precision": 0.8333333333333334,
+      "recall": 0.7510729613733905,
+      "f1": 0.7900677200902935,
+      "precision_wilson_95": [
+        0.7770376291626979,
+        0.8776530036644468
+      ],
+      "recall_wilson_95": [
+        0.6917826826961901,
+        0.8022186656428156
+      ],
+      "alerts": 210,
+      "images": 278,
+      "matching_iou": 0.5,
+      "recall_by_source_annotation": [
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "m1",
+          "source_class_ids": [
+            1
+          ],
+          "gt": 31,
+          "tp": 17,
+          "fn": 14,
+          "recall": 0.5483870967741935
+        },
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "m2",
+          "source_class_ids": [
+            2
+          ],
+          "gt": 69,
+          "tp": 57,
+          "fn": 12,
+          "recall": 0.8260869565217391
+        },
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "m3",
+          "source_class_ids": [
+            3
+          ],
+          "gt": 104,
+          "tp": 87,
+          "fn": 17,
+          "recall": 0.8365384615384616
+        },
+        {
+          "source": "serrano_torres_v2",
+          "class": "monilia",
+          "source_class_ids": [
+            1
+          ],
+          "gt": 29,
+          "tp": 14,
+          "fn": 15,
+          "recall": 0.4827586206896552
+        }
+      ],
+      "target_gt_without_source_annotation": 0,
+      "source_annotation_recall_note": "A merged GT may have multiple provenance strata; it counts once per (source,class). Provenance never changes matching or threshold selection."
+    },
+    {
+      "threshold": 0.6,
+      "unit": "annotated_object",
+      "tp": 175,
+      "fp": 35,
+      "fn": 58,
+      "precision": 0.8333333333333334,
+      "recall": 0.7510729613733905,
+      "f1": 0.7900677200902935,
+      "precision_wilson_95": [
+        0.7770376291626979,
+        0.8776530036644468
+      ],
+      "recall_wilson_95": [
+        0.6917826826961901,
+        0.8022186656428156
+      ],
+      "alerts": 210,
+      "images": 278,
+      "matching_iou": 0.5,
+      "recall_by_source_annotation": [
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "m1",
+          "source_class_ids": [
+            1
+          ],
+          "gt": 31,
+          "tp": 17,
+          "fn": 14,
+          "recall": 0.5483870967741935
+        },
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "m2",
+          "source_class_ids": [
+            2
+          ],
+          "gt": 69,
+          "tp": 57,
+          "fn": 12,
+          "recall": 0.8260869565217391
+        },
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "m3",
+          "source_class_ids": [
+            3
+          ],
+          "gt": 104,
+          "tp": 87,
+          "fn": 17,
+          "recall": 0.8365384615384616
+        },
+        {
+          "source": "serrano_torres_v2",
+          "class": "monilia",
+          "source_class_ids": [
+            1
+          ],
+          "gt": 29,
+          "tp": 14,
+          "fn": 15,
+          "recall": 0.4827586206896552
+        }
+      ],
+      "target_gt_without_source_annotation": 0,
+      "source_annotation_recall_note": "A merged GT may have multiple provenance strata; it counts once per (source,class). Provenance never changes matching or threshold selection."
+    },
+    {
+      "threshold": 0.61,
+      "unit": "annotated_object",
+      "tp": 175,
+      "fp": 35,
+      "fn": 58,
+      "precision": 0.8333333333333334,
+      "recall": 0.7510729613733905,
+      "f1": 0.7900677200902935,
+      "precision_wilson_95": [
+        0.7770376291626979,
+        0.8776530036644468
+      ],
+      "recall_wilson_95": [
+        0.6917826826961901,
+        0.8022186656428156
+      ],
+      "alerts": 210,
+      "images": 278,
+      "matching_iou": 0.5,
+      "recall_by_source_annotation": [
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "m1",
+          "source_class_ids": [
+            1
+          ],
+          "gt": 31,
+          "tp": 17,
+          "fn": 14,
+          "recall": 0.5483870967741935
+        },
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "m2",
+          "source_class_ids": [
+            2
+          ],
+          "gt": 69,
+          "tp": 57,
+          "fn": 12,
+          "recall": 0.8260869565217391
+        },
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "m3",
+          "source_class_ids": [
+            3
+          ],
+          "gt": 104,
+          "tp": 87,
+          "fn": 17,
+          "recall": 0.8365384615384616
+        },
+        {
+          "source": "serrano_torres_v2",
+          "class": "monilia",
+          "source_class_ids": [
+            1
+          ],
+          "gt": 29,
+          "tp": 14,
+          "fn": 15,
+          "recall": 0.4827586206896552
+        }
+      ],
+      "target_gt_without_source_annotation": 0,
+      "source_annotation_recall_note": "A merged GT may have multiple provenance strata; it counts once per (source,class). Provenance never changes matching or threshold selection."
+    },
+    {
+      "threshold": 0.62,
+      "unit": "annotated_object",
+      "tp": 174,
+      "fp": 35,
+      "fn": 59,
+      "precision": 0.8325358851674641,
+      "recall": 0.7467811158798283,
+      "f1": 0.7873303167420814,
+      "precision_wilson_95": [
+        0.7760134960211563,
+        0.8770547584916967
+      ],
+      "recall_wilson_95": [
+        0.6872525819227234,
+        0.7983042989233079
+      ],
+      "alerts": 209,
+      "images": 278,
+      "matching_iou": 0.5,
+      "recall_by_source_annotation": [
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "m1",
+          "source_class_ids": [
+            1
+          ],
+          "gt": 31,
+          "tp": 17,
+          "fn": 14,
+          "recall": 0.5483870967741935
+        },
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "m2",
+          "source_class_ids": [
+            2
+          ],
+          "gt": 69,
+          "tp": 57,
+          "fn": 12,
+          "recall": 0.8260869565217391
+        },
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "m3",
+          "source_class_ids": [
+            3
+          ],
+          "gt": 104,
+          "tp": 86,
+          "fn": 18,
+          "recall": 0.8269230769230769
+        },
+        {
+          "source": "serrano_torres_v2",
+          "class": "monilia",
+          "source_class_ids": [
+            1
+          ],
+          "gt": 29,
+          "tp": 14,
+          "fn": 15,
+          "recall": 0.4827586206896552
+        }
+      ],
+      "target_gt_without_source_annotation": 0,
+      "source_annotation_recall_note": "A merged GT may have multiple provenance strata; it counts once per (source,class). Provenance never changes matching or threshold selection."
+    },
+    {
+      "threshold": 0.63,
+      "unit": "annotated_object",
+      "tp": 174,
+      "fp": 34,
+      "fn": 59,
+      "precision": 0.8365384615384616,
+      "recall": 0.7467811158798283,
+      "f1": 0.7891156462585034,
+      "precision_wilson_95": [
+        0.7802673580682551,
+        0.8806042238183585
+      ],
+      "recall_wilson_95": [
+        0.6872525819227234,
+        0.7983042989233079
+      ],
+      "alerts": 208,
+      "images": 278,
+      "matching_iou": 0.5,
+      "recall_by_source_annotation": [
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "m1",
+          "source_class_ids": [
+            1
+          ],
+          "gt": 31,
+          "tp": 17,
+          "fn": 14,
+          "recall": 0.5483870967741935
+        },
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "m2",
+          "source_class_ids": [
+            2
+          ],
+          "gt": 69,
+          "tp": 57,
+          "fn": 12,
+          "recall": 0.8260869565217391
+        },
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "m3",
+          "source_class_ids": [
+            3
+          ],
+          "gt": 104,
+          "tp": 86,
+          "fn": 18,
+          "recall": 0.8269230769230769
+        },
+        {
+          "source": "serrano_torres_v2",
+          "class": "monilia",
+          "source_class_ids": [
+            1
+          ],
+          "gt": 29,
+          "tp": 14,
+          "fn": 15,
+          "recall": 0.4827586206896552
+        }
+      ],
+      "target_gt_without_source_annotation": 0,
+      "source_annotation_recall_note": "A merged GT may have multiple provenance strata; it counts once per (source,class). Provenance never changes matching or threshold selection."
+    },
+    {
+      "threshold": 0.64,
+      "unit": "annotated_object",
+      "tp": 173,
+      "fp": 34,
+      "fn": 60,
+      "precision": 0.8357487922705314,
+      "recall": 0.7424892703862661,
+      "f1": 0.7863636363636364,
+      "precision_wilson_95": [
+        0.779248207368575,
+        0.8800149222714536
+      ],
+      "recall_wilson_95": [
+        0.6827294433106768,
+        0.7943829700423801
+      ],
+      "alerts": 207,
+      "images": 278,
+      "matching_iou": 0.5,
+      "recall_by_source_annotation": [
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "m1",
+          "source_class_ids": [
+            1
+          ],
+          "gt": 31,
+          "tp": 17,
+          "fn": 14,
+          "recall": 0.5483870967741935
+        },
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "m2",
+          "source_class_ids": [
+            2
+          ],
+          "gt": 69,
+          "tp": 57,
+          "fn": 12,
+          "recall": 0.8260869565217391
+        },
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "m3",
+          "source_class_ids": [
+            3
+          ],
+          "gt": 104,
+          "tp": 85,
+          "fn": 19,
+          "recall": 0.8173076923076923
+        },
+        {
+          "source": "serrano_torres_v2",
+          "class": "monilia",
+          "source_class_ids": [
+            1
+          ],
+          "gt": 29,
+          "tp": 14,
+          "fn": 15,
+          "recall": 0.4827586206896552
+        }
+      ],
+      "target_gt_without_source_annotation": 0,
+      "source_annotation_recall_note": "A merged GT may have multiple provenance strata; it counts once per (source,class). Provenance never changes matching or threshold selection."
+    },
+    {
+      "threshold": 0.65,
+      "unit": "annotated_object",
+      "tp": 172,
+      "fp": 32,
+      "fn": 61,
+      "precision": 0.8431372549019608,
+      "recall": 0.7381974248927039,
+      "f1": 0.7871853546910755,
+      "precision_wilson_95": [
+        0.7869486355886571,
+        0.8866417096406779
+      ],
+      "recall_wilson_95": [
+        0.6782131548721776,
+        0.7904547909879048
+      ],
+      "alerts": 204,
+      "images": 278,
+      "matching_iou": 0.5,
+      "recall_by_source_annotation": [
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "m1",
+          "source_class_ids": [
+            1
+          ],
+          "gt": 31,
+          "tp": 17,
+          "fn": 14,
+          "recall": 0.5483870967741935
+        },
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "m2",
+          "source_class_ids": [
+            2
+          ],
+          "gt": 69,
+          "tp": 56,
+          "fn": 13,
+          "recall": 0.8115942028985508
+        },
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "m3",
+          "source_class_ids": [
+            3
+          ],
+          "gt": 104,
+          "tp": 85,
+          "fn": 19,
+          "recall": 0.8173076923076923
+        },
+        {
+          "source": "serrano_torres_v2",
+          "class": "monilia",
+          "source_class_ids": [
+            1
+          ],
+          "gt": 29,
+          "tp": 14,
+          "fn": 15,
+          "recall": 0.4827586206896552
+        }
+      ],
+      "target_gt_without_source_annotation": 0,
+      "source_annotation_recall_note": "A merged GT may have multiple provenance strata; it counts once per (source,class). Provenance never changes matching or threshold selection."
+    },
+    {
+      "threshold": 0.66,
+      "unit": "annotated_object",
+      "tp": 172,
+      "fp": 32,
+      "fn": 61,
+      "precision": 0.8431372549019608,
+      "recall": 0.7381974248927039,
+      "f1": 0.7871853546910755,
+      "precision_wilson_95": [
+        0.7869486355886571,
+        0.8866417096406779
+      ],
+      "recall_wilson_95": [
+        0.6782131548721776,
+        0.7904547909879048
+      ],
+      "alerts": 204,
+      "images": 278,
+      "matching_iou": 0.5,
+      "recall_by_source_annotation": [
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "m1",
+          "source_class_ids": [
+            1
+          ],
+          "gt": 31,
+          "tp": 17,
+          "fn": 14,
+          "recall": 0.5483870967741935
+        },
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "m2",
+          "source_class_ids": [
+            2
+          ],
+          "gt": 69,
+          "tp": 56,
+          "fn": 13,
+          "recall": 0.8115942028985508
+        },
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "m3",
+          "source_class_ids": [
+            3
+          ],
+          "gt": 104,
+          "tp": 85,
+          "fn": 19,
+          "recall": 0.8173076923076923
+        },
+        {
+          "source": "serrano_torres_v2",
+          "class": "monilia",
+          "source_class_ids": [
+            1
+          ],
+          "gt": 29,
+          "tp": 14,
+          "fn": 15,
+          "recall": 0.4827586206896552
+        }
+      ],
+      "target_gt_without_source_annotation": 0,
+      "source_annotation_recall_note": "A merged GT may have multiple provenance strata; it counts once per (source,class). Provenance never changes matching or threshold selection."
+    },
+    {
+      "threshold": 0.67,
+      "unit": "annotated_object",
+      "tp": 172,
+      "fp": 31,
+      "fn": 61,
+      "precision": 0.8472906403940886,
+      "recall": 0.7381974248927039,
+      "f1": 0.7889908256880734,
+      "precision_wilson_95": [
+        0.7913976924601075,
+        0.8902838273082746
+      ],
+      "recall_wilson_95": [
+        0.6782131548721776,
+        0.7904547909879048
+      ],
+      "alerts": 203,
+      "images": 278,
+      "matching_iou": 0.5,
+      "recall_by_source_annotation": [
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "m1",
+          "source_class_ids": [
+            1
+          ],
+          "gt": 31,
+          "tp": 17,
+          "fn": 14,
+          "recall": 0.5483870967741935
+        },
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "m2",
+          "source_class_ids": [
+            2
+          ],
+          "gt": 69,
+          "tp": 56,
+          "fn": 13,
+          "recall": 0.8115942028985508
+        },
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "m3",
+          "source_class_ids": [
+            3
+          ],
+          "gt": 104,
+          "tp": 85,
+          "fn": 19,
+          "recall": 0.8173076923076923
+        },
+        {
+          "source": "serrano_torres_v2",
+          "class": "monilia",
+          "source_class_ids": [
+            1
+          ],
+          "gt": 29,
+          "tp": 14,
+          "fn": 15,
+          "recall": 0.4827586206896552
+        }
+      ],
+      "target_gt_without_source_annotation": 0,
+      "source_annotation_recall_note": "A merged GT may have multiple provenance strata; it counts once per (source,class). Provenance never changes matching or threshold selection."
+    },
+    {
+      "threshold": 0.68,
+      "unit": "annotated_object",
+      "tp": 172,
+      "fp": 31,
+      "fn": 61,
+      "precision": 0.8472906403940886,
+      "recall": 0.7381974248927039,
+      "f1": 0.7889908256880734,
+      "precision_wilson_95": [
+        0.7913976924601075,
+        0.8902838273082746
+      ],
+      "recall_wilson_95": [
+        0.6782131548721776,
+        0.7904547909879048
+      ],
+      "alerts": 203,
+      "images": 278,
+      "matching_iou": 0.5,
+      "recall_by_source_annotation": [
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "m1",
+          "source_class_ids": [
+            1
+          ],
+          "gt": 31,
+          "tp": 17,
+          "fn": 14,
+          "recall": 0.5483870967741935
+        },
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "m2",
+          "source_class_ids": [
+            2
+          ],
+          "gt": 69,
+          "tp": 56,
+          "fn": 13,
+          "recall": 0.8115942028985508
+        },
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "m3",
+          "source_class_ids": [
+            3
+          ],
+          "gt": 104,
+          "tp": 85,
+          "fn": 19,
+          "recall": 0.8173076923076923
+        },
+        {
+          "source": "serrano_torres_v2",
+          "class": "monilia",
+          "source_class_ids": [
+            1
+          ],
+          "gt": 29,
+          "tp": 14,
+          "fn": 15,
+          "recall": 0.4827586206896552
+        }
+      ],
+      "target_gt_without_source_annotation": 0,
+      "source_annotation_recall_note": "A merged GT may have multiple provenance strata; it counts once per (source,class). Provenance never changes matching or threshold selection."
+    },
+    {
+      "threshold": 0.69,
+      "unit": "annotated_object",
+      "tp": 171,
+      "fp": 30,
+      "fn": 62,
+      "precision": 0.8507462686567164,
+      "recall": 0.7339055793991416,
+      "f1": 0.7880184331797235,
+      "precision_wilson_95": [
+        0.7949293179017015,
+        0.8934079006074817
+      ],
+      "recall_wilson_95": [
+        0.6737036094775837,
+        0.7865198688895241
+      ],
+      "alerts": 201,
+      "images": 278,
+      "matching_iou": 0.5,
+      "recall_by_source_annotation": [
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "m1",
+          "source_class_ids": [
+            1
+          ],
+          "gt": 31,
+          "tp": 17,
+          "fn": 14,
+          "recall": 0.5483870967741935
+        },
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "m2",
+          "source_class_ids": [
+            2
+          ],
+          "gt": 69,
+          "tp": 56,
+          "fn": 13,
+          "recall": 0.8115942028985508
+        },
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "m3",
+          "source_class_ids": [
+            3
+          ],
+          "gt": 104,
+          "tp": 84,
+          "fn": 20,
+          "recall": 0.8076923076923077
+        },
+        {
+          "source": "serrano_torres_v2",
+          "class": "monilia",
+          "source_class_ids": [
+            1
+          ],
+          "gt": 29,
+          "tp": 14,
+          "fn": 15,
+          "recall": 0.4827586206896552
+        }
+      ],
+      "target_gt_without_source_annotation": 0,
+      "source_annotation_recall_note": "A merged GT may have multiple provenance strata; it counts once per (source,class). Provenance never changes matching or threshold selection."
+    },
+    {
+      "threshold": 0.7,
+      "unit": "annotated_object",
+      "tp": 170,
+      "fp": 30,
+      "fn": 63,
+      "precision": 0.85,
+      "recall": 0.7296137339055794,
+      "f1": 0.7852193995381063,
+      "precision_wilson_95": [
+        0.7939442071583334,
+        0.89286406437758
+      ],
+      "recall_wilson_95": [
+        0.6692007046009935,
+        0.7825783062731398
+      ],
+      "alerts": 200,
+      "images": 278,
+      "matching_iou": 0.5,
+      "recall_by_source_annotation": [
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "m1",
+          "source_class_ids": [
+            1
+          ],
+          "gt": 31,
+          "tp": 16,
+          "fn": 15,
+          "recall": 0.5161290322580645
+        },
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "m2",
+          "source_class_ids": [
+            2
+          ],
+          "gt": 69,
+          "tp": 56,
+          "fn": 13,
+          "recall": 0.8115942028985508
+        },
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "m3",
+          "source_class_ids": [
+            3
+          ],
+          "gt": 104,
+          "tp": 84,
+          "fn": 20,
+          "recall": 0.8076923076923077
+        },
+        {
+          "source": "serrano_torres_v2",
+          "class": "monilia",
+          "source_class_ids": [
+            1
+          ],
+          "gt": 29,
+          "tp": 14,
+          "fn": 15,
+          "recall": 0.4827586206896552
+        }
+      ],
+      "target_gt_without_source_annotation": 0,
+      "source_annotation_recall_note": "A merged GT may have multiple provenance strata; it counts once per (source,class). Provenance never changes matching or threshold selection."
+    },
+    {
+      "threshold": 0.71,
+      "unit": "annotated_object",
+      "tp": 169,
+      "fp": 29,
+      "fn": 64,
+      "precision": 0.8535353535353535,
+      "recall": 0.7253218884120172,
+      "f1": 0.7842227378190255,
+      "precision_wilson_95": [
+        0.7975674011063304,
+        0.896046293612201
+      ],
+      "recall_wilson_95": [
+        0.6647043420836581,
+        0.7786302012975009
+      ],
+      "alerts": 198,
+      "images": 278,
+      "matching_iou": 0.5,
+      "recall_by_source_annotation": [
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "m1",
+          "source_class_ids": [
+            1
+          ],
+          "gt": 31,
+          "tp": 16,
+          "fn": 15,
+          "recall": 0.5161290322580645
+        },
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "m2",
+          "source_class_ids": [
+            2
+          ],
+          "gt": 69,
+          "tp": 56,
+          "fn": 13,
+          "recall": 0.8115942028985508
+        },
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "m3",
+          "source_class_ids": [
+            3
+          ],
+          "gt": 104,
+          "tp": 83,
+          "fn": 21,
+          "recall": 0.7980769230769231
+        },
+        {
+          "source": "serrano_torres_v2",
+          "class": "monilia",
+          "source_class_ids": [
+            1
+          ],
+          "gt": 29,
+          "tp": 14,
+          "fn": 15,
+          "recall": 0.4827586206896552
+        }
+      ],
+      "target_gt_without_source_annotation": 0,
+      "source_annotation_recall_note": "A merged GT may have multiple provenance strata; it counts once per (source,class). Provenance never changes matching or threshold selection."
+    },
+    {
+      "threshold": 0.72,
+      "unit": "annotated_object",
+      "tp": 168,
+      "fp": 29,
+      "fn": 65,
+      "precision": 0.8527918781725888,
+      "recall": 0.721030042918455,
+      "f1": 0.7813953488372093,
+      "precision_wilson_95": [
+        0.7965802300196747,
+        0.8955079514553241
+      ],
+      "recall_wilson_95": [
+        0.6602144279138044,
+        0.7746756479743803
+      ],
+      "alerts": 197,
+      "images": 278,
+      "matching_iou": 0.5,
+      "recall_by_source_annotation": [
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "m1",
+          "source_class_ids": [
+            1
+          ],
+          "gt": 31,
+          "tp": 16,
+          "fn": 15,
+          "recall": 0.5161290322580645
+        },
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "m2",
+          "source_class_ids": [
+            2
+          ],
+          "gt": 69,
+          "tp": 56,
+          "fn": 13,
+          "recall": 0.8115942028985508
+        },
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "m3",
+          "source_class_ids": [
+            3
+          ],
+          "gt": 104,
+          "tp": 83,
+          "fn": 21,
+          "recall": 0.7980769230769231
+        },
+        {
+          "source": "serrano_torres_v2",
+          "class": "monilia",
+          "source_class_ids": [
+            1
+          ],
+          "gt": 29,
+          "tp": 13,
+          "fn": 16,
+          "recall": 0.4482758620689655
+        }
+      ],
+      "target_gt_without_source_annotation": 0,
+      "source_annotation_recall_note": "A merged GT may have multiple provenance strata; it counts once per (source,class). Provenance never changes matching or threshold selection."
+    },
+    {
+      "threshold": 0.73,
+      "unit": "annotated_object",
+      "tp": 165,
+      "fp": 29,
+      "fn": 68,
+      "precision": 0.8505154639175257,
+      "recall": 0.7081545064377682,
+      "f1": 0.7728337236533958,
+      "precision_wilson_95": [
+        0.7935601983403646,
+        0.8938589139664157
+      ],
+      "recall_wilson_95": [
+        0.6467824933644868,
+        0.7627741800447743
+      ],
+      "alerts": 194,
+      "images": 278,
+      "matching_iou": 0.5,
+      "recall_by_source_annotation": [
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "m1",
+          "source_class_ids": [
+            1
+          ],
+          "gt": 31,
+          "tp": 15,
+          "fn": 16,
+          "recall": 0.4838709677419355
+        },
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "m2",
+          "source_class_ids": [
+            2
+          ],
+          "gt": 69,
+          "tp": 55,
+          "fn": 14,
+          "recall": 0.7971014492753623
+        },
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "m3",
+          "source_class_ids": [
+            3
+          ],
+          "gt": 104,
+          "tp": 83,
+          "fn": 21,
+          "recall": 0.7980769230769231
+        },
+        {
+          "source": "serrano_torres_v2",
+          "class": "monilia",
+          "source_class_ids": [
+            1
+          ],
+          "gt": 29,
+          "tp": 12,
+          "fn": 17,
+          "recall": 0.41379310344827586
+        }
+      ],
+      "target_gt_without_source_annotation": 0,
+      "source_annotation_recall_note": "A merged GT may have multiple provenance strata; it counts once per (source,class). Provenance never changes matching or threshold selection."
+    },
+    {
+      "threshold": 0.74,
+      "unit": "annotated_object",
+      "tp": 165,
+      "fp": 29,
+      "fn": 68,
+      "precision": 0.8505154639175257,
+      "recall": 0.7081545064377682,
+      "f1": 0.7728337236533958,
+      "precision_wilson_95": [
+        0.7935601983403646,
+        0.8938589139664157
+      ],
+      "recall_wilson_95": [
+        0.6467824933644868,
+        0.7627741800447743
+      ],
+      "alerts": 194,
+      "images": 278,
+      "matching_iou": 0.5,
+      "recall_by_source_annotation": [
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "m1",
+          "source_class_ids": [
+            1
+          ],
+          "gt": 31,
+          "tp": 15,
+          "fn": 16,
+          "recall": 0.4838709677419355
+        },
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "m2",
+          "source_class_ids": [
+            2
+          ],
+          "gt": 69,
+          "tp": 55,
+          "fn": 14,
+          "recall": 0.7971014492753623
+        },
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "m3",
+          "source_class_ids": [
+            3
+          ],
+          "gt": 104,
+          "tp": 83,
+          "fn": 21,
+          "recall": 0.7980769230769231
+        },
+        {
+          "source": "serrano_torres_v2",
+          "class": "monilia",
+          "source_class_ids": [
+            1
+          ],
+          "gt": 29,
+          "tp": 12,
+          "fn": 17,
+          "recall": 0.41379310344827586
+        }
+      ],
+      "target_gt_without_source_annotation": 0,
+      "source_annotation_recall_note": "A merged GT may have multiple provenance strata; it counts once per (source,class). Provenance never changes matching or threshold selection."
+    },
+    {
+      "threshold": 0.75,
+      "unit": "annotated_object",
+      "tp": 165,
+      "fp": 27,
+      "fn": 68,
+      "precision": 0.859375,
+      "recall": 0.7081545064377682,
+      "f1": 0.7764705882352941,
+      "precision_wilson_95": [
+        0.8031305442687525,
+        0.9015210694957679
+      ],
+      "recall_wilson_95": [
+        0.6467824933644868,
+        0.7627741800447743
+      ],
+      "alerts": 192,
+      "images": 278,
+      "matching_iou": 0.5,
+      "recall_by_source_annotation": [
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "m1",
+          "source_class_ids": [
+            1
+          ],
+          "gt": 31,
+          "tp": 15,
+          "fn": 16,
+          "recall": 0.4838709677419355
+        },
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "m2",
+          "source_class_ids": [
+            2
+          ],
+          "gt": 69,
+          "tp": 55,
+          "fn": 14,
+          "recall": 0.7971014492753623
+        },
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "m3",
+          "source_class_ids": [
+            3
+          ],
+          "gt": 104,
+          "tp": 83,
+          "fn": 21,
+          "recall": 0.7980769230769231
+        },
+        {
+          "source": "serrano_torres_v2",
+          "class": "monilia",
+          "source_class_ids": [
+            1
+          ],
+          "gt": 29,
+          "tp": 12,
+          "fn": 17,
+          "recall": 0.41379310344827586
+        }
+      ],
+      "target_gt_without_source_annotation": 0,
+      "source_annotation_recall_note": "A merged GT may have multiple provenance strata; it counts once per (source,class). Provenance never changes matching or threshold selection."
+    },
+    {
+      "threshold": 0.76,
+      "unit": "annotated_object",
+      "tp": 163,
+      "fp": 27,
+      "fn": 70,
+      "precision": 0.8578947368421053,
+      "recall": 0.6995708154506438,
+      "f1": 0.7706855791962175,
+      "precision_wilson_95": [
+        0.8011404242512711,
+        0.9004638704512454
+      ],
+      "recall_wilson_95": [
+        0.6378585574331939,
+        0.7548091809901185
+      ],
+      "alerts": 190,
+      "images": 278,
+      "matching_iou": 0.5,
+      "recall_by_source_annotation": [
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "m1",
+          "source_class_ids": [
+            1
+          ],
+          "gt": 31,
+          "tp": 14,
+          "fn": 17,
+          "recall": 0.45161290322580644
+        },
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "m2",
+          "source_class_ids": [
+            2
+          ],
+          "gt": 69,
+          "tp": 55,
+          "fn": 14,
+          "recall": 0.7971014492753623
+        },
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "m3",
+          "source_class_ids": [
+            3
+          ],
+          "gt": 104,
+          "tp": 83,
+          "fn": 21,
+          "recall": 0.7980769230769231
+        },
+        {
+          "source": "serrano_torres_v2",
+          "class": "monilia",
+          "source_class_ids": [
+            1
+          ],
+          "gt": 29,
+          "tp": 11,
+          "fn": 18,
+          "recall": 0.3793103448275862
+        }
+      ],
+      "target_gt_without_source_annotation": 0,
+      "source_annotation_recall_note": "A merged GT may have multiple provenance strata; it counts once per (source,class). Provenance never changes matching or threshold selection."
+    },
+    {
+      "threshold": 0.77,
+      "unit": "annotated_object",
+      "tp": 163,
+      "fp": 27,
+      "fn": 70,
+      "precision": 0.8578947368421053,
+      "recall": 0.6995708154506438,
+      "f1": 0.7706855791962175,
+      "precision_wilson_95": [
+        0.8011404242512711,
+        0.9004638704512454
+      ],
+      "recall_wilson_95": [
+        0.6378585574331939,
+        0.7548091809901185
+      ],
+      "alerts": 190,
+      "images": 278,
+      "matching_iou": 0.5,
+      "recall_by_source_annotation": [
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "m1",
+          "source_class_ids": [
+            1
+          ],
+          "gt": 31,
+          "tp": 14,
+          "fn": 17,
+          "recall": 0.45161290322580644
+        },
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "m2",
+          "source_class_ids": [
+            2
+          ],
+          "gt": 69,
+          "tp": 55,
+          "fn": 14,
+          "recall": 0.7971014492753623
+        },
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "m3",
+          "source_class_ids": [
+            3
+          ],
+          "gt": 104,
+          "tp": 83,
+          "fn": 21,
+          "recall": 0.7980769230769231
+        },
+        {
+          "source": "serrano_torres_v2",
+          "class": "monilia",
+          "source_class_ids": [
+            1
+          ],
+          "gt": 29,
+          "tp": 11,
+          "fn": 18,
+          "recall": 0.3793103448275862
+        }
+      ],
+      "target_gt_without_source_annotation": 0,
+      "source_annotation_recall_note": "A merged GT may have multiple provenance strata; it counts once per (source,class). Provenance never changes matching or threshold selection."
+    },
+    {
+      "threshold": 0.78,
+      "unit": "annotated_object",
+      "tp": 162,
+      "fp": 27,
+      "fn": 71,
+      "precision": 0.8571428571428571,
+      "recall": 0.6952789699570815,
+      "f1": 0.7677725118483413,
+      "precision_wilson_95": [
+        0.8001302254431508,
+        0.8999267064302194
+      ],
+      "recall_wilson_95": [
+        0.6334055671432963,
+        0.7508177037870414
+      ],
+      "alerts": 189,
+      "images": 278,
+      "matching_iou": 0.5,
+      "recall_by_source_annotation": [
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "m1",
+          "source_class_ids": [
+            1
+          ],
+          "gt": 31,
+          "tp": 14,
+          "fn": 17,
+          "recall": 0.45161290322580644
+        },
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "m2",
+          "source_class_ids": [
+            2
+          ],
+          "gt": 69,
+          "tp": 55,
+          "fn": 14,
+          "recall": 0.7971014492753623
+        },
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "m3",
+          "source_class_ids": [
+            3
+          ],
+          "gt": 104,
+          "tp": 82,
+          "fn": 22,
+          "recall": 0.7884615384615384
+        },
+        {
+          "source": "serrano_torres_v2",
+          "class": "monilia",
+          "source_class_ids": [
+            1
+          ],
+          "gt": 29,
+          "tp": 11,
+          "fn": 18,
+          "recall": 0.3793103448275862
+        }
+      ],
+      "target_gt_without_source_annotation": 0,
+      "source_annotation_recall_note": "A merged GT may have multiple provenance strata; it counts once per (source,class). Provenance never changes matching or threshold selection."
+    },
+    {
+      "threshold": 0.79,
+      "unit": "annotated_object",
+      "tp": 160,
+      "fp": 25,
+      "fn": 73,
+      "precision": 0.8648648648648649,
+      "recall": 0.6866952789699571,
+      "f1": 0.7655502392344498,
+      "precision_wilson_95": [
+        0.8081217018839125,
+        0.9067636884486371
+      ],
+      "recall_wilson_95": [
+        0.6245171916758812,
+        0.7428171442685076
+      ],
+      "alerts": 185,
+      "images": 278,
+      "matching_iou": 0.5,
+      "recall_by_source_annotation": [
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "m1",
+          "source_class_ids": [
+            1
+          ],
+          "gt": 31,
+          "tp": 14,
+          "fn": 17,
+          "recall": 0.45161290322580644
+        },
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "m2",
+          "source_class_ids": [
+            2
+          ],
+          "gt": 69,
+          "tp": 54,
+          "fn": 15,
+          "recall": 0.782608695652174
+        },
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "m3",
+          "source_class_ids": [
+            3
+          ],
+          "gt": 104,
+          "tp": 81,
+          "fn": 23,
+          "recall": 0.7788461538461539
+        },
+        {
+          "source": "serrano_torres_v2",
+          "class": "monilia",
+          "source_class_ids": [
+            1
+          ],
+          "gt": 29,
+          "tp": 11,
+          "fn": 18,
+          "recall": 0.3793103448275862
+        }
+      ],
+      "target_gt_without_source_annotation": 0,
+      "source_annotation_recall_note": "A merged GT may have multiple provenance strata; it counts once per (source,class). Provenance never changes matching or threshold selection."
+    },
+    {
+      "threshold": 0.8,
+      "unit": "annotated_object",
+      "tp": 160,
+      "fp": 25,
+      "fn": 73,
+      "precision": 0.8648648648648649,
+      "recall": 0.6866952789699571,
+      "f1": 0.7655502392344498,
+      "precision_wilson_95": [
+        0.8081217018839125,
+        0.9067636884486371
+      ],
+      "recall_wilson_95": [
+        0.6245171916758812,
+        0.7428171442685076
+      ],
+      "alerts": 185,
+      "images": 278,
+      "matching_iou": 0.5,
+      "recall_by_source_annotation": [
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "m1",
+          "source_class_ids": [
+            1
+          ],
+          "gt": 31,
+          "tp": 14,
+          "fn": 17,
+          "recall": 0.45161290322580644
+        },
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "m2",
+          "source_class_ids": [
+            2
+          ],
+          "gt": 69,
+          "tp": 54,
+          "fn": 15,
+          "recall": 0.782608695652174
+        },
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "m3",
+          "source_class_ids": [
+            3
+          ],
+          "gt": 104,
+          "tp": 81,
+          "fn": 23,
+          "recall": 0.7788461538461539
+        },
+        {
+          "source": "serrano_torres_v2",
+          "class": "monilia",
+          "source_class_ids": [
+            1
+          ],
+          "gt": 29,
+          "tp": 11,
+          "fn": 18,
+          "recall": 0.3793103448275862
+        }
+      ],
+      "target_gt_without_source_annotation": 0,
+      "source_annotation_recall_note": "A merged GT may have multiple provenance strata; it counts once per (source,class). Provenance never changes matching or threshold selection."
+    },
+    {
+      "threshold": 0.81,
+      "unit": "annotated_object",
+      "tp": 159,
+      "fp": 25,
+      "fn": 74,
+      "precision": 0.8641304347826086,
+      "recall": 0.6824034334763949,
+      "f1": 0.762589928057554,
+      "precision_wilson_95": [
+        0.8071203727810997,
+        0.9062471704720166
+      ],
+      "recall_wilson_95": [
+        0.6200816748502949,
+        0.7388081936011197
+      ],
+      "alerts": 184,
+      "images": 278,
+      "matching_iou": 0.5,
+      "recall_by_source_annotation": [
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "m1",
+          "source_class_ids": [
+            1
+          ],
+          "gt": 31,
+          "tp": 14,
+          "fn": 17,
+          "recall": 0.45161290322580644
+        },
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "m2",
+          "source_class_ids": [
+            2
+          ],
+          "gt": 69,
+          "tp": 54,
+          "fn": 15,
+          "recall": 0.782608695652174
+        },
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "m3",
+          "source_class_ids": [
+            3
+          ],
+          "gt": 104,
+          "tp": 80,
+          "fn": 24,
+          "recall": 0.7692307692307693
+        },
+        {
+          "source": "serrano_torres_v2",
+          "class": "monilia",
+          "source_class_ids": [
+            1
+          ],
+          "gt": 29,
+          "tp": 11,
+          "fn": 18,
+          "recall": 0.3793103448275862
+        }
+      ],
+      "target_gt_without_source_annotation": 0,
+      "source_annotation_recall_note": "A merged GT may have multiple provenance strata; it counts once per (source,class). Provenance never changes matching or threshold selection."
+    },
+    {
+      "threshold": 0.82,
+      "unit": "annotated_object",
+      "tp": 157,
+      "fp": 25,
+      "fn": 76,
+      "precision": 0.8626373626373627,
+      "recall": 0.6738197424892703,
+      "f1": 0.7566265060240964,
+      "precision_wilson_95": [
+        0.8050860834788062,
+        0.9051967610363024
+      ],
+      "recall_wilson_95": [
+        0.6112276736166107,
+        0.7307732598488548
+      ],
+      "alerts": 182,
+      "images": 278,
+      "matching_iou": 0.5,
+      "recall_by_source_annotation": [
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "m1",
+          "source_class_ids": [
+            1
+          ],
+          "gt": 31,
+          "tp": 13,
+          "fn": 18,
+          "recall": 0.41935483870967744
+        },
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "m2",
+          "source_class_ids": [
+            2
+          ],
+          "gt": 69,
+          "tp": 53,
+          "fn": 16,
+          "recall": 0.7681159420289855
+        },
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "m3",
+          "source_class_ids": [
+            3
+          ],
+          "gt": 104,
+          "tp": 80,
+          "fn": 24,
+          "recall": 0.7692307692307693
+        },
+        {
+          "source": "serrano_torres_v2",
+          "class": "monilia",
+          "source_class_ids": [
+            1
+          ],
+          "gt": 29,
+          "tp": 11,
+          "fn": 18,
+          "recall": 0.3793103448275862
+        }
+      ],
+      "target_gt_without_source_annotation": 0,
+      "source_annotation_recall_note": "A merged GT may have multiple provenance strata; it counts once per (source,class). Provenance never changes matching or threshold selection."
+    },
+    {
+      "threshold": 0.83,
+      "unit": "annotated_object",
+      "tp": 153,
+      "fp": 24,
+      "fn": 80,
+      "precision": 0.864406779661017,
+      "recall": 0.6566523605150214,
+      "f1": 0.7463414634146341,
+      "precision_wilson_95": [
+        0.8061718284184224,
+        0.9071601743271683
+      ],
+      "recall_wilson_95": [
+        0.5935862208947151,
+        0.7146368425988525
+      ],
+      "alerts": 177,
+      "images": 278,
+      "matching_iou": 0.5,
+      "recall_by_source_annotation": [
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "m1",
+          "source_class_ids": [
+            1
+          ],
+          "gt": 31,
+          "tp": 12,
+          "fn": 19,
+          "recall": 0.3870967741935484
+        },
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "m2",
+          "source_class_ids": [
+            2
+          ],
+          "gt": 69,
+          "tp": 50,
+          "fn": 19,
+          "recall": 0.7246376811594203
+        },
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "m3",
+          "source_class_ids": [
+            3
+          ],
+          "gt": 104,
+          "tp": 80,
+          "fn": 24,
+          "recall": 0.7692307692307693
+        },
+        {
+          "source": "serrano_torres_v2",
+          "class": "monilia",
+          "source_class_ids": [
+            1
+          ],
+          "gt": 29,
+          "tp": 11,
+          "fn": 18,
+          "recall": 0.3793103448275862
+        }
+      ],
+      "target_gt_without_source_annotation": 0,
+      "source_annotation_recall_note": "A merged GT may have multiple provenance strata; it counts once per (source,class). Provenance never changes matching or threshold selection."
+    },
+    {
+      "threshold": 0.84,
+      "unit": "annotated_object",
+      "tp": 152,
+      "fp": 24,
+      "fn": 81,
+      "precision": 0.8636363636363636,
+      "recall": 0.6523605150214592,
+      "f1": 0.7432762836185819,
+      "precision_wilson_95": [
+        0.8051156864385216,
+        0.9066223123486148
+      ],
+      "recall_wilson_95": [
+        0.5891894192309737,
+        0.7105891767696195
+      ],
+      "alerts": 176,
+      "images": 278,
+      "matching_iou": 0.5,
+      "recall_by_source_annotation": [
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "m1",
+          "source_class_ids": [
+            1
+          ],
+          "gt": 31,
+          "tp": 12,
+          "fn": 19,
+          "recall": 0.3870967741935484
+        },
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "m2",
+          "source_class_ids": [
+            2
+          ],
+          "gt": 69,
+          "tp": 49,
+          "fn": 20,
+          "recall": 0.7101449275362319
+        },
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "m3",
+          "source_class_ids": [
+            3
+          ],
+          "gt": 104,
+          "tp": 80,
+          "fn": 24,
+          "recall": 0.7692307692307693
+        },
+        {
+          "source": "serrano_torres_v2",
+          "class": "monilia",
+          "source_class_ids": [
+            1
+          ],
+          "gt": 29,
+          "tp": 11,
+          "fn": 18,
+          "recall": 0.3793103448275862
+        }
+      ],
+      "target_gt_without_source_annotation": 0,
+      "source_annotation_recall_note": "A merged GT may have multiple provenance strata; it counts once per (source,class). Provenance never changes matching or threshold selection."
+    },
+    {
+      "threshold": 0.85,
+      "unit": "annotated_object",
+      "tp": 151,
+      "fp": 23,
+      "fn": 82,
+      "precision": 0.867816091954023,
+      "recall": 0.648068669527897,
+      "f1": 0.742014742014742,
+      "precision_wilson_95": [
+        0.8094633414097699,
+        0.9102788427175769
+      ],
+      "recall_wilson_95": [
+        0.5847979466542734,
+        0.7065361818533453
+      ],
+      "alerts": 174,
+      "images": 278,
+      "matching_iou": 0.5,
+      "recall_by_source_annotation": [
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "m1",
+          "source_class_ids": [
+            1
+          ],
+          "gt": 31,
+          "tp": 11,
+          "fn": 20,
+          "recall": 0.3548387096774194
+        },
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "m2",
+          "source_class_ids": [
+            2
+          ],
+          "gt": 69,
+          "tp": 49,
+          "fn": 20,
+          "recall": 0.7101449275362319
+        },
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "m3",
+          "source_class_ids": [
+            3
+          ],
+          "gt": 104,
+          "tp": 80,
+          "fn": 24,
+          "recall": 0.7692307692307693
+        },
+        {
+          "source": "serrano_torres_v2",
+          "class": "monilia",
+          "source_class_ids": [
+            1
+          ],
+          "gt": 29,
+          "tp": 11,
+          "fn": 18,
+          "recall": 0.3793103448275862
+        }
+      ],
+      "target_gt_without_source_annotation": 0,
+      "source_annotation_recall_note": "A merged GT may have multiple provenance strata; it counts once per (source,class). Provenance never changes matching or threshold selection."
+    },
+    {
+      "threshold": 0.86,
+      "unit": "annotated_object",
+      "tp": 151,
+      "fp": 23,
+      "fn": 82,
+      "precision": 0.867816091954023,
+      "recall": 0.648068669527897,
+      "f1": 0.742014742014742,
+      "precision_wilson_95": [
+        0.8094633414097699,
+        0.9102788427175769
+      ],
+      "recall_wilson_95": [
+        0.5847979466542734,
+        0.7065361818533453
+      ],
+      "alerts": 174,
+      "images": 278,
+      "matching_iou": 0.5,
+      "recall_by_source_annotation": [
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "m1",
+          "source_class_ids": [
+            1
+          ],
+          "gt": 31,
+          "tp": 11,
+          "fn": 20,
+          "recall": 0.3548387096774194
+        },
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "m2",
+          "source_class_ids": [
+            2
+          ],
+          "gt": 69,
+          "tp": 49,
+          "fn": 20,
+          "recall": 0.7101449275362319
+        },
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "m3",
+          "source_class_ids": [
+            3
+          ],
+          "gt": 104,
+          "tp": 80,
+          "fn": 24,
+          "recall": 0.7692307692307693
+        },
+        {
+          "source": "serrano_torres_v2",
+          "class": "monilia",
+          "source_class_ids": [
+            1
+          ],
+          "gt": 29,
+          "tp": 11,
+          "fn": 18,
+          "recall": 0.3793103448275862
+        }
+      ],
+      "target_gt_without_source_annotation": 0,
+      "source_annotation_recall_note": "A merged GT may have multiple provenance strata; it counts once per (source,class). Provenance never changes matching or threshold selection."
+    },
+    {
+      "threshold": 0.87,
+      "unit": "annotated_object",
+      "tp": 149,
+      "fp": 22,
+      "fn": 84,
+      "precision": 0.8713450292397661,
+      "recall": 0.6394849785407726,
+      "f1": 0.7376237623762376,
+      "precision_wilson_95": [
+        0.8128911407800574,
+        0.9134812016644358
+      ],
+      "recall_wilson_95": [
+        0.5760308132894284,
+        0.6984143802322414
+      ],
+      "alerts": 171,
+      "images": 278,
+      "matching_iou": 0.5,
+      "recall_by_source_annotation": [
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "m1",
+          "source_class_ids": [
+            1
+          ],
+          "gt": 31,
+          "tp": 11,
+          "fn": 20,
+          "recall": 0.3548387096774194
+        },
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "m2",
+          "source_class_ids": [
+            2
+          ],
+          "gt": 69,
+          "tp": 48,
+          "fn": 21,
+          "recall": 0.6956521739130435
+        },
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "m3",
+          "source_class_ids": [
+            3
+          ],
+          "gt": 104,
+          "tp": 79,
+          "fn": 25,
+          "recall": 0.7596153846153846
+        },
+        {
+          "source": "serrano_torres_v2",
+          "class": "monilia",
+          "source_class_ids": [
+            1
+          ],
+          "gt": 29,
+          "tp": 11,
+          "fn": 18,
+          "recall": 0.3793103448275862
+        }
+      ],
+      "target_gt_without_source_annotation": 0,
+      "source_annotation_recall_note": "A merged GT may have multiple provenance strata; it counts once per (source,class). Provenance never changes matching or threshold selection."
+    },
+    {
+      "threshold": 0.88,
+      "unit": "annotated_object",
+      "tp": 146,
+      "fp": 22,
+      "fn": 87,
+      "precision": 0.8690476190476191,
+      "recall": 0.6266094420600858,
+      "f1": 0.7281795511221946,
+      "precision_wilson_95": [
+        0.8096888872222077,
+        0.9119064766147946
+      ],
+      "recall_wilson_95": [
+        0.5629190320467059,
+        0.6861927589960406
+      ],
+      "alerts": 168,
+      "images": 278,
+      "matching_iou": 0.5,
+      "recall_by_source_annotation": [
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "m1",
+          "source_class_ids": [
+            1
+          ],
+          "gt": 31,
+          "tp": 11,
+          "fn": 20,
+          "recall": 0.3548387096774194
+        },
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "m2",
+          "source_class_ids": [
+            2
+          ],
+          "gt": 69,
+          "tp": 47,
+          "fn": 22,
+          "recall": 0.6811594202898551
+        },
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "m3",
+          "source_class_ids": [
+            3
+          ],
+          "gt": 104,
+          "tp": 79,
+          "fn": 25,
+          "recall": 0.7596153846153846
+        },
+        {
+          "source": "serrano_torres_v2",
+          "class": "monilia",
+          "source_class_ids": [
+            1
+          ],
+          "gt": 29,
+          "tp": 9,
+          "fn": 20,
+          "recall": 0.3103448275862069
+        }
+      ],
+      "target_gt_without_source_annotation": 0,
+      "source_annotation_recall_note": "A merged GT may have multiple provenance strata; it counts once per (source,class). Provenance never changes matching or threshold selection."
+    },
+    {
+      "threshold": 0.89,
+      "unit": "annotated_object",
+      "tp": 145,
+      "fp": 21,
+      "fn": 88,
+      "precision": 0.8734939759036144,
+      "recall": 0.6223175965665236,
+      "f1": 0.7268170426065163,
+      "precision_wilson_95": [
+        0.8143443230120763,
+        0.9157483225704718
+      ],
+      "recall_wilson_95": [
+        0.558558665790114,
+        0.682108657759658
+      ],
+      "alerts": 166,
+      "images": 278,
+      "matching_iou": 0.5,
+      "recall_by_source_annotation": [
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "m1",
+          "source_class_ids": [
+            1
+          ],
+          "gt": 31,
+          "tp": 10,
+          "fn": 21,
+          "recall": 0.3225806451612903
+        },
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "m2",
+          "source_class_ids": [
+            2
+          ],
+          "gt": 69,
+          "tp": 47,
+          "fn": 22,
+          "recall": 0.6811594202898551
+        },
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "m3",
+          "source_class_ids": [
+            3
+          ],
+          "gt": 104,
+          "tp": 79,
+          "fn": 25,
+          "recall": 0.7596153846153846
+        },
+        {
+          "source": "serrano_torres_v2",
+          "class": "monilia",
+          "source_class_ids": [
+            1
+          ],
+          "gt": 29,
+          "tp": 9,
+          "fn": 20,
+          "recall": 0.3103448275862069
+        }
+      ],
+      "target_gt_without_source_annotation": 0,
+      "source_annotation_recall_note": "A merged GT may have multiple provenance strata; it counts once per (source,class). Provenance never changes matching or threshold selection."
+    },
+    {
+      "threshold": 0.9,
+      "unit": "annotated_object",
+      "tp": 142,
+      "fp": 21,
+      "fn": 91,
+      "precision": 0.8711656441717791,
+      "recall": 0.6094420600858369,
+      "f1": 0.7171717171717171,
+      "precision_wilson_95": [
+        0.8110714301745537,
+        0.9141679728807725
+      ],
+      "recall_wilson_95": [
+        0.5455077722051523,
+        0.6698261488656964
+      ],
+      "alerts": 163,
+      "images": 278,
+      "matching_iou": 0.5,
+      "recall_by_source_annotation": [
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "m1",
+          "source_class_ids": [
+            1
+          ],
+          "gt": 31,
+          "tp": 10,
+          "fn": 21,
+          "recall": 0.3225806451612903
+        },
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "m2",
+          "source_class_ids": [
+            2
+          ],
+          "gt": 69,
+          "tp": 45,
+          "fn": 24,
+          "recall": 0.6521739130434783
+        },
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "m3",
+          "source_class_ids": [
+            3
+          ],
+          "gt": 104,
+          "tp": 78,
+          "fn": 26,
+          "recall": 0.75
+        },
+        {
+          "source": "serrano_torres_v2",
+          "class": "monilia",
+          "source_class_ids": [
+            1
+          ],
+          "gt": 29,
+          "tp": 9,
+          "fn": 20,
+          "recall": 0.3103448275862069
+        }
+      ],
+      "target_gt_without_source_annotation": 0,
+      "source_annotation_recall_note": "A merged GT may have multiple provenance strata; it counts once per (source,class). Provenance never changes matching or threshold selection."
+    },
+    {
+      "threshold": 0.91,
+      "unit": "annotated_object",
+      "tp": 134,
+      "fp": 21,
+      "fn": 99,
+      "precision": 0.864516129032258,
+      "recall": 0.575107296137339,
+      "f1": 0.6907216494845361,
+      "precision_wilson_95": [
+        0.8017527926645733,
+        0.9096483795417234
+      ],
+      "recall_wilson_95": [
+        0.5109218596799112,
+        0.6368563214471417
+      ],
+      "alerts": 155,
+      "images": 278,
+      "matching_iou": 0.5,
+      "recall_by_source_annotation": [
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "m1",
+          "source_class_ids": [
+            1
+          ],
+          "gt": 31,
+          "tp": 9,
+          "fn": 22,
+          "recall": 0.2903225806451613
+        },
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "m2",
+          "source_class_ids": [
+            2
+          ],
+          "gt": 69,
+          "tp": 41,
+          "fn": 28,
+          "recall": 0.5942028985507246
+        },
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "m3",
+          "source_class_ids": [
+            3
+          ],
+          "gt": 104,
+          "tp": 75,
+          "fn": 29,
+          "recall": 0.7211538461538461
+        },
+        {
+          "source": "serrano_torres_v2",
+          "class": "monilia",
+          "source_class_ids": [
+            1
+          ],
+          "gt": 29,
+          "tp": 9,
+          "fn": 20,
+          "recall": 0.3103448275862069
+        }
+      ],
+      "target_gt_without_source_annotation": 0,
+      "source_annotation_recall_note": "A merged GT may have multiple provenance strata; it counts once per (source,class). Provenance never changes matching or threshold selection."
+    },
+    {
+      "threshold": 0.92,
+      "unit": "annotated_object",
+      "tp": 124,
+      "fp": 18,
+      "fn": 109,
+      "precision": 0.8732394366197183,
+      "recall": 0.5321888412017167,
+      "f1": 0.6613333333333333,
+      "precision_wilson_95": [
+        0.8085240574212684,
+        0.9182925889366269
+      ],
+      "recall_wilson_95": [
+        0.4681187284868418,
+        0.5952147777104666
+      ],
+      "alerts": 142,
+      "images": 278,
+      "matching_iou": 0.5,
+      "recall_by_source_annotation": [
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "m1",
+          "source_class_ids": [
+            1
+          ],
+          "gt": 31,
+          "tp": 7,
+          "fn": 24,
+          "recall": 0.22580645161290322
+        },
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "m2",
+          "source_class_ids": [
+            2
+          ],
+          "gt": 69,
+          "tp": 37,
+          "fn": 32,
+          "recall": 0.5362318840579711
+        },
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "m3",
+          "source_class_ids": [
+            3
+          ],
+          "gt": 104,
+          "tp": 72,
+          "fn": 32,
+          "recall": 0.6923076923076923
+        },
+        {
+          "source": "serrano_torres_v2",
+          "class": "monilia",
+          "source_class_ids": [
+            1
+          ],
+          "gt": 29,
+          "tp": 8,
+          "fn": 21,
+          "recall": 0.27586206896551724
+        }
+      ],
+      "target_gt_without_source_annotation": 0,
+      "source_annotation_recall_note": "A merged GT may have multiple provenance strata; it counts once per (source,class). Provenance never changes matching or threshold selection."
+    },
+    {
+      "threshold": 0.93,
+      "unit": "annotated_object",
+      "tp": 114,
+      "fp": 17,
+      "fn": 119,
+      "precision": 0.8702290076335878,
+      "recall": 0.4892703862660944,
+      "f1": 0.6263736263736264,
+      "precision_wilson_95": [
+        0.8019885954053885,
+        0.9173747283701728
+      ],
+      "recall_wilson_95": [
+        0.4257808680932457,
+        0.5531079631743182
+      ],
+      "alerts": 131,
+      "images": 278,
+      "matching_iou": 0.5,
+      "recall_by_source_annotation": [
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "m1",
+          "source_class_ids": [
+            1
+          ],
+          "gt": 31,
+          "tp": 6,
+          "fn": 25,
+          "recall": 0.1935483870967742
+        },
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "m2",
+          "source_class_ids": [
+            2
+          ],
+          "gt": 69,
+          "tp": 35,
+          "fn": 34,
+          "recall": 0.5072463768115942
+        },
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "m3",
+          "source_class_ids": [
+            3
+          ],
+          "gt": 104,
+          "tp": 65,
+          "fn": 39,
+          "recall": 0.625
+        },
+        {
+          "source": "serrano_torres_v2",
+          "class": "monilia",
+          "source_class_ids": [
+            1
+          ],
+          "gt": 29,
+          "tp": 8,
+          "fn": 21,
+          "recall": 0.27586206896551724
+        }
+      ],
+      "target_gt_without_source_annotation": 0,
+      "source_annotation_recall_note": "A merged GT may have multiple provenance strata; it counts once per (source,class). Provenance never changes matching or threshold selection."
+    },
+    {
+      "threshold": 0.94,
+      "unit": "annotated_object",
+      "tp": 110,
+      "fp": 14,
+      "fn": 123,
+      "precision": 0.8870967741935484,
+      "recall": 0.4721030042918455,
+      "f1": 0.6162464985994398,
+      "precision_wilson_95": [
+        0.8193861015044891,
+        0.9315440027478895
+      ],
+      "recall_wilson_95": [
+        0.40897508845801833,
+        0.5361358728376476
+      ],
+      "alerts": 124,
+      "images": 278,
+      "matching_iou": 0.5,
+      "recall_by_source_annotation": [
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "m1",
+          "source_class_ids": [
+            1
+          ],
+          "gt": 31,
+          "tp": 5,
+          "fn": 26,
+          "recall": 0.16129032258064516
+        },
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "m2",
+          "source_class_ids": [
+            2
+          ],
+          "gt": 69,
+          "tp": 34,
+          "fn": 35,
+          "recall": 0.4927536231884058
+        },
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "m3",
+          "source_class_ids": [
+            3
+          ],
+          "gt": 104,
+          "tp": 63,
+          "fn": 41,
+          "recall": 0.6057692307692307
+        },
+        {
+          "source": "serrano_torres_v2",
+          "class": "monilia",
+          "source_class_ids": [
+            1
+          ],
+          "gt": 29,
+          "tp": 8,
+          "fn": 21,
+          "recall": 0.27586206896551724
+        }
+      ],
+      "target_gt_without_source_annotation": 0,
+      "source_annotation_recall_note": "A merged GT may have multiple provenance strata; it counts once per (source,class). Provenance never changes matching or threshold selection."
+    },
+    {
+      "threshold": 0.95,
+      "unit": "annotated_object",
+      "tp": 91,
+      "fp": 10,
+      "fn": 142,
+      "precision": 0.900990099009901,
+      "recall": 0.3905579399141631,
+      "f1": 0.5449101796407185,
+      "precision_wilson_95": [
+        0.8272681581315193,
+        0.9453269670329527
+      ],
+      "recall_wilson_95": [
+        0.3301738511343037,
+        0.4544922277948477
+      ],
+      "alerts": 101,
+      "images": 278,
+      "matching_iou": 0.5,
+      "recall_by_source_annotation": [
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "m1",
+          "source_class_ids": [
+            1
+          ],
+          "gt": 31,
+          "tp": 4,
+          "fn": 27,
+          "recall": 0.12903225806451613
+        },
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "m2",
+          "source_class_ids": [
+            2
+          ],
+          "gt": 69,
+          "tp": 27,
+          "fn": 42,
+          "recall": 0.391304347826087
+        },
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "m3",
+          "source_class_ids": [
+            3
+          ],
+          "gt": 104,
+          "tp": 53,
+          "fn": 51,
+          "recall": 0.5096153846153846
+        },
+        {
+          "source": "serrano_torres_v2",
+          "class": "monilia",
+          "source_class_ids": [
+            1
+          ],
+          "gt": 29,
+          "tp": 7,
+          "fn": 22,
+          "recall": 0.2413793103448276
+        }
+      ],
+      "target_gt_without_source_annotation": 0,
+      "source_annotation_recall_note": "A merged GT may have multiple provenance strata; it counts once per (source,class). Provenance never changes matching or threshold selection."
+    },
+    {
+      "threshold": 0.96,
+      "unit": "annotated_object",
+      "tp": 50,
+      "fp": 7,
+      "fn": 183,
+      "precision": 0.8771929824561403,
+      "recall": 0.2145922746781116,
+      "f1": 0.3448275862068966,
+      "precision_wilson_95": [
+        0.7675355156482598,
+        0.9392193984100191
+      ],
+      "recall_wilson_95": [
+        0.16673231874724237,
+        0.27171059296995625
+      ],
+      "alerts": 57,
+      "images": 278,
+      "matching_iou": 0.5,
+      "recall_by_source_annotation": [
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "m1",
+          "source_class_ids": [
+            1
+          ],
+          "gt": 31,
+          "tp": 2,
+          "fn": 29,
+          "recall": 0.06451612903225806
+        },
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "m2",
+          "source_class_ids": [
+            2
+          ],
+          "gt": 69,
+          "tp": 19,
+          "fn": 50,
+          "recall": 0.2753623188405797
+        },
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "m3",
+          "source_class_ids": [
+            3
+          ],
+          "gt": 104,
+          "tp": 25,
+          "fn": 79,
+          "recall": 0.2403846153846154
+        },
+        {
+          "source": "serrano_torres_v2",
+          "class": "monilia",
+          "source_class_ids": [
+            1
+          ],
+          "gt": 29,
+          "tp": 4,
+          "fn": 25,
+          "recall": 0.13793103448275862
+        }
+      ],
+      "target_gt_without_source_annotation": 0,
+      "source_annotation_recall_note": "A merged GT may have multiple provenance strata; it counts once per (source,class). Provenance never changes matching or threshold selection."
+    },
+    {
+      "threshold": 0.97,
+      "unit": "annotated_object",
+      "tp": 12,
+      "fp": 1,
+      "fn": 221,
+      "precision": 0.9230769230769231,
+      "recall": 0.05150214592274678,
+      "f1": 0.0975609756097561,
+      "precision_wilson_95": [
+        0.6668604907890041,
+        0.9862895787574435
+      ],
+      "recall_wilson_95": [
+        0.029703623708960583,
+        0.08784952327520866
+      ],
+      "alerts": 13,
+      "images": 278,
+      "matching_iou": 0.5,
+      "recall_by_source_annotation": [
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "m1",
+          "source_class_ids": [
+            1
+          ],
+          "gt": 31,
+          "tp": 2,
+          "fn": 29,
+          "recall": 0.06451612903225806
+        },
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "m2",
+          "source_class_ids": [
+            2
+          ],
+          "gt": 69,
+          "tp": 8,
+          "fn": 61,
+          "recall": 0.11594202898550725
+        },
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "m3",
+          "source_class_ids": [
+            3
+          ],
+          "gt": 104,
+          "tp": 0,
+          "fn": 104,
+          "recall": 0.0
+        },
+        {
+          "source": "serrano_torres_v2",
+          "class": "monilia",
+          "source_class_ids": [
+            1
+          ],
+          "gt": 29,
+          "tp": 2,
+          "fn": 27,
+          "recall": 0.06896551724137931
+        }
+      ],
+      "target_gt_without_source_annotation": 0,
+      "source_annotation_recall_note": "A merged GT may have multiple provenance strata; it counts once per (source,class). Provenance never changes matching or threshold selection."
+    },
+    {
+      "threshold": 0.98,
+      "unit": "annotated_object",
+      "tp": 0,
+      "fp": 0,
+      "fn": 233,
+      "precision": null,
+      "recall": 0.0,
+      "f1": 0.0,
+      "precision_wilson_95": null,
+      "recall_wilson_95": [
+        0.0,
+        0.016219537068475766
+      ],
+      "alerts": 0,
+      "images": 278,
+      "matching_iou": 0.5,
+      "recall_by_source_annotation": [
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "m1",
+          "source_class_ids": [
+            1
+          ],
+          "gt": 31,
+          "tp": 0,
+          "fn": 31,
+          "recall": 0.0
+        },
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "m2",
+          "source_class_ids": [
+            2
+          ],
+          "gt": 69,
+          "tp": 0,
+          "fn": 69,
+          "recall": 0.0
+        },
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "m3",
+          "source_class_ids": [
+            3
+          ],
+          "gt": 104,
+          "tp": 0,
+          "fn": 104,
+          "recall": 0.0
+        },
+        {
+          "source": "serrano_torres_v2",
+          "class": "monilia",
+          "source_class_ids": [
+            1
+          ],
+          "gt": 29,
+          "tp": 0,
+          "fn": 29,
+          "recall": 0.0
+        }
+      ],
+      "target_gt_without_source_annotation": 0,
+      "source_annotation_recall_note": "A merged GT may have multiple provenance strata; it counts once per (source,class). Provenance never changes matching or threshold selection."
+    },
+    {
+      "threshold": 0.99,
+      "unit": "annotated_object",
+      "tp": 0,
+      "fp": 0,
+      "fn": 233,
+      "precision": null,
+      "recall": 0.0,
+      "f1": 0.0,
+      "precision_wilson_95": null,
+      "recall_wilson_95": [
+        0.0,
+        0.016219537068475766
+      ],
+      "alerts": 0,
+      "images": 278,
+      "matching_iou": 0.5,
+      "recall_by_source_annotation": [
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "m1",
+          "source_class_ids": [
+            1
+          ],
+          "gt": 31,
+          "tp": 0,
+          "fn": 31,
+          "recall": 0.0
+        },
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "m2",
+          "source_class_ids": [
+            2
+          ],
+          "gt": 69,
+          "tp": 0,
+          "fn": 69,
+          "recall": 0.0
+        },
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "m3",
+          "source_class_ids": [
+            3
+          ],
+          "gt": 104,
+          "tp": 0,
+          "fn": 104,
+          "recall": 0.0
+        },
+        {
+          "source": "serrano_torres_v2",
+          "class": "monilia",
+          "source_class_ids": [
+            1
+          ],
+          "gt": 29,
+          "tp": 0,
+          "fn": 29,
+          "recall": 0.0
+        }
+      ],
+      "target_gt_without_source_annotation": 0,
+      "source_annotation_recall_note": "A merged GT may have multiple provenance strata; it counts once per (source,class). Provenance never changes matching or threshold selection."
+    }
+  ],
+  "note": "95% empirical validation precision is not a guarantee of deployment precision. No thresholds are fitted on test/regression.",
+  "inference_fingerprint": {
+    "weights_sha256": "58ccd2f239f5b2bfe202fa74036cce3edb5207d642a57a0c4b40d7c2610c7bc2",
+    "config_sha256": "a430ee539e462ffa726f5ffebcfc9c4b387c9129d1747fb8d3145664af7dd7ce",
+    "classifier_weights_sha256": null,
+    "classifier_metadata_sha256": null
+  },
+  "validation_manifest_sha256": "b2553f2961e628c6c0ff089605331ab91a998cd8b7009d25c44446c9c747b045",
+  "validation_ids_sha256": "4497216859f09feceb99d338b4c3552f93d16536e86ee22e0233803a418f1678",
+  "latency": {
+    "samples": 278,
+    "p50_ms": 11.326437932439148,
+    "p95_ms": 14.113102562259881,
+    "mean_ms": 11.363990829332913,
+    "cuda_synchronized": true,
+    "proposal_stats": {
+      "proposals": 417,
+      "classified": 0,
+      "discarded_small_rois": 0
+    },
+    "includes": "disk decode, synthetic corruption if any, YOLO preprocessing/NMS, optional all-ROI classification, CPU output transfer and CUDA sync",
+    "excludes": "capture, networking, robot planning/actuation, output file writes"
+  }
+}

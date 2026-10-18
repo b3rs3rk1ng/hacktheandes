@@ -1,0 +1,49 @@
+{
+  "_id": "69c95ab1f69be9b927cbe2c2",
+  "id": "Mahmoud123Mahmoud/fruit-quality-ultra",
+  "private": false,
+  "tags": [
+    "safetensors",
+    "vit",
+    "region:us"
+  ],
+  "downloads": 6,
+  "likes": 0,
+  "modelId": "Mahmoud123Mahmoud/fruit-quality-ultra",
+  "author": "Mahmoud123Mahmoud",
+  "sha": "e6822b6a1eac9a30729ce3efdf582de3761eaf36",
+  "lastModified": "2026-04-14T19:26:05.000Z",
+  "gated": false,
+  "disabled": false,
+  "config": {
+    "architectures": [
+      "ViTForImageClassification"
+    ],
+    "model_type": "vit"
+  },
+  "siblings": [
+    {
+      "rfilename": ".gitattributes"
+    },
+    {
+      "rfilename": "config.json"
+    },
+    {
+      "rfilename": "model.safetensors"
+    },
+    {
+      "rfilename": "preprocessor_config.json"
+    }
+  ],
+  "spaces": [
+    "Mahmoud123Mahmoud/SmartFarm_API"
+  ],
+  "createdAt": "2026-03-29T17:00:33.000Z",
+  "safetensors": {
+    "parameters": {
+      "F32": 85824033
+    },
+    "total": 85824033
+  },
+  "usedStorage": 686635604
+}

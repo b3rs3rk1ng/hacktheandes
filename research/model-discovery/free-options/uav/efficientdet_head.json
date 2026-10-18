@@ -1,0 +1,17 @@
+{
+  "url": "https://agdata-data.s3.us-west-1.amazonaws.com/models/apple_detection_drone_brazil.pth",
+  "status": 200,
+  "headers": {
+    "x-amz-id-2": "Npl3iVoyOU61cAoULUujFCTuK3AAZGkAUy20Ehd4baU3Qtr2GohaxZZFGdz50HNPzmauJjPgxDSWn0v2ZRtp6sNxHWW2XHpT",
+    "x-amz-request-id": "KKWV8YQG5WVHCHTD",
+    "Server": "AmazonS3",
+    "Date": "Sun, 18 Oct 2026 04:58:47 GMT",
+    "Last-Modified": "Tue, 09 Aug 2022 16:02:12 GMT",
+    "ETag": "\"50796b7d135451345a8d4759a7c96249-11\"",
+    "x-amz-version-id": "tD3th_F5j9Sf_ygQE8LOg6l1GGC5nxIX",
+    "Accept-Ranges": "bytes",
+    "Content-Length": "84195286",
+    "Content-Type": "binary/octet-stream",
+    "Connection": "close"
+  }
+}

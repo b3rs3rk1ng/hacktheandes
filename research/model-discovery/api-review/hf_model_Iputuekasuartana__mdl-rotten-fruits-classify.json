@@ -1,0 +1,44 @@
+{
+  "_id": "65dcc3f752eca001fd5b50c1",
+  "id": "Iputuekasuartana/mdl-rotten-fruits-classify",
+  "private": false,
+  "pipeline_tag": "image-classification",
+  "tags": [
+    "safetensors",
+    "image-classification",
+    "region:us"
+  ],
+  "downloads": 0,
+  "likes": 0,
+  "modelId": "Iputuekasuartana/mdl-rotten-fruits-classify",
+  "author": "Iputuekasuartana",
+  "sha": "90cf3d22d0d1a45fe37dbee595111649065e1081",
+  "lastModified": "2024-02-28T11:56:57.000Z",
+  "gated": false,
+  "disabled": false,
+  "model-index": null,
+  "config": {},
+  "cardData": {
+    "pipeline_tag": "image-classification"
+  },
+  "siblings": [
+    {
+      "rfilename": ".gitattributes"
+    },
+    {
+      "rfilename": "README.md"
+    },
+    {
+      "rfilename": "model.safetensors"
+    }
+  ],
+  "spaces": [],
+  "createdAt": "2024-02-26T17:01:43.000Z",
+  "safetensors": {
+    "parameters": {
+      "F32": 4200294
+    },
+    "total": 4200294
+  },
+  "usedStorage": 208138149
+}

@@ -1,0 +1,53 @@
+---
+dataset_info:
+  features:
+  - name: image
+    dtype: image
+  - name: objects
+    struct:
+    - name: bbox
+      list:
+        list: int64
+    - name: categories
+      list:
+        class_label:
+          names:
+            '0': apple
+    - name: category_names
+      list: string
+  splits:
+  - name: train
+    num_bytes: 13559242
+    num_examples: 689
+  download_size: 13564302
+  dataset_size: 13559242
+configs:
+- config_name: default
+  data_files:
+  - split: train
+    path: data/train-*
+---
+
+# Apple Detection Drone Brazil
+
+A dataset for object detection of apples. The dataset contains 689 images with 2,471 bounding box annotations across 1 category.
+
+This dataset is indexed on https://project-agml.github.io/ as part of the AgML python library.
+
+## Citation
+
+```bibtex
+@article{DBLP:journals/corr/abs-2110-12331,
+author={Thiago T. Santos and Luciano Gebler},
+title={A methodology for detection and localization of fruits in apples orchards from aerial images},
+journal={CoRR},
+volume={abs/2110.12331},
+year={2021},
+url={https://arxiv.org/abs/2110.12331},
+eprinttype={arXiv},
+eprint={2110.12331},
+timestamp={Thu, 28 Oct 2021 15:25:31 +0200},
+biburl={https://dblp.org/rec/journals/corr/abs-2110-12331.bib},
+bibsource={dblp computer science bibliography, https://dblp.org}
+}
+```

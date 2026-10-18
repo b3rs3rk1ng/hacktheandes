@@ -1,0 +1,15 @@
+{
+  "hub_queries": [
+    "apple disease", "apple rot", "rotten fruit", "fruit quality",
+    "peach disease", "pear disease", "plum disease", "nectarine disease",
+    "apricot disease", "raspberry disease", "fruit disease detection"
+  ],
+  "paper_queries": [
+    "apple fruit disease detection orchard",
+    "brown rot peach fruit detection deep learning",
+    "raspberry fruit gray mold detection",
+    "fruit disease detection motion blur UAV"
+  ],
+  "limit_per_query": 12,
+  "paper_limit_per_query": 5
+}

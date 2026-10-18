@@ -1,0 +1,18 @@
+{
+  "url": "https://agdata-data.s3.us-west-1.amazonaws.com/models/detector/apple_detection_drone_brazil%2Byolo11n.zip",
+  "status": 200,
+  "headers": {
+    "x-amz-id-2": "iJwGNJ8kRGJ2O9eDArylfFvJRmWrdEzwYhYlo1N3HgmO9i56b/9quYuKwvMb+l6v3/eXYxKdMaByklkPZdUWG5a/i9A8unMe",
+    "x-amz-request-id": "FTM2K93NZA3T9W5N",
+    "Server": "AmazonS3",
+    "Date": "Sun, 18 Oct 2026 04:58:55 GMT",
+    "Last-Modified": "Tue, 22 Oct 2024 17:13:59 GMT",
+    "ETag": "\"617a2ff7be5b697428b579b59567118f\"",
+    "x-amz-server-side-encryption": "AES256",
+    "x-amz-version-id": "e5KKupj0UuDUwHTj2DbzOVTCuJ63ZZcR",
+    "Accept-Ranges": "bytes",
+    "Content-Length": "4914890",
+    "Content-Type": "application/zip",
+    "Connection": "close"
+  }
+}

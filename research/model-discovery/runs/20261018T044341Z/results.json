@@ -1,0 +1,1432 @@
+{
+  "started_at_utc": "2026-10-18T04:43:41.282458+00:00",
+  "config": {
+    "hub_queries": [
+      "apple disease",
+      "apple rot",
+      "rotten fruit",
+      "fruit quality",
+      "peach disease",
+      "pear disease",
+      "plum disease",
+      "nectarine disease",
+      "apricot disease",
+      "raspberry disease",
+      "fruit disease detection"
+    ],
+    "paper_queries": [
+      "apple fruit disease detection orchard",
+      "brown rot peach fruit detection deep learning",
+      "raspberry fruit gray mold detection",
+      "fruit disease detection motion blur UAV"
+    ],
+    "limit_per_query": 12,
+    "paper_limit_per_query": 5
+  },
+  "versions": {
+    "huggingface-hub": "2.2.0",
+    "httpx": "0.28.1"
+  },
+  "queries": [
+    {
+      "source": "models",
+      "query": "apple disease",
+      "status": "ok",
+      "items": [
+        {
+          "id": "Bazaar/cv_apple_leaf_disease_detection",
+          "url": "https://huggingface.co/Bazaar/cv_apple_leaf_disease_detection",
+          "revision": "e9d0b2e37036af241cb2fd4c6431e3e48fe6a582",
+          "task": "image-classification",
+          "library": "transformers",
+          "downloads": 22,
+          "tags": [
+            "transformers",
+            "pytorch",
+            "tensorboard",
+            "safetensors",
+            "vit",
+            "image-classification",
+            "huggingpics",
+            "model-index",
+            "endpoints_compatible",
+            "region:us"
+          ],
+          "gated": false,
+          "card_data_reported_by_author": {},
+          "license_reported_by_author": null,
+          "listed_files": [
+            ".gitattributes",
+            "README.md",
+            "config.json",
+            "images/Alternaria_leaf_spot.jpg",
+            "images/Brown_spot.jpg",
+            "images/Frogeye_leaf_spot.jpg",
+            "images/Grey_spot.jpg",
+            "images/Health.jpg",
+            "images/Mosaic.jpg",
+            "images/Powdery_mildew.jpg",
+            "images/Rust.jpg",
+            "images/Scab.jpg",
+            "model.safetensors",
+            "preprocessor_config.json",
+            "pytorch_model.bin",
+            "runs/events.out.tfevents.1694075527.gpu1.3029.0"
+          ],
+          "validation_in_moving_camera": "not evaluated by this search"
+        },
+        {
+          "id": "biruh/apple_disease_model",
+          "url": "https://huggingface.co/biruh/apple_disease_model",
+          "revision": "d34a6f0bd4e0944a4704d874ea24c58611b391fb",
+          "task": "image-feature-extraction",
+          "library": "keras",
+          "downloads": 7,
+          "tags": [
+            "keras",
+            "safetensors",
+            "pix2struct",
+            "code",
+            "image-feature-extraction",
+            "am",
+            "en",
+            "license:mit",
+            "region:us"
+          ],
+          "gated": false,
+          "card_data_reported_by_author": {},
+          "license_reported_by_author": null,
+          "listed_files": [
+            ".gitattributes",
+            "README.md",
+            "config.json",
+            "generation_config.json",
+            "model.safetensors",
+            "preprocessor_config.json",
+            "special_tokens_map.json",
+            "spiece.model",
+            "tokenizer.json",
+            "tokenizer_config.json"
+          ],
+          "validation_in_moving_camera": "not evaluated by this search"
+        },
+        {
+          "id": "SudeepM27/apple-leaf-disease-detection",
+          "url": "https://huggingface.co/SudeepM27/apple-leaf-disease-detection",
+          "revision": "154b8408e2e5bf3108c3e34846ba98665172a95c",
+          "task": "image-classification",
+          "library": "transformers",
+          "downloads": 7,
+          "tags": [
+            "transformers",
+            "safetensors",
+            "mobilevitv2",
+            "image-classification",
+            "arxiv:1910.09700",
+            "endpoints_compatible",
+            "region:us"
+          ],
+          "gated": false,
+          "card_data_reported_by_author": {},
+          "license_reported_by_author": null,
+          "listed_files": [
+            ".gitattributes",
+            "README.md",
+            "config.json",
+            "model.safetensors",
+            "preprocessor_config.json"
+          ],
+          "validation_in_moving_camera": "not evaluated by this search"
+        },
+        {
+          "id": "JadhavAdi123/apple_disease.h5",
+          "url": "https://huggingface.co/JadhavAdi123/apple_disease.h5",
+          "revision": "ccfa1fbc3bd0541ae37465305df52dfebb1856ae",
+          "task": null,
+          "library": null,
+          "downloads": 0,
+          "tags": [
+            "license:apache-2.0",
+            "region:us"
+          ],
+          "gated": false,
+          "card_data_reported_by_author": {},
+          "license_reported_by_author": null,
+          "listed_files": [
+            ".gitattributes",
+            "README.md"
+          ],
+          "validation_in_moving_camera": "not evaluated by this search"
+        },
+        {
+          "id": "MukulTheModeler/apple-disease-detection",
+          "url": "https://huggingface.co/MukulTheModeler/apple-disease-detection",
+          "revision": "655a8728154117ff5a60b05b8481d4ba27571813",
+          "task": null,
+          "library": null,
+          "downloads": 0,
+          "tags": [
+            "region:us"
+          ],
+          "gated": false,
+          "card_data_reported_by_author": null,
+          "license_reported_by_author": null,
+          "listed_files": [
+            ".gitattributes"
+          ],
+          "validation_in_moving_camera": "not evaluated by this search"
+        },
+        {
+          "id": "alvaro16/Apple-Disease-ResNet",
+          "url": "https://huggingface.co/alvaro16/Apple-Disease-ResNet",
+          "revision": "ad4eadb80296d427eb4f2f11deb6df8ab2e5a2b7",
+          "task": null,
+          "library": "keras",
+          "downloads": 3,
+          "tags": [
+            "keras",
+            "region:us"
+          ],
+          "gated": false,
+          "card_data_reported_by_author": null,
+          "license_reported_by_author": null,
+          "listed_files": [
+            ".gitattributes",
+            "resnet50v2_apple_disease.keras"
+          ],
+          "validation_in_moving_camera": "not evaluated by this search"
+        },
+        {
+          "id": "Salman1695/Kashmiri_Apple_Leaf_Disease_System",
+          "url": "https://huggingface.co/Salman1695/Kashmiri_Apple_Leaf_Disease_System",
+          "revision": "8ea3584e2065e61a882eba741fedabba060445a5",
+          "task": null,
+          "library": null,
+          "downloads": 0,
+          "tags": [
+            "region:us"
+          ],
+          "gated": false,
+          "card_data_reported_by_author": null,
+          "license_reported_by_author": null,
+          "listed_files": [
+            ".gitattributes"
+          ],
+          "validation_in_moving_camera": "not evaluated by this search"
+        },
+        {
+          "id": "azharanggakusuma/apple-leaf-disease-classification",
+          "url": "https://huggingface.co/azharanggakusuma/apple-leaf-disease-classification",
+          "revision": "9fb7506dec00f09a5ed0ff72ee61f4ae2a5bd586",
+          "task": null,
+          "library": "tf-keras",
+          "downloads": 10,
+          "tags": [
+            "tf-keras",
+            "tflite",
+            "region:us"
+          ],
+          "gated": false,
+          "card_data_reported_by_author": null,
+          "license_reported_by_author": null,
+          "listed_files": [
+            ".gitattributes",
+            "saved_model/fingerprint.pb",
+            "saved_model/saved_model.pb",
+            "saved_model/variables/variables.data-00000-of-00001",
+            "saved_model/variables/variables.index",
+            "tfjs_model/group1-shard10of13.bin",
+            "tfjs_model/group1-shard11of13.bin",
+            "tfjs_model/group1-shard12of13.bin",
+            "tfjs_model/group1-shard13of13.bin",
+            "tfjs_model/group1-shard1of13.bin",
+            "tfjs_model/group1-shard2of13.bin",
+            "tfjs_model/group1-shard3of13.bin",
+            "tfjs_model/group1-shard4of13.bin",
+            "tfjs_model/group1-shard5of13.bin",
+            "tfjs_model/group1-shard6of13.bin",
+            "tfjs_model/group1-shard7of13.bin",
+            "tfjs_model/group1-shard8of13.bin",
+            "tfjs_model/group1-shard9of13.bin",
+            "tfjs_model/model.json",
+            "tflite/label.txt",
+            "tflite/model.tflite"
+          ],
+          "validation_in_moving_camera": "not evaluated by this search"
+        },
+        {
+          "id": "Dapros/apple-leaf-disease-cnn",
+          "url": "https://huggingface.co/Dapros/apple-leaf-disease-cnn",
+          "revision": "e2950046a83b8746af25e7f367ec2c1b068342e5",
+          "task": null,
+          "library": null,
+          "downloads": 0,
+          "tags": [
+            "region:us"
+          ],
+          "gated": false,
+          "card_data_reported_by_author": null,
+          "license_reported_by_author": null,
+          "listed_files": [
+            ".gitattributes"
+          ],
+          "validation_in_moving_camera": "not evaluated by this search"
+        },
+        {
+          "id": "zainii786786/Apple-Disease",
+          "url": "https://huggingface.co/zainii786786/Apple-Disease",
+          "revision": "da67ef58e21cf70813c222d252abfa983c3e110d",
+          "task": null,
+          "library": null,
+          "downloads": 0,
+          "tags": [
+            "license:mit",
+            "region:us"
+          ],
+          "gated": false,
+          "card_data_reported_by_author": {},
+          "license_reported_by_author": null,
+          "listed_files": [
+            ".gitattributes",
+            "App.py",
+            "README.md",
+            "requirements.txt"
+          ],
+          "validation_in_moving_camera": "not evaluated by this search"
+        },
+        {
+          "id": "ixrbhii/apple-disease-convnext",
+          "url": "https://huggingface.co/ixrbhii/apple-disease-convnext",
+          "revision": "8bb9c1ae513fff294eed77bdec53ca6fa3c10e8a",
+          "task": "image-classification",
+          "library": "timm",
+          "downloads": 12,
+          "tags": [
+            "timm",
+            "safetensors",
+            "agriculture",
+            "plant-disease",
+            "convnext",
+            "image-classification",
+            "license:cc-by-4.0",
+            "region:us"
+          ],
+          "gated": false,
+          "card_data_reported_by_author": {},
+          "license_reported_by_author": null,
+          "listed_files": [
+            ".gitattributes",
+            "README.md",
+            "config.json",
+            "model.safetensors"
+          ],
+          "validation_in_moving_camera": "not evaluated by this search"
+        },
+        {
+          "id": "ixrbhii/custard-apple-disease-convnext",
+          "url": "https://huggingface.co/ixrbhii/custard-apple-disease-convnext",
+          "revision": "b8795c35e6efbadedaf2a5a789a6297f4f4f6172",
+          "task": "image-classification",
+          "library": "timm",
+          "downloads": 22,
+          "tags": [
+            "timm",
+            "safetensors",
+            "agriculture",
+            "plant-disease",
+            "convnext",
+            "image-classification",
+            "license:cc-by-4.0",
+            "region:us"
+          ],
+          "gated": false,
+          "card_data_reported_by_author": {},
+          "license_reported_by_author": null,
+          "listed_files": [
+            ".gitattributes",
+            "README.md",
+            "config.json",
+            "model.safetensors"
+          ],
+          "validation_in_moving_camera": "not evaluated by this search"
+        }
+      ]
+    },
+    {
+      "source": "datasets",
+      "query": "apple disease",
+      "status": "ok",
+      "items": [
+        {
+          "id": "Project-AgML/apple_leaf_disease_classification",
+          "url": "https://huggingface.co/datasets/Project-AgML/apple_leaf_disease_classification",
+          "revision": "38e4c0600bbf962f2379bf1574b8049c801e089d",
+          "task": null,
+          "library": null,
+          "downloads": 98,
+          "tags": [
+            "task_categories:image-classification",
+            "license:cc-by-4.0",
+            "size_categories:1K<n<10K",
+            "format:parquet",
+            "format:optimized-parquet",
+            "modality:image",
+            "library:datasets",
+            "library:pandas",
+            "library:polars",
+            "library:mlcroissant",
+            "region:us"
+          ],
+          "gated": false,
+          "card_data_reported_by_author": {},
+          "license_reported_by_author": null,
+          "listed_files": [],
+          "validation_in_moving_camera": "not evaluated by this search"
+        },
+        {
+          "id": "Project-AgML/custard_apple_disease_classification",
+          "url": "https://huggingface.co/datasets/Project-AgML/custard_apple_disease_classification",
+          "revision": "80e710823ae0fd0fa5c6c0ba2a4d68299a6f99cf",
+          "task": null,
+          "library": null,
+          "downloads": 16,
+          "tags": [
+            "task_categories:image-classification",
+            "license:cc-by-4.0",
+            "size_categories:1K<n<10K",
+            "format:parquet",
+            "format:optimized-parquet",
+            "modality:image",
+            "library:datasets",
+            "library:dask",
+            "library:polars",
+            "library:mlcroissant",
+            "region:us"
+          ],
+          "gated": false,
+          "card_data_reported_by_author": {},
+          "license_reported_by_author": null,
+          "listed_files": [],
+          "validation_in_moving_camera": "not evaluated by this search"
+        }
+      ]
+    },
+    {
+      "source": "models",
+      "query": "apple rot",
+      "status": "ok",
+      "items": [
+        {
+          "id": "Faless/harvest_apples_xvla_v2_ee_rot6d",
+          "url": "https://huggingface.co/Faless/harvest_apples_xvla_v2_ee_rot6d",
+          "revision": "0e38f438993d4f827e39fccdbdef08fdabeaa6e4",
+          "task": "robotics",
+          "library": "lerobot",
+          "downloads": 5,
+          "tags": [
+            "lerobot",
+            "safetensors",
+            "robotics",
+            "xvla",
+            "dataset:Faless/harvest_apples_with_agilex_piper_sim_ee_rot6d",
+            "license:apache-2.0",
+            "region:us"
+          ],
+          "gated": false,
+          "card_data_reported_by_author": {},
+          "license_reported_by_author": null,
+          "listed_files": [
+            ".gitattributes",
+            "README.md",
+            "config.json",
+            "model.safetensors",
+            "policy_postprocessor.json",
+            "policy_postprocessor_step_0_unnormalizer_processor.safetensors",
+            "policy_preprocessor.json",
+            "policy_preprocessor_step_7_normalizer_processor.safetensors",
+            "train_config.json"
+          ],
+          "validation_in_moving_camera": "not evaluated by this search"
+        },
+        {
+          "id": "mehdiamlal/droid_apple_rot",
+          "url": "https://huggingface.co/mehdiamlal/droid_apple_rot",
+          "revision": "afbeab6fec1cdab5df5f27f337d9484f3d99bf64",
+          "task": null,
+          "library": "peft",
+          "downloads": 2,
+          "tags": [
+            "peft",
+            "safetensors",
+            "region:us"
+          ],
+          "gated": false,
+          "card_data_reported_by_author": {},
+          "license_reported_by_author": null,
+          "listed_files": [
+            ".gitattributes",
+            "README.md",
+            "adapter_config.json",
+            "assets/assets/norm_stats.json",
+            "config.json",
+            "model.safetensors"
+          ],
+          "validation_in_moving_camera": "not evaluated by this search"
+        }
+      ]
+    },
+    {
+      "source": "datasets",
+      "query": "apple rot",
+      "status": "ok",
+      "items": [
+        {
+          "id": "globcy/apple_on_plate_l1_rot",
+          "url": "https://huggingface.co/datasets/globcy/apple_on_plate_l1_rot",
+          "revision": "5fa482310f5bb7782c9d391401289384b1b67819",
+          "task": null,
+          "library": null,
+          "downloads": 82,
+          "tags": [
+            "task_categories:robotics",
+            "license:apache-2.0",
+            "size_categories:n<1K",
+            "format:parquet",
+            "modality:image",
+            "modality:timeseries",
+            "library:datasets",
+            "library:pandas",
+            "library:polars",
+            "library:mlcroissant",
+            "library:lerobot",
+            "region:us",
+            "LeRobot",
+            "libero",
+            "panda",
+            "rlds"
+          ],
+          "gated": false,
+          "card_data_reported_by_author": {},
+          "license_reported_by_author": null,
+          "listed_files": [],
+          "validation_in_moving_camera": "not evaluated by this search"
+        }
+      ]
+    },
+    {
+      "source": "models",
+      "query": "rotten fruit",
+      "status": "ok",
+      "items": [
+        {
+          "id": "Iputuekasuartana/mdl-rotten-fruits-classify",
+          "url": "https://huggingface.co/Iputuekasuartana/mdl-rotten-fruits-classify",
+          "revision": "90cf3d22d0d1a45fe37dbee595111649065e1081",
+          "task": "image-classification",
+          "library": null,
+          "downloads": 0,
+          "tags": [
+            "safetensors",
+            "image-classification",
+            "region:us"
+          ],
+          "gated": false,
+          "card_data_reported_by_author": {},
+          "license_reported_by_author": null,
+          "listed_files": [
+            ".gitattributes",
+            "README.md",
+            "model.safetensors"
+          ],
+          "validation_in_moving_camera": "not evaluated by this search"
+        },
+        {
+          "id": "Rodanciuc/detect-healthy-rotten-fruits",
+          "url": "https://huggingface.co/Rodanciuc/detect-healthy-rotten-fruits",
+          "revision": "06a5d61a1c932f31f20df2a5a1b248e047685883",
+          "task": null,
+          "library": null,
+          "downloads": 0,
+          "tags": [
+            "onnx",
+            "region:us"
+          ],
+          "gated": false,
+          "card_data_reported_by_author": {},
+          "license_reported_by_author": null,
+          "listed_files": [
+            ".gitattributes",
+            "README.md",
+            "model.onnx"
+          ],
+          "validation_in_moving_camera": "not evaluated by this search"
+        },
+        {
+          "id": "diboworks/rotten_fruit_classifier",
+          "url": "https://huggingface.co/diboworks/rotten_fruit_classifier",
+          "revision": "f44a288ef13f2e0901b2e370ad9117551f027897",
+          "task": "image-classification",
+          "library": "keras",
+          "downloads": 6,
+          "tags": [
+            "keras",
+            "onnx",
+            "image-classification",
+            "license:apache-2.0",
+            "region:us"
+          ],
+          "gated": false,
+          "card_data_reported_by_author": {},
+          "license_reported_by_author": null,
+          "listed_files": [
+            ".gitattributes",
+            "README.md",
+            "quantized_oxmodel.onnx",
+            "rotten_fruits_and_veg_classify.h5",
+            "rotten_fruits_classifier.keras"
+          ],
+          "validation_in_moving_camera": "not evaluated by this search"
+        },
+        {
+          "id": "MTerryJack/Element-Detect-RottenFruit",
+          "url": "https://huggingface.co/MTerryJack/Element-Detect-RottenFruit",
+          "revision": "35f0bc9fc72407e128c01b7c54c03a96bdbb4629",
+          "task": null,
+          "library": null,
+          "downloads": 0,
+          "tags": [
+            "onnx",
+            "element_type:detect",
+            "model:yolov5v6n",
+            "object:bad apple",
+            "object:bad banana",
+            "object:bad orange",
+            "object:bad pomegranate",
+            "object:good apple",
+            "object:good banana",
+            "object:good orange",
+            "object:good pomegranate",
+            "region:us"
+          ],
+          "gated": false,
+          "card_data_reported_by_author": {},
+          "license_reported_by_author": null,
+          "listed_files": [
+            ".gitattributes",
+            "README.md",
+            "benchmark/images/1.png",
+            "benchmark/images/2.png",
+            "benchmark/images/3.png",
+            "benchmark/images/4.png",
+            "benchmark/labels/1.json",
+            "benchmark/labels/1.png",
+            "benchmark/labels/2.json",
+            "benchmark/labels/2.png",
+            "benchmark/labels/3.json",
+            "benchmark/labels/3.png",
+            "benchmark/labels/4.json",
+            "benchmark/labels/4.png",
+            "benchmark/predicted/1.json",
+            "benchmark/predicted/1.png",
+            "benchmark/predicted/2.json",
+            "benchmark/predicted/2.png",
+            "benchmark/predicted/3.json",
+            "benchmark/predicted/3.png",
+            "benchmark/predicted/4.json",
+            "benchmark/predicted/4.png",
+            "benchmark/results/2026-02-03T13-53-13.085296Z.json",
+            "benchmark/results/2026-02-06T16-25-21.491877Z.json",
+            "class_names.txt",
+            "environment.json",
+            "example.jpeg",
+            "main.py",
+            "model_type.json",
+            "pyproject.toml",
+            "uv.lock",
+            "yolov5s_weights.onnx"
+          ],
+          "validation_in_moving_camera": "not evaluated by this search"
+        },
+        {
+          "id": "JustFormen/Fruits_fresh_and_rotten",
+          "url": "https://huggingface.co/JustFormen/Fruits_fresh_and_rotten",
+          "revision": "18d83c3acef8671b4f8eb702649fe57ed9e891f5",
+          "task": null,
+          "library": null,
+          "downloads": 0,
+          "tags": [
+            "region:us"
+          ],
+          "gated": false,
+          "card_data_reported_by_author": null,
+          "license_reported_by_author": null,
+          "listed_files": [
+            ".gitattributes"
+          ],
+          "validation_in_moving_camera": "not evaluated by this search"
+        },
+        {
+          "id": "ausjahk/fruit-fresh-rotten-cnn-from-scratch",
+          "url": "https://huggingface.co/ausjahk/fruit-fresh-rotten-cnn-from-scratch",
+          "revision": "9405400af9609eaed66aab694ec259097b423565",
+          "task": "image-classification",
+          "library": null,
+          "downloads": 9,
+          "tags": [
+            "pytorch",
+            "image-classification",
+            "cnn",
+            "from-scratch",
+            "fruits",
+            "region:us"
+          ],
+          "gated": false,
+          "card_data_reported_by_author": {},
+          "license_reported_by_author": null,
+          "listed_files": [
+            ".gitattributes",
+            "README.md",
+            "config.json",
+            "pytorch_model.bin"
+          ],
+          "validation_in_moving_camera": "not evaluated by this search"
+        },
+        {
+          "id": "ausjahk/fruits-fresh-rotten-from-scratch",
+          "url": "https://huggingface.co/ausjahk/fruits-fresh-rotten-from-scratch",
+          "revision": "0cd3827f4a5e38be308680cb26e9730a7169984f",
+          "task": "image-classification",
+          "library": "transformers",
+          "downloads": 25,
+          "tags": [
+            "transformers",
+            "safetensors",
+            "resnet",
+            "image-classification",
+            "generated_from_trainer",
+            "dataset:imagefolder",
+            "base_model:microsoft/resnet-18",
+            "base_model:finetune:microsoft/resnet-18",
+            "license:apache-2.0",
+            "model-index",
+            "endpoints_compatible",
+            "region:us"
+          ],
+          "gated": false,
+          "card_data_reported_by_author": {},
+          "license_reported_by_author": null,
+          "listed_files": [
+            ".gitattributes",
+            "README.md",
+            "config.json",
+            "model.safetensors",
+            "preprocessor_config.json",
+            "training_args.bin"
+          ],
+          "validation_in_moving_camera": "not evaluated by this search"
+        },
+        {
+          "id": "sandeepece15/cnn-fresh-rotten-fruit",
+          "url": "https://huggingface.co/sandeepece15/cnn-fresh-rotten-fruit",
+          "revision": "87e4ca878b54ac230d88ae4759647c5d58049138",
+          "task": null,
+          "library": null,
+          "downloads": 0,
+          "tags": [
+            "region:us"
+          ],
+          "gated": false,
+          "card_data_reported_by_author": null,
+          "license_reported_by_author": null,
+          "listed_files": [
+            ".gitattributes"
+          ],
+          "validation_in_moving_camera": "not evaluated by this search"
+        }
+      ]
+    },
+    {
+      "source": "datasets",
+      "query": "rotten fruit",
+      "status": "ok",
+      "items": [
+        {
+          "id": "Densu341/Fresh-rotten-fruit",
+          "url": "https://huggingface.co/datasets/Densu341/Fresh-rotten-fruit",
+          "revision": "2077850adc575aa1e8d6029e6cd6cefe9e403a1c",
+          "task": null,
+          "library": null,
+          "downloads": 231,
+          "tags": [
+            "license:openrail",
+            "size_categories:10K<n<100K",
+            "format:imagefolder",
+            "modality:image",
+            "library:datasets",
+            "library:mlcroissant",
+            "region:us"
+          ],
+          "gated": false,
+          "card_data_reported_by_author": {},
+          "license_reported_by_author": null,
+          "listed_files": [],
+          "validation_in_moving_camera": "not evaluated by this search"
+        },
+        {
+          "id": "sbartleman/fresh-and-rotten-fruit",
+          "url": "https://huggingface.co/datasets/sbartleman/fresh-and-rotten-fruit",
+          "revision": "35ba9c98f9509d04eceefb11a9001181e16956c8",
+          "task": null,
+          "library": null,
+          "downloads": 209,
+          "tags": [
+            "size_categories:n<1K",
+            "format:imagefolder",
+            "modality:image",
+            "library:datasets",
+            "library:mlcroissant",
+            "region:us"
+          ],
+          "gated": false,
+          "card_data_reported_by_author": null,
+          "license_reported_by_author": null,
+          "listed_files": [],
+          "validation_in_moving_camera": "not evaluated by this search"
+        },
+        {
+          "id": "nikibout/fresh-and-rotten-fruit",
+          "url": "https://huggingface.co/datasets/nikibout/fresh-and-rotten-fruit",
+          "revision": "88062160c5097bdca560ea8e68d4f5c854bde661",
+          "task": null,
+          "library": null,
+          "downloads": 4,
+          "tags": [
+            "size_categories:n<1K",
+            "format:imagefolder",
+            "modality:image",
+            "library:datasets",
+            "library:mlcroissant",
+            "region:us"
+          ],
+          "gated": false,
+          "card_data_reported_by_author": null,
+          "license_reported_by_author": null,
+          "listed_files": [],
+          "validation_in_moving_camera": "not evaluated by this search"
+        },
+        {
+          "id": "Project-AgML/fresh_rotten_fruit_classification",
+          "url": "https://huggingface.co/datasets/Project-AgML/fresh_rotten_fruit_classification",
+          "revision": "65d4488931fef98c76bf996180064397fbe7da34",
+          "task": null,
+          "library": null,
+          "downloads": 511,
+          "tags": [
+            "task_categories:image-classification",
+            "license:cc-by-4.0",
+            "size_categories:10K<n<100K",
+            "format:parquet",
+            "format:optimized-parquet",
+            "modality:image",
+            "modality:text",
+            "library:datasets",
+            "library:dask",
+            "library:polars",
+            "library:mlcroissant",
+            "region:us"
+          ],
+          "gated": false,
+          "card_data_reported_by_author": {},
+          "license_reported_by_author": null,
+          "listed_files": [],
+          "validation_in_moving_camera": "not evaluated by this search"
+        }
+      ]
+    },
+    {
+      "source": "models",
+      "query": "fruit quality",
+      "status": "ok",
+      "items": [
+        {
+          "id": "azlan8289/fruitquality-1.0",
+          "url": "https://huggingface.co/azlan8289/fruitquality-1.0",
+          "revision": "9ad1c715ea0f7ed59bd98fc6e390fcaf85228e41",
+          "task": null,
+          "library": null,
+          "downloads": 0,
+          "tags": [
+            "region:us"
+          ],
+          "gated": false,
+          "card_data_reported_by_author": null,
+          "license_reported_by_author": null,
+          "listed_files": [
+            ".gitattributes",
+            "fruitquality-1.0.h5"
+          ],
+          "validation_in_moving_camera": "not evaluated by this search"
+        },
+        {
+          "id": "spectrewolf8/MobileNetv3_fruit_quality_classifier",
+          "url": "https://huggingface.co/spectrewolf8/MobileNetv3_fruit_quality_classifier",
+          "revision": "a1cfb14231979ad9746d54aeb2a502a209956994",
+          "task": null,
+          "library": null,
+          "downloads": 0,
+          "tags": [
+            "region:us"
+          ],
+          "gated": false,
+          "card_data_reported_by_author": null,
+          "license_reported_by_author": null,
+          "listed_files": [
+            ".gitattributes",
+            "MobileNetv3_fruit_quality_classifier.h5"
+          ],
+          "validation_in_moving_camera": "not evaluated by this search"
+        },
+        {
+          "id": "vy220218/fruit-quality-check",
+          "url": "https://huggingface.co/vy220218/fruit-quality-check",
+          "revision": "070aa6926fc2379503550cf4dae9f168e152ef65",
+          "task": null,
+          "library": null,
+          "downloads": 0,
+          "tags": [
+            "region:us"
+          ],
+          "gated": false,
+          "card_data_reported_by_author": null,
+          "license_reported_by_author": null,
+          "listed_files": [
+            ".gitattributes"
+          ],
+          "validation_in_moving_camera": "not evaluated by this search"
+        },
+        {
+          "id": "Graviton17/vit-fruit-veg-quality-predictor",
+          "url": "https://huggingface.co/Graviton17/vit-fruit-veg-quality-predictor",
+          "revision": "52d48d31daff8d61de48db83ae68ac9b61d2f071",
+          "task": "image-classification",
+          "library": null,
+          "downloads": 0,
+          "tags": [
+            "safetensors",
+            "image-classification",
+            "regression",
+            "vision-transformer",
+            "fruit",
+            "vegetable",
+            "license:mit",
+            "region:us"
+          ],
+          "gated": false,
+          "card_data_reported_by_author": {},
+          "license_reported_by_author": null,
+          "listed_files": [
+            ".gitattributes",
+            "README.md",
+            "model.safetensors",
+            "modeling.py",
+            "preprocessor_config.json"
+          ],
+          "validation_in_moving_camera": "not evaluated by this search"
+        },
+        {
+          "id": "Omarmohamadfhd99/fruit-quality-cnn",
+          "url": "https://huggingface.co/Omarmohamadfhd99/fruit-quality-cnn",
+          "revision": "6fd105619cff7008e71dbf3db1f79087771f5da8",
+          "task": null,
+          "library": null,
+          "downloads": 5,
+          "tags": [
+            "cnn",
+            "region:us"
+          ],
+          "gated": false,
+          "card_data_reported_by_author": null,
+          "license_reported_by_author": null,
+          "listed_files": [
+            ".gitattributes",
+            "README.md",
+            "config.json",
+            "fruit_cnn_model.h5"
+          ],
+          "validation_in_moving_camera": "not evaluated by this search"
+        },
+        {
+          "id": "KartikGoudar1008/fruit-quality-inspector",
+          "url": "https://huggingface.co/KartikGoudar1008/fruit-quality-inspector",
+          "revision": "17f9bd2a602051771006be01300bbdfbab5794eb",
+          "task": null,
+          "library": null,
+          "downloads": 0,
+          "tags": [
+            "license:apache-2.0",
+            "region:us"
+          ],
+          "gated": false,
+          "card_data_reported_by_author": {},
+          "license_reported_by_author": null,
+          "listed_files": [
+            ".gitattributes",
+            "README.md",
+            "fruite-inspection.py"
+          ],
+          "validation_in_moving_camera": "not evaluated by this search"
+        },
+        {
+          "id": "Mahmoud123Mahmoud/fruit-quality-ultra",
+          "url": "https://huggingface.co/Mahmoud123Mahmoud/fruit-quality-ultra",
+          "revision": "e6822b6a1eac9a30729ce3efdf582de3761eaf36",
+          "task": null,
+          "library": null,
+          "downloads": 6,
+          "tags": [
+            "safetensors",
+            "vit",
+            "region:us"
+          ],
+          "gated": false,
+          "card_data_reported_by_author": null,
+          "license_reported_by_author": null,
+          "listed_files": [
+            ".gitattributes",
+            "config.json",
+            "model.safetensors",
+            "preprocessor_config.json"
+          ],
+          "validation_in_moving_camera": "not evaluated by this search"
+        }
+      ]
+    },
+    {
+      "source": "datasets",
+      "query": "fruit quality",
+      "status": "ok",
+      "items": [
+        {
+          "id": "l-isaro/fruit-quality-data",
+          "url": "https://huggingface.co/datasets/l-isaro/fruit-quality-data",
+          "revision": "c970c3220ec25b9d6cc3187c21fdc5adda6508d0",
+          "task": null,
+          "library": null,
+          "downloads": 3,
+          "tags": [
+            "modality:image",
+            "region:us"
+          ],
+          "gated": false,
+          "card_data_reported_by_author": null,
+          "license_reported_by_author": null,
+          "listed_files": [],
+          "validation_in_moving_camera": "not evaluated by this search"
+        }
+      ]
+    },
+    {
+      "source": "models",
+      "query": "peach disease",
+      "status": "ok",
+      "items": [
+        {
+          "id": "peachfawn/yolov8-plant-disease",
+          "url": "https://huggingface.co/peachfawn/yolov8-plant-disease",
+          "revision": "51b4d25448dbb7a91d9332e6ad0e21c163ad43d0",
+          "task": null,
+          "library": null,
+          "downloads": 0,
+          "tags": [
+            "region:us"
+          ],
+          "gated": false,
+          "card_data_reported_by_author": null,
+          "license_reported_by_author": null,
+          "listed_files": [
+            ".gitattributes",
+            "best.pt"
+          ],
+          "validation_in_moving_camera": "not evaluated by this search"
+        },
+        {
+          "id": "peachfawn/yolov8-plant-disease-Better",
+          "url": "https://huggingface.co/peachfawn/yolov8-plant-disease-Better",
+          "revision": "371662c5acfd79e31206d6041a99e5257c28c3a5",
+          "task": null,
+          "library": null,
+          "downloads": 0,
+          "tags": [
+            "region:us"
+          ],
+          "gated": false,
+          "card_data_reported_by_author": null,
+          "license_reported_by_author": null,
+          "listed_files": [
+            ".gitattributes",
+            "best.pt"
+          ],
+          "validation_in_moving_camera": "not evaluated by this search"
+        },
+        {
+          "id": "ixrbhii/peach-disease-convnext",
+          "url": "https://huggingface.co/ixrbhii/peach-disease-convnext",
+          "revision": "bb32365090fd7d8578743691c9c9b660a002307a",
+          "task": "image-classification",
+          "library": "timm",
+          "downloads": 14,
+          "tags": [
+            "timm",
+            "safetensors",
+            "agriculture",
+            "plant-disease",
+            "convnext",
+            "image-classification",
+            "license:cc-by-4.0",
+            "region:us"
+          ],
+          "gated": false,
+          "card_data_reported_by_author": {},
+          "license_reported_by_author": null,
+          "listed_files": [
+            ".gitattributes",
+            "README.md",
+            "config.json",
+            "model.safetensors"
+          ],
+          "validation_in_moving_camera": "not evaluated by this search"
+        }
+      ]
+    },
+    {
+      "source": "datasets",
+      "query": "peach disease",
+      "status": "ok",
+      "items": []
+    },
+    {
+      "source": "models",
+      "query": "pear disease",
+      "status": "ok",
+      "items": [
+        {
+          "id": "ixrbhii/pear-disease-convnext",
+          "url": "https://huggingface.co/ixrbhii/pear-disease-convnext",
+          "revision": "2425fe795a6668ed3bdedc053edbb963e415c2fd",
+          "task": "image-classification",
+          "library": "timm",
+          "downloads": 19,
+          "tags": [
+            "timm",
+            "safetensors",
+            "agriculture",
+            "plant-disease",
+            "convnext",
+            "image-classification",
+            "license:cc-by-4.0",
+            "region:us"
+          ],
+          "gated": false,
+          "card_data_reported_by_author": {},
+          "license_reported_by_author": null,
+          "listed_files": [
+            ".gitattributes",
+            "README.md",
+            "config.json",
+            "model.safetensors"
+          ],
+          "validation_in_moving_camera": "not evaluated by this search"
+        }
+      ]
+    },
+    {
+      "source": "datasets",
+      "query": "pear disease",
+      "status": "ok",
+      "items": []
+    },
+    {
+      "source": "models",
+      "query": "plum disease",
+      "status": "ok",
+      "items": []
+    },
+    {
+      "source": "datasets",
+      "query": "plum disease",
+      "status": "ok",
+      "items": [
+        {
+          "id": "Project-AgML/hog_plum_leaf_disease_classification",
+          "url": "https://huggingface.co/datasets/Project-AgML/hog_plum_leaf_disease_classification",
+          "revision": "ee17d6618deef02ca381cd51827d54b0acebe2fa",
+          "task": null,
+          "library": null,
+          "downloads": 11,
+          "tags": [
+            "task_categories:image-classification",
+            "license:cc-by-4.0",
+            "size_categories:10K<n<100K",
+            "format:parquet",
+            "format:optimized-parquet",
+            "modality:image",
+            "library:datasets",
+            "library:dask",
+            "library:polars",
+            "library:mlcroissant",
+            "region:us"
+          ],
+          "gated": false,
+          "card_data_reported_by_author": {},
+          "license_reported_by_author": null,
+          "listed_files": [],
+          "validation_in_moving_camera": "not evaluated by this search"
+        },
+        {
+          "id": "Project-AgML/plum_leaf_fruit_disease_classification",
+          "url": "https://huggingface.co/datasets/Project-AgML/plum_leaf_fruit_disease_classification",
+          "revision": "51ad0e4f8061bc58c35fe30a83248104a90fc1b9",
+          "task": null,
+          "library": null,
+          "downloads": 64,
+          "tags": [
+            "task_categories:image-classification",
+            "license:cc-by-4.0",
+            "size_categories:10K<n<100K",
+            "format:parquet",
+            "format:optimized-parquet",
+            "modality:image",
+            "library:datasets",
+            "library:dask",
+            "library:polars",
+            "library:mlcroissant",
+            "region:us"
+          ],
+          "gated": false,
+          "card_data_reported_by_author": {},
+          "license_reported_by_author": null,
+          "listed_files": [],
+          "validation_in_moving_camera": "not evaluated by this search"
+        },
+        {
+          "id": "Project-AgML/java_plum_leaf_disease_classification",
+          "url": "https://huggingface.co/datasets/Project-AgML/java_plum_leaf_disease_classification",
+          "revision": "5b86db1d2cfa1f9a66338e1dbfedd05a86a0aec9",
+          "task": null,
+          "library": null,
+          "downloads": 14,
+          "tags": [
+            "size_categories:1K<n<10K",
+            "format:parquet",
+            "format:optimized-parquet",
+            "modality:image",
+            "library:datasets",
+            "library:pandas",
+            "library:polars",
+            "library:mlcroissant",
+            "region:us"
+          ],
+          "gated": false,
+          "card_data_reported_by_author": {},
+          "license_reported_by_author": null,
+          "listed_files": [],
+          "validation_in_moving_camera": "not evaluated by this search"
+        },
+        {
+          "id": "Project-AgML/plum_leaf_disease_classification",
+          "url": "https://huggingface.co/datasets/Project-AgML/plum_leaf_disease_classification",
+          "revision": "b7950578a967b0925ccf52ba43c9505c054c79e6",
+          "task": null,
+          "library": null,
+          "downloads": 142,
+          "tags": [
+            "task_categories:image-classification",
+            "license:cc-by-4.0",
+            "size_categories:1K<n<10K",
+            "format:parquet",
+            "modality:image",
+            "library:datasets",
+            "library:dask",
+            "library:polars",
+            "library:mlcroissant",
+            "region:us"
+          ],
+          "gated": false,
+          "card_data_reported_by_author": {},
+          "license_reported_by_author": null,
+          "listed_files": [],
+          "validation_in_moving_camera": "not evaluated by this search"
+        }
+      ]
+    },
+    {
+      "source": "models",
+      "query": "nectarine disease",
+      "status": "ok",
+      "items": []
+    },
+    {
+      "source": "datasets",
+      "query": "nectarine disease",
+      "status": "ok",
+      "items": []
+    },
+    {
+      "source": "models",
+      "query": "apricot disease",
+      "status": "ok",
+      "items": [
+        {
+          "id": "ixrbhii/apricot-disease-convnext",
+          "url": "https://huggingface.co/ixrbhii/apricot-disease-convnext",
+          "revision": "1fd7e8ef441b3081290dac75bb564e17b2d5fab0",
+          "task": "image-classification",
+          "library": "timm",
+          "downloads": 20,
+          "tags": [
+            "timm",
+            "safetensors",
+            "agriculture",
+            "plant-disease",
+            "convnext",
+            "image-classification",
+            "license:cc-by-4.0",
+            "region:us"
+          ],
+          "gated": false,
+          "card_data_reported_by_author": {},
+          "license_reported_by_author": null,
+          "listed_files": [
+            ".gitattributes",
+            "README.md",
+            "config.json",
+            "model.safetensors"
+          ],
+          "validation_in_moving_camera": "not evaluated by this search"
+        }
+      ]
+    },
+    {
+      "source": "datasets",
+      "query": "apricot disease",
+      "status": "ok",
+      "items": []
+    },
+    {
+      "source": "models",
+      "query": "raspberry disease",
+      "status": "ok",
+      "items": []
+    },
+    {
+      "source": "datasets",
+      "query": "raspberry disease",
+      "status": "ok",
+      "items": []
+    },
+    {
+      "source": "models",
+      "query": "fruit disease detection",
+      "status": "ok",
+      "items": [
+        {
+          "id": "dima806/orange_fruit_disease_detection",
+          "url": "https://huggingface.co/dima806/orange_fruit_disease_detection",
+          "revision": "339b09d56c9ab871aac61ec330560d2575872a28",
+          "task": "image-classification",
+          "library": "transformers",
+          "downloads": 13,
+          "tags": [
+            "transformers",
+            "safetensors",
+            "vit",
+            "image-classification",
+            "base_model:google/vit-base-patch16-224-in21k",
+            "base_model:finetune:google/vit-base-patch16-224-in21k",
+            "license:apache-2.0",
+            "endpoints_compatible",
+            "region:us"
+          ],
+          "gated": false,
+          "card_data_reported_by_author": {},
+          "license_reported_by_author": null,
+          "listed_files": [
+            ".gitattributes",
+            "README.md",
+            "checkpoint-169/config.json",
+            "checkpoint-169/model.safetensors",
+            "checkpoint-169/optimizer.pt",
+            "checkpoint-169/preprocessor_config.json",
+            "checkpoint-169/rng_state.pth",
+            "checkpoint-169/scheduler.pt",
+            "checkpoint-169/trainer_state.json",
+            "checkpoint-169/training_args.bin",
+            "checkpoint-1690/config.json",
+            "checkpoint-1690/model.safetensors",
+            "checkpoint-1690/optimizer.pt",
+            "checkpoint-1690/preprocessor_config.json",
+            "checkpoint-1690/rng_state.pth",
+            "checkpoint-1690/scheduler.pt",
+            "checkpoint-1690/trainer_state.json",
+            "checkpoint-1690/training_args.bin",
+            "config.json",
+            "model.safetensors",
+            "preprocessor_config.json",
+            "training_args.bin"
+          ],
+          "validation_in_moving_camera": "not evaluated by this search"
+        },
+        {
+          "id": "sohaib7861/Fruit_and_Plant_Disease_Detection",
+          "url": "https://huggingface.co/sohaib7861/Fruit_and_Plant_Disease_Detection",
+          "revision": "7e3c4a372720481a798369462d8cc6f96b37abed",
+          "task": null,
+          "library": null,
+          "downloads": 0,
+          "tags": [
+            "region:us"
+          ],
+          "gated": false,
+          "card_data_reported_by_author": null,
+          "license_reported_by_author": null,
+          "listed_files": [
+            ".gitattributes"
+          ],
+          "validation_in_moving_camera": "not evaluated by this search"
+        }
+      ]
+    },
+    {
+      "source": "datasets",
+      "query": "fruit disease detection",
+      "status": "ok",
+      "items": []
+    },
+    {
+      "source": "semantic_scholar",
+      "query": "brown rot peach fruit detection deep learning",
+      "status": "skipped_after_rate_limit"
+    },
+    {
+      "source": "semantic_scholar",
+      "query": "raspberry fruit gray mold detection",
+      "status": "skipped_after_rate_limit"
+    },
+    {
+      "source": "semantic_scholar",
+      "query": "fruit disease detection motion blur UAV",
+      "status": "skipped_after_rate_limit"
+    }
+  ],
+  "errors": [
+    {
+      "source": "semantic_scholar",
+      "query": "apple fruit disease detection orchard",
+      "error_type": "HTTPStatusError",
+      "http_status": 429,
+      "message": "Client error '429 ' for url 'https://api.semanticscholar.org/graph/v1/paper/search?query=apple+fruit+disease+detection+orchard&limit=5&fields=title%2Cyear%2Cabstract%2Curl%2CopenAccessPdf%2CexternalIds'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429"
+    }
+  ],
+  "scope": "Discovery and author-reported metadata only; no model inference or agronomic validation.",
+  "finished_at_utc": "2026-10-18T04:43:44.864716+00:00"
+}

@@ -1,0 +1,672 @@
+Jour nal o f P la n t Pro t e ct io n R e s e a rc h                                                               eISSN 1899-007X
+
+
+
+
+ORIGINAL ARTICLE
+
+
+Improved YOLOv5m model based on Swin Transformer, K-means++,
+and Efficient Intersection over Union (EIoU) loss function
+for cocoa tree (Theobroma cacao) disease detection
+
+Benedicta Nana Esi Nyarko* , Wu Bin Wu, Zhou Jinzhi Zhou, Mwanaharusi Mohd Juma Mohd
+School of Information Engineering, Southwest University of Science and Technology, Qinglong Road,
+Fucheng District, Mianyang C, Mianyang, China
+
+
+
+
+Vol. 64, No. 3: 265–274, 2024            Abstract
+                                         The cocoa tree is prone to diverse diseases such as stem borer, stem canker, swollen shot,
+DOI: 10.24425/jppr.2024.151253
+                                         and root rot disease which impedes high yield. Early disease detection is a critical com-
+Received: April 03, 2024                 ponent of diverse management processes that are implemented throughout the life cycle
+Accepted: April 12, 2024                 of cocoa plants. Consequently, several studies on the application of detection techniques
+Online publication: September 02, 2024   to recognize diseases have been proposed by several researchers. This study proposes the
+                                         YOLOv5m network for cocoa tree disease detection. The development of cocoa disease
+*Corresponding address:                  detection systems will aid farmers in early identification prompt response, and efficient
+benedictanyarko41@gmail.com              management of related cocoa tree diseases which will ultimately increase yield and sus-
+                                         tainability. To improve the performance of the YOLOv5m network, a Swin Transformer
+Responsible Editor:
+Piotr Iwaniuk
+                                         (Swin-T) was added to the backbone network to improve cocoa tree disease detection ac-
+                                         curacy. By obtaining global information, the K-means++ algorithm was added to modify
+                                         the choice of initial clustering locations, and Efficient Intersection over Union Loss (EIoU)
+                                         was used as a bounding box regression loss function to speed up the bounding box re-
+                                         gression rate, resulting in higher precision of the YOLOv5m network. The experimental
+                                         assessment outcome of this study showed that the proposed method YOLOv5m (Swin-T,
+                                         K-means++, EIoU) achieved 96% precision, mAP of 92%, and recall of 94%. Compared to
+                                         the original YOLOv5m, precision improved by 5%, mAP improved by 6%, and recall by
+                                         5%. Comparing the proposed method to the conventional YOLOv5m, the latter showed
+                                         improved performance and better accuracy with a high detection speed and compactness.
+                                         This improvement offers a useful and effective method for detecting diseases related to
+                                         cocoa trees.
+                                         Keywords: cocoa tree disease, EIoU, K-means++, plant disease detection, Swin Transformer
+
+
+
+
+Introduction
+
+A crucial area of research in the field of deep learn-              of the lesion area and different types, and a lot of noise
+ing is the detection of pests and plant diseases (Shoaib            in the lesion image. Deep learning models have seen
+et al. 2023). It is a technology that gathers images of             success in recent years in a variety of computer vi-
+plants using computer vision equipment to determine                 sion applications (Gong and Zhang 2023). Numerous
+the existence of diseases in plants. Currently, deep-               deep learning-based plant diseases and pest detection
+learning-based tools for identifying plant diseases                 techniques are used in smart agricultural practice, and
+and pests have largely replaced traditional naked-eye               businesses have created a range of deep learning-based
+methods of identification in the agricultural sector                plant disease detection applications (Nandini 2023).
+(Bhatti et al. 2023). Plant diseases and pest detection                 Theobroma cacao, also known as the cacao tree or
+in real complex natural environments is difficult due               cocoa tree, is a small, evergreen tree in the Malvaceae
+to factors like low contrast, wide variations in the scale          family (Debnath et al. 2023). It is primarily found in
+266     Journal of Plant Protection Research 64 (3), 2024
+
+
+the Amazon basin and the Guyana Plateau in neo-                   The root rot fungus affects a variety of hosts, in-
+tropical rainforests. It is a typical cauliflorous plant      cluding cocoa plantations and native forest trees. Ad-
+that is not strictly monoecious, is cross-pollinated and      ditionally, it affects breadfruit, and it has been linked to
+grows to a height of 6–12 m (20–39 ft). The fruit, also       the atoll-country-specific Pingelap disease (Puig 2023;
+referred to as cocoa pod, is a kind of indehiscent berry      Angira et al. 2024). It was first recorded in coconut in
+that weighs an average of 500 g but can vary depending        Papua New Guinea. Starting at the tips of the branches,
+on the clone. It has between 30 and 60 sweet mucilage-        the fungus’ attack on the roots causes the leaves to turn
+-coated seeds inside (Snell 2023).                            yellow and wilt. All the leaves disappear very quickly.
+    For millions of farmers in Africa, Asia, Central, and     On the trunk, the fungus develops a crust that can
+South America, it provides a substantial and reliable         reach a height of 1 meter. It is dark brown to black with
+base of agricultural income. Cacao is distinguished by        a white margin, and frequently contains clear liquid
+a significant genetic diversity, and its seeds are the pri-   drops (Bissiri et al. 2023).
+mary raw material for the multi-billion-dollar choco-             Among the various management processes, early
+late industry (Appiah 2023). Over the years, cocoa has        disease detection is crucial. To this end, several studies
+been a significant economic crop and a major source           have reported the use of detection methods to identify
+of income for many cocoa farmers (Okali 2023), but            swollen shoot diseases. Ramos-Sobrinho et al. (2021)
+its production has drastically decreased due to low           investigated molecularly swollen shoot disease in co-
+yields brought on by crop diseases and farmers’ failure       coa produced in Togo by amplification with four PCR
+to maintain healthy crops (Appiah 2023). Like most            primer pairs. In a similar study, Ameyaw et al. (2018)
+other tropical perennial plants, the cocoa tree also          investigated the variable detection of CSSVD polymer-
+heavily depends on the availability of genetic resources      ase chain reaction amplification. Recently, computer-
+from wild sources for genetic improvement, particularly       based algorithms have been applied in the detection of
+for disease resistance standards (Argout et al. 2023).        SSDs (Yan 2022). For instance, Coulibaly et al. (2020)
+    The cocoa tree is prone to diverse diseases that im-      studied the detection of swollen shoot diseases using
+pede high production such as stem borer, stem can-            convolutional neural networks. Hacinas et al. (2022)
+ker, swollen shot, and root rot disease (Ambele et al.        investigated the detection of the cocoa moth by em-
+2023). Stem canker is a pathogenic disease that affects       ploying a deep learning algorithm based on edge com-
+cocoa caused by Phytophthora palmivora and P. mega-           puting. Similar studies have been conducted on differ-
+karya (Bose et al. 2023). Cocoa stem canker is con-           ent crops. For instance, in a study by Bhandarkar et al.
+sidered to be the third most destructive disease that         (2019), the detection of borers in coffee was done us-
+affects Cocoa swollen shoot virus disease and black           ing statistical models and deep learning. T﻿his study
+pod disease (Nyadanu et al. 2012). Several parts of the       explored related cocoa tree diseases and proposed the
+cocoa tree exhibit stem canker infections. Grayish-           YOLOv5m model for disease detection. The model
+brown, water-soaked lesions on the bark with a wide           was enhanced by incorporating the Swin Transformer
+dark brown to black edge are the outward signs of the         (Swin-T) into the model’s backbone to obtain multi-
+condition (Appiah 2023). These pathogens cause can-           scale characteristics. The K-means++ algorithm com-
+kers by infecting bark, flower cushions, and chupons.         plemented the model by altering the initial clustering
+Such lesions leak a reddish-brown liquid that eventu-         location selection which increases the model’s preci-
+ally dries and turns into a rusty deposit (Adeniyi and        sion. The Efficient Intersection over Union Loss (EIoU)
+Asogwa 2023).                                                 was used as a bounding box regression loss function to
+    The cocoa swollen shoot virus (CSSV), which be-           accelerate the bounding box regression rate. The inte-
+longs to the Genus Badna virus, is what causes CSSVD.         gration of these models into the YOLOv5m network
+Only seen in West Africa, CSSVD has been docu-                significantly increased the efficiency of the network.
+mented in Togo, Sierra Leone, Ghana, Nigeria, and                 The development of disease detection systems in
+Côte d’Ivoire (Muller 2016). CSSVD is considered the          cocoa trees is essential for different purposes. This re-
+most financially significant cocoa infection and causes       search can aid farmers in taking immediate action to
+15–50% yield loss depending on the severity of the            stop the spread of diseases to healthy plants by detect-
+strain (George 2019). Cocoa stem borer (cocoa moth)           ing diseases early on. This can safeguard the general
+is caused by Eulophonotus myrmeleon (Kingsley-Uma-            well-being of cocoa plantations and drastically lower
+na et al. 2022). The larvae of the moth feed on the stem,     yield losses. Systems for detecting diseases produce
+thereby resulting in a loss in production yield. Re-          data that can be used to analyze and comprehend dis-
+cently, the implementation of integrated management           ease trends, environmental factors that affect the prev-
+practices has led to the adoption of computer-based           alence of diseases, and the efficiency of disease man-
+systems for the early detection of cocoa pod borer in-        agement techniques. For long-term prevention and
+festation (Bahadur and Dutta 2023).                           control of disease, this data-driven approach facilitates
+                                        Nyarko B.N.E et al.: Improved YOLOv5m model based on Swin Transformer, K-means++ …   267
+
+informed decision-making. Detecting cocoa tree dis-                   Loss (EIoU) was used as a bounding box regression
+eases is primarily done to minimize negative effects on               loss function to speed up the bounding box regression
+the environment and to enhance the welfare of com-                    rate, resulting in higher precision of the YOLOv5m
+munities that grow cocoa, all the while ensuring the                  network. Ablation experiments were performed to as-
+sustainability, profitability, and quality of cocoa farm-             certain the improvement of the network performance.
+ing operations.
+                                                                      The YOLOv5 model
+Materials and Methods                                                 A highly effective network structure in the single-stage
+                                                                      object detection network is the YOLO series network
+                                                                      (Wang et al. 2023). The model backbone acquires
+This section delineates the data and general work-                    features of various sizes, assembles these attributes
+flow of techniques adopted for the application of deep                through the neck, and then generates these maps P3,
+learning methods in cocoa tree disease detection.                     P4, and P5, to detect small, medium, and large objects
+                                                                      (Diwan et al. 2023). Four modules make up its net-
+                                                                      work architecture: input, backbone, neck, and head.
+Dataset analysis and preprocessing
+                                                                      To make this algorithm faster and more accurate, it
+The cocoa tree disease detection dataset contains a to-               incorporates some new ideas for improvement based
+tal of 1,000 images. The datasets were annotated and                  on YOLOv4. Images are sent to the backbone for fea-
+preprocessed using the Roboflow software. They were                   ture extraction after being processed through the input
+then downloaded in YOLOv5 format resulting in a to-                   layer. YOLOv5’s structure is logically divided into four
+tal of 2173 with four (4) classes namely: swollen shoot,              main sections: input, neck, backbone, and prediction.
+stem borer, brown root rot, and healthy stem. The la-                     The input dataset is preprocessed in the input sec-
+beled image names are grouped into training, test, and                tion using methods like image scaling, responsive
+validation sets with a 7 : 2 : 1 ratio as shown in Figure 1.          anchor box processes, and data augmentation. Both
+                                                                      Focus and CSP structures are incorporated into the
+                                                                      YOLOv5 backbone network. The Focus module’s pur-
+Experimental setup and design
+                                                                      pose is to segment the input image to increase network
+The hardware environment configuration for this ex-                   speed and increase the local receptive field range (Ba-
+periment was carried out on a Lenovo laptop with an                   cea and Oniga 2023).
+Intel Core i7 2.50 GHz processor and NVidia GeForce                       The CSP1_X and CSP2_X are two distinct designs
+GTX 860M GPU, and the software environment was                        that are part of the CSP structure. These architectures
+CUDA 11.0, CUDNN version 8, windows 11 operat-                        improve the network’s capacity for learning, ensuring
+ing systems, python 3.8.0, and visual studio. This study              accuracy while cutting down on operations. The CSP
+proposed the YOLOv5m network for cocoa tree dis-                      allows the model to capture a richer set of features by
+ease detection. The performance of the YOLOv5m net-                   dividing the original input into two different sections
+work was improved by adding a Swin Transformer to                     that are each subjected to convolution operations. The
+the backbone network to acquire multi-scale features.                 model can capture a richer set of features thanks to
+By obtaining global information, the K-means++ algo-                  CSP, which divides the original input into two paral-
+rithm was added to modify the choice of initial clus-                 lel branches and subjects each to convolution opera-
+tering locations, and Efficient Intersection over Union               tions. This backbone relies heavily on the CBL module,
+
+
+
+ A                                B                                    C                                D
+
+
+
+
+ Fig. 1. Sample cocoa tree dataset: A – swollen shoot, B – stem borer, C – root rot, D – healthy stem
+268     Journal of Plant Protection Research 64 (3), 2024
+
+
+which stands for Conv + BN + LeakyRelu. To guaran-           Table 1. Parameters of YOLOv5 backbone
+tee effective feature extraction and network prolifera-       Module           Parameters             Arguments
+tion, this module integrates a leaky rectified linear unit    CBS                 3520                 [3,32,6,2,2]
+(LeakyRelu) activation function, a convolutional layer,
+                                                              CBS                18,560                [32,64,3,2]
+and a batch normalization layer. To harmonize fea-
+                                                              C3                 18,816                 [64,64,1]
+tures across distinct layers, the Neck section employs
+                                                              CBS                73,984               [64,128,3,2]
+a unique feature pyramid network (FPN) + path ag-
+gregation network (PAN) structure. PAN consolidates           C3                 115,712              [128,128,2]
+high and low features via up-and-down sampling op-            CBS                295,424              [128,256,3,2]
+erations, while FPN layers transmit semantic features         C3                 625,152              [256,256,3]
+in a top-down manner. Finally, two crucial compo-             CBS               1,180,672             [256,512,3,2]
+nents of object detection are covered in the Prediction       C3                1,182,720             [512,512,1]
+segment: non-maximum suppression and bounding                 SPPF               656,896              [512,512,5]
+box loss. Following the delivery of the three feature
+maps to the prediction head, each pixel in the feature
+map is subjected to bounding box regression and con-
+fidence calculation using the preset a priori box to de-
+                                                             YOLOv5m architecture enhancement
+termine the object category, category confidence, and
+box coordinates. multidimensional arrays with data on        YOLOv5 comes in five different versions: YOLOv5x,
+width and height. Upon executing the non-maximum             YOLOv5l, YOLOv5m, YOLOv5s, and YOLOv5n. The
+suppression (NMS) procedure and establishing the             smallest model in the YOLOv5 series is the YOLOv5s.
+correlating thresholds to eliminate superfluous data         “S” represents “small”, mobile or edge devices. They
+from the array, the ultimate detection information can       have limited processing power and are the ideal
+be generated.                                                platforms for this model’s performance. Although
+    With CSPDaknet53 as the backbone. The primary            YOLOv5s has the fastest detection speed, it is not very
+architecture consists of stacking multiple C3 and CBS        accurate. The YOLOv5 series also includes a medium-
+(Conv + BatchNorm + SiLU) modules, followed by the           sized model. “M” represents “medium”. YOLOv5m is
+connection of an SPPF module. The SPPF module im-            appropriate for devices with specific computing capa-
+proves the backbone’s ability to express features, and       bilities and offers a good balance between speed and
+the CBS module helps the C3 module with feature ex-          accuracy. The YOLOv5x is the largest model in the
+traction. SPPF uses the max pooling function before          YOLOv5 family. “X” represents extra-large. Although
+max pooling to avoid repeating SPP operations in SPP-        YOLOv5x has the slowest detection speed, it performs
+Net which turns to accelerate the module’s speed. The        best in terms of accuracy and is ideal for tasks need-
+parameters of the YOLOv5 backbone are illustrated in         ing a very high level of accuracy and for devices with
+Table 1.                                                     strong computing powers (GPUs, for example). The
+
+
+
+
+ Fig. 2. Structure of the YOLOv5 architecture
+                                             Nyarko B.N.E et al.: Improved YOLOv5m model based on Swin Transformer, K-means++ …                     269
+
+YOLOv5n is an improved version of the YOLOv5 se- in less-than-ideal training convergence, particularly
+ries designed for nanodevices like NVIDIA JETSON when bounding boxes have different aspect ratios or
+Nano. This version of the YOLOv5 series maintains are misaligned. When this happens, GIoU falls back to
+speed while offering edge-detection accuracy. In sum- a simple intersection over union (IoU) metric, which is
+mary, several YOLOv5 versions are tailored to meet insufficient to accurately represent the actual amount
+varying demands for processing power and real-time of intersection between the bounding boxes. The Ef-
+performance. T﻿he primary factors to consider while ficient Intersection over Union (EIoU) loss function
+selecting a suitable model are the device’s process- was proposed to offer a steady gradient and is more
+ing capacity and the task’s accuracy needs. After suc- adept at managing aspect ratio fluctuations and mis-
+cessfully training YOLOv5x, YOLOv5l, YOLOv5m, alignments. The EIoU loss function breaks down the
+YOLOv5s, and YOLOv5n on the cocoa tree datasets, aspect ratios of both the predicted and actual bound-
+the YOLOv5m was maintained for improvements due ing boxes, in contrast to GIoU, which has issues with
+to its outstanding performance over other variants.                     bounding             boxes that are misaligned or have drastically
+                                                                                         𝐷𝐷(𝑥𝑥) 2
+    This research enhanced the YOLOv5m network (𝑥𝑥)                𝑃𝑃         =
+                                                                        different aspect2ratios. This allows for individual com-
+                                                                                  ∑𝑥𝑥∈𝑋𝑋 𝐷𝐷(𝑥𝑥)
+structure specifically for cocoa tree disease detection. putations                           of width and height and produces a more
+A Swin Transformer was integrated into the backbone accurate and subtle depiction of the overlap between
+network. Furthermore, the Efficient intersection over bounding boxes. The EIoU loss function is mathemati-
+union (EIoU) Loss function was added to boost per- cally expressed as:
+formance. Finally, appropriate initial anchor box po-
+sitions were determined by applying the K-means++ 𝐸𝐸𝐸𝐸𝐸𝐸𝐸𝐸 = (1 − 𝑖𝑖𝑖𝑖𝑖𝑖) + 𝛼𝛼 ∙ 𝑑𝑑𝑐𝑐 + 𝛽𝛽 ∙ (𝑑𝑑𝑤𝑤 + 𝑑𝑑ℎ ) . (2)
+clustering algorithm to modify the choice of initial
+clustering locations.                                                           Equation 2 uses the intersection-to-union area
+                                                                        ratio        (IOU) to quantify the correlation between the
+                                                                      𝑧𝑧̂ 𝑙𝑙 = 𝑊𝑊 − 𝑀𝑀𝑀𝑀𝑀𝑀 (𝐿𝐿𝐿𝐿(𝑧𝑧 𝑙𝑙−1 )) + 𝑧𝑧 𝑙𝑙−1
+                                                                        ground truth and predicted bounding boxes.
+K-means++ for anchor box optimization
+                                                                                 𝑧𝑧 𝑙𝑙 =
+                                                                                Coefficient 𝑀𝑀𝑀𝑀𝑀𝑀 a
+                                                                                                   (𝐿𝐿𝐿𝐿(𝑧𝑧̂
+                                                                                                      measures𝑙𝑙 ) + 𝑧𝑧̂ 𝑙𝑙
+                                                                                                                  ) the Euclidean distance be-
+Although K-means is used by the original YOLOv5 tween                                  the    centerline      of   the accurately predicted and
+                                                                       𝑧𝑧̂ 𝑙𝑙+1 = 𝑆𝑆𝑆𝑆 − 𝑀𝑀𝑀𝑀𝑀𝑀 (𝐿𝐿𝐿𝐿(𝑧𝑧 𝑙𝑙 )) + 𝑧𝑧 𝑙𝑙
+to cluster anchor box positions, K-means has built-in ground truth bounding boxes dc which serve as a mod-
+drawbacks. Initially, K-means is a heuristic approach,                  ulatory          weighting
+                                                                              𝑙𝑙+1 = 𝑀𝑀𝑀𝑀𝑀𝑀            factor
+                                                                                                  (𝐿𝐿𝐿𝐿(𝑧𝑧̂ 𝑙𝑙+1 ) for
+                                                                                                                    ) + 𝑧𝑧̂the
+                                                                                                                            𝑙𝑙+1center distance loss.
+                                                                   { 𝑧𝑧
+so it does not guarantee convergence to a global op- Similarly, b serves as a weighting coefficient for the
+timum. Second, the choice of the starting center has dimensional loss terms and, dw + dh which represent
+a direct impact on the clustering result. K-means can the differences in height and width, respectively, be-                                              𝑇𝑇𝑇𝑇
+easily result in local fusion or necessitate more itera- tween the minimally circumscribed bounding                                 𝑅𝑅𝑒𝑒𝑒𝑒𝑒𝑒𝑒𝑒𝑒𝑒 =box and
+                                                                                                                                                     𝑇𝑇𝑇𝑇 + 𝑇𝑇𝑁𝑁
+tions because it randomized selections of sample points the predicted bounding box. EIOU improves regres-
+as cluster centers. To ensure the best anchor boxes for sion accuracy and speeds up convergence for antici-
+cocoa tree-related disease detection, the K-means++ pated bounding boxes. This gets around GIOU’s1built-
+algorithm was proposed to improve the initial clus- in limitations and guarantees stable                                        𝐴𝐴𝐴𝐴@50    = ∫ 𝑃𝑃𝑟𝑟
+                                                                                                                                     learning            𝑑𝑑𝑟𝑟, 𝐼𝐼𝐼𝐼𝐼𝐼 ≥0.5
+                                                                                                                                                     across
+                                                                                                                                                   0
+tering center selection. K-means++ handles the target a range of object sizes and shapes.
+point sampling like a probability-based task, in con-                                                                                      1        n
+trast to K-means, which ensures the increase in speed                                                                           mAP   =       ∑         𝑃𝑃(𝑘𝑘)∆𝑅𝑅(𝑘𝑘)
+                                                                        The Swin Transformer                                              𝐶𝐶        i=1
+of the algorithm convergence. Due to its stochastic
+setup phase, which lowers the possibility of poor con- To output multi-scale feature information, patches
+vergence and guarantees a more reliable and effective are continuously merged at each stage, starting                                            1 with  n
+clustering process, K-means++ is superior to K-means. a smaller patch size and using feature maps∑                                  mAP     =          with𝑃𝑃(𝑘𝑘)∆𝑅𝑅(𝑘𝑘)
+                                                                                                                                                 𝐶𝐶      i=1
+Using a weighted likelihood probabilistic model, the varying down sampling rates at different stages. Swin
+K-means++ algorithm selects a new data point at ran- Transformer is more appropriate for a range of com-
+dom to serve as the new center. When each point is puter vision tasks such as plant disease detection due
+chosen, P(x), is computed in Equation (1) as:                           to its hierarchical network structure for acquiring
+                                        2                               multi-scale features. These features enable the network
+                                 𝐷𝐷(𝑥𝑥)
+                   𝑃𝑃(𝑥𝑥) =                   .                (1)      to perform intensive object detection tasks more ef-
+                              ∑𝑥𝑥∈𝑋𝑋 𝐷𝐷(𝑥𝑥) 2                           fectively. A pretrained model of the Swin T was used
+                                                                        in the YOLOv5 backbone of the cocoa tree dataset.
+                                                                        The initial learning rate Adam was set to 0.01 with
+Loss function optimization
+                                                                        0.0005 weight decay. The learning rate was then de-
+The GIoU loss function is utilized in standard YOLOv5 creased to 0.00001 at the 20th epoch and 0.000001 at
+configurations to quantify      bounding
+                       𝐸𝐸𝐸𝐸𝐸𝐸𝐸𝐸 = (1          box+ 𝛼𝛼 ∙
+                                        − 𝑖𝑖𝑖𝑖𝑖𝑖) prediction
+                                                        𝑑𝑑𝑐𝑐 + in-
+                                                                𝛽𝛽 ∙ (𝑑𝑑the 𝑤𝑤 + 50th  𝑑𝑑ℎ )epoch, respectively. During the training ep-
+congruities. GIoU, however, has limitations that result ochs, the YOLOv5m + Swin-T achieves 89% precision
+
+
+                         𝑧𝑧̂ 𝑙𝑙 = 𝑊𝑊 − 𝑀𝑀𝑀𝑀𝑀𝑀 (𝐿𝐿𝐿𝐿(𝑧𝑧 𝑙𝑙−1 )) + 𝑧𝑧 𝑙𝑙−1
+                                                𝑧𝑧̂ 𝑙𝑙 𝑧𝑧̂=
+                                                  𝐸𝐸𝐸𝐸𝐸𝐸𝐸𝐸  =𝑊𝑊=   𝑊𝑊−(1−  𝑀𝑀𝑀𝑀𝑀𝑀
+                                                                        𝑀𝑀𝑀𝑀𝑀𝑀
+                                                                           −          (𝑧𝑧(𝑧𝑧
+                                                                                   (𝐿𝐿𝐿𝐿
+                                                                                (𝐿𝐿𝐿𝐿
+                                                                              𝑖𝑖𝑖𝑖𝑖𝑖) +       𝑙𝑙−1 ) )+
+                                                                                               𝛼𝛼 ∙ )𝑑𝑑𝑐𝑐)++𝑧𝑧 𝛽𝛽𝑧𝑧 𝑙𝑙−1
+                                                                                                                        ∙ (𝑑𝑑𝑤𝑤 + 𝑑𝑑ℎ )
+                                                       𝐸𝐸𝐸𝐸𝐸𝐸𝐸𝐸 = (1 − 𝑖𝑖𝑖𝑖𝑖𝑖) + 𝛼𝛼 ∙ 𝑑𝑑𝑐𝑐 + 𝛽𝛽 ∙ (𝑑𝑑𝑤𝑤 + 𝑑𝑑ℎ )
+                                                            𝑧𝑧 𝑙𝑙 𝑧𝑧=𝑙𝑙 = 𝑀𝑀𝑀𝑀𝑀𝑀
+                                                                        𝑀𝑀𝑀𝑀𝑀𝑀                 ))𝑙𝑙 )+
+                                                                                      (𝑧𝑧̂ 𝑙𝑙(𝑧𝑧̂
+                                                                                   (𝐿𝐿𝐿𝐿
+                                                                               (𝐿𝐿𝐿𝐿                 ) +𝑧𝑧̂ 𝑙𝑙 𝑧𝑧̂ 𝑙𝑙
+                                         𝑧𝑧̂ 𝑙𝑙+1
+                                   𝑧𝑧̂ 𝑙𝑙+1     ==     𝑆𝑆𝑆𝑆
+                                                     𝑆𝑆𝑆𝑆 −−    𝑀𝑀𝑀𝑀𝑀𝑀
+                                                             𝑀𝑀𝑀𝑀𝑀𝑀 (𝐿𝐿𝐿𝐿 (𝐿𝐿𝐿𝐿    𝑙𝑙 ) 𝑙𝑙 )+
+                                                                                (𝑧𝑧(𝑧𝑧   ) ) +𝑧𝑧 𝑙𝑙 𝑧𝑧 𝑙𝑙
+270                                        𝑧𝑧̂ 𝑙𝑙 =64𝑊𝑊
+           Journal of Plant Protection Research             𝑀𝑀𝑀𝑀𝑀𝑀 (𝐿𝐿𝐿𝐿(𝑧𝑧 𝑙𝑙−1 )) + 𝑧𝑧 𝑙𝑙−1
+                                                      (3),−2024
+                                    𝑧𝑧̂ 𝑙𝑙𝑙𝑙+1
+                                             =𝑙𝑙+1
+                                                 𝑊𝑊 − 𝑀𝑀𝑀𝑀𝑀𝑀 (𝐿𝐿𝐿𝐿(𝑧𝑧̂        𝑙𝑙−1 )
+                                                                        (𝑧𝑧𝑙𝑙+1        )+ +𝑙𝑙+1     𝑧𝑧 𝑙𝑙−1
+                                 { {𝑧𝑧 𝑧𝑧𝑧𝑧 𝑙𝑙===        𝑀𝑀𝑀𝑀𝑀𝑀
+                                                      𝑀𝑀𝑀𝑀𝑀𝑀       (𝑧𝑧̂ 𝑙𝑙+1
+                                                                (𝐿𝐿𝐿𝐿
+                                                             (𝐿𝐿𝐿𝐿        𝑙𝑙    )))+  ) 𝑧𝑧̂ 𝑙𝑙
+                                                                                                 𝑧𝑧̂ 𝑙𝑙+1
+at the 50th epoch compared to YOLOv5m’s                𝑀𝑀𝑀𝑀𝑀𝑀  (𝐿𝐿𝐿𝐿(𝑧𝑧̂ )𝑙𝑙Equations
+                                                          0.8383%              ) + 𝑧𝑧̂
+                                                𝑧𝑧 𝑙𝑙 = 𝑀𝑀𝑀𝑀𝑀𝑀  (𝐿𝐿𝐿𝐿(𝑧𝑧̂ )) + 𝑧𝑧̂ 𝑙𝑙 4–7 present the computational analysis for
+precision at the 50th epoch. This𝑧𝑧̂ 𝑙𝑙+1
+                                     shows           0.6%−signifi-            precision,
+                                                             𝑀𝑀𝑀𝑀𝑀𝑀 (𝐿𝐿𝐿𝐿(𝑧𝑧 𝑙𝑙       )𝑙𝑙) + 𝑧𝑧 𝑙𝑙recall,          and mAP@50:
+                                      𝑧𝑧̂ 𝑙𝑙+1==𝑆𝑆𝑆𝑆  𝑆𝑆𝑆𝑆 −   𝑀𝑀𝑀𝑀𝑀𝑀            (𝑧𝑧     )      +       𝑧𝑧 𝑙𝑙
+cant improvements of the Swin-T when added to the                      (𝐿𝐿𝐿𝐿               )
+                                          𝑙𝑙+1                                                                                         𝑇𝑇𝑇𝑇𝑇𝑇𝑇𝑇
+YOLOv5m backbone architecture.   { 𝑧𝑧𝑧𝑧 𝑙𝑙+1==𝑀𝑀𝑀𝑀𝑀𝑀         (𝐿𝐿𝐿𝐿(𝑧𝑧̂ 𝑙𝑙+1𝑙𝑙+1)
+                                                                                ) + 𝑧𝑧̂ 𝑙𝑙+1       𝑙𝑙+1           𝑅𝑅𝑒𝑒𝑒𝑒𝑒𝑒𝑒𝑒𝑒𝑒
+                                                                                                               𝑅𝑅𝑒𝑒𝑒𝑒𝑒𝑒𝑒𝑒𝑒𝑒 ==                                    (4)
+                                  { which has a two-    𝑀𝑀𝑀𝑀𝑀𝑀 (𝐿𝐿𝐿𝐿 (𝑧𝑧̂        ) )     +     𝑧𝑧̂                              𝑇𝑇𝑇𝑇𝑇𝑇𝑇𝑇++   𝑇𝑇𝑁𝑁𝑇𝑇𝑁𝑁
+    The first Swin Transformer block,
+layer MLP with GELU non-linearity and two two-
+layer norm layers, was based on W-MSA, as seen in                                                                              1 1 𝑇𝑇𝑇𝑇
+                                                                                                               𝑅𝑅𝑒𝑒𝑒𝑒𝑒𝑒𝑒𝑒𝑒𝑒
+                                                                                                             𝐴𝐴𝐴𝐴@50
+                                                                                                       𝐴𝐴𝐴𝐴@50        =    ==
+                                                                                                                            ∫   ∫𝑃𝑃𝑟𝑟 𝑑𝑑 𝑇𝑇𝑇𝑇𝑟𝑟,𝐼𝐼𝐼𝐼𝐼𝐼𝐼𝐼𝐼𝐼𝐼𝐼
+                                                                                                                                      𝑃𝑃𝑟𝑟𝑟,𝑑𝑑                    (5)
+Figure 3. Each W-MSA module and MLP module was                                                                                  𝑇𝑇𝑇𝑇 +
+                                                                                                                 𝑅𝑅𝑒𝑒𝑒𝑒𝑒𝑒𝑒𝑒𝑒𝑒 0= 0           𝑇𝑇𝑁𝑁 ≥0.5       ≥0.5
+followed by a residual connection and a Layer Norm                                                                                𝑇𝑇𝑇𝑇 + 𝑇𝑇𝑁𝑁
+layer, respectively. The second Swin Transformer block                                                                1 1 n1 n
+was identical to the first one, with the exception that                                                mAP   mAP  =  =                   𝑃𝑃(𝑘𝑘)∆𝑅𝑅(𝑘𝑘)
+                                                                                                                         ∑∑1 𝑃𝑃(𝑘𝑘)∆𝑅𝑅(𝑘𝑘)                        (6)
+                                                                                                       𝐴𝐴𝐴𝐴@50 𝐶𝐶=𝐶𝐶∫i=1         𝑃𝑃i=1
+                                                                                                                                   𝑟𝑟 𝑑𝑑𝑟𝑟, 𝐼𝐼𝐼𝐼𝐼𝐼 ≥0.5
+a SW-MSA block took the place of the W-MSA block.                                                         𝐴𝐴𝐴𝐴@50 = 0∫ 𝑃𝑃𝑟𝑟 𝑑𝑑𝑟𝑟, 𝐼𝐼𝐼𝐼𝐼𝐼 ≥0.5
+                                                                                                                                    0
+                                                                                                                 1 1 n1n n n
+                                                                                                           mAP = = 1∑ ∑
+                                                                                                            mAP =𝐶𝐶 =
+                                                                                                               mAP
+                                                                                                             mAP     ∑  ∑𝑃𝑃(𝑘𝑘)∆𝑅𝑅(𝑘𝑘)
+                                                                                                                                  𝑃𝑃(𝑘𝑘)∆𝑅𝑅(𝑘𝑘)
+                                                                                                                               𝑃𝑃(𝑘𝑘)∆𝑅𝑅(𝑘𝑘)
+                                                                                                                            𝑃𝑃(𝑘𝑘)∆𝑅𝑅(𝑘𝑘)                           (7)
+                                                                                                                   𝐶𝐶 𝐶𝐶i=1i=1i=1
+                                                                                                                     𝐶𝐶 i=1
+                                                                                                                                          .
+                                                                                              True Positives (TP) denote the number of targets
+                                                                                          that the model           1 False
+                                                                                                            detected;
+                                                                                                                         n
+                                                                                                                              Positives (FP) indicate
+                                                                                                         mAP    = 1∑       n 𝑃𝑃(𝑘𝑘)∆𝑅𝑅(𝑘𝑘)
+                                                                                          the number ofmAP       =𝐶𝐶that
+                                                                                                            targets       the 𝑃𝑃(𝑘𝑘)∆𝑅𝑅(𝑘𝑘)
+                                                                                                                       ∑i=1    model incorrectly de-
+                                                                                                                    𝐶𝐶     i=1
+                                                                                          tected; and False Negatives (FN) indicate the number
+                                                                                          of targets that the model missed during detection.
+                                                                                          C denotes the number of disease target categories,
+                                                                                          n denotes the number of IoU thresholds, k is the IoU
+                                                                                          of P(k) is precision, and R(k) is Recall. mAP@0.5 refers
+                                                                                          to the average AP of all classes when IoU is set to 0.5.
+
+
+
+         𝑃𝑃(𝑥𝑥)Fig.
+                       𝐷𝐷(𝑥𝑥) 2
+                 = 3. Swin Transformer block
+                                                                                          Results
+                    ∑𝑥𝑥∈𝑋𝑋 𝐷𝐷(𝑥𝑥) 2
+                                                                                    Three sets of comparative experiments were carried
+                                                                                    out in this study The first experiments compared the
+    Shifted Window-based Multi-head Self-Attention
+                                                                                    YOLOv5m model with other YOLOv5 variants such
+(SW-MSA), which forms a new image by shifting the
+                                                                                    as YOLOv5n, YOLOv5s, YOLOv5l, and YOLOv5x.
+initial one𝐸𝐸𝐸𝐸𝐸𝐸𝐸𝐸
+                both = (1vertically  and+horizontally,
+                               − 𝑖𝑖𝑖𝑖𝑖𝑖)         𝛼𝛼 ∙ 𝑑𝑑𝑐𝑐 + 𝛽𝛽 was  ∙ (𝑑𝑑intro-
+                                                                          𝑤𝑤 + 𝑑𝑑ℎ )Both the task’s accuracy requirements and the device’s
+duced by Swin Transformer. The Swin Transformer
+                                                                                    processing capabilities are important considerations
+block is mathematically expressed in Equation 3 as:
+                                                                                    for choosing an appropriate model. Based on our sys-
+            𝑙𝑙                                 𝑙𝑙−1              𝑙𝑙−1               tem’s hardware configurations as stated in YOLOv5m
+         𝑧𝑧̂ = 𝑊𝑊 − 𝑀𝑀𝑀𝑀𝑀𝑀 (𝐿𝐿𝐿𝐿(𝑧𝑧 )) + 𝑧𝑧
+                                                                                    architecture enhancement, the above variants of the
+                      𝑙𝑙                 (𝑧𝑧̂ 𝑙𝑙 )         𝑙𝑙
+                    𝑧𝑧 = 𝑀𝑀𝑀𝑀𝑀𝑀 (𝐿𝐿𝐿𝐿              ) + 𝑧𝑧̂                          YOLOv5 model were analyzed by training each variant
+                                                                             (3) with the cocoa tree disease dataset. Table 2 detailed the
+          𝑧𝑧̂ 𝑙𝑙+1 = 𝑆𝑆𝑆𝑆 − 𝑀𝑀𝑀𝑀𝑀𝑀 (𝐿𝐿𝐿𝐿(𝑧𝑧 𝑙𝑙 )) + 𝑧𝑧 𝑙𝑙 .
+                                                                                    optimization techniques for each variant and the re-
+                 𝑙𝑙+1                      𝑙𝑙+1
+                        = 𝑀𝑀𝑀𝑀𝑀𝑀 (𝐿𝐿𝐿𝐿(𝑧𝑧̂ )) + 𝑧𝑧̂           𝑙𝑙+1                  sults obtained after training each variant at 50 epochs.
+        { 𝑧𝑧
+                                                                                    Model name defines the name of the YOLOv5 variant.
+                                                                                    Size defines the image resolution, and params define
+                                                                                              𝑇𝑇𝑇𝑇
+Results and Discussion                                                  𝑅𝑅𝑒𝑒𝑒𝑒𝑒𝑒𝑒𝑒𝑒𝑒 =
+                                                                                          𝑇𝑇𝑇𝑇 + 𝑇𝑇𝑁𝑁
+                                                                                          Table 2. Experimental results of YOLOv5 models
+Experimental evaluation criteria                                                         1Model           Epochs Precision Recall                mAP_0.5 mAP_0.5:0.95
+                                             𝐴𝐴𝐴𝐴@50 = ∫ YOLOv5m
+                                                           𝑃𝑃 𝑑𝑑𝑟𝑟, 𝐼𝐼𝐼𝐼𝐼𝐼 ≥0.5
+                                                                            50                                             0.91           0.89     0.86      0.86
+mAP50 was the experiment’s evaluation criterion in 0 𝑟𝑟
+this paper. The average of all classification detection   YOLOv5n           50                                             0.88           0.89     0.84      0.88
+results’ AP50 values is known as mAP@50. When 1      the YOLOv5s
+                                                         n                  50                                             0.90           0.90     0.66      0.72
+IOU threshold is set at 0.5, the AP50 value  mAP   = ∑ 𝑃𝑃(𝑘𝑘)∆𝑅𝑅(𝑘𝑘)
+                                                 denotes
+                                                      𝐶𝐶  YOLOv5l
+                                                         i=1                50                                             0.74           0.73     0.71      0.73
+the closed region of the precision and recall curve. YOLOv5x                50                                             0.70           0.72     0.69      0.68
+
+                                                                                     1   n
+                                                                       mAP =            ∑ 𝑃𝑃(𝑘𝑘)∆𝑅𝑅(𝑘𝑘)
+                                                                                     𝐶𝐶  i=1
+                                       Nyarko B.N.E et al.: Improved YOLOv5m model based on Swin Transformer, K-means++ …                271
+
+the parameters corresponding to each model vari-                       precision was achieved by YOLOv5m in an average
+ant. Precision refers to the percentage of all detection               time. The above analysis determined the proposed
+results that are accurately detected. Recall is used to                method to increase YOLOv5m Precision and detection
+show the degree to which a positive input is used to                   accuracy. Hence the study proposed a Swin Transform-
+make positive prediction. Epochs refer to a complete                   er to the YOLOv5m network to obtain the global infor-
+pass through the dataset. mAPval@0.5:0.95 represent                    mation. The K-means++ was also added to modify the
+the mean average precision at different IoU threshold                  choices of the initial clustering location, and the EIOU
+from 0.5 to 0.95. mAPval@0.5 calculates the average                    sped up the bounding box regressions rate. An analysis
+precision of all images in each category, params define                of the experimental results showed that there was signif-
+the parameters corresponding to each model variant.                    icant improvement in the proposed model in detecting
+    The second experiment compared the perfor-                         cocoa tree disease. The results in Table 2 influenced the
+mance of each proposed method (Swin Transformer,                       choice of the model we chose to improve. From Table 3
+K-means++, and EIoU) with the YOLOv5m model.                           it can be seen that the YOLOv5m with Swin Trans-
+Applying the Swin Transformer to the YOLOv5m                           former, K-means++, and EIoU achieved a significant
+network global information was obtained. The                           improvement with an average increase of 5%.
+K-means++ modifies the choices of the initial cluster-                     The performance of the upgraded model was com-
+ing location, and the EIOU speeds up the bounding                      pared to YOLOv5m. To further evaluate the efficacy
+box regressions rate. The above modification made                      of our approach (the improved model), a comparison
+to the YOLOv5m model resulted in a significant im-                     with comparable recent crop disease detection re-
+provement in the model’s performance in terms of                       search is essential. Using computer vision, the suggest-
+precision and recall. Sample results are presented in                  ed model YOLOv5m (EIOU + K-means++ + Swin-T)
+Table 3 and Figure 4, respectively. To ensure the valid-               was compared with the approach proposed by Couli-
+ity of the test results, each set of comparative experi-               baly et al. (2020), Rodriguez et al. (2021), and Kumi
+ments applied the same training set, test set, training                et al. (2022). Coulibaly et al. (2020) proposed a way to
+strategy, and evaluation criteria.                                     extract features effectively to enhance better diagnosis
+    The trained results showed that YOLOv5m achie­                     of plant disease. Rodriguez et al. (2021) proposed ma-
+ved the best prediction results of 91% against other                   chine-learning techniques for cocoa tree disease detec-
+models that achieved 85%, 90%, 74%, and 70%, respec-                   tion. Kumi et al. (2022) designed a mobile application
+tively. The YOLOv5n and YOLOv5s took a short time                      with machine learning techniques integrated for cocoa
+to reach 50 epochs with low performance. YOLOv5l                       pod-related disease detection. The results obtained by
+and YOLOv5x also took multiple hours to reach                          the proposed methods of these authors are tabulated in
+50 epochs with low precision accuracy. The best                        Table 5. The results illustrated in the table below show
+
+
+Table 3. Experimental results of improved YOLOv5m model
+Method                                               Epochs            Precision            Recall         mAP_0.5          mAP_0.5:0.95
+Improved YOLOv5m + (Swin-T,
+                                                      50                 0.96               0.94               0.92               0.93
+ K-means++, and EIoU)
+YOLOv5m+ K-means++,                                   50                 0.92               0.91               0.90               0.89
+YOLOv5m + EIoU                                        50                 0.94               0.91               0.92               0.92
+YOLOv5m + Swin-T                                      50                 0.95               0.90               0.90               0.91
+
+
+
+
+Table 4. Comparative analysis results of the improved models at each epoch
+
+                                  20 Epochs                    30 Epochs                    40 Epochs                     50 Epochs
+         Model           preci-                       preci-                       preci-                        preci-
+                                  recall mAP_0.5                recall mAP_0.5               recall mAP_0.5                recall mAP_0.5
+                          sion                         sion                         sion                          sion
+YOLOv5m + (Swin-T,
+                          0.58     0.56       0.55     0.64     0.63       0.65    0.88       0.89      0.87      0.96     0.94       0.92
+K-means++, and EIoU)
+YOLOv5m + Swin-T          0.54     0.53       0.51     0.75     0.74       0.74    0.79       0.77      0.78      0.89     0.84       0.85
+YOLOv5m + K-means++       0.54     0.52       0.50     0.68     0.66       0.66    0.79       0.78      0.79      0.86     0.84       0.84
+YOLOv5m + EIoU            0.52     0.50       0.56     0.55     0.56       0.54    0.78       0.80      0.77      0.87     0.86       0.81
+YOLOv5m                   0.56     0.56       0.54     0.66     0.64       0.65    0.89       0.86      0.82      0.83     0.89       0.88
+272       Journal of Plant Protection Research 64 (3), 2024
+
+
+
+
+Fig. 4. Sample test results
+
+
+
+
+Table 5. Comparative analysis of experimental results with other studies
+
+                                                                                                            Number
+Authors                               Approach                         Description           Dataset Size                Precision
+                                                                                                            of classes
+                          YOLOv5m (EIOU + K-means++, +
+Our method                                                    cocoa tree disease detection      1,000           4         95.16
+                                    Swin-T)
+Coulibaly et al. (2020)       (DWT + PCA + GLCM + CNN)        cocoa tree disease detection     10,000           2         74%
+Rodriguez et al. (2021)         proposed CNN model            cocoa pod disease detection        N/A            3         75%
+                                 mobile application
+Kumi et al. (2022)                                            cocoa pod disease detection        N/A          N/A         80%
+                                 with ML techniques
+
+
+
+
+that our method achieved higher precision than Cou-                   widely adopted and implemented. The assessment of
+libaly et al. (2020) Rodriguez et al. (2021), and Kumi                many issues in agriculture has been made possible in
+et al. (2022).                                                        recent years by the integration of artificial intelligence
+                                                                      techniques. Current research has focused on develop-
+                                                                      ing deep-learning techniques for image acquisition at
+Discussion                                                            various levels to address plant detection issues. Nu-
+                                                                      merous diseases, such as root rot, swollen shot, stem
+                                                                      borer, and stem canker, impede the high production
+The rapid technological development of the agricul-                   of cocoa trees. Early disease detection is crucial for
+tural industry has been aided by the industry’s adop-                 a variety of management processes. As a result, diverse
+tion of a wide range of new technological solutions                   research on the application of detection methods for
+in recent years. Although agriculture is expected to                  disease identification has been suggested.
+become the industry standard, the physical risks and                      Kumi et al (2022), proposed a deep learning-based
+hazards that exist in this sector are significant fac-                smartphone application for cocoa pod disease detec-
+tors that could prevent these innovations from being                  tion. Their proposed approach incorporates a mobile
+                                  Nyarko B.N.E et al.: Improved YOLOv5m model based on Swin Transformer, K-means++ …           273
+
+application with machine learning techniques. It al-              Despite the rapid advancements in object detec-
+lows cocoa farmers to snap a photo of the cocoa pod           tion, plant disease detection remains a challenge Im-
+and submit it for diagnosis, which is done via a backend      plementation may be hampered by variables like tran-
+cloud service. Convolutional Neural Networks (CNN)            sition costs, model generalization, dataset restrictions,
+are the foundation for automatic disease diagnosis and        and efficiency limitations. We will focus our future
+detection in image analysis and classification.               efforts on addressing these issues to enable wider im-
+    Given that the average recall for a few of the mod-       plementation of object detection algorithms in plant
+els is suitable for practical use, they concluded that        disease detection. The current efforts made by diverse
+the experimental results are encouraging and should be        research in plant disease detection will gradually close
+taken into consideration, in particular, SSD Resnet50         the gap between cutting-edge methods and real-world
+V1 FPN and SSD MobileNet V2 results. They also in-            applications.
+tend to publish an expanded version of this work in
+the future, along with a detailed analysis of each ML
+framework’s performance on the dataset.                       References
+    Rodriguez et al. (2021) used machine learning
+techniques to determine the diseases affecting cocoa          Adeniyi D.O., Asogwa E.U. 2023. Chapter 14 – Complexes and
+                                                                  diversity of pathogens and insect pests of cocoa tree. For-
+trees (Theobroma cacao L.). The methodology uses                  est Microbiology. Tree Diseases and Pests 3: 285–311. DOI:
+machine learning with image processing and analysis               https://doi.org/10.1016/B978-0-443-18694-3.00002-X
+techniques like the SVM (Support Vector Machine)              Ambele C.F., Bisseleua H.D., Djuideu C.T., Akutse K.S. 2023.
+                                                                  Managing insect services and disservices in cocoa agrofor-
+algorithm, LBP (Local Binary Pattern), and HoG (His-
+                                                                  estry systems. Agroforestry Systems: 1–20. DOI: https://
+tograms of Oriented Gradient) for classification to de-           doi.org/10.1007/s10457-023-00839-x
+termine whether or not the cocoa tree is affected by          Ameyaw G.A., Chingandu N., Domfeh O., Dzahini-Obia­
+disease. The results obtained indicate that the cocoa             tey H.K., Gutiérrez O.A., Brown J.K. Variable detection of
+                                                                  cacao swollen shoots disease-associated badnaviruses by
+plant state can be predicted by applying SVM, Random              PCR amplification. p. 13–17. In: “Proceedings of Interna-
+Forest, and ANN with characteristic vectors extracted             tional Symposium on Cocoa Research (ISCR)”. Lima, Peru.
+using the HOG and LBP extraction algorithms. As                   DOI: https://doi/full/10.5555/20203127100
+                                                              Angira A., Sharma T., Choudhary N., Rishi N., Verma H.N.,
+a result, expanding the dataset is recommended to im-             Awasthi L.P. 2024. Viral diseases of field and Horticul-
+prove the accuracy of the results.                                tural Crops. Academic Press: 15–21. DOI: https://doi.org/
+                                                                  10.1016/B978-0-323-90899-3.00015-X
+                                                              Appiah A.A. 2023. Evaluation of progress in cocoa crop protec-
+                                                                  tion and management. IntechOpen: 216. DOI: https://doi.
+Conclusions                                                       org/10.5772/intechopen.112642
+                                                              Argout X., Droc G., Fouet O., Rouard M., Labadie K., Rhoné
+                                                                  B., Rey Loor G., Lanaud C. 2023. Pangenomic explora-
+                                                                  tion of Theobroma cacao: new insights into gene content
+This study proposed YOLOV5m for cocoa tree dis-                   diversity and selection during domestication. bioRxiv:
+ease detection. By integrating Swin Transformer,                  2023.2011.2003.565324. DOI: https://doi.org/10.1101/2023.
+K-means++, and EIOU strategies, the YOLOv5m                       11.03.565324
+demonstrated enhanced performance with the various            Bacea D.-S., Oniga F. 2023. Single-stage architecture for im-
+                                                                  proved accuracy real-time object detection on mobile de-
+methods compared to the original YOLOv5m while                    vices. Image and Vision Computing 130: 104613. DOI:
+maintaining high detection speed and compactness.                 https://doi.org/10.1016/j.imavis.2022.104613
+This study contributes a practical and efficient solution     Bahadur A., Dutta P. 2023. Diseases of commercial crops and
+                                                                  their integrated management. CRC Press: 38–52. DOI:
+for cocoa tree-related disease detection.                         https://doi.org/10.4324/9781032627908		
+    However, there remain some restrictions in our            Bhatti U. A., Bazai S. U., Hussain S., Fakhar S., Ku C. S., Marjan S.,
+current research. First, the total number of related dis-         Yee P. L., Jing L. 2023. Deep learning-based trees disease
+ease data obtained is still limited when compared to              recognition and classification using hyperspectral data.
+                                                                  Computers, Materials & Continua 77 (1): 681–697. DOI:
+the number of cocoa tree-related diseases. In future re-          https://doi.org/10.32604/cmc.2023.037958
+search, more cocoa tree-related diseases will be incor-       Bissiri Y.H.-T., Ollo S., Maurice K.L.M., Senan S., Kolo Y. 2023.
+porated as a detection target to expand the models’ ca-           Socio-entomological characterisation of cocoa orchards in
+                                                                  the haut-sassandra region (Côte d’Ivoire). Journal of Ento-
+pabilities. In addition, while the improved YOLOv5m               mology and Zoology Studies 11 (3): 42–48. DOI: https://
+achieves a balance between precision and efficiency,              doi.org/10.22271/j.ento.2023.v11.i3a.9203
+using a more advanced network could potentially fur-          Bose T., Spies C.F., Hammerbacher A., Coutinho T.A. 2023.
+                                                                  Phytophthora: an underestimated threat to agriculture, for-
+ther boost detection performance. All things consid-
+                                                                  estry, and natural ecosystems in sub-Saharan Africa. Myco-
+ered, this work provides a strong baseline model for              logical Progress 22 (11): 78. DOI: https://doi.org/10.1007/
+cocoa tree disease detection, and future research will            s11557-023-01926-0
+concentrate on increasing category diversity, optimiz-        Coulibaly M., Kouassi K., Kolo S., Asseu O. 2020. Detection of
+                                                                  “swollen shoot” disease in Ivorian cocoa trees via convo-
+ing accuracy, and enhancing generalizability.
+274      Journal of Plant Protection Research 64 (3), 2024
+
+
+   lutional neural networks. Engineering 12: 166–176. DOI:              Research Foundation 18 (2): 474–501. DOI: https://doi.
+   https://doi.org/10.4236/eng.2020.123014                              org/10.18011/2023.10(2).474-501
+Debnath A.J., Dutta P., Bahadur A. 2023. Diseases of commer-        Nyadanu D., Akromah R., Adomako B., Kwoseh C., Lowor S.T.,
+   cial crops and their integrated management. CRC Press:               Dzahini-Obiatey H., Akrofi A.Y., Assuah M.K. 2012. In-
+   38–52 DOI: https://doi.org/10.4324/9781032627908                     heritance and general combining ability studies of detached
+Diwan T., Anirudh G., Tembhurne J.V. 2023. Object detection             pod, leaf disc and natural field resistance to Phytophthora
+   using YOLO: challenges, architectural successors, datasets           palmivora and Phytophthora megakarya in cacao (Theobro-
+   and applications. Multimedia Tools and Applications 82 (6):          ma cacao L.). Euphytica 188 (2): 253–264. DOI: https://doi.
+   9243–9275. DOI: https://doi.org/10.1007/s11042-022-13644-y           org/10.1007/s10681-012-0717-x
+George A.A. 2019. Management of the cacao swollen shoot             Okali C. 2023. Female and male in West Africa. Routledge:
+   virus (CSSV) menace in Ghana: The past, present and the              169–178 DOI: https://doi.org/10.4324/9781003402749
+   future. Plant Diseases. T.-P. Snježana. IntechOpen. Rijeka       Puig A.S. 2023. Fungal pathogens of cacao in Puerto Rico.
+   1–13 DOI: https://doi.org/10.5772/intechopen.87009                   Plants 12 (22): 3855. DOI: https://doi.org/10.3390/plants
+Gong X., Zhang S. 2023. An analysis of plant diseases identifica-       12223855
+   tion based on deep learning methods. The Plant Pathology         Ramos-Sobrinho R., Kouakou K., Bi A. B., Keith C. V., Diby L.,
+   Journal 39 (4): 319. DOI: https://doi.org/10.5423%2FPPJ.             Kouame C., Aka R. A., Marelli J.-P., Brown J. K. 2021. Mo-
+   OA.02.2023.0034                                                      lecular detection of cacao swollen shoot badnavirus species
+Hacinas E.A., Querol L., Acero L.A., Arcelo M., Amalin D.,              by amplification with four PCR primer pairs, and evidence
+   Rustia D.J. 2022. Automated cocoa pod borer detection                that cacao swollen shoot Togo B virus-like isolates are
+   using an edge computing-based deep learning algorithm.               highly prevalent in Côte d’Ivoire. European Journal of Plant
+   In: Proceedings of “ASABE Annual International Meet-                 Pathology 159 (4): 941–947. DOI: https://doi.org/10.1007/
+   ing”. Houston, Texas, USA. DOI: https://doi.org/10.13031/            s10658-021-02203-0
+   aim.202200238                                                    Rodriguez C., Alfaro O., Paredes P., Esenarro D., Hilario F.
+Kingsley-Umana E., Asogwa E., Mokwunye I. 2022. Outbreak,               2021. Machine learning techniques in the detection of co-
+   distribution and damage characteristics of cocoa stem borer,         coa (Theobroma cacao L.) diseases. Annals of the Romanian
+   eulophonotus myrmeleon felder 1874 (Lepidoptera: Cossi-              Society for Cell Biology 25 (3): 7732–7741.
+   dae) in major cocoa producing states in Nigeria. Advances        Shoaib M., Shah B., Ei-Sappagh S., Ali A., Ullah A., Alenezi F.,
+   in Entomology 10: 175–185. DOI: https://doi.org/10.4236/             Gechev T., Hussain T., Ali F. 2023. An advanced deep learn-
+   ae.2022.102013                                                       ing models-based plant disease detection: A review of re-
+Kumi S., Kelly D., Woodstuff J., Lomotey R.K., Orji R., Deters R.       cent research. Frontiers in Plant Science 14: 1158933. DOI:
+   2022. Cocoa companion: Deep learning-based smartphone                https://doi.org/10.3389/fpls.2023.1158933
+   application for cocoa disease detection. Procedia Compu-         Snell N. 2023. Modern medicines from plants. CRC Press: 51–62.
+   ter Science 203: 87–94. DOI: https://doi.org/10.1016/j.pro-          DOI: https://doi.org/10.1201/9781003413004
+   cs.2022.07.013                                                   Wang S., Wang Y., Chang Y., Zhao R., She Y. 2023. EBSE-YO-
+Muller E. 2016. Cacao swollen shoot virus (CSSV): history,              LO: high precision recognition algorithm for small target
+   biology, and genome. p. 337–358. In: “Cacao Diseases” (Bai-          foreign object detection. IEEE Access 11: 57951–57964. DOI:
+   ley B., Meinhardt L., eds.). Springer, Cham DOI: https://doi.        https://doi.org/10.1109/ACCESS.2023.3284062
+   org/10.1007/978-3-319-24789-2_10                                 Yan Y. 2022. Using the improved SSD algorithm to motion tar-
+Nandini M.L.N. 2023. Detection of plant diseases and pests              get detection and tracking. Computational Intelligence and
+   using deep learning models: a recent research. Chelonian             Neuroscience 2022 (1): 1886964.
+

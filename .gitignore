@@ -1,5 +1,74 @@
-dist/
-.DS_Store
+# Dependencies, environments and build products
 node_modules/
-.openai/*.local.*
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+dist/
+build/
+DerivedData/
+*.xcuserstate
+xcuserdata/
+*.xcarchive
+*.ipa
+*.dSYM/
+
+# Local credentials and machine state
+.env
+.env.*
+!.env.example
+!.env.sample
+*.pem
+*.key
+*.p12
+*.pfx
+*.mobileprovision
+*credentials*.json
+*service-account*.json
+operator-token.txt
+.openai/
+.DS_Store
 *.log
+*.pid
+*.sock
+*.local.*
+runtime/
+
+# Temporary presentation builds and document previews
+/.deck-build/
+/tmp/
+
+# Personal authorizations and signed documents
+/output/documents/
+/output/**/Autorizacion*
+
+# Downloaded training data, external weights and archive fragments
+sample-downloads/
+downloads/
+*.parquet
+*.cache
+*.rar
+*.zip
+*.bin
+*.rar.head
+*.pt
+*.pth
+*.onnx
+*.h5
+*.safetensors
+*.tflite
+*.ckpt
+/research/**/mirror_samples/
+/research/**/dataset-audit/instances_*.json
+/research/**/dataset-audit/upstream_notebook.ipynb
+/research/cacao-canopy/*.jpg
+/research/bagua-validation/*.jpg
+/research/china-cacao/pdf.pdf
+
+# Captured third-party web pages may embed API keys and session metadata.
+/research/**/*.html

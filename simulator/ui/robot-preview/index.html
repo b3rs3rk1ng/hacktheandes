@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Cacao — revisión del robot</title><link rel="icon" href="../orchard/icon.svg" type="image/svg+xml"><link rel="stylesheet" href="style.css"><script type="importmap">{"imports":{"three":"/ui/vendor/three.module.js"}}</script></head>
+<body>
+<header><a class="identity" href="#" aria-label="Cacao, vista previa"><svg viewBox="0 0 28 34" fill="none" aria-hidden="true"><path d="M14 2C2 11 2 24 9 30q5 5 10 0c7-6 7-19-5-28Z" stroke="currentColor" stroke-width="1.6"/><path d="M14 3v29M14 3C5 16 8 27 14 32M14 3c9 13 6 24 0 29" stroke="currentColor"/></svg><span>Cacao</span></a><nav class="mode-switch" aria-label="Prueba del robot"><button data-mode="terrain" aria-pressed="true">Terreno difícil</button><button data-mode="arm" aria-pressed="false">Brazo y recolección</button></nav><span class="status"><i></i>Propuesta sin aprobar</span></header>
+<main>
+ <section class="stage" aria-label="Modelo tridimensional del robot terrestre"><canvas id="scene" aria-label="Robot con cuatro ruedas, brazo articulado y pinza"></canvas><div class="stage-title"><h1>Robot de campo</h1><p id="stageSubtitle">Ruedas de 45 cm · Tracción en las cuatro ruedas</p></div><div class="view-toolbar" role="group" aria-label="Ángulo de cámara"><button data-view="three" aria-pressed="true">Tres cuartos</button><button data-view="side" aria-pressed="false">Perfil</button><button data-view="front" aria-pressed="false">Frente</button><button data-view="nav" aria-pressed="false">Cámara frontal</button><button data-view="wrist" aria-pressed="false">Cámara de pinza</button><button data-view="course" aria-pressed="false">Circuito</button></div><div id="cameraInset"><span id="insetLabel">Cámara frontal · en vivo</span></div><span id="fpsReadout" aria-label="Fotogramas por segundo"></span><span id="mainCameraLabel" hidden></span><p class="orbit-hint">Arrastra para girar · Acerca con la rueda o con dos dedos</p><div id="loading">Preparando el modelo…</div></section>
+ <aside class="review">
+  <div class="phase"><span id="stepNumber">01 / 09</span><h2 id="phase">Se desplaza</h2><p id="description">El brazo viaja plegado sobre la base.</p></div>
+  <div id="telemetry"><div class="speed-reading"><strong id="actualSpeed">0.00</strong><span>m/s</span></div><dl><div><dt>Inclinación longitudinal</dt><dd id="pitch">0°</dd></div><div><dt>Inclinación lateral</dt><dd id="roll">0°</dd></div><div><dt>Ruedas con contacto</dt><dd id="contacts">0 / 4</dd></div></dl><div id="suspensionBars" aria-label="Compresión de la suspensión"></div><p class="sensor-note">Cámara frontal en el chasis.<br>Cámara de precisión junto a la pinza.</p></div><dl class="dimensions"><div><dt>Base propuesta</dt><dd>≈ 1.2 × 1.0 m</dd></div><div><dt>Alcance desde el hombro</dt><dd>≈ 1.2 m</dd></div><div><dt>Articulaciones</dt><dd>6</dd></div></dl>
+  <button class="disclosure" id="jointToggle" aria-expanded="false" aria-controls="joints">Mover articulaciones <span>+</span></button>
+  <div id="joints" hidden></div>
+  <div class="options"><label id="treeOption"><input type="checkbox" id="showTree" checked>Mostrar árbol y mazorca</label><label id="loopOption"><input type="checkbox" id="loop">Repetir secuencia</label></div>
+  <button id="download" class="download">Descargar esta pose <span>.glb</span></button>
+  <p class="review-note" id="reviewNote">Prueba con gravedad, chasis rígido y suspensión por rayos. Masas y agarre estimados. No valida todavía barro, vegetación ni un robot real.</p>
+ </aside>
+</main>
+<footer>
+ <div class="transport"><button id="play" class="play" aria-label="Pausar secuencia"><svg id="playIcon" width="15" height="17" viewBox="0 0 15 17" fill="currentColor"><path d="M2 1h4v15H2zm7 0h4v15H9z"/></svg><span id="playLabel">Pausar</span></button><button id="restart" class="restart" aria-label="Volver al inicio">↺</button></div>
+ <div class="timeline"><div class="time-label"><span id="sequenceLabel">Desplazamiento, agarre y depósito</span><span><b id="currentTime">0.0 m</b><span id="timeTotal"> / 14.0 m</span></span></div><input id="time" type="range" min="0" max="28" step="0.01" value="0" aria-label="Posición de la secuencia"><div class="chapter-labels" id="chapters"><span>Surcos</span><span>Subida</span><span>Pendiente lateral</span><span>Raíces</span></div></div>
+ <div class="speed-control"><label for="speed">Velocidad</label><select id="speed"><option value="0.5">0.5×</option><option value="1" selected>1×</option><option value="1.5">1.5×</option></select></div>
+</footer>
+<div id="message" role="status" hidden></div>
+<script type="module" src="main.js"></script>
+</body></html>

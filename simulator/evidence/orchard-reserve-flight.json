@@ -1,0 +1,3384 @@
+{
+  "config": {
+    "seed": 37,
+    "field": {
+      "size_m": [
+        260,
+        300
+      ],
+      "home": [
+        0,
+        -9,
+        0.34
+      ]
+    },
+    "parcels": [
+      {
+        "id": "cacao",
+        "crop": "cacao",
+        "origin": [
+          -68,
+          6
+        ],
+        "rows": 34,
+        "columns": 35,
+        "spacing": [
+          4,
+          4
+        ]
+      },
+      {
+        "id": "platano",
+        "crop": "banana",
+        "origin": [
+          80,
+          8
+        ],
+        "rows": 25,
+        "columns": 8,
+        "spacing": [
+          4,
+          4
+        ]
+      },
+      {
+        "id": "cafe",
+        "crop": "coffee",
+        "origin": [
+          -112,
+          8
+        ],
+        "rows": 39,
+        "columns": 11,
+        "spacing": [
+          2.5,
+          2.8
+        ]
+      },
+      {
+        "id": "maiz",
+        "crop": "maize",
+        "origin": [
+          -108,
+          -64
+        ],
+        "rows": 32,
+        "columns": 68,
+        "spacing": [
+          1,
+          1.4
+        ]
+      }
+    ],
+    "flight": {
+      "mass_kg": 2.4,
+      "max_thrust_n": 65,
+      "inertia": [
+        0.085,
+        0.095,
+        0.15
+      ],
+      "cruise_speed_mps": 1.8,
+      "climb_speed_mps": 0.65,
+      "max_acceleration_mps2": 1.8,
+      "position_kp": 1.4,
+      "velocity_kd": 2.9,
+      "attitude_frequency": 9,
+      "attitude_damping": 1,
+      "return_height_m": 5.1,
+      "rotor_radius_m": 0.165,
+      "rotors": 4,
+      "drag_area_m2": 0.12,
+      "air_density": 1.18,
+      "motor_efficiency": 0.62,
+      "profile_power_w": 48,
+      "avionics_w": 18,
+      "wind_mps": [
+        0.4,
+        0.15,
+        0
+      ],
+      "payload_lever_m": 0.565
+    },
+    "battery": {
+      "cells": 6,
+      "capacity_ah": 4,
+      "initial_soc": 1,
+      "internal_resistance_ohm": 0.085,
+      "reserve_fraction": 0.12,
+      "charge_current_a": 4,
+      "charge_efficiency": 0.94,
+      "resume_at_soc": 0.95
+    },
+    "inspection": {
+      "radius_m": 0.95,
+      "height_m": 1.55,
+      "dwell_s": 3,
+      "minimum_frames": 2,
+      "angles": [
+        -1.5707963267948966,
+        0,
+        1.5707963267948966,
+        3.141592653589793
+      ],
+      "alert_threshold": 0.74,
+      "target_class_ids": [
+        1
+      ],
+      "crop": "cacao",
+      "auto_resume_after_charge": true,
+      "maximum_trees": null,
+      "obstacle_clearance_m": 0.58,
+      "height_levels_m": [
+        1.25,
+        1.8
+      ]
+    },
+    "camera": {
+      "width": 640,
+      "height": 384,
+      "vertical_fov_degrees": 58,
+      "near_m": 0.05,
+      "far_m": 600,
+      "offset_m": [
+        0.34,
+        -0.24,
+        -0.16
+      ],
+      "inference_interval_ms": 450
+    },
+    "model": {
+      "weights": "/home/f3mt0/hacktheandes-cacao-improvement/artifacts/detector-yolo11s.pt",
+      "sha256": "4a72c36e6aed0db8c5f39b637a918da28e4386644ceb52c7b9d8446efb9a9d33",
+      "names": [
+        "healthy",
+        "monilia",
+        "phytophthora"
+      ],
+      "imgsz": 640,
+      "proposal_confidence": 0.05,
+      "nms_iou": 0.7,
+      "class_labels": [
+        "Sano",
+        "Monilia",
+        "Fit\u00f3ftora"
+      ]
+    },
+    "manipulation": {
+      "enabled": true,
+      "mass_kg": 0.45,
+      "tool_offset_m": 0.5,
+      "bin": [
+        1.7,
+        -9,
+        0
+      ],
+      "bin_size": [
+        1,
+        0.9,
+        0.65
+      ],
+      "fruit_radii_m": [
+        0.055,
+        0.055,
+        0.14
+      ],
+      "grip_offset_m": 0.065
+    },
+    "server": {
+      "host": "127.0.0.1",
+      "port": 18437,
+      "physics_port": 18436
+    }
+  },
+  "scene_sha256": "04a5a9e87b42a39c6be8cc0f2fa5c0d311d81596dcaca3e8127d467e74c6989e",
+  "completed": true,
+  "elapsed_wall_s": 9.551447124998958,
+  "initial_soc": 0.16,
+  "harvest_enabled": false,
+  "accelerated": true,
+  "stop_phase": "charging",
+  "samples": [
+    {
+      "physics": {
+        "engine": "Webots R2025a / ODE",
+        "updated_at": 1792310041.8147247,
+        "simulation_time": 28.304000000000002,
+        "mission_time": 2.6560000000000024,
+        "last_command_id": "6cc0200944f14094b067d5ef7085736e",
+        "phase": "takeoff",
+        "phase_id": 2,
+        "label": "Despegando",
+        "position": [
+          0.0011290182788742521,
+          -8.999840671226416,
+          1.7806962314055308
+        ],
+        "velocity": [
+          0.00011438350460963162,
+          1.8696168945519777e-05,
+          0.4992606425704684,
+          3.1990146943269744e-05,
+          -0.00021370591965442432,
+          8.601418581455634e-07
+        ],
+        "orientation": [
+          -7.466992893211333e-05,
+          -0.9999998791379163,
+          -0.0004859511853880083,
+          0.999999994823416,
+          -7.463633100617484e-05,
+          -6.91562467925096e-05,
+          6.911996882061602e-05,
+          -0.0004859563467644744,
+          0.9999998795344222
+        ],
+        "look_at": [
+          0,
+          6,
+          1.55
+        ],
+        "waypoint": [
+          0,
+          -9,
+          2.0
+        ],
+        "battery": {
+          "soc": 0.1573891401244042,
+          "remaining_wh": 13.976155643047093,
+          "nominal_wh": 88.80000000000001,
+          "voltage_v": 19.813761348193477,
+          "current_a": 12.810861958129237,
+          "power_w": 253.8313615030233,
+          "used_wh": 0.2058322225928442
+        },
+        "return_budget": {
+          "distance_m": 0.0011402052149170694,
+          "estimated_seconds": 27.43055325944114,
+          "travel_wh": 2.478454241089694,
+          "reserve_wh": 10.656,
+          "required_wh": 13.134454241089696,
+          "margin_wh": 0.8429654070039359
+        },
+        "return_reason": null,
+        "return_cause": null,
+        "thrust_n": 22.206045023088492,
+        "wind_mps": [
+          0.4,
+          0.15,
+          0
+        ],
+        "plant_id": "cacao-0-17",
+        "visited": [],
+        "observed": {},
+        "removed": [],
+        "payload_attached": false,
+        "gripper_locked": false,
+        "payloads": {},
+        "outcomes": [],
+        "events": [
+          {
+            "phase": "idle",
+            "phase_id": 1,
+            "sim_time": 17.264,
+            "reason": "Escenario restablecido expl\u00edcitamente",
+            "label": "Listo en la base",
+            "battery_soc": 0.16,
+            "position": [
+              9.89759728972743e-18,
+              -9.0,
+              0.29952912010474125
+            ],
+            "return_cause": null,
+            "return_budget": {
+              "distance_m": 9.89759728972743e-18,
+              "estimated_seconds": 29.708416738300397,
+              "travel_wh": 2.6842678222597693,
+              "reserve_wh": 10.656,
+              "required_wh": 13.34026782225977,
+              "margin_wh": 0.8677321777402316
+            }
+          },
+          {
+            "phase": "takeoff",
+            "phase_id": 2,
+            "sim_time": 25.648,
+            "reason": null,
+            "label": "Despegando",
+            "battery_soc": 0.16,
+            "position": [
+              -2.190406536981931e-17,
+              -9.0,
+              0.2995291201047412
+            ],
+            "return_cause": null,
+            "return_budget": {
+              "distance_m": 2.190406536981931e-17,
+              "estimated_seconds": 29.708416738300397,
+              "travel_wh": 2.6842678222597693,
+              "reserve_wh": 10.656,
+              "required_wh": 13.34026782225977,
+              "margin_wh": 0.8677321777402316
+            }
+          }
+        ],
+        "accelerated": true,
+        "camera_frames_at_view": 0,
+        "route_index": 0,
+        "route_count": 1190,
+        "harvest_enabled": false,
+        "limits": [
+          "Potencia y bater\u00eda aproximadas, sin calibraci\u00f3n de un dron real.",
+          "Texturas sint\u00e9ticas/derivadas de entrenamiento no constituyen una nueva prueba independiente.",
+          "Asociaci\u00f3n de detecciones a geometr\u00eda conocida; no SLAM ni estimaci\u00f3n de profundidad aprendida.",
+          "Agarre con conector y corte sin resistencia; follaje visual sin colisiones."
+        ]
+      },
+      "model": {
+        "checkpoint": "detector-yolo11s.pt",
+        "sha256": "4a72c36e6aed0db8c5f39b637a918da28e4386644ceb52c7b9d8446efb9a9d33",
+        "names": [
+          "healthy",
+          "monilia",
+          "phytophthora"
+        ],
+        "device": "cuda:0",
+        "threshold": 0.74,
+        "precision": "FP32",
+        "actual_inference": true
+      },
+      "model_error": null,
+      "server_time": 1792310041.8786607,
+      "last_inference": {
+        "frame_id": "f909c4e9-5fb8-497f-ab03-611e41598704",
+        "sim_time": 8.032,
+        "phase_id": 0,
+        "width": 640,
+        "height": 323,
+        "predictions": [],
+        "inference_ms": 42.314444202929735,
+        "wall_time": 1792310027.665091,
+        "source": "trained_yolo11s_pixels_only"
+      }
+    },
+    {
+      "physics": {
+        "engine": "Webots R2025a / ODE",
+        "updated_at": 1792310042.354158,
+        "simulation_time": 30.064,
+        "mission_time": 4.416,
+        "last_command_id": "6cc0200944f14094b067d5ef7085736e",
+        "phase": "transit",
+        "phase_id": 3,
+        "label": "Hacia el siguiente \u00e1rbol",
+        "position": [
+          0.08441325221366601,
+          -8.499357254805561,
+          1.6456849255022021
+        ],
+        "velocity": [
+          0.13378654797730224,
+          1.313641100901633,
+          -0.5867479485749614,
+          0.08822547515214892,
+          -0.06369116608825666,
+          0.02493613317671656
+        ],
+        "orientation": [
+          0.007400330072153211,
+          -0.9998435513191621,
+          -0.016065739955240094,
+          0.9830163390173086,
+          0.004327789016515563,
+          0.18346702010780228,
+          -0.18336878780160862,
+          -0.01715060138055634,
+          0.9828945744750319
+        ],
+        "look_at": [
+          0.11205124314487783,
+          6.1195079037882865,
+          1.25
+        ],
+        "waypoint": [
+          0.11205124314487788,
+          5.169507903788286,
+          1.25
+        ],
+        "battery": {
+          "soc": 0.15581916426987177,
+          "remaining_wh": 13.836741787164616,
+          "nominal_wh": 88.80000000000001,
+          "voltage_v": 19.699420710030864,
+          "current_a": 14.06184738524097,
+          "power_w": 277.0102476021093,
+          "used_wh": 0.33019667222178134
+        },
+        "return_budget": {
+          "distance_m": 0.507709321822154,
+          "estimated_seconds": 28.018189798286304,
+          "travel_wh": 2.5315494250673924,
+          "reserve_wh": 10.656,
+          "required_wh": 13.187549425067393,
+          "margin_wh": 0.6505797977058982
+        },
+        "return_reason": null,
+        "return_cause": null,
+        "thrust_n": 23.997257608689768,
+        "wind_mps": [
+          0.4,
+          0.15,
+          0
+        ],
+        "plant_id": "cacao-0-17",
+        "visited": [],
+        "observed": {},
+        "removed": [],
+        "payload_attached": false,
+        "gripper_locked": false,
+        "payloads": {},
+        "outcomes": [],
+        "events": [
+          {
+            "phase": "idle",
+            "phase_id": 1,
+            "sim_time": 17.264,
+            "reason": "Escenario restablecido expl\u00edcitamente",
+            "label": "Listo en la base",
+            "battery_soc": 0.16,
+            "position": [
+              9.89759728972743e-18,
+              -9.0,
+              0.29952912010474125
+            ],
+            "return_cause": null,
+            "return_budget": {
+              "distance_m": 9.89759728972743e-18,
+              "estimated_seconds": 29.708416738300397,
+              "travel_wh": 2.6842678222597693,
+              "reserve_wh": 10.656,
+              "required_wh": 13.34026782225977,
+              "margin_wh": 0.8677321777402316
+            }
+          },
+          {
+            "phase": "takeoff",
+            "phase_id": 2,
+            "sim_time": 25.648,
+            "reason": null,
+            "label": "Despegando",
+            "battery_soc": 0.16,
+            "position": [
+              -2.190406536981931e-17,
+              -9.0,
+              0.2995291201047412
+            ],
+            "return_cause": null,
+            "return_budget": {
+              "distance_m": 2.190406536981931e-17,
+              "estimated_seconds": 29.708416738300397,
+              "travel_wh": 2.6842678222597693,
+              "reserve_wh": 10.656,
+              "required_wh": 13.34026782225977,
+              "margin_wh": 0.8677321777402316
+            }
+          },
+          {
+            "phase": "transit",
+            "phase_id": 3,
+            "sim_time": 29.12,
+            "reason": null,
+            "label": "Hacia el siguiente \u00e1rbol",
+            "battery_soc": 0.15665628063257112,
+            "position": [
+              0.001185035050319758,
+              -8.999833211599658,
+              2.0050503973418112
+            ],
+            "return_cause": null,
+            "return_budget": {
+              "distance_m": 0.0011967148536619517,
+              "estimated_seconds": 27.08543538638361,
+              "travel_wh": 2.447271535875359,
+              "reserve_wh": 10.656,
+              "required_wh": 13.10327153587536,
+              "margin_wh": 0.8078061842969575
+            }
+          }
+        ],
+        "accelerated": true,
+        "camera_frames_at_view": 0,
+        "route_index": 0,
+        "route_count": 1190,
+        "harvest_enabled": false,
+        "limits": [
+          "Potencia y bater\u00eda aproximadas, sin calibraci\u00f3n de un dron real.",
+          "Texturas sint\u00e9ticas/derivadas de entrenamiento no constituyen una nueva prueba independiente.",
+          "Asociaci\u00f3n de detecciones a geometr\u00eda conocida; no SLAM ni estimaci\u00f3n de profundidad aprendida.",
+          "Agarre con conector y corte sin resistencia; follaje visual sin colisiones."
+        ]
+      },
+      "model": {
+        "checkpoint": "detector-yolo11s.pt",
+        "sha256": "4a72c36e6aed0db8c5f39b637a918da28e4386644ceb52c7b9d8446efb9a9d33",
+        "names": [
+          "healthy",
+          "monilia",
+          "phytophthora"
+        ],
+        "device": "cuda:0",
+        "threshold": 0.74,
+        "precision": "FP32",
+        "actual_inference": true
+      },
+      "model_error": null,
+      "server_time": 1792310042.3903852,
+      "last_inference": {
+        "frame_id": "f909c4e9-5fb8-497f-ab03-611e41598704",
+        "sim_time": 8.032,
+        "phase_id": 0,
+        "width": 640,
+        "height": 323,
+        "predictions": [],
+        "inference_ms": 42.314444202929735,
+        "wall_time": 1792310027.665091,
+        "source": "trained_yolo11s_pixels_only"
+      }
+    },
+    {
+      "physics": {
+        "engine": "Webots R2025a / ODE",
+        "updated_at": 1792310042.8959372,
+        "simulation_time": 31.952,
+        "mission_time": 6.304000000000002,
+        "last_command_id": "6cc0200944f14094b067d5ef7085736e",
+        "phase": "transit",
+        "phase_id": 3,
+        "label": "Hacia el siguiente \u00e1rbol",
+        "position": [
+          0.10962543186077787,
+          -5.166942253660129,
+          1.2273527574893428
+        ],
+        "velocity": [
+          0.006809806090658895,
+          1.7686403470635819,
+          0.019362769460456637,
+          0.003509204623066304,
+          -0.010137907291578529,
+          4.6417209115801226e-05
+        ],
+        "orientation": [
+          0.00026327538587872447,
+          -0.999999274515569,
+          0.0011754379637864416,
+          0.9999461422664484,
+          0.00027545635228026137,
+          0.010374810371567171,
+          -0.01037512662665761,
+          0.001172643225157789,
+          0.9999454893419677
+        ],
+        "look_at": [
+          0.11205124314487783,
+          6.1195079037882865,
+          1.25
+        ],
+        "waypoint": [
+          0.11205124314487788,
+          5.169507903788286,
+          1.25
+        ],
+        "battery": {
+          "soc": 0.15394089131030508,
+          "remaining_wh": 13.669951148355093,
+          "nominal_wh": 88.80000000000001,
+          "voltage_v": 19.71132312300927,
+          "current_a": 13.809122619685738,
+          "power_w": 272.1960780018818,
+          "used_wh": 0.47799097854665157
+        },
+        "return_budget": {
+          "distance_m": 3.834625069297747,
+          "estimated_seconds": 31.156964559682013,
+          "travel_wh": 2.8151495969497797,
+          "reserve_wh": 10.656,
+          "required_wh": 13.47114959694978,
+          "margin_wh": 0.2001640515037888
+        },
+        "return_reason": null,
+        "return_cause": null,
+        "thrust_n": 23.630858285391927,
+        "wind_mps": [
+          0.4,
+          0.15,
+          0
+        ],
+        "plant_id": "cacao-0-17",
+        "visited": [],
+        "observed": {},
+        "removed": [],
+        "payload_attached": false,
+        "gripper_locked": false,
+        "payloads": {},
+        "outcomes": [],
+        "events": [
+          {
+            "phase": "idle",
+            "phase_id": 1,
+            "sim_time": 17.264,
+            "reason": "Escenario restablecido expl\u00edcitamente",
+            "label": "Listo en la base",
+            "battery_soc": 0.16,
+            "position": [
+              9.89759728972743e-18,
+              -9.0,
+              0.29952912010474125
+            ],
+            "return_cause": null,
+            "return_budget": {
+              "distance_m": 9.89759728972743e-18,
+              "estimated_seconds": 29.708416738300397,
+              "travel_wh": 2.6842678222597693,
+              "reserve_wh": 10.656,
+              "required_wh": 13.34026782225977,
+              "margin_wh": 0.8677321777402316
+            }
+          },
+          {
+            "phase": "takeoff",
+            "phase_id": 2,
+            "sim_time": 25.648,
+            "reason": null,
+            "label": "Despegando",
+            "battery_soc": 0.16,
+            "position": [
+              -2.190406536981931e-17,
+              -9.0,
+              0.2995291201047412
+            ],
+            "return_cause": null,
+            "return_budget": {
+              "distance_m": 2.190406536981931e-17,
+              "estimated_seconds": 29.708416738300397,
+              "travel_wh": 2.6842678222597693,
+              "reserve_wh": 10.656,
+              "required_wh": 13.34026782225977,
+              "margin_wh": 0.8677321777402316
+            }
+          },
+          {
+            "phase": "transit",
+            "phase_id": 3,
+            "sim_time": 29.12,
+            "reason": null,
+            "label": "Hacia el siguiente \u00e1rbol",
+            "battery_soc": 0.15665628063257112,
+            "position": [
+              0.001185035050319758,
+              -8.999833211599658,
+              2.0050503973418112
+            ],
+            "return_cause": null,
+            "return_budget": {
+              "distance_m": 0.0011967148536619517,
+              "estimated_seconds": 27.08543538638361,
+              "travel_wh": 2.447271535875359,
+              "reserve_wh": 10.656,
+              "required_wh": 13.10327153587536,
+              "margin_wh": 0.8078061842969575
+            }
+          }
+        ],
+        "accelerated": true,
+        "camera_frames_at_view": 0,
+        "route_index": 0,
+        "route_count": 1190,
+        "harvest_enabled": false,
+        "limits": [
+          "Potencia y bater\u00eda aproximadas, sin calibraci\u00f3n de un dron real.",
+          "Texturas sint\u00e9ticas/derivadas de entrenamiento no constituyen una nueva prueba independiente.",
+          "Asociaci\u00f3n de detecciones a geometr\u00eda conocida; no SLAM ni estimaci\u00f3n de profundidad aprendida.",
+          "Agarre con conector y corte sin resistencia; follaje visual sin colisiones."
+        ]
+      },
+      "model": {
+        "checkpoint": "detector-yolo11s.pt",
+        "sha256": "4a72c36e6aed0db8c5f39b637a918da28e4386644ceb52c7b9d8446efb9a9d33",
+        "names": [
+          "healthy",
+          "monilia",
+          "phytophthora"
+        ],
+        "device": "cuda:0",
+        "threshold": 0.74,
+        "precision": "FP32",
+        "actual_inference": true
+      },
+      "model_error": null,
+      "server_time": 1792310042.9023116,
+      "last_inference": {
+        "frame_id": "f909c4e9-5fb8-497f-ab03-611e41598704",
+        "sim_time": 8.032,
+        "phase_id": 0,
+        "width": 640,
+        "height": 323,
+        "predictions": [],
+        "inference_ms": 42.314444202929735,
+        "wall_time": 1792310027.665091,
+        "source": "trained_yolo11s_pixels_only"
+      }
+    },
+    {
+      "physics": {
+        "engine": "Webots R2025a / ODE",
+        "updated_at": 1792310043.4446902,
+        "simulation_time": 33.92,
+        "mission_time": 8.272000000000002,
+        "last_command_id": "6cc0200944f14094b067d5ef7085736e",
+        "phase": "return_climb",
+        "phase_id": 4,
+        "label": "Ascendiendo para regresar",
+        "position": [
+          0.22012244688193305,
+          -2.0876376925459206,
+          1.688219580377371
+        ],
+        "velocity": [
+          0.036386753462493863,
+          0.6394411441986713,
+          0.6197817784034899,
+          0.01349759524708586,
+          -0.005848595785494759,
+          0.021505057780773548
+        ],
+        "orientation": [
+          -0.03236272311259536,
+          0.9975764684677253,
+          -0.06159418570124292,
+          -0.9833636344775576,
+          -0.042801478836235654,
+          -0.17653327107522737,
+          -0.1787417593620078,
+          0.054856384941891524,
+          0.9823655941100957
+        ],
+        "look_at": [
+          0,
+          -9,
+          1.688219580377371
+        ],
+        "waypoint": [
+          0.11427604256810536,
+          -3.4076545296710745,
+          5.1
+        ],
+        "battery": {
+          "soc": 0.15197715549276453,
+          "remaining_wh": 13.495571407757492,
+          "nominal_wh": 88.80000000000001,
+          "voltage_v": 19.66761876181842,
+          "current_a": 14.205467425819768,
+          "power_w": 279.3877176644533,
+          "used_wh": 0.6323764099350776
+        },
+        "return_budget": {
+          "distance_m": 6.91586629144413,
+          "estimated_seconds": 32.7588695949256,
+          "travel_wh": 2.959887775974875,
+          "reserve_wh": 10.656,
+          "required_wh": 13.615887775974876,
+          "margin_wh": -0.1189147620980382
+        },
+        "return_reason": "Reserva para volver y aterrizar",
+        "return_cause": "energy_reserve",
+        "thrust_n": 24.177174325178573,
+        "wind_mps": [
+          0.4,
+          0.15,
+          0
+        ],
+        "plant_id": "cacao-0-17",
+        "visited": [],
+        "observed": {},
+        "removed": [],
+        "payload_attached": false,
+        "gripper_locked": false,
+        "payloads": {},
+        "outcomes": [],
+        "events": [
+          {
+            "phase": "idle",
+            "phase_id": 1,
+            "sim_time": 17.264,
+            "reason": "Escenario restablecido expl\u00edcitamente",
+            "label": "Listo en la base",
+            "battery_soc": 0.16,
+            "position": [
+              9.89759728972743e-18,
+              -9.0,
+              0.29952912010474125
+            ],
+            "return_cause": null,
+            "return_budget": {
+              "distance_m": 9.89759728972743e-18,
+              "estimated_seconds": 29.708416738300397,
+              "travel_wh": 2.6842678222597693,
+              "reserve_wh": 10.656,
+              "required_wh": 13.34026782225977,
+              "margin_wh": 0.8677321777402316
+            }
+          },
+          {
+            "phase": "takeoff",
+            "phase_id": 2,
+            "sim_time": 25.648,
+            "reason": null,
+            "label": "Despegando",
+            "battery_soc": 0.16,
+            "position": [
+              -2.190406536981931e-17,
+              -9.0,
+              0.2995291201047412
+            ],
+            "return_cause": null,
+            "return_budget": {
+              "distance_m": 2.190406536981931e-17,
+              "estimated_seconds": 29.708416738300397,
+              "travel_wh": 2.6842678222597693,
+              "reserve_wh": 10.656,
+              "required_wh": 13.34026782225977,
+              "margin_wh": 0.8677321777402316
+            }
+          },
+          {
+            "phase": "transit",
+            "phase_id": 3,
+            "sim_time": 29.12,
+            "reason": null,
+            "label": "Hacia el siguiente \u00e1rbol",
+            "battery_soc": 0.15665628063257112,
+            "position": [
+              0.001185035050319758,
+              -8.999833211599658,
+              2.0050503973418112
+            ],
+            "return_cause": null,
+            "return_budget": {
+              "distance_m": 0.0011967148536619517,
+              "estimated_seconds": 27.08543538638361,
+              "travel_wh": 2.447271535875359,
+              "reserve_wh": 10.656,
+              "required_wh": 13.10327153587536,
+              "margin_wh": 0.8078061842969575
+            }
+          },
+          {
+            "phase": "return_climb",
+            "phase_id": 4,
+            "sim_time": 32.944,
+            "reason": "Reserva para volver y aterrizar",
+            "label": "Ascendiendo para regresar",
+            "battery_soc": 0.1530099195144231,
+            "position": [
+              0.11427604256810536,
+              -3.4076545296710745,
+              1.2467828575345539
+            ],
+            "return_cause": "energy_reserve",
+            "return_budget": {
+              "distance_m": 5.59351292779533,
+              "estimated_seconds": 32.446237991947186,
+              "travel_wh": 2.9316403281391725,
+              "reserve_wh": 10.656,
+              "required_wh": 13.587640328139173,
+              "margin_wh": -0.00035947525839929995
+            }
+          }
+        ],
+        "accelerated": true,
+        "camera_frames_at_view": 0,
+        "route_index": 0,
+        "route_count": 1190,
+        "harvest_enabled": false,
+        "limits": [
+          "Potencia y bater\u00eda aproximadas, sin calibraci\u00f3n de un dron real.",
+          "Texturas sint\u00e9ticas/derivadas de entrenamiento no constituyen una nueva prueba independiente.",
+          "Asociaci\u00f3n de detecciones a geometr\u00eda conocida; no SLAM ni estimaci\u00f3n de profundidad aprendida.",
+          "Agarre con conector y corte sin resistencia; follaje visual sin colisiones."
+        ]
+      },
+      "model": {
+        "checkpoint": "detector-yolo11s.pt",
+        "sha256": "4a72c36e6aed0db8c5f39b637a918da28e4386644ceb52c7b9d8446efb9a9d33",
+        "names": [
+          "healthy",
+          "monilia",
+          "phytophthora"
+        ],
+        "device": "cuda:0",
+        "threshold": 0.74,
+        "precision": "FP32",
+        "actual_inference": true
+      },
+      "model_error": null,
+      "server_time": 1792310043.5168064,
+      "last_inference": {
+        "frame_id": "f909c4e9-5fb8-497f-ab03-611e41598704",
+        "sim_time": 8.032,
+        "phase_id": 0,
+        "width": 640,
+        "height": 323,
+        "predictions": [],
+        "inference_ms": 42.314444202929735,
+        "wall_time": 1792310027.665091,
+        "source": "trained_yolo11s_pixels_only"
+      }
+    },
+    {
+      "physics": {
+        "engine": "Webots R2025a / ODE",
+        "updated_at": 1792310044.1521106,
+        "simulation_time": 36.4,
+        "mission_time": 10.751999999999999,
+        "last_command_id": "6cc0200944f14094b067d5ef7085736e",
+        "phase": "return_climb",
+        "phase_id": 4,
+        "label": "Ascendiendo para regresar",
+        "position": [
+          0.12116643540252002,
+          -3.5487818068255397,
+          3.2666073710306542
+        ],
+        "velocity": [
+          -0.0054572281349323,
+          0.20335313212066483,
+          0.625564273814494,
+          0.36677426296772875,
+          0.01249729313332639,
+          -0.0025068069933874572
+        ],
+        "orientation": [
+          -0.021718485147461847,
+          0.9997557890342829,
+          -0.004082853822758421,
+          -0.9965517194393331,
+          -0.02132140595808533,
+          0.08018770560677856,
+          0.08008107070593112,
+          0.005810330490519225,
+          0.9967714192201653
+        ],
+        "look_at": [
+          0,
+          -9,
+          3.2666073710306542
+        ],
+        "waypoint": [
+          0.11427604256810536,
+          -3.4076545296710745,
+          5.1
+        ],
+        "battery": {
+          "soc": 0.14956638902459118,
+          "remaining_wh": 13.281495345383698,
+          "nominal_wh": 88.80000000000001,
+          "voltage_v": 19.68738551634607,
+          "current_a": 13.828271384462898,
+          "power_w": 272.24250977057767,
+          "used_wh": 0.8221420465128493
+        },
+        "return_budget": {
+          "distance_m": 5.452564634615933,
+          "estimated_seconds": 29.233104443607097,
+          "travel_wh": 2.6413215585995853,
+          "reserve_wh": 10.656,
+          "required_wh": 13.297321558599586,
+          "margin_wh": -0.014461823772620619
+        },
+        "return_reason": "Reserva para volver y aterrizar",
+        "return_cause": "energy_reserve",
+        "thrust_n": 23.634405868169615,
+        "wind_mps": [
+          0.4,
+          0.15,
+          0
+        ],
+        "plant_id": "cacao-0-17",
+        "visited": [],
+        "observed": {},
+        "removed": [],
+        "payload_attached": false,
+        "gripper_locked": false,
+        "payloads": {},
+        "outcomes": [],
+        "events": [
+          {
+            "phase": "idle",
+            "phase_id": 1,
+            "sim_time": 17.264,
+            "reason": "Escenario restablecido expl\u00edcitamente",
+            "label": "Listo en la base",
+            "battery_soc": 0.16,
+            "position": [
+              9.89759728972743e-18,
+              -9.0,
+              0.29952912010474125
+            ],
+            "return_cause": null,
+            "return_budget": {
+              "distance_m": 9.89759728972743e-18,
+              "estimated_seconds": 29.708416738300397,
+              "travel_wh": 2.6842678222597693,
+              "reserve_wh": 10.656,
+              "required_wh": 13.34026782225977,
+              "margin_wh": 0.8677321777402316
+            }
+          },
+          {
+            "phase": "takeoff",
+            "phase_id": 2,
+            "sim_time": 25.648,
+            "reason": null,
+            "label": "Despegando",
+            "battery_soc": 0.16,
+            "position": [
+              -2.190406536981931e-17,
+              -9.0,
+              0.2995291201047412
+            ],
+            "return_cause": null,
+            "return_budget": {
+              "distance_m": 2.190406536981931e-17,
+              "estimated_seconds": 29.708416738300397,
+              "travel_wh": 2.6842678222597693,
+              "reserve_wh": 10.656,
+              "required_wh": 13.34026782225977,
+              "margin_wh": 0.8677321777402316
+            }
+          },
+          {
+            "phase": "transit",
+            "phase_id": 3,
+            "sim_time": 29.12,
+            "reason": null,
+            "label": "Hacia el siguiente \u00e1rbol",
+            "battery_soc": 0.15665628063257112,
+            "position": [
+              0.001185035050319758,
+              -8.999833211599658,
+              2.0050503973418112
+            ],
+            "return_cause": null,
+            "return_budget": {
+              "distance_m": 0.0011967148536619517,
+              "estimated_seconds": 27.08543538638361,
+              "travel_wh": 2.447271535875359,
+              "reserve_wh": 10.656,
+              "required_wh": 13.10327153587536,
+              "margin_wh": 0.8078061842969575
+            }
+          },
+          {
+            "phase": "return_climb",
+            "phase_id": 4,
+            "sim_time": 32.944,
+            "reason": "Reserva para volver y aterrizar",
+            "label": "Ascendiendo para regresar",
+            "battery_soc": 0.1530099195144231,
+            "position": [
+              0.11427604256810536,
+              -3.4076545296710745,
+              1.2467828575345539
+            ],
+            "return_cause": "energy_reserve",
+            "return_budget": {
+              "distance_m": 5.59351292779533,
+              "estimated_seconds": 32.446237991947186,
+              "travel_wh": 2.9316403281391725,
+              "reserve_wh": 10.656,
+              "required_wh": 13.587640328139173,
+              "margin_wh": -0.00035947525839929995
+            }
+          }
+        ],
+        "accelerated": true,
+        "camera_frames_at_view": 0,
+        "route_index": 0,
+        "route_count": 1190,
+        "harvest_enabled": false,
+        "limits": [
+          "Potencia y bater\u00eda aproximadas, sin calibraci\u00f3n de un dron real.",
+          "Texturas sint\u00e9ticas/derivadas de entrenamiento no constituyen una nueva prueba independiente.",
+          "Asociaci\u00f3n de detecciones a geometr\u00eda conocida; no SLAM ni estimaci\u00f3n de profundidad aprendida.",
+          "Agarre con conector y corte sin resistencia; follaje visual sin colisiones."
+        ]
+      },
+      "model": {
+        "checkpoint": "detector-yolo11s.pt",
+        "sha256": "4a72c36e6aed0db8c5f39b637a918da28e4386644ceb52c7b9d8446efb9a9d33",
+        "names": [
+          "healthy",
+          "monilia",
+          "phytophthora"
+        ],
+        "device": "cuda:0",
+        "threshold": 0.74,
+        "precision": "FP32",
+        "actual_inference": true
+      },
+      "model_error": null,
+      "server_time": 1792310044.2298884,
+      "last_inference": {
+        "frame_id": "f909c4e9-5fb8-497f-ab03-611e41598704",
+        "sim_time": 8.032,
+        "phase_id": 0,
+        "width": 640,
+        "height": 323,
+        "predictions": [],
+        "inference_ms": 42.314444202929735,
+        "wall_time": 1792310027.665091,
+        "source": "trained_yolo11s_pixels_only"
+      }
+    },
+    {
+      "physics": {
+        "engine": "Webots R2025a / ODE",
+        "updated_at": 1792310044.697009,
+        "simulation_time": 38.32,
+        "mission_time": 12.672,
+        "last_command_id": "6cc0200944f14094b067d5ef7085736e",
+        "phase": "return_climb",
+        "phase_id": 4,
+        "label": "Ascendiendo para regresar",
+        "position": [
+          0.11579812203543512,
+          -3.419051650262748,
+          4.496867960011573
+        ],
+        "velocity": [
+          0.0008265706460385111,
+          -0.007749302599443973,
+          0.6453984456281918,
+          0.02358834593276156,
+          0.00037453231270666407,
+          -0.00045283685099030386
+        ],
+        "orientation": [
+          -0.02065568899204286,
+          0.9997861497941972,
+          -0.0009985949926206762,
+          -0.9996980137488544,
+          -0.020640547973458014,
+          0.013336007121732161,
+          0.013312543666013348,
+          0.0012737578461646094,
+          0.9999105728624385
+        ],
+        "look_at": [
+          0,
+          -9,
+          4.496867960011573
+        ],
+        "waypoint": [
+          0.11427604256810536,
+          -3.4076545296710745,
+          5.1
+        ],
+        "battery": {
+          "soc": 0.14772426267066427,
+          "remaining_wh": 13.117914525154989,
+          "nominal_wh": 88.80000000000001,
+          "voltage_v": 19.68089495726734,
+          "current_a": 13.794103321800593,
+          "power_w": 271.48029850604996,
+          "used_wh": 0.9671814456641166
+        },
+        "return_budget": {
+          "distance_m": 5.582149557966169,
+          "estimated_seconds": 27.43758453768759,
+          "travel_wh": 2.479089543674567,
+          "reserve_wh": 10.656,
+          "required_wh": 13.135089543674567,
+          "margin_wh": -0.015814000325159228
+        },
+        "return_reason": "Reserva para volver y aterrizar",
+        "return_cause": "energy_reserve",
+        "thrust_n": 23.57613932732093,
+        "wind_mps": [
+          0.4,
+          0.15,
+          0
+        ],
+        "plant_id": "cacao-0-17",
+        "visited": [],
+        "observed": {},
+        "removed": [],
+        "payload_attached": false,
+        "gripper_locked": false,
+        "payloads": {},
+        "outcomes": [],
+        "events": [
+          {
+            "phase": "idle",
+            "phase_id": 1,
+            "sim_time": 17.264,
+            "reason": "Escenario restablecido expl\u00edcitamente",
+            "label": "Listo en la base",
+            "battery_soc": 0.16,
+            "position": [
+              9.89759728972743e-18,
+              -9.0,
+              0.29952912010474125
+            ],
+            "return_cause": null,
+            "return_budget": {
+              "distance_m": 9.89759728972743e-18,
+              "estimated_seconds": 29.708416738300397,
+              "travel_wh": 2.6842678222597693,
+              "reserve_wh": 10.656,
+              "required_wh": 13.34026782225977,
+              "margin_wh": 0.8677321777402316
+            }
+          },
+          {
+            "phase": "takeoff",
+            "phase_id": 2,
+            "sim_time": 25.648,
+            "reason": null,
+            "label": "Despegando",
+            "battery_soc": 0.16,
+            "position": [
+              -2.190406536981931e-17,
+              -9.0,
+              0.2995291201047412
+            ],
+            "return_cause": null,
+            "return_budget": {
+              "distance_m": 2.190406536981931e-17,
+              "estimated_seconds": 29.708416738300397,
+              "travel_wh": 2.6842678222597693,
+              "reserve_wh": 10.656,
+              "required_wh": 13.34026782225977,
+              "margin_wh": 0.8677321777402316
+            }
+          },
+          {
+            "phase": "transit",
+            "phase_id": 3,
+            "sim_time": 29.12,
+            "reason": null,
+            "label": "Hacia el siguiente \u00e1rbol",
+            "battery_soc": 0.15665628063257112,
+            "position": [
+              0.001185035050319758,
+              -8.999833211599658,
+              2.0050503973418112
+            ],
+            "return_cause": null,
+            "return_budget": {
+              "distance_m": 0.0011967148536619517,
+              "estimated_seconds": 27.08543538638361,
+              "travel_wh": 2.447271535875359,
+              "reserve_wh": 10.656,
+              "required_wh": 13.10327153587536,
+              "margin_wh": 0.8078061842969575
+            }
+          },
+          {
+            "phase": "return_climb",
+            "phase_id": 4,
+            "sim_time": 32.944,
+            "reason": "Reserva para volver y aterrizar",
+            "label": "Ascendiendo para regresar",
+            "battery_soc": 0.1530099195144231,
+            "position": [
+              0.11427604256810536,
+              -3.4076545296710745,
+              1.2467828575345539
+            ],
+            "return_cause": "energy_reserve",
+            "return_budget": {
+              "distance_m": 5.59351292779533,
+              "estimated_seconds": 32.446237991947186,
+              "travel_wh": 2.9316403281391725,
+              "reserve_wh": 10.656,
+              "required_wh": 13.587640328139173,
+              "margin_wh": -0.00035947525839929995
+            }
+          }
+        ],
+        "accelerated": true,
+        "camera_frames_at_view": 0,
+        "route_index": 0,
+        "route_count": 1190,
+        "harvest_enabled": false,
+        "limits": [
+          "Potencia y bater\u00eda aproximadas, sin calibraci\u00f3n de un dron real.",
+          "Texturas sint\u00e9ticas/derivadas de entrenamiento no constituyen una nueva prueba independiente.",
+          "Asociaci\u00f3n de detecciones a geometr\u00eda conocida; no SLAM ni estimaci\u00f3n de profundidad aprendida.",
+          "Agarre con conector y corte sin resistencia; follaje visual sin colisiones."
+        ]
+      },
+      "model": {
+        "checkpoint": "detector-yolo11s.pt",
+        "sha256": "4a72c36e6aed0db8c5f39b637a918da28e4386644ceb52c7b9d8446efb9a9d33",
+        "names": [
+          "healthy",
+          "monilia",
+          "phytophthora"
+        ],
+        "device": "cuda:0",
+        "threshold": 0.74,
+        "precision": "FP32",
+        "actual_inference": true
+      },
+      "model_error": null,
+      "server_time": 1792310044.7416415,
+      "last_inference": {
+        "frame_id": "f909c4e9-5fb8-497f-ab03-611e41598704",
+        "sim_time": 8.032,
+        "phase_id": 0,
+        "width": 640,
+        "height": 323,
+        "predictions": [],
+        "inference_ms": 42.314444202929735,
+        "wall_time": 1792310027.665091,
+        "source": "trained_yolo11s_pixels_only"
+      }
+    },
+    {
+      "physics": {
+        "engine": "Webots R2025a / ODE",
+        "updated_at": 1792310045.3941538,
+        "simulation_time": 40.528,
+        "mission_time": 14.879999999999999,
+        "last_command_id": "6cc0200944f14094b067d5ef7085736e",
+        "phase": "return_transit",
+        "phase_id": 5,
+        "label": "Regresando a la base",
+        "position": [
+          0.06012076741116028,
+          -3.676964308422847,
+          5.127302587637813
+        ],
+        "velocity": [
+          -0.14629409170771504,
+          -0.9297530213822517,
+          -0.015681625967797153,
+          0.00986406898362737,
+          0.09522393004205076,
+          0.04777788828098107
+        ],
+        "orientation": [
+          -0.037336893299995955,
+          0.9993011627602547,
+          -0.0017727111180057273,
+          -0.9827981103319393,
+          -0.0370412513692844,
+          -0.18093042868729098,
+          -0.1808696512040483,
+          -0.005013162973679459,
+          0.9834942996633613
+        ],
+        "look_at": [
+          0,
+          -6,
+          2
+        ],
+        "waypoint": [
+          0,
+          -9,
+          5.1
+        ],
+        "battery": {
+          "soc": 0.14567872355228603,
+          "remaining_wh": 12.936270651443001,
+          "nominal_wh": 88.80000000000001,
+          "voltage_v": 19.657402146399185,
+          "current_a": 13.947756984911411,
+          "power_w": 274.1766680926518,
+          "used_wh": 1.1284780193657415
+        },
+        "return_budget": {
+          "distance_m": 5.32337519629026,
+          "estimated_seconds": 26.357612301275868,
+          "travel_wh": 2.3815099671972857,
+          "reserve_wh": 10.656,
+          "required_wh": 13.037509967197286,
+          "margin_wh": -0.09986313706510686
+        },
+        "return_reason": "Reserva para volver y aterrizar",
+        "return_cause": "energy_reserve",
+        "thrust_n": 23.781940060464954,
+        "wind_mps": [
+          0.4,
+          0.15,
+          0
+        ],
+        "plant_id": "cacao-0-17",
+        "visited": [],
+        "observed": {},
+        "removed": [],
+        "payload_attached": false,
+        "gripper_locked": false,
+        "payloads": {},
+        "outcomes": [],
+        "events": [
+          {
+            "phase": "idle",
+            "phase_id": 1,
+            "sim_time": 17.264,
+            "reason": "Escenario restablecido expl\u00edcitamente",
+            "label": "Listo en la base",
+            "battery_soc": 0.16,
+            "position": [
+              9.89759728972743e-18,
+              -9.0,
+              0.29952912010474125
+            ],
+            "return_cause": null,
+            "return_budget": {
+              "distance_m": 9.89759728972743e-18,
+              "estimated_seconds": 29.708416738300397,
+              "travel_wh": 2.6842678222597693,
+              "reserve_wh": 10.656,
+              "required_wh": 13.34026782225977,
+              "margin_wh": 0.8677321777402316
+            }
+          },
+          {
+            "phase": "takeoff",
+            "phase_id": 2,
+            "sim_time": 25.648,
+            "reason": null,
+            "label": "Despegando",
+            "battery_soc": 0.16,
+            "position": [
+              -2.190406536981931e-17,
+              -9.0,
+              0.2995291201047412
+            ],
+            "return_cause": null,
+            "return_budget": {
+              "distance_m": 2.190406536981931e-17,
+              "estimated_seconds": 29.708416738300397,
+              "travel_wh": 2.6842678222597693,
+              "reserve_wh": 10.656,
+              "required_wh": 13.34026782225977,
+              "margin_wh": 0.8677321777402316
+            }
+          },
+          {
+            "phase": "transit",
+            "phase_id": 3,
+            "sim_time": 29.12,
+            "reason": null,
+            "label": "Hacia el siguiente \u00e1rbol",
+            "battery_soc": 0.15665628063257112,
+            "position": [
+              0.001185035050319758,
+              -8.999833211599658,
+              2.0050503973418112
+            ],
+            "return_cause": null,
+            "return_budget": {
+              "distance_m": 0.0011967148536619517,
+              "estimated_seconds": 27.08543538638361,
+              "travel_wh": 2.447271535875359,
+              "reserve_wh": 10.656,
+              "required_wh": 13.10327153587536,
+              "margin_wh": 0.8078061842969575
+            }
+          },
+          {
+            "phase": "return_climb",
+            "phase_id": 4,
+            "sim_time": 32.944,
+            "reason": "Reserva para volver y aterrizar",
+            "label": "Ascendiendo para regresar",
+            "battery_soc": 0.1530099195144231,
+            "position": [
+              0.11427604256810536,
+              -3.4076545296710745,
+              1.2467828575345539
+            ],
+            "return_cause": "energy_reserve",
+            "return_budget": {
+              "distance_m": 5.59351292779533,
+              "estimated_seconds": 32.446237991947186,
+              "travel_wh": 2.9316403281391725,
+              "reserve_wh": 10.656,
+              "required_wh": 13.587640328139173,
+              "margin_wh": -0.00035947525839929995
+            }
+          },
+          {
+            "phase": "return_transit",
+            "phase_id": 5,
+            "sim_time": 39.776,
+            "reason": null,
+            "label": "Regresando a la base",
+            "battery_soc": 0.14639471664717035,
+            "position": [
+              0.11535351529907607,
+              -3.405564015020182,
+              5.1059348709384285
+            ],
+            "return_cause": "energy_reserve",
+            "return_budget": {
+              "distance_m": 5.5956251146345535,
+              "estimated_seconds": 26.528926329727344,
+              "travel_wh": 2.3969888376508957,
+              "reserve_wh": 10.656,
+              "required_wh": 13.052988837650897,
+              "margin_wh": -0.05313799938216768
+            }
+          }
+        ],
+        "accelerated": true,
+        "camera_frames_at_view": 0,
+        "route_index": 0,
+        "route_count": 1190,
+        "harvest_enabled": false,
+        "limits": [
+          "Potencia y bater\u00eda aproximadas, sin calibraci\u00f3n de un dron real.",
+          "Texturas sint\u00e9ticas/derivadas de entrenamiento no constituyen una nueva prueba independiente.",
+          "Asociaci\u00f3n de detecciones a geometr\u00eda conocida; no SLAM ni estimaci\u00f3n de profundidad aprendida.",
+          "Agarre con conector y corte sin resistencia; follaje visual sin colisiones."
+        ]
+      },
+      "model": {
+        "checkpoint": "detector-yolo11s.pt",
+        "sha256": "4a72c36e6aed0db8c5f39b637a918da28e4386644ceb52c7b9d8446efb9a9d33",
+        "names": [
+          "healthy",
+          "monilia",
+          "phytophthora"
+        ],
+        "device": "cuda:0",
+        "threshold": 0.74,
+        "precision": "FP32",
+        "actual_inference": true
+      },
+      "model_error": null,
+      "server_time": 1792310045.458678,
+      "last_inference": {
+        "frame_id": "f909c4e9-5fb8-497f-ab03-611e41598704",
+        "sim_time": 8.032,
+        "phase_id": 0,
+        "width": 640,
+        "height": 323,
+        "predictions": [],
+        "inference_ms": 42.314444202929735,
+        "wall_time": 1792310027.665091,
+        "source": "trained_yolo11s_pixels_only"
+      }
+    },
+    {
+      "physics": {
+        "engine": "Webots R2025a / ODE",
+        "updated_at": 1792310046.0862057,
+        "simulation_time": 42.992000000000004,
+        "mission_time": 17.344000000000005,
+        "last_command_id": "6cc0200944f14094b067d5ef7085736e",
+        "phase": "return_transit",
+        "phase_id": 5,
+        "label": "Regresando a la base",
+        "position": [
+          -0.004018653121700012,
+          -7.846155110055512,
+          5.098703673347677
+        ],
+        "velocity": [
+          -0.011078674381798945,
+          -1.7601673336363028,
+          0.003367522185483771,
+          -0.10617841277578093,
+          0.007736480364477484,
+          -0.05824075495438173
+        ],
+        "orientation": [
+          -0.006787924048384043,
+          -0.9999684768232142,
+          0.004119398860820818,
+          0.9999021510253936,
+          -0.006837747866852536,
+          -0.012203834598209347,
+          0.012231617305347138,
+          0.004036157079514604,
+          0.9999170450463004
+        ],
+        "look_at": [
+          0,
+          -6,
+          2
+        ],
+        "waypoint": [
+          0,
+          -9,
+          5.1
+        ],
+        "battery": {
+          "soc": 0.14330900820598497,
+          "remaining_wh": 12.725839928691467,
+          "nominal_wh": 88.80000000000001,
+          "voltage_v": 19.660356085762928,
+          "current_a": 13.770821836324654,
+          "power_w": 270.7392608957424,
+          "used_wh": 1.3148295196859965
+        },
+        "return_budget": {
+          "distance_m": 1.153851888079194,
+          "estimated_seconds": 23.1904601878322,
+          "travel_wh": 2.095345794222068,
+          "reserve_wh": 10.656,
+          "required_wh": 12.751345794222068,
+          "margin_wh": -0.024147144442752122
+        },
+        "return_reason": "Reserva para volver y aterrizar",
+        "return_cause": "energy_reserve",
+        "thrust_n": 23.51942239623727,
+        "wind_mps": [
+          0.4,
+          0.15,
+          0
+        ],
+        "plant_id": "cacao-0-17",
+        "visited": [],
+        "observed": {},
+        "removed": [],
+        "payload_attached": false,
+        "gripper_locked": false,
+        "payloads": {},
+        "outcomes": [],
+        "events": [
+          {
+            "phase": "idle",
+            "phase_id": 1,
+            "sim_time": 17.264,
+            "reason": "Escenario restablecido expl\u00edcitamente",
+            "label": "Listo en la base",
+            "battery_soc": 0.16,
+            "position": [
+              9.89759728972743e-18,
+              -9.0,
+              0.29952912010474125
+            ],
+            "return_cause": null,
+            "return_budget": {
+              "distance_m": 9.89759728972743e-18,
+              "estimated_seconds": 29.708416738300397,
+              "travel_wh": 2.6842678222597693,
+              "reserve_wh": 10.656,
+              "required_wh": 13.34026782225977,
+              "margin_wh": 0.8677321777402316
+            }
+          },
+          {
+            "phase": "takeoff",
+            "phase_id": 2,
+            "sim_time": 25.648,
+            "reason": null,
+            "label": "Despegando",
+            "battery_soc": 0.16,
+            "position": [
+              -2.190406536981931e-17,
+              -9.0,
+              0.2995291201047412
+            ],
+            "return_cause": null,
+            "return_budget": {
+              "distance_m": 2.190406536981931e-17,
+              "estimated_seconds": 29.708416738300397,
+              "travel_wh": 2.6842678222597693,
+              "reserve_wh": 10.656,
+              "required_wh": 13.34026782225977,
+              "margin_wh": 0.8677321777402316
+            }
+          },
+          {
+            "phase": "transit",
+            "phase_id": 3,
+            "sim_time": 29.12,
+            "reason": null,
+            "label": "Hacia el siguiente \u00e1rbol",
+            "battery_soc": 0.15665628063257112,
+            "position": [
+              0.001185035050319758,
+              -8.999833211599658,
+              2.0050503973418112
+            ],
+            "return_cause": null,
+            "return_budget": {
+              "distance_m": 0.0011967148536619517,
+              "estimated_seconds": 27.08543538638361,
+              "travel_wh": 2.447271535875359,
+              "reserve_wh": 10.656,
+              "required_wh": 13.10327153587536,
+              "margin_wh": 0.8078061842969575
+            }
+          },
+          {
+            "phase": "return_climb",
+            "phase_id": 4,
+            "sim_time": 32.944,
+            "reason": "Reserva para volver y aterrizar",
+            "label": "Ascendiendo para regresar",
+            "battery_soc": 0.1530099195144231,
+            "position": [
+              0.11427604256810536,
+              -3.4076545296710745,
+              1.2467828575345539
+            ],
+            "return_cause": "energy_reserve",
+            "return_budget": {
+              "distance_m": 5.59351292779533,
+              "estimated_seconds": 32.446237991947186,
+              "travel_wh": 2.9316403281391725,
+              "reserve_wh": 10.656,
+              "required_wh": 13.587640328139173,
+              "margin_wh": -0.00035947525839929995
+            }
+          },
+          {
+            "phase": "return_transit",
+            "phase_id": 5,
+            "sim_time": 39.776,
+            "reason": null,
+            "label": "Regresando a la base",
+            "battery_soc": 0.14639471664717035,
+            "position": [
+              0.11535351529907607,
+              -3.405564015020182,
+              5.1059348709384285
+            ],
+            "return_cause": "energy_reserve",
+            "return_budget": {
+              "distance_m": 5.5956251146345535,
+              "estimated_seconds": 26.528926329727344,
+              "travel_wh": 2.3969888376508957,
+              "reserve_wh": 10.656,
+              "required_wh": 13.052988837650897,
+              "margin_wh": -0.05313799938216768
+            }
+          }
+        ],
+        "accelerated": true,
+        "camera_frames_at_view": 0,
+        "route_index": 0,
+        "route_count": 1190,
+        "harvest_enabled": false,
+        "limits": [
+          "Potencia y bater\u00eda aproximadas, sin calibraci\u00f3n de un dron real.",
+          "Texturas sint\u00e9ticas/derivadas de entrenamiento no constituyen una nueva prueba independiente.",
+          "Asociaci\u00f3n de detecciones a geometr\u00eda conocida; no SLAM ni estimaci\u00f3n de profundidad aprendida.",
+          "Agarre con conector y corte sin resistencia; follaje visual sin colisiones."
+        ]
+      },
+      "model": {
+        "checkpoint": "detector-yolo11s.pt",
+        "sha256": "4a72c36e6aed0db8c5f39b637a918da28e4386644ceb52c7b9d8446efb9a9d33",
+        "names": [
+          "healthy",
+          "monilia",
+          "phytophthora"
+        ],
+        "device": "cuda:0",
+        "threshold": 0.74,
+        "precision": "FP32",
+        "actual_inference": true
+      },
+      "model_error": null,
+      "server_time": 1792310046.1194947,
+      "last_inference": {
+        "frame_id": "9cd971cf-46fe-433e-adab-dd3fefceeb91",
+        "sim_time": 38.608000000000004,
+        "phase_id": 4,
+        "width": 640,
+        "height": 323,
+        "predictions": [
+          {
+            "bbox": [
+              51.17059326171875,
+              144.34466552734375,
+              640.0,
+              323.0
+            ],
+            "class_id": 0,
+            "confidence": 0.18485257029533386
+          }
+        ],
+        "inference_ms": 65.44985785149038,
+        "wall_time": 1792310045.524845,
+        "source": "trained_yolo11s_pixels_only"
+      }
+    },
+    {
+      "physics": {
+        "engine": "Webots R2025a / ODE",
+        "updated_at": 1792310046.87084,
+        "simulation_time": 45.696,
+        "mission_time": 20.048,
+        "last_command_id": "6cc0200944f14094b067d5ef7085736e",
+        "phase": "landing",
+        "phase_id": 6,
+        "label": "Aterrizando",
+        "position": [
+          0.0008588942335636811,
+          -8.971967102005074,
+          4.937184407946496
+        ],
+        "velocity": [
+          0.00069668276609404,
+          -0.07424424629311888,
+          -0.500005072304426,
+          -0.10745936341747638,
+          -0.0008960856648599534,
+          2.7977505044471345e-05
+        ],
+        "orientation": [
+          -0.0002715545538636883,
+          -0.9999998818091073,
+          -0.0004032863697412506,
+          0.9999379677700418,
+          -0.00026704712713828023,
+          -0.011135048170103716,
+          0.011134939157575975,
+          -0.0004062851260265088,
+          0.9999379221043442
+        ],
+        "look_at": [
+          0,
+          -6,
+          1.6
+        ],
+        "waypoint": [
+          0,
+          -9,
+          0.34
+        ],
+        "battery": {
+          "soc": 0.1407578341612943,
+          "remaining_wh": 12.499295673522937,
+          "nominal_wh": 88.80000000000001,
+          "voltage_v": 19.70713445131786,
+          "current_a": 13.06741768123223,
+          "power_w": 257.52135717557184,
+          "used_wh": 1.515515565414409
+        },
+        "return_budget": {
+          "distance_m": 0.028046052650923567,
+          "estimated_seconds": 22.594596988801275,
+          "travel_wh": 2.041507300379835,
+          "reserve_wh": 10.656,
+          "required_wh": 12.697507300379836,
+          "margin_wh": -0.19692230831235058
+        },
+        "return_reason": "Reserva para volver y aterrizar",
+        "return_cause": "energy_reserve",
+        "thrust_n": 22.495931521635523,
+        "wind_mps": [
+          0.4,
+          0.15,
+          0
+        ],
+        "plant_id": "cacao-0-17",
+        "visited": [],
+        "observed": {},
+        "removed": [],
+        "payload_attached": false,
+        "gripper_locked": false,
+        "payloads": {},
+        "outcomes": [],
+        "events": [
+          {
+            "phase": "idle",
+            "phase_id": 1,
+            "sim_time": 17.264,
+            "reason": "Escenario restablecido expl\u00edcitamente",
+            "label": "Listo en la base",
+            "battery_soc": 0.16,
+            "position": [
+              9.89759728972743e-18,
+              -9.0,
+              0.29952912010474125
+            ],
+            "return_cause": null,
+            "return_budget": {
+              "distance_m": 9.89759728972743e-18,
+              "estimated_seconds": 29.708416738300397,
+              "travel_wh": 2.6842678222597693,
+              "reserve_wh": 10.656,
+              "required_wh": 13.34026782225977,
+              "margin_wh": 0.8677321777402316
+            }
+          },
+          {
+            "phase": "takeoff",
+            "phase_id": 2,
+            "sim_time": 25.648,
+            "reason": null,
+            "label": "Despegando",
+            "battery_soc": 0.16,
+            "position": [
+              -2.190406536981931e-17,
+              -9.0,
+              0.2995291201047412
+            ],
+            "return_cause": null,
+            "return_budget": {
+              "distance_m": 2.190406536981931e-17,
+              "estimated_seconds": 29.708416738300397,
+              "travel_wh": 2.6842678222597693,
+              "reserve_wh": 10.656,
+              "required_wh": 13.34026782225977,
+              "margin_wh": 0.8677321777402316
+            }
+          },
+          {
+            "phase": "transit",
+            "phase_id": 3,
+            "sim_time": 29.12,
+            "reason": null,
+            "label": "Hacia el siguiente \u00e1rbol",
+            "battery_soc": 0.15665628063257112,
+            "position": [
+              0.001185035050319758,
+              -8.999833211599658,
+              2.0050503973418112
+            ],
+            "return_cause": null,
+            "return_budget": {
+              "distance_m": 0.0011967148536619517,
+              "estimated_seconds": 27.08543538638361,
+              "travel_wh": 2.447271535875359,
+              "reserve_wh": 10.656,
+              "required_wh": 13.10327153587536,
+              "margin_wh": 0.8078061842969575
+            }
+          },
+          {
+            "phase": "return_climb",
+            "phase_id": 4,
+            "sim_time": 32.944,
+            "reason": "Reserva para volver y aterrizar",
+            "label": "Ascendiendo para regresar",
+            "battery_soc": 0.1530099195144231,
+            "position": [
+              0.11427604256810536,
+              -3.4076545296710745,
+              1.2467828575345539
+            ],
+            "return_cause": "energy_reserve",
+            "return_budget": {
+              "distance_m": 5.59351292779533,
+              "estimated_seconds": 32.446237991947186,
+              "travel_wh": 2.9316403281391725,
+              "reserve_wh": 10.656,
+              "required_wh": 13.587640328139173,
+              "margin_wh": -0.00035947525839929995
+            }
+          },
+          {
+            "phase": "return_transit",
+            "phase_id": 5,
+            "sim_time": 39.776,
+            "reason": null,
+            "label": "Regresando a la base",
+            "battery_soc": 0.14639471664717035,
+            "position": [
+              0.11535351529907607,
+              -3.405564015020182,
+              5.1059348709384285
+            ],
+            "return_cause": "energy_reserve",
+            "return_budget": {
+              "distance_m": 5.5956251146345535,
+              "estimated_seconds": 26.528926329727344,
+              "travel_wh": 2.3969888376508957,
+              "reserve_wh": 10.656,
+              "required_wh": 13.052988837650897,
+              "margin_wh": -0.05313799938216768
+            }
+          },
+          {
+            "phase": "landing",
+            "phase_id": 6,
+            "sim_time": 45.184,
+            "reason": null,
+            "label": "Aterrizando",
+            "battery_soc": 0.1411906486338054,
+            "position": [
+              0.0008276447881275324,
+              -8.968050806013965,
+              5.09351827425706
+            ],
+            "return_cause": "energy_reserve",
+            "return_budget": {
+              "distance_m": 0.03195991226916346,
+              "estimated_seconds": 22.357018743037163,
+              "travel_wh": 2.0200412072523823,
+              "reserve_wh": 10.656,
+              "required_wh": 12.676041207252382,
+              "margin_wh": -0.1383116085704632
+            }
+          }
+        ],
+        "accelerated": true,
+        "camera_frames_at_view": 0,
+        "route_index": 0,
+        "route_count": 1190,
+        "harvest_enabled": false,
+        "limits": [
+          "Potencia y bater\u00eda aproximadas, sin calibraci\u00f3n de un dron real.",
+          "Texturas sint\u00e9ticas/derivadas de entrenamiento no constituyen una nueva prueba independiente.",
+          "Asociaci\u00f3n de detecciones a geometr\u00eda conocida; no SLAM ni estimaci\u00f3n de profundidad aprendida.",
+          "Agarre con conector y corte sin resistencia; follaje visual sin colisiones."
+        ]
+      },
+      "model": {
+        "checkpoint": "detector-yolo11s.pt",
+        "sha256": "4a72c36e6aed0db8c5f39b637a918da28e4386644ceb52c7b9d8446efb9a9d33",
+        "names": [
+          "healthy",
+          "monilia",
+          "phytophthora"
+        ],
+        "device": "cuda:0",
+        "threshold": 0.74,
+        "precision": "FP32",
+        "actual_inference": true
+      },
+      "model_error": null,
+      "server_time": 1792310046.8921201,
+      "last_inference": {
+        "frame_id": "04cda360-405b-45ac-8b2a-4a97063fc832",
+        "sim_time": 42.192,
+        "phase_id": 5,
+        "width": 640,
+        "height": 323,
+        "predictions": [],
+        "inference_ms": 48.0063590221107,
+        "wall_time": 1792310046.4306462,
+        "source": "trained_yolo11s_pixels_only"
+      }
+    },
+    {
+      "physics": {
+        "engine": "Webots R2025a / ODE",
+        "updated_at": 1792310047.5646706,
+        "simulation_time": 48.160000000000004,
+        "mission_time": 22.512000000000004,
+        "last_command_id": "6cc0200944f14094b067d5ef7085736e",
+        "phase": "landing",
+        "phase_id": 6,
+        "label": "Aterrizando",
+        "position": [
+          0.0011578923326246405,
+          -8.999719752214471,
+          3.3932158095586984
+        ],
+        "velocity": [
+          4.824109508981569e-05,
+          -0.0052645193744749776,
+          -0.6456761212527047,
+          -0.0028484468990133383,
+          -2.994089455915186e-05,
+          1.464966039329019e-05
+        ],
+        "orientation": [
+          -0.00038266191628845073,
+          -0.9999998072500124,
+          -0.0004889476413981076,
+          0.9999993717958368,
+          -0.0003831767914007896,
+          0.0010533676844280155,
+          -0.0010535548347798012,
+          -0.0004885442505424838,
+          0.9999993256731354
+        ],
+        "look_at": [
+          0,
+          -6,
+          1.6
+        ],
+        "waypoint": [
+          0,
+          -9,
+          0.34
+        ],
+        "battery": {
+          "soc": 0.1384156212562247,
+          "remaining_wh": 12.291307167552755,
+          "nominal_wh": 88.80000000000001,
+          "voltage_v": 19.634147760620614,
+          "current_a": 13.785551856307436,
+          "power_w": 270.667562108438,
+          "used_wh": 1.6995966475050859
+        },
+        "return_budget": {
+          "distance_m": 0.0011913242527728809,
+          "estimated_seconds": 24.949792247714658,
+          "travel_wh": 2.2543081003797085,
+          "reserve_wh": 10.656,
+          "required_wh": 12.910308100379709,
+          "margin_wh": -0.6176407583771333
+        },
+        "return_reason": "Reserva para volver y aterrizar",
+        "return_cause": "energy_reserve",
+        "thrust_n": 23.513931348617422,
+        "wind_mps": [
+          0.4,
+          0.15,
+          0
+        ],
+        "plant_id": "cacao-0-17",
+        "visited": [],
+        "observed": {},
+        "removed": [],
+        "payload_attached": false,
+        "gripper_locked": false,
+        "payloads": {},
+        "outcomes": [],
+        "events": [
+          {
+            "phase": "idle",
+            "phase_id": 1,
+            "sim_time": 17.264,
+            "reason": "Escenario restablecido expl\u00edcitamente",
+            "label": "Listo en la base",
+            "battery_soc": 0.16,
+            "position": [
+              9.89759728972743e-18,
+              -9.0,
+              0.29952912010474125
+            ],
+            "return_cause": null,
+            "return_budget": {
+              "distance_m": 9.89759728972743e-18,
+              "estimated_seconds": 29.708416738300397,
+              "travel_wh": 2.6842678222597693,
+              "reserve_wh": 10.656,
+              "required_wh": 13.34026782225977,
+              "margin_wh": 0.8677321777402316
+            }
+          },
+          {
+            "phase": "takeoff",
+            "phase_id": 2,
+            "sim_time": 25.648,
+            "reason": null,
+            "label": "Despegando",
+            "battery_soc": 0.16,
+            "position": [
+              -2.190406536981931e-17,
+              -9.0,
+              0.2995291201047412
+            ],
+            "return_cause": null,
+            "return_budget": {
+              "distance_m": 2.190406536981931e-17,
+              "estimated_seconds": 29.708416738300397,
+              "travel_wh": 2.6842678222597693,
+              "reserve_wh": 10.656,
+              "required_wh": 13.34026782225977,
+              "margin_wh": 0.8677321777402316
+            }
+          },
+          {
+            "phase": "transit",
+            "phase_id": 3,
+            "sim_time": 29.12,
+            "reason": null,
+            "label": "Hacia el siguiente \u00e1rbol",
+            "battery_soc": 0.15665628063257112,
+            "position": [
+              0.001185035050319758,
+              -8.999833211599658,
+              2.0050503973418112
+            ],
+            "return_cause": null,
+            "return_budget": {
+              "distance_m": 0.0011967148536619517,
+              "estimated_seconds": 27.08543538638361,
+              "travel_wh": 2.447271535875359,
+              "reserve_wh": 10.656,
+              "required_wh": 13.10327153587536,
+              "margin_wh": 0.8078061842969575
+            }
+          },
+          {
+            "phase": "return_climb",
+            "phase_id": 4,
+            "sim_time": 32.944,
+            "reason": "Reserva para volver y aterrizar",
+            "label": "Ascendiendo para regresar",
+            "battery_soc": 0.1530099195144231,
+            "position": [
+              0.11427604256810536,
+              -3.4076545296710745,
+              1.2467828575345539
+            ],
+            "return_cause": "energy_reserve",
+            "return_budget": {
+              "distance_m": 5.59351292779533,
+              "estimated_seconds": 32.446237991947186,
+              "travel_wh": 2.9316403281391725,
+              "reserve_wh": 10.656,
+              "required_wh": 13.587640328139173,
+              "margin_wh": -0.00035947525839929995
+            }
+          },
+          {
+            "phase": "return_transit",
+            "phase_id": 5,
+            "sim_time": 39.776,
+            "reason": null,
+            "label": "Regresando a la base",
+            "battery_soc": 0.14639471664717035,
+            "position": [
+              0.11535351529907607,
+              -3.405564015020182,
+              5.1059348709384285
+            ],
+            "return_cause": "energy_reserve",
+            "return_budget": {
+              "distance_m": 5.5956251146345535,
+              "estimated_seconds": 26.528926329727344,
+              "travel_wh": 2.3969888376508957,
+              "reserve_wh": 10.656,
+              "required_wh": 13.052988837650897,
+              "margin_wh": -0.05313799938216768
+            }
+          },
+          {
+            "phase": "landing",
+            "phase_id": 6,
+            "sim_time": 45.184,
+            "reason": null,
+            "label": "Aterrizando",
+            "battery_soc": 0.1411906486338054,
+            "position": [
+              0.0008276447881275324,
+              -8.968050806013965,
+              5.09351827425706
+            ],
+            "return_cause": "energy_reserve",
+            "return_budget": {
+              "distance_m": 0.03195991226916346,
+              "estimated_seconds": 22.357018743037163,
+              "travel_wh": 2.0200412072523823,
+              "reserve_wh": 10.656,
+              "required_wh": 12.676041207252382,
+              "margin_wh": -0.1383116085704632
+            }
+          }
+        ],
+        "accelerated": true,
+        "camera_frames_at_view": 0,
+        "route_index": 0,
+        "route_count": 1190,
+        "harvest_enabled": false,
+        "limits": [
+          "Potencia y bater\u00eda aproximadas, sin calibraci\u00f3n de un dron real.",
+          "Texturas sint\u00e9ticas/derivadas de entrenamiento no constituyen una nueva prueba independiente.",
+          "Asociaci\u00f3n de detecciones a geometr\u00eda conocida; no SLAM ni estimaci\u00f3n de profundidad aprendida.",
+          "Agarre con conector y corte sin resistencia; follaje visual sin colisiones."
+        ]
+      },
+      "model": {
+        "checkpoint": "detector-yolo11s.pt",
+        "sha256": "4a72c36e6aed0db8c5f39b637a918da28e4386644ceb52c7b9d8446efb9a9d33",
+        "names": [
+          "healthy",
+          "monilia",
+          "phytophthora"
+        ],
+        "device": "cuda:0",
+        "threshold": 0.74,
+        "precision": "FP32",
+        "actual_inference": true
+      },
+      "model_error": null,
+      "server_time": 1792310047.6131608,
+      "last_inference": {
+        "frame_id": "04cda360-405b-45ac-8b2a-4a97063fc832",
+        "sim_time": 42.192,
+        "phase_id": 5,
+        "width": 640,
+        "height": 323,
+        "predictions": [],
+        "inference_ms": 48.0063590221107,
+        "wall_time": 1792310046.4306462,
+        "source": "trained_yolo11s_pixels_only"
+      }
+    },
+    {
+      "physics": {
+        "engine": "Webots R2025a / ODE",
+        "updated_at": 1792310048.7264369,
+        "simulation_time": 52.272,
+        "mission_time": 26.624,
+        "last_command_id": "6cc0200944f14094b067d5ef7085736e",
+        "phase": "landing",
+        "phase_id": 6,
+        "label": "Aterrizando",
+        "position": [
+          0.0011622522377899027,
+          -8.999830424743063,
+          0.7383313307290927
+        ],
+        "velocity": [
+          -4.6870966555097205e-06,
+          -4.3960645143226567e-05,
+          -0.634803607256378,
+          -3.935414334827947e-05,
+          3.012040656594453e-05,
+          -5.765544327170969e-08
+        ],
+        "orientation": [
+          -0.00038749593899538564,
+          -0.9999998095730683,
+          -0.0004803131522712892,
+          0.9999999229094153,
+          -0.00038746540947542463,
+          -6.36531216707461e-05,
+          6.346700481725629e-05,
+          -0.00048033778056981913,
+          0.9999998826237712
+        ],
+        "look_at": [
+          0,
+          -6,
+          1.6
+        ],
+        "waypoint": [
+          0,
+          -9,
+          0.34
+        ],
+        "battery": {
+          "soc": 0.13447507765155045,
+          "remaining_wh": 11.941386895457681,
+          "nominal_wh": 88.80000000000001,
+          "voltage_v": 19.57838308655441,
+          "current_a": 14.205174229041148,
+          "power_w": 278.1143428674178,
+          "used_wh": 2.008895546426012
+        },
+        "return_budget": {
+          "distance_m": 0.0011745578027550756,
+          "estimated_seconds": 29.034217332615,
+          "travel_wh": 2.6233513558452244,
+          "reserve_wh": 10.656,
+          "required_wh": 13.279351355845225,
+          "margin_wh": -1.3365628831969438
+        },
+        "return_reason": "Reserva para volver y aterrizar",
+        "return_cause": "energy_reserve",
+        "thrust_n": 24.080895302927498,
+        "wind_mps": [
+          0.4,
+          0.15,
+          0
+        ],
+        "plant_id": "cacao-0-17",
+        "visited": [],
+        "observed": {},
+        "removed": [],
+        "payload_attached": false,
+        "gripper_locked": false,
+        "payloads": {},
+        "outcomes": [],
+        "events": [
+          {
+            "phase": "idle",
+            "phase_id": 1,
+            "sim_time": 17.264,
+            "reason": "Escenario restablecido expl\u00edcitamente",
+            "label": "Listo en la base",
+            "battery_soc": 0.16,
+            "position": [
+              9.89759728972743e-18,
+              -9.0,
+              0.29952912010474125
+            ],
+            "return_cause": null,
+            "return_budget": {
+              "distance_m": 9.89759728972743e-18,
+              "estimated_seconds": 29.708416738300397,
+              "travel_wh": 2.6842678222597693,
+              "reserve_wh": 10.656,
+              "required_wh": 13.34026782225977,
+              "margin_wh": 0.8677321777402316
+            }
+          },
+          {
+            "phase": "takeoff",
+            "phase_id": 2,
+            "sim_time": 25.648,
+            "reason": null,
+            "label": "Despegando",
+            "battery_soc": 0.16,
+            "position": [
+              -2.190406536981931e-17,
+              -9.0,
+              0.2995291201047412
+            ],
+            "return_cause": null,
+            "return_budget": {
+              "distance_m": 2.190406536981931e-17,
+              "estimated_seconds": 29.708416738300397,
+              "travel_wh": 2.6842678222597693,
+              "reserve_wh": 10.656,
+              "required_wh": 13.34026782225977,
+              "margin_wh": 0.8677321777402316
+            }
+          },
+          {
+            "phase": "transit",
+            "phase_id": 3,
+            "sim_time": 29.12,
+            "reason": null,
+            "label": "Hacia el siguiente \u00e1rbol",
+            "battery_soc": 0.15665628063257112,
+            "position": [
+              0.001185035050319758,
+              -8.999833211599658,
+              2.0050503973418112
+            ],
+            "return_cause": null,
+            "return_budget": {
+              "distance_m": 0.0011967148536619517,
+              "estimated_seconds": 27.08543538638361,
+              "travel_wh": 2.447271535875359,
+              "reserve_wh": 10.656,
+              "required_wh": 13.10327153587536,
+              "margin_wh": 0.8078061842969575
+            }
+          },
+          {
+            "phase": "return_climb",
+            "phase_id": 4,
+            "sim_time": 32.944,
+            "reason": "Reserva para volver y aterrizar",
+            "label": "Ascendiendo para regresar",
+            "battery_soc": 0.1530099195144231,
+            "position": [
+              0.11427604256810536,
+              -3.4076545296710745,
+              1.2467828575345539
+            ],
+            "return_cause": "energy_reserve",
+            "return_budget": {
+              "distance_m": 5.59351292779533,
+              "estimated_seconds": 32.446237991947186,
+              "travel_wh": 2.9316403281391725,
+              "reserve_wh": 10.656,
+              "required_wh": 13.587640328139173,
+              "margin_wh": -0.00035947525839929995
+            }
+          },
+          {
+            "phase": "return_transit",
+            "phase_id": 5,
+            "sim_time": 39.776,
+            "reason": null,
+            "label": "Regresando a la base",
+            "battery_soc": 0.14639471664717035,
+            "position": [
+              0.11535351529907607,
+              -3.405564015020182,
+              5.1059348709384285
+            ],
+            "return_cause": "energy_reserve",
+            "return_budget": {
+              "distance_m": 5.5956251146345535,
+              "estimated_seconds": 26.528926329727344,
+              "travel_wh": 2.3969888376508957,
+              "reserve_wh": 10.656,
+              "required_wh": 13.052988837650897,
+              "margin_wh": -0.05313799938216768
+            }
+          },
+          {
+            "phase": "landing",
+            "phase_id": 6,
+            "sim_time": 45.184,
+            "reason": null,
+            "label": "Aterrizando",
+            "battery_soc": 0.1411906486338054,
+            "position": [
+              0.0008276447881275324,
+              -8.968050806013965,
+              5.09351827425706
+            ],
+            "return_cause": "energy_reserve",
+            "return_budget": {
+              "distance_m": 0.03195991226916346,
+              "estimated_seconds": 22.357018743037163,
+              "travel_wh": 2.0200412072523823,
+              "reserve_wh": 10.656,
+              "required_wh": 12.676041207252382,
+              "margin_wh": -0.1383116085704632
+            }
+          }
+        ],
+        "accelerated": true,
+        "camera_frames_at_view": 0,
+        "route_index": 0,
+        "route_count": 1190,
+        "harvest_enabled": false,
+        "limits": [
+          "Potencia y bater\u00eda aproximadas, sin calibraci\u00f3n de un dron real.",
+          "Texturas sint\u00e9ticas/derivadas de entrenamiento no constituyen una nueva prueba independiente.",
+          "Asociaci\u00f3n de detecciones a geometr\u00eda conocida; no SLAM ni estimaci\u00f3n de profundidad aprendida.",
+          "Agarre con conector y corte sin resistencia; follaje visual sin colisiones."
+        ]
+      },
+      "model": {
+        "checkpoint": "detector-yolo11s.pt",
+        "sha256": "4a72c36e6aed0db8c5f39b637a918da28e4386644ceb52c7b9d8446efb9a9d33",
+        "names": [
+          "healthy",
+          "monilia",
+          "phytophthora"
+        ],
+        "device": "cuda:0",
+        "threshold": 0.74,
+        "precision": "FP32",
+        "actual_inference": true
+      },
+      "model_error": null,
+      "server_time": 1792310048.739408,
+      "last_inference": {
+        "frame_id": "60eeaef6-0214-4c3f-a03c-c86d3fcaf799",
+        "sim_time": 45.696,
+        "phase_id": 6,
+        "width": 640,
+        "height": 323,
+        "predictions": [],
+        "inference_ms": 44.89525291137397,
+        "wall_time": 1792310047.6588557,
+        "source": "trained_yolo11s_pixels_only"
+      }
+    },
+    {
+      "physics": {
+        "engine": "Webots R2025a / ODE",
+        "updated_at": 1792310049.28216,
+        "simulation_time": 54.224000000000004,
+        "mission_time": 28.576000000000004,
+        "last_command_id": "6cc0200944f14094b067d5ef7085736e",
+        "phase": "charging",
+        "phase_id": 7,
+        "label": "Cargando en la base",
+        "position": [
+          0.0012505827602943885,
+          -8.999825223158338,
+          0.2995291205406958
+        ],
+        "velocity": [
+          2.0094492598446471e-10,
+          5.616623440322476e-11,
+          -8.212428855583915e-09,
+          -2.5468004644713127e-10,
+          9.109198806694508e-10,
+          -4.574499185160614e-18
+        ],
+        "orientation": [
+          -0.00038196031704848055,
+          -0.9999999270531554,
+          -1.6754437159131715e-08,
+          0.9999999270531554,
+          -0.00038196031704844347,
+          -2.2224066949846494e-09,
+          2.2160070027378243e-09,
+          -1.6755284808114217e-08,
+          1.0
+        ],
+        "look_at": [
+          0,
+          -6,
+          1.6
+        ],
+        "waypoint": [
+          0,
+          -9,
+          0.34
+        ],
+        "battery": {
+          "soc": 0.13375553491986694,
+          "remaining_wh": 11.877491500884187,
+          "nominal_wh": 88.80000000000001,
+          "voltage_v": 21.12215322809132,
+          "current_a": -4,
+          "power_w": -84.48861291236528,
+          "used_wh": 2.0853625579430286
+        },
+        "return_budget": {
+          "distance_m": 0.0012627367836279392,
+          "estimated_seconds": 29.70936379021742,
+          "travel_wh": 2.684353391982628,
+          "reserve_wh": 10.656,
+          "required_wh": 13.340353391982628,
+          "margin_wh": -1.4632328777651082
+        },
+        "return_reason": "Reserva para volver y aterrizar",
+        "return_cause": "energy_reserve",
+        "thrust_n": 0,
+        "wind_mps": [
+          0.4,
+          0.15,
+          0
+        ],
+        "plant_id": "cacao-0-17",
+        "visited": [],
+        "observed": {},
+        "removed": [],
+        "payload_attached": false,
+        "gripper_locked": false,
+        "payloads": {},
+        "outcomes": [],
+        "events": [
+          {
+            "phase": "idle",
+            "phase_id": 1,
+            "sim_time": 17.264,
+            "reason": "Escenario restablecido expl\u00edcitamente",
+            "label": "Listo en la base",
+            "battery_soc": 0.16,
+            "position": [
+              9.89759728972743e-18,
+              -9.0,
+              0.29952912010474125
+            ],
+            "return_cause": null,
+            "return_budget": {
+              "distance_m": 9.89759728972743e-18,
+              "estimated_seconds": 29.708416738300397,
+              "travel_wh": 2.6842678222597693,
+              "reserve_wh": 10.656,
+              "required_wh": 13.34026782225977,
+              "margin_wh": 0.8677321777402316
+            }
+          },
+          {
+            "phase": "takeoff",
+            "phase_id": 2,
+            "sim_time": 25.648,
+            "reason": null,
+            "label": "Despegando",
+            "battery_soc": 0.16,
+            "position": [
+              -2.190406536981931e-17,
+              -9.0,
+              0.2995291201047412
+            ],
+            "return_cause": null,
+            "return_budget": {
+              "distance_m": 2.190406536981931e-17,
+              "estimated_seconds": 29.708416738300397,
+              "travel_wh": 2.6842678222597693,
+              "reserve_wh": 10.656,
+              "required_wh": 13.34026782225977,
+              "margin_wh": 0.8677321777402316
+            }
+          },
+          {
+            "phase": "transit",
+            "phase_id": 3,
+            "sim_time": 29.12,
+            "reason": null,
+            "label": "Hacia el siguiente \u00e1rbol",
+            "battery_soc": 0.15665628063257112,
+            "position": [
+              0.001185035050319758,
+              -8.999833211599658,
+              2.0050503973418112
+            ],
+            "return_cause": null,
+            "return_budget": {
+              "distance_m": 0.0011967148536619517,
+              "estimated_seconds": 27.08543538638361,
+              "travel_wh": 2.447271535875359,
+              "reserve_wh": 10.656,
+              "required_wh": 13.10327153587536,
+              "margin_wh": 0.8078061842969575
+            }
+          },
+          {
+            "phase": "return_climb",
+            "phase_id": 4,
+            "sim_time": 32.944,
+            "reason": "Reserva para volver y aterrizar",
+            "label": "Ascendiendo para regresar",
+            "battery_soc": 0.1530099195144231,
+            "position": [
+              0.11427604256810536,
+              -3.4076545296710745,
+              1.2467828575345539
+            ],
+            "return_cause": "energy_reserve",
+            "return_budget": {
+              "distance_m": 5.59351292779533,
+              "estimated_seconds": 32.446237991947186,
+              "travel_wh": 2.9316403281391725,
+              "reserve_wh": 10.656,
+              "required_wh": 13.587640328139173,
+              "margin_wh": -0.00035947525839929995
+            }
+          },
+          {
+            "phase": "return_transit",
+            "phase_id": 5,
+            "sim_time": 39.776,
+            "reason": null,
+            "label": "Regresando a la base",
+            "battery_soc": 0.14639471664717035,
+            "position": [
+              0.11535351529907607,
+              -3.405564015020182,
+              5.1059348709384285
+            ],
+            "return_cause": "energy_reserve",
+            "return_budget": {
+              "distance_m": 5.5956251146345535,
+              "estimated_seconds": 26.528926329727344,
+              "travel_wh": 2.3969888376508957,
+              "reserve_wh": 10.656,
+              "required_wh": 13.052988837650897,
+              "margin_wh": -0.05313799938216768
+            }
+          },
+          {
+            "phase": "landing",
+            "phase_id": 6,
+            "sim_time": 45.184,
+            "reason": null,
+            "label": "Aterrizando",
+            "battery_soc": 0.1411906486338054,
+            "position": [
+              0.0008276447881275324,
+              -8.968050806013965,
+              5.09351827425706
+            ],
+            "return_cause": "energy_reserve",
+            "return_budget": {
+              "distance_m": 0.03195991226916346,
+              "estimated_seconds": 22.357018743037163,
+              "travel_wh": 2.0200412072523823,
+              "reserve_wh": 10.656,
+              "required_wh": 12.676041207252382,
+              "margin_wh": -0.1383116085704632
+            }
+          },
+          {
+            "phase": "charging",
+            "phase_id": 7,
+            "sim_time": 53.232,
+            "reason": "Contacto con la base; carga CC/CV aproximada",
+            "label": "Cargando en la base",
+            "battery_soc": 0.13349651269764454,
+            "position": [
+              0.001146957813547741,
+              -8.999841564364282,
+              0.3558171201754153
+            ],
+            "return_cause": "energy_reserve",
+            "return_budget": {
+              "distance_m": 0.0011578489006445257,
+              "estimated_seconds": 29.622688201790226,
+              "travel_wh": 2.6765219247240384,
+              "reserve_wh": 10.656,
+              "required_wh": 13.33252192472404,
+              "margin_wh": -1.478031597173203
+            }
+          }
+        ],
+        "accelerated": true,
+        "camera_frames_at_view": 0,
+        "route_index": 0,
+        "route_count": 1190,
+        "harvest_enabled": false,
+        "limits": [
+          "Potencia y bater\u00eda aproximadas, sin calibraci\u00f3n de un dron real.",
+          "Texturas sint\u00e9ticas/derivadas de entrenamiento no constituyen una nueva prueba independiente.",
+          "Asociaci\u00f3n de detecciones a geometr\u00eda conocida; no SLAM ni estimaci\u00f3n de profundidad aprendida.",
+          "Agarre con conector y corte sin resistencia; follaje visual sin colisiones."
+        ]
+      },
+      "model": {
+        "checkpoint": "detector-yolo11s.pt",
+        "sha256": "4a72c36e6aed0db8c5f39b637a918da28e4386644ceb52c7b9d8446efb9a9d33",
+        "names": [
+          "healthy",
+          "monilia",
+          "phytophthora"
+        ],
+        "device": "cuda:0",
+        "threshold": 0.74,
+        "precision": "FP32",
+        "actual_inference": true
+      },
+      "model_error": null,
+      "server_time": 1792310049.2938504,
+      "last_inference": {
+        "frame_id": "5fa22bc3-9d1a-472c-8077-403ec91f504e",
+        "sim_time": 48.672000000000004,
+        "phase_id": 6,
+        "width": 640,
+        "height": 323,
+        "predictions": [],
+        "inference_ms": 53.494765888899565,
+        "wall_time": 1792310048.7950962,
+        "source": "trained_yolo11s_pixels_only"
+      }
+    },
+    {
+      "physics": {
+        "engine": "Webots R2025a / ODE",
+        "updated_at": 1792310049.8130484,
+        "simulation_time": 56.08,
+        "mission_time": 30.432,
+        "last_command_id": "6cc0200944f14094b067d5ef7085736e",
+        "phase": "charging",
+        "phase_id": 7,
+        "label": "Cargando en la base",
+        "position": [
+          0.0012505827297843086,
+          -8.999825223163555,
+          0.29952912003553145
+        ],
+        "velocity": [
+          -1.2123027756167133e-10,
+          -2.0995077509658698e-11,
+          -2.2178341248278537e-10,
+          9.483162763145124e-11,
+          -5.465296704687423e-10,
+          -1.386355273659054e-17
+        ],
+        "orientation": [
+          -0.0003819603170484797,
+          -0.9999999270531554,
+          -1.6891976282614984e-08,
+          0.9999999270531554,
+          -0.0003819603170484419,
+          -2.2459596701135284e-09,
+          2.2395074416613757e-09,
+          -1.689283291786629e-08,
+          1.0
+        ],
+        "look_at": [
+          0,
+          -6,
+          1.6
+        ],
+        "waypoint": [
+          0,
+          -9,
+          0.34
+        ],
+        "battery": {
+          "soc": 0.1342401571420895,
+          "remaining_wh": 11.920525954217549,
+          "nominal_wh": 88.80000000000001,
+          "voltage_v": 21.124624801424655,
+          "current_a": -4,
+          "power_w": -84.49849920569862,
+          "used_wh": 2.0853625579430286
+        },
+        "return_budget": {
+          "distance_m": 0.0012627367526894101,
+          "estimated_seconds": 29.70936379097139,
+          "travel_wh": 2.684353392050752,
+          "reserve_wh": 10.656,
+          "required_wh": 13.340353392050753,
+          "margin_wh": -1.4201984244998709
+        },
+        "return_reason": "Reserva para volver y aterrizar",
+        "return_cause": "energy_reserve",
+        "thrust_n": 0,
+        "wind_mps": [
+          0.4,
+          0.15,
+          0
+        ],
+        "plant_id": "cacao-0-17",
+        "visited": [],
+        "observed": {},
+        "removed": [],
+        "payload_attached": false,
+        "gripper_locked": false,
+        "payloads": {},
+        "outcomes": [],
+        "events": [
+          {
+            "phase": "idle",
+            "phase_id": 1,
+            "sim_time": 17.264,
+            "reason": "Escenario restablecido expl\u00edcitamente",
+            "label": "Listo en la base",
+            "battery_soc": 0.16,
+            "position": [
+              9.89759728972743e-18,
+              -9.0,
+              0.29952912010474125
+            ],
+            "return_cause": null,
+            "return_budget": {
+              "distance_m": 9.89759728972743e-18,
+              "estimated_seconds": 29.708416738300397,
+              "travel_wh": 2.6842678222597693,
+              "reserve_wh": 10.656,
+              "required_wh": 13.34026782225977,
+              "margin_wh": 0.8677321777402316
+            }
+          },
+          {
+            "phase": "takeoff",
+            "phase_id": 2,
+            "sim_time": 25.648,
+            "reason": null,
+            "label": "Despegando",
+            "battery_soc": 0.16,
+            "position": [
+              -2.190406536981931e-17,
+              -9.0,
+              0.2995291201047412
+            ],
+            "return_cause": null,
+            "return_budget": {
+              "distance_m": 2.190406536981931e-17,
+              "estimated_seconds": 29.708416738300397,
+              "travel_wh": 2.6842678222597693,
+              "reserve_wh": 10.656,
+              "required_wh": 13.34026782225977,
+              "margin_wh": 0.8677321777402316
+            }
+          },
+          {
+            "phase": "transit",
+            "phase_id": 3,
+            "sim_time": 29.12,
+            "reason": null,
+            "label": "Hacia el siguiente \u00e1rbol",
+            "battery_soc": 0.15665628063257112,
+            "position": [
+              0.001185035050319758,
+              -8.999833211599658,
+              2.0050503973418112
+            ],
+            "return_cause": null,
+            "return_budget": {
+              "distance_m": 0.0011967148536619517,
+              "estimated_seconds": 27.08543538638361,
+              "travel_wh": 2.447271535875359,
+              "reserve_wh": 10.656,
+              "required_wh": 13.10327153587536,
+              "margin_wh": 0.8078061842969575
+            }
+          },
+          {
+            "phase": "return_climb",
+            "phase_id": 4,
+            "sim_time": 32.944,
+            "reason": "Reserva para volver y aterrizar",
+            "label": "Ascendiendo para regresar",
+            "battery_soc": 0.1530099195144231,
+            "position": [
+              0.11427604256810536,
+              -3.4076545296710745,
+              1.2467828575345539
+            ],
+            "return_cause": "energy_reserve",
+            "return_budget": {
+              "distance_m": 5.59351292779533,
+              "estimated_seconds": 32.446237991947186,
+              "travel_wh": 2.9316403281391725,
+              "reserve_wh": 10.656,
+              "required_wh": 13.587640328139173,
+              "margin_wh": -0.00035947525839929995
+            }
+          },
+          {
+            "phase": "return_transit",
+            "phase_id": 5,
+            "sim_time": 39.776,
+            "reason": null,
+            "label": "Regresando a la base",
+            "battery_soc": 0.14639471664717035,
+            "position": [
+              0.11535351529907607,
+              -3.405564015020182,
+              5.1059348709384285
+            ],
+            "return_cause": "energy_reserve",
+            "return_budget": {
+              "distance_m": 5.5956251146345535,
+              "estimated_seconds": 26.528926329727344,
+              "travel_wh": 2.3969888376508957,
+              "reserve_wh": 10.656,
+              "required_wh": 13.052988837650897,
+              "margin_wh": -0.05313799938216768
+            }
+          },
+          {
+            "phase": "landing",
+            "phase_id": 6,
+            "sim_time": 45.184,
+            "reason": null,
+            "label": "Aterrizando",
+            "battery_soc": 0.1411906486338054,
+            "position": [
+              0.0008276447881275324,
+              -8.968050806013965,
+              5.09351827425706
+            ],
+            "return_cause": "energy_reserve",
+            "return_budget": {
+              "distance_m": 0.03195991226916346,
+              "estimated_seconds": 22.357018743037163,
+              "travel_wh": 2.0200412072523823,
+              "reserve_wh": 10.656,
+              "required_wh": 12.676041207252382,
+              "margin_wh": -0.1383116085704632
+            }
+          },
+          {
+            "phase": "charging",
+            "phase_id": 7,
+            "sim_time": 53.232,
+            "reason": "Contacto con la base; carga CC/CV aproximada",
+            "label": "Cargando en la base",
+            "battery_soc": 0.13349651269764454,
+            "position": [
+              0.001146957813547741,
+              -8.999841564364282,
+              0.3558171201754153
+            ],
+            "return_cause": "energy_reserve",
+            "return_budget": {
+              "distance_m": 0.0011578489006445257,
+              "estimated_seconds": 29.622688201790226,
+              "travel_wh": 2.6765219247240384,
+              "reserve_wh": 10.656,
+              "required_wh": 13.33252192472404,
+              "margin_wh": -1.478031597173203
+            }
+          }
+        ],
+        "accelerated": true,
+        "camera_frames_at_view": 0,
+        "route_index": 0,
+        "route_count": 1190,
+        "harvest_enabled": false,
+        "limits": [
+          "Potencia y bater\u00eda aproximadas, sin calibraci\u00f3n de un dron real.",
+          "Texturas sint\u00e9ticas/derivadas de entrenamiento no constituyen una nueva prueba independiente.",
+          "Asociaci\u00f3n de detecciones a geometr\u00eda conocida; no SLAM ni estimaci\u00f3n de profundidad aprendida.",
+          "Agarre con conector y corte sin resistencia; follaje visual sin colisiones."
+        ]
+      },
+      "model": {
+        "checkpoint": "detector-yolo11s.pt",
+        "sha256": "4a72c36e6aed0db8c5f39b637a918da28e4386644ceb52c7b9d8446efb9a9d33",
+        "names": [
+          "healthy",
+          "monilia",
+          "phytophthora"
+        ],
+        "device": "cuda:0",
+        "threshold": 0.74,
+        "precision": "FP32",
+        "actual_inference": true
+      },
+      "model_error": null,
+      "server_time": 1792310049.8617883,
+      "last_inference": {
+        "frame_id": "a76aef59-c0e3-4404-8b7f-d09bfec0ba01",
+        "sim_time": 52.544000000000004,
+        "phase_id": 6,
+        "width": 640,
+        "height": 323,
+        "predictions": [],
+        "inference_ms": 42.30561386793852,
+        "wall_time": 1792310049.355893,
+        "source": "trained_yolo11s_pixels_only"
+      }
+    }
+  ],
+  "final": {
+    "physics": {
+      "engine": "Webots R2025a / ODE",
+      "updated_at": 1792310049.8130484,
+      "simulation_time": 56.08,
+      "mission_time": 30.432,
+      "last_command_id": "6cc0200944f14094b067d5ef7085736e",
+      "phase": "charging",
+      "phase_id": 7,
+      "label": "Cargando en la base",
+      "position": [
+        0.0012505827297843086,
+        -8.999825223163555,
+        0.29952912003553145
+      ],
+      "velocity": [
+        -1.2123027756167133e-10,
+        -2.0995077509658698e-11,
+        -2.2178341248278537e-10,
+        9.483162763145124e-11,
+        -5.465296704687423e-10,
+        -1.386355273659054e-17
+      ],
+      "orientation": [
+        -0.0003819603170484797,
+        -0.9999999270531554,
+        -1.6891976282614984e-08,
+        0.9999999270531554,
+        -0.0003819603170484419,
+        -2.2459596701135284e-09,
+        2.2395074416613757e-09,
+        -1.689283291786629e-08,
+        1.0
+      ],
+      "look_at": [
+        0,
+        -6,
+        1.6
+      ],
+      "waypoint": [
+        0,
+        -9,
+        0.34
+      ],
+      "battery": {
+        "soc": 0.1342401571420895,
+        "remaining_wh": 11.920525954217549,
+        "nominal_wh": 88.80000000000001,
+        "voltage_v": 21.124624801424655,
+        "current_a": -4,
+        "power_w": -84.49849920569862,
+        "used_wh": 2.0853625579430286
+      },
+      "return_budget": {
+        "distance_m": 0.0012627367526894101,
+        "estimated_seconds": 29.70936379097139,
+        "travel_wh": 2.684353392050752,
+        "reserve_wh": 10.656,
+        "required_wh": 13.340353392050753,
+        "margin_wh": -1.4201984244998709
+      },
+      "return_reason": "Reserva para volver y aterrizar",
+      "return_cause": "energy_reserve",
+      "thrust_n": 0,
+      "wind_mps": [
+        0.4,
+        0.15,
+        0
+      ],
+      "plant_id": "cacao-0-17",
+      "visited": [],
+      "observed": {},
+      "removed": [],
+      "payload_attached": false,
+      "gripper_locked": false,
+      "payloads": {},
+      "outcomes": [],
+      "events": [
+        {
+          "phase": "idle",
+          "phase_id": 1,
+          "sim_time": 17.264,
+          "reason": "Escenario restablecido expl\u00edcitamente",
+          "label": "Listo en la base",
+          "battery_soc": 0.16,
+          "position": [
+            9.89759728972743e-18,
+            -9.0,
+            0.29952912010474125
+          ],
+          "return_cause": null,
+          "return_budget": {
+            "distance_m": 9.89759728972743e-18,
+            "estimated_seconds": 29.708416738300397,
+            "travel_wh": 2.6842678222597693,
+            "reserve_wh": 10.656,
+            "required_wh": 13.34026782225977,
+            "margin_wh": 0.8677321777402316
+          }
+        },
+        {
+          "phase": "takeoff",
+          "phase_id": 2,
+          "sim_time": 25.648,
+          "reason": null,
+          "label": "Despegando",
+          "battery_soc": 0.16,
+          "position": [
+            -2.190406536981931e-17,
+            -9.0,
+            0.2995291201047412
+          ],
+          "return_cause": null,
+          "return_budget": {
+            "distance_m": 2.190406536981931e-17,
+            "estimated_seconds": 29.708416738300397,
+            "travel_wh": 2.6842678222597693,
+            "reserve_wh": 10.656,
+            "required_wh": 13.34026782225977,
+            "margin_wh": 0.8677321777402316
+          }
+        },
+        {
+          "phase": "transit",
+          "phase_id": 3,
+          "sim_time": 29.12,
+          "reason": null,
+          "label": "Hacia el siguiente \u00e1rbol",
+          "battery_soc": 0.15665628063257112,
+          "position": [
+            0.001185035050319758,
+            -8.999833211599658,
+            2.0050503973418112
+          ],
+          "return_cause": null,
+          "return_budget": {
+            "distance_m": 0.0011967148536619517,
+            "estimated_seconds": 27.08543538638361,
+            "travel_wh": 2.447271535875359,
+            "reserve_wh": 10.656,
+            "required_wh": 13.10327153587536,
+            "margin_wh": 0.8078061842969575
+          }
+        },
+        {
+          "phase": "return_climb",
+          "phase_id": 4,
+          "sim_time": 32.944,
+          "reason": "Reserva para volver y aterrizar",
+          "label": "Ascendiendo para regresar",
+          "battery_soc": 0.1530099195144231,
+          "position": [
+            0.11427604256810536,
+            -3.4076545296710745,
+            1.2467828575345539
+          ],
+          "return_cause": "energy_reserve",
+          "return_budget": {
+            "distance_m": 5.59351292779533,
+            "estimated_seconds": 32.446237991947186,
+            "travel_wh": 2.9316403281391725,
+            "reserve_wh": 10.656,
+            "required_wh": 13.587640328139173,
+            "margin_wh": -0.00035947525839929995
+          }
+        },
+        {
+          "phase": "return_transit",
+          "phase_id": 5,
+          "sim_time": 39.776,
+          "reason": null,
+          "label": "Regresando a la base",
+          "battery_soc": 0.14639471664717035,
+          "position": [
+            0.11535351529907607,
+            -3.405564015020182,
+            5.1059348709384285
+          ],
+          "return_cause": "energy_reserve",
+          "return_budget": {
+            "distance_m": 5.5956251146345535,
+            "estimated_seconds": 26.528926329727344,
+            "travel_wh": 2.3969888376508957,
+            "reserve_wh": 10.656,
+            "required_wh": 13.052988837650897,
+            "margin_wh": -0.05313799938216768
+          }
+        },
+        {
+          "phase": "landing",
+          "phase_id": 6,
+          "sim_time": 45.184,
+          "reason": null,
+          "label": "Aterrizando",
+          "battery_soc": 0.1411906486338054,
+          "position": [
+            0.0008276447881275324,
+            -8.968050806013965,
+            5.09351827425706
+          ],
+          "return_cause": "energy_reserve",
+          "return_budget": {
+            "distance_m": 0.03195991226916346,
+            "estimated_seconds": 22.357018743037163,
+            "travel_wh": 2.0200412072523823,
+            "reserve_wh": 10.656,
+            "required_wh": 12.676041207252382,
+            "margin_wh": -0.1383116085704632
+          }
+        },
+        {
+          "phase": "charging",
+          "phase_id": 7,
+          "sim_time": 53.232,
+          "reason": "Contacto con la base; carga CC/CV aproximada",
+          "label": "Cargando en la base",
+          "battery_soc": 0.13349651269764454,
+          "position": [
+            0.001146957813547741,
+            -8.999841564364282,
+            0.3558171201754153
+          ],
+          "return_cause": "energy_reserve",
+          "return_budget": {
+            "distance_m": 0.0011578489006445257,
+            "estimated_seconds": 29.622688201790226,
+            "travel_wh": 2.6765219247240384,
+            "reserve_wh": 10.656,
+            "required_wh": 13.33252192472404,
+            "margin_wh": -1.478031597173203
+          }
+        }
+      ],
+      "accelerated": true,
+      "camera_frames_at_view": 0,
+      "route_index": 0,
+      "route_count": 1190,
+      "harvest_enabled": false,
+      "limits": [
+        "Potencia y bater\u00eda aproximadas, sin calibraci\u00f3n de un dron real.",
+        "Texturas sint\u00e9ticas/derivadas de entrenamiento no constituyen una nueva prueba independiente.",
+        "Asociaci\u00f3n de detecciones a geometr\u00eda conocida; no SLAM ni estimaci\u00f3n de profundidad aprendida.",
+        "Agarre con conector y corte sin resistencia; follaje visual sin colisiones."
+      ]
+    },
+    "model": {
+      "checkpoint": "detector-yolo11s.pt",
+      "sha256": "4a72c36e6aed0db8c5f39b637a918da28e4386644ceb52c7b9d8446efb9a9d33",
+      "names": [
+        "healthy",
+        "monilia",
+        "phytophthora"
+      ],
+      "device": "cuda:0",
+      "threshold": 0.74,
+      "precision": "FP32",
+      "actual_inference": true
+    },
+    "model_error": null,
+    "server_time": 1792310049.8617883,
+    "last_inference": {
+      "frame_id": "a76aef59-c0e3-4404-8b7f-d09bfec0ba01",
+      "sim_time": 52.544000000000004,
+      "phase_id": 6,
+      "width": 640,
+      "height": 323,
+      "predictions": [],
+      "inference_ms": 42.30561386793852,
+      "wall_time": 1792310049.355893,
+      "source": "trained_yolo11s_pixels_only"
+    }
+  }
+}

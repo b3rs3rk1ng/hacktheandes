@@ -1,0 +1,322 @@
+{
+  "data": {
+    "id": "10.17632/9zgkwwv9j8",
+    "type": "dois",
+    "attributes": {
+      "doi": "10.17632/9zgkwwv9j8",
+      "prefix": "10.17632",
+      "suffix": "9zgkwwv9j8",
+      "identifiers": [],
+      "alternateIdentifiers": [],
+      "creators": [
+        {
+          "name": "FEBRIANTONO, ALDIKI",
+          "nameType": "Personal",
+          "givenName": "ALDIKI",
+          "familyName": "FEBRIANTONO",
+          "affiliation": [],
+          "nameIdentifiers": []
+        },
+        {
+          "name": "Girsang, Abba Suganda  ",
+          "nameType": "Personal",
+          "givenName": "Abba Suganda  ",
+          "familyName": "Girsang",
+          "affiliation": [],
+          "nameIdentifiers": []
+        },
+        {
+          "name": "Suharjito, Suharjito",
+          "nameType": "Personal",
+          "givenName": "Suharjito",
+          "familyName": "Suharjito",
+          "affiliation": [],
+          "nameIdentifiers": []
+        },
+        {
+          "name": "Anggreainy, Maria Susan  ",
+          "nameType": "Personal",
+          "givenName": "Maria Susan  ",
+          "familyName": "Anggreainy",
+          "affiliation": [],
+          "nameIdentifiers": []
+        }
+      ],
+      "titles": [
+        {
+          "title": "Manalagi Apple Disease Dataset"
+        }
+      ],
+      "publisher": "Mendeley Data",
+      "container": {},
+      "publicationYear": 2026,
+      "subjects": [
+        {
+          "subject": "Computer Vision"
+        },
+        {
+          "subject": "Image Classification"
+        },
+        {
+          "subject": "Plant Diseases"
+        },
+        {
+          "subject": "Deep Learning"
+        }
+      ],
+      "contributors": [
+        {
+          "name": "Bina Nusantara University",
+          "nameType": "Organizational",
+          "contributorType": "Other",
+          "nameIdentifiers": [
+            {
+              "schemeUri": "https://ror.org",
+              "nameIdentifier": "https://ror.org/03zmf4s77",
+              "nameIdentifierScheme": "ROR"
+            }
+          ],
+          "affiliation": []
+        }
+      ],
+      "dates": [
+        {
+          "date": "2026-07-13T04:15:52Z",
+          "dateType": "Issued"
+        }
+      ],
+      "language": null,
+      "types": {
+        "ris": "DATA",
+        "bibtex": "misc",
+        "citeproc": "dataset",
+        "schemaOrg": "Dataset",
+        "resourceType": "Dataset",
+        "resourceTypeGeneral": "Dataset"
+      },
+      "relatedIdentifiers": [
+        {
+          "relationType": "HasVersion",
+          "relatedIdentifier": "10.17632/9zgkwwv9j8.6",
+          "resourceTypeGeneral": "Dataset",
+          "relatedIdentifierType": "DOI"
+        },
+        {
+          "relationType": "HasVersion",
+          "relatedIdentifier": "10.17632/9zgkwwv9j8.5",
+          "resourceTypeGeneral": "Dataset",
+          "relatedIdentifierType": "DOI"
+        },
+        {
+          "relationType": "HasVersion",
+          "relatedIdentifier": "10.17632/9zgkwwv9j8.4",
+          "resourceTypeGeneral": "Dataset",
+          "relatedIdentifierType": "DOI"
+        },
+        {
+          "relationType": "HasVersion",
+          "relatedIdentifier": "10.17632/9zgkwwv9j8.3",
+          "resourceTypeGeneral": "Dataset",
+          "relatedIdentifierType": "DOI"
+        },
+        {
+          "relationType": "HasVersion",
+          "relatedIdentifier": "10.17632/9zgkwwv9j8.2",
+          "resourceTypeGeneral": "Dataset",
+          "relatedIdentifierType": "DOI"
+        },
+        {
+          "relationType": "HasVersion",
+          "relatedIdentifier": "10.17632/9zgkwwv9j8.1",
+          "resourceTypeGeneral": "Dataset",
+          "relatedIdentifierType": "DOI"
+        }
+      ],
+      "relatedItems": [],
+      "sizes": [],
+      "formats": [],
+      "version": null,
+      "rightsList": [
+        {
+          "rightsUri": "info:eu-repo/semantics/openAccess"
+        },
+        {
+          "rights": "Creative Commons Attribution 4.0 International",
+          "rightsUri": "https://creativecommons.org/licenses/by/4.0/legalcode",
+          "schemeUri": "https://spdx.org/licenses/",
+          "rightsIdentifier": "cc-by-4.0",
+          "rightsIdentifierScheme": "SPDX"
+        }
+      ],
+      "descriptions": [
+        {
+          "description": "Purpose\nClassification and identification of Manalagi apple fruit diseases \n\nType of data\nImage files.\n\nData format\nJoint Photographic Experts Group (JPG).\n\nImage resolution\n1024 × 1024 pixels.\n\nNumber of classes\nFour:\n- Healthy\n- Anthracnose\n- Black Pox\n- Powdery Mildew\n\nDataset structure\nRaw_Images: 5,100 images\nOriginal_Images: 482 images\nAugmented_Images: 4,718 images\n\nMetadata\nThe dataset contains labeled images categorized into four classes of Manalagi apple fruit conditions. The raw image folder contains the original images collected directly from orchards. The processed image folder includes a curated dataset divided into training, validation, and testing subsets, together with augmented training images. Images were captured under natural orchard conditions with variations in illumination, background, viewing angle, and disease severity to represent real-world agricultural environments.\n\nData acquisition\nImages were collected directly from farmer-owned apple orchards using digital cameras and smartphone cameras under natural environmental conditions. The acquisition process was designed to capture real-world variability in fruit appearance and disease symptoms.\n\nData source\nAgricultural source\nOrchard location: Poncokusumo, Malang Regency, East Java, Indonesia\nSource: Local farmer-owned apple orchards",
+          "descriptionType": "Abstract"
+        }
+      ],
+      "geoLocations": [],
+      "fundingReferences": [],
+      "xml": "PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/Pgo8cmVzb3VyY2UgeG1sbnM9Imh0dHA6Ly9kYXRhY2l0ZS5vcmcvc2NoZW1hL2tlcm5lbC00IiB4bWxuczp4c2k9Imh0dHA6Ly93d3cudzMub3JnLzIwMDEvWE1MU2NoZW1hLWluc3RhbmNlIiB4c2k6c2NoZW1hTG9jYXRpb249Imh0dHA6Ly9kYXRhY2l0ZS5vcmcvc2NoZW1hL2tlcm5lbC00IGh0dHA6Ly9zY2hlbWEuZGF0YWNpdGUub3JnL21ldGEva2VybmVsLTQuNC9tZXRhZGF0YS54c2QiPgogIDxpZGVudGlmaWVyIGlkZW50aWZpZXJUeXBlPSJET0kiPjEwLjE3NjMyLzlaR0tXV1Y5Sjg8L2lkZW50aWZpZXI+CiAgPGNyZWF0b3JzPgogICAgPGNyZWF0b3I+CiAgICAgIDxjcmVhdG9yTmFtZSBuYW1lVHlwZT0iUGVyc29uYWwiPkZFQlJJQU5UT05PLCBBTERJS0k8L2NyZWF0b3JOYW1lPgogICAgICA8Z2l2ZW5OYW1lPkFMRElLSTwvZ2l2ZW5OYW1lPgogICAgICA8ZmFtaWx5TmFtZT5GRUJSSUFOVE9OTzwvZmFtaWx5TmFtZT4KICAgIDwvY3JlYXRvcj4KICAgIDxjcmVhdG9yPgogICAgICA8Y3JlYXRvck5hbWUgbmFtZVR5cGU9IlBlcnNvbmFsIj5HaXJzYW5nLCBBYmJhIFN1Z2FuZGEgIDwvY3JlYXRvck5hbWU+CiAgICAgIDxnaXZlbk5hbWU+QWJiYSBTdWdhbmRhICA8L2dpdmVuTmFtZT4KICAgICAgPGZhbWlseU5hbWU+R2lyc2FuZzwvZmFtaWx5TmFtZT4KICAgIDwvY3JlYXRvcj4KICAgIDxjcmVhdG9yPgogICAgICA8Y3JlYXRvck5hbWUgbmFtZVR5cGU9IlBlcnNvbmFsIj5TdWhhcmppdG8sIFN1aGFyaml0bzwvY3JlYXRvck5hbWU+CiAgICAgIDxnaXZlbk5hbWU+U3VoYXJqaXRvPC9naXZlbk5hbWU+CiAgICAgIDxmYW1pbHlOYW1lPlN1aGFyaml0bzwvZmFtaWx5TmFtZT4KICAgIDwvY3JlYXRvcj4KICAgIDxjcmVhdG9yPgogICAgICA8Y3JlYXRvck5hbWUgbmFtZVR5cGU9IlBlcnNvbmFsIj5BbmdncmVhaW55LCBNYXJpYSBTdXNhbiAgPC9jcmVhdG9yTmFtZT4KICAgICAgPGdpdmVuTmFtZT5NYXJpYSBTdXNhbiAgPC9naXZlbk5hbWU+CiAgICAgIDxmYW1pbHlOYW1lPkFuZ2dyZWFpbnk8L2ZhbWlseU5hbWU+CiAgICA8L2NyZWF0b3I+CiAgPC9jcmVhdG9ycz4KICA8dGl0bGVzPgogICAgPHRpdGxlPk1hbmFsYWdpIEFwcGxlIERpc2Vhc2UgRGF0YXNldDwvdGl0bGU+CiAgPC90aXRsZXM+CiAgPHB1Ymxpc2hlcj5NZW5kZWxleSBEYXRhPC9wdWJsaXNoZXI+CiAgPHB1YmxpY2F0aW9uWWVhcj4yMDI2PC9wdWJsaWNhdGlvblllYXI+CiAgPHJlc291cmNlVHlwZSByZXNvdXJjZVR5cGVHZW5lcmFsPSJEYXRhc2V0Ij5EYXRhc2V0PC9yZXNvdXJjZVR5cGU+CiAgPHN1YmplY3RzPgogICAgPHN1YmplY3Q+Q29tcHV0ZXIgVmlzaW9uPC9zdWJqZWN0PgogICAgPHN1YmplY3Q+SW1hZ2UgQ2xhc3NpZmljYXRpb248L3N1YmplY3Q+CiAgICA8c3ViamVjdD5QbGFudCBEaXNlYXNlczwvc3ViamVjdD4KICAgIDxzdWJqZWN0PkRlZXAgTGVhcm5pbmc8L3N1YmplY3Q+CiAgPC9zdWJqZWN0cz4KICA8Y29udHJpYnV0b3JzPgogICAgPGNvbnRyaWJ1dG9yIGNvbnRyaWJ1dG9yVHlwZT0iT3RoZXIiPgogICAgICA8Y29udHJpYnV0b3JOYW1lIG5hbWVUeXBlPSJPcmdhbml6YXRpb25hbCI+QmluYSBOdXNhbnRhcmEgVW5pdmVyc2l0eTwvY29udHJpYnV0b3JOYW1lPgogICAgICA8bmFtZUlkZW50aWZpZXIgeHNpOnR5cGU9Im5hbWVJZGVudGlmaWVyIiBuYW1lSWRlbnRpZmllclNjaGVtZT0iUk9SIiBzY2hlbWVVUkk9Imh0dHBzOi8vcm9yLm9yZy8iPmh0dHBzOi8vcm9yLm9yZy8wM3ptZjRzNzc8L25hbWVJZGVudGlmaWVyPgogICAgPC9jb250cmlidXRvcj4KICA8L2NvbnRyaWJ1dG9ycz4KICA8ZGF0ZXM+CiAgICA8ZGF0ZSBkYXRlVHlwZT0iSXNzdWVkIj4yMDI2LTA3LTEzVDA0OjE1OjUyWjwvZGF0ZT4KICA8L2RhdGVzPgogIDxyZWxhdGVkSWRlbnRpZmllcnM+CiAgICA8cmVsYXRlZElkZW50aWZpZXIgcmVzb3VyY2VUeXBlR2VuZXJhbD0iRGF0YXNldCIgcmVsYXRlZElkZW50aWZpZXJUeXBlPSJET0kiIHJlbGF0aW9uVHlwZT0iSGFzVmVyc2lvbiI+MTAuMTc2MzIvOXpna3d3djlqOC42PC9yZWxhdGVkSWRlbnRpZmllcj4KICAgIDxyZWxhdGVkSWRlbnRpZmllciByZXNvdXJjZVR5cGVHZW5lcmFsPSJEYXRhc2V0IiByZWxhdGVkSWRlbnRpZmllclR5cGU9IkRPSSIgcmVsYXRpb25UeXBlPSJIYXNWZXJzaW9uIj4xMC4xNzYzMi85emdrd3d2OWo4LjU8L3JlbGF0ZWRJZGVudGlmaWVyPgogICAgPHJlbGF0ZWRJZGVudGlmaWVyIHJlc291cmNlVHlwZUdlbmVyYWw9IkRhdGFzZXQiIHJlbGF0ZWRJZGVudGlmaWVyVHlwZT0iRE9JIiByZWxhdGlvblR5cGU9Ikhhc1ZlcnNpb24iPjEwLjE3NjMyLzl6Z2t3d3Y5ajguNDwvcmVsYXRlZElkZW50aWZpZXI+CiAgICA8cmVsYXRlZElkZW50aWZpZXIgcmVzb3VyY2VUeXBlR2VuZXJhbD0iRGF0YXNldCIgcmVsYXRlZElkZW50aWZpZXJUeXBlPSJET0kiIHJlbGF0aW9uVHlwZT0iSGFzVmVyc2lvbiI+MTAuMTc2MzIvOXpna3d3djlqOC4zPC9yZWxhdGVkSWRlbnRpZmllcj4KICAgIDxyZWxhdGVkSWRlbnRpZmllciByZXNvdXJjZVR5cGVHZW5lcmFsPSJEYXRhc2V0IiByZWxhdGVkSWRlbnRpZmllclR5cGU9IkRPSSIgcmVsYXRpb25UeXBlPSJIYXNWZXJzaW9uIj4xMC4xNzYzMi85emdrd3d2OWo4LjI8L3JlbGF0ZWRJZGVudGlmaWVyPgogICAgPHJlbGF0ZWRJZGVudGlmaWVyIHJlc291cmNlVHlwZUdlbmVyYWw9IkRhdGFzZXQiIHJlbGF0ZWRJZGVudGlmaWVyVHlwZT0iRE9JIiByZWxhdGlvblR5cGU9Ikhhc1ZlcnNpb24iPjEwLjE3NjMyLzl6Z2t3d3Y5ajguMTwvcmVsYXRlZElkZW50aWZpZXI+CiAgPC9yZWxhdGVkSWRlbnRpZmllcnM+CiAgPHJpZ2h0c0xpc3Q+CiAgICA8cmlnaHRzIHJpZ2h0c1VSST0iaW5mbzpldS1yZXBvL3NlbWFudGljcy9vcGVuQWNjZXNzIi8+CiAgICA8cmlnaHRzIHJpZ2h0c1VSST0iaHR0cDovL2NyZWF0aXZlY29tbW9ucy5vcmcvbGljZW5zZXMvYnkvNC4wIj5DcmVhdGl2ZSBDb21tb25zIEF0dHJpYnV0aW9uIDQuMCBJbnRlcm5hdGlvbmFsPC9yaWdodHM+CiAgPC9yaWdodHNMaXN0PgogIDxkZXNjcmlwdGlvbnM+CiAgICA8ZGVzY3JpcHRpb24gZGVzY3JpcHRpb25UeXBlPSJBYnN0cmFjdCI+UHVycG9zZQpDbGFzc2lmaWNhdGlvbiBhbmQgaWRlbnRpZmljYXRpb24gb2YgTWFuYWxhZ2kgYXBwbGUgZnJ1aXQgZGlzZWFzZXMgCgpUeXBlIG9mIGRhdGEKSW1hZ2UgZmlsZXMuCgpEYXRhIGZvcm1hdApKb2ludCBQaG90b2dyYXBoaWMgRXhwZXJ0cyBHcm91cCAoSlBHKS4KCkltYWdlIHJlc29sdXRpb24KMTAyNCDDlyAxMDI0IHBpeGVscy4KCk51bWJlciBvZiBjbGFzc2VzCkZvdXI6Ci0gSGVhbHRoeQotIEFudGhyYWNub3NlCi0gQmxhY2sgUG94Ci0gUG93ZGVyeSBNaWxkZXcKCkRhdGFzZXQgc3RydWN0dXJlClJhd19JbWFnZXM6IDUsMTAwIGltYWdlcwpPcmlnaW5hbF9JbWFnZXM6IDQ4MiBpbWFnZXMKQXVnbWVudGVkX0ltYWdlczogNCw3MTggaW1hZ2VzCgpNZXRhZGF0YQpUaGUgZGF0YXNldCBjb250YWlucyBsYWJlbGVkIGltYWdlcyBjYXRlZ29yaXplZCBpbnRvIGZvdXIgY2xhc3NlcyBvZiBNYW5hbGFnaSBhcHBsZSBmcnVpdCBjb25kaXRpb25zLiBUaGUgcmF3IGltYWdlIGZvbGRlciBjb250YWlucyB0aGUgb3JpZ2luYWwgaW1hZ2VzIGNvbGxlY3RlZCBkaXJlY3RseSBmcm9tIG9yY2hhcmRzLiBUaGUgcHJvY2Vzc2VkIGltYWdlIGZvbGRlciBpbmNsdWRlcyBhIGN1cmF0ZWQgZGF0YXNldCBkaXZpZGVkIGludG8gdHJhaW5pbmcsIHZhbGlkYXRpb24sIGFuZCB0ZXN0aW5nIHN1YnNldHMsIHRvZ2V0aGVyIHdpdGggYXVnbWVudGVkIHRyYWluaW5nIGltYWdlcy4gSW1hZ2VzIHdlcmUgY2FwdHVyZWQgdW5kZXIgbmF0dXJhbCBvcmNoYXJkIGNvbmRpdGlvbnMgd2l0aCB2YXJpYXRpb25zIGluIGlsbHVtaW5hdGlvbiwgYmFja2dyb3VuZCwgdmlld2luZyBhbmdsZSwgYW5kIGRpc2Vhc2Ugc2V2ZXJpdHkgdG8gcmVwcmVzZW50IHJlYWwtd29ybGQgYWdyaWN1bHR1cmFsIGVudmlyb25tZW50cy4KCkRhdGEgYWNxdWlzaXRpb24KSW1hZ2VzIHdlcmUgY29sbGVjdGVkIGRpcmVjdGx5IGZyb20gZmFybWVyLW93bmVkIGFwcGxlIG9yY2hhcmRzIHVzaW5nIGRpZ2l0YWwgY2FtZXJhcyBhbmQgc21hcnRwaG9uZSBjYW1lcmFzIHVuZGVyIG5hdHVyYWwgZW52aXJvbm1lbnRhbCBjb25kaXRpb25zLiBUaGUgYWNxdWlzaXRpb24gcHJvY2VzcyB3YXMgZGVzaWduZWQgdG8gY2FwdHVyZSByZWFsLXdvcmxkIHZhcmlhYmlsaXR5IGluIGZydWl0IGFwcGVhcmFuY2UgYW5kIGRpc2Vhc2Ugc3ltcHRvbXMuCgpEYXRhIHNvdXJjZQpBZ3JpY3VsdHVyYWwgc291cmNlCk9yY2hhcmQgbG9jYXRpb246IFBvbmNva3VzdW1vLCBNYWxhbmcgUmVnZW5jeSwgRWFzdCBKYXZhLCBJbmRvbmVzaWEKU291cmNlOiBMb2NhbCBmYXJtZXItb3duZWQgYXBwbGUgb3JjaGFyZHM8L2Rlc2NyaXB0aW9uPgogIDwvZGVzY3JpcHRpb25zPgo8L3Jlc291cmNlPg==",
+      "url": "https://data.mendeley.com/datasets/9zgkwwv9j8",
+      "contentUrl": null,
+      "metadataVersion": 5,
+      "schemaVersion": "http://datacite.org/schema/kernel-4",
+      "source": "api",
+      "isActive": true,
+      "state": "findable",
+      "reason": null,
+      "viewCount": 1335,
+      "viewsOverTime": [
+        {
+          "yearMonth": "2025-11",
+          "total": 230
+        },
+        {
+          "yearMonth": "2026-01",
+          "total": 105
+        },
+        {
+          "yearMonth": "2026-02",
+          "total": 128
+        },
+        {
+          "yearMonth": "2026-03",
+          "total": 160
+        },
+        {
+          "yearMonth": "2026-05",
+          "total": 198
+        },
+        {
+          "yearMonth": "2026-06",
+          "total": 83
+        },
+        {
+          "yearMonth": "2026-07",
+          "total": 164
+        },
+        {
+          "yearMonth": "2026-08",
+          "total": 126
+        },
+        {
+          "yearMonth": "2026-09",
+          "total": 141
+        }
+      ],
+      "downloadCount": 307,
+      "downloadsOverTime": [
+        {
+          "yearMonth": "2025-11",
+          "total": 44
+        },
+        {
+          "yearMonth": "2026-01",
+          "total": 18
+        },
+        {
+          "yearMonth": "2026-02",
+          "total": 25
+        },
+        {
+          "yearMonth": "2026-03",
+          "total": 46
+        },
+        {
+          "yearMonth": "2026-05",
+          "total": 54
+        },
+        {
+          "yearMonth": "2026-06",
+          "total": 20
+        },
+        {
+          "yearMonth": "2026-07",
+          "total": 35
+        },
+        {
+          "yearMonth": "2026-08",
+          "total": 34
+        },
+        {
+          "yearMonth": "2026-09",
+          "total": 31
+        }
+      ],
+      "referenceCount": 0,
+      "citationCount": 0,
+      "citationsOverTime": [],
+      "partCount": 0,
+      "partOfCount": 0,
+      "versionCount": 6,
+      "versionOfCount": 0,
+      "created": "2025-11-03T15:52:02.000Z",
+      "registered": "2025-11-03T15:52:02.000Z",
+      "published": "2026",
+      "updated": "2026-07-13T04:15:55.000Z"
+    },
+    "relationships": {
+      "client": {
+        "data": {
+          "id": "bl.mendeley",
+          "type": "clients"
+        }
+      },
+      "provider": {
+        "data": {
+          "id": "elsevier",
+          "type": "providers"
+        }
+      },
+      "media": {
+        "data": {
+          "id": "10.17632/9zgkwwv9j8",
+          "type": "media"
+        }
+      },
+      "references": {
+        "data": []
+      },
+      "citations": {
+        "data": []
+      },
+      "parts": {
+        "data": []
+      },
+      "partOf": {
+        "data": []
+      },
+      "versions": {
+        "data": [
+          {
+            "id": "10.17632/9zgkwwv9j8.6",
+            "type": "dois"
+          },
+          {
+            "id": "10.17632/9zgkwwv9j8.2",
+            "type": "dois"
+          },
+          {
+            "id": "10.17632/9zgkwwv9j8.1",
+            "type": "dois"
+          },
+          {
+            "id": "10.17632/9zgkwwv9j8.4",
+            "type": "dois"
+          },
+          {
+            "id": "10.17632/9zgkwwv9j8.5",
+            "type": "dois"
+          },
+          {
+            "id": "10.17632/9zgkwwv9j8.3",
+            "type": "dois"
+          }
+        ]
+      },
+      "versionOf": {
+        "data": []
+      }
+    }
+  }
+}

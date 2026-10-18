@@ -1,0 +1,35 @@
+=======================================================
+  Fruit Quality Detection – YOLOv8 Evaluation Report
+=======================================================
+
+  Precision      : 0.9817
+  Recall         : 0.9779
+  mAP@50         : 0.9897
+  mAP@50-95      : 0.8589
+
+-------------------------------------------------------
+  Metric Interpretation
+-------------------------------------------------------
+
+  • Precision  – Of all detections the model made,
+                 how many were actually correct.
+                 Higher = fewer false positives.
+
+  • Recall     – Of all real objects in the images,
+                 how many did the model find.
+                 Higher = fewer missed detections.
+
+  • mAP@50     – Mean Average Precision at 50% IoU
+                 threshold. A good general measure
+                 of detection accuracy.
+
+  • mAP@50-95  – Mean AP averaged across IoU from
+                 0.50 to 0.95 (stricter). Reflects
+                 how well bounding boxes align with
+                 ground truth.
+
+=======================================================
+  Model   : YOLOv8n (Nano) @ 320×320
+  Epochs  : 50
+  Dataset : c:\Users\mrsoh\Documents\IOT Project\Dataset\data.yaml
+=======================================================

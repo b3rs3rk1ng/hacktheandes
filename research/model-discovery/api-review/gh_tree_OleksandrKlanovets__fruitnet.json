@@ -1,0 +1,207 @@
+{
+  "sha": "42f9d4f39cc6caf3ef84d42eb95dd842c99662f1",
+  "url": "https://api.github.com/repos/OleksandrKlanovets/fruitnet/git/trees/42f9d4f39cc6caf3ef84d42eb95dd842c99662f1",
+  "tree": [
+    {
+      "path": ".gitignore",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "8d5ec66f2f6e177173e87342d43a932802c91c73",
+      "size": 124,
+      "url": "https://api.github.com/repos/OleksandrKlanovets/fruitnet/git/blobs/8d5ec66f2f6e177173e87342d43a932802c91c73"
+    },
+    {
+      "path": "Dockerfile",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "8e973ce6ebfc1cba9de45ccdcb2bd260af1cfc09",
+      "size": 164,
+      "url": "https://api.github.com/repos/OleksandrKlanovets/fruitnet/git/blobs/8e973ce6ebfc1cba9de45ccdcb2bd260af1cfc09"
+    },
+    {
+      "path": "LICENSE",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e0f2d7a456440d9bc5f8863b5f862e4a27cd41c6",
+      "size": 1076,
+      "url": "https://api.github.com/repos/OleksandrKlanovets/fruitnet/git/blobs/e0f2d7a456440d9bc5f8863b5f862e4a27cd41c6"
+    },
+    {
+      "path": "README.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "6cecd06bf59739f96b138ff285139c80bc5b1c05",
+      "size": 2629,
+      "url": "https://api.github.com/repos/OleksandrKlanovets/fruitnet/git/blobs/6cecd06bf59739f96b138ff285139c80bc5b1c05"
+    },
+    {
+      "path": "app.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3120825683107b8b9740db4124bc68e2d1c8f515",
+      "size": 1187,
+      "url": "https://api.github.com/repos/OleksandrKlanovets/fruitnet/git/blobs/3120825683107b8b9740db4124bc68e2d1c8f515"
+    },
+    {
+      "path": "config",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "3c5c816f7f0e96cd72e2f97c85e3e9a3c195367d",
+      "url": "https://api.github.com/repos/OleksandrKlanovets/fruitnet/git/trees/3c5c816f7f0e96cd72e2f97c85e3e9a3c195367d"
+    },
+    {
+      "path": "config/fruit_classifier_v3_transfer_learning.h5",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d54fe7dd8aa3a42ee043a643b9fd9afb942fe0d2",
+      "size": 9428816,
+      "url": "https://api.github.com/repos/OleksandrKlanovets/fruitnet/git/blobs/d54fe7dd8aa3a42ee043a643b9fd9afb942fe0d2"
+    },
+    {
+      "path": "model",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "8bc690096105b36fe4deea22b7e2b6ab8ab85456",
+      "url": "https://api.github.com/repos/OleksandrKlanovets/fruitnet/git/trees/8bc690096105b36fe4deea22b7e2b6ab8ab85456"
+    },
+    {
+      "path": "model/fruitnet.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3f4d0dd5b85d3f1c92d28a90cfa50e8055c6ae65",
+      "size": 715,
+      "url": "https://api.github.com/repos/OleksandrKlanovets/fruitnet/git/blobs/3f4d0dd5b85d3f1c92d28a90cfa50e8055c6ae65"
+    },
+    {
+      "path": "notebooks",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "ec6b5f251c4ba95f8b9b1beed5da9d97fa666d78",
+      "url": "https://api.github.com/repos/OleksandrKlanovets/fruitnet/git/trees/ec6b5f251c4ba95f8b9b1beed5da9d97fa666d78"
+    },
+    {
+      "path": "notebooks/FruitNetTransferLearning.ipynb",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c088f1a16ba4e7e60a1e76d6822fb82f98900427",
+      "size": 427904,
+      "url": "https://api.github.com/repos/OleksandrKlanovets/fruitnet/git/blobs/c088f1a16ba4e7e60a1e76d6822fb82f98900427"
+    },
+    {
+      "path": "requirements.txt",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "78ff422aa7dd6af13617dc61b4ec2c5bac27c965",
+      "size": 846,
+      "url": "https://api.github.com/repos/OleksandrKlanovets/fruitnet/git/blobs/78ff422aa7dd6af13617dc61b4ec2c5bac27c965"
+    },
+    {
+      "path": "static",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "c6b889cc96d9fd9a3867535ebaeb4e27fb130cf8",
+      "url": "https://api.github.com/repos/OleksandrKlanovets/fruitnet/git/trees/c6b889cc96d9fd9a3867535ebaeb4e27fb130cf8"
+    },
+    {
+      "path": "static/css",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "c7b6389c146409b7aef43b840b57972945332e95",
+      "url": "https://api.github.com/repos/OleksandrKlanovets/fruitnet/git/trees/c7b6389c146409b7aef43b840b57972945332e95"
+    },
+    {
+      "path": "static/css/drag.css",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "95da8a8bdd7b5d306939984fd69c75f60465345b",
+      "size": 713,
+      "url": "https://api.github.com/repos/OleksandrKlanovets/fruitnet/git/blobs/95da8a8bdd7b5d306939984fd69c75f60465345b"
+    },
+    {
+      "path": "static/css/main.css",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "fb41586ca05b688ca8e60041aa7e060c65ba55c6",
+      "size": 1412,
+      "url": "https://api.github.com/repos/OleksandrKlanovets/fruitnet/git/blobs/fb41586ca05b688ca8e60041aa7e060c65ba55c6"
+    },
+    {
+      "path": "static/js",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "47495c947f4ff39e7a41752870a1098a09354967",
+      "url": "https://api.github.com/repos/OleksandrKlanovets/fruitnet/git/trees/47495c947f4ff39e7a41752870a1098a09354967"
+    },
+    {
+      "path": "static/js/app.js",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c566aae7ac03cda4480956d025dac93e2d8b543c",
+      "size": 1799,
+      "url": "https://api.github.com/repos/OleksandrKlanovets/fruitnet/git/blobs/c566aae7ac03cda4480956d025dac93e2d8b543c"
+    },
+    {
+      "path": "static/js/capture.js",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "19f4b9983785952c75c0f5dc006de60e4fdfdeac",
+      "size": 1671,
+      "url": "https://api.github.com/repos/OleksandrKlanovets/fruitnet/git/blobs/19f4b9983785952c75c0f5dc006de60e4fdfdeac"
+    },
+    {
+      "path": "static/js/dragDrop.js",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "9badaf03bb195dcfebe5be5ba401dc9dacf2ccc6",
+      "size": 1583,
+      "url": "https://api.github.com/repos/OleksandrKlanovets/fruitnet/git/blobs/9badaf03bb195dcfebe5be5ba401dc9dacf2ccc6"
+    },
+    {
+      "path": "static/js/particles",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "472bf5207c39d839072196183f43711da9bdbd74",
+      "url": "https://api.github.com/repos/OleksandrKlanovets/fruitnet/git/trees/472bf5207c39d839072196183f43711da9bdbd74"
+    },
+    {
+      "path": "static/js/particles/particles.min.js",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b3d46d127fce3c8c3d2cb8a234a6d3f7bb8bbcaf",
+      "size": 23364,
+      "url": "https://api.github.com/repos/OleksandrKlanovets/fruitnet/git/blobs/b3d46d127fce3c8c3d2cb8a234a6d3f7bb8bbcaf"
+    },
+    {
+      "path": "static/js/particles/particlesConfig.js",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b9f106ba947d73baaefaa30e5ebecb7ae8efaa26",
+      "size": 1880,
+      "url": "https://api.github.com/repos/OleksandrKlanovets/fruitnet/git/blobs/b9f106ba947d73baaefaa30e5ebecb7ae8efaa26"
+    },
+    {
+      "path": "static/js/utils.js",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "591b8bc8c5833af07161c8abc99fbe98bb23706f",
+      "size": 556,
+      "url": "https://api.github.com/repos/OleksandrKlanovets/fruitnet/git/blobs/591b8bc8c5833af07161c8abc99fbe98bb23706f"
+    },
+    {
+      "path": "templates",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "37e38883f76b7df5c315138c18947f5c4a86f443",
+      "url": "https://api.github.com/repos/OleksandrKlanovets/fruitnet/git/trees/37e38883f76b7df5c315138c18947f5c4a86f443"
+    },
+    {
+      "path": "templates/index.html",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "7846a90588426a0392bd18b15dfa7de6f49124a9",
+      "size": 2473,
+      "url": "https://api.github.com/repos/OleksandrKlanovets/fruitnet/git/blobs/7846a90588426a0392bd18b15dfa7de6f49124a9"
+    }
+  ],
+  "truncated": false
+}

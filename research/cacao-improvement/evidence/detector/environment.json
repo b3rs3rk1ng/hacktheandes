@@ -1,0 +1,40 @@
+{
+  "python": "3.12.3",
+  "torch": "2.11.0+cu130",
+  "ultralytics": "8.4.182",
+  "gpu": "NVIDIA GeForce RTX 4060 Laptop GPU",
+  "cuda": "13.0",
+  "config": {
+    "name": "cacao-three-class-motion-v2",
+    "classes": [
+      "healthy",
+      "monilia",
+      "phytophthora"
+    ],
+    "seed": 20261019,
+    "training": {
+      "model": "yolo11s.pt",
+      "epochs": 40,
+      "imgsz": 640,
+      "batch": 8,
+      "workers": 2,
+      "device": 0,
+      "patience": 10,
+      "optimizer": "AdamW",
+      "lr0": 0.0007,
+      "lrf": 0.05,
+      "cos_lr": true,
+      "warmup_epochs": 2,
+      "weight_decay": 0.0005,
+      "mosaic": 0.5,
+      "close_mosaic": 10,
+      "hsv_h": 0.01,
+      "hsv_s": 0.3,
+      "hsv_v": 0.3,
+      "scale": 0.3,
+      "degrees": 8,
+      "translate": 0.05
+    }
+  },
+  "manifest_sha256": "b2553f2961e628c6c0ff089605331ab91a998cd8b7009d25c44446c9c747b045"
+}

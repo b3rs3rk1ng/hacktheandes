@@ -1,0 +1,58 @@
+{
+    "description": "",
+    "tags": [],
+    "size": {
+        "height": 4160,
+        "width": 3120
+    },
+    "objects": [
+        {
+            "id": 12891492,
+            "classId": 19770,
+            "description": "",
+            "geometryType": "rectangle",
+            "labelerLogin": "gr@datasetninja.com",
+            "createdAt": "2023-07-03T15:02:25.539Z",
+            "updatedAt": "2023-07-03T15:02:25.539Z",
+            "tags": [],
+            "classTitle": "phytophthora",
+            "points": {
+                "exterior": [
+                    [
+                        1391,
+                        1047
+                    ],
+                    [
+                        2251,
+                        2765
+                    ]
+                ],
+                "interior": []
+            }
+        },
+        {
+            "id": 12891491,
+            "classId": 19772,
+            "description": "",
+            "geometryType": "rectangle",
+            "labelerLogin": "gr@datasetninja.com",
+            "createdAt": "2023-07-03T15:02:25.538Z",
+            "updatedAt": "2023-07-03T15:02:25.538Z",
+            "tags": [],
+            "classTitle": "healthy",
+            "points": {
+                "exterior": [
+                    [
+                        122,
+                        1
+                    ],
+                    [
+                        750,
+                        1111
+                    ]
+                ],
+                "interior": []
+            }
+        }
+    ]
+}

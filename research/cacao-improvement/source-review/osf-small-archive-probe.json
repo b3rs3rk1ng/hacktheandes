@@ -1,0 +1,31 @@
+{
+  "url": "https://osf.io/download/g37kw/",
+  "status": 206,
+  "headers": {
+    "x-amz-request-id": "iad-1:21GqYKKfqC6pJD3anFfxTomY-szwU0A3kBoFMmPdbefATPDqDP0MO9Td6315QInQ",
+    "accept-ranges": "bytes",
+    "Content-Length": "1048576",
+    "content-range": "bytes 0-1048575/658159573",
+    "last-modified": "Sat, 03 Oct 2026 08:50:29 GMT",
+    "ETag": "\"e05069667b1b0ac3395f58569985478c-126\"",
+    "x-amz-server-side-encryption": "AES256",
+    "Content-Type": "application/octet-stream",
+    "x-amz-meta-mtime": "1789930020.822",
+    "x-amz-meta-md5chksum": "GnykSlUkSyK1w075TZtxeg==",
+    "content-disposition": "attachment; filename=\"EcuadorCocoa_EasyDificult.tar.gz\"; filename*=UTF-8''EcuadorCocoa_EasyDificult.tar.gz",
+    "x-amz-version-id": "81ad72b0-c923-439d-b2f1-09f807ab0e84",
+    "connection": "close",
+    "date": "Sun, 18 Oct 2026 06:21:27 GMT",
+    "opc-request-id": "iad-1:21GqYKKfqC6pJD3anFfxTomY-szwU0A3kBoFMmPdbefATPDqDP0MO9Td6315QInQ",
+    "x-api-id": "s3-compatible",
+    "x-content-type-options": "nosniff",
+    "strict-transport-security": "max-age=31536000; includeSubDomains",
+    "access-control-allow-origin": "*",
+    "access-control-allow-methods": "POST,PUT,GET,HEAD,DELETE,OPTIONS",
+    "access-control-allow-credentials": "true",
+    "access-control-expose-headers": "accept-ranges,access-control-allow-credentials,access-control-allow-methods,access-control-allow-origin,connection,content-disposition,content-length,content-range,content-type,date,etag,last-modified,opc-client-info,opc-request-id,strict-transport-security,x-amz-meta-md5chksum,x-amz-meta-mtime,x-amz-request-id,x-amz-server-side-encryption,x-amz-version-id,x-api-id,x-content-type-options"
+  },
+  "resolved": "https://idvyorynw6xy.compat.objectstorage.us-ashburn-1.oraclecloud.com/cos-prod-osf-1-files-ash/cc02fbd45e716717fa0b4b6b564f8d7f5564d89f82a946b9023f9f351a40c321?response-content-disposition=attachment%3B+filename%3D%22EcuadorCocoa_EasyDificult.tar.gz%22%3B+filename%2A%3DUTF-8%27%27EcuadorCocoa_EasyDificult.tar.gz&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=8a1e5869d3122814cba7bd4265a84ad444199855%2F20261018%2Fus-ashburn-1%2Fs3%2Faws4_request&X-Amz-Date=20261018T062126Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=df3a883d7e47b6f91dc3782342feec80314497d6fc61817599ba4097f602e0c2",
+  "bytes": 1048576,
+  "seconds": 4.013120916999469
+}

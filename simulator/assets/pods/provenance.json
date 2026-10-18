@@ -1,0 +1,271 @@
+{
+  "manifest_sha256": "b2553f2961e628c6c0ff089605331ab91a998cd8b7009d25c44446c9c747b045",
+  "license": "Source dataset licenses apply; see scene asset credits.",
+  "independent_validation": false,
+  "records": [
+    {
+      "file": "healthy-0.jpg",
+      "class_name": "healthy",
+      "class_id": 0,
+      "source_id": "ccbcb7b614942c33014bd125",
+      "source_image": "/home/f3mt0/hacktheandes-cacao-improvement/data/mixed-v2/disease/images/train/ccbcb7b614942c33014bd125.jpg",
+      "source_split": "train",
+      "source_bbox": [
+        426.17511520737327,
+        207.926267281106,
+        919.815668202765,
+        1134.0092165898618
+      ],
+      "original_stages": [
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "h0",
+          "source_class_id": 0
+        }
+      ],
+      "sha256": "cc02c6907efb07e49353b756614d00964afadf20b2cc220a43ff0d6900a1fb20"
+    },
+    {
+      "file": "healthy-1.jpg",
+      "class_name": "healthy",
+      "class_id": 0,
+      "source_id": "0c88486e8cb18806f6ac8796",
+      "source_image": "/home/f3mt0/hacktheandes-cacao-improvement/data/mixed-v2/disease/images/train/0c88486e8cb18806f6ac8796.jpg",
+      "source_split": "train",
+      "source_bbox": [
+        455.18716577540107,
+        108.66310160427807,
+        836.3636363636364,
+        1006.6310160427807
+      ],
+      "original_stages": [
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "h0",
+          "source_class_id": 0
+        }
+      ],
+      "sha256": "430651e9e574fd168a02210c4299c5811941df0ca800f08604a1e06b3c118b28"
+    },
+    {
+      "file": "healthy-2.jpg",
+      "class_name": "healthy",
+      "class_id": 0,
+      "source_id": "749029ff8e51c656be488219",
+      "source_image": "/home/f3mt0/hacktheandes-cacao-improvement/data/mixed-v2/disease/images/train/749029ff8e51c656be488219.jpg",
+      "source_split": "train",
+      "source_bbox": [
+        493.2718894009217,
+        386.7281105990784,
+        842.0276497695853,
+        1122.5806451612905
+      ],
+      "original_stages": [
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "h0",
+          "source_class_id": 0
+        }
+      ],
+      "sha256": "c85f482ebc00d15a259b03b60a60c478d6e4842abf76db971cc87bcf424bfa35"
+    },
+    {
+      "file": "healthy-3.jpg",
+      "class_name": "healthy",
+      "class_id": 0,
+      "source_id": "39dd2193b2d891122a5c4a40",
+      "source_image": "/home/f3mt0/hacktheandes-cacao-improvement/data/mixed-v2/disease/images/train/39dd2193b2d891122a5c4a40.jpg",
+      "source_split": "train",
+      "source_bbox": [
+        245.5614973262032,
+        140.32085561497325,
+        902.6737967914438,
+        1276.1497326203207
+      ],
+      "original_stages": [
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "h0",
+          "source_class_id": 0
+        }
+      ],
+      "sha256": "bd87a97b3e6baad78671eaebbc2f7fedcea82881644bbe4ceb3fe905f248dae0"
+    },
+    {
+      "file": "monilia-0.jpg",
+      "class_name": "monilia",
+      "class_id": 1,
+      "source_id": "35328a4cadc6a239fffa99ca",
+      "source_image": "/home/f3mt0/hacktheandes-cacao-improvement/data/mixed-v2/disease/images/train/35328a4cadc6a239fffa99ca.jpg",
+      "source_split": "train",
+      "source_bbox": [
+        296.6666666666667,
+        306.25,
+        661.6666666666667,
+        910.8333333333334
+      ],
+      "original_stages": [
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "m3",
+          "source_class_id": 3
+        }
+      ],
+      "sha256": "2307d2ca61a9c70383fde906e4e03c6b86e64cf22530d3406c47efbdd0cd1a05"
+    },
+    {
+      "file": "monilia-1.jpg",
+      "class_name": "monilia",
+      "class_id": 1,
+      "source_id": "d6ad5b8378e025a961b4f73d",
+      "source_image": "/home/f3mt0/hacktheandes-cacao-improvement/data/mixed-v2/disease/images/train/d6ad5b8378e025a961b4f73d.jpg",
+      "source_split": "train",
+      "source_bbox": [
+        278.33333333333337,
+        364.58333333333337,
+        632.9166666666667,
+        1102.9166666666667
+      ],
+      "original_stages": [
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "m2",
+          "source_class_id": 2
+        }
+      ],
+      "sha256": "27670271339d83605d2663e9f2ca8e034c4a2a85722dd75460acdb6325797073"
+    },
+    {
+      "file": "monilia-2.jpg",
+      "class_name": "monilia",
+      "class_id": 1,
+      "source_id": "cefbe92bcdbb8616baf2ab2a",
+      "source_image": "/home/f3mt0/hacktheandes-cacao-improvement/data/mixed-v2/disease/images/train/cefbe92bcdbb8616baf2ab2a.jpg",
+      "source_split": "train",
+      "source_bbox": [
+        246.25,
+        91.875,
+        795.0,
+        1077.5
+      ],
+      "original_stages": [
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "m2",
+          "source_class_id": 2
+        }
+      ],
+      "sha256": "0ef40d95ce4e55bb2a5b598708cba7b48575c57b4be56f6b3dddb221276cc4b4"
+    },
+    {
+      "file": "monilia-3.jpg",
+      "class_name": "monilia",
+      "class_id": 1,
+      "source_id": "e72ce6eed47864760609d82b",
+      "source_image": "/home/f3mt0/hacktheandes-cacao-improvement/data/mixed-v2/disease/images/train/e72ce6eed47864760609d82b.jpg",
+      "source_split": "train",
+      "source_bbox": [
+        161.66666666666669,
+        187.08333333333334,
+        687.9166666666667,
+        1116.25
+      ],
+      "original_stages": [
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "m3",
+          "source_class_id": 3
+        }
+      ],
+      "sha256": "b0edcf9525fc3796264a509c2ef1a2845ba74917037d7826f7e5e2418e8f5902"
+    },
+    {
+      "file": "phytophthora-0.jpg",
+      "class_name": "phytophthora",
+      "class_id": 2,
+      "source_id": "eb43721edea9bed6b643b97f",
+      "source_image": "/home/f3mt0/hacktheandes-cacao-improvement/data/mixed-v2/disease/images/train/eb43721edea9bed6b643b97f.jpg",
+      "source_split": "train",
+      "source_bbox": [
+        467.38416000000007,
+        332.30784,
+        699.38448,
+        859.38496
+      ],
+      "original_stages": [
+        {
+          "source": "serrano_torres_v2",
+          "class": "phytophthora",
+          "source_class_id": 2
+        }
+      ],
+      "sha256": "5131673f271230f8da1f91ba48afd7d5cc1956241019212e15c3c791f4965ed0"
+    },
+    {
+      "file": "phytophthora-1.jpg",
+      "class_name": "phytophthora",
+      "class_id": 2,
+      "source_id": "0efbd66c2052c5ad5d2ad7f3",
+      "source_image": "/home/f3mt0/hacktheandes-cacao-improvement/data/mixed-v2/disease/images/train/0efbd66c2052c5ad5d2ad7f3.jpg",
+      "source_split": "train",
+      "source_bbox": [
+        272.92368000000005,
+        381.2307200000001,
+        524.6155200000001,
+        1062.1536
+      ],
+      "original_stages": [
+        {
+          "source": "serrano_torres_v2",
+          "class": "phytophthora",
+          "source_class_id": 2
+        }
+      ],
+      "sha256": "3c05c055da91d923465845f7a923ca9ad84c22fb3491e47680415bff769cba46"
+    },
+    {
+      "file": "phytophthora-2.jpg",
+      "class_name": "phytophthora",
+      "class_id": 2,
+      "source_id": "0c556cfacd7c3ca3dbb9db4b",
+      "source_image": "/home/f3mt0/hacktheandes-cacao-improvement/data/mixed-v2/disease/images/train/0c556cfacd7c3ca3dbb9db4b.jpg",
+      "source_split": "train",
+      "source_bbox": [
+        670.15344,
+        735.0771199999999,
+        935.69232,
+        1235.6928
+      ],
+      "original_stages": [
+        {
+          "source": "serrano_torres_v2",
+          "class": "phytophthora",
+          "source_class_id": 2
+        }
+      ],
+      "sha256": "898f4ee6c7b1a15d22b55c2d2c4de7cc3240a28a2b97c0a5849466bb2169d90b"
+    },
+    {
+      "file": "phytophthora-3.jpg",
+      "class_name": "phytophthora",
+      "class_id": 2,
+      "source_id": "dda93b42f2f51407584d21bf",
+      "source_image": "/home/f3mt0/hacktheandes-cacao-improvement/data/mixed-v2/disease/images/train/dda93b42f2f51407584d21bf.jpg",
+      "source_split": "train",
+      "source_bbox": [
+        82.76975999999998,
+        384.61568000000005,
+        426.76944,
+        1015.3843200000001
+      ],
+      "original_stages": [
+        {
+          "source": "serrano_torres_v2",
+          "class": "phytophthora",
+          "source_class_id": 2
+        }
+      ],
+      "sha256": "eaf41c3acba7747fecb93b441b40e44bb454e48a6a4239a4333a3c7e1006468c"
+    }
+  ]
+}

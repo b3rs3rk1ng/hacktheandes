@@ -1,0 +1,31 @@
+{
+  "measurement": "Native Chrome UI, live orchard, October 18 2026",
+  "camera_mount_error_m": 0,
+  "shader_program_errors": 0,
+  "rigid_batches": {
+    "before": 58,
+    "after": 14
+  },
+  "renderer_draw_calls_samples": [
+    53,
+    58
+  ],
+  "raf_window_intervals": 300,
+  "frame_ms": {
+    "minimum": 15.7,
+    "median": 16.7,
+    "p95": 16.9,
+    "maximum": 17.7
+  },
+  "observed_fps_range_including_transitions": [
+    32,
+    60
+  ],
+  "wash_sample": {
+    "dust": 51,
+    "leaves": 16,
+    "vegetation_materials": 4
+  },
+  "audio_context": "running",
+  "limits": "Five-second RAF sample does not include every terrain sector transition; transient 32fps observed separately. Synthesized audio was not compared with hardware recording."
+}

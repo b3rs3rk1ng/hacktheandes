@@ -1,0 +1,789 @@
+{
+  "physics": {
+    "engine": "Webots R2025a / ODE",
+    "updated_at": 1792326933.0856097,
+    "simulation_time": 3578.992,
+    "mission_time": 83.80799999999999,
+    "last_command_id": "b6bc5f18214f4a07bb7687e4060b8cb8",
+    "phase": "return_transit",
+    "phase_id": 238,
+    "label": "Regresando a la base",
+    "position": [
+      0.0031744572437426193,
+      10.152922352944294,
+      7.126721667354697
+    ],
+    "velocity": [
+      -0.001383337969374468,
+      -0.8379495772707952,
+      -3.1846175648529196e-06,
+      0.0009203148937953822,
+      0.0012352958855480572,
+      -2.205318700763709e-05
+    ],
+    "orientation": [
+      -0.00019693378195550045,
+      0.9999992696790826,
+      -0.0011924170357378197,
+      -0.9999943253648539,
+      -0.00020094274853520129,
+      -0.003362864865384739,
+      -0.0033631020169707475,
+      0.0011917480075100536,
+      0.9999936346204961
+    ],
+    "look_at": [
+      0,
+      -6,
+      2
+    ],
+    "waypoint": [
+      0,
+      -9,
+      7.126725591884142
+    ],
+    "battery": {
+      "soc": 0.20913076712915996,
+      "remaining_wh": 18.570812121069405,
+      "nominal_wh": 88.80000000000001,
+      "voltage_v": 19.471779789929133,
+      "current_a": 19.938672028583348,
+      "power_w": 388.24143104419454,
+      "used_wh": 81.49997868304925
+    },
+    "return_budget": {
+      "distance_m": 19.152922616015864,
+      "estimated_seconds": 55.86047001720447,
+      "travel_wh": 7.229075847927808,
+      "reserve_wh": 10.656,
+      "required_wh": 17.88507584792781,
+      "margin_wh": 0.6877035554484188
+    },
+    "return_reason": "Reserva para volver y aterrizar",
+    "return_cause": "energy_reserve",
+    "thrust_n": 23.544215479639544,
+    "wind_mps": [
+      0.5419150265877813,
+      0.26304014714674095,
+      -0.02829519904069311
+    ],
+    "obstacle_clearance_m": 4.315119688037993,
+    "contact_count": 0,
+    "plant_id": "cacao-4-18",
+    "visited": [
+      "cacao-2-18",
+      "cacao-0-18",
+      "cacao-1-19",
+      "cacao-3-18",
+      "cacao-2-19",
+      "cacao-1-18",
+      "cacao-0-17"
+    ],
+    "observed": {
+      "cacao-0-17-pod-3": {
+        "class_id": 0,
+        "confidence": 0.05025333911180496,
+        "sim_time": 2273.376,
+        "target_score": 0,
+        "frames_seen": 4
+      },
+      "cacao-0-17-pod-2": {
+        "class_id": 0,
+        "confidence": 0.7837570905685425,
+        "sim_time": 2254.992,
+        "target_score": 0,
+        "frames_seen": 4
+      },
+      "cacao-0-17-pod-0": {
+        "class_id": 0,
+        "confidence": 0.05771677568554878,
+        "sim_time": 2254.992,
+        "target_score": 0,
+        "frames_seen": 1
+      },
+      "cacao-0-18-pod-1": {
+        "class_id": 0,
+        "confidence": 0.5401773452758789,
+        "sim_time": 2352.864,
+        "target_score": 0.6870185136795044,
+        "frames_seen": 6
+      },
+      "cacao-0-18-pod-2": {
+        "class_id": 0,
+        "confidence": 0.14793114364147186,
+        "sim_time": 2296.6240000000003,
+        "target_score": 0,
+        "frames_seen": 1
+      },
+      "cacao-0-18-pod-0": {
+        "class_id": 0,
+        "confidence": 0.14806686341762543,
+        "sim_time": 2333.648,
+        "target_score": 0,
+        "frames_seen": 3
+      },
+      "cacao-0-18-pod-5": {
+        "class_id": 0,
+        "confidence": 0.7136093974113464,
+        "sim_time": 2352.864,
+        "target_score": 0,
+        "frames_seen": 7
+      },
+      "cacao-1-18-pod-4": {
+        "class_id": 0,
+        "confidence": 0.3227752447128296,
+        "sim_time": 2415.84,
+        "target_score": 0.797145664691925,
+        "frames_seen": 4
+      },
+      "cacao-1-18-pod-0": {
+        "class_id": 0,
+        "confidence": 0.12859880924224854,
+        "sim_time": 2422.96,
+        "target_score": 0,
+        "frames_seen": 5
+      },
+      "cacao-1-18-pod-2": {
+        "class_id": 1,
+        "confidence": 0.3822738528251648,
+        "sim_time": 2438.7200000000003,
+        "target_score": 0.4921394884586334,
+        "frames_seen": 6
+      },
+      "cacao-1-18-pod-5": {
+        "class_id": 1,
+        "confidence": 0.24630188941955566,
+        "sim_time": 2403.936,
+        "target_score": 0.3197612762451172,
+        "frames_seen": 2
+      },
+      "cacao-1-19-pod-4": {
+        "class_id": 2,
+        "confidence": 0.7293116450309753,
+        "sim_time": 2539.44,
+        "target_score": 0,
+        "frames_seen": 4
+      },
+      "cacao-1-19-pod-1": {
+        "class_id": 0,
+        "confidence": 0.14781337976455688,
+        "sim_time": 2488.096,
+        "target_score": 0,
+        "frames_seen": 4
+      },
+      "cacao-1-19-pod-0": {
+        "class_id": 0,
+        "confidence": 0.2793422341346741,
+        "sim_time": 2539.44,
+        "target_score": 0,
+        "frames_seen": 4
+      },
+      "cacao-2-19-pod-5": {
+        "class_id": 0,
+        "confidence": 0.06182056665420532,
+        "sim_time": 2627.744,
+        "target_score": 0.8648427724838257,
+        "frames_seen": 5
+      },
+      "cacao-2-19-pod-6": {
+        "class_id": 0,
+        "confidence": 0.8392051458358765,
+        "sim_time": 2634.608,
+        "target_score": 0,
+        "frames_seen": 9
+      },
+      "cacao-2-19-pod-2": {
+        "class_id": 1,
+        "confidence": 0.1628073751926422,
+        "sim_time": 2627.744,
+        "target_score": 0.664122462272644,
+        "frames_seen": 5
+      },
+      "cacao-2-19-pod-3": {
+        "class_id": 0,
+        "confidence": 0.7488272190093994,
+        "sim_time": 2618.752,
+        "target_score": 0,
+        "frames_seen": 8
+      },
+      "cacao-2-19-pod-1": {
+        "class_id": 0,
+        "confidence": 0.6683319211006165,
+        "sim_time": 2627.744,
+        "target_score": 0,
+        "frames_seen": 4
+      },
+      "cacao-2-19-pod-9": {
+        "class_id": 0,
+        "confidence": 0.1093502789735794,
+        "sim_time": 2634.608,
+        "target_score": 0,
+        "frames_seen": 4
+      },
+      "cacao-2-18-pod-3": {
+        "class_id": 0,
+        "confidence": 0.08488718420267105,
+        "sim_time": 2695.312,
+        "target_score": 0.5156333446502686,
+        "frames_seen": 7
+      },
+      "cacao-2-18-pod-6": {
+        "class_id": 0,
+        "confidence": 0.7969841361045837,
+        "sim_time": 2677.072,
+        "target_score": 0.10539346188306808,
+        "frames_seen": 4
+      },
+      "cacao-2-18-pod-5": {
+        "class_id": 0,
+        "confidence": 0.2889396548271179,
+        "sim_time": 2690.944,
+        "target_score": 0.17831391096115112,
+        "frames_seen": 7
+      },
+      "cacao-2-18-pod-1": {
+        "class_id": 0,
+        "confidence": 0.18078355491161346,
+        "sim_time": 2690.944,
+        "target_score": 0,
+        "frames_seen": 2
+      },
+      "cacao-3-18-pod-7": {
+        "class_id": 0,
+        "confidence": 0.26821133494377136,
+        "sim_time": 2751.824,
+        "target_score": 0,
+        "frames_seen": 4
+      },
+      "cacao-3-18-pod-0": {
+        "class_id": 1,
+        "confidence": 0.8160358667373657,
+        "sim_time": 2760.208,
+        "target_score": 0.8160358667373657,
+        "frames_seen": 9
+      },
+      "cacao-4-18-pod-1": {
+        "class_id": 0,
+        "confidence": 0.057282231748104095,
+        "sim_time": 3540.944,
+        "target_score": 0,
+        "frames_seen": 4
+      },
+      "cacao-4-18-pod-6": {
+        "class_id": 1,
+        "confidence": 0.7458494901657104,
+        "sim_time": 3540.944,
+        "target_score": 0.7884554862976074,
+        "frames_seen": 2
+      }
+    },
+    "removed": [],
+    "payload_attached": false,
+    "gripper_locked": false,
+    "payloads": {},
+    "outcomes": [],
+    "events": [
+      {
+        "phase": "transit",
+        "phase_id": 219,
+        "sim_time": 2760.208,
+        "reason": null,
+        "label": "Hacia el siguiente árbol",
+        "battery_soc": 0.2968446358241542,
+        "position": [
+          3.1668871889329835,
+          18.090146128870746,
+          0.1175510784775658
+        ],
+        "return_cause": null,
+        "return_budget": {
+          "distance_m": 27.274625419077683,
+          "estimated_seconds": 79.54298442486477,
+          "travel_wh": 10.29390313759957,
+          "reserve_wh": 10.656,
+          "required_wh": 20.94990313759957,
+          "margin_wh": 5.409900523585327
+        }
+      },
+      {
+        "phase": "inspect",
+        "phase_id": 220,
+        "sim_time": 2762.016,
+        "reason": null,
+        "label": "Inspeccionando cacao",
+        "battery_soc": 0.2943781022914401,
+        "position": [
+          3.168873930101003,
+          18.090335073208845,
+          0.6655700377164722
+        ],
+        "return_cause": null,
+        "return_budget": {
+          "distance_m": 27.27504383797766,
+          "estimated_seconds": 78.70054288139264,
+          "travel_wh": 10.184880177117321,
+          "reserve_wh": 10.656,
+          "required_wh": 20.84088017711732,
+          "margin_wh": 5.299895306362563
+        }
+      },
+      {
+        "phase": "transit",
+        "phase_id": 221,
+        "sim_time": 2767.232,
+        "reason": null,
+        "label": "Hacia el siguiente árbol",
+        "battery_soc": 0.2873384495711767,
+        "position": [
+          3.166772461592158,
+          18.09009715761896,
+          0.6675636852582038
+        ],
+        "return_cause": null,
+        "return_budget": {
+          "distance_m": 27.274563458151505,
+          "estimated_seconds": 78.69671277513396,
+          "travel_wh": 10.184384511244101,
+          "reserve_wh": 10.656,
+          "required_wh": 20.840384511244103,
+          "margin_wh": 4.6752698106763955
+        }
+      },
+      {
+        "phase": "inspect",
+        "phase_id": 222,
+        "sim_time": 2771.808,
+        "reason": null,
+        "label": "Inspeccionando cacao",
+        "battery_soc": 0.28110734334446613,
+        "position": [
+          3.9990643517564726,
+          21.111112881352597,
+          0.7019568511856776
+        ],
+        "return_cause": null,
+        "return_budget": {
+          "distance_m": 30.375510442510226,
+          "estimated_seconds": 83.56883365791482,
+          "travel_wh": 10.814900713328475,
+          "reserve_wh": 10.656,
+          "required_wh": 21.470900713328476,
+          "margin_wh": 3.4914313756601203
+        }
+      },
+      {
+        "phase": "transit",
+        "phase_id": 223,
+        "sim_time": 2792.928,
+        "reason": null,
+        "label": "Hacia el siguiente árbol",
+        "battery_soc": 0.2523367798255047,
+        "position": [
+          3.9923346158250532,
+          21.084821614682195,
+          0.700748527230182
+        ],
+        "return_cause": null,
+        "return_budget": {
+          "distance_m": 30.348562194475768,
+          "estimated_seconds": 83.5278924592034,
+          "travel_wh": 10.809602386431141,
+          "reserve_wh": 10.656,
+          "required_wh": 21.465602386431144,
+          "margin_wh": 0.9419036620736758
+        }
+      },
+      {
+        "phase": "inspect",
+        "phase_id": 224,
+        "sim_time": 2794.736,
+        "reason": null,
+        "label": "Inspeccionando cacao",
+        "battery_soc": 0.249839364086085,
+        "position": [
+          3.9922320305170262,
+          21.084805899419464,
+          1.2489866070489322
+        ],
+        "return_cause": null,
+        "return_budget": {
+          "distance_m": 30.34853312091427,
+          "estimated_seconds": 82.68440308382574,
+          "travel_wh": 10.700443822787685,
+          "reserve_wh": 10.656,
+          "required_wh": 21.356443822787686,
+          "margin_wh": 0.8292917080566653
+        }
+      },
+      {
+        "phase": "transit",
+        "phase_id": 225,
+        "sim_time": 2799.168,
+        "reason": null,
+        "label": "Hacia el siguiente árbol",
+        "battery_soc": 0.24378594850841878,
+        "position": [
+          3.994485980920793,
+          21.08553391586516,
+          1.2507687621973351
+        ],
+        "return_cause": null,
+        "return_budget": {
+          "distance_m": 30.3495513847313,
+          "estimated_seconds": 82.68327854920729,
+          "travel_wh": 10.700298293291638,
+          "reserve_wh": 10.656,
+          "required_wh": 21.356298293291637,
+          "margin_wh": 0.2918939342559508
+        }
+      },
+      {
+        "phase": "return_climb",
+        "phase_id": 226,
+        "sim_time": 2800.304,
+        "reason": "Reserva para volver y aterrizar",
+        "label": "Ascendiendo para regresar",
+        "battery_soc": 0.24231652169766446,
+        "position": [
+          4.375882479465791,
+          21.469259981712902,
+          0.8822905066692219
+        ],
+        "return_cause": "energy_reserve",
+        "return_budget": {
+          "distance_m": 30.781880243209756,
+          "estimated_seconds": 83.93680812479776,
+          "travel_wh": 10.862521424904628,
+          "reserve_wh": 10.656,
+          "required_wh": 21.518521424904627,
+          "margin_wh": -0.0008142981520204984
+        }
+      },
+      {
+        "phase": "return_transit",
+        "phase_id": 227,
+        "sim_time": 2811.424,
+        "reason": null,
+        "label": "Regresando a la base",
+        "battery_soc": 0.22682192202939275,
+        "position": [
+          4.376178456102328,
+          21.470085026748336,
+          7.130642620761911
+        ],
+        "return_cause": "energy_reserve",
+        "return_budget": {
+          "distance_m": 30.782738984972198,
+          "estimated_seconds": 74.33737499902395,
+          "travel_wh": 9.620229153787744,
+          "reserve_wh": 10.656,
+          "required_wh": 20.276229153787746,
+          "margin_wh": -0.13444247757766625
+        }
+      },
+      {
+        "phase": "landing",
+        "phase_id": 228,
+        "sim_time": 2849.632,
+        "reason": null,
+        "label": "Aterrizando",
+        "battery_soc": 0.17377058567910794,
+        "position": [
+          0.020780800197716276,
+          -8.981337049052387,
+          7.124921418484007
+        ],
+        "return_cause": "energy_reserve",
+        "return_budget": {
+          "distance_m": 0.027931118755438633,
+          "estimated_seconds": 25.488253135202775,
+          "travel_wh": 3.2985135121279043,
+          "reserve_wh": 10.656,
+          "required_wh": 13.954513512127905,
+          "margin_wh": 1.476314496176883
+        }
+      },
+      {
+        "phase": "charging",
+        "phase_id": 229,
+        "sim_time": 2861.024,
+        "reason": "Contacto con la base; carga CC/CV aproximada",
+        "label": "Cargando en la base",
+        "battery_soc": 0.15784081791043325,
+        "position": [
+          0.002468940542154932,
+          -8.999598667260269,
+          0.31797668935352985
+        ],
+        "return_cause": "energy_reserve",
+        "return_budget": {
+          "distance_m": 0.0025013467110091433,
+          "estimated_seconds": 35.92008733392118,
+          "travel_wh": 4.648529375444419,
+          "reserve_wh": 10.656,
+          "required_wh": 15.30452937544442,
+          "margin_wh": -1.288264744997944
+        }
+      },
+      {
+        "phase": "takeoff",
+        "phase_id": 230,
+        "sim_time": 3495.184,
+        "reason": null,
+        "label": "Despegando",
+        "battery_soc": 0.3234228623549944,
+        "position": [
+          0.002661746659612787,
+          -8.999683005526824,
+          0.31811648358301436
+        ],
+        "return_cause": "energy_reserve",
+        "return_budget": {
+          "distance_m": 0.002680556057235828,
+          "estimated_seconds": 35.92015689248453,
+          "travel_wh": 4.648538377232805,
+          "reserve_wh": 10.656,
+          "required_wh": 15.304538377232806,
+          "margin_wh": 13.415411799890704
+        }
+      },
+      {
+        "phase": "transit",
+        "phase_id": 231,
+        "sim_time": 3498.784,
+        "reason": null,
+        "label": "Hacia el siguiente árbol",
+        "battery_soc": 0.31860831455709715,
+        "position": [
+          0.0036608629566588233,
+          -8.999037799311708,
+          2.004592864540219
+        ],
+        "return_cause": "energy_reserve",
+        "return_budget": {
+          "distance_m": 0.0037852011507958994,
+          "estimated_seconds": 33.32733228118313,
+          "travel_wh": 4.312992941082719,
+          "reserve_wh": 10.656,
+          "required_wh": 14.96899294108272,
+          "margin_wh": 13.323425391587511
+        }
+      },
+      {
+        "phase": "inspect",
+        "phase_id": 232,
+        "sim_time": 3537.76,
+        "reason": null,
+        "label": "Inspeccionando cacao",
+        "battery_soc": 0.26585952587767264,
+        "position": [
+          4.971703781459781,
+          22.06062929088129,
+          0.6998110611043704
+        ],
+        "return_cause": "energy_reserve",
+        "return_budget": {
+          "distance_m": 31.45600944869095,
+          "estimated_seconds": 85.2882215302998,
+          "travel_wh": 11.037412005081837,
+          "reserve_wh": 10.656,
+          "required_wh": 21.69341200508184,
+          "margin_wh": 1.9149138928554965
+        }
+      },
+      {
+        "phase": "transit",
+        "phase_id": 233,
+        "sim_time": 3540.944,
+        "reason": null,
+        "label": "Hacia el siguiente árbol",
+        "battery_soc": 0.26151739579674627,
+        "position": [
+          4.942935408329409,
+          22.033737277747573,
+          0.700773467278368
+        ],
+        "return_cause": "energy_reserve",
+        "return_budget": {
+          "distance_m": 31.424917818113318,
+          "estimated_seconds": 85.23736008038166,
+          "travel_wh": 11.030829867855273,
+          "reserve_wh": 10.656,
+          "required_wh": 21.686829867855273,
+          "margin_wh": 1.5359148788957988
+        }
+      },
+      {
+        "phase": "inspect",
+        "phase_id": 234,
+        "sim_time": 3542.752,
+        "reason": null,
+        "label": "Inspeccionando cacao",
+        "battery_soc": 0.2590262570128511,
+        "position": [
+          4.945692780768796,
+          22.034779615174386,
+          1.24882387494789
+        ],
+        "return_cause": "energy_reserve",
+        "return_budget": {
+          "distance_m": 31.426381001384684,
+          "estimated_seconds": 84.39652948635728,
+          "travel_wh": 10.922015385313532,
+          "reserve_wh": 10.656,
+          "required_wh": 21.578015385313535,
+          "margin_wh": 1.4235162374276467
+        }
+      },
+      {
+        "phase": "transit",
+        "phase_id": 235,
+        "sim_time": 3546.4320000000002,
+        "reason": null,
+        "label": "Hacia el siguiente árbol",
+        "battery_soc": 0.25401668481487394,
+        "position": [
+          4.942313567589223,
+          22.0358329975654,
+          1.2506679029348742
+        ],
+        "return_cause": "energy_reserve",
+        "return_budget": {
+          "distance_m": 31.4268896528617,
+          "estimated_seconds": 84.39450037845167,
+          "travel_wh": 10.921752792196274,
+          "reserve_wh": 10.656,
+          "required_wh": 21.577752792196275,
+          "margin_wh": 0.9789288193645334
+        }
+      },
+      {
+        "phase": "inspect",
+        "phase_id": 236,
+        "sim_time": 3549.84,
+        "reason": null,
+        "label": "Inspeccionando cacao",
+        "battery_soc": 0.24931297234376096,
+        "position": [
+          4.025810149730936,
+          22.961200315119015,
+          0.6945195790900922
+        ],
+        "return_cause": "energy_reserve",
+        "return_budget": {
+          "distance_m": 32.21374664556795,
+          "estimated_seconds": 86.49982723160606,
+          "travel_wh": 11.194209638718418,
+          "reserve_wh": 10.656,
+          "required_wh": 21.850209638718418,
+          "margin_wh": 0.2887823054075582
+        }
+      },
+      {
+        "phase": "return_climb",
+        "phase_id": 237,
+        "sim_time": 3552.224,
+        "reason": "Reserva para volver y aterrizar",
+        "label": "Ascendiendo para regresar",
+        "battery_soc": 0.24607261887930312,
+        "position": [
+          3.9952462874320207,
+          22.982402782667616,
+          0.7008010175190662
+        ],
+        "return_cause": "energy_reserve",
+        "return_budget": {
+          "distance_m": 32.23098013790497,
+          "estimated_seconds": 86.51753432094742,
+          "travel_wh": 11.196501167806074,
+          "reserve_wh": 10.656,
+          "required_wh": 21.852501167806075,
+          "margin_wh": -0.0012526113239559322
+        }
+      },
+      {
+        "phase": "return_transit",
+        "phase_id": 238,
+        "sim_time": 3563.088,
+        "reason": null,
+        "label": "Regresando a la base",
+        "battery_soc": 0.23108781150679292,
+        "position": [
+          3.9956943315775124,
+          22.982387401644,
+          7.130471002533825
+        ],
+        "return_cause": "energy_reserve",
+        "return_budget": {
+          "distance_m": 32.23102041667681,
+          "estimated_seconds": 76.63732265662924,
+          "travel_wh": 9.917872479344647,
+          "reserve_wh": 10.656,
+          "required_wh": 20.573872479344647,
+          "margin_wh": -0.05327481754143193
+        }
+      }
+    ],
+    "accelerated": false,
+    "camera_frames_at_view": 0,
+    "route_index": 7,
+    "route_count": 1190,
+    "harvest_enabled": false,
+    "limits": [
+      "Potencia y batería aproximadas, sin calibración de un dron real.",
+      "Texturas sintéticas/derivadas de entrenamiento no constituyen una nueva prueba independiente.",
+      "Asociación de detecciones a geometría conocida; no SLAM ni estimación de profundidad aprendida.",
+      "Agarre con conector y corte sin resistencia; follaje visual sin colisiones."
+    ]
+  },
+  "model": {
+    "checkpoint": "detector-yolo11s.pt",
+    "sha256": "4a72c36e6aed0db8c5f39b637a918da28e4386644ceb52c7b9d8446efb9a9d33",
+    "names": [
+      "healthy",
+      "monilia",
+      "phytophthora"
+    ],
+    "device": "cuda:0",
+    "threshold": 0.74,
+    "precision": "FP32",
+    "actual_inference": true
+  },
+  "model_error": null,
+  "server_time": 1792326933.1334472,
+  "last_inference": {
+    "frame_id": "a282e3d4-ac8a-4456-a1cd-6c8f36578693",
+    "sim_time": 3577.491317188088,
+    "phase_id": 238,
+    "width": 640,
+    "height": 323,
+    "predictions": [],
+    "inference_ms": 4.530964884907007,
+    "wall_time": 1792326933.084514,
+    "source": "trained_yolo11s_pixels_only",
+    "vehicle_id": "drone",
+    "task_id": "",
+    "camera": {
+      "position": [
+        0.002368913694530491,
+        7.086232346261092,
+        -11.179029664276902
+      ],
+      "quaternion": [
+        0.0006136984402096424,
+        -0.9897509108534535,
+        -0.14280314171792727,
+        -0.00014336831322947496
+      ],
+      "vertical_fov_degrees": 58,
+      "aspect": 1.9807427785419531
+    },
+    "localization": {
+      "version": 1,
+      "method": "known_scene_geometry_not_a_visual_classifier",
+      "associations": [],
+      "rejected": []
+    },
+    "localization_ms": 3.9085031021386385
+  }
+}

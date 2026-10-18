@@ -1,0 +1,9 @@
+{
+  "dataset": "Serrano/Torres Cocoa Diseases (YOLOv4), Kaggle version 2, external test only",
+  "require_class_files": true,
+  "classes": [
+    {"source_id": 0, "source_name": "Fitoftora", "target_id": 2, "target_name": "phytophthora", "role": "other_disease"},
+    {"source_id": 1, "source_name": "Monilia", "target_id": 1, "target_name": "monilia", "role": "target_disease"},
+    {"source_id": 2, "source_name": "Sana", "target_id": 0, "target_name": "healthy", "role": "healthy"}
+  ]
+}

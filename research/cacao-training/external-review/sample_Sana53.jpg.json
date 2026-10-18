@@ -1,0 +1,82 @@
+{
+    "description": "",
+    "tags": [],
+    "size": {
+        "height": 4160,
+        "width": 3120
+    },
+    "objects": [
+        {
+            "id": 12892971,
+            "classId": 19772,
+            "description": "",
+            "geometryType": "rectangle",
+            "labelerLogin": "gr@datasetninja.com",
+            "createdAt": "2023-07-03T15:04:35.130Z",
+            "updatedAt": "2023-07-03T15:04:35.130Z",
+            "tags": [],
+            "classTitle": "healthy",
+            "points": {
+                "exterior": [
+                    [
+                        995,
+                        1697
+                    ],
+                    [
+                        1941,
+                        3606
+                    ]
+                ],
+                "interior": []
+            }
+        },
+        {
+            "id": 12892970,
+            "classId": 19772,
+            "description": "",
+            "geometryType": "rectangle",
+            "labelerLogin": "gr@datasetninja.com",
+            "createdAt": "2023-07-03T15:04:35.129Z",
+            "updatedAt": "2023-07-03T15:04:35.129Z",
+            "tags": [],
+            "classTitle": "healthy",
+            "points": {
+                "exterior": [
+                    [
+                        2231,
+                        2452
+                    ],
+                    [
+                        2663,
+                        2793
+                    ]
+                ],
+                "interior": []
+            }
+        },
+        {
+            "id": 12892969,
+            "classId": 19772,
+            "description": "",
+            "geometryType": "rectangle",
+            "labelerLogin": "gr@datasetninja.com",
+            "createdAt": "2023-07-03T15:04:35.129Z",
+            "updatedAt": "2023-07-03T15:04:35.129Z",
+            "tags": [],
+            "classTitle": "healthy",
+            "points": {
+                "exterior": [
+                    [
+                        1904,
+                        870
+                    ],
+                    [
+                        2101,
+                        1157
+                    ]
+                ],
+                "interior": []
+            }
+        }
+    ]
+}

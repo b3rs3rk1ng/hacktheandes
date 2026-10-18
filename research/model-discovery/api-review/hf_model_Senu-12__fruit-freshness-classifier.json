@@ -1,0 +1,41 @@
+{
+  "_id": "6a3fa82b1831ca8ca8d15ce6",
+  "id": "Senu-12/fruit-freshness-classifier",
+  "private": false,
+  "library_name": "keras",
+  "tags": [
+    "keras",
+    "license:apache-2.0",
+    "region:us"
+  ],
+  "downloads": 140,
+  "likes": 0,
+  "modelId": "Senu-12/fruit-freshness-classifier",
+  "author": "Senu-12",
+  "sha": "409c55a15256a8cd876773e3b8008cd450faa20c",
+  "lastModified": "2026-06-27T11:02:57.000Z",
+  "gated": false,
+  "disabled": false,
+  "model-index": null,
+  "config": {},
+  "cardData": {
+    "license": "apache-2.0"
+  },
+  "siblings": [
+    {
+      "rfilename": ".gitattributes"
+    },
+    {
+      "rfilename": "README.md"
+    },
+    {
+      "rfilename": "cnn/cnn_model.keras"
+    },
+    {
+      "rfilename": "mobilenet/mobilenet_model.keras"
+    }
+  ],
+  "spaces": [],
+  "createdAt": "2026-06-27T10:38:35.000Z",
+  "usedStorage": 1077639683
+}

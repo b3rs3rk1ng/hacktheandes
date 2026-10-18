@@ -1,0 +1,16 @@
+{
+  "description": "Ultralytics best model trained on c:\\Users\\mrsoh\\Documents\\IOT Project\\Dataset\\data.yaml",
+  "author": "Ultralytics",
+  "date": "2026-04-11T13:32:48.210616",
+  "version": "8.4.37",
+  "license": "AGPL-3.0 License (https://ultralytics.com/license)",
+  "docs": "https://docs.ultralytics.com",
+  "stride": "32",
+  "task": "detect",
+  "batch": "1",
+  "imgsz": "[320, 320]",
+  "names": "{0: 'bad apple', 1: 'bad banana', 2: 'bad orange', 3: 'bad pomegranate', 4: 'good apple', 5: 'good banana', 6: 'good orange', 7: 'good pomegranate'}",
+  "args": "{'batch': 1, 'half': False, 'dynamic': False, 'simplify': True, 'opset': None, 'nms': False}",
+  "channels": "3",
+  "end2end": "False"
+}

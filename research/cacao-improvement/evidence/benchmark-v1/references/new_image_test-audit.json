@@ -1,0 +1,20 @@
+[
+  {
+    "source": "/home/f3mt0/hacktheandes-cacao-improvement/data/mixed-v2/disease/manifest.json",
+    "source_sha256": "b2553f2961e628c6c0ff089605331ab91a998cd8b7009d25c44446c9c747b045",
+    "filter": {
+      "manifest": "data/mixed-v2/disease/manifest.json",
+      "splits": [
+        "train",
+        "val",
+        "regression"
+      ],
+      "exclude_if_truthy": [
+        "augmentation"
+      ]
+    },
+    "rows": 2184,
+    "output": "/home/f3mt0/hacktheandes-cacao-improvement/runs/benchmark-v1/references/new_image_test-0.json",
+    "sha256": "423302e7704fae620d3c8a577bf7dff64f5c23f5b1e962151497400784a7ff81"
+  }
+]

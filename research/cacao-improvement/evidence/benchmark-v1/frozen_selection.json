@@ -1,0 +1,265 @@
+{
+  "schema_version": 1,
+  "frozen_at_epoch": 1792306137.2911189,
+  "run_config_sha256": "c9a55db2c597b635414f3927fde0c91dedd00f1b4c0c9eea3987d08bdf2f200e",
+  "development_manifest_sha256": "b2553f2961e628c6c0ff089605331ab91a998cd8b7009d25c44446c9c747b045",
+  "decision": {
+    "status": "validation_target_met_max_f1",
+    "target_met_on_validation": true,
+    "selected_candidate": "detector_v2",
+    "ranking": [
+      "f1",
+      "precision",
+      "recall"
+    ],
+    "tie_break": "earlier candidate in the declared configuration",
+    "policy": {
+      "precision_target": 0.95,
+      "min_recall": 0.5,
+      "min_alerts": 20
+    }
+  },
+  "baseline": "baseline_v1",
+  "models": {
+    "baseline_v1": {
+      "selection_sha256": "f39dd5ef368270e1d2044f040ffc4cd23664bfca176fb59abb0714703b717b35",
+      "inference_fingerprint": {
+        "weights_sha256": "58ccd2f239f5b2bfe202fa74036cce3edb5207d642a57a0c4b40d7c2610c7bc2",
+        "config_sha256": "a430ee539e462ffa726f5ffebcfc9c4b387c9129d1747fb8d3145664af7dd7ce",
+        "classifier_weights_sha256": null,
+        "classifier_metadata_sha256": null
+      },
+      "validation_ids_sha256": "4497216859f09feceb99d338b4c3552f93d16536e86ee22e0233803a418f1678"
+    },
+    "detector_v2": {
+      "selection_sha256": "751d3e10c6dd7612ffaeff749e005bc47b108a56e78e36d216bde8c96057c5e9",
+      "inference_fingerprint": {
+        "weights_sha256": "4a72c36e6aed0db8c5f39b637a918da28e4386644ceb52c7b9d8446efb9a9d33",
+        "config_sha256": "e89a5312c24390bca78a94f690643d3dda5a2de6a2970b434c4365b47faee04f",
+        "classifier_weights_sha256": null,
+        "classifier_metadata_sha256": null
+      },
+      "validation_ids_sha256": "4497216859f09feceb99d338b4c3552f93d16536e86ee22e0233803a418f1678"
+    },
+    "detector_roi_v2": {
+      "selection_sha256": "6ca762e93124a1f88777b8afb297bd8731b1d32b653059e061381a515b5a2570",
+      "inference_fingerprint": {
+        "weights_sha256": "4a72c36e6aed0db8c5f39b637a918da28e4386644ceb52c7b9d8446efb9a9d33",
+        "config_sha256": "e89a5312c24390bca78a94f690643d3dda5a2de6a2970b434c4365b47faee04f",
+        "classifier_weights_sha256": "bc25908e39d9b28c816feb3bbd9dc9fefae31b573b466b2d4738bcacacdf0f4a",
+        "classifier_metadata_sha256": "8e516b1c40400e31539764518a5b915327964d1aaaad888099d456370fdc2235"
+      },
+      "validation_ids_sha256": "4497216859f09feceb99d338b4c3552f93d16536e86ee22e0233803a418f1678"
+    }
+  },
+  "selection_data": "validation only; benchmark inference has not started",
+  "validation_metrics": {
+    "baseline_v1": {
+      "threshold": 0.89,
+      "unit": "annotated_object",
+      "tp": 145,
+      "fp": 21,
+      "fn": 88,
+      "precision": 0.8734939759036144,
+      "recall": 0.6223175965665236,
+      "f1": 0.7268170426065163,
+      "precision_wilson_95": [
+        0.8143443230120763,
+        0.9157483225704718
+      ],
+      "recall_wilson_95": [
+        0.558558665790114,
+        0.682108657759658
+      ],
+      "alerts": 166,
+      "images": 278,
+      "matching_iou": 0.5,
+      "recall_by_source_annotation": [
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "m1",
+          "source_class_ids": [
+            1
+          ],
+          "gt": 31,
+          "tp": 10,
+          "fn": 21,
+          "recall": 0.3225806451612903
+        },
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "m2",
+          "source_class_ids": [
+            2
+          ],
+          "gt": 69,
+          "tp": 47,
+          "fn": 22,
+          "recall": 0.6811594202898551
+        },
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "m3",
+          "source_class_ids": [
+            3
+          ],
+          "gt": 104,
+          "tp": 79,
+          "fn": 25,
+          "recall": 0.7596153846153846
+        },
+        {
+          "source": "serrano_torres_v2",
+          "class": "monilia",
+          "source_class_ids": [
+            1
+          ],
+          "gt": 29,
+          "tp": 9,
+          "fn": 20,
+          "recall": 0.3103448275862069
+        }
+      ],
+      "target_gt_without_source_annotation": 0,
+      "source_annotation_recall_note": "A merged GT may have multiple provenance strata; it counts once per (source,class). Provenance never changes matching or threshold selection."
+    },
+    "detector_v2": {
+      "threshold": 0.74,
+      "unit": "annotated_object",
+      "tp": 168,
+      "fp": 8,
+      "fn": 65,
+      "precision": 0.9545454545454546,
+      "recall": 0.721030042918455,
+      "f1": 0.8215158924205379,
+      "precision_wilson_95": [
+        0.9128822753639693,
+        0.9767902231199511
+      ],
+      "recall_wilson_95": [
+        0.6602144279138044,
+        0.7746756479743803
+      ],
+      "alerts": 176,
+      "images": 278,
+      "matching_iou": 0.5,
+      "recall_by_source_annotation": [
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "m1",
+          "source_class_ids": [
+            1
+          ],
+          "gt": 31,
+          "tp": 11,
+          "fn": 20,
+          "recall": 0.3548387096774194
+        },
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "m2",
+          "source_class_ids": [
+            2
+          ],
+          "gt": 69,
+          "tp": 60,
+          "fn": 9,
+          "recall": 0.8695652173913043
+        },
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "m3",
+          "source_class_ids": [
+            3
+          ],
+          "gt": 104,
+          "tp": 82,
+          "fn": 22,
+          "recall": 0.7884615384615384
+        },
+        {
+          "source": "serrano_torres_v2",
+          "class": "monilia",
+          "source_class_ids": [
+            1
+          ],
+          "gt": 29,
+          "tp": 15,
+          "fn": 14,
+          "recall": 0.5172413793103449
+        }
+      ],
+      "target_gt_without_source_annotation": 0,
+      "source_annotation_recall_note": "A merged GT may have multiple provenance strata; it counts once per (source,class). Provenance never changes matching or threshold selection."
+    },
+    "detector_roi_v2": {
+      "threshold": 0.76,
+      "unit": "annotated_object",
+      "tp": 144,
+      "fp": 7,
+      "fn": 89,
+      "precision": 0.9536423841059603,
+      "recall": 0.6180257510729614,
+      "f1": 0.75,
+      "precision_wilson_95": [
+        0.9074103910248671,
+        0.977365566547617
+      ],
+      "recall_wilson_95": [
+        0.5542033551726951,
+        0.6780195008841025
+      ],
+      "alerts": 151,
+      "images": 278,
+      "matching_iou": 0.5,
+      "recall_by_source_annotation": [
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "m1",
+          "source_class_ids": [
+            1
+          ],
+          "gt": 31,
+          "tp": 7,
+          "fn": 24,
+          "recall": 0.22580645161290322
+        },
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "m2",
+          "source_class_ids": [
+            2
+          ],
+          "gt": 69,
+          "tp": 52,
+          "fn": 17,
+          "recall": 0.7536231884057971
+        },
+        {
+          "source": "cocoa_monilia_v2",
+          "class": "m3",
+          "source_class_ids": [
+            3
+          ],
+          "gt": 104,
+          "tp": 75,
+          "fn": 29,
+          "recall": 0.7211538461538461
+        },
+        {
+          "source": "serrano_torres_v2",
+          "class": "monilia",
+          "source_class_ids": [
+            1
+          ],
+          "gt": 29,
+          "tp": 10,
+          "fn": 19,
+          "recall": 0.3448275862068966
+        }
+      ],
+      "target_gt_without_source_annotation": 0,
+      "source_annotation_recall_note": "A merged GT may have multiple provenance strata; it counts once per (source,class). Provenance never changes matching or threshold selection."
+    }
+  }
+}

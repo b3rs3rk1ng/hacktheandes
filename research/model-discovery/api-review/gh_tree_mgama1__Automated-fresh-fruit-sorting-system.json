@@ -1,0 +1,23 @@
+{
+  "sha": "99a541a6edefa9af540bc24775cc0c57c1e378a5",
+  "url": "https://api.github.com/repos/mgama1/Automated-fresh-fruit-sorting-system/git/trees/99a541a6edefa9af540bc24775cc0c57c1e378a5",
+  "tree": [
+    {
+      "path": "LICENSE",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "918bf7b56c59b9e556feb22289937d460f20c97a",
+      "size": 1070,
+      "url": "https://api.github.com/repos/mgama1/Automated-fresh-fruit-sorting-system/git/blobs/918bf7b56c59b9e556feb22289937d460f20c97a"
+    },
+    {
+      "path": "README.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "1d660e499cf21edd8133550b818e021e9b8acf9f",
+      "size": 1726,
+      "url": "https://api.github.com/repos/mgama1/Automated-fresh-fruit-sorting-system/git/blobs/1d660e499cf21edd8133550b818e021e9b8acf9f"
+    }
+  ],
+  "truncated": false
+}

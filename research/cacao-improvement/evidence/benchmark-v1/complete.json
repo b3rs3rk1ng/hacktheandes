@@ -1,0 +1,39 @@
+{
+  "status": "complete",
+  "frozen_selection_sha256": "f62c5c66159d7be2f0b8c70661f4641d040c8ffd8adbf1d776e4c84985421d2d",
+  "decision": {
+    "status": "validation_target_met_max_f1",
+    "target_met_on_validation": true,
+    "selected_candidate": "detector_v2",
+    "ranking": [
+      "f1",
+      "precision",
+      "recall"
+    ],
+    "tie_break": "earlier candidate in the declared configuration",
+    "policy": {
+      "precision_target": 0.95,
+      "min_recall": 0.5,
+      "min_alerts": 20
+    }
+  },
+  "results": [
+    {
+      "benchmark": "regression",
+      "reports": [
+        "/home/f3mt0/hacktheandes-cacao-improvement/runs/benchmark-v1/benchmarks/regression/baseline_v1/evaluation.json",
+        "/home/f3mt0/hacktheandes-cacao-improvement/runs/benchmark-v1/benchmarks/regression/detector_v2/evaluation.json"
+      ],
+      "comparison": "/home/f3mt0/hacktheandes-cacao-improvement/runs/benchmark-v1/comparisons/regression.json"
+    },
+    {
+      "benchmark": "new_image_test",
+      "reports": [
+        "/home/f3mt0/hacktheandes-cacao-improvement/runs/benchmark-v1/benchmarks/new_image_test/baseline_v1/evaluation.json",
+        "/home/f3mt0/hacktheandes-cacao-improvement/runs/benchmark-v1/benchmarks/new_image_test/detector_v2/evaluation.json"
+      ],
+      "comparison": "/home/f3mt0/hacktheandes-cacao-improvement/runs/benchmark-v1/comparisons/new_image_test.json"
+    }
+  ],
+  "note": "Regression is development evidence. New held-out image labels provide image metrics only. No benchmark results were used to choose the new model or thresholds."
+}

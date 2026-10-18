@@ -1,0 +1,62 @@
+{
+  "_id": "6ac0a2ef1f2153fa716e2345",
+  "id": "ixrbhii/peach-disease-convnext",
+  "private": false,
+  "pipeline_tag": "image-classification",
+  "library_name": "timm",
+  "tags": [
+    "timm",
+    "safetensors",
+    "agriculture",
+    "plant-disease",
+    "convnext",
+    "image-classification",
+    "license:cc-by-4.0",
+    "region:us"
+  ],
+  "downloads": 14,
+  "likes": 0,
+  "modelId": "ixrbhii/peach-disease-convnext",
+  "author": "ixrbhii",
+  "sha": "bb32365090fd7d8578743691c9c9b660a002307a",
+  "lastModified": "2026-10-04T17:29:30.000Z",
+  "gated": false,
+  "disabled": false,
+  "model-index": null,
+  "config": {},
+  "cardData": {
+    "license": "cc-by-4.0",
+    "library_name": "timm",
+    "pipeline_tag": "image-classification",
+    "tags": [
+      "agriculture",
+      "plant-disease",
+      "convnext",
+      "image-classification",
+      "timm"
+    ]
+  },
+  "siblings": [
+    {
+      "rfilename": ".gitattributes"
+    },
+    {
+      "rfilename": "README.md"
+    },
+    {
+      "rfilename": "config.json"
+    },
+    {
+      "rfilename": "model.safetensors"
+    }
+  ],
+  "spaces": [],
+  "createdAt": "2026-10-03T06:38:39.000Z",
+  "safetensors": {
+    "parameters": {
+      "F16": 49457764
+    },
+    "total": 49457764
+  },
+  "usedStorage": 98949344
+}

@@ -1,0 +1,43 @@
+[
+  {
+    "_id": "6ac0a2f317c08e6d36c11cd6",
+    "id": "ixrbhii/pear-disease-convnext",
+    "author": "ixrbhii",
+    "gated": false,
+    "lastModified": "2026-10-04T17:29:32.000Z",
+    "likes": 0,
+    "trendingScore": 0,
+    "private": false,
+    "sha": "2425fe795a6668ed3bdedc053edbb963e415c2fd",
+    "config": {},
+    "downloads": 19,
+    "tags": [
+      "timm",
+      "safetensors",
+      "agriculture",
+      "plant-disease",
+      "convnext",
+      "image-classification",
+      "license:cc-by-4.0",
+      "region:us"
+    ],
+    "pipeline_tag": "image-classification",
+    "library_name": "timm",
+    "createdAt": "2026-10-03T06:38:43.000Z",
+    "modelId": "ixrbhii/pear-disease-convnext",
+    "siblings": [
+      {
+        "rfilename": ".gitattributes"
+      },
+      {
+        "rfilename": "README.md"
+      },
+      {
+        "rfilename": "config.json"
+      },
+      {
+        "rfilename": "model.safetensors"
+      }
+    ]
+  }
+]

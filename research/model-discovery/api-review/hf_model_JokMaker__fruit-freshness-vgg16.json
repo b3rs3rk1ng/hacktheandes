@@ -1,0 +1,43 @@
+{
+  "_id": "69c726887d77aba79965bd6a",
+  "id": "JokMaker/fruit-freshness-vgg16",
+  "private": false,
+  "library_name": "keras",
+  "tags": [
+    "keras",
+    "license:mit",
+    "region:us"
+  ],
+  "downloads": 5,
+  "likes": 0,
+  "modelId": "JokMaker/fruit-freshness-vgg16",
+  "author": "JokMaker",
+  "sha": "7f5cd1856057a97a467a021613b3ead59326a874",
+  "lastModified": "2026-03-28T01:01:29.000Z",
+  "gated": false,
+  "disabled": false,
+  "model-index": null,
+  "config": {},
+  "cardData": {
+    "license": "mit"
+  },
+  "siblings": [
+    {
+      "rfilename": ".gitattributes"
+    },
+    {
+      "rfilename": "README.md"
+    },
+    {
+      "rfilename": "class_names.json"
+    },
+    {
+      "rfilename": "fruit_model_final.keras"
+    }
+  ],
+  "spaces": [
+    "JokMaker/fruit-freshness-mlops"
+  ],
+  "createdAt": "2026-03-28T00:53:28.000Z",
+  "usedStorage": 167583548
+}

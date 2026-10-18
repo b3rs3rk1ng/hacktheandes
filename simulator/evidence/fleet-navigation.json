@@ -1,0 +1,36 @@
+{
+  "target_id": "cacao-0-17-pod-0",
+  "path": [
+    [
+      2,
+      -8
+    ],
+    [
+      -1.7934659036145932,
+      8.911194627562686
+    ],
+    [
+      -0.5787505281140458,
+      6.841299326702624
+    ]
+  ],
+  "outbound_reached_enu": [
+    -0.7787314980038103,
+    6.841282223773183
+  ],
+  "return_enu": [
+    1.956617612462534,
+    -7.80636339337446
+  ],
+  "charging": true,
+  "parking_drift_20s_m": 0,
+  "soc_before": 0.9971745788145655,
+  "soc_after": 0.997304787147881,
+  "checks": [
+    "grid avoids trunks and excessive grades",
+    "exact start/goal path segments clear",
+    "physical drive to alert approach",
+    "physical return to own station",
+    "gradual positive charge only at station"
+  ]
+}

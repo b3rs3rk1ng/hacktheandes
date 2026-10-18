@@ -1,0 +1,20 @@
+{
+  "scope": "Development observations before final camera/fruit scale and attachment corrections; not final validation metrics",
+  "observations": [
+    {
+      "pod_id": "cacao-0-17-pod-1",
+      "predicted_class": "monilia",
+      "confidence": 0.7875755429267883,
+      "actual_label": "healthy",
+      "result": "False alert observed in live telemetry; static attachment also prevented transport in that development revision."
+    }
+  ],
+  "screenshots": [
+    "development-first-view.png",
+    "development-false-alert.png"
+  ],
+  "limitations": [
+    "A complete telemetry trace for this early run was not retained.",
+    "The final scene changed camera offset, fruit scale and attachment implementation; do not combine these observations into final accuracy estimates."
+  ]
+}

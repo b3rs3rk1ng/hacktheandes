@@ -1,0 +1,41 @@
+{
+  "_id": "67c95183dd8b0c2d8e95ad17",
+  "id": "yazidsupriadi/fruits-vegetables-diseases",
+  "private": false,
+  "tags": [
+    "id",
+    "license:apache-2.0",
+    "region:us"
+  ],
+  "downloads": 0,
+  "likes": 1,
+  "modelId": "yazidsupriadi/fruits-vegetables-diseases",
+  "author": "yazidsupriadi",
+  "sha": "f07803aaa81ca88cc08a12ac3457dc01076b6463",
+  "lastModified": "2025-03-07T07:06:08.000Z",
+  "gated": false,
+  "disabled": false,
+  "model-index": null,
+  "config": {},
+  "cardData": {
+    "language": "id",
+    "license": "apache-2.0",
+    "metrics": [
+      "accuracy"
+    ]
+  },
+  "siblings": [
+    {
+      "rfilename": ".gitattributes"
+    },
+    {
+      "rfilename": "README.md"
+    },
+    {
+      "rfilename": "vegetables_and_fruit_diseases_model.pth"
+    }
+  ],
+  "spaces": [],
+  "createdAt": "2025-03-06T07:40:51.000Z",
+  "usedStorage": 134536210
+}

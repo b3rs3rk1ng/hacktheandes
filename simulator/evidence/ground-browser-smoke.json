@@ -1,0 +1,36 @@
+{
+  "selected": "ground",
+  "started": "running",
+  "bubbled": 1,
+  "fast": true,
+  "real": true,
+  "returning": true,
+  "reset": {
+    "status": "idle",
+    "soc": 0.9,
+    "position": [
+      0,
+      0.07999999761581422,
+      0
+    ]
+  },
+  "dronePhaseBefore": "inspect",
+  "dronePhaseAfter": "inspect",
+  "batching": {
+    "before": 443,
+    "after": 75
+  },
+  "terrain_sha256": "da7177adb15afbf5220cc871b333cc9d0cd081ae2530804d0a39a4c5783a7da2",
+  "environment": {
+    "treeCells": 4,
+    "bones": 3884,
+    "farClusters": 4965,
+    "nearLeaves": 0,
+    "litterLeaves": 8552,
+    "terrainTriangles": 70200,
+    "residentTrees": 81,
+    "nearTrees": 0,
+    "backgroundClusters": 6676,
+    "disposedCells": 0
+  }
+}
