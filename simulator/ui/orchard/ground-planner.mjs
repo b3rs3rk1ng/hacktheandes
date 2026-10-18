@@ -22,12 +22,23 @@ export function createGroundPlanner(world){
    for(const d of [[1,0],[-1,0],[0,1],[0,-1],[1,1],[1,-1],[-1,1],[-1,-1]]){const p=[node.p[0]+d[0],node.p[1]+d[1]],pk=key(p);if(closed.has(pk)||!valid(p)||!clear(point(node.p),point(p)))continue;const cost=g.get(k)+Math.hypot(...d)*step;if(cost>=(g.get(pk)??Infinity))continue;g.set(pk,cost);parent.set(pk,k);open.push({p,f:cost+Math.hypot(p[0]-b[0],p[1]-b[1])*step})}
   }return null;
  }
- function planFromPose(start,goal){
+ function planFromPose(start,goal,yaw=null){
   if(safe(start))return plan(start,goal);
   // A physical vehicle may stop inside the conservative planning margin.
   // Escape only away from nearby trunks; never shrink an existing clearance.
   const nearby=[];const bx=Math.floor(start[0]/4),by=Math.floor(start[1]/4);
   for(let y=by-1;y<=by+1;y++)for(let x=bx-1;x<=bx+1;x++)for(const tree of bins.get(`${x},${y}`)||[]){const r=tree.structure?.radius||.09,d=Math.hypot(start[0]-tree.position[0],start[1]-tree.position[1]);if(d<r+.18)return null;nearby.push({p:tree.position,minimum:Math.min(d,r+clearance)})}
+  if(Number.isFinite(yaw)){
+   const forward=Math.PI/2+yaw;
+   // First create room along the vehicle's actual forward/reverse axis. A
+   // car cannot escape a trunk by moving sideways toward a grid waypoint.
+   for(const length of [step*3,step*4])for(const angle of [forward,forward+Math.PI]){
+    const endpoint=[start[0]+Math.cos(angle)*length,start[1]+Math.sin(angle)*length];if(!safe(endpoint))continue;
+    let pass=true;const n=Math.ceil(length/.1);
+    for(let i=0;i<=n&&pass;i++){const q=[start[0]+(endpoint[0]-start[0])*i/n,start[1]+(endpoint[1]-start[1])*i/n];for(const tree of nearby)if(Math.hypot(q[0]-tree.p[0],q[1]-tree.p[1])<tree.minimum-1e-5){pass=false;break}}
+    if(pass){const path=plan(endpoint,goal);if(path)return [start,...path]}
+   }
+  }
   const candidates=[];
   for(const radius of [step,step*2,step*3])for(let turn=0;turn<16;turn++){
    const a=turn*Math.PI/8,p=[start[0]+Math.cos(a)*radius,start[1]+Math.sin(a)*radius];if(!safe(p))continue;

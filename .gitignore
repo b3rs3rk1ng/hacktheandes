@@ -72,3 +72,11 @@ downloads/
 
 # Captured third-party web pages may embed API keys and session metadata.
 /research/**/*.html
+
+# Original presentation photos may contain identifiable people.
+/output/assets/*.jpg
+/output/assets/*.jpeg
+/output/assets/*.heic
+
+# Local artifact build workspaces.
+.*-build/

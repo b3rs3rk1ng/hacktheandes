@@ -22,17 +22,22 @@ export function createCoveragePatrol({world,planner,post,getData,setData,phase,g
  }
  function update(c){if(!plan)return false;const v=c.vehicle;
   if(['idle','charging','waiting_scout','waiting_team'].includes(c.phase)){
+   if(c.retryAfter&&performance.now()<c.retryAfter)return true;
    if(c.surveyDone&&c.scanTree){ready(c);return true}
    const info=target(c);if(!info.tree){phase(c,'waiting_team');return true}
    c.scanTree=info.tree;const minFrames=settings.minimum_survey_frames||2,scout=info.progress.scouted?.[info.tree.id];
    if((scout?.frames.length||0)<minFrames&&!info.progress.local_inspection_allowed){phase(c,'waiting_scout');return true}
    const indices=info.progress.indices||{},frontier=Math.min(...info.batch.lanes.map(l=>indices[l.robot_id]||0));if(info.index>frontier+(settings.maximum_ground_lead_trees||1)){phase(c,'waiting_team');return true}
    const p=info.tree.position,dir=info.batch.forward?1:-1,axis=plan.axis_enu,cross=plan.cross_enu,offset=settings.aisle_offset_m||1.25,back=(settings.stop_before_tree_m||.6)*dir;
-   let path=null;for(const side of [1,-1]){const goal=[p[0]+cross[0]*offset*side-axis[0]*back,p[1]+cross[1]*offset*side-axis[1]*back];path=planner.planFromPose([v.position.x,-v.position.z],goal);if(path)break}
+   let path=null;for(const side of [1,-1]){const goal=[p[0]+cross[0]*offset*side-axis[0]*back,p[1]+cross[1]*offset*side-axis[1]*back];path=planner.planFromPose([v.position.x,-v.position.z],goal,v.state.yaw);if(path)break}
    if(!path){c.error='No hay paso seguro hasta el siguiente árbol';phase(c,'waiting_team');return true}
    c.path=path;c.breadcrumbs??=[v.station];c.breadcrumbs.push(...path.slice(1));v.navigate(path);phase(c,'patrolling');return true;
   }
   if(c.phase==='patrolling'){
+   if(c.time-c.lastMotion>12){
+    if(v.position.distanceTo(c.lastPosition)<.15){v.driver.pause();phase(c,'waiting_team');c.retryAfter=performance.now()+1000;c.error='Recalculando aproximación desde la pose real';return true}
+    c.lastMotion=c.time;c.lastPosition.copy(v.position);
+   }
    if(v.state.status==='complete'&&Math.abs(v.state.speed)<.04){v.setArm(v.spec.arm.folded_rad);phase(c,'surveying');focus(c)}return true;
   }
   if(c.phase==='surveying'){
