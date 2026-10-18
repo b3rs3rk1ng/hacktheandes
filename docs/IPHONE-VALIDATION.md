@@ -31,6 +31,21 @@ La prueba de interfaz terminó con cero fallos en 144,336 segundos, incluida la 
 
 Los resultados de Xcode quedaron en `/tmp/onda-usb-ui-radio.xcresult`, el registro en `/tmp/onda-ios-ui-test-radio.log` y los informes filtrados en `/tmp/onda-usb-ui-radio-evidence.txt` y `.json`. No se incorporaron capturas originales que pudieran mostrar una ubicación seleccionada. Los parámetros y límites del ensayo de software se describen en [RADIO-SIMULATION.md](RADIO-SIMULATION.md).
 
+## Radio continua y ambiente constante, 20:10–20:12 Lima
+
+La validación actual usa la app nativa recién compilada y el perfil de radio estable con velocidad `fast`, ganancia final 0,65 y ambiente constante durante locutor, datos y pausas: siseo 0,04, crujidos a 3,5 eventos/s y amplitud 0,13. La introducción dura cinco segundos; el ruido no baja al terminarla. Cada boletín recorre todas las capas y vuelve a recorrerlas una segunda vez.
+
+La prueba borró las capas anteriores mediante el control público antes de iniciar el micrófono. Exigió recibir en esa sesión las dos capas LIVE del análisis real de las 19:50, con identificadores, contexto, variable, fecha de observación y dimensiones esperados. Las filas de diagnóstico sólo aparecen después de completar el ensamblado y sus comprobaciones de transporte.
+
+| Capa completa | Observación, Lima | Recepción nueva, Lima |
+| --- | --- | --- |
+| Detalle de 9 × 9 celdas | 19:50 | 20:11:00,331 |
+| Nacional de 26 × 38 celdas | 19:50 | 20:11:17,829 |
+
+El test pasó con las dos capas completas y cero fallos en 94,510 segundos, incluyendo preparación, permisos, una ventana de escucha de aproximadamente un minuto y parada. Esto prueba recepción acústica de ambas capas con este ambiente continuo, esta laptop y este iPhone en la sala. La interfaz comprobó sus metadatos; no se extrajeron los valores individuales del almacenamiento en esta corrida. Las pruebas PCM adicionales compararon los valores exactos reconstruidos y CRC.
+
+Evidencia local: `/tmp/onda-continuous-reception.xcresult`, `/tmp/onda-continuous-reception.log` y `/tmp/onda-continuous-reception-summary.json`. Las capturas originales permanecen fuera del repositorio porque pueden mostrar la ubicación seleccionada. Una corrida anterior del mismo cierre se interrumpió al cambiar el ambiente; no se cuenta como prueba aprobada.
+
 ## Límites de la evidencia
 
 Se verificaron recepción y cambios reales en la sala descrita por el usuario. No demuestra inmunidad a cualquier voz, ruido, distancia, radio AM/FM o modelo de teléfono. No se completó una prueba física en modo avión ni de obtención GPS sin red. La firma de desarrollo actual vence el 24 de octubre de 2026; debe renovarse para seguir ejecutándose después.

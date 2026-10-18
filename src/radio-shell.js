@@ -2,10 +2,11 @@ const $ = id => document.getElementById(id);
 
 // The object is another view of the existing station. It never owns an audio
 // session, so stopping, permission errors and source changes keep one lifecycle.
-export function mountRadioShowcase({ getModem = () => null, onPreview, getBusy = () => false } = {}) {
+export function mountRadioShowcase({ getModem = () => null, onToggle, getBusy = () => false,
+  getStationState = () => null, loadModel = () => import('./radio-3d.js') } = {}) {
   const stage = $('radio-3d-stage');
   const preview = $('radio-showcase-preview');
-  const originalPreview = $('station-preview');
+  const originalStart = $('station-start');
   const channel = $('station-channel');
   const volume = $('radio-volume');
   const finishes = [...document.querySelectorAll('[data-radio-color]')];
@@ -15,6 +16,10 @@ export function mountRadioShowcase({ getModem = () => null, onPreview, getBusy =
   const listeners = new AbortController();
   let model = null;
   let disposed = false;
+  let station = getStationState() || { running: false, operation: null, phase: 'stopped' };
+  const observationTime = value => new Intl.DateTimeFormat('es-PE', {
+    day: 'numeric', month: 'short', hour: '2-digit', minute: '2-digit', timeZone: 'America/Lima',
+  }).format(new Date(value));
 
   function readChannel() {
     state.channel = channel?.value || '';
@@ -23,20 +28,32 @@ export function mountRadioShowcase({ getModem = () => null, onPreview, getBusy =
   }
 
   function syncPreview() {
-    preview.disabled = originalPreview ? originalPreview.disabled : getBusy();
-    const stopping = originalPreview?.textContent.startsWith('Detener');
-    preview.querySelector('span').textContent = stopping ? 'Detener prueba' : 'Escuchar radio · 5 s';
+    const stopping = station.running && station.operation === 'emit';
+    preview.disabled = !stopping && (station.running || getBusy() || Boolean(originalStart?.disabled));
+    preview.querySelector('span').textContent = stopping ? 'Apagar radio' : 'Encender radio';
+    preview.setAttribute('aria-pressed', String(Boolean(stopping)));
     preview.classList.toggle('is-playing', Boolean(stopping));
   }
 
   function sync() {
-    const label = !state.active ? 'Apagada' : ({
+    const label = station.running ? ({
+      preparing: 'Preparando boletín', intro: 'En sintonía', transmitting: 'Transmitiendo boletín', waiting: 'Radio encendida',
+    }[station.phase] || 'Radio encendida') : !state.active ? 'Apagada' : ({
       starting: 'Preparando audio', previewing: 'Probando sonido',
       transmitting: 'Transmitiendo datos', listening: 'Escuchando',
       idle: 'Emitiendo señal',
     }[state.mode] || 'Audio activo');
     $('radio-power-state').textContent = label;
-    stage.closest('.radio-showcase').dataset.active = String(state.active);
+    stage.closest('.radio-showcase').dataset.active = String(state.active || station.running);
+    const status = $('radio-stream-status');
+    if (status) status.textContent = station.phase === 'error' ? station.message : station.running
+      ? station.phase === 'transmitting' ? `Boletín ${station.cycle} · ${station.sent} de ${station.total} fragmentos enviados`
+        : station.message || 'Radio encendida.'
+      : 'Enciende la radio. El boletín se repite hasta que la apagues.';
+    const source = $('radio-stream-source');
+    if (source) source.textContent = station.observedAt
+      ? `${station.context === 'replay' ? 'Histórico de demostración' : 'Último análisis disponible'} · ${observationTime(station.observedAt)}${station.sourceLabel ? ` · ${station.sourceLabel}` : ''}`
+      : 'Datos reales. Cada teléfono muestra su zona.';
     volume.value = String(Math.round(state.volume * 100));
     $('radio-volume-value').value = `${volume.value}%`;
     finishes.forEach(button => button.setAttribute('aria-pressed', String(button.dataset.radioColor === state.bodyColor)));
@@ -51,11 +68,11 @@ export function mountRadioShowcase({ getModem = () => null, onPreview, getBusy =
     sync();
   }
 
-  function requestPreview() {
+  function requestToggle() {
     syncPreview();
     if (preview.disabled) return;
-    if (typeof onPreview === 'function') onPreview();
-    else originalPreview?.click();
+    if (typeof onToggle === 'function') onToggle();
+    else originalStart?.click();
     syncPreview();
   }
 
@@ -69,7 +86,7 @@ export function mountRadioShowcase({ getModem = () => null, onPreview, getBusy =
     channel.dispatchEvent(new Event('change', { bubbles: true }));
   }
 
-  preview.addEventListener('click', requestPreview, { signal: listeners.signal });
+  preview.addEventListener('click', requestToggle, { signal: listeners.signal });
   volume.addEventListener('input', () => changeVolume(Number(volume.value) / 100), { signal: listeners.signal });
   channel?.addEventListener('change', () => { readChannel(); sync(); }, { signal: listeners.signal });
   finishes.forEach(button => button.addEventListener('click', () => {
@@ -83,17 +100,22 @@ export function mountRadioShowcase({ getModem = () => null, onPreview, getBusy =
     state.mode = event.detail.mode || 'idle';
     sync();
   }, { signal: listeners.signal });
+  window.addEventListener('onda:station-state', event => {
+    if (!event.detail || typeof event.detail.running !== 'boolean') return;
+    station = event.detail;
+    sync();
+  }, { signal: listeners.signal });
 
   const observer = new MutationObserver(syncPreview);
-  if (originalPreview) observer.observe(originalPreview, { attributes: true, childList: true, subtree: true });
+  if (originalStart) observer.observe(originalStart, { attributes: true, attributeFilter: ['disabled'] });
   readChannel();
   sync();
 
-  import('./radio-3d.js').then(({ mountRadio3D }) => {
+  loadModel().then(({ mountRadio3D }) => {
     if (disposed) return;
     model = mountRadio3D(stage, {
       onAction: action => {
-        if (action === 'preview' || action === 'power') requestPreview();
+        if (action === 'preview' || action === 'power') requestToggle();
         if (action === 'tune') tuneChannel();
       },
       onVolume: changeVolume,

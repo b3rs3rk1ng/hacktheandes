@@ -4,6 +4,8 @@ import { encodeField, validateField } from './protocol.js';
 const $ = id => document.getElementById(id);
 const time = value => new Intl.DateTimeFormat('es-PE', { hour: '2-digit', minute: '2-digit', timeZone: 'America/Lima' }).format(new Date(value));
 const stopped = signal => signal.reason || new DOMException('Emisión detenida', 'AbortError');
+const feedMetadata = feed => ({ observedAt: feed.sourceUpdatedAt, fetchedAt: feed.fetchedAt,
+  sourceLabel: [...new Set(feed.fields.map(field => field.source?.name).filter(Boolean))].join(' · ') });
 const channels = {
   direct: {
     label: 'Sonido directo',
@@ -57,10 +59,17 @@ function validateReplay(value) {
   return { ...value, frames };
 }
 
-export function createStation({ getModem, isBusy, onBusy, fetchImpl = globalThis.fetch }) {
+export function createStation({ getModem, isBusy, onBusy, onState = () => {}, fetchImpl = globalThis.fetch }) {
   let client, replay, controller, preparing, operation;
   let prepared = false;
   let lastCheck = 0;
+  let state = Object.freeze({ operation: null, phase: 'stopped', running: false, cycle: 0, sent: 0, total: 0,
+    observedAt: null, fetchedAt: null, sourceLabel: '', context: null, message: 'Enciende la radio para transmitir.', error: null });
+  function updateState(change) {
+    state = Object.freeze({ ...state, ...change });
+    // A view must never interrupt transmission or prevent cleanup.
+    try { onState(state); } catch { /* Observer errors do not own audio. */ }
+  }
   // Both source URLs are same-origin and may sit behind the private site login.
   const fetchLocal = (url, options) => fetchImpl(url, { ...options, credentials: 'same-origin' });
   const readJSON = url => fetchSource(url, { fetchImpl: fetchLocal });
@@ -77,6 +86,7 @@ export function createStation({ getModem, isBusy, onBusy, fetchImpl = globalThis
 
   async function intro(modem, channel, signal, keepAlive) {
     $('station-state').textContent = `Radio · locutor y sintonía · 5 segundos · ${channels[channel].label}`;
+    updateState({ phase: 'intro', message: 'Locutor y sintonía. El boletín comienza enseguida.' });
     await cancellable(modem.previewChannel({ channel, seconds: 5, signal, keepAlive }), signal);
     if (signal.aborted) throw stopped(signal);
   }
@@ -96,6 +106,7 @@ export function createStation({ getModem, isBusy, onBusy, fetchImpl = globalThis
       $('source-time').textContent = `Análisis ${time(feed.sourceUpdatedAt)} · consulta ${time(feed.fetchedAt)}`;
       $('source-cells').textContent = `${feed.fields.reduce((sum, field) => sum + field.values.length, 0)} celdas · ${feed.fields.length} rejillas`;
       $('source-age').textContent = Date.now() - Date.parse(feed.sourceUpdatedAt) > 2 * 3600000 ? 'Registro desactualizado' : 'La fuente puede tardar en publicar cambios.';
+      if (state.context !== 'replay') updateState(feedMetadata(feed));
     }
     if (result.error) $('source-age').textContent = `${result.error.message} La fecha original se conserva.`;
   }
@@ -157,18 +168,30 @@ export function createStation({ getModem, isBusy, onBusy, fetchImpl = globalThis
         : `Emitiendo análisis de ${time(feed.sourceUpdatedAt)} · vuelta ${cycle}`;
       $('station-state').textContent = `${sourceState} · ${channelLabel}`;
       const packets = await Promise.all(feed.fields.map(field => encodeField(field)));
+      if (signal.aborted) throw stopped(signal);
       const total = packets.reduce((sum, packet) => sum + packet.frames.length * 2, 0);
       let sent = 0;
+      updateState({ phase: 'transmitting', cycle, sent, total, context, ...feedMetadata(feed),
+        message: context === 'replay' ? 'Transmitiendo observaciones históricas.' : 'Transmitiendo el último análisis disponible.' });
       $('station-size').textContent = `${packets.reduce((sum, packet) => sum + packet.compressedBytes, 0)} B comprimidos · ${total} fragmentos con repetición`;
-      for (const packet of packets) {
-        await modem.transmit(packet.frames, { repeat: 2, keepAlive: true, speed, channel, signal, onProgress: progress => {
-          $('station-progress').max = total;
-          $('station-progress').value = sent + progress.sent;
-          $('station-progress-text').textContent = `${sent + progress.sent} de ${total} fragmentos · ${channelLabel} · la laptop debe seguir abierta`;
-        } });
-        sent += packet.frames.length * 2;
+      // Complete the whole bulletin before repeating any field. Receivers get
+      // every area sooner, with the same two copies and total airtime.
+      for (let pass = 0; pass < 2; pass++) {
+        for (const packet of packets) {
+          if (signal.aborted) throw stopped(signal);
+          await modem.transmit(packet.frames, { repeat: 1, keepAlive: true, speed, channel, signal, onProgress: progress => {
+            $('station-progress').max = total;
+            $('station-progress').value = sent + progress.sent;
+            $('station-progress-text').textContent = `${sent + progress.sent} de ${total} fragmentos · ${channelLabel} · la laptop debe seguir abierta`;
+            updateState({ sent: sent + progress.sent });
+          } });
+          sent += packet.frames.length;
+          updateState({ sent });
+        }
       }
+      if (signal.aborted) throw stopped(signal);
       if (context === 'replay') replayIndex++;
+      updateState({ phase: 'waiting', message: 'Radio encendida. El boletín vuelve a emitirse en unos segundos.' });
       await pause(2500, signal);
     }
   }
@@ -179,15 +202,19 @@ export function createStation({ getModem, isBusy, onBusy, fetchImpl = globalThis
       return;
     }
     const modem = getModem();
-    if (!modem) { $('station-state').textContent = 'El audio se está preparando. Vuelve a pulsar en un momento.'; return; }
-    if (isBusy()) { $('station-state').textContent = 'Detén la otra recepción o emisión antes de iniciar.'; return; }
+    if (!modem) { $('station-state').textContent = 'El audio se está preparando. Vuelve a pulsar en un momento.'; updateState({ phase: 'error', error: $('station-state').textContent, message: $('station-state').textContent }); return; }
+    if (isBusy()) { $('station-state').textContent = 'Detén la otra recepción o emisión antes de iniciar.'; updateState({ phase: 'error', error: $('station-state').textContent, message: $('station-state').textContent }); return; }
     controller = new AbortController();
     const current = controller;
     operation = mode;
+    const context = mode === 'emit' ? $('station-context').value : state.context;
+    updateState({ operation: mode, phase: 'preparing', running: true, cycle: 0, sent: 0, total: 0,
+      ...(context !== state.context ? { observedAt: null, fetchedAt: null, sourceLabel: '' } : {}), context, error: null,
+      message: mode === 'emit' ? 'Preparando el boletín de la radio…' : 'Preparando la prueba de sonido…' });
     onBusy(true);
     $('station-start').textContent = mode === 'emit' ? 'Detener emisión continua' : 'Emitir datos continuamente';
     $('station-start').disabled = mode === 'preview';
-    $('station-preview').textContent = mode === 'preview' ? 'Detener escucha de prueba' : 'Escuchar radio · 5 segundos';
+    $('station-preview').textContent = mode === 'preview' ? 'Detener escucha de prueba' : 'Probar sonido · 5 s';
     $('station-preview').disabled = mode === 'emit';
     $('station-context').disabled = true;
     $('station-speed').disabled = true;
@@ -200,19 +227,22 @@ export function createStation({ getModem, isBusy, onBusy, fetchImpl = globalThis
       $('station-state').textContent = current.signal.aborted
         ? mode === 'preview' ? 'Escucha de prueba detenida. No se enviaron datos.' : 'Emisión detenida. Los receptores conservan los datos.'
         : error.message;
+      updateState({ phase: current.signal.aborted ? 'stopped' : 'error',
+        error: current.signal.aborted ? null : error.message, message: $('station-state').textContent });
     } finally {
       try { await modem.stop(); }
-      catch (error) { $('station-state').textContent = `No se pudo cerrar el audio: ${error.message}`; }
+      catch (error) { $('station-state').textContent = `No se pudo cerrar el audio: ${error.message}`; updateState({ phase: 'error', error: error.message, message: $('station-state').textContent }); }
       if (controller === current) { controller = null; operation = null; }
       onBusy(false);
       $('station-start').textContent = 'Emitir datos continuamente';
       $('station-start').disabled = false;
-      $('station-preview').textContent = 'Escuchar radio · 5 segundos';
+      $('station-preview').textContent = 'Probar sonido · 5 s';
       $('station-preview').disabled = false;
       $('station-context').disabled = false;
       $('station-speed').disabled = false;
       $('station-channel').disabled = false;
       document.body.classList.remove('transmitting');
+      updateState({ operation: null, running: false, phase: state.phase === 'error' ? 'error' : 'stopped', message: $('station-state').textContent });
     }
   }
   $('station-start').addEventListener('click', () => startOperation('emit'));
@@ -228,5 +258,6 @@ export function createStation({ getModem, isBusy, onBusy, fetchImpl = globalThis
     prepare,
     stop: () => controller?.abort(new DOMException('Emisión detenida', 'AbortError')),
     get running() { return !!controller; },
+    get state() { return state; },
   };
 }

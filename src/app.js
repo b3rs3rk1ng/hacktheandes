@@ -40,14 +40,17 @@ let radioShowcase;
 let radioShowcaseLoading;
 const assembler = createAssembler();
 const situationReady = createSituationUI(storage,{toast,onReset:()=>{assembler.reset();$('receive-progress').hidden=true;}}).catch(error=>{ $('situation-map').textContent=error.message; return null; });
-const station = createStation({ getModem:()=>modem, isBusy:()=>listening||sending, onBusy:value=>{sending=value;$('transmit-button').disabled=value;} });
+const station = createStation({ getModem:()=>modem, isBusy:()=>listening||sending,
+  onBusy:value=>{sending=value;$('transmit-button').disabled=value;},
+  onState:state=>window.dispatchEvent(new CustomEvent('onda:station-state',{detail:state})) });
 const screenAwake = createScreenAwake();
 
 function loadRadioShowcase() {
   if (!runtime.canEmit) return;
   if (!radioShowcaseLoading) radioShowcaseLoading = import('./radio-shell.js').then(({ mountRadioShowcase }) => {
     radioShowcase = mountRadioShowcase({ getModem: () => modem,
-      onPreview: () => $('station-preview').click(), getBusy: () => listening || sending });
+      onToggle: () => $('station-start').click(), getStationState: () => station.state,
+      getBusy: () => listening || sending });
     radioShowcase.setVisible(!$('send-view').hidden);
     return radioShowcase;
   }).catch(() => { radioShowcaseLoading = null; });

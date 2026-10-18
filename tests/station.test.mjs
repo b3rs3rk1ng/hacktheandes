@@ -21,7 +21,7 @@ const replay = () => ({ version: 1, context: 'replay', frames: [feed('replay')] 
 const response = value => new Response(JSON.stringify(value), { headers: { 'content-type': 'application/json' } });
 const deferred = () => { let resolve; const promise = new Promise(done => { resolve = done; }); return { promise, resolve }; };
 
-function fixture(t, { fetchImpl, prime, stop, transmit, previewChannel, busy = false, modemReady = true } = {}) {
+function fixture(t, { fetchImpl, prime, stop, transmit, previewChannel, onState, busy = false, modemReady = true } = {}) {
   const nodes = new Map();
   const classes = new Set();
   const defaults = { 'station-context': 'live', 'station-speed': 'fast', 'station-channel': 'radio' };
@@ -43,6 +43,7 @@ function fixture(t, { fetchImpl, prime, stop, transmit, previewChannel, busy = f
   const previews = [];
   const audioOrder = [];
   const busyChanges = [];
+  const states = [];
   let primeCount = 0, stopCount = 0;
   const modem = {
     prime() { primeCount++; audioOrder.push('prime'); return prime ? prime() : Promise.resolve(); },
@@ -65,6 +66,7 @@ function fixture(t, { fetchImpl, prime, stop, transmit, previewChannel, busy = f
   const station = createStation({
     getModem: () => modemReady ? modem : null, isBusy: () => busy,
     onBusy: value => busyChanges.push(value),
+    onState: value => { states.push(value); onState?.(value); },
     fetchImpl: async (url, options) => {
       requests.push({ url, options });
       if (fetchImpl) return fetchImpl(url, options);
@@ -72,7 +74,7 @@ function fixture(t, { fetchImpl, prime, stop, transmit, previewChannel, busy = f
     },
   });
   return {
-    station, requests, transmissions, previews, audioOrder, busyChanges, classes, node: document.getElementById,
+    station, requests, transmissions, previews, audioOrder, busyChanges, states, classes, node: document.getElementById,
     start: () => document.getElementById('station-start').events.get('click')(),
     preview: () => document.getElementById('station-preview').events.get('click')(),
     changeChannel: value => { const node = document.getElementById('station-channel'); node.value = value; node.events.get('change')(); },
@@ -105,7 +107,7 @@ test('concurrent preparation deduplicates source work and repeat visits preserve
   assert.equal(options.keepAlive, true);
   assert.equal(options.speed, 'fast');
   assert.equal(options.channel, 'radio');
-  assert.equal(options.repeat, 2);
+  assert.equal(options.repeat, 1);
   assert.equal(f.node('station-channel').disabled, true);
   assert.equal(f.node('station-preview').disabled, true);
   assert.equal(f.node('station-start').disabled, false);
@@ -225,22 +227,22 @@ test('continuous replay advances dated snapshots while retaining audio until the
     fetchImpl: async url => response(url.endsWith('replay-feed.json')
       ? { version: 1, context: 'replay', frames: [feed('replay'), feed('replay', newerAt)] }
       : feed()),
-    transmit: async () => { if (f.transmissions.length === 2) f.station.stop(); },
+    transmit: async () => { if (f.transmissions.length === 4) f.station.stop(); },
   });
   await f.station.prepare();
   f.node('station-context').value = 'replay';
   f.node('station-speed').value = 'fastest';
   f.changeChannel('weak');
   await f.start();
-  assert.equal(f.transmissions.length, 2);
+  assert.equal(f.transmissions.length, 4);
   const fields = await Promise.all(f.transmissions.map(transmission => decode(transmission.frames)));
-  assert.deepEqual(fields.map(field => field.observedAt), [initialAt, newerAt]);
+  assert.deepEqual(fields.map(field => field.observedAt), [initialAt, initialAt, newerAt, newerAt]);
   assert.ok(fields.every(field => field.context === 'replay'));
   assert.ok(f.transmissions.every(transmission => transmission.options.keepAlive));
   assert.ok(f.transmissions.every(transmission => transmission.options.channel === 'weak' && transmission.options.speed === 'fastest'));
   assert.equal(f.previews.length, 1, 'the five-second introduction plays once across successive snapshots');
   assert.equal(f.previews[0].channel, 'weak');
-  assert.deepEqual(f.audioOrder, ['prime', 'preview', 'transmit', 'transmit']);
+  assert.deepEqual(f.audioOrder, ['prime', 'preview', 'transmit', 'transmit', 'transmit', 'transmit']);
   assert.equal(f.primeCount, 1);
   assert.equal(f.stopCount, 1);
   assert.deepEqual(f.busyChanges, [true, false]);
@@ -257,23 +259,29 @@ test('direct sound reaches every grid transmission and progress retains the sele
   let f;
   f = fixture(t, {
     fetchImpl: async url => response(url.endsWith('replay-feed.json') ? replay() : multiFeed()),
-    transmit: async (_frames, options) => {
+    transmit: async (frames, options) => {
       states.push(f.node('station-state').textContent);
-      options.onProgress({ sent: 2 });
+      options.onProgress({ sent: frames.length });
       progress.push(f.node('station-progress-text').textContent);
       assert.equal(f.node('station-channel').disabled, true);
-      if (f.transmissions.length === 2) f.station.stop();
+      if (f.transmissions.length === 4) f.station.stop();
     },
   });
   f.changeChannel('direct');
   await f.start();
-  assert.equal(f.transmissions.length, 2);
+  assert.equal(f.transmissions.length, 4);
   assert.equal(f.previews.length, 1, 'the introduction is shared by all grids in one emission');
   assert.equal(f.previews[0].channel, 'direct');
   assert.ok(f.transmissions.every(transmission => transmission.options.channel === 'direct'));
   assert.ok(states.every(state => state.includes('Emitiendo análisis') && state.includes('Sonido directo')));
   assert.ok(progress.every(state => state.includes('Sonido directo')));
-  assert.deepEqual((await Promise.all(f.transmissions.map(transmission => decode(transmission.frames)))).map(field => field.id), ['regional-field', 'another-field']);
+  assert.deepEqual((await Promise.all(f.transmissions.map(transmission => decode(transmission.frames)))).map(field => field.id), ['regional-field', 'another-field', 'regional-field', 'another-field']);
+  assert.ok(f.transmissions.every(transmission => transmission.options.repeat === 1));
+  const total = f.transmissions.reduce((sum, transmission) => sum + transmission.frames.length, 0);
+  const emitted = f.states.filter(state => state.phase === 'transmitting');
+  assert.equal(emitted.at(-1).sent, total);
+  assert.ok(emitted.every(state => state.total === total && state.sent >= 0 && state.sent <= total));
+  assert.ok(emitted.every((state, index) => !index || state.sent >= emitted[index - 1].sent), 'progress counts the entire bulletin across both passes');
   assert.equal(f.node('station-channel').disabled, false);
 });
 
@@ -367,7 +375,7 @@ test('a preview owns the shared audio controls and either its button or station 
   assert.equal(f.requests.length, 0);
   assert.equal(f.transmissions.length, 0);
   assert.equal(f.node('station-start').disabled, false);
-  assert.equal(f.node('station-preview').textContent, 'Escuchar radio · 5 segundos');
+  assert.equal(f.node('station-preview').textContent, 'Probar sonido · 5 s');
   for (const id of ['station-context', 'station-speed', 'station-channel']) assert.equal(f.node(id).disabled, false);
   const restarted = f.preview();
   await waitFor(() => f.previews.length === 2);
@@ -451,3 +459,105 @@ test('a preview waits for an available modem without claiming audio ownership', 
   assert.deepEqual(f.busyChanges, []);
   assert.equal(f.station.running, false);
 });
+
+test('continuous station survives multiple cycles and source failure, with one introduction and honest state', { timeout: 2000 }, async t => {
+  const nativeTimeout = globalThis.setTimeout;
+  let clock = Date.now(), sourceCalls = 0;
+  t.mock.method(Date, 'now', () => clock);
+  t.mock.method(globalThis, 'setTimeout', (callback, ms, ...args) => {
+    if (ms === 2500) { clock += 300001; return nativeTimeout(callback, 0, ...args); }
+    return nativeTimeout(callback, ms, ...args);
+  });
+  const latestAt = '2026-10-17T15:20:00.000Z';
+  let f;
+  f = fixture(t, {
+    fetchImpl: async url => {
+      if (url.endsWith('initial-feed.json')) return response(feed());
+      if (url.endsWith('replay-feed.json')) return response(replay());
+      sourceCalls++;
+      if (sourceCalls === 2) throw new Error('Source temporarily unavailable');
+      return response(feed('live', sourceCalls === 1 ? newerAt : latestAt));
+    },
+    transmit: async (_frames, options) => {
+      options.onProgress({ sent: 1 });
+      if (f.transmissions.length === 6) f.station.stop();
+    },
+  });
+  await f.start();
+  assert.equal(sourceCalls, 3);
+  assert.deepEqual(await Promise.all(f.transmissions.map(async packet => (await decode(packet.frames)).observedAt)), [newerAt, newerAt, newerAt, newerAt, latestAt, latestAt]);
+  assert.equal(f.previews.length, 1);
+  assert.equal(f.stopCount, 1);
+  assert.ok(f.transmissions.every(packet => packet.options.keepAlive));
+  assert.deepEqual([...new Set(f.states.filter(state => state.phase === 'transmitting').map(state => state.cycle))], [1, 2, 3]);
+  assert.ok(f.states.some(state => state.phase === 'waiting' && state.running && state.operation === 'emit'));
+  assert.ok(f.states.some(state => state.phase === 'intro' && state.running));
+  assert.ok(f.states.some(state => state.sent === 1 && state.total > 0));
+  assert.equal(f.station.state.running, false);
+  assert.equal(f.station.state.operation, null);
+  assert.equal(f.station.state.phase, 'stopped');
+  assert.equal(f.station.state.observedAt, latestAt);
+  assert.equal(f.station.state.sourceLabel, 'Example meteorological service');
+});
+
+test('state observers cannot interrupt station ownership or cleanup, and published snapshots are immutable', async t => {
+  const f = fixture(t, { onState: state => {
+    assert.ok(Object.isFrozen(state));
+    throw new Error('A view failed');
+  } });
+  const operation = f.start();
+  await waitFor(() => f.transmissions.length === 1);
+  assert.equal(f.station.state.phase, 'transmitting');
+  const published = f.station.state;
+  f.station.stop();
+  await operation;
+  assert.equal(published.running, true);
+  assert.equal(f.station.state.running, false);
+  assert.equal(f.stopCount, 1);
+  assert.deepEqual(f.busyChanges, [true, false]);
+});
+
+test('state retains the actual error after introduction failure and permits a fresh operation', async t => {
+  let fail = true;
+  const f = fixture(t, { previewChannel: async () => { if (fail) throw new Error('Speaker unavailable'); } });
+  await f.start();
+  assert.equal(f.station.state.phase, 'error');
+  assert.equal(f.station.state.error, 'Speaker unavailable');
+  assert.equal(f.station.state.running, false);
+  fail = false;
+  const restarted = f.start();
+  await waitFor(() => f.transmissions.length === 1);
+  assert.equal(f.station.state.error, null);
+  assert.equal(f.station.state.phase, 'transmitting');
+  f.station.stop();
+  await restarted;
+  assert.equal(f.station.state.phase, 'stopped');
+});
+
+for (const stopAfter of [1, 2]) {
+  test(`cancellation after ${stopAfter} fields prevents the next field or repetition pass`, async t => {
+    const multiFeed = () => {
+      const value = feed('live', newerAt);
+      value.fields.push({ ...value.fields[0], id: 'second-area', values: [3, 2, 1, 0] });
+      return value;
+    };
+    let f;
+    f = fixture(t, {
+      fetchImpl: async url => response(url.endsWith('replay-feed.json') ? replay() : multiFeed()),
+      transmit: async (frames, options) => {
+        options.onProgress({ sent: frames.length });
+        if (f.transmissions.length === stopAfter) f.station.stop();
+      },
+    });
+    await f.start();
+    assert.equal(f.transmissions.length, stopAfter);
+    assert.deepEqual(await Promise.all(f.transmissions.map(async transmission => (await decode(transmission.frames)).id)),
+      ['regional-field', 'second-area'].slice(0, stopAfter));
+    assert.ok(f.transmissions.every(transmission => transmission.options.repeat === 1));
+    assert.equal(f.station.state.phase, 'stopped');
+    assert.equal(f.station.running, false);
+    assert.equal(f.stopCount, 1);
+    assert.equal(f.previews.length, 1);
+    assert.equal(f.states.some(state => state.phase === 'waiting'), false, 'an incomplete cancelled cycle never enters its inter-cycle pause');
+  });
+}

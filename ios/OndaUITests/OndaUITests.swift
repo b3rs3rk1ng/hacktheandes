@@ -5,13 +5,42 @@ import XCTest
 final class OndaUITests: XCTestCase {
     private let listeningLabel = "Detener escucha"
     private let idleLabels = ["Escuchar boletín", "Volver a escuchar"]
+    private let environment = ProcessInfo.processInfo.environment
+
+    private struct ExpectedField: Decodable {
+        let id: String
+        let context: String
+        let observedAt: String
+        let variable: String?
+        let cols: Int?
+        let rows: Int?
+    }
+
+    private var receptionSeconds: TimeInterval {
+        let fallback: TimeInterval = environment["ONDA_EXPECTED_FIELDS"] == nil ? 120 : 240
+        return min(300, max(10, Double(environment["ONDA_RECEPTION_SECONDS"] ?? "") ?? fallback))
+    }
 
     override func setUpWithError() throws {
         continueAfterFailure = false
-        executionTimeAllowance = 180
+        executionTimeAllowance = receptionSeconds + 100
     }
 
     func testReceiverStaysInForegroundForAcousticReception() throws {
+        let expectedFields: [ExpectedField]
+        if let expectedJSON = environment["ONDA_EXPECTED_FIELDS"] {
+            expectedFields = try JSONDecoder().decode([ExpectedField].self, from: Data(expectedJSON.utf8))
+            XCTAssertFalse(expectedFields.isEmpty, "ONDA_EXPECTED_FIELDS must contain at least one field.")
+            for expected in expectedFields {
+                XCTAssertFalse(expected.id.isEmpty)
+                XCTAssertTrue(["live", "replay"].contains(expected.context))
+                XCTAssertNotNil(Self.isoDate(expected.observedAt), "An expected observation date is invalid.")
+            }
+            print("ONDA_VALIDATION_MODE acoustic-complete-fields count=\(expectedFields.count)")
+        } else {
+            expectedFields = []
+            print("ONDA_VALIDATION_MODE UI-only; this run does not prove payload reception")
+        }
         let app = XCUIApplication()
         let monitor = addUIInterruptionMonitor(withDescription: "Onda microphone permission") { alert in
             Self.allowOndaMicrophonePrompt(alert)
@@ -33,6 +62,25 @@ final class OndaUITests: XCTestCase {
         capture(app, named: "Onda — local map ready")
         print("ONDA_UI_READY")
 
+        if !expectedFields.isEmpty {
+            let details = webView.descendants(matching: .any).matching(
+                NSPredicate(format: "label BEGINSWITH %@", "Detalles de recepción")
+            ).firstMatch
+            XCTAssertTrue(details.waitForExistence(timeout: 10), "Reception details are unavailable.")
+            reveal(details, in: webView)
+            details.tap()
+            let clear = webView.buttons["Borrar datos recibidos del mapa"]
+            XCTAssertTrue(clear.waitForExistence(timeout: 5))
+            reveal(clear, in: webView)
+            XCTAssertTrue(clear.isHittable)
+            clear.tap()
+            let previousData = webView.descendants(matching: .any).matching(
+                NSPredicate(format: "label BEGINSWITH %@", "Señal completa · ")
+            )
+            XCTAssertEqual(previousData.count, 0, "Previously stored fields were not cleared through the public control.")
+            print("ONDA_RECEIVER_CLEARED")
+        }
+
         let receiver = webView.buttons.matching(NSPredicate(
             format: "label CONTAINS %@ OR label CONTAINS %@ OR label CONTAINS %@",
             idleLabels[0], idleLabels[1], listeningLabel
@@ -47,6 +95,7 @@ final class OndaUITests: XCTestCase {
             XCTAssertTrue(waitForIdle(receiver, timeout: 5))
         }
 
+        let receptionStartedAt = Date()
         receiver.tap()
         handleVisibleMicrophonePrompt(in: app)
         let started = XCTNSPredicateExpectation(
@@ -66,7 +115,8 @@ final class OndaUITests: XCTestCase {
         capture(app, named: "Onda — microphone listening")
         print("ONDA_UI_LISTENING")
 
-        let receptionDeadline = Date().addingTimeInterval(120)
+        let receptionDeadline = receptionStartedAt.addingTimeInterval(receptionSeconds)
+        var receivedExpected = Set<Int>()
         while Date() < receptionDeadline {
             let duration = min(30, receptionDeadline.timeIntervalSinceNow)
             guard duration > 0 else { break }
@@ -75,9 +125,32 @@ final class OndaUITests: XCTestCase {
             XCTAssertEqual(XCTWaiter.wait(for: [interval], timeout: duration), .timedOut)
             XCTAssertEqual(app.state, .runningForeground, "Onda left the foreground during reception.")
             XCTAssertTrue(receiver.label.contains(listeningLabel), "Microphone listening was interrupted.")
+            if !expectedFields.isEmpty {
+                let rows = webView.descendants(matching: .any).matching(
+                    NSPredicate(format: "label BEGINSWITH %@", "Señal completa · ")
+                ).allElementsBoundByIndex.map(\.label)
+                for (index, expected) in expectedFields.enumerated() {
+                    let matched = rows.contains { row in
+                        Self.matches(row, expected: expected, receivedAfter: receptionStartedAt,
+                                     receivedBefore: Date().addingTimeInterval(2))
+                    }
+                    if matched && receivedExpected.insert(index).inserted {
+                        print("ONDA_FIELD_COMPLETE id=\(expected.id) context=\(expected.context) observedAt=\(expected.observedAt)")
+                    }
+                }
+                print("ONDA_RECEPTION_PROGRESS \(receivedExpected.count)/\(expectedFields.count)")
+                capture(app, named: "Onda — reception \(receivedExpected.count) of \(expectedFields.count)")
+                if receivedExpected.count == expectedFields.count { break }
+            }
         }
 
         capture(app, named: "Onda — acoustic reception result")
+        if !expectedFields.isEmpty {
+            XCTAssertEqual(receivedExpected.count, expectedFields.count,
+                           "Not every expected field was completely received during this microphone session.")
+            print("ONDA_ACOUSTIC_VALIDATED fields=\(receivedExpected.count)")
+        }
+        reveal(receiver, in: webView)
         receiver.tap()
         XCTAssertTrue(waitForIdle(receiver, timeout: 5), "The microphone did not stop.")
         print("ONDA_UI_STOPPED")
@@ -92,13 +165,38 @@ final class OndaUITests: XCTestCase {
     }
 
     private func reveal(_ element: XCUIElement, in webView: XCUIElement) {
-        for _ in 0..<8 {
+        for _ in 0..<12 {
             if element.isHittable { return }
             // The map consumes drags. The page margin remains outside its canvas.
-            let start = webView.coordinate(withNormalizedOffset: CGVector(dx: 0.99, dy: 0.83))
-            let end = webView.coordinate(withNormalizedOffset: CGVector(dx: 0.99, dy: 0.25))
+            let above = element.frame.minY < webView.frame.minY + 20
+            let start = webView.coordinate(withNormalizedOffset: CGVector(dx: 0.99, dy: above ? 0.25 : 0.83))
+            let end = webView.coordinate(withNormalizedOffset: CGVector(dx: 0.99, dy: above ? 0.83 : 0.25))
             start.press(forDuration: 0.05, thenDragTo: end)
         }
+    }
+
+    private static func isoDate(_ value: String) -> Date? {
+        let formatter = ISO8601DateFormatter()
+        formatter.formatOptions = [.withInternetDateTime, .withFractionalSeconds]
+        if let date = formatter.date(from: value) { return date }
+        formatter.formatOptions = [.withInternetDateTime]
+        return formatter.date(from: value)
+    }
+
+    private static func matches(_ label: String, expected: ExpectedField,
+                                receivedAfter: Date, receivedBefore: Date) -> Bool {
+        guard label.hasPrefix("Señal completa · \(expected.id) · \(expected.context) · "),
+              let observedAt = isoDate(expected.observedAt) else { return false }
+        let formatter = ISO8601DateFormatter()
+        formatter.formatOptions = [.withInternetDateTime, .withFractionalSeconds]
+        guard label.contains("Observación \(formatter.string(from: observedAt)).") else { return false }
+        if let variable = expected.variable, !label.contains("Variable \(variable).") { return false }
+        if let cols = expected.cols, let rows = expected.rows,
+           !label.contains("· \(cols) × \(rows) celdas.") { return false }
+        guard let range = label.range(of: "Recibido ", options: .backwards),
+              label.hasSuffix("."),
+              let receivedAt = isoDate(String(label[range.upperBound...].dropLast())) else { return false }
+        return receivedAt >= receivedAfter && receivedAt <= receivedBefore
     }
 
     private func capture(_ app: XCUIApplication, named name: String) {

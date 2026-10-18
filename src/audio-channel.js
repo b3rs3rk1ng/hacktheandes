@@ -8,21 +8,21 @@ export const CHANNEL_PROFILES = Object.freeze({
     hissLevel: 0, hissLowPassHz: 0, fadeDepth: 0, fadeSeconds: 1,
     crackleRate: 0, crackleLevel: 0,
     whistleHz: 0, whistleLevel: 0, whistleWanderHz: 0, whistleWanderSeconds: 1,
-    introduction: Object.freeze({ highPassHz: 0, lowPassHz: 0, hissLevel: 0, crackleRate: 0, crackleLevel: 0, tuningSeconds: 0, tuningLevel: 0 }),
+    introduction: Object.freeze({ highPassHz: 0, lowPassHz: 0, tuningSeconds: 0, tuningLevel: 0 }),
   }),
   radio: Object.freeze({
     label: 'Radio simulada', highPassHz: 150, lowPassHz: 7000, signalGain: 0.9,
-    hissLevel: 0.012, hissLowPassHz: 9500, fadeDepth: 0.18, fadeSeconds: 6.7,
-    crackleRate: 0.3, crackleLevel: 0.025,
+    hissLevel: 0.04, hissLowPassHz: 9500, fadeDepth: 0.18, fadeSeconds: 6.7,
+    crackleRate: 3.5, crackleLevel: 0.13,
     whistleHz: 850, whistleLevel: 0.003, whistleWanderHz: 35, whistleWanderSeconds: 11.7,
-    introduction: Object.freeze({ highPassHz: 220, lowPassHz: 3400, hissLevel: 0.04, crackleRate: 3.5, crackleLevel: 0.13, tuningSeconds: 0.5, tuningLevel: 0.055 }),
+    introduction: Object.freeze({ highPassHz: 220, lowPassHz: 3400, tuningSeconds: 0.5, tuningLevel: 0.055 }),
   }),
   weak: Object.freeze({
     label: 'Señal débil simulada', highPassHz: 250, lowPassHz: 4500, signalGain: 0.75,
-    hissLevel: 0.038, hissLowPassHz: 7500, fadeDepth: 0.65, fadeSeconds: 5.3,
-    crackleRate: 0.65, crackleLevel: 0.045,
+    hissLevel: 0.07, hissLowPassHz: 7500, fadeDepth: 0.65, fadeSeconds: 5.3,
+    crackleRate: 5, crackleLevel: 0.17,
     whistleHz: 880, whistleLevel: 0.005, whistleWanderHz: 55, whistleWanderSeconds: 8.3,
-    introduction: Object.freeze({ highPassHz: 250, lowPassHz: 3100, hissLevel: 0.07, crackleRate: 5, crackleLevel: 0.17, tuningSeconds: 0.5, tuningLevel: 0.065 }),
+    introduction: Object.freeze({ highPassHz: 250, lowPassHz: 3100, tuningSeconds: 0.5, tuningLevel: 0.065 }),
   }),
 });
 
@@ -115,17 +115,14 @@ export function createAudioChannel({ profile = 'radio', sampleRate, seed = 0x4f4
     for (let index = 0; index < input.length; index++) {
       const introducing = introductionRemaining > 0;
       const elapsed = introducing ? (introductionLength - introductionRemaining) / sampleRate : 0;
-      // Ease strong introductory interference down over the last quarter-second.
-      const scene = introducing ? Math.min(1, introductionRemaining / (sampleRate * 0.25)) : 0;
       const opening = introducing && elapsed < introduction.tuningSeconds;
-      const hissLevel = configuration.hissLevel + (introduction.hissLevel - configuration.hissLevel) * scene;
+      // One receiver atmosphere spans voice, data and silence. The introduction
+      // changes voice bandwidth and adds a brief tuning sweep, never its noise.
       // A uniform source has the flat spectrum needed for audible broadband
       // hiss. hissLevel is its RMS before the receiver's noise low-pass filter.
-      const hiss = hissFilter((uniform() * 2 - 1) * Math.sqrt(3) * hissLevel);
-      const crackleRate = configuration.crackleRate + (introduction.crackleRate * (opening ? 2 : 1) - configuration.crackleRate) * scene;
-      const crackleLevel = configuration.crackleLevel + (introduction.crackleLevel - configuration.crackleLevel) * scene;
-      if (uniform() < crackleRate / sampleRate) {
-        const impulse = (uniform() * 2 - 1) * crackleLevel;
+      const hiss = hissFilter((uniform() * 2 - 1) * Math.sqrt(3) * configuration.hissLevel);
+      if (uniform() < configuration.crackleRate / sampleRate) {
+        const impulse = (uniform() * 2 - 1) * configuration.crackleLevel;
         crackleFast += impulse;
         crackleSlow += impulse;
       }

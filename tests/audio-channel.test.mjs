@@ -115,12 +115,14 @@ for (const sampleRate of [44100, 48000]) for (const profile of ['radio', 'weak']
   });
 }
 
-test('the introduction has recognizable static and a narrower voice band, then returns to a gentler data background', () => {
+test('the introduction keeps the same ambient static and narrows only the voice band', () => {
   const sampleRate = 44100, options = { profile: 'radio', sampleRate, seed: 19 };
   const channel = createAudioChannel(options);
   channel.beginIntroduction(5);
   const staticOnly = channel.process(new Float32Array(sampleRate * 6), new Float32Array(sampleRate * 6));
-  assert.ok(rms(staticOnly, 0, sampleRate / 2) > rms(staticOnly, sampleRate * 5, sampleRate * 6) * 2);
+  assert.ok(rms(staticOnly, sampleRate, sampleRate * 2) > 0.02);
+  const sameReceiver = processed(options, new Float32Array(sampleRate * 6));
+  assert.deepEqual(staticOnly.subarray(sampleRate), sameReceiver.subarray(sampleRate), 'after the brief tuning sweep, intro and data have exactly the same receiver atmosphere');
   const input = sine(sampleRate, 6500, 2, 0.4);
   const intro = createAudioChannel(options);
   intro.beginIntroduction(5);
@@ -128,6 +130,32 @@ test('the introduction has recognizable static and a narrower voice band, then r
   const dataPath = processed(options, input);
   assert.ok(rms(voicePath, sampleRate) < rms(dataPath, sampleRate) * 0.5, 'only voice is limited to the small radio speaker band');
 });
+
+for (const sampleRate of [44100, 48000]) for (const profile of ['radio', 'weak']) {
+  test(`${profile} at ${sampleRate} Hz preserves the same ambient intensity across introduction, data mode and gaps`, () => {
+    const options = { sampleRate, profile, seed: 0x7369676e };
+    const input = new Float32Array(sampleRate * 12);
+    const reference = processed(options, input);
+    const channel = createAudioChannel(options), output = new Float32Array(input.length);
+    channel.beginIntroduction(5);
+    // Unequal callback sizes deliberately cross the five-second boundary.
+    for (let offset = 0; offset < input.length; offset += 4093) {
+      const end = Math.min(input.length, offset + 4093);
+      channel.process(input.subarray(offset, end), output.subarray(offset, end));
+    }
+    assert.deepEqual(output.subarray(sampleRate), reference.subarray(sampleRate),
+      'a voice introduction must not change hiss, crackles, whistle phase or their random stream');
+    const duringVoice = rms(output, sampleRate, sampleRate * 4);
+    const crossingToData = rms(output, Math.round(sampleRate * 4.75), Math.round(sampleRate * 5.25));
+    const laterGap = rms(output, sampleRate * 9, sampleRate * 12);
+    assert.ok(duringVoice > 0.02, 'the permanent atmosphere remains audible without a voice or packet');
+    assert.ok(crossingToData / duringVoice > 0.95 && crossingToData / duringVoice < 1.05,
+      'the five-second transition has no ambient fade or intensity step');
+    assert.ok(laterGap / duringVoice > 0.95 && laterGap / duringVoice < 1.05,
+      'long pauses retain the same atmosphere as the opening');
+    assert.equal(channel.isIntroducing, false);
+  });
+}
 
 for (const sampleRate of [44100, 48000]) for (const profile of ['radio', 'weak']) {
   test(`${profile} at ${sampleRate} Hz preserves exact state across uneven blocks, silence and in-place buffers`, () => {
@@ -153,9 +181,10 @@ for (const sampleRate of [44100, 48000]) for (const profile of ['radio', 'weak']
 
 test('radio-shaped signal reduces very low/high frequencies and varies gain smoothly over seconds', () => {
   const sampleRate = 44100, options = { sampleRate, profile: 'radio', seed: 42 };
-  const middle = processed(options, sine(sampleRate, 3000, 1));
-  const low = processed(options, sine(sampleRate, 30, 1));
-  const high = processed(options, sine(sampleRate, 16000, 1));
+  const ambient = processed(options, new Float32Array(sampleRate));
+  const isolated = frequency => processed(options, sine(sampleRate, frequency, 1)).map((value, index) => value - ambient[index]);
+  // Compare the signal response, not the deliberately persistent noise floor.
+  const middle = isolated(3000), low = isolated(30), high = isolated(16000);
   assert.ok(rms(low, 1000) < rms(middle, 1000) * 0.15);
   assert.ok(rms(high, 1000) < rms(middle, 1000) * 0.15);
   const varying = processed(options, sine(sampleRate, 3000, 12));
@@ -171,8 +200,8 @@ test('a separate weak channel has stronger persistent hiss than a normal radio',
   const silence = new Float32Array(48000);
   const normal = processed({ sampleRate: 48000, profile: 'radio', seed: 1 }, silence);
   const weak = processed({ sampleRate: 48000, profile: 'weak', seed: 1 }, silence);
-  assert.ok(rms(normal) > 0.004 && rms(normal) < 0.02);
-  assert.ok(rms(weak) > rms(normal) * 2);
+  assert.ok(rms(normal) > 0.02 && rms(normal) < 0.04);
+  assert.ok(rms(weak) > rms(normal) * 1.4);
   assert.notDeepEqual(weak.subarray(0, 1024), weak.subarray(1024, 2048), 'hiss does not loop a short recording');
 });
 

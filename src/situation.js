@@ -1,6 +1,7 @@
 import { createSituationMap, loadLocalities } from './map-view.js';
 import { loadFields, saveFields, mergeField, selectFieldAt, fieldFreshness } from './field-store.js';
 import { loadLocation, saveLocation, locateDevice, normalizeLocation } from './location.js';
+import { fieldReceptionSummary } from './field-reception.js';
 const $ = id => document.getElementById(id);
 const dateText = value => new Intl.DateTimeFormat('es-PE',{day:'2-digit',month:'short',hour:'2-digit',minute:'2-digit',timeZone:'America/Lima'}).format(new Date(value));
 const levelNames = ['Sin clasificación','Clasificación amarilla','Clasificación naranja','Clasificación roja'];
@@ -8,6 +9,15 @@ export async function createSituationUI(storage,{toast=()=>{},onReset=()=>{}}={}
   let fields = loadFields(storage);
   let context = 'live';
   let mapView = 'national';
+  const receptionDiagnostics=document.createElement('section');
+  receptionDiagnostics.id='complete-field-receptions';
+  receptionDiagnostics.setAttribute('aria-label','Capas completas recibidas');
+  const diagnosticsHeading=document.createElement('h3');
+  diagnosticsHeading.textContent='Capas completas recibidas';
+  const diagnosticsList=document.createElement('div');
+  diagnosticsList.id='complete-field-reception-list';
+  receptionDiagnostics.append(diagnosticsHeading,diagnosticsList);
+  document.querySelector('.diagnostic-grid').after(receptionDiagnostics);
   const localities = await loadLocalities();
   let position = loadLocation(storage, localities[0]);
   const map = await createSituationMap($('situation-map'),{onSelect:value=>selectPosition(value)});
@@ -21,6 +31,17 @@ export async function createSituationUI(storage,{toast=()=>{},onReset=()=>{}}={}
     render();
   }
   function render() {
+    const receptionRows=fields.map(record=>{
+      const summary=fieldReceptionSummary(record);
+      const row=document.createElement('p');
+      row.className='complete-field-reception';
+      row.setAttribute('aria-label',summary.label);
+      for(const key of ['id','context','variable','observedAt','receivedAt','cols','rows'])row.dataset[key]=String(summary[key]);
+      row.textContent=summary.label;
+      return row;
+    });
+    if(!receptionRows.length){const empty=document.createElement('p');empty.textContent='Aún no se ha recibido una capa completa.';receptionRows.push(empty);}
+    diagnosticsList.replaceChildren(...receptionRows);
     const selected=localities.find(item=>Math.abs(item.longitude-position.longitude)<0.00001&&Math.abs(item.latitude-position.latitude)<0.00001);
     $('map-locality').value=selected?.id||'';
     $('position-name').textContent=position.name;
