@@ -4,6 +4,20 @@ import { encodeField, validateField } from './protocol.js';
 const $ = id => document.getElementById(id);
 const time = value => new Intl.DateTimeFormat('es-PE', { hour: '2-digit', minute: '2-digit', timeZone: 'America/Lima' }).format(new Date(value));
 const stopped = signal => signal.reason || new DOMException('Emisión detenida', 'AbortError');
+const channels = {
+  direct: {
+    label: 'Sonido directo',
+    description: 'Sonido directo, sin efectos de radio. La simulación de radio aplica siseo, banda reducida y desvanecimiento al audio que recibe el micrófono; no prueba una emisora real.',
+  },
+  radio: {
+    label: 'Radio simulada · estable',
+    description: 'Simulación de una radio estable: aplica siseo, banda reducida y desvanecimiento leve al audio que recibe el micrófono. No prueba una emisora real.',
+  },
+  weak: {
+    label: 'Radio simulada · señal variable',
+    description: 'Simulación de señal variable: aplica siseo, banda reducida y desvanecimiento al audio que recibe el micrófono. Puede perder fragmentos; no prueba una emisora real.',
+  },
+};
 
 function pause(ms, signal) {
   return new Promise((resolve, reject) => {
@@ -50,6 +64,10 @@ export function createStation({ getModem, isBusy, onBusy, fetchImpl = globalThis
   // Both source URLs are same-origin and may sit behind the private site login.
   const fetchLocal = (url, options) => fetchImpl(url, { ...options, credentials: 'same-origin' });
   const readJSON = url => fetchSource(url, { fetchImpl: fetchLocal });
+
+  function describeChannel() {
+    $('station-channel-info').textContent = channels[$('station-channel').value]?.description || 'Selecciona un canal de sonido válido.';
+  }
 
   function status(result) {
     if (result.state === 'loading') { $('source-state').textContent = 'Consultando fuente…'; return; }
@@ -105,6 +123,9 @@ export function createStation({ getModem, isBusy, onBusy, fetchImpl = globalThis
     const context = $('station-context').value;
     if (!['live', 'replay'].includes(context)) throw new Error('Contexto de emisión no válido.');
     const speed = $('station-speed').value;
+    const channel = $('station-channel').value;
+    if (!Object.hasOwn(channels, channel)) throw new Error('Canal de sonido no válido.');
+    const channelLabel = channels[channel].label;
     let cycle = 0, replayIndex = 0;
     while (!signal.aborted) {
       if (context === 'live' && Date.now() - lastCheck >= 300000) await cancellable(refresh(signal), signal);
@@ -112,18 +133,19 @@ export function createStation({ getModem, isBusy, onBusy, fetchImpl = globalThis
       const feed = context === 'replay' ? replay.frames[Math.min(replayIndex, replay.frames.length - 1)] : client.lastFeed;
       if (!feed) throw new Error('Todavía no hay datos para transmitir.');
       cycle++;
-      $('station-state').textContent = context === 'replay'
+      const sourceState = context === 'replay'
         ? `Histórico ${time(feed.sourceUpdatedAt)} · paso ${Math.min(replayIndex + 1, replay.frames.length)} de ${replay.frames.length}`
         : `Emitiendo análisis de ${time(feed.sourceUpdatedAt)} · vuelta ${cycle}`;
+      $('station-state').textContent = `${sourceState} · ${channelLabel}`;
       const packets = await Promise.all(feed.fields.map(field => encodeField(field)));
       const total = packets.reduce((sum, packet) => sum + packet.frames.length * 2, 0);
       let sent = 0;
       $('station-size').textContent = `${packets.reduce((sum, packet) => sum + packet.compressedBytes, 0)} B comprimidos · ${total} fragmentos con repetición`;
       for (const packet of packets) {
-        await modem.transmit(packet.frames, { repeat: 2, keepAlive: true, speed, signal, onProgress: progress => {
+        await modem.transmit(packet.frames, { repeat: 2, keepAlive: true, speed, channel, signal, onProgress: progress => {
           $('station-progress').max = total;
           $('station-progress').value = sent + progress.sent;
-          $('station-progress-text').textContent = `${sent + progress.sent} de ${total} fragmentos · la laptop debe seguir abierta`;
+          $('station-progress-text').textContent = `${sent + progress.sent} de ${total} fragmentos · ${channelLabel} · la laptop debe seguir abierta`;
         } });
         sent += packet.frames.length * 2;
       }
@@ -143,6 +165,7 @@ export function createStation({ getModem, isBusy, onBusy, fetchImpl = globalThis
     $('station-start').textContent = 'Detener emisión continua';
     $('station-context').disabled = true;
     $('station-speed').disabled = true;
+    $('station-channel').disabled = true;
     document.body.classList.add('transmitting');
     try {
       // No await precedes prime(): Safari receives resume inside this gesture.
@@ -157,6 +180,7 @@ export function createStation({ getModem, isBusy, onBusy, fetchImpl = globalThis
       $('station-start').textContent = 'Emitir datos continuamente';
       $('station-context').disabled = false;
       $('station-speed').disabled = false;
+      $('station-channel').disabled = false;
       document.body.classList.remove('transmitting');
     }
   });
@@ -165,6 +189,8 @@ export function createStation({ getModem, isBusy, onBusy, fetchImpl = globalThis
       if (error.name !== 'AbortError') $('source-state').textContent = error.message;
     });
   });
+  $('station-channel').addEventListener('change', describeChannel);
+  describeChannel();
   return {
     prepare,
     stop: () => controller?.abort(new DOMException('Emisión detenida', 'AbortError')),

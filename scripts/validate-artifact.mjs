@@ -25,7 +25,7 @@ assert.match(shell.headers.get('permissions-policy'), /geolocation=\(self\)/);
 const html = await shell.text();
 assert.match(html, /name="onda-shell-revision"/);
 assert.equal(html, await readFile(path.join(root, 'dist/index.html'), 'utf8'));
-for (const pathname of ['/src/app.js', '/src/map-view.js', '/public/data/basemap.json', '/public/data/localities.json', '/manifest.webmanifest', '/sw.js']) {
+for (const pathname of ['/src/app.js', '/src/audio.js', '/src/audio-channel.js', '/src/map-view.js', '/public/data/basemap.json', '/public/data/localities.json', '/manifest.webmanifest', '/sw.js']) {
   const response = await call(pathname);
   assert.equal(response.status, 200, pathname);
   const expected = await readFile(path.join(root, 'dist', pathname.slice(1)));

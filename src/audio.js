@@ -1,3 +1,5 @@
+import { CHANNEL_PROFILES, createAudioChannel } from './audio-channel.js';
+
 // ggwave supplies the modem and its Reed–Solomon correction. This module handles
 // browser audio lifecycle only; no microphone permission is requested on load.
 let factoryPromise;
@@ -40,7 +42,8 @@ function microphoneError(error) {
 }
 
 // onActivity receives { mode, active } whenever the audio lifecycle changes.
-// Starting capture and transmitting are active; a retained, idle context is not.
+// Capture, transmission and a retained channel producing hiss are active.
+// A primed context alone does not keep the screen awake.
 export async function createAudioModem({ onActivity = () => {} } = {}) {
   const modem = await loadModule();
   let context = null;
@@ -56,13 +59,49 @@ export async function createAudioModem({ onActivity = () => {} } = {}) {
   let generation = 0;
   let statusCallback = () => {};
   let receivingTimer;
+  let outputChannel = null;
+  let activityActive = false;
 
   function setMode(next) {
-    if (mode === next) return;
+    const active = next !== 'idle' || outputChannel !== null;
+    if (mode === next && activityActive === active) return;
     mode = next;
+    activityActive = active;
     // Observers must not prevent microphone/playback cleanup.
-    try { onActivity({ mode, active: mode !== 'idle' }); }
+    try { onActivity({ mode, active }); }
     catch (error) { console.warn('Audio activity observer:', error); }
+  }
+
+  function releaseOutputChannel() {
+    if (!outputChannel) return;
+    const previous = outputChannel;
+    outputChannel = null;
+    previous.node.onaudioprocess = null;
+    try { previous.clock.stop(); } catch {}
+    previous.clock.disconnect();
+    previous.node.disconnect();
+  }
+
+  // A persistent, clocked graph processes the transmitted waveform AND the
+  // silence between packets. Fading and hiss never restart at packet boundaries.
+  // The receiver still decodes only its physical microphone input.
+  function transmissionDestination(profile) {
+    if (profile === 'direct') { releaseOutputChannel(); return context.destination; }
+    if (outputChannel?.profile === profile) return outputChannel.node;
+    releaseOutputChannel();
+    const channel = createAudioChannel({ profile, sampleRate: context.sampleRate });
+    const node = context.createScriptProcessor(4096, 1, 1);
+    const clock = context.createBufferSource();
+    outputChannel = { profile, node, clock };
+    clock.buffer = context.createBuffer(1, 4096, context.sampleRate);
+    clock.loop = true;
+    clock.connect(node);
+    node.onaudioprocess = event => {
+      channel.process(event.inputBuffer.getChannelData(0), event.outputBuffer.getChannelData(0));
+    };
+    node.connect(context.destination);
+    clock.start();
+    return node;
   }
 
   function resetInstance() {
@@ -84,7 +123,7 @@ export async function createAudioModem({ onActivity = () => {} } = {}) {
     if (!context || context.state === 'closed') {
       context = new AudioContext();
       context.onstatechange = () => {
-        if (context?.state === 'interrupted' || (context?.state === 'suspended' && mode !== 'idle')) {
+        if (context?.state === 'interrupted' || (context?.state === 'suspended' && activityActive)) {
           const report=statusCallback;
           void stop().then(()=>report('interrupted'));
         }
@@ -113,6 +152,7 @@ export async function createAudioModem({ onActivity = () => {} } = {}) {
 
   async function stop() {
     const token = ++generation;
+    releaseOutputChannel();
     setMode('idle');
     for (const cancel of pendingResumes) cancel();
     pendingResumes.clear();
@@ -139,6 +179,7 @@ export async function createAudioModem({ onActivity = () => {} } = {}) {
     }
     if (mode === 'listening') return;
     if (mode !== 'idle') throw new Error('Detén la transmisión antes de escuchar.');
+    releaseOutputChannel();
     statusCallback = onStatus;
     const token = ++generation;
     setMode('starting');
@@ -200,12 +241,13 @@ export async function createAudioModem({ onActivity = () => {} } = {}) {
   }
 
   async function transmit(frames, { onProgress = () => {}, onStatus = () => {}, repeat = 2, signal,
-    keepAlive = false, speed = 'fast' } = {}) {
+    keepAlive = false, speed = 'fast', channel = 'direct' } = {}) {
     if (!Array.isArray(frames) || !frames.length || frames.length > 68 || frames.some((frame) => !(frame instanceof Uint8Array) || !frame.length || frame.length > 140)) {
       throw new Error('La transmisión requiere paquetes de entre 1 y 140 bytes.');
     }
     if (!Number.isInteger(repeat) || repeat < 1 || repeat > 8) throw new Error('Repeticiones: entre 1 y 8.');
     if (!['fast', 'fastest'].includes(speed)) throw new Error('Velocidad de transmisión no compatible.');
+    if (!Object.hasOwn(CHANNEL_PROFILES, channel)) throw new Error('Canal de audio no compatible.');
     if (typeof keepAlive !== 'boolean') throw new Error('keepAlive debe ser booleano.');
     if (mode !== 'idle') throw new Error('Detén la escucha o transmisión actual primero.');
     if (signal?.aborted) throw abortError();
@@ -221,6 +263,7 @@ export async function createAudioModem({ onActivity = () => {} } = {}) {
       onStatus('transmitting');
       const protocol = modem.ProtocolId[speed === 'fastest' ? 'GGWAVE_PROTOCOL_AUDIBLE_FASTEST' : 'GGWAVE_PROTOCOL_AUDIBLE_FAST'];
       if (protocol === undefined) throw new Error('El módem no admite esa velocidad de transmisión.');
+      const destination = transmissionDestination(channel);
       let sent = 0;
       for (let cycle = 0; cycle < repeat; cycle++) {
         for (let part = 0; part < frames.length; part++) {
@@ -233,7 +276,7 @@ export async function createAudioModem({ onActivity = () => {} } = {}) {
           buffer.copyToChannel(samples, 0);
           const source = context.createBufferSource();
           source.buffer = buffer;
-          source.connect(context.destination);
+          source.connect(destination);
           playback = source;
           onProgress({ sent, total: frames.length * repeat, cycle: cycle + 1, cycles: repeat, frame: part + 1, frames: frames.length, durationSeconds: buffer.duration });
           try {

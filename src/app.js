@@ -278,11 +278,14 @@ $('send-form').addEventListener('submit', async event => {
   sending = true;
   document.body.classList.add('transmitting');
   $('transmit-button').disabled = true;
+  $('station-speed').disabled = true;
+  $('station-channel').disabled = true;
   $('stop-transmit').hidden = false;
   $('transmit-feedback').textContent = 'Emitiendo. El receptor debe estar escuchando.';
   try {
     // Audio activation remains directly attached to this user gesture.
-    await modem.transmit(packet.frames, { repeat:Number($('send-repeat').value), signal:transmissionController.signal, onProgress:progress => {
+    await modem.transmit(packet.frames, { repeat:Number($('send-repeat').value), speed:$('station-speed').value,
+      channel:$('station-channel').value, signal:transmissionController.signal, onProgress:progress => {
       $('transmit-progress').max = progress.total;
       $('transmit-progress').value = progress.sent;
       $('transmit-progress-text').textContent = `Vuelta ${progress.cycle} de ${progress.cycles} · fragmento ${progress.frame} de ${progress.frames}`;
@@ -296,6 +299,8 @@ $('send-form').addEventListener('submit', async event => {
     sending = false;
     document.body.classList.remove('transmitting');
     $('transmit-button').disabled = false;
+    $('station-speed').disabled = false;
+    $('station-channel').disabled = false;
     $('stop-transmit').hidden = true;
     transmissionController = null;
   }

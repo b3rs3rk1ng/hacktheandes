@@ -24,11 +24,12 @@ const deferred = () => { let resolve; const promise = new Promise(done => { reso
 function fixture(t, { fetchImpl, prime, stop, transmit, busy = false } = {}) {
   const nodes = new Map();
   const classes = new Set();
+  const defaults = { 'station-context': 'live', 'station-speed': 'fast', 'station-channel': 'radio' };
   const previous = Object.getOwnPropertyDescriptor(globalThis, 'document');
   const document = {
     getElementById(id) {
       if (!nodes.has(id)) nodes.set(id, {
-        value: id === 'station-context' ? 'live' : 'fast', disabled: false, textContent: '',
+        value: defaults[id] ?? '', disabled: false, textContent: '',
         events: new Map(), addEventListener(event, callback) { this.events.set(event, callback); },
       });
       return nodes.get(id);
@@ -65,6 +66,7 @@ function fixture(t, { fetchImpl, prime, stop, transmit, busy = false } = {}) {
   return {
     station, requests, transmissions, busyChanges, classes, node: document.getElementById,
     start: () => document.getElementById('station-start').events.get('click')(),
+    changeChannel: value => { const node = document.getElementById('station-channel'); node.value = value; node.events.get('change')(); },
     get primeCount() { return primeCount; }, get stopCount() { return stopCount; },
   };
 }
@@ -93,7 +95,10 @@ test('concurrent preparation deduplicates source work and repeat visits preserve
   assert.equal((await decode(frames)).observedAt, newerAt);
   assert.equal(options.keepAlive, true);
   assert.equal(options.speed, 'fast');
+  assert.equal(options.channel, 'radio');
   assert.equal(options.repeat, 2);
+  assert.equal(f.node('station-channel').disabled, true);
+  assert.match(f.node('station-state').textContent, /Radio simulada · estable/);
   assert.ok(f.requests.every(request => request.options.credentials === 'same-origin'));
   f.station.stop();
   await running;
@@ -101,6 +106,7 @@ test('concurrent preparation deduplicates source work and repeat visits preserve
   assert.deepEqual(f.busyChanges, [true, false]);
   assert.equal(f.stopCount, 1);
   assert.equal(f.classes.size, 0);
+  assert.equal(f.node('station-channel').disabled, false);
 });
 
 test('a rapid second click stops pending preparation immediately while shared warmup remains reusable', { timeout: 2000 }, async t => {
@@ -153,6 +159,7 @@ test('synchronous prime failure and cleanup rejection both release sender owners
   assert.deepEqual(f.busyChanges, [true, false]);
   assert.equal(f.node('station-context').disabled, false);
   assert.equal(f.node('station-speed').disabled, false);
+  assert.equal(f.node('station-channel').disabled, false);
   assert.equal(f.classes.size, 0);
 });
 
@@ -203,13 +210,86 @@ test('continuous replay advances dated snapshots while retaining audio until the
   });
   await f.station.prepare();
   f.node('station-context').value = 'replay';
+  f.node('station-speed').value = 'fastest';
+  f.changeChannel('weak');
   await f.start();
   assert.equal(f.transmissions.length, 2);
   const fields = await Promise.all(f.transmissions.map(transmission => decode(transmission.frames)));
   assert.deepEqual(fields.map(field => field.observedAt), [initialAt, newerAt]);
   assert.ok(fields.every(field => field.context === 'replay'));
   assert.ok(f.transmissions.every(transmission => transmission.options.keepAlive));
+  assert.ok(f.transmissions.every(transmission => transmission.options.channel === 'weak' && transmission.options.speed === 'fastest'));
   assert.equal(f.primeCount, 1);
   assert.equal(f.stopCount, 1);
   assert.deepEqual(f.busyChanges, [true, false]);
+  assert.equal(f.node('station-channel').disabled, false);
+});
+
+test('direct sound reaches every grid transmission and progress retains the selected channel', async t => {
+  const states = [], progress = [];
+  const multiFeed = () => {
+    const value = feed('live', newerAt);
+    value.fields.push({ ...value.fields[0], id: 'another-field', values: [3, 2, 1, 0] });
+    return value;
+  };
+  let f;
+  f = fixture(t, {
+    fetchImpl: async url => response(url.endsWith('replay-feed.json') ? replay() : multiFeed()),
+    transmit: async (_frames, options) => {
+      states.push(f.node('station-state').textContent);
+      options.onProgress({ sent: 2 });
+      progress.push(f.node('station-progress-text').textContent);
+      assert.equal(f.node('station-channel').disabled, true);
+      if (f.transmissions.length === 2) f.station.stop();
+    },
+  });
+  f.changeChannel('direct');
+  await f.start();
+  assert.equal(f.transmissions.length, 2);
+  assert.ok(f.transmissions.every(transmission => transmission.options.channel === 'direct'));
+  assert.ok(states.every(state => state.includes('Emitiendo análisis') && state.includes('Sonido directo')));
+  assert.ok(progress.every(state => state.includes('Sonido directo')));
+  assert.deepEqual((await Promise.all(f.transmissions.map(transmission => decode(transmission.frames)))).map(field => field.id), ['regional-field', 'another-field']);
+  assert.equal(f.node('station-channel').disabled, false);
+});
+
+test('channel descriptions identify the simulation and distinguish direct, stable and variable sound', t => {
+  const f = fixture(t);
+  assert.equal(f.node('station-channel').value, 'radio');
+  assert.match(f.node('station-channel-info').textContent, /Simulación de una radio estable/);
+  f.changeChannel('weak');
+  assert.match(f.node('station-channel-info').textContent, /señal variable/);
+  assert.match(f.node('station-channel-info').textContent, /Puede perder fragmentos/);
+  f.changeChannel('direct');
+  assert.match(f.node('station-channel-info').textContent, /sin efectos de radio/);
+  for (const value of ['direct', 'radio', 'weak']) {
+    f.changeChannel(value);
+    const description = f.node('station-channel-info').textContent;
+    assert.match(description, /siseo, banda reducida y desvanecimiento/);
+    assert.match(description, /micrófono/);
+    assert.match(description, /[Nn]o prueba una emisora real/);
+  }
+});
+
+test('transmission errors unlock the channel and a later emission may use a different profile', async t => {
+  const f = fixture(t, { transmit: async () => { throw new Error('Audio output failed'); } });
+  await f.start();
+  assert.equal(f.node('station-state').textContent, 'Audio output failed');
+  assert.equal(f.node('station-channel').disabled, false);
+  assert.equal(f.station.running, false);
+  f.changeChannel('weak');
+  await f.start();
+  assert.deepEqual(f.transmissions.map(transmission => transmission.options.channel), ['radio', 'weak']);
+  assert.equal(f.node('station-channel').disabled, false);
+  assert.deepEqual(f.busyChanges, [true, false, true, false]);
+});
+
+test('an unsupported channel cannot silently transmit direct sound', async t => {
+  const f = fixture(t);
+  f.changeChannel('unknown');
+  await f.start();
+  assert.equal(f.transmissions.length, 0);
+  assert.equal(f.node('station-state').textContent, 'Canal de sonido no válido.');
+  assert.equal(f.node('station-channel').disabled, false);
+  assert.equal(f.station.running, false);
 });

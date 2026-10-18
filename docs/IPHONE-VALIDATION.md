@@ -21,6 +21,16 @@ XCUITest ejecutó en el dispositivo: carga del mapa empaquetado, selección de v
 
 El proyecto incluye la prueba en `ios/OndaUITests/`. No requiere Duplicación del iPhone para pulsar los controles. El receptor contiene sus recursos y excluye los snapshots del emisor; la información del mapa entra mediante el ensamblador de paquetes acústicos.
 
+## Radio simulada, 19:15–19:17 Lima
+
+La laptop emitió la observación LIVE de las 18:50 mediante el perfil `radio`, velocidad `fast`, dos repeticiones por rejilla. El altavoz reprodujo el DSP de `src/audio-channel.js`: filtros de banda, siseo continuo y variación lenta de señal. El iPhone mantuvo el receptor acústico ya instalado; no se modificó su contenido para introducir esta observación.
+
+El resumen global «Más reciente» avanzó de 18:40 en la captura inicial a 18:50 en la final, conservando dos capas. Esto confirma recepción física de una observación nueva mediante el canal simulado. La capa nacional se actualizó; el detalle de 9 × 9 del punto seleccionado permaneció en 18:40, con uno de dos fragmentos pendientes al final. No se verificó actualización completa de todas las capas durante esta prueba.
+
+La prueba de interfaz terminó con cero fallos en 144,336 segundos, incluida la ventana de escucha de 120 segundos y su parada. Pasar el test de interfaz comprueba los controles y la permanencia; el cambio de fecha del mapa es la evidencia específica de recepción.
+
+Los resultados de Xcode quedaron en `/tmp/onda-usb-ui-radio.xcresult`, el registro en `/tmp/onda-ios-ui-test-radio.log` y los informes filtrados en `/tmp/onda-usb-ui-radio-evidence.txt` y `.json`. No se incorporaron capturas originales que pudieran mostrar una ubicación seleccionada. Los parámetros y límites del ensayo de software se describen en [RADIO-SIMULATION.md](RADIO-SIMULATION.md).
+
 ## Límites de la evidencia
 
 Se verificaron recepción y cambios reales en la sala descrita por el usuario. No demuestra inmunidad a cualquier voz, ruido, distancia, radio AM/FM o modelo de teléfono. No se completó una prueba física en modo avión ni de obtención GPS sin red. La firma de desarrollo actual vence el 24 de octubre de 2026; debe renovarse para seguir ejecutándose después.
