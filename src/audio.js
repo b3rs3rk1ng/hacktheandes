@@ -62,6 +62,8 @@ export async function createAudioModem({ onActivity = () => {}, fetchImpl = glob
   let statusCallback = () => {};
   let receivingTimer;
   let outputChannel = null;
+  let outputGain = null;
+  let outputVolume = 0.65;
   let activityActive = false;
 
   function setMode(next) {
@@ -88,7 +90,7 @@ export async function createAudioModem({ onActivity = () => {}, fetchImpl = glob
   // silence between packets. Fading and hiss never restart at packet boundaries.
   // The receiver still decodes only its physical microphone input.
   function transmissionDestination(profile) {
-    if (profile === 'direct') { releaseOutputChannel(); return context.destination; }
+    if (profile === 'direct') { releaseOutputChannel(); return outputGain; }
     if (outputChannel?.profile === profile) return outputChannel.node;
     releaseOutputChannel();
     const channel = createAudioChannel({ profile, sampleRate: context.sampleRate });
@@ -101,7 +103,7 @@ export async function createAudioModem({ onActivity = () => {}, fetchImpl = glob
     node.onaudioprocess = event => {
       channel.process(event.inputBuffer.getChannelData(0), event.outputBuffer.getChannelData(0));
     };
-    node.connect(context.destination);
+    node.connect(outputGain);
     clock.start();
     return node;
   }
@@ -183,6 +185,9 @@ export async function createAudioModem({ onActivity = () => {}, fetchImpl = glob
     if (!AudioContext) throw new Error('Este navegador no admite Web Audio.');
     if (!context || context.state === 'closed') {
       context = new AudioContext();
+      outputGain = context.createGain();
+      outputGain.gain.value = outputVolume;
+      outputGain.connect(context.destination);
       context.onstatechange = () => {
         if (context?.state === 'interrupted' || (context?.state === 'suspended' && activityActive)) {
           const report=statusCallback;
@@ -226,6 +231,7 @@ export async function createAudioModem({ onActivity = () => {}, fetchImpl = glob
     if (instance !== null) { modem.free(instance); instance = null; }
     const previous = context;
     context = null;
+    if (outputGain) { outputGain.disconnect(); outputGain = null; }
     if (previous) {
       previous.onstatechange = null;
       if (previous.state !== 'closed') await previous.close();
@@ -401,5 +407,15 @@ export async function createAudioModem({ onActivity = () => {}, fetchImpl = glob
     }
   }
 
-  return { prime, previewChannel, transmit, listen, stop };
+  function setVolume(volume) {
+    if (!Number.isFinite(volume) || volume < 0 || volume > 1) throw new RangeError('El volumen debe estar entre 0 y 1.');
+    outputVolume = volume;
+    if (outputGain) {
+      if (outputGain.gain.setTargetAtTime) outputGain.gain.setTargetAtTime(volume, context.currentTime, 0.025);
+      else outputGain.gain.value = volume;
+    }
+    return outputVolume;
+  }
+
+  return { prime, previewChannel, transmit, listen, stop, setVolume, get volume() { return outputVolume; } };
 }

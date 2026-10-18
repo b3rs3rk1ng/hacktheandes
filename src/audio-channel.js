@@ -7,18 +7,21 @@ export const CHANNEL_PROFILES = Object.freeze({
     label: 'Directo', highPassHz: 0, lowPassHz: 0, signalGain: 1,
     hissLevel: 0, hissLowPassHz: 0, fadeDepth: 0, fadeSeconds: 1,
     crackleRate: 0, crackleLevel: 0,
+    whistleHz: 0, whistleLevel: 0, whistleWanderHz: 0, whistleWanderSeconds: 1,
     introduction: Object.freeze({ highPassHz: 0, lowPassHz: 0, hissLevel: 0, crackleRate: 0, crackleLevel: 0, tuningSeconds: 0, tuningLevel: 0 }),
   }),
   radio: Object.freeze({
     label: 'Radio simulada', highPassHz: 150, lowPassHz: 7000, signalGain: 0.9,
     hissLevel: 0.012, hissLowPassHz: 9500, fadeDepth: 0.18, fadeSeconds: 6.7,
     crackleRate: 0.3, crackleLevel: 0.025,
+    whistleHz: 850, whistleLevel: 0.003, whistleWanderHz: 35, whistleWanderSeconds: 11.7,
     introduction: Object.freeze({ highPassHz: 220, lowPassHz: 3400, hissLevel: 0.04, crackleRate: 3.5, crackleLevel: 0.13, tuningSeconds: 0.5, tuningLevel: 0.055 }),
   }),
   weak: Object.freeze({
     label: 'Señal débil simulada', highPassHz: 250, lowPassHz: 4500, signalGain: 0.75,
     hissLevel: 0.038, hissLowPassHz: 7500, fadeDepth: 0.65, fadeSeconds: 5.3,
     crackleRate: 0.65, crackleLevel: 0.045,
+    whistleHz: 880, whistleLevel: 0.005, whistleWanderHz: 55, whistleWanderSeconds: 8.3,
     introduction: Object.freeze({ highPassHz: 250, lowPassHz: 3100, hissLevel: 0.07, crackleRate: 5, crackleLevel: 0.17, tuningSeconds: 0.5, tuningLevel: 0.065 }),
   }),
 });
@@ -69,6 +72,10 @@ export function createAudioChannel({ profile = 'radio', sampleRate, seed = 0x4f4
   let processedSamples = 0;
   let introductionLength = 0, introductionRemaining = 0;
   let tuningPhase = 0, crackleFast = 0, crackleSlow = 0;
+  // This subtle receiver effect has its own clock. An introductory tuning sweep
+  // must not restart its pitch or interrupt it between data packets.
+  let whistlePhase = phase * 0.37, whistleWanderPhase = phase + 1.9;
+  const whistleWanderStep = 2 * Math.PI / (configuration.whistleWanderSeconds * sampleRate);
 
   function uniform() {
     random = (Math.imul(random, 1664525) + 1013904223) >>> 0;
@@ -133,6 +140,11 @@ export function createAudioChannel({ profile = 'radio', sampleRate, seed = 0x4f4
         tuningPhase += 2 * Math.PI * (450 + 1150 * fraction + 110 * Math.sin(18 * fraction)) / sampleRate;
         tuning = Math.sin(tuningPhase) * introduction.tuningLevel * envelope;
       }
+      const whistle = Math.sin(whistlePhase) * configuration.whistleLevel;
+      whistlePhase += 2 * Math.PI * (configuration.whistleHz + configuration.whistleWanderHz * Math.sin(whistleWanderPhase)) / sampleRate;
+      whistleWanderPhase += whistleWanderStep;
+      if (whistlePhase >= 2 * Math.PI) whistlePhase -= 2 * Math.PI;
+      if (whistleWanderPhase >= 2 * Math.PI) whistleWanderPhase -= 2 * Math.PI;
       const fading = 1 - configuration.fadeDepth * (0.5 - 0.35 * Math.cos(phase) - 0.15 * Math.cos(secondPhase));
       // Always advance both paths: switching to data cannot reveal stale filter
       // history from a previous packet. Only the introduction narrows the voice.
@@ -142,7 +154,7 @@ export function createAudioChannel({ profile = 'radio', sampleRate, seed = 0x4f4
       const signal = (introducing ? voiceSignal * voiceGain : broadSignal) * configuration.signalGain * fading;
       // Smooth saturation bounds all simulated output, including unusually loud
       // inputs, without the discontinuity of clipping individual peaks.
-      output[index] = Math.tanh(signal + hiss + crackle + tuning);
+      output[index] = Math.tanh(signal + hiss + crackle + tuning + whistle);
       if (introducing) introductionRemaining--;
       phase += phaseStep;
       secondPhase += phaseStep * 0.613;

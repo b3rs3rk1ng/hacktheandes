@@ -25,12 +25,16 @@ assert.match(shell.headers.get('permissions-policy'), /geolocation=\(self\)/);
 const html = await shell.text();
 assert.match(html, /name="onda-shell-revision"/);
 assert.equal(html, await readFile(path.join(root, 'dist/index.html'), 'utf8'));
-for (const pathname of ['/src/app.js', '/src/audio.js', '/src/audio-channel.js', '/src/map-view.js', '/public/data/basemap.json', '/public/data/localities.json', '/manifest.webmanifest', '/sw.js']) {
+for (const pathname of ['/src/app.js', '/src/audio.js', '/src/audio-channel.js', '/src/radio-shell.js', '/src/radio-3d.js', '/src/map-view.js', '/public/data/basemap.json', '/public/data/localities.json', '/manifest.webmanifest', '/sw.js']) {
   const response = await call(pathname);
   assert.equal(response.status, 200, pathname);
   const expected = await readFile(path.join(root, 'dist', pathname.slice(1)));
   assert.deepEqual(Buffer.from(await response.arrayBuffer()), expected, pathname + ' must preserve bytes');
 }
+const modelSource = await (await call('/src/radio-3d.js')).text();
+assert.doesNotMatch(modelSource, /from\s*["']three(?:\/|["'])/, 'The 3D view must bundle its local Three dependency.');
+const modelModule = await import(`data:text/javascript;base64,${Buffer.from(modelSource).toString('base64')}`);
+assert.equal(typeof modelModule.mountRadio3D, 'function');
 const png = await call('/public/apple-touch-icon.png');
 assert.equal(png.headers.get('content-type'), 'image/png');
 assert.deepEqual(Buffer.from(await png.arrayBuffer()).subarray(0, 8), Buffer.from([137, 80, 78, 71, 13, 10, 26, 10]));

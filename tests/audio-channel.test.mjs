@@ -18,6 +18,26 @@ function sine(sampleRate, frequency, seconds, amplitude = 0.2) {
 function processed(options, input) {
   return createAudioChannel(options).process(input, new Float32Array(input.length));
 }
+function bandPower(samples, sampleRate, startSeconds, endSeconds, lowHz, highHz) {
+  const size = 2048, firstBin = Math.ceil(lowHz * size / sampleRate), lastBin = Math.floor(highHz * size / sampleRate);
+  let power = 0, blocks = 0;
+  for (let start = Math.round(startSeconds * sampleRate); start + size <= endSeconds * sampleRate; start += size) {
+    for (let bin = firstBin; bin <= lastBin; bin++) {
+      const step = 2 * Math.PI * bin / size, cosine = Math.cos(step), sine = Math.sin(step);
+      let phaseCosine = 1, phaseSine = 0, real = 0, imaginary = 0;
+      for (let index = 0; index < size; index++) {
+        real += samples[start + index] * phaseCosine;
+        imaginary += samples[start + index] * phaseSine;
+        const nextCosine = phaseCosine * cosine - phaseSine * sine;
+        phaseSine = phaseSine * cosine + phaseCosine * sine;
+        phaseCosine = nextCosine;
+      }
+      power += real * real + imaginary * imaginary;
+    }
+    blocks++;
+  }
+  return 2 * power / (blocks * size * size);
+}
 
 test('channel profiles are immutable and invalid configuration or PCM never advances state', () => {
   assert.ok(Object.isFrozen(CHANNEL_PROFILES));
@@ -156,6 +176,29 @@ test('a separate weak channel has stronger persistent hiss than a normal radio',
   assert.notDeepEqual(weak.subarray(0, 1024), weak.subarray(1024, 2048), 'hiss does not loop a short recording');
 });
 
+for (const sampleRate of [44100, 48000]) for (const profile of ['radio', 'weak']) {
+  test(`${profile} at ${sampleRate} Hz retains a subtle low whistle after the introduction and through long gaps`, () => {
+    const channel = createAudioChannel({ sampleRate, profile, seed: 19 });
+    channel.beginIntroduction(5);
+    const input = new Float32Array(sampleRate * 34), output = new Float32Array(input.length);
+    // Silence models the quiet interval between repeated bulletins. Callback
+    // boundaries must not be the trigger for producing or restarting the tone.
+    for (let offset = 0; offset < input.length; offset += 4093) {
+      const end = Math.min(input.length, offset + 4093);
+      channel.process(input.subarray(offset, end), output.subarray(offset, end));
+    }
+    const center = CHANNEL_PROFILES[profile].whistleHz;
+    for (const [start, end] of [[6, 10], [30, 34]]) {
+      const toneBand = bandPower(output, sampleRate, start, end, center - 75, center + 75);
+      const noiseBand = bandPower(output, sampleRate, start, end, center + 425, center + 575);
+      assert.ok(toneBand > noiseBand * 1.15, `${start}–${end}s: a sustained low tone must remain distinguishable from broadband hiss`);
+    }
+    assert.equal(channel.isIntroducing, false);
+    assert.equal(channel.processedSamples, input.length);
+    assert.deepEqual(channel.process(new Float32Array(0), new Float32Array(0)), new Float32Array(0));
+  });
+}
+
 test('the supported sample-rate endpoints keep filter state finite after loud audio and silence', () => {
   for (const sampleRate of [16000, 192000]) for (const profile of ['radio', 'weak']) {
     const channel = createAudioChannel({ sampleRate, profile, seed: 0xffffffff });
@@ -174,11 +217,13 @@ test('complete geographic fields survive the same radio simulation used for audi
   new Function('module', 'exports', 'require', '__filename', '__dirname', await readFile(path, 'utf8'))(wrapper, wrapper.exports, createRequire(import.meta.url), path, dirname(path));
   const modem = await wrapper.exports({ print: () => {}, printErr: () => {} });
   modem.disableLog();
-  for (const [sampleRate, speed, bounds, values, introductionSeconds] of [
+  for (const [sampleRate, speed, bounds, values, introductionSeconds, idleSeconds = introductionSeconds + 0.3, seed = 97] of [
     [44100, 'FAST', [130, 30, 134, 34], [0, 1, 2, 255], 0],
     [48000, 'FASTEST', [18, -34, 22, -30], [3, 2, 1, 0], 0],
     [44100, 'FAST', [130, 30, 134, 34], [0, 1, 2, 255], 5],
     [48000, 'FASTEST', [18, -34, 22, -30], [3, 2, 1, 0], 5],
+    [44100, 'FASTEST', [-75, -15, -71, -11], [1, 0, 3, 2], 0, 30.3, 121],
+    [48000, 'FAST', [-8, 8, -4, 12], [255, 3, 2, 1], 5, 30.3, 0xffffffff],
   ]) {
     const field = {
       version: 1, type: 'grid', id: 'radio-roundtrip', variable: 'rain-category',
@@ -193,7 +238,7 @@ test('complete geographic fields survive the same radio simulation used for audi
     const tx = modem.init(parameters);
     let rx = modem.init(parameters);
     try {
-      const recordings = [new Float32Array(Math.round(sampleRate * (introductionSeconds + 0.3)))];
+      const recordings = [new Float32Array(Math.round(sampleRate * idleSeconds))];
       for (const frame of encoded.frames) {
         const raw = modem.encode(tx, frame, modem.ProtocolId[`GGWAVE_PROTOCOL_AUDIBLE_${speed}`], 40);
         recordings.push(new Float32Array(new Uint8Array(raw.buffer, raw.byteOffset, raw.byteLength).slice().buffer), new Float32Array(Math.round(sampleRate * 0.25)));
@@ -202,7 +247,7 @@ test('complete geographic fields survive the same radio simulation used for audi
       const recording = new Float32Array(length);
       let cursor = 0;
       for (const samples of recordings) { recording.set(samples, cursor); cursor += samples.length; }
-      const channel = createAudioChannel({ sampleRate, profile: 'radio', seed: 97 });
+      const channel = createAudioChannel({ sampleRate, profile: 'radio', seed });
       if (introductionSeconds) channel.beginIntroduction(introductionSeconds);
       const assembler = createAssembler();
       let received;

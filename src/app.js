@@ -36,16 +36,31 @@ let cachedPacket;
 let packetGeneration = 0;
 let sending = false;
 let clearPending = false;
+let radioShowcase;
+let radioShowcaseLoading;
 const assembler = createAssembler();
 const situationReady = createSituationUI(storage,{toast,onReset:()=>{assembler.reset();$('receive-progress').hidden=true;}}).catch(error=>{ $('situation-map').textContent=error.message; return null; });
 const station = createStation({ getModem:()=>modem, isBusy:()=>listening||sending, onBusy:value=>{sending=value;$('transmit-button').disabled=value;} });
 const screenAwake = createScreenAwake();
+
+function loadRadioShowcase() {
+  if (!runtime.canEmit) return;
+  if (!radioShowcaseLoading) radioShowcaseLoading = import('./radio-shell.js').then(({ mountRadioShowcase }) => {
+    radioShowcase = mountRadioShowcase({ getModem: () => modem,
+      onPreview: () => $('station-preview').click(), getBusy: () => listening || sending });
+    radioShowcase.setVisible(!$('send-view').hidden);
+    return radioShowcase;
+  }).catch(() => { radioShowcaseLoading = null; });
+  return radioShowcaseLoading;
+}
 
 const modemReady = createAudioModem({ onActivity: activity => {
   screenAwake.setActive(activity.active);
   window.dispatchEvent(new CustomEvent('onda:audio-activity', { detail: activity }));
 } }).then(value => {
   modem = value;
+  const selectedVolume = radioShowcase?.getState?.()?.volume;
+  if (typeof selectedVolume === 'number') modem.setVolume(selectedVolume);
   $('engine-state').textContent = 'Disponible';
   return modem;
 }).catch(error => {
@@ -316,6 +331,8 @@ async function setMode(mode, updateUrl = true) {
   if (mode !== 'send' && sending) { transmissionController?.abort(); station.stop(); }
   if (mode === 'send') void station.prepare();
   for (const view of ['receive', 'send', 'guide']) $(`${view}-view`).hidden = view !== mode;
+  radioShowcase?.setVisible(mode === 'send');
+  if (mode === 'send') void loadRadioShowcase();
   document.querySelectorAll('[data-mode]').forEach(button => {
     const active = button.dataset.mode === mode;
     button.classList.toggle('active', active);

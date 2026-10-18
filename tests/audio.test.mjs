@@ -16,6 +16,7 @@ async function fixture(t, { holdPlayback = false, holdResume = false, holdIntrod
   const processors = [];
   const requests = [];
   const buffers = [];
+  const gains = [];
   let nextInstance = 0;
   let finishResume;
   let finishIntroduction;
@@ -45,7 +46,7 @@ async function fixture(t, { holdPlayback = false, holdResume = false, holdIntrod
     }
     createMediaStreamSource() { return node(); }
     createScriptProcessor() { const processor = node(); processors.push(processor); return processor; }
-    createGain() { return { ...node(), gain: { value: 1 } }; }
+    createGain() { const gain = { ...node(), gain: { value: 1 } }; gains.push(gain); return gain; }
   }
   const track = { stop() { trackStops++; } };
   const stream = { getTracks: () => [track], getAudioTracks: () => [track] };
@@ -78,7 +79,7 @@ async function fixture(t, { holdPlayback = false, holdResume = false, holdIntrod
     requests.push({ url, options });
     return fetchImpl ? fetchImpl(url, options) : new Response(new Uint8Array([1, 2, 3, 4]), { headers: { 'content-type': 'audio/wav' } });
   } });
-  return { modem, contexts, sources, processors, requests, buffers, encoded, freed,
+  return { modem, contexts, sources, processors, requests, buffers, gains, encoded, freed,
     finishResume: () => finishResume?.(), finishIntroduction: () => finishIntroduction?.(),
     get trackStops() { return trackStops; }, get microphoneRequests() { return microphoneRequests; } };
 }
@@ -215,7 +216,8 @@ test('radio processing receives every waveform and remains clocked through packe
   assert.equal(clock.started, true);
   assert.deepEqual(clock.connections, [processor]);
   assert.ok(f.sources.filter(source => !source.loop).every(source => source.connections[0] === processor));
-  assert.deepEqual(processor.connections, [f.contexts[0].destination]);
+  assert.deepEqual(processor.connections, [f.gains[0]]);
+  assert.deepEqual(f.gains[0].connections, [f.contexts[0].destination]);
   const input = new Float32Array(4096), output = new Float32Array(4096);
   const render = () => processor.onaudioprocess({ inputBuffer: { getChannelData: () => input }, outputBuffer: { getChannelData: () => output } });
   render();
@@ -242,7 +244,7 @@ test('changing channel or starting reception releases the previous simulated out
   const second = f.processors[1];
   await f.modem.transmit([new Uint8Array([3])], { channel: 'direct', keepAlive: true });
   assert.equal(second.onaudioprocess, null);
-  assert.equal(f.sources.at(-1).connections[0], f.contexts[0].destination);
+  assert.equal(f.sources.at(-1).connections[0], f.gains[0]);
   await f.modem.transmit([new Uint8Array([4])], { channel: 'radio', keepAlive: true });
   const third = f.processors[2];
   await f.modem.listen();
@@ -306,7 +308,7 @@ test('a kept introduction and following data reuse one output graph and one loca
   assert.equal(f.requests.length, 1, 'voice is decoded once for the current context');
   assert.equal(f.processors.length, 1);
   assert.deepEqual(f.encoded[0].frame, [42]);
-  assert.equal(f.sources.at(-1).connections[0], f.contexts[0].destination);
+  assert.equal(f.sources.at(-1).connections[0], f.gains[0]);
   await f.modem.stop();
 });
 
@@ -347,4 +349,24 @@ test('invalid preview options and a sign-in HTML response never become introduct
   await assert.rejects(f.modem.previewChannel(), /voz local/);
   assert.equal(f.sources.length, 0);
   assert.equal(f.contexts[0].closes, 1);
+});
+
+test('volume controls the shared output gain live and remains selected after stopping', async t => {
+  const f = await fixture(t);
+  assert.equal(f.modem.volume, 0.65);
+  for (const volume of [-0.1, 1.01, NaN, Infinity, '0.5']) assert.throws(() => f.modem.setVolume(volume), /volumen/);
+  assert.equal(f.contexts.length, 0);
+  f.modem.setVolume(0.3);
+  await f.modem.transmit([new Uint8Array([1])], { channel: 'radio', repeat: 1, keepAlive: true });
+  assert.equal(f.gains[0].gain.value, 0.3);
+  f.modem.setVolume(0);
+  assert.equal(f.gains[0].gain.value, 0, 'mute also silences continuing hiss and whistle');
+  f.modem.setVolume(1);
+  assert.equal(f.gains[0].gain.value, 1);
+  await f.modem.stop();
+  assert.equal(f.gains[0].disconnected, true);
+  await f.modem.previewChannel({ channel: 'direct' });
+  assert.equal(f.gains[1].gain.value, 1);
+  assert.equal(f.modem.volume, 1);
+  assert.equal(f.microphoneRequests, 0);
 });

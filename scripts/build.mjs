@@ -12,6 +12,14 @@ await mkdir(output, { recursive: true });
 for (const name of ['index.html', 'styles.css', 'manifest.webmanifest', 'src', 'public']) {
   await cp(path.join(root, name), path.join(output, name), { recursive: true });
 }
+// Bundle the optional 3D view locally. Browser/native receivers need no CDN,
+// import map or third-party model/texture requests to show the radio.
+await build({
+  entryPoints: [path.join(root, 'src/radio-3d.js')],
+  outfile: path.join(output, 'src/radio-3d.js'), bundle: true, format: 'esm',
+  platform: 'browser', target: 'es2022', minify: true, legalComments: 'inline',
+});
+await cp(path.join(root, 'node_modules/three/LICENSE'), path.join(output, 'public/vendor/three-LICENSE.txt'));
 // Keep static files for the local preview. Hosted responses come from the same
 // byte-for-byte files embedded in one self-contained Sites Worker ESM bundle.
 const shellPath = path.join(output, 'index.html');

@@ -1,5 +1,9 @@
 # Simulación del canal de sonido
 
+Los perfiles de radio también incluyen un silbido tenue continuo, con fase independiente de la introducción: 850 ± 35 Hz en el perfil estable y 880 ± 55 Hz en señal variable. Es una elección de la escena sonora, no una propiedad necesaria de toda radio. Persiste durante voz, datos y pausas; el perfil directo conserva sonido sin efectos. Las pruebas comprueban continuidad y recuperación de campos tras pausas de treinta segundos. La prueba física anterior no valida automáticamente este nuevo efecto.
+
+La ganancia final se controla entre cero y uno desde la radio 3D o el deslizador, con valor inicial de 0,65. Afecta conjuntamente a voz, datos y efectos; bajar a cero silencia todo el canal. La atenuación de volumen y las condiciones físicas pueden afectar a la recepción.
+
 La estación ofrece sonido directo, radio estable simulada y señal variable simulada. El perfil inicial es radio estable. La misma selección de canal y velocidad se aplica al flujo de rejillas y a los avisos escritos de ejercicio.
 
 La simulación procesa las muestras que salen del altavoz. No modifica los datos ni entrega paquetes al receptor por otra vía. El iPhone sigue reconstruyendo los fragmentos captados por su micrófono, con la misma corrección del módem y las verificaciones CRC del transporte.

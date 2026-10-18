@@ -49,6 +49,10 @@ El editor desplegable también permite enviar un aviso escrito de ejercicio. Un 
 
 ## Fuente real, caché e histórico
 
+La vista de emisión incluye una radio 3D procedural que se puede girar, con tres acabados. Su botón reproduce la misma prueba de cinco segundos; la perilla de volumen y el deslizador controlan la ganancia real del audio, también el siseo. La perilla de sintonía selecciona los perfiles de sonido disponibles cuando la estación está detenida. La escala de la radio virtual no sintoniza una emisora RF. Si el navegador no dispone de WebGL, los controles de sonido siguen disponibles.
+
+El modelo, las texturas de las marcas y sus materiales se construyen localmente con Three.js, empaquetado en el build. No se descargan modelos, texturas ni bibliotecas de un CDN. La vista se carga sólo al abrir «Emitir»; detiene el renderizado continuo estando inactiva, oculta o fuera de pantalla, y respeta el ajuste de movimiento reducido.
+
 El adaptador consulta el [índice de nowcasting de SENAMHI](https://www.senamhi.gob.pe/mapas/mapa-nowcasting/nowcasting-analisis.php), descubre su último identificador y descarga el GeoJSON del WFS oficial. El navegador no puede consultar directamente ese WFS por CORS; el gateway lo hace desde el servidor. El receptor no consulta `/api/feed` ni descarga las rejillas por internet: éstas entran por audio.
 
 `GET /api/feed` devuelve el contrato común `{fields, fetchedAt, sourceUpdatedAt, ...}`. Sólo acepta GET/HEAD sin parámetros; no permite elegir URLs externas. Usa caché de 300 segundos cuando hay Cache API, un límite total de 15 segundos y respuestas de fuente acotadas. Ante un fallo devuelve JSON HTTP 503; no sustituye silenciosamente la consulta por datos antiguos. El cliente emisor conserva su último snapshot con la fecha original. **«Consultar ahora»** también respeta esa caché.
