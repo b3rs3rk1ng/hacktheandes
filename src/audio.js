@@ -39,7 +39,9 @@ function microphoneError(error) {
   return error;
 }
 
-export async function createAudioModem() {
+// onActivity receives { mode, active } whenever the audio lifecycle changes.
+// Starting capture and transmitting are active; a retained, idle context is not.
+export async function createAudioModem({ onActivity = () => {} } = {}) {
   const modem = await loadModule();
   let context = null;
   let instance = null;
@@ -54,6 +56,14 @@ export async function createAudioModem() {
   let generation = 0;
   let statusCallback = () => {};
   let receivingTimer;
+
+  function setMode(next) {
+    if (mode === next) return;
+    mode = next;
+    // Observers must not prevent microphone/playback cleanup.
+    try { onActivity({ mode, active: mode !== 'idle' }); }
+    catch (error) { console.warn('Audio activity observer:', error); }
+  }
 
   function resetInstance() {
     if (instance !== null) modem.free(instance);
@@ -103,7 +113,7 @@ export async function createAudioModem() {
 
   async function stop() {
     const token = ++generation;
-    mode = 'idle';
+    setMode('idle');
     for (const cancel of pendingResumes) cancel();
     pendingResumes.clear();
     releaseCapture();
@@ -131,7 +141,7 @@ export async function createAudioModem() {
     if (mode !== 'idle') throw new Error('Detén la transmisión antes de escuchar.');
     statusCallback = onStatus;
     const token = ++generation;
-    mode = 'starting';
+    setMode('starting');
     onStatus('loading');
     try {
       await prime();
@@ -181,7 +191,7 @@ export async function createAudioModem() {
       input.connect(processor);
       processor.connect(silence);
       silence.connect(context.destination);
-      mode = 'listening';
+      setMode('listening');
       onStatus('listening');
     } catch (error) {
       if (token === generation) await stop();
@@ -201,7 +211,7 @@ export async function createAudioModem() {
     if (signal?.aborted) throw abortError();
     statusCallback = onStatus;
     const token = ++generation;
-    mode = 'transmitting';
+    setMode('transmitting');
     const cancel = () => { void stop(); };
     signal?.addEventListener('abort', cancel, { once: true });
     let complete = false;
@@ -251,7 +261,7 @@ export async function createAudioModem() {
     } finally {
       signal?.removeEventListener('abort', cancel);
       if (token === generation) {
-        if (complete && keepAlive) { mode = 'idle'; onStatus('idle'); }
+        if (complete && keepAlive) { setMode('idle'); onStatus('idle'); }
         else await stop();
       }
     }

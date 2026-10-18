@@ -1,6 +1,7 @@
 import { createSituationUI } from './situation.js';
 import { createStation } from './station.js';
 import { createAudioModem } from './audio.js';
+import { createScreenAwake } from './screen-awake.js';
 import { createAssembler, encodeAlert } from './protocol.js';
 import { locations, officialSources, officialBulletins } from './data.js';
 import { isForLocation, validity, loadInbox, saveInbox, mergeNotice } from './inbox.js';
@@ -36,10 +37,14 @@ let packetGeneration = 0;
 let sending = false;
 let clearPending = false;
 const assembler = createAssembler();
-const situationReady = createSituationUI(storage,{toast}).catch(error=>{ $('situation-map').textContent=error.message; return null; });
+const situationReady = createSituationUI(storage,{toast,onReset:()=>{assembler.reset();$('receive-progress').hidden=true;}}).catch(error=>{ $('situation-map').textContent=error.message; return null; });
 const station = createStation({ getModem:()=>modem, isBusy:()=>listening||sending, onBusy:value=>{sending=value;$('transmit-button').disabled=value;} });
+const screenAwake = createScreenAwake();
 
-const modemReady = createAudioModem().then(value => {
+const modemReady = createAudioModem({ onActivity: activity => {
+  screenAwake.setActive(activity.active);
+  window.dispatchEvent(new CustomEvent('onda:audio-activity', { detail: activity }));
+} }).then(value => {
   modem = value;
   $('engine-state').textContent = 'Disponible';
   return modem;
@@ -403,7 +408,7 @@ document.addEventListener('visibilitychange', () => {
     $('receiver-feedback').textContent = 'Se detuvo la escucha al salir de esta pantalla. Pulsa escuchar para continuar.';
   }
 });
-window.addEventListener('pagehide', () => { station.stop(); transmissionController?.abort(); if (modem) void modem.stop(); });
+window.addEventListener('pagehide', () => { screenAwake.setActive(false); station.stop(); transmissionController?.abort(); if (modem) void modem.stop(); });
 
 // Kept exported for integration checks using the real frame validation path.
 export { receiveFrame };

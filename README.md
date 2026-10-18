@@ -91,4 +91,6 @@ Quedan por medir fiabilidad del flujo completo de mapas en el teléfono, consumo
 
 La carpeta `ios/` contiene una app SwiftUI/WKWebView que incluye los recursos del receptor y abre sin depender del hosting. Reutiliza el protocolo y el módem de la web. Consulta [ios/README.md](ios/README.md) para compilar, firmar e instalar con Xcode/Developer Mode. La firma y los perfiles de desarrollo se gestionan fuera del repositorio.
 
-La compilación para un iPhone físico y la instalación por USB se verificaron. La primera apertura necesita que el usuario confíe en el certificado de desarrollo en los ajustes de iOS. Las pruebas físicas de audio/GPS de este contenedor siguen pendientes hasta autorizarlo y abrirlo.
+La compilación para un iPhone físico y la instalación por USB se verificaron. La primera apertura necesita que el usuario confíe en el certificado de desarrollo en los ajustes de iOS. La recepción física del contenedor y los cambios de dos rejillas se verificaron; también pasó una prueba de interfaz por USB con 120 segundos de escucha. La comprobación física de GPS sin red y modo avión sigue pendiente. Consulta [la evidencia y sus límites](docs/IPHONE-VALIDATION.md).
+
+Mientras el audio está activo, el contrato común `onActivity({mode, active})` permite al navegador solicitar Screen Wake Lock y al contenedor iOS mantener encendida su pantalla. Al detener, ocultar o cerrar la app se libera la solicitud. Los navegadores pueden rechazar Wake Lock; no se alteran los ajustes generales de bloqueo del teléfono.

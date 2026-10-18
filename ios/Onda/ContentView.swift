@@ -91,8 +91,16 @@ private struct LocalWebView: UIViewRepresentable {
         configuration.allowsInlineMediaPlayback = true
         configuration.mediaTypesRequiringUserActionForPlayback = .all
         configuration.preferences.javaScriptCanOpenWindowsAutomatically = false
+        configuration.userContentController.add(context.coordinator, name: "ondaAudioActivity")
         configuration.userContentController.addUserScript(WKUserScript(
-            source: "globalThis.ONDA_CONFIG={bundled:true,canEmit:false};",
+            source: """
+                globalThis.ONDA_CONFIG={bundled:true,canEmit:false};
+                window.addEventListener('onda:audio-activity', event => {
+                    if (typeof event.detail?.active === 'boolean') {
+                        window.webkit.messageHandlers.ondaAudioActivity.postMessage({active:event.detail.active});
+                    }
+                });
+                """,
             injectionTime: .atDocumentStart,
             forMainFrameOnly: true
         ))
@@ -110,21 +118,59 @@ private struct LocalWebView: UIViewRepresentable {
     func updateUIView(_ uiView: WKWebView, context: Context) {}
 
     static func dismantleUIView(_ uiView: WKWebView, coordinator: Coordinator) {
+        coordinator.detach()
+        uiView.configuration.userContentController.removeScriptMessageHandler(forName: "ondaAudioActivity")
         uiView.stopLoading()
         uiView.navigationDelegate = nil
         uiView.uiDelegate = nil
     }
 
     @MainActor
-    final class Coordinator: NSObject, WKNavigationDelegate, WKUIDelegate {
+    final class Coordinator: NSObject, WKNavigationDelegate, WKUIDelegate, WKScriptMessageHandler {
         private let origin: URL
         private let onReady: @MainActor () -> Void
         private let onFailure: @MainActor (String) -> Void
+        private var audioActive = false
 
         init(origin: URL, onReady: @escaping @MainActor () -> Void, onFailure: @escaping @MainActor (String) -> Void) {
             self.origin = origin
             self.onReady = onReady
             self.onFailure = onFailure
+            super.init()
+            let notifications = NotificationCenter.default
+            notifications.addObserver(self, selector: #selector(applicationResignedActive), name: UIApplication.willResignActiveNotification, object: nil)
+            notifications.addObserver(self, selector: #selector(applicationEnteredBackground), name: UIApplication.didEnterBackgroundNotification, object: nil)
+            notifications.addObserver(self, selector: #selector(applicationBecameActive), name: UIApplication.didBecomeActiveNotification, object: nil)
+        }
+
+        func detach() {
+            NotificationCenter.default.removeObserver(self)
+            setAudioActive(false)
+        }
+
+        private func setAudioActive(_ active: Bool) {
+            audioActive = active
+            UIApplication.shared.isIdleTimerDisabled = active && UIApplication.shared.applicationState == .active
+        }
+
+        @objc private func applicationResignedActive() {
+            UIApplication.shared.isIdleTimerDisabled = false
+        }
+
+        @objc private func applicationEnteredBackground() {
+            setAudioActive(false)
+        }
+
+        @objc private func applicationBecameActive() {
+            setAudioActive(audioActive)
+        }
+
+        func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
+            guard message.name == "ondaAudioActivity", message.frameInfo.isMainFrame,
+                  isLocal(message.frameInfo.securityOrigin),
+                  let activity = message.body as? [String: Any],
+                  let active = activity["active"] as? Bool else { return }
+            setAudioActive(active)
         }
 
         private func isLocal(_ url: URL) -> Bool {
@@ -226,6 +272,10 @@ private struct LocalWebView: UIViewRepresentable {
             onReady()
         }
 
+        func webView(_ webView: WKWebView, didStartProvisionalNavigation navigation: WKNavigation!) {
+            setAudioActive(false)
+        }
+
         func webView(_ webView: WKWebView, didFail navigation: WKNavigation!, withError error: Error) {
             report(error)
         }
@@ -235,12 +285,14 @@ private struct LocalWebView: UIViewRepresentable {
         }
 
         func webViewWebContentProcessDidTerminate(_ webView: WKWebView) {
+            setAudioActive(false)
             onFailure("La pantalla se cerró para liberar memoria. Tus datos guardados se conservan.")
         }
 
         private func report(_ error: Error) {
             let error = error as NSError
             guard !(error.domain == NSURLErrorDomain && error.code == NSURLErrorCancelled) else { return }
+            setAudioActive(false)
             onFailure("No se pudo cargar el contenido incluido. \(error.localizedDescription)")
         }
     }

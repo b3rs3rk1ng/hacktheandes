@@ -4,7 +4,7 @@ import { loadLocation, saveLocation, locateDevice, normalizeLocation } from './l
 const $ = id => document.getElementById(id);
 const dateText = value => new Intl.DateTimeFormat('es-PE',{day:'2-digit',month:'short',hour:'2-digit',minute:'2-digit',timeZone:'America/Lima'}).format(new Date(value));
 const levelNames = ['Sin clasificación','Clasificación amarilla','Clasificación naranja','Clasificación roja'];
-export async function createSituationUI(storage,{toast=()=>{}}={}) {
+export async function createSituationUI(storage,{toast=()=>{},onReset=()=>{}}={}) {
   let fields = loadFields(storage);
   let context = 'live';
   let mapView = 'national';
@@ -62,7 +62,7 @@ export async function createSituationUI(storage,{toast=()=>{}}={}) {
   function updateViewButtons(){document.querySelectorAll('[data-map-view]').forEach(button=>{button.classList.toggle('active',button.dataset.mapView===mapView);button.setAttribute('aria-pressed',String(button.dataset.mapView===mapView));});}
   document.querySelectorAll('[data-map-view]').forEach(button=>button.addEventListener('click',()=>{mapView=button.dataset.mapView;map.setView(mapView);updateViewButtons();}));
   $('field-context').addEventListener('change',()=>{context=$('field-context').value;render();});
-  $('clear-map').addEventListener('click',()=>{try{saveFields(storage,[]);fields=[];render();toast('Datos del mapa borrados. La ubicación y el mapa base se conservan.');}catch{toast('No se pudo borrar el almacenamiento.');}});
+  $('clear-map').addEventListener('click',()=>{try{saveFields(storage,[]);fields=[];onReset();render();toast('Datos del mapa borrados. La ubicación y el mapa base se conservan.');}catch{toast('No se pudo borrar el almacenamiento.');}});
   render();updateViewButtons();setInterval(render,60000);
   return {
     async receive(field) {
