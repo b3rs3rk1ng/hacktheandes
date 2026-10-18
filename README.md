@@ -1,6 +1,24 @@
-# Hack the Andes
+# Cacao: visión artificial y robots para inspeccionar una chacra
 
-Repositorio del proyecto: aplicación Onda, análisis visual de cacao, entrenamiento y evaluación de modelos, y simulación de inspección y manipulación.
+Proyecto de Hack the Andes, Perú · Track Clima y Territorio.
+
+La moniliasis daña el fruto del cacao. Este prototipo conecta un detector YOLO11s entrenado con fotografías reales a una simulación de inspección con un dron y robots terrestres.
+
+**[Ver presentación (3 diapositivas)](output/pdf/Cacao-Presentacion-Final.pdf)** · **[Entrenamiento y evaluación](research/cacao-improvement/README.md)** · **[Cómo ejecutar la chacra virtual](simulator/ORCHARD.md)**
+
+![Cámara de la chacra virtual con una detección del modelo](simulator/evidence/visibility-corrected-frame.jpg)
+
+## Qué puedes explorar
+
+- Entrenamiento con 1,655 fotografías reales de cacao y sus aumentos.
+- Evaluación externa en 399 fotografías: 191 de 200 fotos con Monilia activaron alerta; 8 de 199 fotos sanas también activaron alerta.
+- El mismo detector procesa imágenes RGB de la cámara virtual. El simulador integra navegación, batería y retorno a la base.
+
+La evaluación anterior corresponde a fotografías. La simulación muestra la integración; las pruebas en una chacra real son el siguiente paso.
+
+**If you work on computer vision or agricultural robotics:** this repository contains a YOLO11s cacao disease detector trained on real photographs, its evaluation, and a drone/ground-robot orchard simulation. See the training report and simulator documentation above. Feedback on generalization to field images is welcome.
+
+Si te sirve el proyecto, una estrella ayuda a que más personas lo encuentren. Puedes abrir un [issue](https://github.com/b3rs3rk1ng/hacktheandes/issues) con preguntas, fallos o propuestas para probarlo con imágenes de campo.
 
 ## Componentes
 
