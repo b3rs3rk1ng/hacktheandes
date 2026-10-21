@@ -42,6 +42,11 @@ class FixtureHandler(BaseHTTPRequestHandler):
         if fixture.mode=='slow':time.sleep(1)
         if fixture.mode=='fail':return self.reply(500,{'error':'fixture failure'})
         if self.headers.get('Authorization')!='Bearer '+KEY:return self.reply(401,{'error':'unauthorized'})
+        if fixture.mode=='empty_receipt':return self.reply(200,{})
+        if fixture.mode=='empty_ids':return self.reply(200,{'stored_memory_ids':[],'memories_skipped':0})
+        if fixture.mode=='invalid_ids':return self.reply(200,{'stored_memory_ids':[None]})
+        if fixture.mode=='redirect':
+            self.send_response(307);self.send_header('Location',fixture.url+'/redirect-target');self.end_headers();return
         if self.command=='POST' and url.path=='/v1/memories/ingest/quick':
             external=body['metadata'].get('externalId')
             if any(r['user_id']==body['user_id'] and r['metadata'].get('externalId')==external for r in fixture.rows):
@@ -77,6 +82,19 @@ class TreeNotesConfiguration(unittest.TestCase):
         self.assertIn('https',review_memory.from_env(insecure)[1])
         notes,_=review_memory.from_env({**insecure,'ATOMICMEMORY_API_URL':''})
         self.assertEqual((notes.url,notes.subject),('https://api.atomicstrata.ai','cacao-operator:huerto'))
+
+    def test_url_rejects_embedded_credentials(self):
+        config={'CACAO_REVIEW_MEMORY':'1','ATOMICMEMORY_API_KEY':KEY,'CACAO_REVIEW_MEMORY_OPERATOR_ID':'huerto',
+                'ATOMICMEMORY_API_URL':'https://user:password@memory.example'}
+        self.assertIsNone(review_memory.from_env(config)[0])
+
+    def test_credentials_are_not_forwarded_on_redirect(self):
+        fixture=FixtureMemory();fixture.mode='redirect'
+        try:
+            notes=review_memory.TreeNotes(fixture.url,KEY,'huerto')
+            with self.assertRaises(review_memory.MemoryUnavailable):notes.recall('cacao-4-18')
+            self.assertEqual([r['path'] for r in fixture.requests],['/v1/memories/search/fast'])
+        finally:fixture.shutdown();fixture.server_close()
 
     def test_timeout_is_bounded_and_reported_as_not_saved(self):
         fixture=FixtureMemory();fixture.mode='slow'
@@ -159,6 +177,16 @@ class TreeNotesReview(unittest.TestCase):
         self.assertEqual(self.request('/api/review/memory/remember',{'task_id':'cacao-4-18-pod-6'})[0],403)
         self.assertEqual(self.fixture.requests,[])
         self.assertEqual(self.request('/api/review/memory/recall',{'plant_id':'cacao-4-18'},{'Authorization':'Bearer operator-secret'})[0],200)
+
+    def test_empty_or_malformed_success_receipts_do_not_confirm_a_saved_note(self):
+        self.reviewed()
+        for mode in ('empty_receipt','empty_ids','invalid_ids'):
+            with self.subTest(mode=mode):
+                self.fixture.mode=mode
+                status,reply=self.request('/api/review/memory/remember',{'task_id':'cacao-4-18-pod-6'})
+                self.assertEqual(status,503)
+                self.assertIn('no se guardó',reply['error'])
+        self.assertEqual(self.fixture.rows,[])
 
     def test_provider_failure_keeps_the_decision_and_says_the_note_was_not_saved(self):
         self.reviewed(decision='approve');self.fixture.mode='fail'

@@ -9,7 +9,15 @@ import json
 import re
 from urllib.error import HTTPError, URLError
 from urllib.parse import quote, urlencode, urlparse
-from urllib.request import Request, urlopen
+from urllib.request import HTTPRedirectHandler, Request, build_opener
+
+
+class NoMemoryRedirect(HTTPRedirectHandler):
+    """Never forward the project credential to a redirect destination."""
+    def redirect_request(self,req,fp,code,msg,headers,newurl):return None
+
+
+open_memory=build_opener(NoMemoryRedirect()).open
 
 SOURCE_SITE='cacao-orchard-review'
 DEFAULT_URL='https://api.atomicstrata.ai'
@@ -25,7 +33,7 @@ def prefix(plant_id):
 
 
 class TreeNotes:
-    def __init__(self,url,key,operator,timeout=4.0,opener=urlopen):
+    def __init__(self,url,key,operator,timeout=4.0,opener=open_memory):
         self.url=url.rstrip('/');self.key=key;self.subject='cacao-operator:'+operator;self.timeout=timeout;self.opener=opener
 
     def call(self,method,path,body=None):
@@ -58,7 +66,15 @@ class TreeNotes:
                         'cacao_review_decision':task['review']['decision']}})
         stored=reply.get('stored_memory_ids') if isinstance(reply,dict) else None
         if not isinstance(stored,list):raise MemoryUnavailable('Respuesta inesperada de Atomic Memory')
-        return {'stored':len(stored)>0,'unchanged':not stored and bool(reply.get('memories_skipped'))}
+        updated=reply.get('updated_memory_ids',[])
+        if not isinstance(updated,list):raise MemoryUnavailable('Atomic Memory no confirmó el guardado')
+        ids=stored+updated
+        if any(not isinstance(value,str) or not value.strip() for value in ids):
+            raise MemoryUnavailable('Atomic Memory no confirmó el guardado')
+        skipped=reply.get('memories_skipped',0)
+        if not ids and not (type(skipped) is int and skipped>0):
+            raise MemoryUnavailable('Atomic Memory no confirmó el guardado')
+        return {'stored':bool(ids),'unchanged':not ids}
 
     def forget(self,plant_id,memory_id):
         if memory_id not in [n['id'] for n in self.recall(plant_id,limit=50)]:raise ValueError('La nota no pertenece a este árbol')
@@ -74,6 +90,7 @@ def from_env(env):
     if not key:return None,'Falta ATOMICMEMORY_API_KEY en el servidor'
     if not IDENTIFIER.fullmatch(operator):return None,'CACAO_REVIEW_MEMORY_OPERATOR_ID debe ser un identificador estable'
     # The project key travels only over TLS, except to a loopback test service.
+    if parsed.username is not None or parsed.password is not None:return None,'ATOMICMEMORY_API_URL no debe incluir credenciales'
     if parsed.scheme!='https' and not (parsed.scheme=='http' and parsed.hostname in ('127.0.0.1','localhost','::1')):
         return None,'ATOMICMEMORY_API_URL debe usar https'
     return TreeNotes(url,key,operator),None
