@@ -11,6 +11,7 @@ from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 import json
 import math
 import mimetypes
+import os
 from pathlib import Path
 import threading
 import time
@@ -20,6 +21,7 @@ from fleet_core import Fleet, ReviewConflict
 from review_evidence import save_evidence, evidence_path
 from vision_geometry import SceneLocalizer, validate_camera, VERSION as LOCALIZATION_VERSION
 from access import authorized
+import review_memory
 
 ROOT=Path(__file__).resolve().parent;RUNTIME=ROOT/'runtime'
 CFG=json.loads((ROOT/'orchard_config.json').read_text())
@@ -27,6 +29,7 @@ LOCK=threading.Lock();FRAMES=OrderedDict();FRAME_IMAGES=OrderedDict();STARTED=ti
 MODEL=None;MODEL_ERROR='Modelo iniciando';MODEL_INFO={};LAST=None
 FLEET_LOCK=threading.Lock()
 WORLD_CACHE=None
+NOTES,NOTES_REASON=review_memory.from_env(os.environ)
 
 
 def world_snapshot():
@@ -213,6 +216,7 @@ class Handler(BaseHTTPRequestHandler):
             if self.headers.get('Content-Type')!='application/json':self.send(415,{'error':'Se requiere JSON'});return
             value=json.loads(body)
             if route=='/api/host/lease':self.send(200,fleet_call('lease',value['host_id']));return
+            if route.startswith('/api/review/memory/'):self.tree_notes(route.removeprefix('/api/review/memory/'),value);return
             if route=='/api/review/decision':
                 self.send(200,fleet_call('review',value['task_id'],value['decision'],value['revision'],value.get('note',''),value.get('epoch')));return
             if route=='/api/fleet/control':self.send(200,fleet_call('control',value['action']));return
@@ -268,6 +272,30 @@ class Handler(BaseHTTPRequestHandler):
         except (ValueError,KeyError,TypeError,json.JSONDecodeError) as error:self.send(400,{'error':str(error)})
         except Exception as error:
             print(json.dumps({'request_error':str(error)}),flush=True);self.send(500,{'error':'Falló la operación: '+str(error)})
+
+    def tree_notes(self,action,value):
+        # Operator-only (checked in do_POST) and outside the review decision:
+        # a slow or failed memory service never blocks or alters a decision.
+        if action not in ('recall','remember','forget'):self.send(404,{'error':'Acción no disponible'});return
+        if NOTES is None:
+            self.send(200,{'enabled':False,'reason':NOTES_REASON}) if action=='recall' else self.send(409,{'error':NOTES_REASON})
+            return
+        if action=='remember':
+            snapshot=fleet_call();task=snapshot['tasks'].get(value['task_id'])
+            if not task or task['review']['decision'] not in ('approve','reject'):raise ValueError('Sólo se recuerda la nota de una revisión guardada')
+            if not task['review'].get('note'):raise ValueError('La revisión no tiene nota')
+            work=lambda:NOTES.remember(task,snapshot['epoch']);plant=task['plant_id']
+        else:
+            plant=value['plant_id'];world,_=world_snapshot()
+            if not isinstance(plant,str) or plant not in {p.get('plant_id') for p in world.get('pods',[])}:raise ValueError('Árbol desconocido')
+            if action=='recall':work=lambda:{'notes':NOTES.recall(plant)}
+            else:
+                memory_id=value['memory_id']
+                if not isinstance(memory_id,str) or not 0<len(memory_id)<=128:raise ValueError('Nota inválida')
+                work=lambda:(NOTES.forget(plant,memory_id),{'forgotten':memory_id})[1]
+        try:self.send(200,{'enabled':True,'plant_id':plant,**work()})
+        except review_memory.MemoryUnavailable as error:
+            self.send(503,{'error':f'{error}. '+('No se pudieron consultar las notas recordadas.' if action=='recall' else 'La nota no se guardó.' if action=='remember' else 'La nota no se borró.')})
 
     def log_message(self,fmt,*args):
         if len(args)>1 and str(args[1]) not in ('200','202','429'):super().log_message(fmt,*args)
