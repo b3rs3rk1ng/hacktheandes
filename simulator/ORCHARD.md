@@ -101,6 +101,30 @@ Pasaron 26 pruebas de revisión, evidencias JPEG, API, asignación, transiciones
 Kevin eligió primero el buzón de la demo: no se conectó ni simuló un envío de WhatsApp. El servidor permanece local y sin autenticación de agricultores; no está preparado para publicar decisiones a internet. El movimiento terrestre actual requiere el visor de simulación activo.
 
 
+### Notas recordadas por árbol (opcional)
+
+Al reiniciar el escenario se borran todas las tareas y sus notas. Para no repetir lo que el agricultor ya sabe de un árbol (por ejemplo, una cicatriz antigua que el modelo confunde con monilia), el buzón puede recordar la nota de una revisión en [Atomic Memory](https://docs.atomicstrata.ai/) y mostrarla en la siguiente sospecha del mismo árbol, también en escenarios posteriores.
+
+- Desactivado por defecto: sin configuración el buzón se ve y funciona igual que antes.
+- Sólo el operador: las rutas `POST /api/review/memory/recall|remember|forget` exigen la credencial del operador; la vista pública recibe 403.
+- Se recuerda únicamente la nota de una decisión ya guardada, cuando el operador marca «Recordar esta nota». El servidor toma la nota de la revisión persistida, no de texto enviado aparte. La decisión se guarda primero y no depende de Atomic Memory.
+- Cada nota muestra «Olvidar», que la borra en Atomic Memory. Para corregirla, olvidarla y escribir la nueva en la siguiente revisión.
+- Las notas son contexto para una persona: no cambian puntuaciones, umbral, estado de tareas ni decisiones.
+- Si Atomic Memory falla o no responde en 4 s, el buzón indica que la nota no se guardó o no se pudo consultar; la revisión continúa.
+
+Configuración en el entorno del proceso `orchard_server.py` (nombres en [.env.example](.env.example); la clave queda sólo en el servidor):
+
+```sh
+export CACAO_REVIEW_MEMORY=1
+export ATOMICMEMORY_API_KEY=amc_...            # clave de un proyecto Atomic Memory Cloud
+export CACAO_REVIEW_MEMORY_OPERATOR_ID=huerto-demo
+# opcional: export ATOMICMEMORY_API_URL=https://api.atomicstrata.ai
+```
+
+Hay una sola credencial de operador por huerto, así que el sujeto de memoria es `cacao-operator:<CACAO_REVIEW_MEMORY_OPERATOR_ID>`, fijado por el servidor; las peticiones no pueden elegirlo. Usar un identificador distinto por huerto y no reutilizar la clave de otro proyecto. Se usan las rutas documentadas `/v1/memories/ingest/quick` (verbatim, `content_class: summary`, `metadata.externalId` por revisión), `/v1/memories/search/fast` y `DELETE /v1/memories/{id}`. La búsqueda es semántica: se consideran las 50 primeras coincidencias del sujeto y se muestran sólo las notas escritas para ese árbol exacto.
+
+`python3 test_review_memory.py -v` prueba guardado, recuperación tras reinicio, olvido, aislamiento de sujeto, acceso público, fallo, tiempo límite y configuración desactivada contra un **servidor HTTP local de prueba** que imita esas rutas; no es el servicio real de Atomic Memory.
+
 ### Corrección de asociaciones a través del tronco
 
 La foto reportada de cacao-4-18 correspondía a una caja YOLO [246,0,369,323] sobre el tronco. El visor anterior lanzaba un rayo contra esferas de frutos sin comprobar obstáculos, por lo que podía asignar un fruto oculto. Se conserva visibility-before-frame.jpg; no se corrigió el modelo ni se cambió esa imagen.
