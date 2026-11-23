@@ -35,7 +35,8 @@ def scene(config):
                     support=plant.get('structure') or {'trunk':[[0,0,0],[0,0,min(height*.55,2)]],'radius':.09,'primary':[],'color_family':0}
                     count=rng.randint(*profile.get('pods',[5,5]))
                     for index,attachment in enumerate(fruit_attachments(support,plant['seed']+9001,count,config['manipulation']['fruit_radii_m'])):
-                        label=rng.choices(['healthy','monilia','phytophthora'],[.70,.24,.06])[0]
+                        weights=config.get('simulation',{}).get('fruit_label_weights',{'healthy':.70,'monilia':.24,'phytophthora':.06})
+                        label=rng.choices(list(weights),list(weights.values()))[0]
                         local=attachment.pop('local_position');stem=attachment.pop('local_stem')
                         pods.append({'id':identifier+f'-pod-{index}','plant_id':identifier,
                             'position':[x+local[0],y+local[1],ground+local[2]],
@@ -98,6 +99,7 @@ def world(data):
 
 if __name__=='__main__':
     config=json.loads((ROOT/'orchard_config.json').read_text()); data=scene(config)
+    data['revision']=hashlib.sha256(json.dumps(data,sort_keys=True,separators=(',',':')).encode()).hexdigest()
     (ROOT/'runtime').mkdir(exist_ok=True); (ROOT/'worlds').mkdir(exist_ok=True)
     encoded=json.dumps(data,separators=(',',':'))
     (ROOT/'runtime/orchard.json').write_text(encoded)

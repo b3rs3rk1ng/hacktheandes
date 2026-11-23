@@ -77,8 +77,8 @@
       0.095,
       0.15
     ],
-    "cruise_speed_mps": 0.85,
-    "climb_speed_mps": 0.65,
+    "cruise_speed_mps": 1.1,
+    "climb_speed_mps": 0.85,
     "max_acceleration_mps2": 1.2,
     "position_kp": 1.4,
     "velocity_kd": 2.9,
@@ -104,22 +104,24 @@
     "max_jerk_mps3": 8,
     "motor_response_s": 0.06,
     "max_yaw_rate_rad_s": 0.7,
-    "inspection_only": true
+    "inspection_only": true,
+    "arrival_position_m": 0.12
   },
   "battery": {
     "cells": 6,
-    "capacity_ah": 4,
+    "capacity_ah": 16,
     "initial_soc": 1,
-    "internal_resistance_ohm": 0.085,
+    "internal_resistance_ohm": 0.02125,
     "reserve_fraction": 0.12,
     "charge_current_a": 4,
     "charge_efficiency": 0.94,
-    "resume_at_soc": 0.95
+    "resume_at_soc": 0.95,
+    "minimum_airborne_seconds": 1800
   },
   "inspection": {
     "radius_m": 0.95,
     "height_m": 1.55,
-    "dwell_s": 1.2,
+    "dwell_s": 0.5,
     "minimum_frames": 2,
     "angles": [
       -1.5707963267948966
@@ -133,9 +135,10 @@
     "maximum_trees": null,
     "obstacle_clearance_m": 0.58,
     "height_levels_m": [
-      1.25,
-      1.8
-    ]
+      1.4
+    ],
+    "mode": "flyby",
+    "scan_span_m": 1.2
   },
   "camera": {
     "width": 640,
@@ -148,7 +151,7 @@
       0,
       -0.04
     ],
-    "inference_interval_ms": 450
+    "inference_interval_ms": 150
   },
   "model": {
     "weights": "/home/f3mt0/hacktheandes-cacao-improvement/artifacts/detector-yolo11s.pt",
@@ -375,9 +378,9 @@
         0
       ]
     ],
-    "cruise_speed_mps": 0.55,
-    "reverse_speed_mps": 0.35,
-    "battery_wh": 1024,
+    "cruise_speed_mps": 0.9,
+    "reverse_speed_mps": 0.4,
+    "battery_wh": 2048,
     "idle_power_w": 55,
     "motor_efficiency": 0.7
   },
@@ -424,14 +427,44 @@
         1
       ],
       "lane_spacing_m": 4,
-      "scout_lookahead_trees": 1,
+      "scout_lookahead_trees": null,
       "maximum_ground_lead_trees": 1,
-      "survey_seconds": 6,
+      "survey_seconds": 2.5,
       "minimum_survey_frames": 2,
       "aisle_offset_m": 1.25,
       "stop_before_tree_m": 0.6,
       "continue_without_scout": true
     },
-    "bin_capacity_pods": 2
+    "bin_capacity_pods": 6,
+    "intervention": {
+      "approval": "automatic",
+      "confirmation": "initial_detection"
+    },
+    "motion_rate": 2.2,
+    "bin_layout": {
+      "columns": 2,
+      "rows": 2,
+      "pitch_m": 0.13,
+      "layer_m": 0.15
+    },
+    "station_arrival_m": 0.5
+  },
+  "simulation": {
+    "demo": true,
+    "fruit_label_weights": {
+      "healthy": 0.24,
+      "monilia": 0.7,
+      "phytophthora": 0.06
+    },
+    "presentation_mode": "scripted",
+    "choreography": {
+      "travelSeconds": 3,
+      "harvestSeconds": 6,
+      "droneTravelSeconds": 4.5,
+      "scanSeconds": 1.4,
+      "groundSpeed": 0.85,
+      "droneSpeed": 1.0,
+      "treesPerLane": 6
+    }
   }
 }

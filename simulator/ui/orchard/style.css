@@ -13,4 +13,25 @@
 
 #droneSound,#start{display:none!important}.activity-panel{position:fixed;left:30px;bottom:29px;width:350px;max-width:calc(100vw - 36px);padding:14px 16px;background:var(--glass);border:1px solid var(--line);border-radius:10px;backdrop-filter:blur(12px)}.activity-heading{display:flex;justify-content:space-between;font-size:12px;margin-bottom:9px}.activity-heading small{font-variant-numeric:tabular-nums;color:var(--muted)}.activity-row{display:grid;grid-template-columns:12px 1fr auto;gap:7px;align-items:center;font-size:10px;line-height:1.4;margin-top:7px}.activity-row span{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.activity-row small{font-size:9px;color:var(--muted);font-variant-numeric:tabular-nums}.activity-row i{font-style:normal;color:#b9d19d}.activity-row .working{width:8px;height:8px;border:1px solid #e6edcf44;border-top-color:#e6edcf;border-radius:50%;animation:activity-spin .9s linear infinite}.activity-row .waiting{color:#aeb9aa}@keyframes activity-spin{to{transform:rotate(360deg)}}.ground-stats{grid-template-columns:repeat(4,1fr);gap:8px}.ground-stats b{font-size:18px}.ground-energy{margin-top:12px;padding-top:9px}.ground-panel .mission-heading{font-size:14px}.observer{bottom:225px;height:150px}footer .actions{display:none}body[data-viewer=true] #settingsButton,body[data-viewer=true] footer,body[data-viewer=true] #reviewDrawer{display:none!important}body[data-viewer=true] .map{bottom:29px}body[data-viewer=true] .observer{bottom:225px}@media(max-width:900px){.activity-panel{left:18px;width:310px}.ground-stats b{font-size:16px}}@media(max-width:600px){.activity-panel{left:12px;bottom:25px;width:255px;padding:10px}.activity-row{font-size:9px;gap:5px;margin-top:5px}.activity-row small{font-size:8px}.observer{bottom:220px;height:110px}.ground-stats{grid-template-columns:repeat(2,1fr)}body[data-viewer=true] .map{bottom:195px}}
 
-.audio-hint{position:fixed;top:78px;left:50%;transform:translateX(-50%);z-index:4;padding:6px 11px;background:#18271ddd;border:1px solid #f1f4e029;border-radius:6px;font-size:11px;color:#e6edcf;pointer-events:none}
+
+
+/* Mobile is a camera viewer: vehicle selection and one camera action. */
+.mobile-camera-label{display:none}
+@media(max-width:760px),(max-height:500px) and (pointer:coarse){
+ header{top:calc(12px + env(safe-area-inset-top));left:calc(12px + env(safe-area-inset-left));right:calc(12px + env(safe-area-inset-right));justify-content:center;gap:0}
+ header .identity,header .connection,#settingsButton,
+ body .mission,body[data-vehicle=ground] .ground-panel,
+ .power,.fleet-panel,.map,.telemetry,.activity-panel,
+ .crosshair,.target-caption,footer,.model-status{display:none}
+ .vehicle-selector{margin:0;max-width:100%;min-width:0;overflow-x:auto;padding:4px;background:#172b20ed;scrollbar-width:none}
+ .vehicle-selector::-webkit-scrollbar{display:none}
+ .vehicle-selector button{flex:0 0 auto;min-height:44px;padding:10px 12px;font-size:12px;white-space:nowrap;touch-action:manipulation}
+ body .observer,body[data-viewer=true] .observer{left:0;bottom:0;width:0;height:0;border:0;border-radius:0;overflow:visible;box-shadow:none}
+ .observer-label{position:static;padding:0;background:none;font-size:0}
+ #otherView,.desktop-camera-label{display:none}
+ .mobile-camera-label{display:inline}
+ .observer #swap{position:fixed;right:calc(12px + env(safe-area-inset-right));bottom:calc(12px + env(safe-area-inset-bottom));min-height:44px;padding:12px 16px;background:#172b20ed;border:1px solid var(--line);border-radius:8px;font-size:12px;touch-action:manipulation}
+ #message{bottom:calc(70px + env(safe-area-inset-bottom));width:max-content;max-width:calc(100vw - 32px)}
+}
+
+.demo-badge{position:fixed;left:calc(12px + env(safe-area-inset-left));bottom:calc(16px + env(safe-area-inset-bottom));font-size:10px;color:#e6edcf99;text-shadow:0 1px 3px #000;pointer-events:none}body[data-demo=true] #modelDetailsButton{display:none}

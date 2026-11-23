@@ -1,5 +1,5 @@
 import unittest,math
-from flight_geometry import vegetation_capsules,ObstacleField,nearest_on_segment,segment_distance,segment_clear,plan_vertical_escape
+from flight_geometry import vegetation_capsules,ObstacleField,nearest_on_segment,segment_distance,segment_clear,plan_vertical_escape,plan_flight_path,plan_scan_segment
 class FlightGeometry(unittest.TestCase):
  def test_capsules_from_generic_structure_and_depth(self):
   plant={'position':[8,4,1],'height':3,'structure':{'bones':[[0,0,0,0,0,1,.10,.07,0],[0,0,1,1,0,2,.05,.02,1],[1,0,2,1,1,2.2,.01,.005,2]]}}
@@ -26,4 +26,17 @@ class FlightGeometry(unittest.TestCase):
   f=json.loads((Path(__file__).parent/'orchard_config.json').read_text())['flight']
   tip_radius=math.hypot(f['rotor_arm_m']+f['rotor_radius_m']+.008,.027)
   self.assertLess(tip_radius,f['cage_radius_m'])
+ def test_flight_checks_branches_short_long_and_blocked_inspection_pose(self):
+  cases=[
+   ([0,-2,1.8],[0,2,1.8],[{'a':[-1,0,1.8],'b':[1,0,1.8],'radius':.1}]),
+   ([0,-15,1.5],[0,15,1.5],[{'a':[-2,0,1.5],'b':[2,0,1.5],'radius':.15}]),
+   ([-2,0,1],[0,0,1],[{'a':[0,0,0],'b':[0,0,3],'radius':.12}])]
+  for start,goal,capsules in cases:
+   field=ObstacleField(capsules);path=plan_flight_path(start,goal,field,.285,height=5)
+   self.assertTrue(path);self.assertLess(math.dist(path[-1],goal),1)
+   for a,b in zip([start,*path],path):self.assertTrue(segment_clear(field,a,b,.285,.24))
+ def test_moving_scan_is_nonzero_and_swept_clear(self):
+  field=ObstacleField([{'a':[-1,0,0],'b':[-1,0,3],'radius':.12}])
+  a,b=plan_scan_segment([0,0,1.4],[0,1,1.4],[1,0,0],field,.285)
+  self.assertGreater(math.dist(a,b),.25);self.assertTrue(segment_clear(field,a,b,.285,.24))
 if __name__=='__main__':unittest.main()

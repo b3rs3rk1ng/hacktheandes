@@ -1,5 +1,6 @@
 """Launch this scene's isolated services; leave the original lab and other jobs alone."""
 import json
+import argparse
 import os
 from pathlib import Path
 import signal
@@ -9,16 +10,21 @@ import time
 
 from mission_resume import parked_checkpoint
 ROOT=Path(__file__).resolve().parent;RUNTIME=ROOT/'runtime';RUNTIME.mkdir(exist_ok=True)
+parser=argparse.ArgumentParser();parser.add_argument('--service',action='append',choices=['orchard-webots','orchard-server'])
+config=json.loads((ROOT/'orchard_config.json').read_text())
+selected=parser.parse_args().service or ['orchard-webots','orchard-server']
+if config.get('simulation',{}).get('presentation_mode')=='scripted':
+    selected=[name for name in selected if name!='orchard-webots']
 try:checkpoint=parked_checkpoint(json.loads((RUNTIME/'mission-status.json').read_text()),json.loads((RUNTIME/'orchard.json').read_text()))
 except (FileNotFoundError,ValueError,KeyError):checkpoint=None
-subprocess.run([sys.executable,'generate_orchard.py'],cwd=ROOT,check=True)
-config=json.loads((ROOT/'orchard_config.json').read_text())
+if 'orchard-webots' in selected:subprocess.run([sys.executable,'generate_orchard.py'],cwd=ROOT,check=True)
 webots=Path.home()/'.local/opt/onda-webots/webots/webots'
 env=os.environ.copy();env['LIBGL_ALWAYS_SOFTWARE']='true';env['OMP_NUM_THREADS']='4';env['OPENBLAS_NUM_THREADS']='2';env['YOLO_CONFIG_DIR']=str(RUNTIME/'yolo')
 commands={
  'orchard-webots':['xvfb-run','-a','--server-args=-screen 0 1024x768x24',str(webots),'--batch','--mode=realtime','--no-rendering','--stdout','--stderr','--port='+str(config['server']['physics_port']),str(ROOT/'worlds/orchard.wbt')],
  'orchard-server':[sys.executable,'-u','orchard_server.py']}
 for name,command in commands.items():
+    if name not in selected:continue
     pid_file=RUNTIME/(name+'.pid')
     if pid_file.exists():
         try:

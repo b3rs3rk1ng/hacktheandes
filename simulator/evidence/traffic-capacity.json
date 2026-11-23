@@ -1,0 +1,43 @@
+{
+  "tested_at": "2026-10-18T14:17:50.155936+00:00",
+  "deployment": "direct SSH to laptop; public tunnel process and URL retained; no git push",
+  "live_polling": {
+    "url": "https://reads-puzzle-song-assets.trycloudflare.com",
+    "simulated_viewers": 200,
+    "duration_per_viewer_s": 20.0,
+    "elapsed_s": 23.72,
+    "scope": "live polling only; excludes browser rendering and initial asset burst",
+    "statuses": {
+      "200": 5699
+    },
+    "errors": {},
+    "latency_ms": {
+      "p50": 127.61,
+      "p95": 312.86,
+      "max": 1210.53754100285
+    },
+    "received_bytes": 59250985,
+    "maximum_physics_age_s": 0.425
+  },
+  "initial_loading": {
+    "simultaneous_initial_loads": 20,
+    "scope": "HTML, session, world, main JS, Three.js core, physics WASM bundle; excludes remaining scene textures and browser rendering",
+    "elapsed_s": 7.44,
+    "responses": 120,
+    "failures": [],
+    "bytes": 131305942,
+    "slowest_request_ms": 4158.9
+  },
+  "validation": {
+    "http_delivery_and_api_tests": 15,
+    "result": "passed",
+    "existing_review_api_failures": 2,
+    "baseline_review_api_failures": 2,
+    "note": "Existing local fleet/config changes automatically approve targets; these two review expectations also fail with the original server. Unrelated files were preserved."
+  },
+  "limitations": [
+    "200 simulated HTTP viewers for 20 seconds, not 200 rendered browsers or a long-duration endurance test.",
+    "Initial resource test used 20 simultaneous clients and excludes remaining textures.",
+    "Quick Tunnel limits and laptop/network uptime still apply."
+  ]
+}

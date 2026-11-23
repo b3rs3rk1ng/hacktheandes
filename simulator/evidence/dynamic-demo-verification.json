@@ -1,0 +1,319 @@
+{
+  "samples": [
+    {
+      "wall_time": 1792338673.5649438,
+      "model_frames": 825,
+      "physics_age_s": 0.10258078575134277,
+      "drone_phase": "transit",
+      "drone_position": [
+        13.366059816062034,
+        121.09777306628932,
+        3.1542691872113138
+      ],
+      "drone_speed_mps": 1.1448883322280459,
+      "trees_scouted": 111,
+      "airborne_wall_seconds": 1236.2243650311138,
+      "robots": [
+        {
+          "id": "ground-1",
+          "phase": "waiting_team",
+          "position": [
+            0.7303945585960605,
+            41.01789310524722,
+            -1.0243518210319837
+          ],
+          "task_id": null,
+          "updated_at": 1792338673.463428
+        },
+        {
+          "id": "ground-2",
+          "phase": "navigating",
+          "position": [
+            3.168237341709828,
+            38.1897977671171,
+            -0.346186661781637
+          ],
+          "task_id": "cacao-8-18-pod-4",
+          "updated_at": 1792338673.4634395
+        },
+        {
+          "id": "ground-3",
+          "phase": "navigating",
+          "position": [
+            10.993619263803279,
+            41.179484234660116,
+            -0.09006899468138028
+          ],
+          "task_id": "cacao-9-19-pod-4",
+          "updated_at": 1792338673.463446
+        }
+      ],
+      "completed_by_robot": {
+        "ground-1": 4,
+        "ground-2": 7,
+        "ground-3": 6
+      },
+      "completed_assistance": [
+        {
+          "id": "cacao-7-19-pod-1",
+          "robot_id": "ground-2",
+          "plant_id": "cacao-7-19"
+        }
+      ],
+      "renderer_resources": [
+        {
+          "pid": 3049712,
+          "open_descriptors": 29
+        },
+        {
+          "pid": 3049713,
+          "open_descriptors": 83
+        },
+        {
+          "pid": 3049917,
+          "open_descriptors": 30
+        }
+      ]
+    },
+    {
+      "wall_time": 1792338688.5845315,
+      "model_frames": 915,
+      "physics_age_s": 0.07418537139892578,
+      "drone_phase": "transit",
+      "drone_position": [
+        20.554595792878178,
+        117.29687227435515,
+        3.2778645303913265
+      ],
+      "drone_speed_mps": 1.0880736996943843,
+      "trees_scouted": 113,
+      "airborne_wall_seconds": 1251.2723516309634,
+      "robots": [
+        {
+          "id": "ground-1",
+          "phase": "waiting_team",
+          "position": [
+            0.757586649329582,
+            41.04605301414969,
+            -1.0281144145454182
+          ],
+          "task_id": null,
+          "updated_at": 1792338688.5455155
+        },
+        {
+          "id": "ground-2",
+          "phase": "aligning",
+          "position": [
+            3.1393912533980757,
+            38.13529977895382,
+            -0.338066402214557
+          ],
+          "task_id": "cacao-8-18-pod-4",
+          "updated_at": 1792338688.5455256
+        },
+        {
+          "id": "ground-3",
+          "phase": "navigating",
+          "position": [
+            8.901478268289456,
+            42.61418796370423,
+            -0.3611080119133983
+          ],
+          "task_id": "cacao-9-19-pod-4",
+          "updated_at": 1792338688.5455317
+        }
+      ],
+      "completed_by_robot": {
+        "ground-1": 4,
+        "ground-2": 7,
+        "ground-3": 6
+      },
+      "completed_assistance": [
+        {
+          "id": "cacao-7-19-pod-1",
+          "robot_id": "ground-2",
+          "plant_id": "cacao-7-19"
+        }
+      ],
+      "renderer_resources": [
+        {
+          "pid": 3049712,
+          "open_descriptors": 29
+        },
+        {
+          "pid": 3049713,
+          "open_descriptors": 83
+        },
+        {
+          "pid": 3049917,
+          "open_descriptors": 30
+        }
+      ]
+    },
+    {
+      "wall_time": 1792338703.60647,
+      "model_frames": 1005,
+      "physics_age_s": 0.09480452537536621,
+      "drone_phase": "transit",
+      "drone_position": [
+        11.636883562671802,
+        115.11863789661496,
+        2.932785177994732
+      ],
+      "drone_speed_mps": 1.4011130601457427,
+      "trees_scouted": 116,
+      "airborne_wall_seconds": 1266.2736707080621,
+      "robots": [
+        {
+          "id": "ground-1",
+          "phase": "patrolling",
+          "position": [
+            1.5517703086482442,
+            40.5316138433203,
+            -0.8817637544127042
+          ],
+          "task_id": null,
+          "updated_at": 1792338703.4820805
+        },
+        {
+          "id": "ground-2",
+          "phase": "patrolling",
+          "position": [
+            4.943846261417457,
+            40.90310980118109,
+            -0.6473394310194753
+          ],
+          "task_id": null,
+          "updated_at": 1792338703.482096
+        },
+        {
+          "id": "ground-3",
+          "phase": "navigating",
+          "position": [
+            8.47099191461324,
+            42.837837772332996,
+            -0.41889429833022923
+          ],
+          "task_id": "cacao-9-19-pod-4",
+          "updated_at": 1792338703.4821064
+        }
+      ],
+      "completed_by_robot": {
+        "ground-1": 4,
+        "ground-2": 8,
+        "ground-3": 6
+      },
+      "completed_assistance": [
+        {
+          "id": "cacao-7-19-pod-1",
+          "robot_id": "ground-2",
+          "plant_id": "cacao-7-19"
+        }
+      ],
+      "renderer_resources": [
+        {
+          "pid": 3049712,
+          "open_descriptors": 29
+        },
+        {
+          "pid": 3049713,
+          "open_descriptors": 84
+        },
+        {
+          "pid": 3049917,
+          "open_descriptors": 30
+        }
+      ]
+    },
+    {
+      "wall_time": 1792338718.6211863,
+      "model_frames": 1095,
+      "physics_age_s": 0.09776139259338379,
+      "drone_phase": "transit",
+      "drone_position": [
+        21.05963514516956,
+        112.2265292885274,
+        2.562037646034754
+      ],
+      "drone_speed_mps": 1.2332996210545344,
+      "trees_scouted": 119,
+      "airborne_wall_seconds": 1281.285427958006,
+      "robots": [
+        {
+          "id": "ground-1",
+          "phase": "patrolling",
+          "position": [
+            1.8767995188508309,
+            39.98429423698857,
+            -0.7602170291921454
+          ],
+          "task_id": null,
+          "updated_at": 1792338718.568201
+        },
+        {
+          "id": "ground-2",
+          "phase": "navigating",
+          "position": [
+            5.2656352185997,
+            45.24493076033961,
+            -1.0137670409132962
+          ],
+          "task_id": "cacao-10-18-pod-5",
+          "updated_at": 1792338718.5682108
+        },
+        {
+          "id": "ground-3",
+          "phase": "blocked",
+          "position": [
+            8.431683859391288,
+            42.859604663512734,
+            -0.4244971654404716
+          ],
+          "task_id": null,
+          "updated_at": 1792338718.568217
+        }
+      ],
+      "completed_by_robot": {
+        "ground-1": 4,
+        "ground-2": 8,
+        "ground-3": 7
+      },
+      "completed_assistance": [
+        {
+          "id": "cacao-7-19-pod-1",
+          "robot_id": "ground-2",
+          "plant_id": "cacao-7-19"
+        }
+      ],
+      "renderer_resources": [
+        {
+          "pid": 3049712,
+          "open_descriptors": 29
+        },
+        {
+          "pid": 3049713,
+          "open_descriptors": 83
+        },
+        {
+          "pid": 3049917,
+          "open_descriptors": 30
+        }
+      ]
+    }
+  ],
+  "intervention_policy": {
+    "approval": "automatic",
+    "confirmation": "initial_detection"
+  },
+  "simulation": {
+    "demo": true,
+    "fruit_label_weights": {
+      "healthy": 0.24,
+      "monilia": 0.7,
+      "phytophthora": 0.06
+    }
+  },
+  "motion_rate": 2.2,
+  "ground_battery_wh": 2048,
+  "scout_lookahead": null
+}

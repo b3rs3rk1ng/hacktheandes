@@ -1,0 +1,16 @@
+import assert from 'node:assert/strict';
+import {canAssistTask} from './ui/orchard/team-assistance.mjs';
+const plan={batches:[{lanes:[{robot_id:'a',tree_ids:['a0','a1']},{robot_id:'b',tree_ids:['b0','b1','b2']}]}]};
+const coverage={batch:0,indices:{a:1,b:1},scouted:{b0:{frames:['x','y']},b1:{frames:['x','y']},b2:{frames:['x','y']}}};
+const context={robotId:'a',position:[0,0],plan,coverage,radius:6};
+const task={status:'pending',plant_id:'b1',position:[4,0,2]};
+assert.equal(canAssistTask(task,context),true);
+assert.equal(canAssistTask({...task,plant_id:'b0'},context),true);
+assert.equal(canAssistTask({...task,plant_id:'b2'},context),false,'future trees stay with the lane sequence');
+assert.equal(canAssistTask({...task,plant_id:'a1'},context),false,'own lane uses its normal dispatch');
+assert.equal(canAssistTask({...task,status:'claimed'},context),false,'never steal an assigned task');
+assert.equal(canAssistTask({...task,position:[8,0,2]},context),false,'stay near the team');
+assert.equal(canAssistTask(task,{...context,radius:0}),false,'assistance is configurable');
+assert.equal(canAssistTask(task,{...context,coverage:{...coverage,scouted:{}}}),false,'scout evidence is required');
+assert.equal(canAssistTask({...task,plant_id:'unknown'},context),false);
+console.log('Team assistance: neighboring lanes, progress, evidence, distance and ownership passed');

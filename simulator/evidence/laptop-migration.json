@@ -1,0 +1,15 @@
+{
+  "public_url": "https://reads-puzzle-song-assets.trycloudflare.com/",
+  "runtime_host": "laptop",
+  "gpu_renderer": "ANGLE / Vulkan / NVIDIA GeForce RTX 4060 Laptop GPU",
+  "services": [
+    "cacao-live-host.service",
+    "cacao-public-tunnel.service"
+  ],
+  "user_linger": true,
+  "mac_simulation_processes": 0,
+  "mac_public_tunnel_running": false,
+  "mac_18437_forward_running": false,
+  "public_anonymous_role": "observer",
+  "scope": "Native physics and YOLO remain on laptop; authoritative ground physics and sensor renderer migrated from Mac to laptop. Viewer still renders its own 3D camera."
+}

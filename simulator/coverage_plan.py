@@ -43,6 +43,7 @@ def build_coverage(plants, config):
 
 def scout_can_advance(plan, tree_id, progress, lookahead=1):
     if not plan:return True
+    if lookahead is None:return tree_id in plan['drone_route']
     batch_index=progress.get('batch',0)
     if batch_index>=len(plan['batches']):return False
     batch=plan['batches'][batch_index];indices=progress.get('indices',{})
@@ -85,6 +86,20 @@ class CoverageLedger:
         index=self.state['indices'].get(robot,0)
         return lane['tree_ids'][index] if lane and index<len(lane['tree_ids']) else None
 
+    def can_service(self,robot,tree,position,target_position,assisting=False):
+        if not self.plan or self.target(robot)==tree:return True
+        batch=self.state['batch']
+        if batch>=len(self.plan['batches']) or not position:return False
+        lane=next((l for l in self.plan['batches'][batch]['lanes'] if l['robot_id']==robot),None)
+        if lane and tree in lane['tree_ids']:
+            return lane['tree_ids'].index(tree)<=self.state['indices'].get(robot,0) and math.dist(position[:2],target_position[:2])<=self.cfg.get('alert_revisit_radius_m',8)
+        if not assisting:return False
+        owner=next((l for l in self.plan['batches'][batch]['lanes'] if tree in l['tree_ids']),None)
+        radius=self.cfg.get('assistance_radius_m',self.cfg.get('alert_revisit_radius_m',8))
+        return bool(owner and radius>0 and owner['tree_ids'].index(tree)<=self.state['indices'].get(owner['robot_id'],0)
+            and len(self.state['scouted'].get(tree,{}).get('frames',[]))>=self.cfg.get('minimum_survey_frames',2)
+            and math.dist(position[:2],target_position[:2])<=radius)
+
     def observe(self,frame):
         tree=frame.get('plant_id');role=frame.get('camera_role');actor=frame.get('vehicle_id')
         if not self.plan or not tree:return
@@ -94,13 +109,15 @@ class CoverageLedger:
         if frame['frame_id'] not in record['frames']:record['frames'].append(frame['frame_id'])
         record['frames']=record['frames'][-8:];record['detections']=len(frame['predictions']);record['last_frame']=frame['frame_id']
 
-    def complete(self,robot,tree):
+    def complete(self,robot,tree,robots=None):
         if self.target(robot)!=tree:raise ValueError('El árbol no es el siguiente de la fila asignada')
         required=self.cfg.get('minimum_survey_frames',2)
         scouted=len(self.state['scouted'].get(tree,{}).get('frames',[]))>=required
         if not scouted and not self.state.get('local_inspection_allowed'):raise ValueError('El dron todavía no envió el reconocimiento del árbol')
         if len(self.state['inspected'].get(robot,{}).get(tree,{}).get('frames',[]))<required:raise ValueError('Faltan imágenes de la cámara terrestre')
-        batch=self.plan['batches'][self.state['batch']];indices=self.state['indices'];frontier=min(indices.get(l['robot_id'],0) for l in batch['lanes'])
+        batch=self.plan['batches'][self.state['batch']];indices=self.state['indices']
+        active=[lane for lane in batch['lanes'] if (robots or {}).get(lane['robot_id'],{}).get('phase') not in {'returning','charging'}]
+        frontier=min(indices.get(l['robot_id'],0) for l in (active or batch['lanes']))
         if indices.get(robot,0)>frontier+self.cfg.get('maximum_ground_lead_trees',1):raise ValueError('Esperando a los robots vecinos')
         self.state['completed'][tree]={'robot_id':robot,'method':'scout_assisted' if scouted else 'ground_local','time':time.time()}
         indices[robot]=indices.get(robot,0)+1

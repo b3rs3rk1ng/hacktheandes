@@ -1,0 +1,21 @@
+{
+  "context": "running",
+  "enabled": true,
+  "master_gain": 0.379935622215271,
+  "maximum_rms_during_real_motion": 0.007297897757330075,
+  "maximum_measured_speed_mps": 0.6905642605806074,
+  "public_viewer_inferences": 0,
+  "notes": "Measured in public Chrome before 1.6x ground audio gain increase. Requires browser permission/gesture; no claim to have heard the user device speakers.",
+  "maximum_rms_after_gain_update": 0.01351073397711151,
+  "final_context": "running",
+  "final_ground_tree_counts": {
+    "ground-1": 21,
+    "ground-2": 22,
+    "ground-3": 22
+  },
+  "final_ground_speeds_mps": [
+    -0.3679204461814674,
+    0.5211122607159192,
+    0.5016448792460174
+  ]
+}

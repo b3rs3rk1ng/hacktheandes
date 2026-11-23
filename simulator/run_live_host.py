@@ -1,5 +1,7 @@
 """Owned background renderer: one physics/vision session, public views read poses."""
 import argparse
+import json
+import sys
 import os
 from pathlib import Path
 import signal
@@ -50,4 +52,6 @@ def launch(base, chrome, port, backend='auto', probe=False, foreground=False):
 
 if __name__=='__main__':
     parser=argparse.ArgumentParser();parser.add_argument('--base',default='http://127.0.0.1:18437');parser.add_argument('--chrome',default=None);parser.add_argument('--port',type=int,default=18438);parser.add_argument('--backend',default='auto');parser.add_argument('--probe',action='store_true');parser.add_argument('--foreground',action='store_true');args=parser.parse_args()
+    if json.loads((ROOT/'orchard_config.json').read_text()).get('simulation',{}).get('presentation_mode')=='scripted':
+        print('Scripted demo: no server renderer or GPU inference needed.');sys.exit(0)
     launch(args.base,args.chrome,args.port,args.backend,args.probe,args.foreground)

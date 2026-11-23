@@ -1,4 +1,4 @@
-"""Persistent simulator task contract: human approval and fresh vision before a cut.
+"""Persistent simulator task contract with configurable intervention policy.
 
 Scene geometry locates fruit; scene disease labels are never consulted here.
 The renderer owns idealized arm motion, not force-controlled manipulation.
@@ -22,6 +22,8 @@ class ReviewConflict(ValueError):
 class Fleet:
     def __init__(self, config, state=None, clock=time.time, plan=None):
         self.cfg=config; self.clock=clock
+        self.policy=config.get('fleet',{}).get('intervention',{})
+        self.automatic=self.policy.get('approval','human')=='automatic'
         self.robots={r['id']:r for r in config.get('fleet',{}).get('robots',[])}
         self.data=copy.deepcopy(state) if state else {'enabled':False,'returning':False,'tasks':{},'removed':[], 'robots':{},'events':[],'epoch':0}
         self.coverage=CoverageLedger(plan,config,self.data.setdefault('coverage',{}))
@@ -41,6 +43,23 @@ class Fleet:
                     task.update(status='awaiting_review',robot_id=None,verification=[])
             if task['status']=='awaiting_review' and not task.get('evidence'):
                 task['status']='awaiting_evidence'
+        self.apply_policy()
+
+    def authorized(self,task):
+        if not self.automatic:return task.get('review',{}).get('decision')=='approve'
+        return bool((task.get('detection') or {}).get('localization_version')==LOCALIZATION_VERSION or (task.get('evidence',{} ) or {}).get('localization',{}).get('version')==LOCALIZATION_VERSION)
+
+    def apply_policy(self):
+        previous=self.data.get('intervention_policy',{});changed=previous.get('approval')!=self.policy.get('approval','human')
+        for task in self.data['tasks'].values():
+            if task['pod_id'] in self.data['removed']:continue
+            if self.automatic and self.authorized(task):
+                if task['status'] in ('awaiting_review','awaiting_evidence') or (changed and task['status']=='rejected' and task.get('review',{}).get('decision')!='reject'):
+                    task.update(status='pending',robot_id=None,verification=[])
+                task['authorization']={'mode':'automatic','source_frame':task.get('drone_frame')}
+            elif not self.automatic and task.get('authorization',{}).get('mode')=='automatic' and task['status'] not in TERMINAL:
+                task.update(status='awaiting_review' if task.get('evidence') else 'awaiting_evidence',robot_id=None,verification=[])
+        self.data['intervention_policy']={'approval':self.policy.get('approval','human'),'confirmation':self.policy.get('confirmation','fresh_frames')}
 
     def event(self, task, kind):
         self.data['events'].append({'time':self.clock(),'kind':kind,'task_id':task.get('id'),'robot_id':task.get('robot_id')})
@@ -69,13 +88,15 @@ class Fleet:
                     if task['status'] in ('awaiting_review','awaiting_evidence') and not task.get('evidence') and evidence:
                         task.update(status='awaiting_review',evidence=evidence,drone_frame=frame['frame_id'],confidence=prediction['confidence'])
                         task['review']['revision']+=1
+                    task['detection']={'frame_id':frame['frame_id'],'class_id':prediction['class_id'],'confidence':prediction['confidence'],'localization_version':LOCALIZATION_VERSION}
+                    self.apply_policy()
                     continue
                 pod=pods[pid]
                 self.data['tasks'][pid]={'id':pid,'pod_id':pid,'plant_id':pod['plant_id'],'position':pod['position'],
                     'status':'awaiting_review' if evidence else 'awaiting_evidence','robot_id':None,'created_at':self.clock(),'drone_frame':frame['frame_id'],
                     'confidence':prediction['confidence'],'verification':[], 'evidence':evidence,'detected_by':actor,
-                    'review':{'decision':'pending','revision':1}}
-                self.event(self.data['tasks'][pid],'alert_located')
+                    'review':{'decision':'pending','revision':1},'detection':{'frame_id':frame['frame_id'],'class_id':prediction['class_id'],'confidence':prediction['confidence'],'localization_version':LOCALIZATION_VERSION}}
+                self.apply_policy();self.event(self.data['tasks'][pid],'target_detected' if self.automatic else 'alert_located')
             elif actor in self.robots:
                 task=self.data['tasks'].get(pid)
                 if not task or task['robot_id']!=actor or task['status']!='verifying':continue
@@ -122,8 +143,11 @@ class Fleet:
         if not self.data['enabled']:raise ValueError('Flota detenida')
         task=self.data['tasks'].get(pid)
         if not task or task['status']!='pending':raise ValueError('Objetivo ya asignado o terminado')
-        if task['review']['decision']!='approve':raise ValueError('Falta aprobación del agricultor')
-        if self.coverage.plan and self.coverage.target(robot)!=task['plant_id']:raise ValueError('El robot debe llegar a ese árbol siguiendo su fila')
+        if not self.authorized(task):raise ValueError('Falta autorización para intervenir')
+        vehicle=self.data['robots'].get(robot,{})
+        inspected=self.coverage.state.get('inspected',{}).get(robot,{}).get(self.coverage.target(robot),{})
+        assisting=vehicle.get('phase') in {'surveying','waiting_team'} and len(inspected.get('frames',[]))>=self.cfg['fleet'].get('coverage',{}).get('minimum_survey_frames',2)
+        if not self.coverage.can_service(robot,task['plant_id'],vehicle.get('position'),task['position'],assisting=assisting):raise ValueError('El objetivo está fuera del tramo de fila atendido por el robot')
         if any(t.get('robot_id')==robot and t['status'] not in TERMINAL|WAITING for t in self.data['tasks'].values()):raise ValueError('Robot ocupado')
         if any(t['plant_id']==task['plant_id'] and t['status'] not in TERMINAL|WAITING for t in self.data['tasks'].values()):raise ValueError('Otro robot está atendiendo ese árbol')
         task.update(status='claimed',robot_id=robot,heartbeat=self.clock(),verification=[])
@@ -131,14 +155,14 @@ class Fleet:
 
     def retry(self, pid):
         task=self.data['tasks'].get(pid)
-        if not task or task['status'] not in {'unreachable','rejected','interrupted'} or task['review']['decision']!='approve' or pid in self.data['removed']:
+        if not task or task['status'] not in {'unreachable','rejected','interrupted'} or not self.authorized(task) or pid in self.data['removed']:
             raise ValueError('Sólo se puede reintentar una tarea aprobada sin retirar el fruto')
         task.update(status='pending',robot_id=None,verification=[])
         task.pop('reason',None);self.event(task,'retry_requested');return task
 
     def complete_tree(self,robot,tree):
         if any(t['plant_id']==tree and t['status'] not in TERMINAL|{'awaiting_evidence','awaiting_review'} for t in self.data['tasks'].values()):raise ValueError('Hay una retirada aprobada pendiente en este árbol')
-        self.coverage.complete(robot,tree)
+        self.coverage.complete(robot,tree,self.data['robots'])
         self.event({'id':tree,'robot_id':robot},'tree_surveyed')
 
     def transition(self, pid, robot, status, reason=None):
@@ -147,11 +171,13 @@ class Fleet:
         if task['status']==status:return task
         if status not in {'rejected','unreachable','interrupted'} and NEXT.get(task['status'])!=status:raise ValueError('Transición de tarea inválida')
         if task['status'] in TERMINAL:raise ValueError('La tarea ya terminó')
-        if status not in {'rejected','unreachable','interrupted'} and task['review']['decision']!='approve':
+        if status not in {'rejected','unreachable','interrupted'} and not self.authorized(task):
             raise ValueError('Falta aprobación del agricultor')
         task.update(status=status,heartbeat=self.clock())
         if reason:task['reason']=str(reason)[:240]
-        if status=='verifying':task['verification_started']=self.clock();task['verification']=[]
+        if status=='verifying':
+            task['verification_started']=self.clock();task['verification']=[]
+            if self.automatic and self.policy.get('confirmation')=='initial_detection':task['status']='verified';self.event(task,'detection_accepted')
         if status=='carrying' and pid not in self.data['removed']:self.data['removed'].append(pid)
         self.event(task,status);return task
 

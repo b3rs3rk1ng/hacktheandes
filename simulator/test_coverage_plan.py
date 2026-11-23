@@ -30,6 +30,8 @@ class CoverageContract(unittest.TestCase):
         batch=self.plan['batches'][0];lane=batch['lanes'][0]
         self.assertTrue(scout_can_advance(self.plan,lane['tree_ids'][1],{},1))
         self.assertFalse(scout_can_advance(self.plan,lane['tree_ids'][2],{},1))
+        self.assertTrue(scout_can_advance(self.plan,self.plan['drone_route'][-1],{},None))
+        self.assertFalse(scout_can_advance(self.plan,'unknown',{},None))
         self.cfg['fleet']['coverage']['axis_enu']=[1,0]
         rotated=build_coverage(self.plants,self.cfg);self.assertEqual(rotated['axis_enu'],[1.,0.])
         self.assertEqual(len(set(rotated['drone_route'])),len(self.plants))
@@ -58,6 +60,36 @@ class CoverageContract(unittest.TestCase):
         self.assertEqual(index,len(first['scout_tree_ids']))
         state['batch']=len(self.plan['batches'])
         self.assertEqual(next_scout_index(self.plan,0,state),len(self.plan['drone_route']))
+
+    def test_revisit_stays_in_own_completed_lane_and_nearby(self):
+        ledger=CoverageLedger(self.plan,self.cfg,{'indices':{'0':2}})
+        lane=self.plan['batches'][0]['lanes'][0]['tree_ids'];other=self.plan['batches'][0]['lanes'][1]['tree_ids']
+        self.assertTrue(ledger.can_service('0',lane[1],[0,0,0],[0,4,1]))
+        self.assertFalse(ledger.can_service('0',lane[1],[0,0,0],[0,20,1]))
+        self.assertFalse(ledger.can_service('0',lane[3],[0,0,0],[0,4,1]))
+        self.assertFalse(ledger.can_service('0',other[1],[0,0,0],[0,4,1]))
+
+    def test_assistance_requires_nearby_scouted_tree_at_neighbor_frontier(self):
+        state={'indices':{'0':2,'1':1}}
+        ledger=CoverageLedger(self.plan,self.cfg,state)
+        other=self.plan['batches'][0]['lanes'][1]['tree_ids']
+        for tree in other:
+            state['scouted'][tree]={'frames':['x','y']}
+        self.assertTrue(ledger.can_service('0',other[1],[0,0,0],[4,0,1],assisting=True))
+        self.assertTrue(ledger.can_service('0',other[0],[0,0,0],[4,0,1],assisting=True))
+        self.assertFalse(ledger.can_service('0',other[2],[0,0,0],[4,0,1],assisting=True))
+        self.assertFalse(ledger.can_service('0',other[1],[0,0,0],[10,0,1],assisting=True))
+        state['scouted'].clear()
+        self.assertFalse(ledger.can_service('0',other[1],[0,0,0],[4,0,1],assisting=True))
+
+    def test_station_trip_does_not_hold_other_field_robots(self):
+        state={'indices':{'0':2,'1':2,'2':0}}
+        ledger=CoverageLedger(self.plan,self.cfg,state);tree=ledger.target('0')
+        state['scouted'][tree]={'frames':['s1','s2']}
+        state['inspected']['0']={tree:{'frames':['g1','g2']}}
+        with self.assertRaises(ValueError):ledger.complete('0',tree)
+        ledger.complete('0',tree,{'2':{'phase':'returning'}})
+        self.assertEqual(state['indices']['0'],3)
 
 
 if __name__=='__main__':unittest.main()

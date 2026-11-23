@@ -4,6 +4,7 @@ Capsule endpoints use ENU meters. Neither crop names nor health labels enter
 clearance calculations. Fine leaves, webs and vines are not resolved here.
 """
 import math
+import heapq
 
 def vegetation_capsules(plant,max_depth=1,min_radius=.018):
     origin=plant['position']
@@ -90,3 +91,85 @@ def plan_vertical_escape(start,height,field,radius,*,margin=.10,max_lateral_m=3.
         if candidates:break
     if not candidates:raise ValueError('No clear climb column within lateral search range')
     _,low,high=min(candidates,key=lambda row:row[0]);return [low,high,goal]
+
+
+def plan_flight_path(start,goal,field,radius,*,height,ground_height=lambda x,y:0,margin=.24,cell=.5,max_nodes=5000):
+    """Capsule-aware 3D routes, with a canopy corridor for long transfers.
+
+    A blocked inspection pose is adjusted locally, preserving the separate
+    camera look target. Every emitted segment checks trunks AND branches.
+    """
+    start=list(start);goal=list(goal)
+    def point_ok(p):return p[2]>=ground_height(*p[:2])+radius+.08 and segment_clear(field,p,p,radius,margin)
+    def clear(a,b):
+        steps=max(1,math.ceil(math.dist(a,b)/cell))
+        return segment_clear(field,a,b,radius,margin) and all((a[2]+(b[2]-a[2])*i/steps)>=ground_height(a[0]+(b[0]-a[0])*i/steps,a[1]+(b[1]-a[1])*i/steps)+radius+.08 for i in range(steps+1))
+    if not point_ok(goal):
+        candidates=[]
+        for ring in range(1,5):
+            for z in [0,.2,-.2,.4]:
+                for i in range(16):
+                    a=i*math.tau/16;p=[goal[0]+ring*.2*math.cos(a),goal[1]+ring*.2*math.sin(a),goal[2]+z]
+                    if point_ok(p):candidates.append((math.dist(p,goal),p))
+            if candidates:break
+        if not candidates:raise ValueError('No clear inspection pose near requested target')
+        goal=min(candidates,key=lambda c:c[0])[1]
+    if clear(start,goal):return [goal]
+    # Nearby inspections use a bounded voxel search below/through the canopy.
+    if math.dist(start,goal)<12:
+        cell=min(cell,max(.05,math.dist(start,goal)/3))
+        source=tuple(round(v/cell) for v in start);target=tuple(round(v/cell) for v in goal)
+        lo=[min(start[i],goal[i])-3 for i in range(3)];hi=[max(start[i],goal[i])+3 for i in range(3)]
+        def position(k):return start if k==source else goal if k==target else [v*cell for v in k]
+        def heuristic(k):return math.dist(position(k),goal)
+        queue=[(heuristic(source),0,source)];cost={source:0};parents={};occupied={};count=0
+        while queue and count<max_nodes:
+            _,g,k=heapq.heappop(queue)
+            if g>cost[k]:continue
+            count+=1
+            if k==target:
+                path=[goal]
+                while k in parents:k=parents[k];path.append(position(k))
+                path.reverse();out=[];index=0
+                while index<len(path)-1:
+                    end=len(path)-1
+                    while end>index+1 and not clear(path[index],path[end]):end-=1
+                    out.append(path[end]);index=end
+                return out
+            a=position(k)
+            for dx in (-1,0,1):
+                for dy in (-1,0,1):
+                    for dz in (-1,0,1):
+                        if not (dx or dy or dz):continue
+                        n=(k[0]+dx,k[1]+dy,k[2]+dz);b=position(n)
+                        if any(b[i]<lo[i] or b[i]>hi[i] for i in range(3)):continue
+                        if n not in occupied:occupied[n]=point_ok(b)
+                        if not occupied[n]:continue
+                        candidate=g+math.dist(a,b)
+                        if candidate>=cost.get(n,float('inf')) or not clear(a,b):continue
+                        cost[n]=candidate;parents[n]=k;heapq.heappush(queue,(candidate+heuristic(n)*1.15,candidate,n))
+    # The same checked escape mechanism also supplies the descent corridor.
+    climb=plan_vertical_escape(start,height,field,radius,margin=margin)
+    descent=plan_vertical_escape(goal,height,field,radius,margin=margin)
+    path=[*climb,*reversed([goal,*descent])]
+    out=[];previous=start
+    for p in path:
+        if math.dist(previous,p)<1e-6:continue
+        if not clear(previous,p):raise ValueError('No clear connecting flight corridor')
+        out.append(p);previous=p
+    return out
+
+
+def plan_scan_segment(center,look,preferred,field,radius,span=1.2,margin=.24,ground_height=lambda x,y:0):
+    """A swept-clear viewing pass. The camera keeps its separate look target."""
+    tangent=[look[1]-center[1],center[0]-look[0],0];length=math.hypot(*tangent[:2])
+    tangent=[v/max(length,1e-8) for v in tangent]
+    if sum(tangent[i]*preferred[i] for i in range(2))<0:tangent=[-v for v in tangent]
+    axes=[tangent,*([math.cos(i*math.pi/4),math.sin(i*math.pi/4),0] for i in range(8)),[0,0,1]]
+    for distance in [span,span*.75,span*.5,span*.25]:
+        for axis in axes:
+            for offset in [-.5,0,-1]:
+                a=[center[i]+axis[i]*distance*offset for i in range(3)];b=[a[i]+axis[i]*distance for i in range(3)]
+                if min(p[2]-ground_height(*p[:2]) for p in (a,b))<radius+.08:continue
+                if segment_clear(field,a,b,radius,margin):return [a,b]
+    raise ValueError('No clear viewing pass around inspection pose')

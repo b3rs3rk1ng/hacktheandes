@@ -1,0 +1,13 @@
+{
+  "seconds": 1800,
+  "minGap": 0.12948401535811938,
+  "holds": {
+    "ground-2": 8864
+  },
+  "completed": {
+    "ground-1": true,
+    "ground-3": true,
+    "ground-2": true
+  },
+  "model": "swept circular chassis and arm envelopes with 0.12 m margin"
+}

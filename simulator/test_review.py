@@ -11,6 +11,7 @@ from review_evidence import save_evidence, evidence_path
 class HumanReview(unittest.TestCase):
     def setUp(self):
         self.cfg=json.loads((Path(__file__).parent/'orchard_config.json').read_text())
+        self.cfg['fleet']['intervention']={'approval':'human','confirmation':'fresh_frames'}
         self.now=100.;self.f=Fleet(self.cfg,clock=lambda:self.now)
         self.pods={'fruit':{'plant_id':'plant','position':[2,3,1.6]}}
         self.frame={'vehicle_id':'drone','frame_id':'one','wall_time':100,'predictions':[{'class_id':1,'confidence':.9,'bbox':[10,10,30,40]}],

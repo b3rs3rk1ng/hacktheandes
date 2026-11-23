@@ -18,6 +18,19 @@ class EnergyAndScene(unittest.TestCase):
         a.consume(250,10);b.consume(250,20)
         self.assertAlmostEqual(1-b.soc,2*(1-a.soc),places=7)
 
+    def test_configured_endurance_preserves_return_reserve(self):
+        duration=CONFIG['battery']['minimum_airborne_seconds']
+        self.assertGreaterEqual(duration,1800)
+        # Sustained thrust above hover covers maneuvering overhead. This is an
+        # energy-model regression, not a wall-clock flight or hardware test.
+        power=motor_power(CONFIG['flight']['mass_kg']*9.81*1.25,CONFIG['flight'])
+        for position in ([0,6,2],[100,145,2],[-100,145,2]):
+            battery=Battery(CONFIG['battery'])
+            for _ in range(duration):battery.consume(power,1)
+            budget=return_budget(position,CONFIG['field']['home'],CONFIG['flight'],battery)
+            self.assertGreater(budget['margin_wh'],0)
+            self.assertGreater(battery.soc,CONFIG['battery']['reserve_fraction'])
+
     def test_empty_full_and_invalid_input(self):
         a=Battery(CONFIG['battery'],.001);a.consume(300,10000);self.assertEqual(a.soc,0)
         a=Battery(CONFIG['battery'],1);a.charge(100);self.assertEqual(a.soc,1)
@@ -41,6 +54,11 @@ class EnergyAndScene(unittest.TestCase):
     def test_stationary_controller_and_wind_drag(self):
         thrust,torque,drag,stable=flight_control([0,0,1],[0]*6,[1,0,0,0,1,0,0,0,1],[0,0,1],0,CONFIG['flight'])
         self.assertAlmostEqual(thrust,CONFIG['flight']['mass_kg']*9.81);self.assertTrue(stable);self.assertGreater(drag[0],0)
+
+    def test_arrival_tolerance_accepts_small_hover_error_but_not_transit(self):
+        for offset,expected in [(.09,True),(.3,False)]:
+            *_,stable=flight_control([offset,0,1],[0]*6,[1,0,0,0,1,0,0,0,1],[0,0,1],0,CONFIG['flight'])
+            self.assertEqual(stable,expected)
 
     def test_force_saturation_yaw_and_movement(self):
         thrust,torque,drag,stable=flight_control([0,0,1],[0]*6,[1,0,0,0,1,0,0,0,1],[100,0,4],math.pi/2,CONFIG['flight'])

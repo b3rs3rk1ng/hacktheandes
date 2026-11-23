@@ -1,3 +1,4 @@
+import {planGuidedVehicleRoute} from './vehicle-route.mjs';
 import {heightAt} from './terrain.mjs';
 
 // A common metric navigation grid: trunk clearance + grade, independent of
@@ -15,11 +16,17 @@ export function createGroundPlanner(world){
  const key=p=>p.join(','),point=p=>[p[0]*step,p[1]*step];
  function plan(start,goal){
   if(!safe(start)||!safe(goal))return null;if(clear(start,goal))return [start,goal];
-  const a=start.map(v=>Math.round(v/step)),b=goal.map(v=>Math.round(v/step)),g=new Map([[key(a),0]]),parent=new Map(),open=[{p:a,f:0}],closed=new Set();let count=0;
+  const g=new Map(),parent=new Map(),open=[],closed=new Set();let count=0;
   function valid(p){const k=key(p);if(!cache.has(k))cache.set(k,safe(point(p)));return cache.get(k)}
+  // A valid physical pose may round into a blocked grid cell. Connect each
+  // exact endpoint to nearby clear cells instead of assuming its rounded cell
+  // is navigable; this also handles tight but valid harvest/charger poses.
+  function connections(endpoint){const center=endpoint.map(v=>Math.round(v/step)),out=[];for(let y=-2;y<=2;y++)for(let x=-2;x<=2;x++){const p=[center[0]+x,center[1]+y];if(valid(p)&&clear(endpoint,point(p)))out.push(p)}return out}
+  const goals=new Set(connections(goal).map(key));if(!goals.size)return null;
+  for(const p of connections(start)){const cost=Math.hypot(point(p)[0]-start[0],point(p)[1]-start[1]);g.set(key(p),cost);open.push({p,f:cost+Math.hypot(point(p)[0]-goal[0],point(p)[1]-goal[1])})}
   while(open.length&&count++<35000){let best=0;for(let i=1;i<open.length;i++)if(open[i].f<open[best].f)best=i;const node=open.splice(best,1)[0],k=key(node.p);if(closed.has(k))continue;closed.add(k);
-   if(k===key(b)){const path=[goal];let cur=k;while(parent.has(cur)){path.push(point(cur.split(',').map(Number)));cur=parent.get(cur)}path.push(start);path.reverse();const out=[start];let index=0;while(index<path.length-1){let next=index+1;for(let i=next+1;i<path.length&&clear(path[index],path[i]);i++)next=i;out.push(path[next]);index=next}return out}
-   for(const d of [[1,0],[-1,0],[0,1],[0,-1],[1,1],[1,-1],[-1,1],[-1,-1]]){const p=[node.p[0]+d[0],node.p[1]+d[1]],pk=key(p);if(closed.has(pk)||!valid(p)||!clear(point(node.p),point(p)))continue;const cost=g.get(k)+Math.hypot(...d)*step;if(cost>=(g.get(pk)??Infinity))continue;g.set(pk,cost);parent.set(pk,k);open.push({p,f:cost+Math.hypot(p[0]-b[0],p[1]-b[1])*step})}
+   if(goals.has(k)){const path=[goal];let cur=k;while(true){path.push(point(cur.split(',').map(Number)));if(!parent.has(cur))break;cur=parent.get(cur)}path.push(start);path.reverse();const out=[start];let index=0;while(index<path.length-1){let next=index+1;for(let i=next+1;i<path.length&&clear(path[index],path[i]);i++)next=i;out.push(path[next]);index=next}return out}
+   for(const d of [[1,0],[-1,0],[0,1],[0,-1],[1,1],[1,-1],[-1,1],[-1,-1]]){const p=[node.p[0]+d[0],node.p[1]+d[1]],pk=key(p);if(closed.has(pk)||!valid(p)||!clear(point(node.p),point(p)))continue;const cost=g.get(k)+Math.hypot(...d)*step;if(cost>=(g.get(pk)??Infinity))continue;g.set(pk,cost);parent.set(pk,k);open.push({p,f:cost+Math.hypot(p[0]*step-goal[0],p[1]*step-goal[1])})}
   }return null;
  }
  function planFromPose(start,goal,yaw=null){
@@ -50,9 +57,16 @@ export function createGroundPlanner(world){
   for(const candidate of candidates){const path=plan(candidate,goal);if(path)return [start,...path]}
   return null;
  }
+ function planVehicle(start,goal,yaw,goalYaw){
+  if(safe(start)){const referencePath=plan(start,goal);if(!referencePath)return null;return planGuidedVehicleRoute(start,goal,yaw,goalYaw,{safe,clear,referencePath})}
+  const escape=planFromPose(start,goal,yaw);if(!escape||escape.length<2)return null;
+  const end=escape[1],route=planGuidedVehicleRoute(end,goal,yaw,goalYaw,{safe,clear,referencePath:escape.slice(1)});if(!route)return null;
+  const along=(end[0]-start[0])*(-Math.sin(yaw))+(end[1]-start[1])*Math.cos(yaw),direction=along>=0?1:-1;
+  return {points:[start,...route.points],directions:[direction,direction,...route.directions.slice(1)]};
+ }
  function approaches(pod,plant){const a=Math.atan2(pod.position[1]-plant.position[1],pod.position[0]-plant.position[0]),out=[];
   for(const turn of [0,.4,-.4,.8,-.8,1.2,-1.2,Math.PI])for(const r of [.85,1,.75]){const p=[pod.position[0]+Math.cos(a+turn)*r,pod.position[1]+Math.sin(a+turn)*r];if(safe(p))out.push(p)}return out;
  }
  function approachPath(start,goal,pod){const d=[pod.position[0]-goal[0],pod.position[1]-goal[1]],length=Math.hypot(...d);for(const lead of [2.4,1.8,1.3]){const staging=[goal[0]-d[0]/length*lead,goal[1]-d[1]/length*lead];if(!clear(staging,goal))continue;const path=plan(start,staging);if(path)return [...path,goal]}return null}
- return {plan,planFromPose,safe,clear,approaches,approachPath};
+ return {plan,planVehicle,planFromPose,safe,clear,approaches,approachPath};
 }

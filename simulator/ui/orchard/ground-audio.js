@@ -10,8 +10,8 @@ export function createGroundAudio(control,vehicles){
   });
  }
  function update(){stats.enabled=control.enabled;if(!control.context)return;try{if(!channels)create();const c=control.context,t=c.currentTime,set=(p,value)=>p.setTargetAtTime(value,t,.06);stats.rolling=stats.servos=0;
-  for(const ch of channels){const v=ch.v,s=v.state,speed=Math.abs(s.speed),contacts=s.wheels.filter(w=>w.contact).length/4,rough=s.wheels.reduce((n,w)=>n+Math.abs(w.compression),0),roll=Math.min(1,speed/ .65)*contacts,servo=Math.min(1,v.soundState.armSpeed*.18+v.soundState.toolSpeed*.12);stats.rolling+=roll;stats.servos+=servo;const active=control.enabled&&!document.hidden;
-   set(ch.soil.gain.gain,active?roll*.28:0);set(ch.soil.filter.frequency,180+speed*650);set(ch.leaves.gain.gain,active?roll*(.05+Math.min(.12,rough*.2)):0);set(ch.servoGain.gain,active?servo*.07:0);set(ch.servo.frequency,180+Math.min(500,v.soundState.armSpeed*90+v.soundState.toolSpeed*30));
+  for(const ch of channels){const v=ch.v,s=v.state,speed=Math.abs(s.speed),contacts=s.wheels.filter(w=>w.contact).length/4,rough=s.wheels.reduce((n,w)=>n+Math.abs(w.compression),0),roll=speed<.015?0:Math.min(1,speed/.65)*contacts,servo=Math.min(1,v.soundState.armSpeed*.18+v.soundState.toolSpeed*.12);stats.rolling+=roll;stats.servos+=servo;const active=control.enabled&&!document.hidden;
+   set(ch.soil.gain.gain,active?roll*.45:0);set(ch.soil.filter.frequency,180+speed*650);set(ch.leaves.gain.gain,active?roll*(.09+Math.min(.18,rough*.25)):0);set(ch.servoGain.gain,active?servo*.11:0);set(ch.servo.frequency,180+Math.min(500,v.soundState.armSpeed*90+v.soundState.toolSpeed*30));
    for(const [p,node] of [[v.position,ch.wheels],[v.rover.arm.getWorldPosition(v.position.clone()),ch.arm]])for(const axis of ['X','Y','Z'])set(node['position'+axis],p[axis.toLowerCase()]);
   }}catch(e){stats.error=e.message}}
  return {update,stats};

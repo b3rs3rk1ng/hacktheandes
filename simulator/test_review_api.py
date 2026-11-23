@@ -13,6 +13,7 @@ import orchard_server as server
 
 class ReviewRoundTrip(unittest.TestCase):
     def setUp(self):
+        self.old_intervention=server.CFG['fleet'].get('intervention');server.CFG['fleet']['intervention']={'approval':'human','confirmation':'fresh_frames'}
         self.directory=tempfile.TemporaryDirectory();self.old_runtime=server.RUNTIME
         server.RUNTIME=Path(self.directory.name)
         server.atomic(server.RUNTIME/'orchard.json',{'pods':[{'id':'fruit','plant_id':'plant','position':[2,3,1.6]}]})
@@ -27,6 +28,8 @@ class ReviewRoundTrip(unittest.TestCase):
         self.thread=threading.Thread(target=self.http.serve_forever,daemon=True);self.thread.start()
 
     def tearDown(self):
+        if self.old_intervention is None:server.CFG['fleet'].pop('intervention',None)
+        else:server.CFG['fleet']['intervention']=self.old_intervention
         self.http.shutdown();self.http.server_close();server.RUNTIME=self.old_runtime
         server.FRAMES.pop('photo-frame',None);server.FRAME_IMAGES.pop('photo-frame',None);self.directory.cleanup()
 

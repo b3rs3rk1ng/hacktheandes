@@ -16,7 +16,7 @@ from controller.wb import wb
 ROOT=Path(__file__).resolve().parents[2]
 sys.path.insert(0,str(ROOT))
 from terrain import height_at
-from flight_geometry import vegetation_capsules, ObstacleField, plan_vertical_escape
+from flight_geometry import vegetation_capsules, ObstacleField, plan_vertical_escape, plan_flight_path, plan_scan_segment
 from flight_core import FlightDynamics, Battery, distance, flight_control, motor_power, return_budget, plan_horizontal_path, wrap
 from coverage_plan import scout_can_advance, next_scout_index
 from mission_resume import restore_parked
@@ -54,12 +54,14 @@ camera_look=list(look);arrival=None;last_thrust=0;outcomes=[]
 harvest_enabled=CFG['manipulation']['enabled'] and not F.get('inspection_only',False)
 resume_after_charge=False
 return_cause=None
-navigation_phase_id=None;navigation=[];navigation_index=0
+navigation_phase_id=None;navigation=[];navigation_index=0;scan_segment=None;scan_direction=1
 fleet_status={};last_fleet_read=0
+airborne_since=None;airborne_wall_seconds=0
 resume=restore_parked(read(RUNTIME/'mission-restart.json'),DATA)
 (RUNTIME/'mission-restart.json').unlink(missing_ok=True)
 if resume:
-    battery=Battery(CFG['battery'],resume['battery']['soc']);phase=resume['phase'];route_index=resume.get('route_index',0)
+    same_pack=abs(resume['battery'].get('nominal_wh',0)-battery.nominal_wh)<.01
+    battery=Battery(CFG['battery'],resume['battery']['soc'] if same_pack else CFG['battery']['initial_soc']);phase=resume['phase'] if same_pack else 'idle';route_index=resume.get('route_index',0)
     visited=set(resume.get('visited',[]));observed=resume.get('observed',{});mission_start=-resume.get('mission_time',0)
     resume_after_charge=phase=='charging'
 
@@ -123,6 +125,7 @@ while robot.step(dt_ms)!=-1:
     now=robot.getTime();position=body.getPosition();velocity=body.getVelocity();rotation=body.getOrientation()
     if time.monotonic()-last_fleet_read>.2:
         fleet_status=read(RUNTIME/'fleet-state.json',{});last_fleet_read=time.monotonic()
+        if DATA.get('revision') and fleet_status.get('scene_revision')!=DATA['revision']:fleet_status={}
         if phase in ('idle','charging','scout_hold','takeoff'):
             route_index=next_scout_index(DATA.get('coverage'),route_index,fleet_status.get('coverage',{}))
             if route_index>=len(DATA['route']) and phase in ('scout_hold','takeoff'):return_home('Recorrido completado por el equipo',cause='route_complete')
@@ -176,14 +179,23 @@ while robot.step(dt_ms)!=-1:
         if phase=='transit':
             if navigation_phase_id!=phase_id:
                 navigation_phase_id=phase_id;navigation_index=0
-                try:navigation=plan_horizontal_path(position,desired,OBSTACLES,clearance=INS['obstacle_clearance_m'])
+                try:
+                    radius=F.get('cage_radius_m',.35)+abs(F.get('cage_center_y_m',0))
+                    navigation=plan_flight_path(position,desired,FLIGHT_OBSTACLES,radius,height=F['return_height_m'],ground_height=lambda x,y:height_at(DATA.get('terrain'),x,y))
+                    if INS.get('mode')=='flyby':
+                        next_plant=PLANTS[DATA['route'][min(route_index+1,len(DATA['route'])-1)]]['position'];center=navigation[-1]
+                        scan_segment=plan_scan_segment(center,look,[next_plant[i]-center[i] for i in range(3)],FLIGHT_OBSTACLES,radius,span=INS.get('scan_span_m',1.2),ground_height=lambda x,y:height_at(DATA.get('terrain'),x,y));scan_direction=1
+                        navigation=plan_flight_path(position,scan_segment[0],FLIGHT_OBSTACLES,radius,height=F['return_height_m'],ground_height=lambda x,y:height_at(DATA.get('terrain'),x,y))
                 except ValueError:
                     navigation=[];return_home('No se encontró una aproximación libre de troncos',cause='blocked_path');waypoint=[position[0],position[1],F['return_height_m']]
             if navigation:
-                target_xy=navigation[navigation_index]
-                if math.dist(position[:2],target_xy)<.10 and navigation_index<len(navigation)-1:navigation_index+=1
-                waypoint=[*navigation[navigation_index],max(desired[2],height_at(DATA.get('terrain'),*position[:2])+.9,height_at(DATA.get('terrain'),*navigation[navigation_index])+.9)]
-        else:waypoint=desired
+                if distance(position,navigation[navigation_index])<F.get('arrival_position_m',.12) and navigation_index<len(navigation)-1:navigation_index+=1
+                waypoint=navigation[navigation_index]
+        else:
+            if INS.get('mode')=='flyby' and scan_segment:
+                waypoint=scan_segment[scan_direction]
+                if distance(position,waypoint)<.25 and frames<INS['minimum_frames']:scan_direction=1-scan_direction;waypoint=scan_segment[scan_direction]
+            else:waypoint=navigation[-1] if navigation else desired
     elif phase in ('grip_approach','grip'):
         a=selected['angle'];radius=CFG['manipulation']['tool_offset_m']+CFG['manipulation']['grip_offset_m']
         waypoint=[selected['position'][0]+radius*math.cos(a),selected['position'][1]+radius*math.sin(a),selected['position'][2]];look=list(selected['position'])
@@ -222,8 +234,8 @@ while robot.step(dt_ms)!=-1:
     last_thrust=thrust if not ground else 0
 
     if phase=='takeoff' and stable:transition('transit')
-    elif phase=='transit' and stable and navigation_index==len(navigation)-1:transition('inspect')
-    elif phase=='inspect' and stable and now-phase_start>=INS['dwell_s'] and frames>=INS['minimum_frames']:
+    elif phase=='transit' and navigation_index==len(navigation)-1 and (distance(position,waypoint)<.30 if INS.get('mode')=='flyby' else stable):transition('inspect')
+    elif phase=='inspect' and (distance(position,waypoint)<.35 if INS.get('mode')=='flyby' else stable) and now-phase_start>=INS['dwell_s'] and frames>=INS['minimum_frames']:
         view_index+=1
         if view_index>=len(INS['angles'])*len(INS.get('height_levels_m',[INS['height_m']])):
             visited.add(DATA['route'][route_index]);route_index+=1;view_index=0
@@ -261,11 +273,16 @@ while robot.step(dt_ms)!=-1:
 
     if time.monotonic()-last_status_wall>.075:
         last_status_wall=time.monotonic()
+        above_ground=position[2]>height_at(DATA.get('terrain'),*position[:2])+F.get('cage_radius_m',.35)-F.get('cage_center_y_m',0)+.08
+        if above_ground and phase not in ('idle','charging','failed'):
+            if airborne_since is None:airborne_since=last_status_wall
+            airborne_wall_seconds=last_status_wall-airborne_since
+        else:airborne_since=None;airborne_wall_seconds=0
         payloads={pid:{'position':node.getPosition(),'orientation':node.getOrientation()} for pid,node in moving.items()}
         current_plant=DATA['route'][min(route_index,len(DATA['route'])-1)]
         status={'engine':'Webots R2025a / ODE','updated_at':time.time(),'simulation_time':now,'mission_time':now-mission_start if mission_start else 0,
           'phase_elapsed_s':now-phase_start,'last_command_id':command_id,'phase':phase,'phase_id':phase_id,'label':LABELS[phase],'position':position,'velocity':velocity,'orientation':rotation,'look_at':look,'waypoint':waypoint,
-          'battery':battery.telemetry(),'return_budget':budget,'return_reason':return_reason,'return_cause':return_cause,'thrust_n':last_thrust,'wind_mps':flight_dynamics.wind,'obstacle_clearance_m':obstacle_gap if math.isfinite(obstacle_gap) else None,'contact_count':len(body.getContactPoints()),
+          'battery':battery.telemetry(),'airborne_wall_seconds':airborne_wall_seconds,'return_budget':budget,'return_reason':return_reason,'return_cause':return_cause,'thrust_n':last_thrust,'wind_mps':flight_dynamics.wind,'obstacle_clearance_m':obstacle_gap if math.isfinite(obstacle_gap) else None,'contact_count':len(body.getContactPoints()),
           'plant_id':current_plant,'visited':list(visited),'observed':observed,'removed':list(removed),'payload_attached':loaded,'gripper_locked':gripper.isLocked(),'payloads':payloads,'outcomes':outcomes,
           'events':events[-20:],'accelerated':fast,'camera_frames_at_view':frames,'route_index':route_index,'route_count':len(DATA['route']),
           'harvest_enabled':harvest_enabled,

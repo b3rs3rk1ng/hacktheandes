@@ -8,6 +8,7 @@ from fleet_core import Fleet
 class FleetContract(unittest.TestCase):
     def setUp(self):
         self.cfg=json.loads((Path(__file__).parent/'orchard_config.json').read_text())
+        self.cfg['fleet']['intervention']={'approval':'human','confirmation':'fresh_frames'}
         self.now=100.;self.f=Fleet(self.cfg,clock=lambda:self.now)
         self.pods={name:{'id':name,'plant_id':'tree-'+str(i),'position':[i,2,1.4]} for i,name in enumerate(['one','two','three','four'])}
 
@@ -67,6 +68,21 @@ class FleetContract(unittest.TestCase):
         self.prepare();saved=copy.deepcopy(self.f.data);restored=Fleet(self.cfg,saved,clock=lambda:self.now)
         self.assertEqual(restored.snapshot(),saved);restored.control('return');self.assertTrue(restored.data['returning']);self.assertFalse(restored.data['enabled'])
         restored.control('reset');self.assertEqual(restored.data['tasks'],{});self.assertEqual(restored.data['epoch'],1)
+
+    def test_idle_neighbor_assistance_requires_completed_own_inspection(self):
+        self.cfg['fleet']['intervention']={'approval':'automatic','confirmation':'initial_detection'}
+        plan={'batches':[{'lanes':[{'robot_id':'ground-1','tree_ids':['own']},{'robot_id':'ground-2','tree_ids':['neighbor']}]}]}
+        self.f=Fleet(self.cfg,clock=lambda:self.now,plan=plan);self.f.control('start')
+        self.pods['one'].update(plant_id='neighbor',position=[4,0,1])
+        self.observe(self.frame('alert'),'one')
+        self.f.data['robots']['ground-1']={'phase':'waiting_team','position':[0,0,0]}
+        self.f.coverage.state['scouted']['neighbor']={'frames':['s1','s2']}
+        with self.assertRaises(ValueError):self.f.claim('one','ground-1')
+        self.f.coverage.state['inspected']['ground-1']={'own':{'frames':['g1','g2']}}
+        self.f.data['robots']['ground-1']['phase']='navigating'
+        with self.assertRaises(ValueError):self.f.claim('one','ground-1')
+        self.f.data['robots']['ground-1']['phase']='waiting_team'
+        self.assertEqual(self.f.claim('one','ground-1')['robot_id'],'ground-1')
 
 
 if __name__=='__main__':unittest.main()

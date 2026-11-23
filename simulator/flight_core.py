@@ -118,7 +118,7 @@ def flight_control(position, velocity, rotation, waypoint, yaw, cfg, payload_kg=
     thrust = clamp(sum(a*b for a,b in zip(force,up)),0,cfg['max_thrust_n'])
     relative = [velocity[i]-cfg['wind_mps'][i] for i in range(3)]
     drag = [-.5*cfg['air_density']*cfg['drag_area_m2']*v*abs(v) for v in relative]
-    stable = distance(position,waypoint)<.065 and math.sqrt(sum(v*v for v in velocity[:3]))<.10 and abs(error[2])<.12
+    stable = distance(position,waypoint)<cfg.get('arrival_position_m',.065) and math.sqrt(sum(v*v for v in velocity[:3]))<cfg.get('arrival_speed_mps',.10) and abs(error[2])<cfg.get('arrival_yaw_rad',.12)
     return thrust, torque, drag, stable
 
 

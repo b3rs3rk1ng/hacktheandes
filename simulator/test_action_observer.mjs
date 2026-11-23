@@ -1,0 +1,15 @@
+import assert from 'node:assert/strict';
+import {createActionObserver} from './ui/orchard/action-observer.mjs';
+const contexts=[{vehicle:{id:'a'},phase:'patrolling'},{vehicle:{id:'b'},phase:'surveying'}];
+const director=createActionObserver();
+assert.equal(director.choose(contexts,'a',0),'drone');
+contexts[1].phase='gripping';
+assert.equal(director.choose(contexts,'a',1000),'drone','avoid rapid camera cuts');
+assert.equal(director.choose(contexts,'a',7000),'b','show an actual harvest');
+contexts[0].phase='cutting';
+assert.equal(director.choose(contexts,'a',8000),'b','hold the current live shot');
+assert.equal(director.choose(contexts,'a',14000),'a');
+contexts[0].phase='waiting_team';contexts[1].phase='patrolling';
+assert.equal(director.choose(contexts,'drone',15000),'b','leave an inactive robot');
+assert.equal(director.choose(contexts,'b',22000),'drone');
+console.log('Action observer: real activity, steady shots and inactive transitions passed');

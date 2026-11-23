@@ -1,0 +1,14 @@
+{
+  "seconds": 1200,
+  "waits": {
+    "ground-1": 13144,
+    "ground-2": 12675,
+    "ground-3": 14250
+  },
+  "retreats": {
+    "ground-3": 319,
+    "ground-1": 322,
+    "ground-2": 319
+  },
+  "minSeparation": 1.2727694988886455
+}

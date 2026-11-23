@@ -9,6 +9,7 @@ export function createObserverView(renderer,{fps=30,maxPixels=180000,prepareScen
  scene.add(new THREE.Mesh(new THREE.PlaneGeometry(2,2),new THREE.MeshBasicMaterial({map:target.texture,depthTest:false,depthWrite:false,toneMapped:true})));
  let last=-Infinity,lastCamera=null,width=0,height=0;const stats={updates:0,composites:0};
  function render(world,sensor,rect,screenHeight,time){
+  if(rect.width<=0||rect.height<=0)return;
   const scale=Math.min(renderer.getPixelRatio(),Math.sqrt(maxPixels/(rect.width*rect.height))),w=Math.max(1,Math.round(rect.width*scale)),h=Math.max(1,Math.round(rect.height*scale));
   if(w!==width||h!==height){width=w;height=h;target.setSize(w,h);last=-Infinity}
   if(time-last>=1000/fps-.25||sensor!==lastCamera){

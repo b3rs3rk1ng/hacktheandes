@@ -94,5 +94,33 @@ class APIContract(unittest.TestCase):
                 content=response.read();self.assertEqual(response.headers.get('Content-Encoding')=='gzip',compressed)
                 self.assertEqual(json.loads(gzip.decompress(content) if compressed else content),data)
 
+    def test_world_exposes_current_presentation_configuration(self):
+        data={'config':{'simulation':{'presentation_mode':'outdated'}},'plants':[],'pods':[]}
+        server.atomic(server.RUNTIME/'orchard.json',data)
+        code,reply=self.request('/api/world');self.assertEqual(code,200)
+        self.assertEqual(reply['config']['simulation'],server.CFG['simulation'])
+        self.assertEqual(server.read(server.RUNTIME/'orchard.json'),data)
+        self.assertEqual(self.request('/api/session')[1]['presentation_mode'],server.CFG['simulation']['presentation_mode'])
+
+    def test_public_live_projects_history_but_keeps_current_state(self):
+        server.atomic(server.RUNTIME/'fleet-state.json',{'robots':{'r':{'phase':'surveying'}},'tasks':{},'events':list(range(30)), 'coverage':{'scouted':{'tree':{'frames':['photo']}}}})
+        code,reply=self.request('/api/live');self.assertEqual(code,200)
+        self.assertEqual(reply['fleet']['robots']['r']['phase'],'surveying')
+        self.assertEqual(reply['fleet']['coverage']['scouted'],{'tree':True})
+        self.assertEqual(len(reply['fleet']['events']),20)
+        self.assertEqual(server.read(server.RUNTIME/'fleet-state.json')['coverage']['scouted']['tree']['frames'],['photo'])
+
+    def test_static_validation_and_anonymous_write_denial(self):
+        with urlopen(self.base+'/orchard/session.js') as response:
+            etag=response.headers['ETag'];self.assertTrue(response.read())
+        try:urlopen(Request(self.base+'/orchard/session.js',headers={'If-None-Match':etag}))
+        except HTTPError as error:self.assertEqual(error.code,304);error.close()
+        else:self.fail('Expected unchanged representation')
+        token=server.RUNTIME/'operator-token.txt';token.write_text('test-only')
+        try:
+            self.assertEqual(self.request('/api/session')[1]['operator'],False)
+            self.assertEqual(self.request('/api/command',{'action':'start'})[0],403)
+        finally:token.unlink()
+
 
 if __name__=='__main__':unittest.main()

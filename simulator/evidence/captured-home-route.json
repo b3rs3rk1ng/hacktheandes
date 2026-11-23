@@ -1,0 +1,10 @@
+[
+  {
+    "id": "ground-3",
+    "status": "idle",
+    "charging": true,
+    "elapsed": 74.89166666682615,
+    "maxDeviation": 0.14331385985743572,
+    "points": 115
+  }
+]

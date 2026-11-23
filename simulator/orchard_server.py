@@ -20,6 +20,7 @@ from fleet_core import Fleet, ReviewConflict
 from review_evidence import save_evidence, evidence_path
 from vision_geometry import SceneLocalizer, validate_camera, VERSION as LOCALIZATION_VERSION
 from access import authorized
+from http_delivery import RepresentationCache, viewer_fleet
 
 ROOT=Path(__file__).resolve().parent;RUNTIME=ROOT/'runtime'
 CFG=json.loads((ROOT/'orchard_config.json').read_text())
@@ -27,6 +28,12 @@ LOCK=threading.Lock();FRAMES=OrderedDict();FRAME_IMAGES=OrderedDict();STARTED=ti
 MODEL=None;MODEL_ERROR='Modelo iniciando';MODEL_INFO={};LAST=None
 FLEET_LOCK=threading.Lock()
 WORLD_CACHE=None
+HTTP_CACHE=RepresentationCache()
+
+
+class LiveHTTPServer(ThreadingHTTPServer):
+    request_queue_size=512
+    daemon_threads=True
 
 
 def world_snapshot():
@@ -36,6 +43,7 @@ def world_snapshot():
     except FileNotFoundError:return {},None
     if WORLD_CACHE is None or WORLD_CACHE[0]!=key:
         data=read(path,{})
+        if 'config' in data:data['config']['simulation']=CFG.get('simulation',{})
         WORLD_CACHE=(key,data,SceneLocalizer(data))
     return WORLD_CACHE[1],WORLD_CACHE[2]
 
@@ -43,7 +51,11 @@ def world_snapshot():
 def fleet_call(method=None,*args):
     with FLEET_LOCK:
         world,_=world_snapshot()
-        fleet=Fleet(CFG,read(RUNTIME/'fleet-state.json'),plan=world.get('coverage'))
+        state=read(RUNTIME/'fleet-state.json');revision=world.get('revision')
+        changed=bool(revision and state and state.get('scene_revision')!=revision)
+        fleet=Fleet(CFG,None if changed else state,plan=world.get('coverage'))
+        if changed:fleet.data['epoch']=state.get('epoch',0)+1
+        if revision:fleet.data['scene_revision']=revision
         fleet.coverage.set_scout(read(RUNTIME/'mission-status.json',{}))
         result=getattr(fleet,method)(*args) if method else None
         snapshot=fleet.snapshot();atomic(RUNTIME/'fleet-state.json',snapshot)
@@ -94,6 +106,25 @@ def load_model(weights,device):
 class Handler(BaseHTTPRequestHandler):
     protocol_version='HTTP/1.1'
     disable_nagle_algorithm=True
+    def setup(self):
+        super().setup();self.connection.settimeout(10)
+
+    def deliver(self,representation,mime,cache_control='no-store'):
+        raw,packed,etag=representation
+        compressed=packed is not None and accepts_gzip(self.headers.get('Accept-Encoding',''))
+        data=packed if compressed else raw
+        unchanged=cache_control!='no-store' and self.headers.get('If-None-Match')==etag
+        self.send_response(304 if unchanged else 200)
+        self.send_header('Content-Type',mime);self.send_header('Cache-Control',cache_control)
+        self.send_header('Vary','Accept-Encoding');self.send_header('ETag',etag)
+        self.send_header('X-Content-Type-Options','nosniff')
+        if compressed:self.send_header('Content-Encoding','gzip')
+        if not unchanged:self.send_header('Content-Length',str(len(data)))
+        self.end_headers()
+        if not unchanged:
+            try:self.wfile.write(data)
+            except (BrokenPipeError,ConnectionResetError):pass
+
     def send(self,status,value,mime='application/json; charset=utf-8'):
         data=value if isinstance(value,bytes) else json.dumps(value,ensure_ascii=False,allow_nan=False).encode()
         compressed=len(data)>4096 and mime.startswith('application/json') and accepts_gzip(self.headers.get('Accept-Encoding',''))
@@ -106,13 +137,15 @@ class Handler(BaseHTTPRequestHandler):
 
     def do_GET(self):
         route=unquote(urlparse(self.path).path)
-        if route=='/api/session':self.send(200,{'operator':authorized(self.headers,RUNTIME),'shared':True});return
+        if route=='/api/session':self.send(200,{'operator':authorized(self.headers,RUNTIME),'shared':True,'presentation_mode':CFG.get('simulation',{}).get('presentation_mode','physical')});return
         if route=='/api/live':
-            physical=read(RUNTIME/'mission-status.json',{})
-            physical['counts']={'alerts':sum(o.get('target_score',0)>=CFG['inspection']['alert_threshold'] for o in physical.get('observed',{}).values())}
-            for key in ('observed','events','limits'):physical.pop(key,None)
-            fleet=read(RUNTIME/'fleet-state.json',{})
-            self.send(200,{'physics':physical,'fleet':fleet,'model':MODEL_INFO,'model_error':MODEL_ERROR,'last_inference':LAST,'server_time':time.time()});return
+            def snapshot():
+                physical=read(RUNTIME/'mission-status.json',{})
+                physical['counts']={'alerts':sum(o.get('target_score',0)>=CFG['inspection']['alert_threshold'] for o in physical.get('observed',{}).values())}
+                for key in ('observed','events','limits'):physical.pop(key,None)
+                fleet=viewer_fleet(read(RUNTIME/'fleet-state.json',{}))
+                return json.dumps({'physics':physical,'fleet':fleet,'model':MODEL_INFO,'model_error':MODEL_ERROR,'last_inference':LAST,'server_time':time.time(),'scene_revision':world_snapshot()[0].get('revision')},ensure_ascii=False,allow_nan=False,separators=(',',':')).encode()
+            self.deliver(HTTP_CACHE.get(('live',str(RUNTIME)),snapshot,ttl=.1),'application/json; charset=utf-8');return
         if route=='/api/fleet':self.send(200,fleet_call());return
         if route.startswith('/api/review/evidence/'):
             path=evidence_path(RUNTIME/'review-evidence',route.removeprefix('/api/review/evidence/'))
@@ -128,11 +161,14 @@ class Handler(BaseHTTPRequestHandler):
                 # observation history or a second copy of inference boxes.
                 state={**state,'counts':{'alerts':sum(o.get('target_score',0)>=CFG['inspection']['alert_threshold'] for o in state.get('observed',{}).values())}}
                 for key in ('observed','events','limits'):state.pop(key,None)
-            reply={'physics':state,'model':MODEL_INFO,'model_error':MODEL_ERROR,'server_time':time.time()}
+            reply={'physics':state,'model':MODEL_INFO,'model_error':MODEL_ERROR,'server_time':time.time(),'scene_revision':world_snapshot()[0].get('revision')}
             if not compact:reply['last_inference']=LAST
             self.send(200,reply);return
         if route=='/api/world':
-            self.send(200,read(RUNTIME/'orchard.json',{}));return
+            path=RUNTIME/'orchard.json'
+            if not path.is_file():self.send(200,{});return
+            stat=path.stat()
+            self.deliver(HTTP_CACHE.get(('world',str(path),stat.st_mtime_ns,stat.st_size),lambda:json.dumps(world_snapshot()[0],ensure_ascii=False,separators=(',',':')).encode()),'application/json; charset=utf-8');return
         if route=='/api/evaluation':
             data=read(RUNTIME/'orchard.json',{});state=read(RUNTIME/'mission-status.json',{})
             pods={p['id']:p for p in data.get('pods',[])};tp=fp=fn=tn=0
@@ -151,7 +187,11 @@ class Handler(BaseHTTPRequestHandler):
                     if candidate.is_relative_to(base.resolve()):path=candidate
                     break
         if path is None or not path.is_file():self.send(404,{'error':'Recurso no disponible'});return
-        self.send(200,path.read_bytes(),mimetypes.guess_type(path.name)[0] or 'application/octet-stream')
+        mime=mimetypes.guess_type(path.name)[0] or 'application/octet-stream'
+        if route=='/vision.jpg':self.send(200,path.read_bytes(),mime);return
+        stat=path.stat();key=(str(path),stat.st_mtime_ns,stat.st_size)
+        compress=mime.startswith('text/') or mime in ('application/javascript','application/json','application/wasm')
+        self.deliver(HTTP_CACHE.get(key,path.read_bytes,compress=compress),mime,'public, max-age=0, must-revalidate')
 
     def do_POST(self):
         global LAST
@@ -276,6 +316,9 @@ class Handler(BaseHTTPRequestHandler):
 if __name__=='__main__':
     parser=argparse.ArgumentParser();parser.add_argument('--weights',type=Path,default=Path(CFG['model']['weights']));parser.add_argument('--device',default='0');args=parser.parse_args()
     RUNTIME.mkdir(exist_ok=True)
-    threading.Thread(target=load_model,args=(args.weights,args.device),daemon=True).start()
+    if CFG.get('simulation',{}).get('presentation_mode')=='scripted':
+        MODEL_ERROR=None;MODEL_INFO={'actual_inference':False,'simulated':True,'device':'none','presentation_mode':'scripted'}
+    else:
+        threading.Thread(target=load_model,args=(args.weights,args.device),daemon=True).start()
     print('Orchard: http://127.0.0.1:'+str(CFG['server']['port']),flush=True)
-    ThreadingHTTPServer((CFG['server']['host'],CFG['server']['port']),Handler).serve_forever()
+    LiveHTTPServer((CFG['server']['host'],CFG['server']['port']),Handler).serve_forever()
